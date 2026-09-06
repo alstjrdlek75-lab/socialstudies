@@ -338,7 +338,7 @@
       <div class="hidden xl:flex items-center gap-1.5 text-[11px] text-slate-400">
         <span class="px-1.5 py-0.5 bg-lime-50 text-lime-800 border border-lime-200 rounded font-semibold" title="본문 글자 드래그 후 [M]을 누르면 테이프가 붙습니다">[드래그+M] 추가</span>
         <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-semibold" title="테이프 위에서 마우스 우클릭하거나 Option/Cmd+클릭하면 삭제됩니다">[우클릭] 테이프 삭제</span>
-        <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded font-semibold" title="마스킹 테이프 자리에 키보드로 직접 정답을 타이핑하여 맞히는 모드로 전환합니다">[I] 직접 타이핑</span>
+        <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded font-semibold" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 모드로 전환합니다">[I] 작성 모드</span>
         <span class="px-1.5 py-0.5 bg-lime-100 text-lime-900 border border-lime-300 rounded font-semibold">[Space] 전체공개</span>
         <span class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-600">[Tab] 서술입력</span>
         <span class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-600">[F/A/P] 자가채점</span>
@@ -445,9 +445,9 @@
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span>마스킹 테이프</span>
             </button>
-            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="type" type="button" title="마스킹 테이프 자리에 키보드로 직접 정답을 타이핑하여 맞히는 모드 [단축키: I]">
-              <span class="material-symbols-outlined text-[15px]">keyboard</span>
-              <span>직접 타이핑</span>
+            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
+              <span class="material-symbols-outlined text-[15px]">edit_note</span>
+              <span>작성 모드</span>
             </button>
             <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="study" type="button">
               <span class="material-symbols-outlined text-[15px]">menu_book</span>
@@ -1478,29 +1478,34 @@
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
           document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
         } else if (mode === 'type') {
-          // Direct typing recall mode
+          // Direct typing recall mode (작성 모드)
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
-          enableTypingMode();
+          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
+          enableTypingMode(true);
         } else if (mode === 'study') {
           // Unmask everything, peel all tapes
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
           document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+          if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
         } else if (mode === 'blur') {
           // Blur all groups
           document.querySelectorAll('.topic-group').forEach(grp => blurGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
           document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
         } else if (mode === 'cloze') {
           // Open groups, but mask keywords
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
           document.querySelectorAll('.cloze-target').forEach(el => maskCloze(el));
+          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
         }
 
         isAllRevealed = (mode === 'study');
@@ -1537,7 +1542,8 @@
 
         let existingInput = tape.querySelector('.tape-typing-input');
         if (existingInput) {
-          existingInput.focus();
+          existingInput.value = '';
+          existingInput.classList.remove('is-correct', 'is-wrong');
           return existingInput;
         }
 
@@ -1588,26 +1594,26 @@
         });
 
         tape.appendChild(input);
-        setTimeout(() => input.focus(), 50);
         return input;
       }
 
-      function enableTypingMode() {
+      function enableTypingMode(forceReset = true) {
         const tapes = subnoteContainer.querySelectorAll('.mask-tape');
         let firstInput = null;
 
+        // Hide spoiler keyword tags on card header
+        if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
+
         tapes.forEach(tape => {
-          if (tape.classList.contains('is-peeled') && !tape.classList.contains('is-typing-mode')) {
-            return;
-          }
           const inp = createSingleTypingInput(tape);
           if (!firstInput && inp) firstInput = inp;
         });
 
         if (firstInput) {
-          showToast('마스킹 테이프 직접 타이핑 모드 [단축키: I]', 'keyboard');
+          setTimeout(() => firstInput.focus(), 60);
+          showToast('✍️ 작성 모드: 답을 미리 보지 않고 빈칸을 직접 입력하세요! [단축키: I]', 'edit_note');
         } else {
-          showToast('모든 테이프가 이미 공개되어 있습니다', 'info');
+          showToast('작성할 마스킹 빈칸이 없습니다', 'info');
         }
       }
 
@@ -1646,7 +1652,7 @@
             if (nextInput) {
               nextInput.focus();
             } else {
-              showToast('🎉 모든 빈칸 타이핑 완료! 정답 인출 성공!', 'star');
+              showToast('🎉 모든 빈칸 작성 완료! 정답 인출 성공!', 'star');
             }
           }
         }, isCorrectInput ? 180 : 0);
@@ -1691,12 +1697,18 @@
           document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
+          if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
           showToast('모든 정답(마스킹 테이프)이 공개되었습니다 [Space]', 'visibility');
         } else {
-          restoreTapesFromTyping();
-          document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
-          applyMode(currentMode);
-          showToast('정답을 다시 마스킹 테이프로 가렸습니다 [Space]', 'label');
+          if (currentMode === 'type') {
+            enableTypingMode(true);
+            showToast('정답을 다시 가리고 작성 모드로 리셋했습니다 [Space]', 'edit_note');
+          } else {
+            restoreTapesFromTyping();
+            document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
+            applyMode(currentMode);
+            showToast('정답을 다시 마스킹 테이프로 가렸습니다 [Space]', 'label');
+          }
         }
         updateRevealButton(isAllRevealed);
       }
@@ -1704,13 +1716,13 @@
       function updateRevealButton(revealed) {
         if (!revealBtnLabel || !revealEyeIcon || !btnRevealAll) return;
         if (revealed) {
-          revealBtnLabel.textContent = '정답 다시 가리기 [Space]';
+          revealBtnLabel.textContent = (currentMode === 'type') ? '다시 가리고 작성하기 [Space]' : '정답 다시 가리기 [Space]';
           revealEyeIcon.textContent = 'visibility_off';
-          btnRevealAll.className = 'px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 border border-slate-300 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer';
+          btnRevealAll.className = 'px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 border border-slate-300 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
         } else {
-          revealBtnLabel.textContent = '정답 전체 공개 [Space]';
+          revealBtnLabel.textContent = (currentMode === 'type') ? '정답 확인 [Space]' : '정답 전체 공개 [Space]';
           revealEyeIcon.textContent = 'visibility';
-          btnRevealAll.className = 'px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer';
+          btnRevealAll.className = 'px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
         }
       }
 
@@ -1729,10 +1741,15 @@
           if (isIncluded) matched++;
 
           const chip = document.createElement('span');
-          chip.className = isIncluded
-            ? 'px-2 py-0.5 rounded-md text-[11px] font-bold bg-blue-600 text-white flex items-center gap-0.5 shadow-2xs'
-            : 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-white text-slate-500 border border-slate-200';
-          chip.innerHTML = `#${kw} ${isIncluded ? '<span class="material-symbols-outlined text-[12px]">check</span>' : ''}`;
+          if (isIncluded) {
+            chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-bold bg-blue-600 text-white flex items-center gap-0.5 shadow-2xs';
+            chip.innerHTML = `#${kw} <span class="material-symbols-outlined text-[12px]">check</span>`;
+          } else {
+            const isBlindMode = (currentMode === 'type' || currentMode === 'tape');
+            chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-white text-slate-400 border border-slate-200';
+            chip.textContent = isBlindMode ? `#?? (${kw.length}자)` : `#${kw}`;
+            chip.title = isBlindMode ? '서술창 또는 빈칸에 단어를 작성하면 공개됩니다' : '';
+          }
           keywordMatchChips.appendChild(chip);
         });
 
