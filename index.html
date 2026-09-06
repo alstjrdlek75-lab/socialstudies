@@ -282,7 +282,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260906_2222"></script>
+  <script src="topics-data.js?v=20260906_2226"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -1097,7 +1097,7 @@
       }
 
       // 5. Render Topic Content View
-      function renderTopic(index) {
+      function renderTopic(index, keepMobileDrawer = false) {
         currentTopicIndex = (index + TOPICS.length) % TOPICS.length;
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
@@ -1122,8 +1122,8 @@
         // Scroll to top of page content on topic change
         window.scrollTo({ top: 0, behavior: 'instant' });
 
-        // Auto-close mobile drawer when topic is rendered on small screens
-        if (window.innerWidth < 768) {
+        // Auto-close mobile drawer when topic is rendered on small screens (unless keepMobileDrawer is true)
+        if (window.innerWidth < 768 && !keepMobileDrawer) {
           closeMobileSidebar();
         }
 
@@ -1842,13 +1842,14 @@
         });
       }
 
-      function setSubjectTab(subj, autoSelectFirst = false) {
+      function setSubjectTab(subj, autoSelectFirst = false, keepMobileDrawer = false) {
         activeSubject = subj;
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
         updateSubjectTabStyles();
         renderSidebar();
+        if (sidebarTree) sidebarTree.scrollTop = 0;
         if (autoSelectFirst && filteredIndices.length > 0) {
-          renderTopic(filteredIndices[0]);
+          renderTopic(filteredIndices[0], keepMobileDrawer);
         }
       }
 
@@ -1865,16 +1866,17 @@
       subjectTabs.forEach(btn => {
         btn.addEventListener('click', () => {
           const subj = btn.dataset.subject;
-          setSubjectTab(subj, true);
+          setSubjectTab(subj, true, false);
           showToast(`${subj === 'ALL' ? '전체 과목' : subj} 선택됨`, 'filter_list');
         });
       });
 
       mobileSubjTabs.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
           const subj = btn.dataset.subject;
-          setSubjectTab(subj, true);
-          showToast(`${subj === 'ALL' ? '전체 과목' : subj} 선택됨`, 'filter_list');
+          setSubjectTab(subj, true, true);
+          showToast(`${subj === 'ALL' ? '전체 과목' : subj} 목차`, 'filter_list');
         });
       });
 
