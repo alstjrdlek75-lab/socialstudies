@@ -883,6 +883,17 @@
         }, 2200);
       }
 
+      // Helper: Format examTag for display
+      // Pure numbers like "22" → "'22", "23 25" → "'23 '25", "22,23,26(단답)" → "'22,'23,'26(단답)"
+      // Category-style like "수요공급(29)" stays as-is (Korean prefix + parenthesized number)
+      function formatExamTag(tag) {
+        if (!tag) return '';
+        // Category-style: Korean text followed by parenthesized number e.g. "수요공급(29)" → keep as-is
+        if (/^[\uAC00-\uD7AF]+\(\d+\)$/.test(tag)) return tag;
+        // For everything else, prefix standalone 2-digit numbers with apostrophe
+        return tag.replace(/(^|[\s,])(\d{2})(?=\b)/g, "$1'$2");
+      }
+
       // 4. Render Sidebar Tree (Clean Collapsible Hierarchical Tree)
       function renderSidebar() {
         sidebarTree.innerHTML = '';
@@ -989,7 +1000,7 @@
                   ${gradeIcon || '<span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>'}
                   <span class="truncate font-semibold">${displayName}</span>
                 </div>
-                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${topic.examTag}</span>` : ''}
+                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${formatExamTag(topic.examTag)}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -1067,7 +1078,7 @@
                   ${gradeIcon}
                   <span class="truncate">${topic.title}</span>
                 </div>
-                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${topic.examTag}</span>` : ''}
+                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${formatExamTag(topic.examTag)}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -1140,7 +1151,7 @@
         }
         bcTitle.textContent = topic.title;
         if (topic.examTag) {
-          bcExamTag.textContent = topic.examTag;
+          bcExamTag.textContent = formatExamTag(topic.examTag);
           bcExamTag.classList.remove('hidden');
         } else {
           bcExamTag.classList.add('hidden');
@@ -1156,7 +1167,7 @@
           topicBadgeSection.classList.add('hidden');
         }
         if (topic.examTag) {
-          topicBadgeExam.textContent = `기출: ${topic.examTag}`;
+          topicBadgeExam.textContent = `기출: ${formatExamTag(topic.examTag)}`;
           topicBadgeExam.classList.remove('hidden');
         } else {
           topicBadgeExam.classList.add('hidden');
