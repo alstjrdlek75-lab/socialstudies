@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>EduRecall - 중등 임용 일반사회 단권화 서브노트 액티브 리콜</title>
+  <title>EduRecall - 일반사회 시험 대비 단권화 서브노트</title>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
   <style>
@@ -282,7 +282,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260906_2215"></script>
+  <script src="topics-data.js?v=20260906_2222"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -298,7 +298,7 @@
             <span class="font-bold text-base tracking-tight text-slate-900">EduRecall</span>
             <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">단권화 서브노트</span>
           </div>
-          <div class="text-[11px] text-slate-500 font-medium">중등 임용 일반사회 전공 액티브 리콜</div>
+          <div class="text-[11px] text-slate-500 font-medium">일반사회 시험 대비</div>
         </div>
       </div>
     </div>
@@ -438,12 +438,6 @@
       <button id="btn-reset-grades" class="text-red-600 hover:underline text-[10px]">기록 초기화</button>
     </div>
   </aside>
-
-  <!-- Floating Mobile TOC Action Button (easy one-tap access on mobile) -->
-  <button id="floating-mobile-toc" class="md:hidden fixed bottom-6 left-4 z-40 flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-slate-900/95 hover:bg-slate-900 text-white shadow-xl backdrop-blur-md text-xs font-bold transition-all active:scale-95" type="button" aria-label="목차 열기">
-    <span class="material-symbols-outlined text-[18px] text-blue-400">menu_book</span>
-    <span>목차 열기</span>
-  </button>
 
   <!-- MAIN AREA CONTAINER -->
   <div class="md:pl-sidebar-width flex-1 flex flex-col" style="padding-top: 6.5rem;">
@@ -720,7 +714,6 @@
       const sidebarDrawer = document.getElementById('sidebar-drawer');
       const mobileBackdrop = document.getElementById('mobile-sidebar-backdrop');
       const btnMobileToc = document.getElementById('btn-mobile-toc');
-      const floatingMobileToc = document.getElementById('floating-mobile-toc');
       const btnCloseMobileToc = document.getElementById('btn-close-mobile-toc');
       const bcContainer = document.getElementById('bc-container');
 
@@ -1861,7 +1854,6 @@
 
       // 9. Event Listeners Wire-up
       if (btnMobileToc) btnMobileToc.addEventListener('click', openMobileSidebar);
-      if (floatingMobileToc) floatingMobileToc.addEventListener('click', openMobileSidebar);
       if (btnCloseMobileToc) btnCloseMobileToc.addEventListener('click', closeMobileSidebar);
       if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileSidebar);
       if (bcContainer) {
