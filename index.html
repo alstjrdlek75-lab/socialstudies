@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EduRecall - 중등 임용 일반사회 단권화 서브노트 액티브 리콜</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    
+    .cloze-blank {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .topic-group.is-blurred .group-content {
+      filter: blur(5px);
+      user-select: none;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Authentic Masking Tape (마스킹 테이프) */
+    .mask-tape {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      vertical-align: baseline;
+      border-radius: 4px;
+      padding: 1px 7px;
+      margin: 0 2px;
+      font-weight: 700;
+    }
+
+    /* Taped (가려짐) state: fresh pastel lime-green (연두색) masking tape */
+    .mask-tape.is-taped {
+      background: linear-gradient(180deg, #ecfccb 0%, #d9f99d 100%);
+      color: transparent !important;
+      user-select: none;
+      box-shadow: 0 1px 3px rgba(101, 163, 13, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border-top: 1px solid #f7fee7;
+      border-bottom: 2px solid #84cc16;
+      min-width: 2rem;
+      text-align: center;
+    }
+
+    .mask-tape.is-taped:hover {
+      background: linear-gradient(180deg, #f7fee7 0%, #bef264 100%);
+      transform: translateY(-1.5px);
+      box-shadow: 0 3px 6px rgba(101, 163, 13, 0.3);
+    }
+
+    .mask-tape.is-taped:active {
+      transform: translateY(0);
+    }
+
+    /* Subtle label icon indicator on taped element */
+    .mask-tape.is-taped::after {
+      content: "🏷️";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0.68);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    /* Peeled (보임) state: emphasized bold with light green underline highlighter */
+    .mask-tape.is-peeled {
+      background-color: #f7fee7;
+      color: #0f172a !important;
+      font-weight: 800 !important;
+      text-decoration: underline;
+      text-decoration-thickness: 2.5px;
+      text-decoration-color: #65a30d;
+      text-underline-offset: 3.5px;
+      box-shadow: 0 1px 2px rgba(101, 163, 13, 0.1);
+      border-bottom: 1.5px solid #d9f99d;
+    }
+
+    .mask-tape.is-peeled:hover {
+      background-color: #ecfccb;
+    }
+
+    /* Dynamic Font Scale Controller Rules */
+    :root {
+      --content-font-scale: 1.15;
+    }
+
+    #subnote-content-container {
+      font-size: calc(16px * var(--content-font-scale, 1.15));
+    }
+
+    #subnote-content-container .recall-item {
+      font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.8 !important;
+    }
+
+    #subnote-content-container .recall-item.pl-6,
+    #subnote-content-container .recall-item.text-xs {
+      font-size: calc(14.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    #subnote-content-container .topic-group .font-bold,
+    #subnote-content-container .topic-group .font-bold span {
+      font-size: calc(17px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.5 !important;
+    }
+
+    #subnote-content-container p {
+      font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.8 !important;
+    }
+
+    #subnote-content-container .mask-tape {
+      font-size: inherit !important;
+      line-height: inherit !important;
+    }
+
+    #essay-input {
+      font-size: calc(15px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    #diff-user-box, #diff-model-box {
+      font-size: calc(15px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1d4ed8",
+            "primary-light": "#dbeafe",
+            "primary-dark": "#1e40af",
+            "surface": "#f8fafc",
+            "card": "#ffffff",
+            "border": "#e2e8f0",
+            "text-main": "#0f172a",
+            "text-muted": "#64748b"
+          },
+          spacing: {
+            "sidebar-width": "20rem"
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Load complete authentic syllabus data -->
+  <script src="topics-data.js"></script>
+</head>
+<body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+
+  <!-- TOP APP HEADER -->
+  <header class="fixed top-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-4 lg:px-6">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base tracking-tight text-slate-900">EduRecall</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">단권화 서브노트</span>
+          </div>
+          <div class="text-[11px] text-slate-500 font-medium">중등 임용 일반사회 전공 액티브 리콜</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subject Selector Navigation -->
+    <nav class="hidden md:flex items-center gap-1.5 bg-slate-100/80 p-1 rounded-xl border border-slate-200" id="subject-tabs">
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs" data-subject="사회과교육론" type="button">
+        사회과교육론 <span class="opacity-75 text-[11px]" id="count-edu">(99)</span>
+      </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="법학" type="button">
+        법학 <span class="opacity-75 text-[11px]" id="count-law">(173)</span>
+      </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="사회학" type="button">
+        사회학 <span class="opacity-75 text-[11px]" id="count-soc">(151)</span>
+      </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="정치학" type="button">
+        정치학 <span class="opacity-75 text-[11px]" id="count-pol">(129)</span>
+      </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="경제학" type="button">
+        경제학 <span class="opacity-75 text-[11px]" id="count-econ">(6)</span>
+      </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="ALL" type="button">
+        전체보기 <span class="opacity-75 text-[11px]" id="count-all">(558)</span>
+      </button>
+    </nav>
+
+    <!-- Top Tools (Pomodoro, Global Stats, Mobile Menu) -->
+    <div class="flex items-center gap-3">
+      <!-- Pomodoro -->
+      <button id="pomodoro-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all" title="클릭: 25분 타이머 시작/일시정지 | 더블클릭: 리셋">
+        <span class="material-symbols-outlined text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
+        <span class="font-mono font-bold" id="pomodoro-display">25:00</span>
+      </button>
+
+      <!-- Global Progress -->
+      <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-xs text-blue-800 font-medium">
+        <span class="material-symbols-outlined text-[15px] text-blue-600">check_circle</span>
+        <span id="global-stat-text">완료: 0 / 558 (0%)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUB-HEADER (Breadcrumb, Prev/Next, Shortcuts Hint) -->
+  <div class="fixed top-16 left-0 right-0 h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-4 lg:px-6 text-xs">
+    <div class="flex items-center gap-1.5 overflow-hidden text-slate-600 font-medium">
+      <span class="text-blue-700 font-bold shrink-0" id="bc-subject">사회과교육론</span>
+      <span class="text-slate-300 shrink-0">/</span>
+      <span class="text-slate-500 shrink-0 truncate max-w-[160px]" id="bc-chapter">1.사회과 교육의 전통</span>
+      <span class="text-slate-300 shrink-0 hidden" id="bc-section-sep">/</span>
+      <span class="text-indigo-700 font-semibold shrink-0 truncate max-w-[180px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100 hidden" id="bc-section">1-1. 세 가지 전통</span>
+      <span class="text-slate-300 shrink-0">/</span>
+      <span class="text-slate-900 font-bold truncate" id="bc-title">1.시민성 전달 모형</span>
+      <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
+    </div>
+
+    <div class="flex items-center gap-2 shrink-0">
+      <div class="hidden xl:flex items-center gap-1.5 text-[11px] text-slate-400">
+        <span class="px-1.5 py-0.5 bg-lime-50 text-lime-800 border border-lime-200 rounded font-semibold" title="본문 글자 드래그 후 [M]을 누르면 테이프가 붙습니다">[드래그+M] 추가</span>
+        <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-semibold" title="테이프 위에서 마우스 우클릭하거나 Option/Cmd+클릭하면 삭제됩니다">[우클릭] 테이프 삭제</span>
+        <span class="px-1.5 py-0.5 bg-lime-100 text-lime-900 border border-lime-300 rounded font-semibold">[Space] 전체공개</span>
+        <span class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-600">[Tab] 서술입력</span>
+        <span class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-600">[F/A/P] 자가채점</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <button id="btn-prev-topic" class="px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button">
+          <span class="material-symbols-outlined text-[15px]">chevron_left</span>
+          <span>이전</span>
+        </button>
+        <button id="btn-next-topic" class="px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button">
+          <span>다음</span>
+          <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEFT SIDEBAR: Table of Contents Tree -->
+  <aside class="fixed left-0 top-26 bottom-0 w-sidebar-width bg-white border-r border-border z-30 hidden md:flex flex-col shadow-xs" style="top: 6.5rem;">
+    <!-- Sidebar Header & Search -->
+    <div class="p-3 border-b border-border bg-slate-50/50 flex flex-col gap-2">
+      <div class="flex items-center justify-between">
+        <span class="font-bold text-xs text-slate-800" id="sidebar-subject-label">사회과교육론 목차</span>
+        <span class="text-[11px] text-blue-600 font-bold" id="sidebar-topic-count">99개 주제</span>
+      </div>
+      <!-- Search Input -->
+      <div class="relative flex items-center">
+        <span class="material-symbols-outlined absolute left-2 text-slate-400 text-[16px]">search</span>
+        <input id="sidebar-search" type="text" placeholder="단원·주제·키워드 검색..." class="w-full pl-7 pr-7 py-1.5 text-xs bg-white rounded-lg border border-slate-200 focus:border-blue-500 focus:outline-none transition-colors">
+        <button id="btn-clear-search" class="hidden absolute right-2 text-slate-400 hover:text-slate-600" type="button">
+          <span class="material-symbols-outlined text-[14px]">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tree Navigation List -->
+    <nav class="flex-1 overflow-y-auto p-2 space-y-2 text-xs" id="sidebar-tree">
+      <!-- Injected by JS -->
+    </nav>
+
+    <!-- Sidebar Bottom Status -->
+    <div class="p-3 border-t border-border bg-slate-50 text-[11px] flex items-center justify-between text-slate-500">
+      <span id="sidebar-pass-count">암기 완료: 0개</span>
+      <button id="btn-reset-grades" class="text-red-600 hover:underline text-[10px]">기록 초기화</button>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA CONTAINER -->
+  <div class="md:pl-sidebar-width flex-1 flex flex-col" style="padding-top: 6.5rem;">
+    <main class="w-full max-w-7xl mx-auto p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+
+      <!-- LEFT/CENTER: Sub-note Authentic Content & Recall Deck (70%) -->
+      <section class="xl:col-span-8 flex flex-col gap-4 min-w-0">
+
+        <!-- Topic Banner Card -->
+        <div class="bg-white rounded-2xl border border-border p-5 shadow-xs flex flex-col gap-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800" id="topic-badge-subject">
+                사회과교육론
+              </span>
+              <span class="px-2 py-0.5 rounded-md text-xs font-medium bg-slate-100 text-slate-700 truncate max-w-[200px]" id="topic-badge-chapter">
+                1.사회과 교육의 전통
+              </span>
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-50 text-indigo-800 border border-indigo-200 truncate max-w-[260px] flex items-center gap-1 shadow-2xs hidden" id="topic-badge-section">
+                <span class="material-symbols-outlined text-[13px] text-indigo-600">folder_open</span>
+                <span id="topic-section-text">1-1. 세 가지 전통</span>
+              </span>
+              <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-red-100 text-red-800 hidden" id="topic-badge-exam">
+                22,23,26(단답)
+              </span>
+              <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-lime-50 text-lime-800 border border-lime-300 flex items-center gap-1 shadow-2xs" id="topic-badge-tape">
+                <span class="material-symbols-outlined text-[14px] text-lime-700">label</span>
+                <span id="topic-tape-count">테이프 0개</span>
+              </span>
+              <button id="btn-reset-custom-tape" class="px-2 py-0.5 rounded-md text-[11px] font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 추가/삭제한 마스킹을 원본으로 복원합니다">
+                <span class="material-symbols-outlined text-[13px]">restart_alt</span>
+                <span>마스킹 복원</span>
+              </button>
+            </div>
+            <div class="text-xs text-slate-500 flex items-center gap-1.5 font-mono">
+              <span class="material-symbols-outlined text-[15px] text-slate-400">description</span>
+              <span id="topic-page-ref">PDF p.1</span>
+            </div>
+          </div>
+
+          <!-- Main Title -->
+          <div>
+            <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight" id="topic-title">
+              1.시민성 전달 모형 22,23,26(단답)
+            </h1>
+            <!-- Keywords list -->
+            <div class="flex flex-wrap gap-1.5 mt-2.5" id="topic-keywords-tags">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Mode Controls Bar -->
+        <div class="bg-white rounded-xl border border-border p-2 shadow-xs flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-1">
+            <span class="text-xs font-bold text-slate-500 px-2">리콜 모드:</span>
+            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs flex items-center gap-1" data-mode="tape" type="button">
+              <span class="material-symbols-outlined text-[15px]">label</span>
+              <span>마스킹 테이프</span>
+            </button>
+            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1" data-mode="study" type="button">
+              <span class="material-symbols-outlined text-[15px]">menu_book</span>
+              <span>원문 정독</span>
+            </button>
+            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1" data-mode="blur" type="button">
+              <span class="material-symbols-outlined text-[15px]">blur_on</span>
+              <span>블러 암기</span>
+            </button>
+            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1" data-mode="cloze" type="button">
+              <span class="material-symbols-outlined text-[15px]">visibility_off</span>
+              <span>핵심어 빈칸</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <!-- Add Tape & Delete guide badge -->
+            <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-lime-50/90 border border-lime-300/80 text-lime-900 text-xs font-semibold select-none shadow-2xs" title="본문 글자 드래그 후 [M] 추가, 마우스 우클릭 또는 Option/Cmd+클릭으로 삭제">
+              <span class="material-symbols-outlined text-[14px] text-lime-700">edit_note</span>
+              <span>드래그 <b>[M]</b> 추가 / <b>우클릭</b> 삭제</span>
+            </span>
+
+            <!-- Font Scale Controller -->
+            <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200 text-xs text-slate-700 font-bold select-none">
+              <button id="btn-font-down" type="button" class="px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 hover:text-blue-700 cursor-pointer" title="글자 작게 [단축키: []">A-</button>
+              <span id="font-scale-text" class="px-2 text-[11px] text-slate-700 font-mono font-bold min-w-[3.2rem] text-center">115%</span>
+              <button id="btn-font-up" type="button" class="px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 hover:text-blue-700 cursor-pointer" title="글자 크게 [단축키: ]]">A+</button>
+            </div>
+
+            <!-- Single Consolidated Reveal / Hide Button -->
+            <button id="btn-reveal-all" class="px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
+              <span class="material-symbols-outlined text-[16px] text-lime-800" id="reveal-eye-icon">visibility</span>
+              <span id="reveal-btn-label">정답 전체 공개 [Space]</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Authentic Sub-note Content Body (Indented & Structured Cards) -->
+        <div id="subnote-content-container" class="space-y-3">
+          <!-- Injected by renderCurrentTopic() -->
+        </div>
+
+      </section>
+
+      <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading (30%) -->
+      <aside class="xl:col-span-4 flex flex-col gap-4 min-w-0">
+
+        <!-- Essay Recall Textarea Card -->
+        <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-blue-600 text-[18px]">edit_note</span>
+              <span class="font-bold text-sm text-slate-900">백지 인출 서술창</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <button id="btn-load-answer" class="px-2 py-0.5 text-[11px] text-blue-600 hover:bg-blue-50 rounded font-semibold transition-colors" title="원문 텍스트를 불러와 대조해봅니다">
+                원문 불러오기
+              </button>
+              <button id="btn-clear-essay" class="p-1 text-slate-400 hover:text-slate-700 rounded" title="지우기">
+                <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-500 leading-relaxed">
+            원문을 보지 않고 기억나는 목차((1), ①...)와 핵심 키워드를 직접 타이핑해 보세요.
+          </p>
+
+          <!-- Textarea -->
+          <div class="relative">
+            <textarea id="essay-input" rows="9" placeholder="예: (1) 목표: 사회유지 존속...&#10;(2) 주요 학습 내용...&#10;(3) 교수학습 방법: 직접적/간접적..." class="w-full p-3.5 text-sm md:text-[15px] leading-relaxed rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-y font-mono"></textarea>
+            <div class="flex justify-between items-center mt-1.5 text-[11px] text-slate-400">
+              <span id="char-counter">0자 작성됨</span>
+              <button id="btn-open-diff" class="text-blue-600 hover:underline font-bold flex items-center gap-0.5" type="button">
+                <span class="material-symbols-outlined text-[13px]">compare</span>
+                <span>원문 1:1 대조창 (Diff)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Real-time Keywords Matching -->
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-700 flex items-center gap-1">
+                <span class="material-symbols-outlined text-slate-500 text-[15px]">tag</span>
+                <span>목표 키워드 인출 현황</span>
+              </span>
+              <span class="text-[11px] font-mono text-blue-700 font-bold" id="keyword-match-ratio">0 / 0 매칭</span>
+            </div>
+            <div class="flex flex-wrap gap-1" id="keyword-match-chips">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta-Cognitive Self-Grading SM-2 -->
+        <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-blue-600 text-[18px]">psychology</span>
+              <span class="font-bold text-sm text-slate-900">메타인지 자가 평가</span>
+            </div>
+            <span class="text-[11px] text-slate-400">단축키: F / A / P</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95" data-grade="fail" type="button">
+              <span class="text-sm font-bold">F (Fail)</span>
+              <span class="text-[10px] text-red-600 font-medium">인출 실패 [F]</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95" data-grade="ambiguous" type="button">
+              <span class="text-sm font-bold">A (Ambiguous)</span>
+              <span class="text-[10px] text-amber-600 font-medium">부분 성공 [A]</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95" data-grade="pass" type="button">
+              <span class="text-sm font-bold">P (Pass)</span>
+              <span class="text-[10px] text-blue-600 font-medium">완벽 인출 [P]</span>
+            </button>
+          </div>
+
+          <!-- Retention Tracker -->
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 text-xs flex flex-col gap-1.5">
+            <div class="flex justify-between items-center font-medium">
+              <span class="text-slate-600">이 주제 숙련도:</span>
+              <span class="font-bold text-blue-700" id="topic-mastery-label">기초 인출 단계</span>
+            </div>
+            <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-blue-600 h-full transition-all duration-300" id="topic-mastery-bar" style="width: 15%;"></div>
+            </div>
+            <div class="flex justify-between items-center text-[10px] text-slate-400 mt-0.5">
+              <span id="topic-retention-text">인출 기록 0회</span>
+              <span id="topic-review-schedule">다음 복습: 오늘</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </main>
+  </div>
+
+  <!-- DIFF MODAL WINDOW -->
+  <div id="diff-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-4xl max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in duration-150">
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-600 text-[20px]">compare</span>
+          <h3 class="font-bold text-base text-slate-900">내 인출 답안 vs 원문 서브노트 1:1 대조</h3>
+        </div>
+        <button id="close-diff-modal-btn" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200" type="button">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- User text -->
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+            <span>내가 작성한 인출 답안</span>
+            <span id="diff-user-len" class="text-slate-400 font-normal">0자</span>
+          </div>
+          <div id="diff-user-box" class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-sm md:text-[15px] leading-relaxed whitespace-pre-wrap min-h-[320px] text-slate-900 font-mono">
+            (작성된 내용이 없습니다)
+          </div>
+        </div>
+
+        <!-- Model answer -->
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-xs font-bold text-blue-700">
+            <span>원문 단권화 서브노트</span>
+            <span id="diff-model-len" class="text-slate-400 font-normal">0자</span>
+          </div>
+          <div id="diff-model-box" class="p-4 bg-blue-50/50 rounded-xl border border-blue-100 text-sm md:text-[15px] leading-relaxed whitespace-pre-wrap min-h-[320px] text-slate-900 font-mono">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 border-t border-slate-100 flex items-center justify-between bg-slate-50 text-xs">
+        <span class="text-slate-500">원문과 대조하여 누락된 키워드와 위계를 점검하세요.</span>
+        <button id="diff-pass-btn" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all">
+          완벽 인출(P) 반영하고 닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MASKING TAPE ACTION BUTTON (Drag to Mask) -->
+  <button id="floating-mask-btn" class="fixed z-50 hidden bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none" type="button" title="선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]">
+    <span class="material-symbols-outlined text-[15px]">label</span>
+    <span>테이프 붙이기 [M]</span>
+  </button>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
+    <span class="material-symbols-outlined text-[18px] text-blue-400" id="toast-icon">info</span>
+    <span id="toast-msg">알림</span>
+  </div>
+
+  <!-- APPLICATION LOGIC SCRIPT -->
+  <script>
+    (function () {
+      // 1. Data Initialization
+      const TOPICS = window.ALL_TOPICS || [];
+      let currentTopicIndex = 0;
+      let currentMode = 'tape'; // 'tape', 'study', 'blur', 'cloze'
+      let isAllRevealed = false;
+      let activeSubject = '사회과교육론';
+      let searchQuery = '';
+      let filteredIndices = [];
+      const expandedSections = new Set();
+
+      // 2. DOM Cache
+      const subjectTabs = document.querySelectorAll('.subject-tab-btn');
+      const sidebarTree = document.getElementById('sidebar-tree');
+      const sidebarSearch = document.getElementById('sidebar-search');
+      const btnClearSearch = document.getElementById('btn-clear-search');
+      const sidebarSubjectLabel = document.getElementById('sidebar-subject-label');
+      const sidebarTopicCount = document.getElementById('sidebar-topic-count');
+      const sidebarPassCount = document.getElementById('sidebar-pass-count');
+      const globalStatText = document.getElementById('global-stat-text');
+
+      const bcSubject = document.getElementById('bc-subject');
+      const bcChapter = document.getElementById('bc-chapter');
+      const bcSectionSep = document.getElementById('bc-section-sep');
+      const bcSection = document.getElementById('bc-section');
+      const bcTitle = document.getElementById('bc-title');
+      const bcExamTag = document.getElementById('bc-exam-tag');
+
+      const topicBadgeSubject = document.getElementById('topic-badge-subject');
+      const topicBadgeChapter = document.getElementById('topic-badge-chapter');
+      const topicBadgeSection = document.getElementById('topic-badge-section');
+      const topicSectionText = document.getElementById('topic-section-text');
+      const topicBadgeExam = document.getElementById('topic-badge-exam');
+      const topicBadgeTape = document.getElementById('topic-badge-tape');
+      const topicTapeCount = document.getElementById('topic-tape-count');
+      const btnResetCustomTape = document.getElementById('btn-reset-custom-tape');
+      const floatingMaskBtn = document.getElementById('floating-mask-btn');
+      const topicPageRef = document.getElementById('topic-page-ref');
+      const topicTitle = document.getElementById('topic-title');
+      const topicKeywordsTags = document.getElementById('topic-keywords-tags');
+
+      const modePills = document.querySelectorAll('.mode-pill');
+      const btnRevealAll = document.getElementById('btn-reveal-all');
+      const revealBtnLabel = document.getElementById('reveal-btn-label');
+      const revealEyeIcon = document.getElementById('reveal-eye-icon');
+      const subnoteContainer = document.getElementById('subnote-content-container');
+
+      const essayInput = document.getElementById('essay-input');
+      const charCounter = document.getElementById('char-counter');
+      const btnLoadAnswer = document.getElementById('btn-load-answer');
+      const btnClearEssay = document.getElementById('btn-clear-essay');
+      const keywordMatchRatio = document.getElementById('keyword-match-ratio');
+      const keywordMatchChips = document.getElementById('keyword-match-chips');
+
+      const gradeBtns = document.querySelectorAll('.grade-btn');
+      const topicMasteryLabel = document.getElementById('topic-mastery-label');
+      const topicMasteryBar = document.getElementById('topic-mastery-bar');
+      const topicRetentionText = document.getElementById('topic-retention-text');
+      const topicReviewSchedule = document.getElementById('topic-review-schedule');
+
+      const btnPrevTopic = document.getElementById('btn-prev-topic');
+      const btnNextTopic = document.getElementById('btn-next-topic');
+
+      const diffModal = document.getElementById('diff-modal');
+      const btnOpenDiff = document.getElementById('btn-open-diff');
+      const closeDiffModalBtn = document.getElementById('close-diff-modal-btn');
+      const diffUserBox = document.getElementById('diff-user-box');
+      const diffModelBox = document.getElementById('diff-model-box');
+      const diffUserLen = document.getElementById('diff-user-len');
+      const diffModelLen = document.getElementById('diff-model-len');
+      const diffPassBtn = document.getElementById('diff-pass-btn');
+
+      const pomodoroBtn = document.getElementById('pomodoro-btn');
+      const pomodoroDisplay = document.getElementById('pomodoro-display');
+      const pomodoroIcon = document.getElementById('pomodoro-icon');
+
+      
+      // Font Scale Controller
+      let currentFontScale = parseInt(localStorage.getItem('edurecall_font_scale') || '115', 10);
+      const fontScaleText = document.getElementById('font-scale-text');
+      const btnFontUp = document.getElementById('btn-font-up');
+      const btnFontDown = document.getElementById('btn-font-down');
+
+      function applyFontScale(scale, notify = false) {
+        currentFontScale = Math.min(180, Math.max(80, scale));
+        if (fontScaleText) fontScaleText.textContent = `${currentFontScale}%`;
+        
+        const ratio = (currentFontScale / 100).toFixed(2);
+        document.documentElement.style.setProperty('--content-font-scale', ratio);
+        if (subnoteContainer) {
+          subnoteContainer.style.setProperty('--content-font-scale', ratio);
+        }
+        localStorage.setItem('edurecall_font_scale', currentFontScale);
+        if (notify) {
+          showToast(`본문 글자 크기: ${currentFontScale}%`, 'format_size');
+        }
+      }
+
+      if (btnFontUp) {
+        btnFontUp.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          applyFontScale(currentFontScale + 10, true);
+        });
+      }
+      if (btnFontDown) {
+        btnFontDown.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          applyFontScale(currentFontScale - 10, true);
+        });
+      }
+      applyFontScale(currentFontScale, false);
+
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      const toastIcon = document.getElementById('toast-icon');
+
+      // 3. LocalStorage Storage Management
+      function getStoredGrades() {
+        try {
+          return JSON.parse(localStorage.getItem('edurecall_subnote_grades')) || {};
+        } catch(e) { return {}; }
+      }
+
+      function saveGrade(topicId, grade) {
+        try {
+          const map = getStoredGrades();
+          const prev = map[topicId] || { count: 0, grade: null, timestamp: 0 };
+          map[topicId] = {
+            grade: grade,
+            count: prev.count + 1,
+            timestamp: Date.now()
+          };
+          localStorage.setItem('edurecall_subnote_grades', JSON.stringify(map));
+          updateOverallStats();
+          renderSidebar();
+          updateTopicRetentionView(topicId);
+          return map[topicId];
+        } catch(e) { return null; }
+      }
+
+      function updateOverallStats() {
+        const map = getStoredGrades();
+        const passedCount = Object.keys(map).filter(k => map[k].grade === 'pass').length;
+        const total = TOPICS.length;
+        const pct = Math.round((passedCount / total) * 100);
+        if (globalStatText) globalStatText.textContent = `완료: ${passedCount} / ${total} (${pct}%)`;
+        if (sidebarPassCount) sidebarPassCount.textContent = `암기 완료: ${passedCount}개`;
+      }
+
+      // Toast notification helper
+      let toastTimer = null;
+      function showToast(msg, icon = 'info') {
+        clearTimeout(toastTimer);
+        toastMsg.textContent = msg;
+        toastIcon.textContent = icon;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 2200);
+      }
+
+      // 4. Render Sidebar Tree (Clean Collapsible Hierarchical Tree)
+      function renderSidebar() {
+        sidebarTree.innerHTML = '';
+        const grades = getStoredGrades();
+        const q = searchQuery.trim().toLowerCase();
+
+        filteredIndices = [];
+        TOPICS.forEach((topic, idx) => {
+          const matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
+          const matchSearch = !q || (
+            topic.title.toLowerCase().includes(q) ||
+            topic.chapter.toLowerCase().includes(q) ||
+            (topic.section && topic.section.toLowerCase().includes(q)) ||
+            topic.defaultAnswer.toLowerCase().includes(q) ||
+            (topic.targetKeywords && topic.targetKeywords.some(k => k.toLowerCase().includes(q)))
+          );
+          if (matchSubj && matchSearch) {
+            filteredIndices.push(idx);
+          }
+        });
+
+        if (filteredIndices.length === 0) {
+          sidebarTree.innerHTML = '<div class="p-6 text-xs text-slate-400 text-center">검색 조건에 맞는 주제가 없습니다.</div>';
+          sidebarSubjectLabel.textContent = `${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 목차`;
+          sidebarTopicCount.textContent = '0개 주제';
+          return;
+        }
+
+        // Group filtered indices by Chapter and Section
+        const chapterMap = new Map();
+        filteredIndices.forEach((globalIdx) => {
+          const topic = TOPICS[globalIdx];
+          const ch = topic.chapter;
+          const sec = (topic.section && topic.section !== ch) ? topic.section : ch;
+
+          if (!chapterMap.has(ch)) {
+            chapterMap.set(ch, new Map());
+          }
+          const secMap = chapterMap.get(ch);
+          if (!secMap.has(sec)) {
+            secMap.set(sec, []);
+          }
+          secMap.get(sec).push(globalIdx);
+        });
+
+        // Ensure active topic's section is expanded
+        const activeTopic = TOPICS[currentTopicIndex];
+        if (activeTopic) {
+          const activeSec = (activeTopic.section && activeTopic.section !== activeTopic.chapter) ? activeTopic.section : activeTopic.chapter;
+          expandedSections.delete(`COLLAPSED__${activeTopic.chapter}__${activeSec}`);
+        }
+
+        chapterMap.forEach((secMap, chName) => {
+          let chapterTotal = 0;
+          secMap.forEach(arr => { chapterTotal += arr.length; });
+
+          // 1. Chapter Container & Header
+          const chapContainer = document.createElement('div');
+          chapContainer.className = 'chapter-group mb-2.5';
+
+          const chapHeader = document.createElement('div');
+          chapHeader.className = 'chapter-header pt-3 pb-1.5 px-2 text-[11px] font-extrabold text-slate-700 uppercase tracking-wider flex items-center justify-between border-b border-slate-200 mt-2 first:mt-0';
+          chapHeader.innerHTML = `
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="material-symbols-outlined text-[15px] text-blue-600 shrink-0">folder</span>
+              <span class="truncate font-extrabold text-slate-800">${chName}</span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-medium shrink-0">${chapterTotal}개</span>
+          `;
+          chapContainer.appendChild(chapHeader);
+
+          // 2. Sections inside Chapter
+          const chapContent = document.createElement('div');
+          chapContent.className = 'chapter-content space-y-0.5 pt-1';
+
+          secMap.forEach((indices, secName) => {
+            // If section has only 1 topic, render directly as a clean standalone item without redundant folder accordion
+            if (indices.length === 1) {
+              const globalIdx = indices[0];
+              const topic = TOPICS[globalIdx];
+              const isCurrent = (globalIdx === currentTopicIndex);
+
+              const gradeInfo = grades[topic.id];
+              let gradeIcon = '';
+              if (gradeInfo && gradeInfo.grade === 'pass') {
+                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-emerald-600 shrink-0">check_circle</span>';
+              } else if (gradeInfo && gradeInfo.grade === 'ambiguous') {
+                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-amber-500 shrink-0">help</span>';
+              } else if (gradeInfo && gradeInfo.grade === 'fail') {
+                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-red-500 shrink-0">cancel</span>';
+              }
+
+              const item = document.createElement('a');
+              item.href = '#';
+              item.dataset.globalIndex = globalIdx;
+              item.className = isCurrent
+                ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
+                : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
+
+              const displayName = (topic.section && topic.section !== chName) ? topic.section : topic.title;
+
+              item.innerHTML = `
+                <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
+                  ${gradeIcon || '<span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>'}
+                  <span class="truncate font-semibold">${displayName}</span>
+                </div>
+                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${topic.examTag}</span>` : ''}
+              `;
+
+              item.addEventListener('click', (e) => {
+                e.preventDefault();
+                renderTopic(globalIdx);
+              });
+
+              chapContent.appendChild(item);
+              return;
+            }
+
+            // Multiple Topics: Render Clickable Accordion Folder
+            const secKey = `${chName}__${secName}`;
+            const isSecActive = indices.includes(currentTopicIndex);
+            const isExpanded = Boolean(q) || isSecActive || !expandedSections.has(`COLLAPSED__${secKey}`);
+
+            const secGroup = document.createElement('div');
+            secGroup.className = 'section-group';
+
+            // Section Header (Clickable Accordion)
+            const secHeader = document.createElement('button');
+            secHeader.type = 'button';
+            secHeader.className = 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-700 transition-colors cursor-pointer group text-left';
+            secHeader.innerHTML = `
+              <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
+                <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-indigo-600 transition-transform duration-150 sec-chevron shrink-0 ${isExpanded ? 'rotate-90 text-indigo-600' : ''}">chevron_right</span>
+                <span class="material-symbols-outlined text-[15px] text-indigo-600 shrink-0">folder_open</span>
+                <span class="truncate font-bold text-slate-800 group-hover:text-indigo-700">${secName}</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-normal px-1.5 py-0.2 bg-slate-100 group-hover:bg-indigo-50 group-hover:text-indigo-600 rounded-full shrink-0">${indices.length}</span>
+            `;
+
+            // Section Children Container (with single continuous straight vertical guide line)
+            const secChildren = document.createElement('div');
+            secChildren.className = `section-children ml-3.5 pl-2.5 border-l-2 border-slate-200/80 space-y-0.5 mt-0.5 mb-1 ${isExpanded ? '' : 'hidden'}`;
+            secChildren.dataset.secKey = secKey;
+
+            secHeader.addEventListener('click', () => {
+              const currentlyHidden = secChildren.classList.contains('hidden');
+              if (currentlyHidden) {
+                secChildren.classList.remove('hidden');
+                secHeader.querySelector('.sec-chevron').classList.add('rotate-90', 'text-indigo-600');
+                expandedSections.delete(`COLLAPSED__${secKey}`);
+              } else {
+                secChildren.classList.add('hidden');
+                secHeader.querySelector('.sec-chevron').classList.remove('rotate-90', 'text-indigo-600');
+                expandedSections.add(`COLLAPSED__${secKey}`);
+              }
+            });
+
+            // Add Topics under this Section
+            indices.forEach((globalIdx) => {
+              const topic = TOPICS[globalIdx];
+              const item = document.createElement('a');
+              item.href = '#';
+              item.dataset.globalIndex = globalIdx;
+              const isCurrent = (globalIdx === currentTopicIndex);
+
+              const gradeInfo = grades[topic.id];
+              let gradeIcon = '';
+              if (gradeInfo && gradeInfo.grade === 'pass') {
+                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-emerald-600 shrink-0">check_circle</span>';
+              } else if (gradeInfo && gradeInfo.grade === 'ambiguous') {
+                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-amber-500 shrink-0">help</span>';
+              } else if (gradeInfo && gradeInfo.grade === 'fail') {
+                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-red-500 shrink-0">cancel</span>';
+              }
+
+              item.className = isCurrent
+                ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all'
+                : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all';
+
+              item.innerHTML = `
+                <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
+                  ${gradeIcon}
+                  <span class="truncate">${topic.title}</span>
+                </div>
+                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${topic.examTag}</span>` : ''}
+              `;
+
+              item.addEventListener('click', (e) => {
+                e.preventDefault();
+                renderTopic(globalIdx);
+              });
+
+              secChildren.appendChild(item);
+            });
+
+            secGroup.appendChild(secHeader);
+            secGroup.appendChild(secChildren);
+            chapContent.appendChild(secGroup);
+          });
+
+          chapContainer.appendChild(chapContent);
+          sidebarTree.appendChild(chapContainer);
+        });
+
+        if (filteredIndices.length === 0) {
+          sidebarTree.innerHTML = '<div class="p-6 text-xs text-slate-400 text-center">검색 조건에 맞는 주제가 없습니다.</div>';
+        }
+
+        // Update Labels
+        sidebarSubjectLabel.textContent = `${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 목차`;
+        sidebarTopicCount.textContent = `${filteredIndices.length}개 주제`;
+      }
+
+      // 5. Render Topic Content View
+      function renderTopic(index) {
+        currentTopicIndex = (index + TOPICS.length) % TOPICS.length;
+        const topic = TOPICS[currentTopicIndex];
+
+        // Update Breadcrumb
+        bcSubject.textContent = topic.subject;
+        bcChapter.textContent = topic.chapter;
+        if (topic.section && topic.section !== topic.chapter) {
+          bcSection.textContent = topic.section;
+          bcSection.classList.remove('hidden');
+          bcSectionSep.classList.remove('hidden');
+        } else {
+          bcSection.classList.add('hidden');
+          bcSectionSep.classList.add('hidden');
+        }
+        bcTitle.textContent = topic.title;
+        if (topic.examTag) {
+          bcExamTag.textContent = topic.examTag;
+          bcExamTag.classList.remove('hidden');
+        } else {
+          bcExamTag.classList.add('hidden');
+        }
+
+        // Update Topic Banner
+        topicBadgeSubject.textContent = topic.subject;
+        topicBadgeChapter.textContent = topic.chapter;
+        if (topic.section && topic.section !== topic.chapter) {
+          topicSectionText.textContent = topic.section;
+          topicBadgeSection.classList.remove('hidden');
+        } else {
+          topicBadgeSection.classList.add('hidden');
+        }
+        if (topic.examTag) {
+          topicBadgeExam.textContent = `기출: ${topic.examTag}`;
+          topicBadgeExam.classList.remove('hidden');
+        } else {
+          topicBadgeExam.classList.add('hidden');
+        }
+        if (topic.tapeCount && topic.tapeCount > 0) {
+          topicTapeCount.textContent = `테이프 ${topic.tapeCount}개`;
+          topicBadgeTape.classList.remove('hidden');
+        } else {
+          topicBadgeTape.classList.add('hidden');
+        }
+        topicPageRef.textContent = `PDF p.${topic.page || 1}`;
+        topicTitle.textContent = topic.title;
+
+        // Keywords Chips
+        topicKeywordsTags.innerHTML = '';
+        (topic.targetKeywords || []).forEach(kw => {
+          const chip = document.createElement('span');
+          chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200/80';
+          chip.textContent = `#${kw}`;
+          topicKeywordsTags.appendChild(chip);
+        });
+
+        // Insert Structured Content HTML (Check custom user masking first)
+        const customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
+        if (customHtml) {
+          subnoteContainer.innerHTML = customHtml;
+          if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
+        } else {
+          subnoteContainer.innerHTML = topic.contentHtml;
+          if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
+        }
+
+        // Bind interactive handlers to groups and items
+        setupGroupInteractions();
+        setupTapeInteractions();
+        updateTapeCountBadge();
+
+        // Apply Current Mode (tape, study, blur, cloze)
+        applyMode(currentMode);
+
+        // Update Retention Stats
+        updateTopicRetentionView(topic.id);
+
+        // Reset Essay and match
+        essayInput.value = '';
+        charCounter.textContent = '0자 작성됨';
+        checkKeywords();
+
+        // Highlight Active in Sidebar
+        document.querySelectorAll('.sidebar-topic-item').forEach(item => {
+          const gIdx = parseInt(item.dataset.globalIndex, 10);
+          const isCur = (gIdx === currentTopicIndex);
+
+          if (isCur) {
+            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all';
+            // Ensure parent section is expanded
+            const secChildren = item.closest('.section-children');
+            if (secChildren && secChildren.classList.contains('hidden')) {
+              secChildren.classList.remove('hidden');
+              const secGroup = secChildren.closest('.section-group');
+              if (secGroup) {
+                const chevron = secGroup.querySelector('.sec-chevron');
+                if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
+              }
+            }
+            item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          } else {
+            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all';
+          }
+        });
+
+        isAllRevealed = false;
+        updateRevealButton(false);
+      }
+
+      // Update Topic Retention Status in UI
+      function updateTopicRetentionView(topicId) {
+        const grades = getStoredGrades();
+        const info = grades[topicId] || { count: 0, grade: null };
+
+        topicRetentionText.textContent = `인출 기록 ${info.count}회`;
+
+        if (info.grade === 'pass' && info.count >= 3) {
+          topicMasteryLabel.textContent = '장기 기억 정착 (3회차 이상)';
+          topicMasteryBar.style.width = '100%';
+          topicMasteryBar.className = 'bg-emerald-600 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = '다음 복습: 7일 후 (D+7)';
+        } else if (info.grade === 'pass') {
+          topicMasteryLabel.textContent = '인출 성공 단계';
+          topicMasteryBar.style.width = '65%';
+          topicMasteryBar.className = 'bg-blue-600 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = '다음 복습: 3일 후 (D+3)';
+        } else if (info.grade === 'ambiguous') {
+          topicMasteryLabel.textContent = '부분 숙지 (보완 필요)';
+          topicMasteryBar.style.width = '40%';
+          topicMasteryBar.className = 'bg-amber-500 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = '다음 복습: 내일 (D+1)';
+        } else if (info.grade === 'fail') {
+          topicMasteryLabel.textContent = '오답/미숙지 (재학습 필요)';
+          topicMasteryBar.style.width = '20%';
+          topicMasteryBar.className = 'bg-red-500 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = '다음 복습: 오늘';
+        } else {
+          topicMasteryLabel.textContent = '미인출 상태';
+          topicMasteryBar.style.width = '10%';
+          topicMasteryBar.className = 'bg-slate-300 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = '다음 복습: 오늘';
+        }
+      }
+
+      // Setup Group Interactions
+      function setupGroupInteractions() {
+        document.querySelectorAll('.topic-group').forEach(grp => {
+          const btn = grp.querySelector('.group-toggle-btn');
+          const content = grp.querySelector('.group-content');
+          
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleGroup(grp);
+          });
+
+          // Clicking blurred group reveals it
+          grp.addEventListener('click', () => {
+            if (grp.classList.contains('is-blurred')) {
+              revealGroup(grp);
+            }
+          });
+        });
+      }
+
+      function toggleGroup(grp) {
+        if (grp.classList.contains('is-blurred')) {
+          revealGroup(grp);
+        } else {
+          blurGroup(grp);
+        }
+      }
+
+      function blurGroup(grp) {
+        grp.classList.add('is-blurred');
+        const icon = grp.querySelector('.group-toggle-btn span');
+        if (icon) icon.textContent = 'visibility_off';
+      }
+
+      function revealGroup(grp) {
+        grp.classList.remove('is-blurred');
+        const icon = grp.querySelector('.group-toggle-btn span');
+        if (icon) icon.textContent = 'visibility';
+      }
+
+      // Authentic Masking Tape Functions
+      function bindSingleTape(tape) {
+        tape.title = '클릭: 떼기/가리기 | 마우스 우클릭 또는 Option/Cmd+클릭: 테이프 삭제';
+
+        // Right-Click (contextmenu): instant delete (Mac trackpad two-finger tap or Ctrl+click)
+        tape.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          removeTape(tape);
+        });
+
+        // Prevent unwanted text drag/selection on Mac when modifier is held
+        tape.addEventListener('mousedown', (e) => {
+          if (e.altKey || e.metaKey || e.shiftKey) {
+            e.preventDefault();
+          }
+        });
+
+        // Left-Click: toggle (or delete if modifier held)
+        tape.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (e.altKey || e.metaKey || e.shiftKey) {
+            e.preventDefault();
+            removeTape(tape);
+            return;
+          }
+          if (tape.classList.contains('is-taped')) {
+            peelTape(tape);
+          } else {
+            stickTape(tape);
+          }
+        });
+      }
+
+      function setupTapeInteractions() {
+        const tapes = subnoteContainer.querySelectorAll('.mask-tape');
+        tapes.forEach(tape => bindSingleTape(tape));
+      }
+
+      function stickTape(tape) {
+        tape.classList.remove('is-peeled');
+        tape.classList.add('is-taped');
+        tape.title = '클릭: 떼기/가리기 | 마우스 우클릭 또는 Option/Cmd+클릭: 테이프 삭제';
+      }
+
+      function peelTape(tape) {
+        tape.classList.remove('is-taped');
+        tape.classList.add('is-peeled');
+        tape.title = '클릭: 떼기/가리기 | 마우스 우클릭 또는 Option/Cmd+클릭: 테이프 삭제';
+      }
+
+      function toggleAllTapes(forceTaped) {
+        toggleMasterReveal(forceTaped !== undefined ? !forceTaped : undefined);
+      }
+
+      function updateTapeCountBadge() {
+        const tapes = subnoteContainer.querySelectorAll('.mask-tape');
+        if (topicTapeCount) topicTapeCount.textContent = tapes.length;
+        if (topicBadgeTape) {
+          topicBadgeTape.classList.toggle('hidden', tapes.length === 0);
+        }
+        const topic = TOPICS[currentTopicIndex];
+        if (topic && btnResetCustomTape) {
+          const hasCustom = !!localStorage.getItem(`edurecall_custom_${topic.id}`);
+          btnResetCustomTape.classList.toggle('hidden', !hasCustom);
+        }
+      }
+
+      function saveCurrentTopicCustomContent() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+        localStorage.setItem(`edurecall_custom_${topic.id}`, subnoteContainer.innerHTML);
+        if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
+      }
+
+      function resetTopicCustomContent() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+        if (!confirm(`'${topic.title}' 주제에서 직접 추가/삭제한 마스킹 테이프를 초기화하고 원본으로 되돌리시겠습니까?`)) {
+          return;
+        }
+        localStorage.removeItem(`edurecall_custom_${topic.id}`);
+        subnoteContainer.innerHTML = topic.contentHtml;
+        if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
+        setupGroupInteractions();
+        setupTapeInteractions();
+        updateTapeCountBadge();
+        applyMode(currentMode);
+        showToast('원본 서브노트 마스킹으로 복원되었습니다', 'refresh');
+      }
+
+      function removeTape(tape) {
+        if (!tape || !tape.parentNode) return;
+        const parent = tape.parentNode;
+        const text = tape.textContent;
+        const textNode = document.createTextNode(text);
+        parent.replaceChild(textNode, tape);
+        parent.normalize();
+
+        hideFloatingMaskBtn();
+        saveCurrentTopicCustomContent();
+        updateTapeCountBadge();
+
+        const previewText = text.length > 10 ? text.slice(0, 10) + '...' : text;
+        showToast(`'${previewText}' 마스킹 테이프가 삭제되었습니다 [우클릭/삭제]`, 'delete');
+      }
+
+      function addTapeToCurrentSelection() {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || !sel.rangeCount) {
+          showToast('마스킹할 텍스트를 먼저 마우스로 드래그해주세요', 'info');
+          return;
+        }
+
+        const selectedText = sel.toString().trim();
+        if (!selectedText) {
+          showToast('마스킹할 텍스트를 먼저 마우스로 드래그해주세요', 'info');
+          return;
+        }
+
+        const range = sel.getRangeAt(0);
+
+        // Check if selection is inside subnoteContainer
+        if (!subnoteContainer.contains(range.commonAncestorContainer)) {
+          showToast('서브노트 본문 영역 내의 텍스트만 마스킹할 수 있습니다', 'warning');
+          return;
+        }
+
+        // Prevent nested masking tape
+        const checkAncestor = (node) => {
+          let curr = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+          return curr ? curr.closest('.mask-tape') : null;
+        };
+
+        if (checkAncestor(range.commonAncestorContainer) || checkAncestor(range.startContainer) || checkAncestor(range.endContainer)) {
+          showToast('이미 마스킹 테이프가 적용되어 있는 부분입니다', 'info');
+          return;
+        }
+
+        const span = document.createElement('span');
+        span.className = 'mask-tape is-taped';
+        span.setAttribute('data-tape', 'true');
+        span.setAttribute('data-text', selectedText);
+
+        try {
+          range.surroundContents(span);
+        } catch (err) {
+          const fragment = range.extractContents();
+          span.appendChild(fragment);
+          range.insertNode(span);
+        }
+
+        bindSingleTape(span);
+        sel.removeAllRanges();
+        hideFloatingMaskBtn();
+
+        saveCurrentTopicCustomContent();
+        updateTapeCountBadge();
+
+        const previewText = selectedText.length > 12 ? selectedText.slice(0, 12) + '...' : selectedText;
+        showToast(`'${previewText}' 마스킹 테이프가 추가되었습니다 [M]`, 'label');
+      }
+
+      let currentFloatingMode = 'add'; // 'add' or 'delete'
+      let targetTapesToDelete = [];
+
+      function hideFloatingMaskBtn() {
+        if (floatingMaskBtn) floatingMaskBtn.classList.add('hidden');
+        targetTapesToDelete = [];
+      }
+
+      function checkTextSelection() {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || !sel.rangeCount) {
+          hideFloatingMaskBtn();
+          return;
+        }
+        const text = sel.toString().trim();
+        if (!text) {
+          hideFloatingMaskBtn();
+          return;
+        }
+        const range = sel.getRangeAt(0);
+        if (!subnoteContainer.contains(range.commonAncestorContainer)) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        const rect = range.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        const parentTape = (range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+          ? range.commonAncestorContainer
+          : range.commonAncestorContainer.parentElement)?.closest('.mask-tape');
+
+        if (parentTape) {
+          currentFloatingMode = 'delete';
+          targetTapesToDelete = [parentTape];
+          floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+          floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 [M/Del]</span>';
+          floatingMaskBtn.title = '이 마스킹 테이프를 완전히 삭제합니다 [단축키: M 또는 Delete]';
+        } else {
+          // Check if selection intersects any tapes
+          const containedTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape')).filter(t => range.intersectsNode(t));
+          if (containedTapes.length > 0) {
+            currentFloatingMode = 'delete';
+            targetTapesToDelete = containedTapes;
+            floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+            floatingMaskBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 (${containedTapes.length}개) [M/Del]</span>`;
+            floatingMaskBtn.title = '선택 영역 내 마스킹 테이프들을 삭제합니다';
+          } else {
+            currentFloatingMode = 'add';
+            targetTapesToDelete = [];
+            floatingMaskBtn.className = 'fixed z-50 bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+            floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">label</span><span>테이프 붙이기 [M]</span>';
+            floatingMaskBtn.title = '선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]';
+          }
+        }
+
+        if (floatingMaskBtn) {
+          floatingMaskBtn.style.top = `${Math.max(10, rect.top - 8)}px`;
+          floatingMaskBtn.style.left = `${rect.left + (rect.width / 2)}px`;
+          floatingMaskBtn.classList.remove('hidden');
+        }
+      }
+
+      // 6. Mode Switcher (Tape, Study, Blur, Cloze)
+      function applyMode(mode) {
+        currentMode = mode;
+        modePills.forEach(pill => {
+          if (pill.dataset.mode === mode) {
+            if (mode === 'tape') {
+              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs flex items-center gap-1';
+            } else if (mode === 'study') {
+              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs flex items-center gap-1';
+            } else if (mode === 'blur') {
+              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs flex items-center gap-1';
+            } else {
+              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-purple-600 text-white shadow-xs flex items-center gap-1';
+            }
+          } else {
+            pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1';
+          }
+        });
+
+        if (mode === 'tape') {
+          // Open groups, cover all masking tapes
+          document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
+          document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
+          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+        } else if (mode === 'study') {
+          // Unmask everything, peel all tapes
+          document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
+          document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
+          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+        } else if (mode === 'blur') {
+          // Blur all groups
+          document.querySelectorAll('.topic-group').forEach(grp => blurGroup(grp));
+          document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
+          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+        } else if (mode === 'cloze') {
+          // Open groups, but mask keywords
+          document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
+          document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
+          document.querySelectorAll('.cloze-target').forEach(el => maskCloze(el));
+        }
+
+        isAllRevealed = (mode === 'study');
+        updateRevealButton(isAllRevealed);
+      }
+
+      function maskCloze(el) {
+        const text = el.dataset.cloze || el.textContent;
+        el.dataset.originalText = text;
+        el.textContent = `[ ${text.length}글자 ? ]`;
+        el.className = 'cloze-blank px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 font-bold border border-blue-300 text-[11px] inline-block hover:bg-blue-200 transition-all';
+        el.onclick = (e) => {
+          e.stopPropagation();
+          unmaskCloze(el);
+        };
+      }
+
+      function unmaskCloze(el) {
+        if (el.dataset.originalText) {
+          el.textContent = el.dataset.originalText;
+        }
+        el.className = 'font-semibold text-blue-700 underline decoration-blue-300 inline-block';
+        el.onclick = null;
+      }
+
+      // Master Reveal / Hide (Consolidated Single Action)
+      function toggleMasterReveal(forceState) {
+        isAllRevealed = (forceState !== undefined) ? forceState : !isAllRevealed;
+        
+        if (isAllRevealed) {
+          document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
+          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
+          document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
+          showToast('모든 정답(마스킹 테이프)이 공개되었습니다 [Space]', 'visibility');
+        } else {
+          document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
+          applyMode(currentMode);
+          showToast('정답을 다시 마스킹 테이프로 가렸습니다 [Space]', 'label');
+        }
+        updateRevealButton(isAllRevealed);
+      }
+
+      function updateRevealButton(revealed) {
+        if (!revealBtnLabel || !revealEyeIcon || !btnRevealAll) return;
+        if (revealed) {
+          revealBtnLabel.textContent = '정답 다시 가리기 [Space]';
+          revealEyeIcon.textContent = 'visibility_off';
+          btnRevealAll.className = 'px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 border border-slate-300 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer';
+        } else {
+          revealBtnLabel.textContent = '정답 전체 공개 [Space]';
+          revealEyeIcon.textContent = 'visibility';
+          btnRevealAll.className = 'px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer';
+        }
+      }
+
+      // 7. Real-Time Essay Keyword Matching
+      function checkKeywords() {
+        const text = essayInput.value;
+        charCounter.textContent = `${text.length}자 작성됨`;
+        const topic = TOPICS[currentTopicIndex];
+        const keywords = topic.targetKeywords || [];
+
+        keywordMatchChips.innerHTML = '';
+        let matched = 0;
+
+        keywords.forEach(kw => {
+          const isIncluded = kw.length >= 2 && text.includes(kw);
+          if (isIncluded) matched++;
+
+          const chip = document.createElement('span');
+          chip.className = isIncluded
+            ? 'px-2 py-0.5 rounded-md text-[11px] font-bold bg-blue-600 text-white flex items-center gap-0.5 shadow-2xs'
+            : 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-white text-slate-500 border border-slate-200';
+          chip.innerHTML = `#${kw} ${isIncluded ? '<span class="material-symbols-outlined text-[12px]">check</span>' : ''}`;
+          keywordMatchChips.appendChild(chip);
+        });
+
+        keywordMatchRatio.textContent = `${matched} / ${keywords.length} 매칭`;
+      }
+
+      // 8. Self-Grading Event Handler
+      function handleGrade(grade) {
+        const topic = TOPICS[currentTopicIndex];
+        const res = saveGrade(topic.id, grade);
+        if (grade === 'pass') {
+          showToast(`완벽 인출 성공! (복습 ${res.count}회차)`, 'verified');
+        } else if (grade === 'ambiguous') {
+          showToast('부분 성공으로 기록되었습니다', 'help');
+        } else if (grade === 'fail') {
+          showToast('오답 노트에 등록되었습니다', 'cancel');
+        }
+      }
+
+      // 9. Event Listeners Wire-up
+      subjectTabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeSubject = btn.dataset.subject;
+          subjectTabs.forEach(b => {
+            if (b === btn) {
+              b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs';
+            } else {
+              b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+            }
+          });
+          renderSidebar();
+          if (filteredIndices.length > 0) {
+            renderTopic(filteredIndices[0]);
+          }
+          showToast(`${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 선택됨`, 'filter_list');
+        });
+      });
+
+      // Search
+      sidebarSearch.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        btnClearSearch.classList.toggle('hidden', !searchQuery.trim());
+        renderSidebar();
+      });
+
+      btnClearSearch.addEventListener('click', () => {
+        sidebarSearch.value = '';
+        searchQuery = '';
+        btnClearSearch.classList.add('hidden');
+        renderSidebar();
+      });
+
+      // Mode pills
+      modePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          applyMode(pill.dataset.mode);
+          showToast(`${pill.textContent.trim()} 적용됨`, 'tune');
+        });
+      });
+
+      if (btnResetCustomTape) {
+        btnResetCustomTape.addEventListener('click', resetTopicCustomContent);
+      }
+
+      if (floatingMaskBtn) {
+        floatingMaskBtn.addEventListener('mousedown', (e) => {
+          e.preventDefault(); // Don't lose current selection
+        });
+        floatingMaskBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
+            targetTapesToDelete.forEach(t => removeTape(t));
+            hideFloatingMaskBtn();
+            window.getSelection()?.removeAllRanges();
+          } else {
+            addTapeToCurrentSelection();
+          }
+        });
+      }
+
+      // Drag selection events on subnote container
+      subnoteContainer.addEventListener('mouseup', () => {
+        setTimeout(checkTextSelection, 10);
+      });
+      subnoteContainer.addEventListener('keyup', () => {
+        setTimeout(checkTextSelection, 10);
+      });
+      document.addEventListener('mousedown', (e) => {
+        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target)) {
+          hideFloatingMaskBtn();
+        }
+      });
+      window.addEventListener('scroll', () => {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed) {
+          hideFloatingMaskBtn();
+        } else {
+          checkTextSelection();
+        }
+      }, { passive: true });
+
+      if (btnRevealAll) {
+        btnRevealAll.addEventListener('click', () => toggleMasterReveal());
+      }
+
+      essayInput.addEventListener('input', checkKeywords);
+
+      btnLoadAnswer.addEventListener('click', () => {
+        const topic = TOPICS[currentTopicIndex];
+        essayInput.value = topic.defaultAnswer;
+        checkKeywords();
+        showToast('원문 서브노트 텍스트를 불러왔습니다', 'content_paste');
+      });
+
+      btnClearEssay.addEventListener('click', () => {
+        essayInput.value = '';
+        checkKeywords();
+        essayInput.focus();
+        showToast('서술창이 비워졌습니다', 'delete');
+      });
+
+      gradeBtns.forEach(btn => {
+        btn.addEventListener('click', () => handleGrade(btn.dataset.grade));
+      });
+
+      // Prev / Next Topic
+      btnPrevTopic.addEventListener('click', () => {
+        if (filteredIndices.length === 0) return;
+        const pos = filteredIndices.indexOf(currentTopicIndex);
+        if (pos > 0) renderTopic(filteredIndices[pos - 1]);
+        else renderTopic(filteredIndices[filteredIndices.length - 1]);
+      });
+
+      btnNextTopic.addEventListener('click', () => {
+        if (filteredIndices.length === 0) return;
+        const pos = filteredIndices.indexOf(currentTopicIndex);
+        if (pos >= 0 && pos < filteredIndices.length - 1) renderTopic(filteredIndices[pos + 1]);
+        else renderTopic(filteredIndices[0]);
+      });
+
+      // Reset All Grades
+      document.getElementById('btn-reset-grades').addEventListener('click', () => {
+        if (confirm('모든 학습 인출 기록(Pass/Fail)을 초기화하시겠습니까?')) {
+          localStorage.removeItem('edurecall_subnote_grades');
+          updateOverallStats();
+          renderSidebar();
+          updateTopicRetentionView(TOPICS[currentTopicIndex].id);
+          showToast('모든 학습 기록이 초기화되었습니다', 'restart_alt');
+        }
+      });
+
+      // Diff Modal Handlers
+      btnOpenDiff.addEventListener('click', () => {
+        const topic = TOPICS[currentTopicIndex];
+        diffUserBox.textContent = essayInput.value || '(작성된 내용이 없습니다)';
+        diffUserLen.textContent = `${essayInput.value.length}자`;
+        diffModelBox.textContent = topic.defaultAnswer;
+        diffModelLen.textContent = `${topic.defaultAnswer.length}자`;
+        diffModal.classList.remove('hidden');
+      });
+
+      function closeDiff() { diffModal.classList.add('hidden'); }
+      closeDiffModalBtn.addEventListener('click', closeDiff);
+      diffModal.addEventListener('click', (e) => { if (e.target === diffModal) closeDiff(); });
+      diffPassBtn.addEventListener('click', () => {
+        closeDiff();
+        handleGrade('pass');
+      });
+
+      // Pomodoro Timer
+      let pomoSecs = 25 * 60;
+      let pomoRunning = false;
+      let pomoTimer = null;
+
+      function updatePomo() {
+        const m = Math.floor(pomoSecs / 60).toString().padStart(2, '0');
+        const s = (pomoSecs % 60).toString().padStart(2, '0');
+        pomodoroDisplay.textContent = `${m}:${s}`;
+      }
+
+      pomodoroBtn.addEventListener('click', () => {
+        pomoRunning = !pomoRunning;
+        if (pomoRunning) {
+          pomodoroBtn.classList.add('bg-blue-50', 'border-blue-300');
+          pomodoroIcon.classList.add('animate-pulse');
+          showToast('25분 뽀모도로 타이머 시작', 'timer');
+          pomoTimer = setInterval(() => {
+            if (pomoSecs > 0) {
+              pomoSecs--;
+              updatePomo();
+            } else {
+              clearInterval(pomoTimer);
+              pomoRunning = false;
+              alert('⏰ 25분 집중 세션 완료! 5분간 휴식하세요.');
+            }
+          }, 1000);
+        } else {
+          clearInterval(pomoTimer);
+          pomodoroBtn.classList.remove('bg-blue-50', 'border-blue-300');
+          pomodoroIcon.classList.remove('animate-pulse');
+          showToast('타이머 일시 정지', 'pause');
+        }
+      });
+
+      pomodoroBtn.addEventListener('dblclick', () => {
+        clearInterval(pomoTimer);
+        pomoRunning = false;
+        pomoSecs = 25 * 60;
+        updatePomo();
+        pomodoroBtn.classList.remove('bg-blue-50', 'border-blue-300');
+        pomodoroIcon.classList.remove('animate-pulse');
+        showToast('타이머 25:00 리셋', 'refresh');
+      });
+
+      // Keyboard Navigation
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab' && document.activeElement !== essayInput) {
+          e.preventDefault();
+          essayInput.focus();
+          showToast('서술 입력란 포커스 [Tab]', 'keyboard');
+          return;
+        }
+
+        const activeEl = document.activeElement;
+        const isTyping = activeEl === essayInput || (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA'));
+
+        if (isTyping) {
+          if (e.code === 'Escape') {
+            activeEl.blur();
+          } else if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            handleGrade('pass');
+          }
+          return;
+        }
+
+        if (e.code === 'Space' || ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey)) {
+          e.preventDefault();
+          toggleMasterReveal();
+        } else if (((e.key === 'm' || e.key === 'M') || e.code === 'Delete' || e.code === 'Backspace') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          const sel = window.getSelection();
+          if (sel && !sel.isCollapsed && sel.toString().trim()) {
+            if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
+              e.preventDefault();
+              targetTapesToDelete.forEach(t => removeTape(t));
+              hideFloatingMaskBtn();
+              sel.removeAllRanges();
+            } else if (e.key === 'm' || e.key === 'M') {
+              e.preventDefault();
+              addTapeToCurrentSelection();
+            }
+          } else if (e.key === 'm' || e.key === 'M') {
+            showToast('본문 글자를 드래그한 후 [M]을 누르면 테이프가 붙고, 우클릭 시 삭제됩니다', 'info');
+          }
+        } else if (e.key === ']' || e.key === '}') {
+          e.preventDefault();
+          applyFontScale(currentFontScale + 10, true);
+        } else if (e.key === '[' || e.key === '{') {
+          e.preventDefault();
+          applyFontScale(currentFontScale - 10, true);
+        } else if (e.key === 'f' || e.key === 'F') {
+          handleGrade('fail');
+        } else if (e.key === 'a' || e.key === 'A') {
+          handleGrade('ambiguous');
+        } else if (e.key === 'p' || e.key === 'P') {
+          handleGrade('pass');
+        } else if (e.key === 'r' || e.key === 'R') {
+          toggleMasterReveal(false);
+        } else if (e.code === 'Escape') {
+          if (!diffModal.classList.contains('hidden')) {
+            closeDiff();
+          } else {
+            toggleMasterReveal(false);
+          }
+        }
+      });
+
+      function updateSubjectCountBadges() {
+        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0 };
+        TOPICS.forEach(t => { if (counts[t.subject] !== undefined) counts[t.subject]++; });
+        const map = {
+          'count-edu': counts['사회과교육론'],
+          'count-law': counts['법학'],
+          'count-soc': counts['사회학'],
+          'count-pol': counts['정치학'],
+          'count-econ': counts['경제학'],
+          'count-all': TOPICS.length
+        };
+        Object.keys(map).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = `(${map[id]})`;
+        });
+      }
+
+      // Initial Boot
+      updateSubjectCountBadges();
+      updateOverallStats();
+      renderSidebar();
+      renderTopic(0);
+      showToast('EduRecall 마스킹 테이프 액티브 리콜 준비 완료', 'verified');
+    })();
+  </script>
+</body>
+</html>
