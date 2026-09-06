@@ -1046,6 +1046,27 @@
       function renderTopic(index) {
         currentTopicIndex = (index + TOPICS.length) % TOPICS.length;
         const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+
+        // Auto-switch active subject if current topic belongs to another subject and filter is not ALL
+        if (activeSubject !== 'ALL' && topic.subject !== activeSubject) {
+          activeSubject = topic.subject;
+          try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
+          updateSubjectTabStyles();
+          renderSidebar();
+        }
+
+        // Persist last viewed topic and sync URL hash
+        try {
+          localStorage.setItem('edurecall_last_topic_id', topic.id);
+          localStorage.setItem('edurecall_active_subject', activeSubject);
+          if (window.location.hash !== '#' + topic.id) {
+            history.replaceState(null, '', '#' + topic.id);
+          }
+        } catch (e) {}
+
+        // Scroll to top of page content on topic change
+        window.scrollTo({ top: 0, behavior: 'instant' });
 
         // Update Breadcrumb
         bcSubject.textContent = topic.subject;
@@ -1462,6 +1483,7 @@
       // 6. Mode Switcher (Tape, Type, Study, Blur, Cloze)
       function applyMode(mode) {
         currentMode = mode;
+        try { localStorage.setItem('edurecall_mode', mode); } catch (e) {}
         modePills.forEach(pill => {
           if (pill.dataset.mode === mode) {
             if (mode === 'tape') {
@@ -1744,22 +1766,32 @@
         }
       }
 
+      function updateSubjectTabStyles() {
+        subjectTabs.forEach(b => {
+          if (b.dataset.subject === activeSubject) {
+            b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs';
+          } else {
+            b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+          }
+        });
+      }
+
+      function setSubjectTab(subj, autoSelectFirst = false) {
+        activeSubject = subj;
+        try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
+        updateSubjectTabStyles();
+        renderSidebar();
+        if (autoSelectFirst && filteredIndices.length > 0) {
+          renderTopic(filteredIndices[0]);
+        }
+      }
+
       // 9. Event Listeners Wire-up
       subjectTabs.forEach(btn => {
         btn.addEventListener('click', () => {
-          activeSubject = btn.dataset.subject;
-          subjectTabs.forEach(b => {
-            if (b === btn) {
-              b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs';
-            } else {
-              b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
-            }
-          });
-          renderSidebar();
-          if (filteredIndices.length > 0) {
-            renderTopic(filteredIndices[0]);
-          }
-          showToast(`${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 선택됨`, 'filter_list');
+          const subj = btn.dataset.subject;
+          setSubjectTab(subj, true);
+          showToast(`${subj === 'ALL' ? '전체 과목' : subj} 선택됨`, 'filter_list');
         });
       });
 
@@ -2033,12 +2065,58 @@
         });
       }
 
-      // Initial Boot
+      // Initial Boot & Session Restoration
+      const savedMode = localStorage.getItem('edurecall_mode');
+      if (savedMode && ['tape', 'type', 'study', 'blur'].includes(savedMode)) {
+        currentMode = savedMode;
+      }
+
+      let initialTopicId = '';
+      if (window.location.hash && window.location.hash.length > 1) {
+        initialTopicId = decodeURIComponent(window.location.hash.slice(1)).trim();
+      }
+      if (!initialTopicId) {
+        initialTopicId = localStorage.getItem('edurecall_last_topic_id') || '';
+      }
+
+      let initialIndex = 0;
+      if (initialTopicId) {
+        const foundIdx = TOPICS.findIndex(t => t.id === initialTopicId);
+        if (foundIdx !== -1) {
+          initialIndex = foundIdx;
+        }
+      }
+
+      const targetTopic = TOPICS[initialIndex];
+      const savedSubject = localStorage.getItem('edurecall_active_subject');
+      if (savedSubject === 'ALL') {
+        activeSubject = 'ALL';
+      } else if (targetTopic) {
+        activeSubject = targetTopic.subject;
+      } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학'].includes(savedSubject)) {
+        activeSubject = savedSubject;
+      }
+
       updateSubjectCountBadges();
       updateOverallStats();
-      renderSidebar();
-      renderTopic(0);
-      showToast('EduRecall 마스킹 테이프 액티브 리콜 준비 완료', 'verified');
+      setSubjectTab(activeSubject, false);
+      renderTopic(initialIndex);
+
+      if (initialTopicId && targetTopic && initialIndex !== 0) {
+        showToast(`이전 학습 위치 복원: [${targetTopic.subject}] ${targetTopic.title}`, 'history');
+      } else {
+        showToast('EduRecall 마스킹 테이프 액티브 리콜 준비 완료', 'verified');
+      }
+
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash && window.location.hash.length > 1) {
+          const hashId = decodeURIComponent(window.location.hash.slice(1)).trim();
+          const idx = TOPICS.findIndex(t => t.id === hashId);
+          if (idx !== -1 && idx !== currentTopicIndex) {
+            renderTopic(idx);
+          }
+        }
+      });
     })();
   </script>
 </body>
