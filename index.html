@@ -16,11 +16,6 @@
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     
-    .cloze-blank {
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.2s ease;
-    }
     .topic-group.is-blurred .group-content {
       filter: blur(5px);
       user-select: none;
@@ -457,10 +452,6 @@
               <span class="material-symbols-outlined text-[15px]">blur_on</span>
               <span>블러 암기</span>
             </button>
-            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="cloze" type="button">
-              <span class="material-symbols-outlined text-[15px]">visibility_off</span>
-              <span>핵심어 빈칸</span>
-            </button>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
@@ -652,7 +643,7 @@
       // 1. Data Initialization
       const TOPICS = window.ALL_TOPICS || [];
       let currentTopicIndex = 0;
-      let currentMode = 'tape'; // 'tape', 'study', 'blur', 'cloze'
+      let currentMode = 'tape'; // 'tape', 'type', 'study', 'blur'
       let isAllRevealed = false;
       let activeSubject = '사회과교육론';
       let searchQuery = '';
@@ -1098,7 +1089,7 @@
         setupTapeInteractions();
         updateTapeCountBadge();
 
-        // Apply Current Mode (tape, study, blur, cloze)
+        // Apply Current Mode (tape, type, study, blur)
         applyMode(currentMode);
 
         // Update Retention Stats
@@ -1244,14 +1235,6 @@
             peelTape(tape);
           } else {
             stickTape(tape);
-          }
-        });
-
-        // Double-click: open typing input for this individual tape
-        tape.addEventListener('dblclick', (e) => {
-          e.stopPropagation();
-          if (tape.classList.contains('is-taped') && !tape.classList.contains('is-typing-mode')) {
-            createSingleTypingInput(tape);
           }
         });
       }
@@ -1464,8 +1447,6 @@
               pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
             } else if (mode === 'blur') {
               pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
-            } else {
-              pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-purple-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
             }
           } else {
             pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer';
@@ -1477,12 +1458,10 @@
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
-          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
           if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
         } else if (mode === 'type') {
           // Direct typing recall mode (작성 모드)
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
-          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
           if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
           enableTypingMode(true);
         } else if (mode === 'study') {
@@ -1490,21 +1469,12 @@
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
-          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
           if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
         } else if (mode === 'blur') {
           // Blur all groups
           document.querySelectorAll('.topic-group').forEach(grp => blurGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
-          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
-          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
-        } else if (mode === 'cloze') {
-          // Open groups, but mask keywords
-          document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
-          restoreTapesFromTyping();
-          document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
-          document.querySelectorAll('.cloze-target').forEach(el => maskCloze(el));
           if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
         }
 
@@ -1669,32 +1639,12 @@
         });
       }
 
-      function maskCloze(el) {
-        const text = el.dataset.cloze || el.textContent;
-        el.dataset.originalText = text;
-        el.textContent = `[ ${text.length}글자 ? ]`;
-        el.className = 'cloze-blank px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 font-bold border border-blue-300 text-[11px] inline-block hover:bg-blue-200 transition-all';
-        el.onclick = (e) => {
-          e.stopPropagation();
-          unmaskCloze(el);
-        };
-      }
-
-      function unmaskCloze(el) {
-        if (el.dataset.originalText) {
-          el.textContent = el.dataset.originalText;
-        }
-        el.className = 'font-semibold text-blue-700 underline decoration-blue-300 inline-block';
-        el.onclick = null;
-      }
-
       // Master Reveal / Hide (Consolidated Single Action)
       function toggleMasterReveal(forceState) {
         isAllRevealed = (forceState !== undefined) ? forceState : !isAllRevealed;
         
         if (isAllRevealed) {
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
-          document.querySelectorAll('.cloze-target').forEach(el => unmaskCloze(el));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
           if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
