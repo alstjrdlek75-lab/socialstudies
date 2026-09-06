@@ -117,6 +117,29 @@
       line-height: 1.5 !important;
     }
 
+    #subnote-content-container .topic-group .font-bold {
+      display: flex !important;
+      align-items: flex-start !important;
+    }
+
+    #subnote-content-container .topic-group .font-bold span:first-child {
+      margin-top: 0.35rem !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Prevent toolbar buttons from wrapping text mid-syllable */
+    .mode-pill {
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      cursor: pointer;
+    }
+
+    #btn-reveal-all {
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      cursor: pointer;
+    }
+
     #subnote-content-container p {
       font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
       line-height: 1.8 !important;
@@ -336,43 +359,43 @@
         </div>
 
         <!-- Mode Controls Bar -->
-        <div class="bg-white rounded-xl border border-border p-2 shadow-xs flex flex-wrap items-center justify-between gap-2">
-          <div class="flex items-center gap-1">
-            <span class="text-xs font-bold text-slate-500 px-2">리콜 모드:</span>
-            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs flex items-center gap-1" data-mode="tape" type="button">
+        <div class="bg-white rounded-xl border border-border p-2.5 shadow-xs flex flex-wrap items-center justify-between gap-2.5">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="text-xs font-bold text-slate-500 px-1 whitespace-nowrap">리콜 모드:</span>
+            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs flex items-center gap-1 cursor-pointer" data-mode="tape" type="button">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span>마스킹 테이프</span>
             </button>
-            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1" data-mode="study" type="button">
+            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="study" type="button">
               <span class="material-symbols-outlined text-[15px]">menu_book</span>
               <span>원문 정독</span>
             </button>
-            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1" data-mode="blur" type="button">
+            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="blur" type="button">
               <span class="material-symbols-outlined text-[15px]">blur_on</span>
               <span>블러 암기</span>
             </button>
-            <button class="mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1" data-mode="cloze" type="button">
+            <button class="mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer" data-mode="cloze" type="button">
               <span class="material-symbols-outlined text-[15px]">visibility_off</span>
               <span>핵심어 빈칸</span>
             </button>
           </div>
 
-          <div class="flex items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2">
             <!-- Add Tape & Delete guide badge -->
-            <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-lime-50/90 border border-lime-300/80 text-lime-900 text-xs font-semibold select-none shadow-2xs" title="본문 글자 드래그 후 [M] 추가, 마우스 우클릭 또는 Option/Cmd+클릭으로 삭제">
+            <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-lime-50/90 border border-lime-300/80 text-lime-900 text-xs font-semibold select-none shadow-2xs whitespace-nowrap shrink-0" title="본문 글자 드래그 후 [M] 추가, 마우스 우클릭 또는 Option/Cmd+클릭으로 삭제">
               <span class="material-symbols-outlined text-[14px] text-lime-700">edit_note</span>
               <span>드래그 <b>[M]</b> 추가 / <b>우클릭</b> 삭제</span>
             </span>
 
             <!-- Font Scale Controller -->
-            <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200 text-xs text-slate-700 font-bold select-none">
+            <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
               <button id="btn-font-down" type="button" class="px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 hover:text-blue-700 cursor-pointer" title="글자 작게 [단축키: []">A-</button>
               <span id="font-scale-text" class="px-2 text-[11px] text-slate-700 font-mono font-bold min-w-[3.2rem] text-center">115%</span>
               <button id="btn-font-up" type="button" class="px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 hover:text-blue-700 cursor-pointer" title="글자 크게 [단축키: ]]">A+</button>
             </div>
 
             <!-- Single Consolidated Reveal / Hide Button -->
-            <button id="btn-reveal-all" class="px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
+            <button id="btn-reveal-all" class="px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
               <span class="material-symbols-outlined text-[16px] text-lime-800" id="reveal-eye-icon">visibility</span>
               <span id="reveal-btn-label">정답 전체 공개 [Space]</span>
             </button>
@@ -1340,16 +1363,16 @@
         modePills.forEach(pill => {
           if (pill.dataset.mode === mode) {
             if (mode === 'tape') {
-              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs flex items-center gap-1';
+              pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
             } else if (mode === 'study') {
-              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs flex items-center gap-1';
+              pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
             } else if (mode === 'blur') {
-              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs flex items-center gap-1';
+              pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
             } else {
-              pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-purple-600 text-white shadow-xs flex items-center gap-1';
+              pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-purple-600 text-white shadow-xs flex items-center gap-1 cursor-pointer';
             }
           } else {
-            pill.className = 'mode-pill px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1';
+            pill.className = 'mode-pill whitespace-nowrap shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-1 cursor-pointer';
           }
         });
 
