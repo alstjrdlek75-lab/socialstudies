@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">총수요-총공급(AD-AS) 모형과 단기·장기 균형 (AD-AS Model)</text>
+  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">실질 GDP (Y)</text>
+  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">물가수준 (P)</text>
+  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
+  <!-- Long-run Vertical AS -->
+  <line x1="420" y1="390" x2="420" y2="80" stroke="#059669" stroke-width="3" />
+  <text x="430" y="90" font-size="14" font-weight="bold" fill="#059669">장기 총공급 LRAS (잠재GDP)</text>
+  <text x="405" y="410" font-size="13" font-weight="bold" fill="#059669">Yn (자연산출량)</text>
+  <!-- Short-run AS -->
+  <line x1="180" y1="350" x2="640" y2="130" stroke="#ea580c" stroke-width="3" />
+  <text x="650" y="135" font-size="14" font-weight="bold" fill="#ea580c">단기 총공급 SRAS</text>
+  <!-- AD0 -->
+  <line x1="180" y1="130" x2="640" y2="350" stroke="#2563eb" stroke-width="3" />
+  <text x="650" y="355" font-size="14" font-weight="bold" fill="#2563eb">총수요 AD0</text>
+  <!-- AD1 Shift (Expansionary policy) -->
+  <line x1="280" y1="100" x2="700" y2="300" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="6,4" />
+  <text x="710" y="305" font-size="13" font-weight="bold" fill="#3b82f6">AD1 (재정·통화확장)</text>
+  <!-- Equilibrium Points -->
+  <circle cx="420" cy="235" r="6" fill="#0f172a" />
+  <text x="360" y="240" font-size="13" font-weight="bold" fill="#0f172a">초기균형 E0</text>
+  <line x1="100" y1="235" x2="420" y2="235" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="60" y="240" font-size="13" font-weight="bold" fill="#0f172a">P0</text>
+</svg>

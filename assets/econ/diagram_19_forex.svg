@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">외환시장 균형과 환율 결정 (Foreign Exchange Market)</text>
+  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">외환 거래량 (Q)</text>
+  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">원/달러 환율 (e)</text>
+  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
+  <!-- Supply curve (Export, foreign investment) -->
+  <line x1="160" y1="350" x2="620" y2="110" stroke="#16a34a" stroke-width="3" />
+  <text x="630" y="115" font-size="14" font-weight="bold" fill="#16a34a">외환 공급곡선 S$ (수출, 외자유치)</text>
+  <!-- Demand curve (Import, overseas investment) -->
+  <line x1="160" y1="110" x2="620" y2="350" stroke="#2563eb" stroke-width="3" />
+  <text x="630" y="355" font-size="14" font-weight="bold" fill="#2563eb">외환 수요곡선 D$ (수입, 해외투자)</text>
+  <!-- Equilibrium -->
+  <circle cx="390" cy="230" r="6" fill="#dc2626" />
+  <line x1="390" y1="390" x2="390" y2="230" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="100" y1="230" x2="390" y2="230" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="45" y="235" font-size="14" font-weight="bold" fill="#dc2626">e* (균형환율)</text>
+  <text x="380" y="412" font-size="14" font-weight="bold" fill="#dc2626">Q*</text>
+  <!-- Explanation note -->
+  <rect x="140" y="275" width="220" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" />
+  <text x="150" y="300" font-size="12" font-weight="bold" fill="#1e40af">환율 상승 (원화 절하):</text>
+  <text x="150" y="320" font-size="12" fill="#334155">• 수출가격경쟁력 상승 → 수출↑</text>
+  <text x="150" y="340" font-size="12" fill="#334155">• 수입물가 상승 → 수입↓</text>
+  <text x="150" y="355" font-size="11" fill="#64748b">※ 마셜-러너 조건 충족 시 순수출 개선</text>
+</svg>

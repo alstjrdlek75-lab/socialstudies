@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">단기 및 장기 필립스 곡선 (Phillips Curve &amp; Natural Rate Hypothesis)</text>
+  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">실업률 (u, %)</text>
+  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">인플레이션율 (π, %)</text>
+  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
+  <!-- Long-run Vertical Phillips Curve LPC -->
+  <line x1="420" y1="390" x2="420" y2="80" stroke="#059669" stroke-width="3" />
+  <text x="430" y="90" font-size="14" font-weight="bold" fill="#059669">장기 필립스곡선 LPC (수직)</text>
+  <text x="400" y="410" font-size="14" font-weight="bold" fill="#059669">Un (자연실업률)</text>
+  <!-- Short-run Phillips Curves -->
+  <path d="M 180 130 Q 300 240 600 350" fill="none" stroke="#2563eb" stroke-width="3" />
+  <text x="610" y="355" font-size="13" font-weight="bold" fill="#2563eb">단기 필립스곡선 SRPC0 (πe=0%)</text>
+  <path d="M 230 90 Q 360 190 650 310" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="6,4" />
+  <text x="660" y="315" font-size="13" font-weight="bold" fill="#3b82f6">SRPC1 (기대인플레 상승 반영)</text>
+  <text x="450" y="210" font-size="12" font-weight="bold" fill="#7c3aed">장기에는 상충관계 소멸</text>
+  <text x="450" y="230" font-size="12" font-weight="bold" fill="#059669">(자연실업률 회귀)</text>
+</svg>

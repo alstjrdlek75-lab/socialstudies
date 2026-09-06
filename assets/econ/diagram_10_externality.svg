@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">부정적 외부효과와 피구세 (Negative Externality &amp; Pigouvian Tax)</text>
+  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">생산량 (Q)</text>
+  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">가격, 비용 (P)</text>
+  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
+  <!-- Demand SMB = PMB -->
+  <line x1="130" y1="90" x2="670" y2="370" stroke="#2563eb" stroke-width="3" />
+  <text x="680" y="375" font-size="13" font-weight="bold" fill="#2563eb">D = PMB = SMB</text>
+  <!-- Supply: PMC (Private Cost) -->
+  <line x1="150" y1="370" x2="650" y2="150" stroke="#10b981" stroke-width="2.5" />
+  <text x="660" y="155" font-size="13" font-weight="bold" fill="#10b981">사적한계비용 (PMC = S0)</text>
+  <!-- Supply: SMC = PMC + 외부비용 (Social Cost) -->
+  <line x1="150" y1="290" x2="650" y2="70" stroke="#dc2626" stroke-width="3" />
+  <text x="660" y="75" font-size="13" font-weight="bold" fill="#dc2626">사회적한계비용 (SMC = S1)</text>
+  <!-- Pigouvian Tax arrow -->
+  <line x1="280" y1="310" x2="280" y2="230" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr)" />
+  <text x="210" y="270" font-size="12" font-weight="bold" fill="#7c3aed">피구세(t)</text>
+  <!-- Market Equilibrium Qm (overproduction) -->
+  <circle cx="460" cy="235" r="5" fill="#10b981" />
+  <line x1="460" y1="390" x2="460" y2="235" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="440" y="410" font-size="13" font-weight="bold" fill="#10b981">Qm (시장 과다생산)</text>
+  <!-- Social Optimum Q* -->
+  <circle cx="370" cy="220" r="5" fill="#dc2626" />
+  <line x1="370" y1="390" x2="370" y2="220" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="350" y="410" font-size="13" font-weight="bold" fill="#dc2626">Q* (사회적 최적)</text>
+  <!-- Deadweight loss of overproduction -->
+  <polygon points="370,220 460,235 460,150" fill="#fef08a" fill-opacity="0.75" stroke="#eab308" stroke-width="1.5" />
+  <text x="475" y="195" font-size="12" font-weight="bold" fill="#a16207">과다생산 후생손실</text>
+</svg>

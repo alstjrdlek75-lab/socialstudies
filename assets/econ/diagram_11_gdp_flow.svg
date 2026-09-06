@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">국민경제 순환모형과 국민소득 삼면등가의 원칙</text>
+  <!-- Households Box -->
+  <rect x="80" y="160" width="180" height="140" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.5" />
+  <text x="170" y="210" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">가 계 (Household)</text>
+  <text x="170" y="240" font-size="13" text-anchor="middle" fill="#475569">생산요소(노동,자본) 공급</text>
+  <text x="170" y="265" font-size="13" text-anchor="middle" fill="#475569">소비재화 및 서비스 수요</text>
+  <!-- Firms Box -->
+  <rect x="540" y="160" width="180" height="140" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.5" />
+  <text x="630" y="210" font-size="18" font-weight="bold" text-anchor="middle" fill="#166534">기 업 (Firm)</text>
+  <text x="630" y="240" font-size="13" text-anchor="middle" fill="#475569">재화와 서비스 생산/공급</text>
+  <text x="630" y="265" font-size="13" text-anchor="middle" fill="#475569">생산요소 수요 및 소득분배</text>
+  <!-- Upper flow: Goods & Services / Consumption Spending -->
+  <path d="M 260 190 Q 400 130 540 190" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="400" y="150" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e40af">지출국민소득: 소비지출 (C + I + G + NX)</text>
+  <text x="400" y="172" font-size="12" text-anchor="middle" fill="#64748b">재화 및 서비스 시장</text>
+  <!-- Lower flow: Factor Market / Income distribution -->
+  <path d="M 540 270 Q 400 330 260 270" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="400" y="315" font-size="13" font-weight="bold" text-anchor="middle" fill="#166534">분배국민소득: 요소소득 (임금 + 이자 + 지대 + 이윤)</text>
+  <text x="400" y="337" font-size="12" text-anchor="middle" fill="#64748b">생산요소 시장 (노동, 자본, 토지)</text>
+  <!-- Central Equation Card -->
+  <rect x="180" y="370" width="440" height="60" rx="8" fill="#fef08a" fill-opacity="0.5" stroke="#eab308" stroke-width="2" />
+  <text x="400" y="405" font-size="16" font-weight="bold" text-anchor="middle" fill="#854d0e">생산국민소득 ≡ 지출국민소득 ≡ 분배국민소득</text>
+</svg>

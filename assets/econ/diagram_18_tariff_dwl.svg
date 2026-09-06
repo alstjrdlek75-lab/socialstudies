@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">관세 부과의 경제적 후생 효과 (소국 모형)</text>
+  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">수량 (Q)</text>
+  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">가격 (P)</text>
+  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
+  <!-- Domestic Supply and Demand -->
+  <line x1="130" y1="350" x2="650" y2="100" stroke="#dc2626" stroke-width="2.5" />
+  <text x="660" y="105" font-size="13" font-weight="bold" fill="#dc2626">국내공급 S</text>
+  <line x1="130" y1="100" x2="650" y2="350" stroke="#2563eb" stroke-width="2.5" />
+  <text x="660" y="355" font-size="13" font-weight="bold" fill="#2563eb">국내수요 D</text>
+  <!-- World Price Pw -->
+  <line x1="100" y1="300" x2="680" y2="300" stroke="#059669" stroke-width="2" />
+  <text x="50" y="305" font-size="13" font-weight="bold" fill="#059669">Pw (국제가격)</text>
+  <!-- Tariff Price Pw + t -->
+  <line x1="100" y1="240" x2="680" y2="240" stroke="#d97706" stroke-width="2.5" />
+  <text x="35" y="245" font-size="13" font-weight="bold" fill="#d97706">Pw + t (관세부과)</text>
+  <!-- Shaded areas a, b, c, d -->
+  <!-- a: producer surplus gain (trapezoid) -->
+  <polygon points="234,300 358,240 100,240 100,300" fill="#dbeafe" fill-opacity="0.6" />
+  <text x="200" y="275" font-size="14" font-weight="bold" fill="#1e40af">a (생산자잉여증가)</text>
+  <!-- b: production distortion DWL triangle -->
+  <polygon points="234,300 358,240 358,300" fill="#fee2e2" fill-opacity="0.8" />
+  <text x="310" y="285" font-size="13" font-weight="bold" fill="#dc2626">b(DWL)</text>
+  <!-- c: tariff revenue rectangle -->
+  <rect x="358" y="240" width="168" height="60" fill="#fef08a" fill-opacity="0.8" />
+  <text x="400" y="275" font-size="14" font-weight="bold" fill="#a16207">c (정부관세수입)</text>
+  <!-- d: consumption distortion DWL triangle -->
+  <polygon points="526,240 650,300 526,300" fill="#fee2e2" fill-opacity="0.8" />
+  <text x="545" y="285" font-size="13" font-weight="bold" fill="#dc2626">d(DWL)</text>
+</svg>
