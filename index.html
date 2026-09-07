@@ -287,7 +287,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260907_1015"></script>
+  <script src="topics-data.js?v=20260907_1020"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -1193,7 +1193,7 @@
         // Insert Structured Content HTML (Check custom user masking first)
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
         // Clear any corrupted customHtml that has broken/split group header
-        if (customHtml && (customHtml.includes('<span>(1)</span>') || customHtml.includes('민주주의를 제도로 국한해서') || (customHtml.includes('국민주권의 원리') && !customHtml.includes('(1) 국민주권의 원리')))) {
+        if (customHtml && (topic.id === 'POL-016' || topic.id === 'POL-017' || customHtml.includes('<span>(1)</span>') || customHtml.includes('민주주의를 제도로 국한해서') || (customHtml.includes('국민주권의 원리') && !customHtml.includes('(1) 국민주권의 원리')))) {
           try { localStorage.removeItem(`edurecall_custom_${topic.id}`); } catch (e) {}
           customHtml = null;
         }
@@ -2251,6 +2251,8 @@
 
       // Clean legacy corrupted localStorage entries where header title was split
       try {
+        localStorage.removeItem('edurecall_custom_POL-016');
+        localStorage.removeItem('edurecall_custom_POL-017');
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
