@@ -287,7 +287,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260907_0952"></script>
+  <script src="topics-data.js?v=20260907_1010"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -1191,7 +1191,13 @@
         });
 
         // Insert Structured Content HTML (Check custom user masking first)
-        const customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
+        let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
+        // Clear any corrupted customHtml that has broken/split group header
+        if (customHtml && (customHtml.includes('<span>(1)</span>') || (customHtml.includes('국민주권의 원리') && !customHtml.includes('(1) 국민주권의 원리')))) {
+          try { localStorage.removeItem(`edurecall_custom_${topic.id}`); } catch (e) {}
+          customHtml = null;
+        }
+
         if (customHtml) {
           subnoteContainer.innerHTML = customHtml;
           if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
@@ -1199,6 +1205,9 @@
           subnoteContainer.innerHTML = topic.contentHtml;
           if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         }
+
+        // Normalize group headers to guarantee uniform layout and typography
+        sanitizeAndNormalizeGroupHeaders(subnoteContainer);
 
         // Bind interactive handlers to groups and items
         setupGroupInteractions();
@@ -1276,6 +1285,49 @@
           topicMasteryBar.className = 'bg-slate-300 h-full transition-all duration-300';
           topicReviewSchedule.textContent = '다음 복습: 오늘';
         }
+      }
+
+      // Sanitize and normalize group headers to prevent split titles or stray elements
+      function sanitizeAndNormalizeGroupHeaders(container) {
+        if (!container) return;
+        container.querySelectorAll('.topic-group').forEach(grp => {
+          const header = grp.querySelector('.flex.items-center.justify-between');
+          if (!header) return;
+
+          const fontBold = header.querySelector('.font-bold');
+          let toggleBtn = header.querySelector('.group-toggle-btn');
+          if (!fontBold) return;
+
+          // If toggleBtn is missing, generate it
+          if (!toggleBtn) {
+            toggleBtn = document.createElement('button');
+            toggleBtn.className = 'group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1';
+            toggleBtn.type = 'button';
+            toggleBtn.title = '이 항목 블러 토글';
+            toggleBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">visibility</span>';
+            header.appendChild(toggleBtn);
+          }
+
+          // Gather any stray text nodes or elements directly between fontBold and toggleBtn
+          const childNodes = Array.from(header.childNodes);
+          childNodes.forEach(node => {
+            if (node === fontBold || node === toggleBtn || fontBold.contains(node) || toggleBtn.contains(node)) {
+              return;
+            }
+            const txt = node.textContent.trim();
+            if (txt) {
+              let titleSpan = fontBold.querySelector('span:last-child');
+              if (titleSpan) {
+                titleSpan.textContent = (titleSpan.textContent.trim() + ' ' + txt).trim();
+              } else {
+                const s = document.createElement('span');
+                s.textContent = txt;
+                fontBold.appendChild(s);
+              }
+            }
+            node.remove();
+          });
+        });
       }
 
       // Setup Group Interactions
@@ -2196,6 +2248,19 @@
       } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학'].includes(savedSubject)) {
         activeSubject = savedSubject;
       }
+
+      // Clean legacy corrupted localStorage entries where header title was split
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith('edurecall_custom_')) {
+            const val = localStorage.getItem(key);
+            if (val && (val.includes('<span>(1)</span>') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리')))) {
+              localStorage.removeItem(key);
+            }
+          }
+        }
+      } catch (e) {}
 
       updateSubjectCountBadges();
       updateOverallStats();
