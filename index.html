@@ -287,7 +287,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260907_1105"></script>
+  <script src="topics-data.js?v=20260907_1110"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -474,7 +474,7 @@
             </div>
             <div class="text-xs text-slate-500 flex items-center gap-1.5 font-mono">
               <span class="material-symbols-outlined text-[15px] text-slate-400">description</span>
-              <span id="topic-page-ref">PDF p.1</span>
+              <span id="topic-page-ref">PDF p.1 / 33</span>
             </div>
           </div>
 
@@ -869,6 +869,23 @@
         if (sidebarPassCount) sidebarPassCount.textContent = `암기 완료: ${passedCount}개`;
       }
 
+      // Subject total PDF pages helper (dynamic calculation from syllabus data)
+      const subjectTotalPagesCache = {};
+      function getSubjectTotalPages(subject) {
+        if (!subject) return null;
+        if (subjectTotalPagesCache[subject]) return subjectTotalPagesCache[subject];
+        if (!window.ALL_TOPICS || !Array.isArray(window.ALL_TOPICS)) return null;
+        let maxPage = 0;
+        for (let i = 0; i < window.ALL_TOPICS.length; i++) {
+          const t = window.ALL_TOPICS[i];
+          if (t.subject === subject && typeof t.page === 'number' && t.page > maxPage) {
+            maxPage = t.page;
+          }
+        }
+        if (maxPage > 0) subjectTotalPagesCache[subject] = maxPage;
+        return maxPage > 0 ? maxPage : null;
+      }
+
       // Toast notification helper
       let toastTimer = null;
       function showToast(msg, icon = 'info') {
@@ -1178,7 +1195,8 @@
         } else {
           topicBadgeTape.classList.add('hidden');
         }
-        topicPageRef.textContent = `PDF p.${topic.page || 1}`;
+        const totalPages = getSubjectTotalPages(topic.subject);
+        topicPageRef.textContent = totalPages ? `PDF p.${topic.page || 1} / ${totalPages}` : `PDF p.${topic.page || 1}`;
         topicTitle.textContent = topic.title;
 
         // Keywords Chips
