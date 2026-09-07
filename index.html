@@ -262,6 +262,20 @@
       border-color: #bfdbfe;
       box-shadow: 0 1px 2px rgba(29, 78, 216, 0.06);
     }
+    /* Desktop Sidebar Collapsed State */
+    @media (min-width: 768px) {
+      body.sidebar-collapsed #sidebar-drawer {
+        transform: translateX(-100%) !important;
+        box-shadow: none !important;
+        pointer-events: none !important;
+      }
+      body.sidebar-collapsed #main-content-wrapper {
+        padding-left: 0 !important;
+      }
+      body.sidebar-collapsed #floating-open-sidebar-btn {
+        display: flex !important;
+      }
+    }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
@@ -287,7 +301,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260907_1210"></script>
+  <script src="topics-data.js?v=20260907_1615"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -351,20 +365,29 @@
 
   <!-- SUB-HEADER (Breadcrumb, Prev/Next, Shortcuts Hint) -->
   <div class="fixed top-16 left-0 right-0 h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-6 text-xs">
-    <div class="flex items-center gap-1.5 overflow-hidden text-slate-600 font-medium cursor-pointer hover:text-blue-700 transition-colors" id="bc-container" title="목차 열기 (클릭)">
-      <span class="material-symbols-outlined text-[15px] text-blue-600 md:hidden shrink-0">format_list_bulleted</span>
-      <span class="text-blue-700 font-bold shrink-0" id="bc-subject">사회과교육론</span>
-      <span class="text-slate-300 shrink-0">/</span>
-      <span class="text-slate-500 shrink-0 truncate max-w-[120px] md:max-w-[160px]" id="bc-chapter">1.사회과 교육의 전통</span>
-      <span class="text-slate-300 shrink-0 hidden" id="bc-section-sep">/</span>
-      <span class="text-indigo-700 font-semibold shrink-0 truncate max-w-[140px] md:max-w-[180px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100 hidden" id="bc-section">1-1. 세 가지 전통</span>
-      <span class="text-slate-300 shrink-0">/</span>
-      <span class="text-slate-900 font-bold truncate max-w-[140px] md:max-w-none" id="bc-title">1.시민성 전달 모형</span>
-      <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
+    <div class="flex items-center gap-2 overflow-hidden min-w-0">
+      <!-- Sidebar Toggle Button (Desktop & Mobile) -->
+      <button id="btn-toggle-sidebar" class="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
+        <span class="material-symbols-outlined text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
+        <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
+      </button>
+      <span class="text-slate-300 shrink-0">|</span>
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-1.5 overflow-hidden text-slate-600 font-medium cursor-pointer hover:text-blue-700 transition-colors" id="bc-container" title="목차 열기 (클릭)">
+        <span class="text-blue-700 font-bold shrink-0" id="bc-subject">사회과교육론</span>
+        <span class="text-slate-300 shrink-0">/</span>
+        <span class="text-slate-500 shrink-0 truncate max-w-[120px] md:max-w-[160px]" id="bc-chapter">1.사회과 교육의 전통</span>
+        <span class="text-slate-300 shrink-0 hidden" id="bc-section-sep">/</span>
+        <span class="text-indigo-700 font-semibold shrink-0 truncate max-w-[140px] md:max-w-[180px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100 hidden" id="bc-section">1-1. 세 가지 전통</span>
+        <span class="text-slate-300 shrink-0">/</span>
+        <span class="text-slate-900 font-bold truncate max-w-[140px] md:max-w-none" id="bc-title">1.시민성 전달 모형</span>
+        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
+      </div>
     </div>
 
     <div class="flex items-center gap-2 shrink-0">
       <div class="hidden xl:flex items-center gap-1.5 text-[11px] text-slate-400">
+        <span class="px-1.5 py-0.5 bg-blue-50 text-blue-800 border border-blue-200 rounded font-semibold cursor-pointer hover:bg-blue-100" id="hint-toggle-sidebar" title="목차 사이드바를 접거나 펼칩니다">[Ctrl+B] 목차</span>
         <span class="px-1.5 py-0.5 bg-lime-50 text-lime-800 border border-lime-200 rounded font-semibold" title="본문 글자 드래그 후 [M]을 누르면 테이프가 붙습니다">[드래그+M] 추가</span>
         <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-semibold" title="테이프 위에서 마우스 우클릭하거나 Option/Cmd+클릭하면 삭제됩니다">[우클릭] 테이프 삭제</span>
         <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded font-semibold" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 모드로 전환합니다">[I] 작성 모드</span>
@@ -415,7 +438,12 @@
     <div class="p-3 border-b border-border bg-slate-50/50 flex flex-col gap-2">
       <div class="flex items-center justify-between">
         <span class="font-bold text-xs text-slate-800" id="sidebar-subject-label">사회과교육론 목차</span>
-        <span class="text-[11px] text-blue-600 font-bold" id="sidebar-topic-count">99개 주제</span>
+        <div class="flex items-center gap-1.5">
+          <span class="text-[11px] text-blue-600 font-bold" id="sidebar-topic-count">99개 주제</span>
+          <button id="btn-collapse-sidebar" class="hidden md:flex items-center justify-center w-6 h-6 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-200/80 transition-colors cursor-pointer" type="button" title="목차 접기 (Ctrl+B)">
+            <span class="material-symbols-outlined text-[17px]">dock_to_left</span>
+          </button>
+        </div>
       </div>
       <!-- Search Input -->
       <div class="relative flex items-center">
@@ -439,8 +467,14 @@
     </div>
   </aside>
 
+  <!-- Floating Button to Re-Open Sidebar when Collapsed (Desktop) -->
+  <button id="floating-open-sidebar-btn" class="fixed left-3 top-[7.2rem] z-30 hidden items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-md border border-slate-200 shadow-md hover:shadow-lg rounded-full text-xs font-bold text-slate-700 hover:text-blue-700 hover:border-blue-300 transition-all cursor-pointer group" type="button" title="목차 열기 (Ctrl+B)">
+    <span class="material-symbols-outlined text-[17px] text-blue-600 group-hover:scale-110 transition-transform">menu_open</span>
+    <span class="text-[11px]">목차 열기</span>
+  </button>
+
   <!-- MAIN AREA CONTAINER -->
-  <div class="md:pl-sidebar-width flex-1 flex flex-col" style="padding-top: 6.5rem;">
+  <div id="main-content-wrapper" class="md:pl-sidebar-width flex-1 flex flex-col transition-all duration-300 ease-in-out" style="padding-top: 6.5rem;">
     <main class="w-full max-w-7xl mx-auto p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
 
       <!-- LEFT/CENTER: Sub-note Authentic Content & Recall Deck (70%) -->
@@ -737,6 +771,50 @@
         sidebarDrawer.classList.add('-translate-x-full');
         mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
         document.body.classList.remove('overflow-hidden');
+      }
+
+      // Sidebar Collapse / Expand (Desktop & Mobile)
+      const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
+      const btnCollapseSidebar = document.getElementById('btn-collapse-sidebar');
+      const floatingOpenSidebarBtn = document.getElementById('floating-open-sidebar-btn');
+      const sidebarToggleIcon = document.getElementById('sidebar-toggle-icon');
+      const hintToggleSidebar = document.getElementById('hint-toggle-sidebar');
+
+      function updateSidebarToggleUI(isCollapsed) {
+        if (sidebarToggleIcon) {
+          sidebarToggleIcon.textContent = isCollapsed ? 'menu' : 'dock_to_left';
+        }
+        if (btnToggleSidebar) {
+          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 (Ctrl+B)' : '목차 사이드바 접기 (Ctrl+B)';
+        }
+      }
+
+      function toggleDesktopSidebar() {
+        if (window.innerWidth < 768) {
+          if (sidebarDrawer.classList.contains('-translate-x-full')) {
+            openMobileSidebar();
+          } else {
+            closeMobileSidebar();
+          }
+          return;
+        }
+
+        const isCurrentlyCollapsed = document.body.classList.contains('sidebar-collapsed');
+        const willCollapse = !isCurrentlyCollapsed;
+        document.body.classList.toggle('sidebar-collapsed', willCollapse);
+        try {
+          localStorage.setItem('edurecall_sidebar_collapsed', willCollapse ? 'true' : 'false');
+        } catch (e) {}
+        updateSidebarToggleUI(willCollapse);
+        showToast(willCollapse ? '목차 탭을 접었습니다 (Ctrl+B로 다시 열기)' : '목차 탭을 펼쳤습니다', willCollapse ? 'dock_to_left' : 'menu_open');
+      }
+
+      function setSidebarCollapsed(collapsed) {
+        document.body.classList.toggle('sidebar-collapsed', collapsed);
+        try {
+          localStorage.setItem('edurecall_sidebar_collapsed', collapsed ? 'true' : 'false');
+        } catch (e) {}
+        updateSidebarToggleUI(collapsed);
       }
 
       const bcSubject = document.getElementById('bc-subject');
@@ -1998,9 +2076,17 @@
       if (btnMobileToc) btnMobileToc.addEventListener('click', openMobileSidebar);
       if (btnCloseMobileToc) btnCloseMobileToc.addEventListener('click', closeMobileSidebar);
       if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileSidebar);
+      if (btnToggleSidebar) btnToggleSidebar.addEventListener('click', toggleDesktopSidebar);
+      if (btnCollapseSidebar) btnCollapseSidebar.addEventListener('click', () => setSidebarCollapsed(true));
+      if (floatingOpenSidebarBtn) floatingOpenSidebarBtn.addEventListener('click', () => setSidebarCollapsed(false));
+      if (hintToggleSidebar) hintToggleSidebar.addEventListener('click', toggleDesktopSidebar);
       if (bcContainer) {
         bcContainer.addEventListener('click', () => {
-          if (window.innerWidth < 768) openMobileSidebar();
+          if (window.innerWidth < 768) {
+            openMobileSidebar();
+          } else if (document.body.classList.contains('sidebar-collapsed')) {
+            setSidebarCollapsed(false);
+          }
         });
       }
 
@@ -2214,6 +2300,13 @@
           return;
         }
 
+        // Shortcut: [Ctrl+B] / [Cmd+B] Toggle Table of Contents Sidebar
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'b' || e.key === 'B')) {
+          e.preventDefault();
+          toggleDesktopSidebar();
+          return;
+        }
+
         const isTyping = activeEl === essayInput || (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA'));
 
         if (isTyping) {
@@ -2348,6 +2441,15 @@
       updateSubjectCountBadges();
       updateOverallStats();
       setSubjectTab(activeSubject, false);
+
+      try {
+        const savedCollapsed = localStorage.getItem('edurecall_sidebar_collapsed');
+        if (savedCollapsed === 'true' && window.innerWidth >= 768) {
+          document.body.classList.add('sidebar-collapsed');
+          updateSidebarToggleUI(true);
+        }
+      } catch (e) {}
+
       renderTopic(initialIndex);
 
       if (initialTopicId && targetTopic && initialIndex !== 0) {
