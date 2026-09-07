@@ -287,7 +287,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260907_1155"></script>
+  <script src="topics-data.js?v=20260907_1210"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -886,6 +886,16 @@
         return maxPage > 0 ? maxPage : null;
       }
 
+      // Subject last visited topic helper (persists position per subject across tabs)
+      function getSubjectLastTopicId(subj) {
+        if (!subj || subj === 'ALL') return null;
+        try {
+          return localStorage.getItem(`edurecall_last_topic_${subj}`);
+        } catch (e) {
+          return null;
+        }
+      }
+
       // Toast notification helper
       let toastTimer = null;
       function showToast(msg, icon = 'info') {
@@ -1142,6 +1152,9 @@
         try {
           localStorage.setItem('edurecall_last_topic_id', topic.id);
           localStorage.setItem('edurecall_active_subject', activeSubject);
+          if (topic.subject) {
+            localStorage.setItem(`edurecall_last_topic_${topic.subject}`, topic.id);
+          }
           if (window.location.hash !== '#' + topic.id) {
             history.replaceState(null, '', '#' + topic.id);
           }
@@ -1923,14 +1936,61 @@
         });
       }
 
-      function setSubjectTab(subj, autoSelectFirst = false, keepMobileDrawer = false) {
+      function setSubjectTab(subj, autoSelectTopic = false, keepMobileDrawer = false) {
         activeSubject = subj;
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
         updateSubjectTabStyles();
+
+        // If autoSelectTopic is requested, resolve the remembered topic for this subject
+        if (autoSelectTopic) {
+          const q = searchQuery.toLowerCase().trim();
+          const matchIndices = [];
+          TOPICS.forEach((topic, idx) => {
+            const matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
+            const matchQuery = !q || (
+              topic.title.toLowerCase().includes(q) ||
+              (topic.chapter && topic.chapter.toLowerCase().includes(q)) ||
+              (topic.section && topic.section.toLowerCase().includes(q)) ||
+              (topic.targetKeywords && topic.targetKeywords.some(kw => kw.toLowerCase().includes(q)))
+            );
+            if (matchSubj && matchQuery) {
+              matchIndices.push(idx);
+            }
+          });
+
+          if (matchIndices.length > 0) {
+            let targetIndex = -1;
+            if (subj === 'ALL') {
+              // If viewing all subjects, keep current topic if it exists in filtered list
+              if (matchIndices.includes(currentTopicIndex)) {
+                targetIndex = currentTopicIndex;
+              }
+            } else {
+              // Look up previously viewed topic for this specific subject
+              const lastId = getSubjectLastTopicId(subj);
+              if (lastId) {
+                const found = matchIndices.find(idx => TOPICS[idx] && TOPICS[idx].id === lastId);
+                if (found !== undefined) {
+                  targetIndex = found;
+                }
+              }
+            }
+
+            if (targetIndex === -1) {
+              targetIndex = matchIndices[0];
+            }
+
+            // Set currentTopicIndex before renderSidebar so the active section is automatically expanded
+            currentTopicIndex = targetIndex;
+          }
+        }
+
         renderSidebar();
-        if (sidebarTree) sidebarTree.scrollTop = 0;
-        if (autoSelectFirst && filteredIndices.length > 0) {
-          renderTopic(filteredIndices[0], keepMobileDrawer);
+
+        if (autoSelectTopic && filteredIndices.length > 0) {
+          renderTopic(currentTopicIndex, keepMobileDrawer);
+        } else if (sidebarTree) {
+          sidebarTree.scrollTop = 0;
         }
       }
 
