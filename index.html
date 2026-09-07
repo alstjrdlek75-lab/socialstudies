@@ -184,18 +184,18 @@
       line-height: 1.75 !important;
     }
 
-    #subnote-content-container .topic-group .font-bold,
-    #subnote-content-container .topic-group .font-bold span {
+    #subnote-content-container .topic-group > div:first-child .font-bold,
+    #subnote-content-container .topic-group > div:first-child .font-bold span {
       font-size: calc(17px * var(--content-font-scale, 1.15)) !important;
       line-height: 1.5 !important;
     }
 
-    #subnote-content-container .topic-group .font-bold {
+    #subnote-content-container .topic-group > div:first-child .font-bold {
       display: flex !important;
       align-items: flex-start !important;
     }
 
-    #subnote-content-container .topic-group .font-bold span:first-child {
+    #subnote-content-container .topic-group > div:first-child .font-bold span:first-child {
       margin-top: 0.35rem !important;
       flex-shrink: 0 !important;
     }
@@ -233,23 +233,24 @@
       line-height: 1.75 !important;
     }
 
-    /* Exam Year Badges */
+    /* Exam Year Badges (Tiny, Compact & Strictly Inline) */
     .exam-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 1px 6px;
-      margin: 0 4px;
-      font-size: calc(11px * var(--content-font-scale, 1.15)) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      padding: 0 4px !important;
+      margin: 0 3px !important;
+      font-size: 10px !important;
       font-weight: 700 !important;
-      line-height: 1.25 !important;
-      border-radius: 4px;
-      background-color: #fef2f2;
-      color: #dc2626;
-      border: 1px solid #fecaca;
-      vertical-align: 1px;
-      user-select: none;
-      white-space: nowrap;
-      box-shadow: 0 1px 2px rgba(220, 38, 38, 0.06);
+      line-height: 1.2 !important;
+      height: 16px !important;
+      border-radius: 3px !important;
+      background-color: #fef2f2 !important;
+      color: #dc2626 !important;
+      border: 1px solid #fecaca !important;
+      vertical-align: 1px !important;
+      user-select: none !important;
+      white-space: nowrap !important;
+      box-shadow: 0 1px 2px rgba(220, 38, 38, 0.06) !important;
     }
     .exam-badge.short, .exam-badge-short {
       background-color: #eff6ff;
@@ -282,7 +283,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260907_0859"></script>
+  <script src="topics-data.js?v=20260907_0902"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
