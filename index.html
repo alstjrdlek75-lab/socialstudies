@@ -301,9 +301,9 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_1100"></script>
+  <script src="topics-data.js?v=20260908_1155"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260908_1100"></script>
+  <script src="explanations-data.js?v=20260908_1155"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -2848,6 +2848,9 @@
       if (!initialTopicId) {
         initialTopicId = localStorage.getItem('edurecall_last_topic_id') || '';
       }
+      if (initialTopicId === 'LAW-045' || initialTopicId === 'LAW-046') {
+        initialTopicId = 'LAW-044';
+      }
 
       let initialIndex = 0;
       if (initialTopicId) {
@@ -2869,6 +2872,24 @@
 
       // Clean legacy corrupted localStorage entries where header title was split
       try {
+        // Migrate legacy LAW-045/LAW-046 entries to LAW-044
+        ['edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
+          const m46 = localStorage.getItem(`${prefix}_LAW-046`);
+          const m45 = localStorage.getItem(`${prefix}_LAW-045`);
+          const m44 = localStorage.getItem(`${prefix}_LAW-044`);
+          if (!m44 && (m46 || m45)) {
+            localStorage.setItem(`${prefix}_LAW-044`, m46 || m45);
+          }
+          localStorage.removeItem(`${prefix}_LAW-045`);
+          localStorage.removeItem(`${prefix}_LAW-046`);
+        });
+        if (localStorage.getItem('edurecall_last_topic_id') === 'LAW-045' || localStorage.getItem('edurecall_last_topic_id') === 'LAW-046') {
+          localStorage.setItem('edurecall_last_topic_id', 'LAW-044');
+        }
+        if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-045' || localStorage.getItem('edurecall_last_topic_법학') === 'LAW-046') {
+          localStorage.setItem('edurecall_last_topic_법학', 'LAW-044');
+        }
+
         localStorage.removeItem('edurecall_custom_POL-016');
         localStorage.removeItem('edurecall_custom_POL-017');
         localStorage.removeItem('edurecall_custom_POL-024');
