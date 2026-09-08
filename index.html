@@ -348,7 +348,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_2140"></script>
+  <script src="topics-data.js?v=20260908_2150"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260908_1955"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
@@ -1558,7 +1558,7 @@
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
         // Clear any corrupted customHtml that has broken/split group header or stale POL-024/POL-031/POL-032/LAW-066/ECON content
         if (customHtml && (
-          topic.id === 'POL-016' || topic.id === 'POL-017' || topic.id === 'POL-024' || topic.id === 'POL-031' || topic.id === 'POL-032' || topic.id === 'LAW-066' ||
+          topic.id === 'POL-016' || topic.id === 'POL-017' || topic.id === 'POL-024' || topic.id === 'POL-031' || topic.id === 'POL-032' || topic.id === 'LAW-029' || topic.id === 'LAW-030' || topic.id === 'LAW-066' ||
           topic.id === 'ECON-001' || topic.id === 'ECON-002' || topic.id === 'ECON-004' || topic.id === 'ECON-005' || topic.id === 'ECON-007' || topic.id === 'ECON-008' || topic.id === 'ECON-012' || topic.id === 'ECON-013' || topic.id === 'ECON-014' || topic.id === 'ECON-015' || topic.id === 'ECON-018' || topic.id === 'ECON-019' ||
           (topic.id === 'ECON-009' && (customHtml.includes('bg-amber-50') || customHtml.includes('로렌츠') || !customHtml.includes('recall-item'))) ||
           (topic.id === 'ECON-010' && !customHtml.includes('[Case 1]')) ||
@@ -3201,6 +3201,9 @@
       if (initialTopicId === 'LAW-045' || initialTopicId === 'LAW-046') {
         initialTopicId = 'LAW-044';
       }
+      if (initialTopicId === 'LAW-030') {
+        initialTopicId = 'LAW-029';
+      }
 
       let initialIndex = 0;
       if (initialTopicId) {
@@ -3239,6 +3242,24 @@
         if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-045' || localStorage.getItem('edurecall_last_topic_법학') === 'LAW-046') {
           localStorage.setItem('edurecall_last_topic_법학', 'LAW-044');
         }
+
+        // Migrate legacy LAW-030 entries to LAW-029
+        ['edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
+          const m30 = localStorage.getItem(`${prefix}_LAW-030`);
+          const m29 = localStorage.getItem(`${prefix}_LAW-029`);
+          if (!m29 && m30) {
+            localStorage.setItem(`${prefix}_LAW-029`, m30);
+          }
+          localStorage.removeItem(`${prefix}_LAW-030`);
+        });
+        if (localStorage.getItem('edurecall_last_topic_id') === 'LAW-030') {
+          localStorage.setItem('edurecall_last_topic_id', 'LAW-029');
+        }
+        if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-030') {
+          localStorage.setItem('edurecall_last_topic_법학', 'LAW-029');
+        }
+        localStorage.removeItem('edurecall_custom_LAW-029');
+        localStorage.removeItem('edurecall_custom_LAW-030');
 
         localStorage.removeItem('edurecall_custom_POL-016');
         localStorage.removeItem('edurecall_custom_POL-017');
