@@ -1,62 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
     </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
   </defs>
 
-  <!-- Header -->
-  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">외환시장 균형과 환율 변동 및 J-커브 효과</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <!-- 1. Header Area -->
+  <rect x="0" y="0" width="980" height="48" fill="#f8fafc" />
+  <text x="490" y="31" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">외환시장 균형과 환율 변동 및 J-커브 효과</text>
+  <line x1="0" y1="48" x2="980" y2="48" stroke="#e2e8f0" stroke-width="1.5" />
 
-  <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 마셜-러너 조건 만족 시 환율 상승(평가절하) ➔ 단기 경상수지 악화 ➔ 장기 경상수지 대폭 개선(J-Curve)</text>
+  <!-- 2. Subtitle Banner -->
+  <rect x="110" y="58" width="760" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="490" y="75" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">
+    • 환율 상승(원화 절하) 시 단기에는 계약 가격 고정으로 경상수지 악화 ➔ 장기에는 수출입 수량 조정으로 흑자 반등 (J-Curve)
+  </text>
 
-  <!-- Left Plot: Forex Market Equilibrium -->
-  <!-- Origin: (80, 460) -->
-  <line x1="80" y1="460" x2="480" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="80" y1="460" x2="80" y2="105" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="485" y="465" font-size="11" font-weight="bold" fill="#475569">외환 거래량 (Q)</text>
-  <text x="80" y="98" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">원/달러 환율 (E)</text>
-  <text x="68" y="472" font-size="10" fill="#94a3b8">0</text>
+  <!-- ==================== LEFT PLOT: 외환시장 균형 (X: 20 ~ 460) ==================== -->
+  <!-- Left Axes: Origin (90, 460) -->
+  <line x1="90" y1="460" x2="450" y2="460" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <line x1="90" y1="460" x2="90" y2="95" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <text x="450" y="480" font-size="12" font-weight="bold" fill="#334155" text-anchor="end">외환 거래량 (Q)</text>
+  <text x="90" y="84" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">원/달러 환율 (E)</text>
+  <text x="76" y="474" font-size="11" fill="#94a3b8">0</text>
 
-  <!-- Forex Supply S$ (Export revenue, capital inflow): upward sloping -->
-  <line x1="120" y1="410" x2="420" y2="150" stroke="#16a34a" stroke-width="3" />
-  <text x="425" y="155" font-size="12" font-weight="bold" fill="#16a34a">S$ (외환 공급: 수출, 자본유입)</text>
+  <!-- Forex Supply S (외환 공급: 수출 대금 수취, 외국인 국내 투자) -->
+  <line x1="130" y1="410" x2="390" y2="150" stroke="#16a34a" stroke-width="3.5" />
+  <g transform="translate(250, 118)" filter="url(#shadow)">
+    <rect x="0" y="0" width="180" height="24" rx="5" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" />
+    <text x="90" y="16" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">외환 공급 S (수출, 외화유입)</text>
+  </g>
 
-  <!-- Forex Demand D$ (Import payment, capital outflow): downward sloping -->
-  <line x1="120" y1="150" x2="420" y2="410" stroke="#2563eb" stroke-width="3" />
-  <text x="425" y="415" font-size="12" font-weight="bold" fill="#2563eb">D$ (외환 수요: 수입, 대외송금)</text>
+  <!-- Forex Demand D (외환 수요: 수입 대금 결제, 대외 송금 및 해외 투자) -->
+  <line x1="130" y1="150" x2="390" y2="410" stroke="#2563eb" stroke-width="3.5" />
+  <g transform="translate(250, 418)" filter="url(#shadow)">
+    <rect x="0" y="0" width="180" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2" />
+    <text x="90" y="16" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">외환 수요 D (수입, 외화유출)</text>
+  </g>
 
-  <!-- Equilibrium E0 (270, 280) -->
-  <circle cx="270" cy="280" r="5.5" fill="#1d4ed8" />
-  <line x1="80" y1="280" x2="270" y2="280" stroke="#1d4ed8" stroke-dasharray="3,3" />
-  <line x1="270" y1="280" x2="270" y2="460" stroke="#1d4ed8" stroke-dasharray="3,3" />
-  <text x="50" y="284" font-size="12" font-weight="bold" fill="#1d4ed8">E0 (균형환율)</text>
-  <text x="270" y="478" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Q0</text>
+  <!-- Equilibrium Point E0 (260, 280) -->
+  <circle cx="260" cy="280" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <line x1="90" y1="280" x2="260" y2="280" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.5" />
+  <line x1="260" y1="280" x2="260" y2="460" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.5" />
 
-  <!-- Right Plot: J-Curve Effect -->
-  <!-- Origin: (540, 320) [Horizontal line is trade balance = 0] -->
-  <line x1="540" y1="320" x2="880" y2="320" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="540" y1="460" x2="540" y2="105" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="885" y="324" font-size="11" font-weight="bold" fill="#475569">시간 경과 (t)</text>
-  <text x="540" y="98" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">경상수지 (NX = X - M)</text>
-  <text x="520" y="324" font-size="11" font-weight="bold" fill="#475569">0 (균형)</text>
-  <text x="510" y="200" font-size="11" font-weight="bold" fill="#16a34a">흑자(+)</text>
-  <text x="510" y="420" font-size="11" font-weight="bold" fill="#dc2626">적자(-)</text>
+  <!-- E0 Badge on Y-axis -->
+  <rect x="20" y="269" width="65" height="22" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+  <text x="52" y="284" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">E0 (균형)</text>
 
-  <!-- Devaluation occurs at t0 (580, 320) -->
-  <circle cx="580" cy="320" r="4" fill="#dc2626" />
-  <text x="580" y="305" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">t0 (환율 급등)</text>
+  <!-- Q0 Badge on X-axis -->
+  <rect x="240" y="468" width="40" height="22" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+  <text x="260" y="483" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Q0</text>
 
-  <!-- J-Curve trajectory: dips below 0 (short-run price rigidity), then rises above 0 (long-run volume effect) -->
-  <!-- Starts at (580, 320) -> down to (630, 420) -> crosses at (700, 320) -> up to (860, 150) -->
-  <path d="M 540 320 L 580 320 Q 620 440, 680 340 T 860 160" fill="none" stroke="#dc2626" stroke-width="3.5" />
-  <text x="865" y="165" font-size="13" font-weight="bold" fill="#dc2626">J-Curve</text>
+  <g transform="translate(165, 255)" filter="url(#shadow)">
+    <rect x="0" y="0" width="85" height="22" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1" />
+    <text x="42" y="15" font-size="10.5" font-weight="bold" fill="#1d4ed8" text-anchor="middle">균형점 (E0)</text>
+  </g>
 
-  <rect x="620" y="440" width="240" height="40" rx="4" fill="#fef2f2" stroke="#fecaca" />
-  <text x="740" y="457" font-size="10.5" font-weight="bold" fill="#991b1b" text-anchor="middle">단기: 수량조정 지연으로 악화</text>
-  <text x="740" y="473" font-size="10.5" font-weight="bold" fill="#166534" text-anchor="middle">장기: 마셜-러너 조건으로 흑자 전환</text>
+  <!-- ==================== RIGHT PLOT: J-커브 효과 (X: 510 ~ 960) ==================== -->
+  <!-- Zero Trade Balance Line (NX = 0): y = 300 -->
+  <line x1="540" y1="300" x2="920" y2="300" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <line x1="570" y1="460" x2="570" y2="95" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <text x="925" y="304" font-size="12" font-weight="bold" fill="#334155" text-anchor="start">시간 경과 (t)</text>
+  <text x="570" y="84" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">경상수지 (NX = X - M)</text>
+
+  <!-- Axis zone labels (placed to the left of the vertical axis, completely inside 505~565) -->
+  <rect x="502" y="170" width="62" height="22" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+  <text x="533" y="185" font-size="10.5" font-weight="bold" fill="#166534" text-anchor="middle">흑자 (+)</text>
+
+  <rect x="502" y="289" width="62" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="533" y="304" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">0 (균형)</text>
+
+  <rect x="502" y="390" width="62" height="22" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+  <text x="533" y="405" font-size="10.5" font-weight="bold" fill="#dc2626" text-anchor="middle">적자 (-)</text>
+
+  <!-- Devaluation Event at t0 (610, 300) -->
+  <circle cx="610" cy="300" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2" />
+  <line x1="610" y1="280" x2="610" y2="294" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="2,2" />
+  <g transform="translate(555, 256)" filter="url(#shadow)">
+    <rect x="0" y="0" width="115" height="24" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2" />
+    <text x="57" y="16" font-size="10.5" font-weight="bold" fill="#dc2626" text-anchor="middle">t0 (환율 급등 시점)</text>
+  </g>
+
+  <!-- J-Curve Trajectory -->
+  <!-- Flat before t0, then drops to (685, 415), crosses at (770, 300), rises to (910, 150) -->
+  <path d="M 570 300 L 610 300 C 640 300, 655 415, 685 415 C 720 415, 745 320, 770 300 C 800 270, 860 190, 910 150" fill="none" stroke="#dc2626" stroke-width="3.5" />
+  
+  <g transform="translate(850, 122)" filter="url(#shadow)">
+    <rect x="0" y="0" width="95" height="24" rx="5" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" />
+    <text x="47" y="16" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">J-커브 곡선</text>
+  </g>
+
+  <!-- Phase 1 (단기): Trough Callout Card -->
+  <g transform="translate(605, 432)" filter="url(#shadow)">
+    <rect x="0" y="0" width="195" height="38" rx="6" fill="#fff5f5" stroke="#fecaca" stroke-width="1.2" />
+    <text x="10" y="16" font-size="10.5" font-weight="bold" fill="#991b1b">① [단기] 경상수지 악화 (적자 심화)</text>
+    <text x="10" y="30" font-size="9.5" fill="#b91c1c">• 계약가격 고정 &amp; 수량조정 시차 지연</text>
+  </g>
+
+  <!-- Phase 2 (장기): Expansion Callout Card -->
+  <g transform="translate(755, 205)" filter="url(#shadow)">
+    <rect x="0" y="0" width="195" height="38" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" />
+    <text x="10" y="16" font-size="10.5" font-weight="bold" fill="#166534">② [장기] 경상수지 대폭 개선 (흑자)</text>
+    <text x="10" y="30" font-size="9.5" fill="#15803d">• 마셜-러너 조건 충족 (|ηx| + |ηm| &gt; 1)</text>
+  </g>
+
+  <!-- 3. Bottom Summary Banner -->
+  <rect x="70" y="502" width="840" height="34" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="490" y="523" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    💡 마셜-러너 조건(Marshall-Lerner Condition): 환율 상승이 경상수지를 개선하기 위해서는 수출입 수요의 가격탄력성 합이 1보다 커야 함 (|ηx| + |ηm| &gt; 1)
+  </text>
 </svg>
