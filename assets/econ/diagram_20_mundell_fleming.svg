@@ -1,27 +1,163 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
-  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">먼델-플레밍 모형 (IS-LM-BP 개방거시모형)</text>
-  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
-  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
-  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">국민소득 (Y)</text>
-  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">이자율 (r)</text>
-  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
-  <!-- Horizontal BP curve (perfect capital mobility) -->
-  <line x1="100" y1="230" x2="680" y2="230" stroke="#dc2626" stroke-width="3" />
-  <text x="690" y="235" font-size="14" font-weight="bold" fill="#dc2626">BP 곡선 (r = rf, 완전자본이동)</text>
-  <text x="50" y="235" font-size="13" font-weight="bold" fill="#dc2626">rf (국제금리)</text>
-  <!-- IS curve -->
-  <line x1="160" y1="120" x2="620" y2="340" stroke="#2563eb" stroke-width="3" />
-  <text x="630" y="345" font-size="14" font-weight="bold" fill="#2563eb">IS 곡선</text>
-  <!-- LM curve -->
-  <line x1="160" y1="340" x2="620" y2="120" stroke="#059669" stroke-width="3" />
-  <text x="630" y="125" font-size="14" font-weight="bold" fill="#059669">LM 곡선</text>
-  <!-- Policy summary table -->
-  <rect x="140" y="280" width="220" height="95" rx="6" fill="#f8fafc" stroke="#94a3b8" />
-  <text x="150" y="305" font-size="12" font-weight="bold" fill="#1e40af">변동환율제도:</text>
-  <text x="150" y="325" font-size="12" fill="#334155">• 재정정책: 완전 무력 (순수출 구축)</text>
-  <text x="150" y="345" font-size="12" font-weight="bold" fill="#059669">• 통화정책: 매우 강력 (환율상승)</text>
-  <rect x="420" y="280" width="220" height="95" rx="6" fill="#f8fafc" stroke="#94a3b8" />
-  <text x="430" y="305" font-size="12" font-weight="bold" fill="#dc2626">고정환율제도:</text>
-  <text x="430" y="325" font-size="12" font-weight="bold" fill="#059669">• 재정정책: 매우 강력 (통화량 동조)</text>
-  <text x="430" y="345" font-size="12" fill="#334155">• 통화정책: 완전 무력 (환율방어)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="55" fill="#f8fafc" />
+  <text x="500" y="35" font-size="19" font-weight="bold" text-anchor="middle" fill="#0f172a">먼델-플레밍 모형 (IS-LM-BP): 환율제도별 거시정책 효과 비교</text>
+  <line x1="0" y1="55" x2="1000" y2="55" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Quadrant 1: 변동환율제 하 재정정책 vs 통화정책 (좌측: 변동환율제) -->
+  <g transform="translate(25, 70)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="0" y="0" width="465" height="36" rx="10" fill="#eff6ff" />
+    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#eff6ff" />
+    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#1d4ed8">[변동환율제] 통화정책 절대 효과적 / 재정정책 완전 무력</text>
+
+    <!-- Subtitle badge -->
+    <rect x="15" y="42" width="435" height="22" rx="4" fill="#dbeafe" stroke="#bfdbfe" />
+    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e40af">재정확대: 이자율↑ ➔ 자본유입 ➔ 환율하락(절상) ➔ 순수출↓ ➔ IS 원위치(무력)</text>
+
+    <!-- Axes: Origin (65, 285) -->
+    <line x1="65" y1="285" x2="425" y2="285" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="65" y1="285" x2="65" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="430" y="289" font-size="11" font-weight="bold" fill="#475569">소득(Y)</text>
+    <text x="65" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">국내이자율(r)</text>
+
+    <!-- Perfect Capital Mobility BP line: horizontal at rw (y=175) -->
+    <line x1="65" y1="175" x2="410" y2="175" stroke="#dc2626" stroke-width="2.5" />
+    <text x="415" y="179" font-size="11" font-weight="bold" fill="#dc2626">BP = 0 (r = rw)</text>
+
+    <!-- LM0: y = -0.6*x + 310 -->
+    <line x1="90" y1="256" x2="330" y2="112" stroke="#16a34a" stroke-width="2.5" />
+    <text x="335" y="112" font-size="11" font-weight="bold" fill="#16a34a">LM0</text>
+
+    <!-- Shifted LM1 (Monetary expansion): y = -0.6*x + 350 -->
+    <line x1="150" y1="260" x2="390" y2="116" stroke="#15803d" stroke-width="2.5" stroke-dasharray="4,3" />
+    <text x="395" y="116" font-size="11" font-weight="bold" fill="#15803d">LM1</text>
+
+    <!-- IS0: y = 0.6*x + 55 -->
+    <!-- Intersection with BP(175): 0.6*x + 55 = 175 => x = 200, y = 175 -->
+    <line x1="90" y1="109" x2="330" y2="253" stroke="#2563eb" stroke-width="2.5" />
+    <text x="335" y="255" font-size="11" font-weight="bold" fill="#2563eb">IS0</text>
+
+    <!-- Shifted IS1 (Depreciation expands net export): y = 0.6*x + 15 -->
+    <!-- Intersection with BP(175): 0.6*x + 15 = 175 => x = 267 -->
+    <line x1="150" y1="105" x2="390" y2="249" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="4,3" />
+    <text x="395" y="250" font-size="11" font-weight="bold" fill="#1d4ed8">IS1 (환율상승 NX↑)</text>
+
+    <!-- Equilibrium E0 and E1 -->
+    <circle cx="200" cy="175" r="4.5" fill="#2563eb" />
+    <circle cx="267" cy="175" r="4.5" fill="#16a34a" />
+    <line x1="200" y1="175" x2="200" y2="285" stroke="#2563eb" stroke-dasharray="2,2" />
+    <line x1="267" y1="175" x2="267" y2="285" stroke="#16a34a" stroke-dasharray="2,2" />
+    <text x="200" y="300" font-size="10.5" font-weight="bold" fill="#2563eb" text-anchor="middle">Y0</text>
+    <text x="267" y="300" font-size="10.5" font-weight="bold" fill="#16a34a" text-anchor="middle">Y1 (소득증대!)</text>
+    <text x="185" y="165" font-size="11" font-weight="bold" fill="#2563eb">E0</text>
+    <text x="275" y="165" font-size="11" font-weight="bold" fill="#16a34a">E1</text>
+  </g>
+
+  <!-- Quadrant 2: 고정환율제 하 재정정책 vs 통화정책 (우측: 고정환율제) -->
+  <g transform="translate(510, 70)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="0" y="0" width="465" height="36" rx="10" fill="#fef3c7" />
+    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#fef3c7" />
+    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#b45309">[고정환율제] 재정정책 절대 효과적 / 통화정책 완전 무력</text>
+
+    <!-- Subtitle badge -->
+    <rect x="15" y="42" width="435" height="22" rx="4" fill="#fef9c3" stroke="#fde047" />
+    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#854d0e">재정확대: IS우측 ➔ r↑ ➔ 외환유입 ➔ 환율방어(통화공급↑) ➔ LM우측 동조 ➔ Y 극대</text>
+
+    <!-- Axes: Origin (65, 285) -->
+    <line x1="65" y1="285" x2="425" y2="285" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="65" y1="285" x2="65" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="430" y="289" font-size="11" font-weight="bold" fill="#475569">소득(Y)</text>
+    <text x="65" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">국내이자율(r)</text>
+
+    <!-- BP line: r = rw (y=175) -->
+    <line x1="65" y1="175" x2="410" y2="175" stroke="#dc2626" stroke-width="2.5" />
+    <text x="415" y="179" font-size="11" font-weight="bold" fill="#dc2626">BP = 0 (r = rw)</text>
+
+    <!-- LM0: y = -0.6*x + 310 -->
+    <line x1="90" y1="256" x2="330" y2="112" stroke="#16a34a" stroke-width="2.5" />
+    <text x="335" y="112" font-size="11" font-weight="bold" fill="#16a34a">LM0</text>
+
+    <!-- LM1 (Money expands to defend peg): y = -0.6*x + 350 -->
+    <line x1="150" y1="260" x2="390" y2="116" stroke="#15803d" stroke-width="2.5" stroke-dasharray="4,3" />
+    <text x="395" y="116" font-size="11" font-weight="bold" fill="#15803d">LM1 (통화량↑ 동조)</text>
+
+    <!-- IS0: y = 0.6*x + 55 -->
+    <line x1="90" y1="109" x2="330" y2="253" stroke="#2563eb" stroke-width="2.5" />
+    <text x="335" y="255" font-size="11" font-weight="bold" fill="#2563eb">IS0</text>
+
+    <!-- IS1 (Fiscal expansion ΔG): y = 0.6*x + 15 -->
+    <line x1="150" y1="105" x2="390" y2="249" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="4,3" />
+    <text x="395" y="250" font-size="11" font-weight="bold" fill="#1d4ed8">IS1 (재정확대 ΔG)</text>
+
+    <!-- Equilibrium Points E0 and E1 -->
+    <circle cx="200" cy="175" r="4.5" fill="#2563eb" />
+    <circle cx="267" cy="175" r="4.5" fill="#d97706" />
+    <line x1="200" y1="175" x2="200" y2="285" stroke="#2563eb" stroke-dasharray="2,2" />
+    <line x1="267" y1="175" x2="267" y2="285" stroke="#d97706" stroke-dasharray="2,2" />
+    <text x="200" y="300" font-size="10.5" font-weight="bold" fill="#2563eb" text-anchor="middle">Y0</text>
+    <text x="267" y="300" font-size="10.5" font-weight="bold" fill="#d97706" text-anchor="middle">Y1 (재정정책 극대화!)</text>
+    <text x="185" y="165" font-size="11" font-weight="bold" fill="#2563eb">E0</text>
+    <text x="275" y="165" font-size="11" font-weight="bold" fill="#d97706">E1</text>
+  </g>
+
+  <!-- Bottom Panel: 2x2 Policy Effectiveness Matrix (하단 종합 비교 매트릭스) -->
+  <g transform="translate(25, 435)">
+    <rect x="0" y="0" width="950" height="340" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <text x="475" y="32" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">먼델-플레밍 모형 (완전 자본이동 가정) 2×2 정책효과 종합 비교표</text>
+    <line x1="20" y1="48" x2="930" y2="48" stroke="#e2e8f0" stroke-width="1.5" />
+
+    <!-- Table -->
+    <g transform="translate(35, 65)">
+      <!-- Header row -->
+      <rect x="0" y="0" width="880" height="38" fill="#e2e8f0" rx="5" />
+      <text x="120" y="24" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">환율 제도</text>
+      <text x="350" y="24" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">재정정책 (확대 재정 G↑)</text>
+      <text x="650" y="24" font-size="13" font-weight="bold" fill="#15803d" text-anchor="middle">통화정책 (확대 통화 M↑)</text>
+
+      <!-- Row 1: 변동환율제 -->
+      <rect x="0" y="46" width="880" height="100" fill="#eff6ff" rx="5" stroke="#bfdbfe" />
+      <text x="120" y="90" font-size="14" font-weight="bold" fill="#1d4ed8" text-anchor="middle">변동환율제</text>
+      <text x="120" y="112" font-size="11" fill="#475569" text-anchor="middle">(자율 환율결정)</text>
+
+      <g transform="translate(250, 60)">
+        <text x="0" y="18" font-size="14" font-weight="bold" fill="#dc2626">❌ 완전 무력 (소득 Y 불변)</text>
+        <text x="0" y="40" font-size="11.5" fill="#334155">• G↑ ➔ r↑ ➔ 외환유입 ➔ 환율하락(원화절상)</text>
+        <text x="0" y="60" font-size="11.5" fill="#334155">• 순수출 감소(NX↓)가 재정확대를 100% 상쇄</text>
+      </g>
+
+      <g transform="translate(540, 60)">
+        <text x="0" y="18" font-size="14" font-weight="bold" fill="#16a34a">⭕ 절대적 효과 (소득 Y 극대)</text>
+        <text x="0" y="40" font-size="11.5" fill="#334155">• M↑ ➔ r↓ ➔ 외환유출 ➔ 환율상승(원화절하)</text>
+        <text x="0" y="60" font-size="11.5" fill="#334155">• 순수출 대폭 증가(NX↑) ➔ IS우측 추가 이동</text>
+      </g>
+
+      <!-- Row 2: 고정환율제 -->
+      <rect x="0" y="154" width="880" height="100" fill="#fef9c3" rx="5" stroke="#fde047" />
+      <text x="120" y="198" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">고정환율제</text>
+      <text x="120" y="220" font-size="11" fill="#475569" text-anchor="middle">(환율방어 개입)</text>
+
+      <g transform="translate(250, 168)">
+        <text x="0" y="18" font-size="14" font-weight="bold" fill="#16a34a">⭕ 절대적 효과 (소득 Y 극대)</text>
+        <text x="0" y="40" font-size="11.5" fill="#334155">• G↑ ➔ r↑ ➔ 외환유입 ➔ 절상압력 방어</text>
+        <text x="0" y="60" font-size="11.5" fill="#334155">• 외환매입(통화공급 M↑ 자동동조) ➔ LM 우측 이동</text>
+      </g>
+
+      <g transform="translate(540, 168)">
+        <text x="0" y="18" font-size="14" font-weight="bold" fill="#dc2626">❌ 완전 무력 (소득 Y 불변)</text>
+        <text x="0" y="40" font-size="11.5" fill="#334155">• M↑ ➔ r↓ ➔ 외환유출 ➔ 절하압력 방어</text>
+        <text x="0" y="60" font-size="11.5" fill="#334155">• 외환매도(통화환수 M↓ 강제) ➔ LM 원위치</text>
+      </g>
+    </g>
+  </g>
 </svg>

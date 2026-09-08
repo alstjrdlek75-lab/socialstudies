@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
+  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">수요의 가격탄력성 (Ep)과 기업의 총수입 (TR)</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Subtitle Badge -->
+  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• Ep &gt; 1 (탄력적): 가격 인하 시 TR 증가 | Ep = 1 (단위탄력적): TR 극대화 | Ep &lt; 1 (비탄력적): 가격 인하 시 TR 감소</text>
+
+  <!-- Upper Plot: Demand Curve -->
+  <!-- Origin: (100, 260) -->
+  <line x1="100" y1="260" x2="520" y2="260" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+  <line x1="100" y1="260" x2="100" y2="95" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+  <text x="525" y="264" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
+  <text x="100" y="88" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">가격(P)</text>
+
+  <!-- Demand Line: (100, 110) to (480, 260) -->
+  <line x1="100" y1="110" x2="480" y2="260" stroke="#2563eb" stroke-width="3" />
+  <text x="490" y="255" font-size="12" font-weight="bold" fill="#2563eb">D</text>
+
+  <!-- Midpoint (Unit Elastic): (290, 185) -->
+  <circle cx="290" cy="185" r="5" fill="#dc2626" />
+  <line x1="290" y1="185" x2="290" y2="500" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.5" />
+  <text x="300" y="180" font-size="12" font-weight="bold" fill="#dc2626">Ep = 1 (중앙점: 단위탄력적)</text>
+
+  <!-- Elastic region -->
+  <text x="180" y="140" font-size="11.5" font-weight="bold" fill="#1d4ed8">Ep &gt; 1 (탄력적 구간)</text>
+  <!-- Inelastic region -->
+  <text x="360" y="225" font-size="11.5" font-weight="bold" fill="#1d4ed8">Ep &lt; 1 (비탄력적 구간)</text>
+
+  <!-- Lower Plot: Total Revenue (TR = P x Q) -->
+  <!-- Origin: (100, 500) -->
+  <line x1="100" y1="500" x2="520" y2="500" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+  <line x1="100" y1="500" x2="100" y2="330" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+  <text x="525" y="504" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
+  <text x="100" y="322" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">총수입(TR)</text>
+
+  <!-- TR Parabola: starts (100, 500), peak at (290, 350), ends at (480, 500) -->
+  <path d="M 100 500 Q 290 200, 480 500" fill="none" stroke="#16a34a" stroke-width="3" />
+  <circle cx="290" cy="350" r="5" fill="#16a34a" />
+  <text x="300" y="355" font-size="12" font-weight="bold" fill="#15803d">TR 극대점 (MR = 0)</text>
+
+  <!-- Right Summary Box -->
+  <rect x="560" y="110" width="330" height="370" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="725" y="140" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">탄력성과 기업의 가격전략 요약</text>
+  <line x1="580" y1="155" x2="870" y2="155" stroke="#e2e8f0" stroke-width="1" />
+
+  <text x="580" y="185" font-size="12" font-weight="bold" fill="#1d4ed8">1. Ep &gt; 1 (탄력적: 사치품, 대체재 많음)</text>
+  <text x="595" y="208" font-size="11" fill="#334155">• 가격 인하(P↓) ➔ 수량 대폭 증가(Q↑↑) ➔ TR 증가</text>
+  <text x="595" y="228" font-size="11" fill="#334155">• 가격 인상(P↑) ➔ 수량 대폭 감소(Q↓↓) ➔ TR 감소</text>
+
+  <text x="580" y="265" font-size="12" font-weight="bold" fill="#dc2626">2. Ep = 1 (단위탄력적)</text>
+  <text x="595" y="288" font-size="11" fill="#334155">• 가격 변동률 = 수요량 변동률 ➔ TR 극대화 불변</text>
+
+  <text x="580" y="325" font-size="12" font-weight="bold" fill="#15803d">3. Ep &lt; 1 (비탄력적: 필수품, 대체재 적음)</text>
+  <text x="595" y="348" font-size="11" fill="#334155">• 가격 인상(P↑) ➔ 수량 미세 감소(Q↓) ➔ TR 증가</text>
+  <text x="595" y="368" font-size="11" fill="#334155">• 가격 인하(P↓) ➔ 수량 미세 증가(Q↑) ➔ TR 감소</text>
+
+  <rect x="580" y="395" width="290" height="65" rx="5" fill="#eff6ff" stroke="#bfdbfe" />
+  <text x="725" y="420" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e40af">농부의 역설 (풍년의 역설):</text>
+  <text x="725" y="442" font-size="10.5" text-anchor="middle" fill="#1e40af">농산물은 Ep &lt; 1이므로 풍년 시 공급증가(P폭락)로</text>
+  <text x="725" y="458" font-size="10.5" text-anchor="middle" fill="#1e40af">오히려 농가 총수입(TR)이 감소함!</text>
+</svg>

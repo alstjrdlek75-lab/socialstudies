@@ -1,25 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
-  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">케인즈 45도선 균형모형과 인플레·디플레 갭 (Keynesian Cross)</text>
-  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
-  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
-  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">국민소득, 총공급 (Y)</text>
-  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">총지출 (AE)</text>
-  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
-  <!-- 45-degree line -->
-  <line x1="100" y1="390" x2="680" y2="80" stroke="#475569" stroke-width="2" stroke-dasharray="6,4" />
-  <text x="690" y="85" font-size="14" font-weight="bold" fill="#475569">Y = AE (45°선)</text>
-  <!-- Aggregate Expenditure Curve AE -->
-  <line x1="100" y1="280" x2="680" y2="120" stroke="#2563eb" stroke-width="3" />
-  <text x="690" y="125" font-size="14" font-weight="bold" fill="#2563eb">AE = C + I + G + NX</text>
-  <!-- Equilibrium Point E -->
-  <!-- 45 line: Y = 390 - (310/580)*X. AE: AE = 280 - (160/580)*X. Intersection around X=420, Y=220 -->
-  <circle cx="430" cy="214" r="6" fill="#2563eb" />
-  <line x1="430" y1="390" x2="430" y2="214" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
-  <text x="410" y="410" font-size="14" font-weight="bold" fill="#2563eb">Y* (균형국민소득)</text>
-  <text x="445" y="210" font-size="13" font-weight="bold" fill="#2563eb">균형점 E (재고변동 = 0)</text>
-  <!-- Full Employment Yf < Y* (Deflationary gap) or Yf > Y* -->
-  <line x1="550" y1="390" x2="550" y2="150" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" />
-  <text x="535" y="410" font-size="13" font-weight="bold" fill="#dc2626">Yf (완전고용)</text>
-  <line x1="550" y1="150" x2="550" y2="156" stroke="#dc2626" stroke-width="3" />
-  <text x="560" y="170" font-size="12" font-weight="bold" fill="#dc2626">디플레이션 갭 (경기침체 갭)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
+  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">케인지언 크로스: 45도선 균형국민소득 결정 모형</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Subtitle Badge -->
+  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 균형 조건: 총지출(AE) = 총생산(Y) ➔ 독립지출 증가(ΔG) 시 승수효과로 국민소득 대폭 증가(ΔY &gt; ΔG)</text>
+
+  <!-- Axes: Origin (100, 460) -->
+  <line x1="100" y1="460" x2="800" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
+  <text x="810" y="465" font-size="12" font-weight="bold" fill="#475569">총생산, 국민소득 (Y)</text>
+  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">총지출 (AE = C + I + G)</text>
+  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+
+  <!-- 45-degree Reference Line: Y = AE -->
+  <!-- from (100, 460) to (460, 100) -> slope 1.0 (inverted y = -1*x + 560) -->
+  <line x1="100" y1="460" x2="480" y2="80" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,4" />
+  <text x="490" y="85" font-size="13" font-weight="bold" fill="#dc2626">45°선 (Y = AE)</text>
+
+  <!-- AE0: AE = A0 + c*Y. Slope c=0.5. At x=100: y=310. At x=700: y=10) -->
+  <!-- Equation: y = -0.5*(x - 100) + 310 = -0.5*x + 360 -->
+  <!-- Intersection with 45 line: -0.5*x + 360 = -1.0*x + 560 => 0.5*x = 200 => x0 = 400, y0 = 160 -->
+  <line x1="100" y1="310" x2="650" y2="85" stroke="#2563eb" stroke-width="3" />
+  <text x="660" y="90" font-size="12.5" font-weight="bold" fill="#2563eb">AE0 = C + I + G0 (기울기 = MPC)</text>
+
+  <!-- Shifted AE1 (Increase in G by ΔG = 40 px in y): y = -0.5*x + 320 -->
+  <!-- Intersection with 45 line: -0.5*x + 320 = -1.0*x + 560 => 0.5*x = 240 => x1 = 480, y1 = 80 -->
+  <line x1="100" y1="270" x2="600" y2="70" stroke="#16a34a" stroke-width="3" stroke-dasharray="5,3" />
+  <text x="610" y="70" font-size="12.5" font-weight="bold" fill="#16a34a">AE1 = C + I + G1 (정부지출 확대)</text>
+
+  <!-- Equilibrium Points -->
+  <!-- E0 (400, 160) -->
+  <circle cx="400" cy="160" r="5.5" fill="#2563eb" />
+  <line x1="400" y1="160" x2="400" y2="460" stroke="#2563eb" stroke-dasharray="3,3" />
+  <text x="400" y="478" font-size="12" font-weight="bold" fill="#2563eb" text-anchor="middle">Y0 (초기 균형소득)</text>
+  <text x="375" y="150" font-size="13" font-weight="bold" fill="#2563eb">E0</text>
+
+  <!-- E1 (480, 80) -->
+  <circle cx="480" cy="80" r="5.5" fill="#16a34a" />
+  <line x1="480" y1="80" x2="480" y2="460" stroke="#16a34a" stroke-dasharray="3,3" />
+  <text x="480" y="478" font-size="12" font-weight="bold" fill="#16a34a" text-anchor="middle">Y1 (승수효과 후 소득)</text>
+  <text x="460" y="70" font-size="13" font-weight="bold" fill="#16a34a">E1</text>
+
+  <!-- Delta G bracket at x=200 from AE0(260) up to AE1(220) -->
+  <line x1="220" y1="250" x2="220" y2="210" stroke="#e11d48" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="230" y="235" font-size="11.5" font-weight="bold" fill="#e11d48">ΔG (독립지출 증가)</text>
+
+  <!-- Delta Y bracket on X axis: 400 to 480 -->
+  <line x1="400" y1="510" x2="480" y2="510" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue)" />
+  <text x="440" y="530" font-size="12" font-weight="bold" fill="#2563eb" text-anchor="middle">ΔY = ΔG × [1 / (1 - c)] (승수효과로 대폭 확대)</text>
 </svg>

@@ -1,24 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
-  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">국민경제 순환모형과 국민소득 삼면등가의 원칙</text>
-  <!-- Households Box -->
-  <rect x="80" y="160" width="180" height="140" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.5" />
-  <text x="170" y="210" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">가 계 (Household)</text>
-  <text x="170" y="240" font-size="13" text-anchor="middle" fill="#475569">생산요소(노동,자본) 공급</text>
-  <text x="170" y="265" font-size="13" text-anchor="middle" fill="#475569">소비재화 및 서비스 수요</text>
-  <!-- Firms Box -->
-  <rect x="540" y="160" width="180" height="140" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.5" />
-  <text x="630" y="210" font-size="18" font-weight="bold" text-anchor="middle" fill="#166534">기 업 (Firm)</text>
-  <text x="630" y="240" font-size="13" text-anchor="middle" fill="#475569">재화와 서비스 생산/공급</text>
-  <text x="630" y="265" font-size="13" text-anchor="middle" fill="#475569">생산요소 수요 및 소득분배</text>
-  <!-- Upper flow: Goods & Services / Consumption Spending -->
-  <path d="M 260 190 Q 400 130 540 190" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr)" />
-  <text x="400" y="150" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e40af">지출국민소득: 소비지출 (C + I + G + NX)</text>
-  <text x="400" y="172" font-size="12" text-anchor="middle" fill="#64748b">재화 및 서비스 시장</text>
-  <!-- Lower flow: Factor Market / Income distribution -->
-  <path d="M 540 270 Q 400 330 260 270" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr)" />
-  <text x="400" y="315" font-size="13" font-weight="bold" text-anchor="middle" fill="#166534">분배국민소득: 요소소득 (임금 + 이자 + 지대 + 이윤)</text>
-  <text x="400" y="337" font-size="12" text-anchor="middle" fill="#64748b">생산요소 시장 (노동, 자본, 토지)</text>
-  <!-- Central Equation Card -->
-  <rect x="180" y="370" width="440" height="60" rx="8" fill="#fef08a" fill-opacity="0.5" stroke="#eab308" stroke-width="2" />
-  <text x="400" y="405" font-size="16" font-weight="bold" text-anchor="middle" fill="#854d0e">생산국민소득 ≡ 지출국민소득 ≡ 분배국민소득</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a" />
+    </marker>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="940" height="50" fill="#f8fafc" />
+  <text x="470" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">국민경제의 순환과 GDP 삼면등가의 법칙</text>
+  <line x1="0" y1="50" x2="940" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Subtitle Badge -->
+  <rect x="150" y="62" width="640" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="470" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 삼면등가의 법칙: 생산국민소득(GDP) ≡ 분배국민소득(임금+지대+이자+이윤) ≡ 지출국민소득(C+I+G+NX)</text>
+
+  <!-- Left Box: Households (가계) -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="180" height="130" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+    <text x="90" y="35" font-size="16" font-weight="bold" fill="#1d4ed8" text-anchor="middle">가계 (Households)</text>
+    <line x1="20" y1="50" x2="160" y2="50" stroke="#bfdbfe" />
+    <text x="90" y="75" font-size="11.5" fill="#1e3a8a" text-anchor="middle">• 생산요소 공급자</text>
+    <text x="90" y="95" font-size="11.5" fill="#1e3a8a" text-anchor="middle">• 최종재 소비자</text>
+    <text x="90" y="115" font-size="11.5" fill="#1e3a8a" text-anchor="middle">• 소득 분배의 주체</text>
+  </g>
+
+  <!-- Right Box: Firms (기업) -->
+  <g transform="translate(680, 200)">
+    <rect x="0" y="0" width="180" height="130" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" filter="url(#shadow)" />
+    <text x="90" y="35" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">기업 (Firms)</text>
+    <line x1="20" y1="50" x2="160" y2="50" stroke="#bbf7d0" />
+    <text x="90" y="75" font-size="11.5" fill="#14532d" text-anchor="middle">• 생산요소 수요자</text>
+    <text x="90" y="95" font-size="11.5" fill="#14532d" text-anchor="middle">• 재화·서비스 공급자</text>
+    <text x="90" y="115" font-size="11.5" fill="#14532d" text-anchor="middle">• 부가가치 창출 주체</text>
+  </g>
+
+  <!-- Top Center: Goods Market (생산물 시장) -->
+  <g transform="translate(370, 110)">
+    <rect x="0" y="0" width="200" height="70" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="100" y="30" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">생산물 시장</text>
+    <text x="100" y="52" font-size="11" font-weight="bold" fill="#d97706" text-anchor="middle">[지출국민소득: 소비지출]</text>
+  </g>
+
+  <!-- Bottom Center: Factor Market (생산요소 시장) -->
+  <g transform="translate(370, 350)">
+    <rect x="0" y="0" width="200" height="70" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="100" y="30" font-size="14" font-weight="bold" fill="#6b21a8" text-anchor="middle">생산요소 시장</text>
+    <text x="100" y="52" font-size="11" font-weight="bold" fill="#7e22ce" text-anchor="middle">[분배국민소득: 요소소득]</text>
+  </g>
+
+  <!-- Flow Arrows (Real Flows & Money Flows) -->
+  <!-- Top: Goods Market Flows -->
+  <!-- Firms to Goods Market (Goods supply) -->
+  <path d="M 740 200 Q 700 130, 580 135" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)" />
+  <text x="680" y="145" font-size="11" font-weight="bold" fill="#16a34a">재화·서비스 공급</text>
+
+  <!-- Households to Goods Market (Consumption expenditure) -->
+  <path d="M 200 200 Q 240 130, 360 135" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
+  <text x="210" y="145" font-size="11" font-weight="bold" fill="#2563eb">소비 지출 (C)</text>
+
+  <!-- Bottom: Factor Market Flows -->
+  <!-- Households to Factor Market (Factor supply) -->
+  <path d="M 170 330 Q 220 395, 360 390" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
+  <text x="200" y="415" font-size="11" font-weight="bold" fill="#2563eb">생산요소 공급 (노동·자본·토지)</text>
+
+  <!-- Factor Market to Households (Factor income payment) -->
+  <path d="M 770 330 Q 720 395, 580 390" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)" />
+  <text x="630" y="415" font-size="11" font-weight="bold" fill="#16a34a">요소소득 지급 (임금+이자+지대+이윤)</text>
+
+  <!-- Center Circle: Equality of 3 Aspects -->
+  <g transform="translate(415, 220)">
+    <circle cx="55" cy="45" r="42" fill="#fff1f2" stroke="#e11d48" stroke-width="2" />
+    <text x="55" y="38" font-size="12" font-weight="bold" fill="#be123c" text-anchor="middle">GDP</text>
+    <text x="55" y="55" font-size="11" font-weight="bold" fill="#be123c" text-anchor="middle">삼면등가</text>
+  </g>
 </svg>

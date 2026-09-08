@@ -1,31 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
-  <text x="400" y="36" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">과점시장 굴절수요곡선과 가격경직성 (Kinked Demand Curve)</text>
-  <line x1="100" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
-  <line x1="100" y1="390" x2="100" y2="70" stroke="#334155" stroke-width="2.5" marker-end="url(#arr)" />
-  <text x="730" y="395" font-size="14" font-weight="bold" fill="#334155">생산량 (Q)</text>
-  <text x="95" y="55" font-size="14" font-weight="bold" fill="#334155">가격, 비용 (P, C)</text>
-  <text x="85" y="408" font-size="14" font-weight="bold" fill="#64748b">0</text>
-  <!-- Kinked Demand Curve -->
-  <!-- Flat segment (elastic, price increase) -->
-  <line x1="120" y1="130" x2="380" y2="210" stroke="#2563eb" stroke-width="3" />
-  <text x="180" y="145" font-size="13" font-weight="bold" fill="#2563eb">가격 인상 시 탄력적 (비협조)</text>
-  <!-- Steep segment (inelastic, price decrease) -->
-  <line x1="380" y1="210" x2="620" y2="380" stroke="#1d4ed8" stroke-width="3" />
-  <text x="500" y="330" font-size="13" font-weight="bold" fill="#1d4ed8">가격 인하 시 비탄력적 (협조/동조)</text>
-  <!-- Discontinuous MR -->
-  <line x1="120" y1="130" x2="380" y2="280" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,4" />
-  <line x1="380" y1="280" x2="380" y2="350" stroke="#dc2626" stroke-width="3" stroke-dasharray="3,3" />
-  <text x="390" y="315" font-size="12" font-weight="bold" fill="#dc2626">수직 단절 구간</text>
-  <line x1="380" y1="350" x2="520" y2="390" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,4" />
-  <!-- MC curves intersecting the gap -->
-  <path d="M 280 340 Q 380 310 480 270" fill="none" stroke="#059669" stroke-width="2.5" />
-  <text x="490" y="275" font-size="13" font-weight="bold" fill="#059669">MC1</text>
-  <path d="M 280 360 Q 380 330 480 290" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4,3" />
-  <text x="490" y="295" font-size="13" font-weight="bold" fill="#10b981">MC2 (비용 변동 시에도 가격 불변)</text>
-  <!-- Kink Point -->
-  <circle cx="380" cy="210" r="6" fill="#f59e0b" />
-  <line x1="380" y1="390" x2="380" y2="210" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
-  <line x1="100" y1="210" x2="380" y2="210" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
-  <text x="50" y="215" font-size="14" font-weight="bold" fill="#0f172a">P* (경직적 가격)</text>
-  <text x="370" y="410" font-size="14" font-weight="bold" fill="#0f172a">Q*</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
+  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">스위지(Sweezy)의 굴절수요곡선과 과점시장의 가격 경직성</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Subtitle Badge -->
+  <rect x="140" y="62" width="640" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 가격 인상 시 경쟁사 미추종(탄력적) vs 가격 인하 시 동반 인하(비탄력적) ➔ MR 수직 불연속 ➔ 가격 경직성</text>
+
+  <!-- Axes: Origin (100, 460) -->
+  <line x1="100" y1="460" x2="780" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
+  <text x="790" y="465" font-size="12" font-weight="bold" fill="#475569">수량 (Q)</text>
+  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">가격, 한계수입, 한계비용</text>
+  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+
+  <!-- Kinked Demand Curve: Kink at K(380, 220) -->
+  <!-- Upper segment: Elastic d1 (flat) from (120, 140) to (380, 220) -->
+  <line x1="120" y1="140" x2="380" y2="220" stroke="#2563eb" stroke-width="3.5" />
+  <text x="210" y="165" font-size="11.5" font-weight="bold" fill="#2563eb">탄력적 구간 (가격 인상 시 미추종)</text>
+
+  <!-- Lower segment: Inelastic D2 (steep) from (380, 220) to (600, 440) -->
+  <line x1="380" y1="220" x2="600" y2="440" stroke="#2563eb" stroke-width="3.5" />
+  <text x="510" y="370" font-size="11.5" font-weight="bold" fill="#2563eb">비탄력적 구간 (가격 인하 시 동반 인하)</text>
+
+  <!-- Marginal Revenue MR: Discontinuous at Q0=380 -->
+  <!-- Upper MR segment: (120, 140) to (380, 290) -->
+  <line x1="120" y1="140" x2="380" y2="290" stroke="#dc2626" stroke-width="2.5" />
+  <!-- Vertical Discontinuity Gap from y=290 to y=380 at x=380 -->
+  <line x1="380" y1="290" x2="380" y2="380" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="3,3" />
+  <text x="390" y="340" font-size="11" font-weight="bold" fill="#dc2626">MR 불연속 구간 (수직 간격)</text>
+  <!-- Lower MR segment: from (380, 380) to (500, 450) -->
+  <line x1="380" y1="380" x2="500" y2="450" stroke="#dc2626" stroke-width="2.5" />
+  <text x="510" y="455" font-size="12" font-weight="bold" fill="#dc2626">MR</text>
+
+  <!-- Marginal Cost curves shifting within the gap: MC1, MC2 -->
+  <path d="M 220 370 Q 380 320, 560 270" fill="none" stroke="#16a34a" stroke-width="2.5" />
+  <text x="570" y="275" font-size="11.5" font-weight="bold" fill="#16a34a">MC1 (기존 한계비용)</text>
+
+  <path d="M 220 400 Q 380 350, 560 300" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="4,3" />
+  <text x="570" y="305" font-size="11.5" font-weight="bold" fill="#059669">MC2 (비용 상승 시)</text>
+
+  <!-- Kink Point K (380, 220) -->
+  <circle cx="380" cy="220" r="6" fill="#1d4ed8" />
+  <line x1="380" y1="220" x2="380" y2="460" stroke="#475569" stroke-dasharray="3,3" />
+  <line x1="100" y1="220" x2="380" y2="220" stroke="#475569" stroke-dasharray="3,3" />
+  <text x="380" y="478" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Q0 (경직적 생산량)</text>
+  <text x="60" y="225" font-size="12" font-weight="bold" fill="#1e293b">P0 (경직적 가격)</text>
+  <text x="390" y="210" font-size="13" font-weight="bold" fill="#1d4ed8">K (굴절점: Kink)</text>
 </svg>

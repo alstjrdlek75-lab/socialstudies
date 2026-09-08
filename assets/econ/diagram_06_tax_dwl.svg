@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
+  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">종량세 부과 시 조세의 귀착과 경제적 순손실 (DWL)</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Subtitle Badge -->
+  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 조세 귀착 원리: 상대적으로 가격탄력성이 더 작은(비탄력적인) 주체가 더 많은 세금을 부담</text>
+
+  <!-- Axes: Origin (100, 460) -->
+  <line x1="100" y1="460" x2="780" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
+  <text x="790" y="465" font-size="12" font-weight="bold" fill="#475569">수량 (Q)</text>
+  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">가격 (P)</text>
+  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+
+  <!-- Demand Curve: y = 0.5*x + 100 -->
+  <!-- at x=140: y=170; at x=620: y=410 -->
+  <line x1="140" y1="170" x2="620" y2="410" stroke="#2563eb" stroke-width="3" />
+  <text x="630" y="415" font-size="13" font-weight="bold" fill="#2563eb">D</text>
+
+  <!-- Initial Supply S0: y = -0.5*x + 490 -->
+  <!-- at x=140: y=420; at x=620: y=180 -->
+  <line x1="140" y1="420" x2="620" y2="180" stroke="#16a34a" stroke-width="3" />
+  <text x="630" y="185" font-size="13" font-weight="bold" fill="#16a34a">S0 (과세 전)</text>
+
+  <!-- New Supply S1 (Shifted up by t=70 px): y = -0.5*x + 420 -->
+  <line x1="140" y1="350" x2="550" y2="145" stroke="#dc2626" stroke-width="3" />
+  <text x="560" y="145" font-size="13" font-weight="bold" fill="#dc2626">S1 = S0 + t (과세 후)</text>
+
+  <!-- Equilibrium Points -->
+  <!-- Initial Eq E0: 0.5*x + 100 = -0.5*x + 490 => x0 = 390, P0 = 295 -->
+  <!-- Tax Eq E1: 0.5*x + 100 = -0.5*x + 420 => x1 = 320, Pb = 260 -->
+  <!-- At x1=320 on S0: Ps = -0.5*(320) + 490 = 330 -->
+  <!-- Shaded Tax Revenue: Rectangle (100 to 320, Pb=260 to Ps=330) -->
+  <!-- Consumer Tax Burden: (100 to 320, Pb=260 to P0=295) -->
+  <rect x="100" y="260" width="220" height="35" fill="#fee2e2" fill-opacity="0.8" stroke="#dc2626" stroke-dasharray="2,2" />
+  <text x="210" y="282" font-size="11" font-weight="bold" fill="#b91c1c" text-anchor="middle">소비자 조세부담</text>
+
+  <!-- Producer Tax Burden: (100 to 320, P0=295 to Ps=330) -->
+  <rect x="100" y="295" width="220" height="35" fill="#fef3c7" fill-opacity="0.8" stroke="#d97706" stroke-dasharray="2,2" />
+  <text x="210" y="317" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">생산자 조세부담</text>
+
+  <!-- Deadweight Loss (DWL) Triangle: (320, 260) -> (390, 295) -> (320, 330) -->
+  <polygon points="320,260 390,295 320,330" fill="#fecaca" stroke="#dc2626" stroke-width="1.8" />
+  <text x="340" y="298" font-size="11.5" font-weight="bold" fill="#b91c1c">DWL</text>
+
+  <!-- Point Circles and Projections -->
+  <!-- E0 (390, 295) -->
+  <circle cx="390" cy="295" r="5" fill="#16a34a" />
+  <line x1="390" y1="295" x2="390" y2="460" stroke="#16a34a" stroke-dasharray="3,3" />
+  <text x="390" y="478" font-size="11.5" font-weight="bold" fill="#16a34a" text-anchor="middle">Q0 (과세 전)</text>
+  <text x="402" y="295" font-size="12" font-weight="bold" fill="#16a34a">E0</text>
+
+  <!-- E1 (320, 260) -->
+  <circle cx="320" cy="260" r="5" fill="#dc2626" />
+  <line x1="320" y1="260" x2="320" y2="460" stroke="#dc2626" stroke-dasharray="3,3" />
+  <text x="320" y="478" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">Qt (과세 후)</text>
+  <text x="310" y="250" font-size="12" font-weight="bold" fill="#dc2626">E1</text>
+
+  <!-- Price levels on Y-axis -->
+  <line x1="100" y1="260" x2="320" y2="260" stroke="#dc2626" stroke-dasharray="2,2" />
+  <text x="50" y="265" font-size="11.5" font-weight="bold" fill="#dc2626">Pb (소비자 지불)</text>
+
+  <line x1="100" y1="295" x2="390" y2="295" stroke="#475569" stroke-dasharray="2,2" />
+  <text x="60" y="300" font-size="11.5" font-weight="bold" fill="#475569">P0 (균형가격)</text>
+
+  <line x1="100" y1="330" x2="320" y2="330" stroke="#d97706" stroke-dasharray="2,2" />
+  <text x="50" y="335" font-size="11.5" font-weight="bold" fill="#d97706">Ps (생산자 수취)</text>
+
+  <!-- Tax bracket between Pb and Ps at x=280 -->
+  <line x1="280" y1="260" x2="280" y2="330" stroke="#7c3aed" stroke-width="3" />
+  <text x="288" y="300" font-size="11" font-weight="bold" fill="#7c3aed">조세(t)</text>
+</svg>
