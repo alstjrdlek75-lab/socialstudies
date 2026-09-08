@@ -348,7 +348,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_2055"></script>
+  <script src="topics-data.js?v=20260908_2115"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260908_1955"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
@@ -1556,8 +1556,16 @@
 
         // Insert Structured Content HTML (Check custom user masking first)
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
-        // Clear any corrupted customHtml that has broken/split group header or stale POL-024/POL-031/POL-032/LAW-066/ECON-009/ECON-010 content
-        if (customHtml && (topic.id === 'POL-016' || topic.id === 'POL-017' || topic.id === 'POL-024' || topic.id === 'POL-031' || topic.id === 'POL-032' || topic.id === 'LAW-066' || (topic.id === 'ECON-009' && (customHtml.includes('bg-amber-50') || customHtml.includes('로렌츠') || !customHtml.includes('recall-item'))) || (topic.id === 'ECON-010' && !customHtml.includes('[Case 1]')) || customHtml.includes('<span>(1)</span>') || customHtml.includes('직접행사란</p>') || customHtml.includes('기본권 총론 혁명으로') || customHtml.includes('민주주의를 제도로 국한해서') || (customHtml.includes('국민주권의 원리') && !customHtml.includes('(1) 국민주권의 원리')))) {
+        // Clear any corrupted customHtml that has broken/split group header or stale POL-024/POL-031/POL-032/LAW-066/ECON-002/ECON-004/ECON-009/ECON-010 content
+        if (customHtml && (
+          topic.id === 'POL-016' || topic.id === 'POL-017' || topic.id === 'POL-024' || topic.id === 'POL-031' || topic.id === 'POL-032' || topic.id === 'LAW-066' ||
+          topic.id === 'ECON-002' || topic.id === 'ECON-004' ||
+          (topic.id === 'ECON-009' && (customHtml.includes('bg-amber-50') || customHtml.includes('로렌츠') || !customHtml.includes('recall-item'))) ||
+          (topic.id === 'ECON-010' && !customHtml.includes('[Case 1]')) ||
+          customHtml.includes('PXPY') || customHtml.includes('MUXPX') || customHtml.includes('-PXPYX') || customHtml.includes('MPY-') ||
+          customHtml.includes('<span>(1)</span>') || customHtml.includes('직접행사란</p>') || customHtml.includes('기본권 총론 혁명으로') || customHtml.includes('민주주의를 제도로 국한해서') ||
+          (customHtml.includes('국민주권의 원리') && !customHtml.includes('(1) 국민주권의 원리'))
+        )) {
           try { localStorage.removeItem(`edurecall_custom_${topic.id}`); } catch (e) {}
           customHtml = null;
         }
@@ -3246,45 +3254,62 @@
         localStorage.removeItem('edurecall_custom_POL-069');
         localStorage.removeItem('edurecall_custom_POL-087');
         localStorage.removeItem('edurecall_custom_LAW-066');
+        localStorage.removeItem('edurecall_custom_ECON-002');
+        localStorage.removeItem('edurecall_custom_ECON-004');
+        localStorage.removeItem('edurecall_custom_ECON-005');
         localStorage.removeItem('edurecall_custom_ECON-009');
-        localStorage.removeItem('edurecall_custom_ECON-021');
         localStorage.removeItem('edurecall_custom_ECON-010');
+        localStorage.removeItem('edurecall_custom_ECON-021');
+
+        // Safely extract all custom keys to avoid index-shift skipping during deletion
+        const customKeys = [];
         for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-          if (key && key.startsWith('edurecall_custom_')) {
-            const val = localStorage.getItem(key);
-            if (val) {
-              const typoReplacements = [
-                ['것으 로', '것으로'],
-                ['배 상책임', '배상책임'],
-                ['문회적', '문화적'],
-                ['총레적', '총체적'],
-                ['문하 인류학', '문화인류학'],
-                ['유 형 (', '유형 ('],
-                ['모집 단', '모집단'],
-                ['수 밖에', '수밖에'],
-                ['내릴수 있는', '내릴 수 있는'],
-                ['공유함으로서', '공유함으로써'],
-                ['참여함으로서', '참여함으로써'],
-                ['유지함으로 무역', '유지함으로써 무역'],
-                ['가치x확률이', '가치 × 확률이'],
-                ['배 액을', '배액을'],
-                ['최우선변제권(대항력+확정일자+소액, 그럼에도 전액 반환은 아님)', '최우선변제권(대항력+소액, 그럼에도 전액 반환은 아님)'],
-                ['대항력+확정일자+소액', '대항력+소액']
-              ];
-              let updatedVal = val;
-              let changed = false;
-              for (const [fromStr, toStr] of typoReplacements) {
-                if (updatedVal.includes(fromStr)) {
-                  updatedVal = updatedVal.replaceAll(fromStr, toStr);
-                  changed = true;
-                }
-              }
-              if (changed) {
-                localStorage.setItem(key, updatedVal);
+          const k = localStorage.key(i);
+          if (k && k.startsWith('edurecall_custom_')) {
+            customKeys.push(k);
+          }
+        }
+
+        for (const key of customKeys) {
+          const val = localStorage.getItem(key);
+          if (val) {
+            const typoReplacements = [
+              ['것으 로', '것으로'],
+              ['배 상책임', '배상책임'],
+              ['문회적', '문화적'],
+              ['총레적', '총체적'],
+              ['문하 인류학', '문화인류학'],
+              ['유 형 (', '유형 ('],
+              ['모집 단', '모집단'],
+              ['수 밖에', '수밖에'],
+              ['내릴수 있는', '내릴 수 있는'],
+              ['공유함으로서', '공유함으로써'],
+              ['참여함으로서', '참여함으로써'],
+              ['유지함으로 무역', '유지함으로써 무역'],
+              ['가치x확률이', '가치 × 확률이'],
+              ['배 액을', '배액을'],
+              ['최우선변제권(대항력+확정일자+소액, 그럼에도 전액 반환은 아님)', '최우선변제권(대항력+소액, 그럼에도 전액 반환은 아님)'],
+              ['대항력+확정일자+소액', '대항력+소액']
+            ];
+            let updatedVal = val;
+            let changed = false;
+            for (const [fromStr, toStr] of typoReplacements) {
+              if (updatedVal.includes(fromStr)) {
+                updatedVal = updatedVal.replaceAll(fromStr, toStr);
+                changed = true;
               }
             }
-            if (val && (val.includes('토표형태') || val.includes('수반만을 수행→') || val.includes('집권→정부의 구성도') || val.includes('행정국가화 현상 :') || val.includes('하부구조적 권력↓') || val.includes('사회공익 실현 특수이익 실현') || val.includes('세계화시대의 국가 변형에서 논의') || val.includes('위윔') || val.includes('<span>(1)</span>') || val.includes('민주주의를 제도로 국한해서') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리')))) {
+            if (changed) {
+              localStorage.setItem(key, updatedVal);
+            }
+
+            if (
+              val.includes('PXPY') || val.includes('MUXPX') || val.includes('-PXPYX') || val.includes('MPY-') ||
+              val.includes('토표형태') || val.includes('수반만을 수행→') || val.includes('집권→정부의 구성도') ||
+              val.includes('행정국가화 현상 :') || val.includes('하부구조적 권력↓') || val.includes('사회공익 실현 특수이익 실현') ||
+              val.includes('세계화시대의 국가 변형에서 논의') || val.includes('위윔') || val.includes('<span>(1)</span>') ||
+              val.includes('민주주의를 제도로 국한해서') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리'))
+            ) {
               localStorage.removeItem(key);
             }
           }
