@@ -24,6 +24,43 @@
       pointer-events: none;
     }
 
+    
+    /* Textbook-Style Vertical Math Fractions (교과서/서브노트 수직 분수 표기) */
+    .math-frac {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: -0.65em;
+      text-align: center;
+      padding: 0 0.18em;
+      font-family: 'Cambria Math', 'KaTeX_Math', 'Times New Roman', serif;
+      font-style: italic;
+    }
+    .math-frac > .num {
+      display: block;
+      border-bottom: 1.5px solid currentColor;
+      padding: 0 0.2em 1px 0.2em;
+      line-height: 1.1;
+      font-size: 0.88em;
+      text-align: center;
+    }
+    .math-frac > .den {
+      display: block;
+      padding: 1px 0.2em 0 0.2em;
+      line-height: 1.1;
+      font-size: 0.88em;
+      text-align: center;
+    }
+    .math-box {
+      display: inline-flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 3px 10px;
+      margin: 2px 0;
+      font-family: 'Cambria Math', 'KaTeX_Math', 'Times New Roman', serif;
+    }
+
     /* Authentic Masking Tape (마스킹 테이프) */
     .mask-tape {
       display: inline-block;
@@ -301,9 +338,12 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_2040"></script>
+  <script src="topics-data.js?v=20260908_2035"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260908_1955"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -1526,6 +1566,18 @@
         // Bind interactive handlers to groups and items
         setupGroupInteractions();
         setupTapeInteractions();
+        if (window.renderMathInElement) {
+          try {
+            renderMathInElement(subnoteContainer, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+              ],
+              throwOnError: false
+            });
+          } catch(e) {}
+        }
+
         updateTapeCountBadge();
 
         // Apply Current Mode (tape, type, study, blur)
@@ -1777,6 +1829,18 @@
         if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         setupGroupInteractions();
         setupTapeInteractions();
+        if (window.renderMathInElement) {
+          try {
+            renderMathInElement(subnoteContainer, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+              ],
+              throwOnError: false
+            });
+          } catch(e) {}
+        }
+
         updateTapeCountBadge();
         applyMode(currentMode);
         showToast('원본 서브노트 마스킹으로 복원되었습니다', 'refresh');
