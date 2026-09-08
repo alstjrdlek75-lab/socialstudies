@@ -301,9 +301,9 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_1050"></script>
+  <script src="topics-data.js?v=20260908_1055"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260908_1050"></script>
+  <script src="explanations-data.js?v=20260908_1055"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -2425,6 +2425,110 @@
         }
       }
 
+      // Helper: Format Explanation Text with paragraphs, clean line breaks, cards, bullets & badges
+      function formatExplanationText(raw, theme = 'slate') {
+        if (!raw) return '';
+        let text = String(raw).trim();
+
+        // Ensure double newlines before major list/card headings if separated only by single newline
+        text = text.replace(/(^|[^\n])\n(?=[①②③④⑤⑥⑦⑧⑨⑩]|\d+\.\s)/g, '$1\n\n');
+
+        const themes = {
+          slate: {
+            bullet: 'text-slate-400',
+            badgeBg: 'bg-slate-200 text-slate-800',
+            cardBorder: 'border-slate-200/80',
+            divider: 'border-slate-200/60'
+          },
+          emerald: {
+            bullet: 'text-emerald-500',
+            badgeBg: 'bg-emerald-600 text-white',
+            cardBorder: 'border-emerald-200/80',
+            divider: 'border-emerald-100'
+          },
+          indigo: {
+            bullet: 'text-indigo-500',
+            badgeBg: 'bg-indigo-600 text-white',
+            cardBorder: 'border-indigo-200/80',
+            divider: 'border-indigo-100'
+          }
+        };
+        const t = themes[theme] || themes.slate;
+
+        const blocks = text.split(/\n\s*\n/);
+
+        const formattedBlocks = blocks.map(block => {
+          const rawLines = block.split('\n').map(l => l.trimEnd());
+          if (rawLines.length === 0 || (rawLines.length === 1 && !rawLines[0].trim())) return '';
+
+          // Case 1: Callout block (starts with emoji like 💡, 📌, ⚠️, etc.)
+          if (/^[💡📌⚠️🚨👉]/.test(rawLines[0].trim())) {
+            const calloutContent = rawLines.map(l => escapeHtml(l.trim())).join('<br>');
+            const calloutClass = theme === 'emerald'
+              ? 'bg-emerald-100/70 border-emerald-300/80 text-emerald-950'
+              : theme === 'indigo'
+              ? 'bg-indigo-100/70 border-indigo-300/80 text-indigo-950'
+              : 'bg-amber-500/10 border-amber-500/25 text-amber-900';
+            return `<div class="p-3 rounded-xl border font-bold text-xs md:text-[13px] leading-relaxed ${calloutClass}">${calloutContent}</div>`;
+          }
+
+          const firstLineTrimmed = rawLines[0].trim();
+          const isCircledNumber = /^[①②③④⑤⑥⑦⑧⑨⑩]/.test(firstLineTrimmed);
+          const isMajorNumber = /^\d+\.\s+/.test(firstLineTrimmed);
+
+          let blockHtml = '';
+          let textBuffer = [];
+
+          function flushTextBuffer() {
+            if (textBuffer.length > 0) {
+              blockHtml += `<p class="leading-relaxed my-1">${textBuffer.join('<br>')}</p>`;
+              textBuffer = [];
+            }
+          }
+
+          for (let i = 0; i < rawLines.length; i++) {
+            let line = rawLines[i];
+            const trimmed = line.trim();
+            if (!trimmed) {
+              flushTextBuffer();
+              continue;
+            }
+
+            const safeLine = escapeHtml(trimmed)
+              .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
+
+            if (/^[-*•·]\s+/.test(trimmed)) {
+              flushTextBuffer();
+              const bulletText = safeLine.replace(/^[-*•·]\s+/, '');
+              blockHtml += `<div class="flex items-start gap-2 pl-1.5 text-slate-700 leading-relaxed my-1"><span class="${t.bullet} font-bold select-none shrink-0 mt-0.5">•</span><div class="flex-1">${bulletText}</div></div>`;
+            } else if (/^[①②③④⑤⑥⑦⑧⑨⑩]/.test(trimmed)) {
+              flushTextBuffer();
+              const numChar = trimmed.charAt(0);
+              const rest = safeLine.substring(1).trim();
+              blockHtml += `<div class="font-bold text-slate-900 text-xs md:text-[13.5px] flex items-center gap-1.5 pb-1.5 border-b ${t.divider}"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full ${t.badgeBg} text-xs font-bold shrink-0">${numChar}</span><span>${rest}</span></div>`;
+            } else if (/^\d+\.\s+/.test(trimmed)) {
+              flushTextBuffer();
+              const numMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
+              blockHtml += `<div class="font-bold text-slate-900 text-xs md:text-[13.5px] flex items-center gap-1.5 pb-1.5 border-b ${t.divider}"><span class="inline-flex items-center justify-center w-5 h-5 rounded-md ${t.badgeBg} text-xs font-bold shrink-0">${numMatch[1]}</span><span>${escapeHtml(numMatch[2]).replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>')}</span></div>`;
+            } else if (trimmed.startsWith('※') || trimmed.startsWith('(※') || trimmed.startsWith('(단,')) {
+              flushTextBuffer();
+              blockHtml += `<div class="text-[11.5px] md:text-xs text-slate-500 pl-1 pt-0.5 leading-relaxed italic">${safeLine}</div>`;
+            } else {
+              textBuffer.push(safeLine);
+            }
+          }
+          flushTextBuffer();
+
+          if (isCircledNumber || isMajorNumber) {
+            return `<div class="bg-white/90 border ${t.cardBorder} rounded-xl p-3.5 shadow-2xs space-y-1.5">${blockHtml}</div>`;
+          }
+
+          return `<div class="space-y-1.5">${blockHtml}</div>`;
+        });
+
+        return formattedBlocks.filter(Boolean).join('\n');
+      }
+
       // Open Supplementary Explanation Drawer
       function openExplanation() {
         const topic = TOPICS[currentTopicIndex];
@@ -2459,8 +2563,8 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
                 <span>1. 입법 및 이론적 배경 (왜 생겼을까?)</span>
               </h4>
-              <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-700 leading-relaxed space-y-2">
-                ${escapeHtml(exp.background)}
+              <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-700 leading-relaxed space-y-3">
+                ${formatExplanationText(exp.background, 'slate')}
               </div>
             </div>
 
@@ -2469,8 +2573,8 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
                 <span>2. 한 번에 이해하는 쉬운 비유와 사례</span>
               </h4>
-              <div class="bg-emerald-50/60 border border-emerald-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-800 leading-relaxed">
-                ${escapeHtml(exp.analogy)}
+              <div class="bg-emerald-50/60 border border-emerald-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-800 leading-relaxed space-y-3">
+                ${formatExplanationText(exp.analogy, 'emerald')}
               </div>
             </div>
 
@@ -2479,8 +2583,8 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0"></span>
                 <span>3. 서브노트 본문과의 연결고리 (시험 인출 포인트)</span>
               </h4>
-              <div class="bg-indigo-50/60 border border-indigo-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-indigo-950 leading-relaxed font-medium">
-                ${escapeHtml(exp.subnoteBridge)}
+              <div class="bg-indigo-50/60 border border-indigo-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-indigo-950 leading-relaxed font-medium space-y-3">
+                ${formatExplanationText(exp.subnoteBridge, 'indigo')}
               </div>
             </div>
           `;
