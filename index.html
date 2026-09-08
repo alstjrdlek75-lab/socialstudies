@@ -301,9 +301,9 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_1010"></script>
+  <script src="topics-data.js?v=20260908_1030"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260908_1020"></script>
+  <script src="explanations-data.js?v=20260908_1030"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -2782,8 +2782,33 @@
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
             const val = localStorage.getItem(key);
-            if (val && (val.includes('것으 로') || val.includes('배 상책임'))) {
-              localStorage.setItem(key, val.replaceAll('것으 로', '것으로').replaceAll('배 상책임', '배상책임'));
+            if (val) {
+              const typoReplacements = [
+                ['것으 로', '것으로'],
+                ['배 상책임', '배상책임'],
+                ['문회적', '문화적'],
+                ['총레적', '총체적'],
+                ['문하 인류학', '문화인류학'],
+                ['유 형 (', '유형 ('],
+                ['모집 단', '모집단'],
+                ['수 밖에', '수밖에'],
+                ['내릴수 있는', '내릴 수 있는'],
+                ['공유함으로서', '공유함으로써'],
+                ['참여함으로서', '참여함으로써'],
+                ['유지함으로 무역', '유지함으로써 무역'],
+                ['가치x확률이', '가치 × 확률이']
+              ];
+              let updatedVal = val;
+              let changed = false;
+              for (const [fromStr, toStr] of typoReplacements) {
+                if (updatedVal.includes(fromStr)) {
+                  updatedVal = updatedVal.replaceAll(fromStr, toStr);
+                  changed = true;
+                }
+              }
+              if (changed) {
+                localStorage.setItem(key, updatedVal);
+              }
             }
             if (val && (val.includes('토표형태') || val.includes('수반만을 수행→') || val.includes('집권→정부의 구성도') || val.includes('행정국가화 현상 :') || val.includes('하부구조적 권력↓') || val.includes('사회공익 실현 특수이익 실현') || val.includes('세계화시대의 국가 변형에서 논의') || val.includes('위윔') || val.includes('<span>(1)</span>') || val.includes('민주주의를 제도로 국한해서') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리')))) {
               localStorage.removeItem(key);
