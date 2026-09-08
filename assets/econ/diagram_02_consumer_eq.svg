@@ -67,7 +67,7 @@
   <text x="672" y="414" font-size="10" font-weight="bold" fill="#64748b" text-anchor="middle">U0 (낮은 효용)</text>
 
   <!-- U1 (Maximized Utility: Tangent to budget line at E(350, 295)) -->
-  <path d="M 180 170 C 230 235, 290 280, 350 295 C 430 315, 560 338, 700 355" fill="none" stroke="#2563eb" stroke-width="3.5" />
+  <path d="M 160 140 C 210 195, 295 263, 350 295 C 405 327, 550 350, 680 365" fill="none" stroke="#2563eb" stroke-width="3.5" />
   <rect x="705" y="344" width="115" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
   <text x="762" y="359" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">U1 (극대화 효용)</text>
 
