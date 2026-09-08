@@ -1,63 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
     </marker>
-    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
     </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626" />
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.06" />
+    </filter>
   </defs>
 
   <!-- Header -->
-  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">케인지언 크로스: 45도선 균형국민소득 결정 모형</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="0" y="0" width="960" height="50" fill="#f8fafc" />
+  <text x="480" y="32" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">케인지언 크로스: 45°선 균형국민소득과 승수효과 모형</text>
+  <line x1="0" y1="50" x2="960" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
 
-  <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 균형 조건: 총지출(AE) = 총생산(Y) ➔ 독립지출 증가(ΔG) 시 승수효과로 국민소득 대폭 증가(ΔY &gt; ΔG)</text>
+  <!-- Subtitle Badge (Left Aligned, Clean) -->
+  <g transform="translate(110, 62)">
+    <rect x="0" y="0" width="740" height="26" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="370" y="17" font-size="12" font-weight="bold" text-anchor="middle" fill="#1d4ed8">
+      • 균형 조건: 총생산(Y) = 총지출(AE) ┃ 승수효과: 정부지출 증가(ΔG) 시 국민소득은 그 몇 배(ΔY &gt; ΔG)로 대폭 확대
+    </text>
+  </g>
 
-  <!-- Axes: Origin (100, 460) -->
-  <line x1="100" y1="460" x2="800" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="810" y="465" font-size="12" font-weight="bold" fill="#475569">총생산, 국민소득 (Y)</text>
-  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">총지출 (AE = C + I + G)</text>
-  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+  <!-- Grid lines for clean textbook feel -->
+  <line x1="110" y1="340" x2="850" y2="340" stroke="#f1f5f9" stroke-width="1" />
+  <line x1="110" y1="240" x2="850" y2="240" stroke="#f1f5f9" stroke-width="1" />
+  <line x1="110" y1="160" x2="850" y2="160" stroke="#f1f5f9" stroke-width="1" />
 
-  <!-- 45-degree Reference Line: Y = AE -->
-  <!-- from (100, 460) to (460, 100) -> slope 1.0 (inverted y = -1*x + 560) -->
-  <line x1="100" y1="460" x2="480" y2="80" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,4" />
-  <text x="490" y="85" font-size="13" font-weight="bold" fill="#dc2626">45°선 (Y = AE)</text>
+  <!-- Axes: Origin (110, 440) -->
+  <line x1="110" y1="440" x2="880" y2="440" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="110" y1="440" x2="110" y2="100" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <text x="890" y="445" font-size="13" font-weight="bold" fill="#0f172a">총생산, 국민소득 (Y)</text>
+  <text x="110" y="90" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">총지출 (AE = C + I + G)</text>
+  <text x="94" y="456" font-size="12" font-weight="bold" fill="#64748b">0</text>
 
-  <!-- AE0: AE = A0 + c*Y. Slope c=0.5. At x=100: y=310. At x=700: y=10) -->
-  <!-- Equation: y = -0.5*(x - 100) + 310 = -0.5*x + 360 -->
-  <!-- Intersection with 45 line: -0.5*x + 360 = -1.0*x + 560 => 0.5*x = 200 => x0 = 400, y0 = 160 -->
-  <line x1="100" y1="310" x2="650" y2="85" stroke="#2563eb" stroke-width="3" />
-  <text x="660" y="90" font-size="12.5" font-weight="bold" fill="#2563eb">AE0 = C + I + G0 (기울기 = MPC)</text>
+  <!-- 45-degree Reference Ray (Y = AE) -->
+  <!-- from (110, 440) to (750, 120) -->
+  <line x1="110" y1="440" x2="740" y2="125" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6,4" />
+  <!-- Label at end of 45 line with colored pill -->
+  <g transform="translate(680, 85)">
+    <rect x="0" y="0" width="130" height="24" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+    <text x="65" y="16" font-size="12" font-weight="bold" fill="#dc2626" text-anchor="middle">45°선 (Y = AE)</text>
+  </g>
 
-  <!-- Shifted AE1 (Increase in G by ΔG = 40 px in y): y = -0.5*x + 320 -->
-  <!-- Intersection with 45 line: -0.5*x + 320 = -1.0*x + 560 => 0.5*x = 240 => x1 = 480, y1 = 80 -->
-  <line x1="100" y1="270" x2="600" y2="70" stroke="#16a34a" stroke-width="3" stroke-dasharray="5,3" />
-  <text x="610" y="70" font-size="12.5" font-weight="bold" fill="#16a34a">AE1 = C + I + G1 (정부지출 확대)</text>
+  <!-- Initial Aggregate Expenditure: AE0 = A0 + c*Y -->
+  <line x1="110" y1="340" x2="820" y2="162" stroke="#2563eb" stroke-width="3" />
+  <!-- AE0 Label Tag -->
+  <g transform="translate(830, 150)">
+    <rect x="0" y="0" width="115" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+    <text x="57" y="16" font-size="11.5" font-weight="bold" fill="#1d4ed8" text-anchor="middle">AE₀ = C + I + G₀</text>
+  </g>
 
-  <!-- Equilibrium Points -->
-  <!-- E0 (400, 160) -->
-  <circle cx="400" cy="160" r="5.5" fill="#2563eb" />
-  <line x1="400" y1="160" x2="400" y2="460" stroke="#2563eb" stroke-dasharray="3,3" />
-  <text x="400" y="478" font-size="12" font-weight="bold" fill="#2563eb" text-anchor="middle">Y0 (초기 균형소득)</text>
-  <text x="375" y="150" font-size="13" font-weight="bold" fill="#2563eb">E0</text>
+  <!-- Shifted Aggregate Expenditure: AE1 = A1 + c*Y (Shift up by 40px) -->
+  <line x1="110" y1="300" x2="820" y2="122" stroke="#16a34a" stroke-width="3" stroke-dasharray="6,3" />
+  <!-- AE1 Label Tag -->
+  <g transform="translate(830, 110)">
+    <rect x="0" y="0" width="115" height="24" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+    <text x="57" y="16" font-size="11.5" font-weight="bold" fill="#15803d" text-anchor="middle">AE₁ = C + I + G₁</text>
+  </g>
 
-  <!-- E1 (480, 80) -->
-  <circle cx="480" cy="80" r="5.5" fill="#16a34a" />
-  <line x1="480" y1="80" x2="480" y2="460" stroke="#16a34a" stroke-dasharray="3,3" />
-  <text x="480" y="478" font-size="12" font-weight="bold" fill="#16a34a" text-anchor="middle">Y1 (승수효과 후 소득)</text>
-  <text x="460" y="70" font-size="13" font-weight="bold" fill="#16a34a">E1</text>
+  <!-- Delta G: Vertical Upward Shift Bracket at x=200 -->
+  <line x1="210" y1="315" x2="210" y2="278" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <g transform="translate(220, 282)">
+    <rect x="0" y="0" width="125" height="24" rx="4" fill="#fff1f2" stroke="#fecdd3" stroke-width="1" />
+    <text x="62" y="16" font-size="11.5" font-weight="bold" fill="#be123c" text-anchor="middle">ΔG (독립지출 증가)</text>
+  </g>
 
-  <!-- Delta G bracket at x=200 from AE0(260) up to AE1(220) -->
-  <line x1="220" y1="250" x2="220" y2="210" stroke="#e11d48" stroke-width="2.5" marker-end="url(#arr)" />
-  <text x="230" y="235" font-size="11.5" font-weight="bold" fill="#e11d48">ΔG (독립지출 증가)</text>
+  <!-- Autonomous Expenditure Intercepts on Y-axis -->
+  <text x="100" y="344" font-size="11.5" font-weight="bold" fill="#2563eb" text-anchor="end">AE₀(0)</text>
+  <text x="100" y="304" font-size="11.5" font-weight="bold" fill="#16a34a" text-anchor="end">AE₁(0)</text>
 
-  <!-- Delta Y bracket on X axis: 400 to 480 -->
-  <line x1="400" y1="510" x2="480" y2="510" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue)" />
-  <text x="440" y="530" font-size="12" font-weight="bold" fill="#2563eb" text-anchor="middle">ΔY = ΔG × [1 / (1 - c)] (승수효과로 대폭 확대)</text>
+  <!-- Initial Equilibrium Point E0 (510, 240) -->
+  <line x1="110" y1="240" x2="510" y2="240" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.2" />
+  <line x1="510" y1="240" x2="510" y2="440" stroke="#2563eb" stroke-dasharray="4,3" stroke-width="1.5" />
+  <circle cx="510" cy="240" r="6" fill="#2563eb" stroke="#ffffff" stroke-width="2" />
+  <!-- E0 Badge -->
+  <g transform="translate(470, 205)">
+    <rect x="0" y="0" width="46" height="22" rx="4" fill="#2563eb" />
+    <text x="23" y="15" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">E₀</text>
+  </g>
+
+  <!-- New Equilibrium Point E1 (670, 160) -->
+  <line x1="110" y1="160" x2="670" y2="160" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.2" />
+  <line x1="670" y1="160" x2="670" y2="440" stroke="#16a34a" stroke-dasharray="4,3" stroke-width="1.5" />
+  <circle cx="670" cy="160" r="6" fill="#16a34a" stroke="#ffffff" stroke-width="2" />
+  <!-- E1 Badge -->
+  <g transform="translate(630, 125)">
+    <rect x="0" y="0" width="46" height="22" rx="4" fill="#16a34a" />
+    <text x="23" y="15" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">E₁</text>
+  </g>
+
+  <!-- Y Axis Equilibrium Values -->
+  <text x="100" y="244" font-size="11.5" font-weight="bold" fill="#2563eb" text-anchor="end">AE₀*</text>
+  <text x="100" y="164" font-size="11.5" font-weight="bold" fill="#16a34a" text-anchor="end">AE₁*</text>
+
+  <!-- X Axis Equilibrium Income Labels (Well Separated!) -->
+  <!-- Y0 at x=510 -->
+  <g transform="translate(445, 452)">
+    <rect x="0" y="0" width="130" height="24" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="65" y="16" font-size="11.5" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Y₀ (초기 균형소득)</text>
+  </g>
+
+  <!-- Y1 at x=670 -->
+  <g transform="translate(605, 452)">
+    <rect x="0" y="0" width="130" height="24" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+    <text x="65" y="16" font-size="11.5" font-weight="bold" fill="#15803d" text-anchor="middle">Y₁ (승수효과 후 소득)</text>
+  </g>
+
+  <!-- Multiplier Effect Arrow and Formula on X-Axis Bottom -->
+  <!-- From x=510 to x=670 at y=500 -->
+  <line x1="510" y1="492" x2="660" y2="492" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue)" />
+  <g transform="translate(450, 508)">
+    <rect x="0" y="0" width="280" height="32" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)" />
+    <text x="140" y="21" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">
+      ΔY = ΔG × [ 1 / (1 - c) ] &gt; ΔG
+    </text>
+  </g>
+
+  <!-- Core Takeaway Card (Bottom Left, perfectly filling empty space) -->
+  <g transform="translate(130, 485)">
+    <rect x="0" y="0" width="290" height="85" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="290" height="26" rx="8" fill="#1e293b" />
+    <rect x="0" y="16" width="290" height="10" fill="#1e293b" />
+    <text x="145" y="17" font-size="11.5" font-weight="bold" fill="#ffffff" text-anchor="middle">📌 시험 핵심: 승수효과의 기하학적 원리</text>
+    <text x="12" y="44" font-size="11" fill="#334155">• 총지출선 기울기 = 한계소비성향(MPC = c)</text>
+    <text x="12" y="62" font-size="11" fill="#334155">• 0 &lt; c &lt; 1 이므로 45°선보다 완만하게 상승</text>
+    <text x="12" y="80" font-size="11" font-weight="bold" fill="#2563eb">• 독립지출(ΔG) 수직 이동 ➔ 소득(ΔY) 수평 확장</text>
+  </g>
 </svg>
