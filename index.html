@@ -301,9 +301,9 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_1930"></script>
+  <script src="topics-data.js?v=20260908_1940"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260908_1930"></script>
+  <script src="explanations-data.js?v=20260908_1940"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -390,14 +390,28 @@
     </div>
 
     <div class="flex items-center gap-2 shrink-0">
-      <div class="hidden xl:flex items-center gap-1.5 text-[11px] text-slate-400">
-        <span class="px-1.5 py-0.5 bg-blue-50 text-blue-800 border border-blue-200 rounded font-semibold cursor-pointer hover:bg-blue-100" id="hint-toggle-sidebar" title="목차 사이드바를 접거나 펼칩니다">[Ctrl+B] 목차</span>
-        <span class="px-1.5 py-0.5 bg-lime-50 text-lime-800 border border-lime-200 rounded font-semibold" title="본문 글자 드래그 후 [M]을 누르면 테이프가 붙습니다">[드래그+M] 추가</span>
-        <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-semibold" title="테이프 위에서 마우스 우클릭하거나 Option/Cmd+클릭하면 삭제됩니다">[우클릭] 테이프 삭제</span>
-        <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded font-semibold" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 모드로 전환합니다">[I] 작성 모드</span>
-        <span class="px-1.5 py-0.5 bg-lime-100 text-lime-900 border border-lime-300 rounded font-semibold">[Space] 전체공개</span>
-        <span class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-600">[Tab] 서술입력</span>
-        <span class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-600">[F/A/P] 자가채점</span>
+      <div class="hidden lg:flex items-center gap-1.5 text-[11px]">
+        <button id="sc-btn-sidebar" class="px-1.5 py-0.5 bg-blue-50 text-blue-800 border border-blue-200 rounded font-semibold cursor-pointer hover:bg-blue-100 transition-all active:scale-95 flex items-center gap-1" title="목차 사이드바 접기/펼치기 (단축키: ⌘B / Ctrl+B)" type="button">
+          <span id="label-sc-sidebar">[⌘B] 목차</span>
+        </button>
+        <button id="sc-btn-add" class="px-1.5 py-0.5 bg-lime-50 text-lime-800 border border-lime-200 rounded font-semibold cursor-pointer hover:bg-lime-100 transition-all active:scale-95 flex items-center gap-1" title="본문 글자 드래그 후 누르면 테이프가 생성됩니다 (단축키: M / ⌘M)" type="button">
+          <span id="label-sc-add">[드래그+M] 추가</span>
+        </button>
+        <button id="sc-btn-del" class="px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-semibold cursor-pointer hover:bg-rose-100 transition-all active:scale-95 flex items-center gap-1" title="테이프 위에서 우클릭 또는 ⌥/⌘+클릭 시 삭제 (단축키: Backspace/Delete)" type="button">
+          <span id="label-sc-del">[우클릭] 테이프 삭제</span>
+        </button>
+        <button id="sc-btn-mode" class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded font-semibold cursor-pointer hover:bg-emerald-100 transition-all active:scale-95 flex items-center gap-1" title="빈칸 직접 타이핑 모드로 전환 (단축키: I / ⌘I)" type="button">
+          <span id="label-sc-mode">[I] 작성 모드</span>
+        </button>
+        <button id="sc-btn-reveal" class="px-1.5 py-0.5 bg-lime-100 text-lime-900 border border-lime-300 rounded font-semibold cursor-pointer hover:bg-lime-200 transition-all active:scale-95 flex items-center gap-1" title="모든 테이프 전체 공개 / 가리기 (단축키: Space / T)" type="button">
+          <span id="label-sc-reveal">[Space] 전체공개</span>
+        </button>
+        <button id="sc-btn-essay" class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-700 cursor-pointer hover:bg-slate-100 transition-all active:scale-95 flex items-center gap-1" title="서술형 입력창으로 포커스 이동 (단축키: Tab)" type="button">
+          <span id="label-sc-essay">[Tab] 서술입력</span>
+        </button>
+        <button id="sc-btn-grade" class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-700 cursor-pointer hover:bg-slate-100 transition-all active:scale-95 flex items-center gap-1" title="자가채점: P(완벽인출), A(세모), F(오답) (단축키: P / A / F 또는 ⌘P / ⌘A / ⌘F)" type="button">
+          <span id="label-sc-grade">[F/A/P] 자가채점</span>
+        </button>
       </div>
       <div class="flex items-center gap-1">
         <button id="btn-prev-topic" class="px-2 md:px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button">
@@ -883,8 +897,10 @@
         if (sidebarToggleIcon) {
           sidebarToggleIcon.textContent = isCollapsed ? 'menu' : 'dock_to_left';
         }
+        const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
+        const scKeyText = isMacPlatform ? '⌘B' : 'Ctrl+B';
         if (btnToggleSidebar) {
-          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 (Ctrl+B)' : '목차 사이드바 접기 (Ctrl+B)';
+          btnToggleSidebar.title = isCollapsed ? `목차 사이드바 펼치기 (${scKeyText})` : `목차 사이드바 접기 (${scKeyText})`;
         }
       }
 
@@ -905,7 +921,9 @@
           localStorage.setItem('edurecall_sidebar_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateSidebarToggleUI(willCollapse);
-        showToast(willCollapse ? '목차 탭을 접었습니다 (Ctrl+B로 다시 열기)' : '목차 탭을 펼쳤습니다', willCollapse ? 'dock_to_left' : 'menu_open');
+        const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
+        const scKeyText = isMacPlatform ? '⌘B' : 'Ctrl+B';
+        showToast(willCollapse ? `목차 탭을 접었습니다 (${scKeyText}로 다시 열기)` : '목차 탭을 펼쳤습니다', willCollapse ? 'dock_to_left' : 'menu_open');
       }
 
       function setSidebarCollapsed(collapsed) {
@@ -2183,12 +2201,25 @@
       function handleGrade(grade) {
         const topic = TOPICS[currentTopicIndex];
         const res = saveGrade(topic.id, grade);
+
+        // Visual bounce animation on corresponding grade button in sidebar/drawer
+        const targetBtn = Array.from(gradeBtns).find(b => b.dataset.grade === grade);
+        if (targetBtn) {
+          const ringColor = grade === 'pass' ? 'ring-blue-400' : (grade === 'ambiguous' ? 'ring-amber-400' : 'ring-red-400');
+          targetBtn.classList.add('ring-4', 'ring-offset-1', ringColor, 'scale-105');
+          setTimeout(() => {
+            targetBtn.classList.remove('ring-4', 'ring-offset-1', ringColor, 'scale-105');
+          }, 300);
+        }
+
+        const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
+        const modKey = isMacPlatform ? '⌘' : 'Ctrl+';
         if (grade === 'pass') {
-          showToast(`완벽 인출 성공! (복습 ${res.count}회차)`, 'verified');
+          showToast(`[P / ${modKey}P] 완벽 인출 성공! (복습 ${res.count}회차)`, 'verified');
         } else if (grade === 'ambiguous') {
-          showToast('부분 성공으로 기록되었습니다', 'help');
+          showToast(`[A / ${modKey}A] 부분 성공 (보완 필요)`, 'help');
         } else if (grade === 'fail') {
-          showToast('오답 노트에 등록되었습니다', 'cancel');
+          showToast(`[F / ${modKey}F] 오답 노트에 등록되었습니다`, 'cancel');
         }
       }
 
@@ -2275,6 +2306,57 @@
       if (btnCollapseSidebar) btnCollapseSidebar.addEventListener('click', () => setSidebarCollapsed(true));
       if (floatingOpenSidebarBtn) floatingOpenSidebarBtn.addEventListener('click', () => setSidebarCollapsed(false));
       if (hintToggleSidebar) hintToggleSidebar.addEventListener('click', toggleDesktopSidebar);
+
+      // Shortcut Toolbar Quick Actions
+      const scBtnSidebar = document.getElementById('sc-btn-sidebar');
+      const scBtnAdd = document.getElementById('sc-btn-add');
+      const scBtnDel = document.getElementById('sc-btn-del');
+      const scBtnMode = document.getElementById('sc-btn-mode');
+      const scBtnReveal = document.getElementById('sc-btn-reveal');
+      const scBtnEssay = document.getElementById('sc-btn-essay');
+      const scBtnGrade = document.getElementById('sc-btn-grade');
+
+      if (scBtnSidebar) scBtnSidebar.addEventListener('click', toggleDesktopSidebar);
+
+      if (scBtnAdd) scBtnAdd.addEventListener('click', () => {
+        const sel = window.getSelection();
+        if (sel && !sel.isCollapsed && sel.toString().trim()) {
+          addTapeToCurrentSelection();
+        } else {
+          showToast('본문 글자를 드래그한 후 [M] 또는 이 버튼을 누르면 테이프가 생성됩니다', 'info');
+        }
+      });
+
+      if (scBtnDel) scBtnDel.addEventListener('click', () => {
+        showToast('테이프를 마우스 우클릭하거나 ⌥/⌘+클릭하면 즉시 삭제됩니다', 'delete');
+      });
+
+      if (scBtnMode) scBtnMode.addEventListener('click', () => {
+        applyMode(currentMode === 'type' ? 'tape' : 'type');
+      });
+
+      if (scBtnReveal) scBtnReveal.addEventListener('click', () => {
+        toggleMasterReveal();
+      });
+
+      if (scBtnEssay) scBtnEssay.addEventListener('click', () => {
+        essayInput.focus();
+        essayInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        showToast('서술 입력란 포커스 [Tab]', 'keyboard');
+      });
+
+      if (scBtnGrade) scBtnGrade.addEventListener('click', () => {
+        showToast('자가채점 단축키: [P/⌘P] 완벽인출 | [A/⌘A] 부분성공 | [F/⌘F] 오답', 'psychology');
+      });
+
+      // OS-aware shortcut badge labels (Mac: ⌘, Win: Ctrl)
+      const isMacUser = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
+      const modPrefix = isMacUser ? '⌘' : 'Ctrl+';
+      const labelScSidebar = document.getElementById('label-sc-sidebar');
+      if (labelScSidebar) labelScSidebar.textContent = `[${modPrefix}B] 목차`;
+      const labelScDel = document.getElementById('label-sc-del');
+      if (labelScDel && isMacUser) labelScDel.textContent = `[우클릭/⌥클릭] 테이프 삭제`;
+
       if (bcContainer) {
         bcContainer.addEventListener('click', () => {
           if (window.innerWidth < 768) {
@@ -2826,14 +2908,16 @@
           return;
         }
 
+        // 1. [Tab] Focus essay input
         if (e.key === 'Tab' && activeEl !== essayInput) {
           e.preventDefault();
           essayInput.focus();
+          essayInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
           showToast('서술 입력란 포커스 [Tab]', 'keyboard');
           return;
         }
 
-        // Shortcut: [Ctrl+B] / [Cmd+B] Toggle Table of Contents Sidebar
+        // 2. [Cmd+B] / [Ctrl+B] Toggle Table of Contents Sidebar
         if ((e.ctrlKey || e.metaKey) && (e.key === 'b' || e.key === 'B')) {
           e.preventDefault();
           toggleDesktopSidebar();
@@ -2842,34 +2926,100 @@
 
         const isTyping = activeEl === essayInput || (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA'));
 
+        // If inside text editing area (essayInput or other text inputs):
         if (isTyping) {
           if (e.code === 'Escape') {
             activeEl.blur();
-          } else if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            showToast('입력 종료 (본문 이동)', 'close');
+            return;
+          }
+          // Self-grading while typing:
+          // [Cmd+Enter] or [Cmd+P] or [Ctrl+P] -> Pass (Never opens Print dialog!)
+          if ((e.ctrlKey || e.metaKey) && (e.key === 'Enter' || e.key === 'p' || e.key === 'P')) {
             e.preventDefault();
             handleGrade('pass');
+            return;
+          }
+          // [Cmd+F] or [Ctrl+F] -> Fail (Never opens browser search!)
+          if ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F')) {
+            e.preventDefault();
+            handleGrade('fail');
+            return;
+          }
+          // [Cmd+Shift+A] or [Alt+A] or [Option+A] -> Ambiguous
+          if (((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'a' || e.key === 'A')) || (e.altKey && (e.key === 'a' || e.key === 'A'))) {
+            e.preventDefault();
+            handleGrade('ambiguous');
+            return;
           }
           return;
         }
 
-        // Shortcut: [I] for direct typing mode
-        if ((e.key === 'i' || e.key === 'I') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // --- NON-TYPING MODE (Browsing / Recalling) ---
+
+        // 3. Search Shortcut: [Cmd+K] / [Ctrl+K] or [/]
+        if (((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) || e.key === '/') {
           e.preventDefault();
-          applyMode('type');
+          if (document.body.classList.contains('sidebar-collapsed')) {
+            setSidebarCollapsed(false);
+          }
+          if (window.innerWidth < 768 && sidebarDrawer.classList.contains('-translate-x-full')) {
+            openMobileSidebar();
+          }
+          if (sidebarSearch) {
+            sidebarSearch.focus();
+            sidebarSearch.select();
+          }
+          const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
+          showToast(`단원 검색 포커스 [${isMacPlatform ? '⌘K' : 'Ctrl+K'}]`, 'search');
           return;
         }
 
-        // Shortcut: [H] or [?] Toggle Supplementary Explanation Drawer
+        // 4. Self-Grading Shortcuts:
+        // [P] or [Cmd+P] or [Ctrl+P] or [3] -> Pass
+        if ((e.key === 'p' || e.key === 'P' || e.key === '3') || ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P'))) {
+          e.preventDefault(); // intercepts Mac Print dialog!
+          handleGrade('pass');
+          return;
+        }
+
+        // [F] or [Cmd+F] or [Ctrl+F] or [1] -> Fail
+        if ((e.key === 'f' || e.key === 'F' || e.key === '1') || ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F'))) {
+          e.preventDefault(); // intercepts browser Find dialog!
+          handleGrade('fail');
+          return;
+        }
+
+        // [A] or [Cmd+A] or [Ctrl+A] or [2] -> Ambiguous
+        if ((e.key === 'a' || e.key === 'A' || e.key === '2') || ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'A'))) {
+          e.preventDefault(); // intercepts select all!
+          handleGrade('ambiguous');
+          return;
+        }
+
+        // 5. [I] or [Cmd+I] -> Toggle direct typing mode
+        if ((e.key === 'i' || e.key === 'I')) {
+          e.preventDefault();
+          applyMode(currentMode === 'type' ? 'tape' : 'type');
+          return;
+        }
+
+        // 6. [H] or [?] Toggle Supplementary Explanation Drawer
         if ((e.key === 'h' || e.key === 'H' || e.key === '?') && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleExplanation();
           return;
         }
 
+        // 7. [Space] or [T] Toggle master reveal
         if (e.code === 'Space' || ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey)) {
           e.preventDefault();
           toggleMasterReveal();
-        } else if (((e.key === 'm' || e.key === 'M') || e.code === 'Delete' || e.code === 'Backspace') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          return;
+        }
+
+        // 8. [M] or [Cmd+M] or [Backspace] or [Delete] for Tapes
+        if (((e.key === 'm' || e.key === 'M') || e.code === 'Delete' || e.code === 'Backspace') && !e.altKey) {
           const sel = window.getSelection();
           if (sel && !sel.isCollapsed && sel.toString().trim()) {
             if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
@@ -2884,21 +3034,41 @@
           } else if (e.key === 'm' || e.key === 'M') {
             showToast('본문 글자를 드래그한 후 [M]을 누르면 테이프가 붙고, 우클릭 시 삭제됩니다', 'info');
           }
-        } else if (e.key === ']' || e.key === '}') {
+          return;
+        }
+
+        // 9. Topic Navigation: Left / Right Arrow keys
+        if (e.key === 'ArrowLeft' && !e.altKey) {
+          e.preventDefault();
+          btnPrevTopic.click();
+          return;
+        }
+        if (e.key === 'ArrowRight' && !e.altKey) {
+          e.preventDefault();
+          btnNextTopic.click();
+          return;
+        }
+
+        // 10. Font scaling: [ / ]
+        if (e.key === ']' || e.key === '}') {
           e.preventDefault();
           applyFontScale(currentFontScale + 10, true);
+          return;
         } else if (e.key === '[' || e.key === '{') {
           e.preventDefault();
           applyFontScale(currentFontScale - 10, true);
-        } else if (e.key === 'f' || e.key === 'F') {
-          handleGrade('fail');
-        } else if (e.key === 'a' || e.key === 'A') {
-          handleGrade('ambiguous');
-        } else if (e.key === 'p' || e.key === 'P') {
-          handleGrade('pass');
-        } else if (e.key === 'r' || e.key === 'R') {
+          return;
+        }
+
+        // 11. [R] Hide all
+        if (e.key === 'r' || e.key === 'R') {
+          e.preventDefault();
           toggleMasterReveal(false);
-        } else if (e.code === 'Escape') {
+          return;
+        }
+
+        // 12. [Escape] Modals / Drawer / Unreveal
+        if (e.code === 'Escape') {
           if (diagramModal && !diagramModal.classList.contains('hidden')) {
             closeDiagramModal();
             return;
@@ -2916,6 +3086,7 @@
           } else {
             toggleMasterReveal(false);
           }
+          return;
         }
       });
 
