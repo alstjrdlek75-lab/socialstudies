@@ -348,7 +348,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_2115"></script>
+  <script src="topics-data.js?v=20260908_2125"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260908_1955"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
@@ -1556,10 +1556,10 @@
 
         // Insert Structured Content HTML (Check custom user masking first)
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
-        // Clear any corrupted customHtml that has broken/split group header or stale POL-024/POL-031/POL-032/LAW-066/ECON-002/ECON-004/ECON-009/ECON-010 content
+        // Clear any corrupted customHtml that has broken/split group header or stale POL-024/POL-031/POL-032/LAW-066/ECON content
         if (customHtml && (
           topic.id === 'POL-016' || topic.id === 'POL-017' || topic.id === 'POL-024' || topic.id === 'POL-031' || topic.id === 'POL-032' || topic.id === 'LAW-066' ||
-          topic.id === 'ECON-002' || topic.id === 'ECON-004' ||
+          topic.id === 'ECON-001' || topic.id === 'ECON-002' || topic.id === 'ECON-004' || topic.id === 'ECON-005' || topic.id === 'ECON-007' || topic.id === 'ECON-008' || topic.id === 'ECON-012' || topic.id === 'ECON-013' || topic.id === 'ECON-014' || topic.id === 'ECON-015' || topic.id === 'ECON-018' || topic.id === 'ECON-019' ||
           (topic.id === 'ECON-009' && (customHtml.includes('bg-amber-50') || customHtml.includes('로렌츠') || !customHtml.includes('recall-item'))) ||
           (topic.id === 'ECON-010' && !customHtml.includes('[Case 1]')) ||
           customHtml.includes('PXPY') || customHtml.includes('MUXPX') || customHtml.includes('-PXPYX') || customHtml.includes('MPY-') ||
