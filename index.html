@@ -301,9 +301,9 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_2020"></script>
+  <script src="topics-data.js?v=20260908_1935"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260908_2020"></script>
+  <script src="explanations-data.js?v=20260908_1935"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -385,7 +385,7 @@
         <span class="text-amber-800 font-semibold shrink-0 truncate max-w-[130px] md:max-w-[170px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/80 hidden" id="bc-subsection">세부단원</span>
         <span class="text-slate-300 shrink-0">/</span>
         <span class="text-slate-900 font-bold truncate max-w-[140px] md:max-w-none" id="bc-title">1.시민성 전달 모형</span>
-        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
+        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-600 border border-indigo-200 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
 
@@ -1117,14 +1117,10 @@
       }
 
       // Helper: Format examTag for display
-      // Pure numbers like "22" → "'22", "23 25" → "'23 '25", "22,23,26(단답)" → "'22,'23,'26(단답)"
-      // Category-style like "수요공급(29)" stays as-is (Korean prefix + parenthesized number)
       function formatExamTag(tag) {
         if (!tag) return '';
-        // Category-style: Korean text followed by parenthesized number e.g. "수요공급(29)" → keep as-is
-        if (/^[\uAC00-\uD7AF]+\(\d+\)$/.test(tag)) return tag;
-        // For everything else, prefix standalone 2-digit numbers with apostrophe
-        return tag.replace(/(^|[\s,])(\d{2})(?=\b)/g, "$1'$2");
+        const formatted = tag.replace(/(^|[\s,])(\d{2})(?=\b)/g, "$1'$2");
+        return `[기출 ${formatted}]`;
       }
 
       // 4. Render Sidebar Tree (Clean Collapsible Hierarchical Tree)
@@ -1237,7 +1233,7 @@
                   ${gradeIcon || '<span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>'}
                   <span class="truncate font-semibold">${displayName}</span>
                 </div>
-                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${formatExamTag(topic.examTag)}</span>` : ''}
+                ${topic.examTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formatExamTag(topic.examTag)}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -1315,7 +1311,7 @@
                   ${gradeIcon}
                   <span class="truncate">${topic.title}</span>
                 </div>
-                ${topic.examTag ? `<span class="px-1 py-0.2 rounded text-[9px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0">${formatExamTag(topic.examTag)}</span>` : ''}
+                ${topic.examTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formatExamTag(topic.examTag)}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -1484,7 +1480,7 @@
           topicBadgeSection.classList.add('hidden');
         }
         if (topic.examTag) {
-          topicBadgeExam.textContent = `기출: ${formatExamTag(topic.examTag)}`;
+          topicBadgeExam.textContent = formatExamTag(topic.examTag);
           topicBadgeExam.classList.remove('hidden');
         } else {
           topicBadgeExam.classList.add('hidden');
