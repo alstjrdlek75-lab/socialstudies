@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 700" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
@@ -17,66 +17,118 @@
   <line x1="0" y1="50" x2="940" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
 
   <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="640" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="470" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 삼면등가의 법칙: 생산국민소득(GDP) ≡ 분배국민소득(임금+지대+이자+이윤) ≡ 지출국민소득(C+I+G+NX)</text>
+  <rect x="150" y="60" width="640" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="470" y="76" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 삼면등가의 법칙: 생산국민소득(GDP) ≡ 분배국민소득(임금+지대+이자+이윤) ≡ 지출국민소득(C+I+G+NX)</text>
 
   <!-- Left Box: Households (가계) -->
-  <g transform="translate(80, 200)">
-    <rect x="0" y="0" width="180" height="130" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
-    <text x="90" y="35" font-size="16" font-weight="bold" fill="#1d4ed8" text-anchor="middle">가계 (Households)</text>
-    <line x1="20" y1="50" x2="160" y2="50" stroke="#bfdbfe" />
-    <text x="90" y="75" font-size="11.5" fill="#1e3a8a" text-anchor="middle">• 생산요소 공급자</text>
-    <text x="90" y="95" font-size="11.5" fill="#1e3a8a" text-anchor="middle">• 최종재 소비자</text>
-    <text x="90" y="115" font-size="11.5" fill="#1e3a8a" text-anchor="middle">• 소득 분배의 주체</text>
+  <g transform="translate(80, 140)">
+    <rect x="0" y="0" width="180" height="125" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+    <text x="90" y="32" font-size="15" font-weight="bold" fill="#1d4ed8" text-anchor="middle">가계 (Households)</text>
+    <line x1="20" y1="45" x2="160" y2="45" stroke="#bfdbfe" />
+    <text x="90" y="68" font-size="11" fill="#1e3a8a" text-anchor="middle">• 생산요소 공급자</text>
+    <text x="90" y="88" font-size="11" fill="#1e3a8a" text-anchor="middle">• 최종재 소비자</text>
+    <text x="90" y="108" font-size="11" fill="#1e3a8a" text-anchor="middle">• 소득 처분: Y = C + S + T</text>
   </g>
 
   <!-- Right Box: Firms (기업) -->
-  <g transform="translate(680, 200)">
-    <rect x="0" y="0" width="180" height="130" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" filter="url(#shadow)" />
-    <text x="90" y="35" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">기업 (Firms)</text>
-    <line x1="20" y1="50" x2="160" y2="50" stroke="#bbf7d0" />
-    <text x="90" y="75" font-size="11.5" fill="#14532d" text-anchor="middle">• 생산요소 수요자</text>
-    <text x="90" y="95" font-size="11.5" fill="#14532d" text-anchor="middle">• 재화·서비스 공급자</text>
-    <text x="90" y="115" font-size="11.5" fill="#14532d" text-anchor="middle">• 부가가치 창출 주체</text>
+  <g transform="translate(680, 140)">
+    <rect x="0" y="0" width="180" height="125" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" filter="url(#shadow)" />
+    <text x="90" y="32" font-size="15" font-weight="bold" fill="#15803d" text-anchor="middle">기업 (Firms)</text>
+    <line x1="20" y1="45" x2="160" y2="45" stroke="#bbf7d0" />
+    <text x="90" y="68" font-size="11" fill="#14532d" text-anchor="middle">• 생산요소 수요자</text>
+    <text x="90" y="88" font-size="11" fill="#14532d" text-anchor="middle">• 재화·서비스 공급자</text>
+    <text x="90" y="108" font-size="11" fill="#14532d" text-anchor="middle">• 부가가치 창출 주체</text>
   </g>
 
   <!-- Top Center: Goods Market (생산물 시장) -->
-  <g transform="translate(370, 110)">
-    <rect x="0" y="0" width="200" height="70" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.8" filter="url(#shadow)" />
-    <text x="100" y="30" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">생산물 시장</text>
-    <text x="100" y="52" font-size="11" font-weight="bold" fill="#d97706" text-anchor="middle">[지출국민소득: 소비지출]</text>
+  <g transform="translate(370, 90)">
+    <rect x="0" y="0" width="200" height="58" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="100" y="25" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">생산물 시장</text>
+    <text x="100" y="45" font-size="10.5" font-weight="bold" fill="#d97706" text-anchor="middle">[지출국민소득: C + I + G + NX]</text>
   </g>
 
   <!-- Bottom Center: Factor Market (생산요소 시장) -->
-  <g transform="translate(370, 350)">
-    <rect x="0" y="0" width="200" height="70" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="1.8" filter="url(#shadow)" />
-    <text x="100" y="30" font-size="14" font-weight="bold" fill="#6b21a8" text-anchor="middle">생산요소 시장</text>
-    <text x="100" y="52" font-size="11" font-weight="bold" fill="#7e22ce" text-anchor="middle">[분배국민소득: 요소소득]</text>
+  <g transform="translate(370, 260)">
+    <rect x="0" y="0" width="200" height="58" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="100" y="25" font-size="13" font-weight="bold" fill="#6b21a8" text-anchor="middle">생산요소 시장</text>
+    <text x="100" y="45" font-size="10.5" font-weight="bold" fill="#7e22ce" text-anchor="middle">[분배국민소득: 요소소득 합]</text>
   </g>
 
   <!-- Flow Arrows (Real Flows & Money Flows) -->
-  <!-- Top: Goods Market Flows -->
-  <!-- Firms to Goods Market (Goods supply) -->
-  <path d="M 740 200 Q 700 130, 580 135" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)" />
-  <text x="680" y="145" font-size="11" font-weight="bold" fill="#16a34a">재화·서비스 공급</text>
+  <path d="M 740 140 Q 700 100, 580 105" fill="none" stroke="#16a34a" stroke-width="2.3" marker-end="url(#arr-green)" />
+  <text x="675" y="112" font-size="10.5" font-weight="bold" fill="#16a34a">재화·서비스 공급</text>
 
-  <!-- Households to Goods Market (Consumption expenditure) -->
-  <path d="M 200 200 Q 240 130, 360 135" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
-  <text x="210" y="145" font-size="11" font-weight="bold" fill="#2563eb">소비 지출 (C)</text>
+  <path d="M 200 140 Q 240 100, 360 105" fill="none" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arr-blue)" />
+  <text x="210" y="112" font-size="10.5" font-weight="bold" fill="#2563eb">소비 지출 (C)</text>
 
-  <!-- Bottom: Factor Market Flows -->
-  <!-- Households to Factor Market (Factor supply) -->
-  <path d="M 170 330 Q 220 395, 360 390" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
-  <text x="200" y="415" font-size="11" font-weight="bold" fill="#2563eb">생산요소 공급 (노동·자본·토지)</text>
+  <path d="M 170 265 Q 220 300, 360 295" fill="none" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arr-blue)" />
+  <text x="195" y="320" font-size="10.5" font-weight="bold" fill="#2563eb">생산요소 공급 (L, K, T)</text>
 
-  <!-- Factor Market to Households (Factor income payment) -->
-  <path d="M 770 330 Q 720 395, 580 390" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)" />
-  <text x="630" y="415" font-size="11" font-weight="bold" fill="#16a34a">요소소득 지급 (임금+이자+지대+이윤)</text>
+  <path d="M 770 265 Q 720 300, 580 295" fill="none" stroke="#16a34a" stroke-width="2.3" marker-end="url(#arr-green)" />
+  <text x="630" y="320" font-size="10.5" font-weight="bold" fill="#16a34a">요소소득 (임금+이자+지대+이윤)</text>
 
   <!-- Center Circle: Equality of 3 Aspects -->
-  <g transform="translate(415, 220)">
-    <circle cx="55" cy="45" r="42" fill="#fff1f2" stroke="#e11d48" stroke-width="2" />
-    <text x="55" y="38" font-size="12" font-weight="bold" fill="#be123c" text-anchor="middle">GDP</text>
-    <text x="55" y="55" font-size="11" font-weight="bold" fill="#be123c" text-anchor="middle">삼면등가</text>
+  <g transform="translate(425, 165)">
+    <circle cx="45" cy="40" r="37" fill="#fff1f2" stroke="#e11d48" stroke-width="2" />
+    <text x="45" y="34" font-size="11" font-weight="bold" fill="#be123c" text-anchor="middle">GDP</text>
+    <text x="45" y="50" font-size="10" font-weight="bold" fill="#be123c" text-anchor="middle">삼면등가</text>
+  </g>
+
+  <!-- Bottom Panel: Income Disposition & Leakages/Injections Equilibrium -->
+  <g transform="translate(40, 350)">
+    <rect x="0" y="0" width="860" height="325" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    
+    <!-- Title -->
+    <rect x="0" y="0" width="860" height="38" rx="10" fill="#1e293b" />
+    <rect x="0" y="26" width="860" height="12" fill="#1e293b" />
+    <text x="430" y="24" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">💡 국민소득의 처분 및 누출(Leakages)·주입(Injections) 균형 모형</text>
+    
+    <!-- Section 1: Income Disposition -->
+    <g transform="translate(25, 52)">
+      <rect x="0" y="0" width="385" height="92" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+      <text x="15" y="24" font-size="12" font-weight="bold" fill="#1e40af">① 국민소득의 처분 (총소득 관점)</text>
+      <text x="15" y="44" font-size="11" fill="#334155">가계가 벌어들인 소득 Y는 소비(C), 저축(S), 세금(T)으로 배분</text>
+      <rect x="15" y="54" width="355" height="26" rx="4" fill="#ffffff" stroke="#bfdbfe" stroke-width="1" />
+      <text x="192" y="72" font-size="13.5" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Y = C + S + T</text>
+    </g>
+
+    <!-- Section 2: Expenditure Perspective -->
+    <g transform="translate(450, 52)">
+      <rect x="0" y="0" width="385" height="92" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+      <text x="15" y="24" font-size="12" font-weight="bold" fill="#166534">② 총지출 관점 (지출국민소득)</text>
+      <text x="15" y="44" font-size="11" fill="#334155">국민경제 전체 총지출은 소비, 투자, 정부지출, 순수출의 합</text>
+      <rect x="15" y="54" width="355" height="26" rx="4" fill="#ffffff" stroke="#bbf7d0" stroke-width="1" />
+      <text x="192" y="72" font-size="13.5" font-weight="bold" fill="#15803d" text-anchor="middle">Y = C + I + G + X - M</text>
+    </g>
+
+    <!-- Section 3: Equilibrium & Derivation -->
+    <g transform="translate(25, 155)">
+      <rect x="0" y="0" width="810" height="155" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+      
+      <!-- Top Row: Equation Derivation -->
+      <text x="20" y="24" font-size="12" font-weight="bold" fill="#0f172a">③ 양변 결합 및 소거:</text>
+      <text x="155" y="24" font-size="12" fill="#475569">C + S + T = C + I + G + X - M</text>
+      <text x="430" y="24" font-size="12" fill="#64748b">➔ (소비 C 소거)</text>
+      <text x="545" y="24" font-size="12" font-weight="bold" fill="#0f172a">S + T = I + G + X - M</text>
+
+      <!-- Mid Row: Leakage = Injection Box -->
+      <rect x="20" y="38" width="370" height="50" rx="5" fill="#fef2f2" stroke="#fecaca" stroke-width="1" />
+      <text x="35" y="57" font-size="11" font-weight="bold" fill="#991b1b">• 누출 (Leakages): 소득 순환 이탈 요소</text>
+      <text x="205" y="76" font-size="13" font-weight="bold" fill="#b91c1c" text-anchor="middle">S + T + M (저축 + 조세 + 수입)</text>
+
+      <text x="405" y="68" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">=</text>
+
+      <rect x="420" y="38" width="370" height="50" rx="5" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+      <text x="435" y="57" font-size="11" font-weight="bold" fill="#065f46">• 주입 (Injections): 소득 순환 유입 요소</text>
+      <text x="605" y="76" font-size="13" font-weight="bold" fill="#047857" text-anchor="middle">I + G + X (투자 + 정부지출 + 수출)</text>
+
+      <!-- Bottom Row: Y form representation -->
+      <rect x="20" y="96" width="770" height="48" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+      <text x="35" y="115" font-size="11" font-weight="bold" fill="#334155">④ Y 형태로 표현할 경우 (S + T = Y - C 대입):</text>
+      <text x="35" y="133" font-size="11.5" font-weight="bold" fill="#1e293b">(Y - C) + M = I + G + X</text>
+      <text x="385" y="133" font-size="12" font-weight="bold" fill="#6366f1">⟺</text>
+      <text x="415" y="133" font-size="12" font-weight="bold" fill="#2563eb">Y - C + M = I + G + X</text>
+      <text x="635" y="133" font-size="11" fill="#64748b">[총공급·처분 관점 = 총지출 관점]</text>
+    </g>
   </g>
 </svg>
