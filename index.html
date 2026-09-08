@@ -301,7 +301,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_1005"></script>
+  <script src="topics-data.js?v=20260908_1010"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -2524,6 +2524,9 @@
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
             const val = localStorage.getItem(key);
+            if (val && (val.includes('것으 로') || val.includes('배 상책임'))) {
+              localStorage.setItem(key, val.replaceAll('것으 로', '것으로').replaceAll('배 상책임', '배상책임'));
+            }
             if (val && (val.includes('토표형태') || val.includes('수반만을 수행→') || val.includes('집권→정부의 구성도') || val.includes('행정국가화 현상 :') || val.includes('하부구조적 권력↓') || val.includes('사회공익 실현 특수이익 실현') || val.includes('세계화시대의 국가 변형에서 논의') || val.includes('위윔') || val.includes('<span>(1)</span>') || val.includes('민주주의를 제도로 국한해서') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리')))) {
               localStorage.removeItem(key);
             }
