@@ -301,7 +301,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_0950"></script>
+  <script src="topics-data.js?v=20260908_1000"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -379,6 +379,8 @@
         <span class="text-slate-500 shrink-0 truncate max-w-[120px] md:max-w-[160px]" id="bc-chapter">1.사회과 교육의 전통</span>
         <span class="text-slate-300 shrink-0 hidden" id="bc-section-sep">/</span>
         <span class="text-indigo-700 font-semibold shrink-0 truncate max-w-[140px] md:max-w-[180px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100 hidden" id="bc-section">1-1. 세 가지 전통</span>
+        <span class="text-slate-300 shrink-0 hidden" id="bc-subsection-sep">/</span>
+        <span class="text-amber-800 font-semibold shrink-0 truncate max-w-[130px] md:max-w-[170px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/80 hidden" id="bc-subsection">세부단원</span>
         <span class="text-slate-300 shrink-0">/</span>
         <span class="text-slate-900 font-bold truncate max-w-[140px] md:max-w-none" id="bc-title">1.시민성 전달 모형</span>
         <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-700 border border-red-200 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
@@ -821,6 +823,8 @@
       const bcChapter = document.getElementById('bc-chapter');
       const bcSectionSep = document.getElementById('bc-section-sep');
       const bcSection = document.getElementById('bc-section');
+      const bcSubsectionSep = document.getElementById('bc-subsection-sep');
+      const bcSubsection = document.getElementById('bc-subsection');
       const bcTitle = document.getElementById('bc-title');
       const bcExamTag = document.getElementById('bc-exam-tag');
 
@@ -1012,6 +1016,7 @@
             topic.title.toLowerCase().includes(q) ||
             topic.chapter.toLowerCase().includes(q) ||
             (topic.section && topic.section.toLowerCase().includes(q)) ||
+            (topic.subsection && topic.subsection.toLowerCase().includes(q)) ||
             topic.defaultAnswer.toLowerCase().includes(q) ||
             (topic.targetKeywords && topic.targetKeywords.some(k => k.toLowerCase().includes(q)))
           );
@@ -1044,11 +1049,14 @@
           secMap.get(sec).push(globalIdx);
         });
 
-        // Ensure active topic's section is expanded
+        // Ensure active topic's section and subsection are expanded
         const activeTopic = TOPICS[currentTopicIndex];
         if (activeTopic) {
           const activeSec = (activeTopic.section && activeTopic.section !== activeTopic.chapter) ? activeTopic.section : activeTopic.chapter;
           expandedSections.delete(`COLLAPSED__${activeTopic.chapter}__${activeSec}`);
+          if (activeTopic.subsection) {
+            expandedSections.delete(`COLLAPSED__${activeTopic.chapter}__${activeSec}__${activeTopic.subsection}`);
+          }
         }
 
         chapterMap.forEach((secMap, chName) => {
@@ -1156,8 +1164,8 @@
               }
             });
 
-            // Add Topics under this Section
-            indices.forEach((globalIdx) => {
+            // Helper to create a topic item element
+            function createTopicItem(globalIdx) {
               const topic = TOPICS[globalIdx];
               const item = document.createElement('a');
               item.href = '#';
@@ -1175,8 +1183,8 @@
               }
 
               item.className = isCurrent
-                ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all'
-                : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all';
+                ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
+                : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
 
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
@@ -1191,8 +1199,77 @@
                 renderTopic(globalIdx);
               });
 
-              secChildren.appendChild(item);
-            });
+              return item;
+            }
+
+            const hasSubsections = indices.some(idx => Boolean(TOPICS[idx].subsection));
+            if (!hasSubsections) {
+              // Add Topics directly under this Section
+              indices.forEach((globalIdx) => {
+                secChildren.appendChild(createTopicItem(globalIdx));
+              });
+            } else {
+              // Group by subsection and render sub-accordions (세부단원)
+              const subMap = new Map();
+              indices.forEach((globalIdx) => {
+                const sub = TOPICS[globalIdx].subsection || '';
+                if (!subMap.has(sub)) subMap.set(sub, []);
+                subMap.get(sub).push(globalIdx);
+              });
+
+              subMap.forEach((subIndices, subName) => {
+                if (!subName) {
+                  subIndices.forEach((globalIdx) => {
+                    secChildren.appendChild(createTopicItem(globalIdx));
+                  });
+                  return;
+                }
+
+                const subSecKey = `${secKey}__${subName}`;
+                const isSubActive = subIndices.includes(currentTopicIndex);
+                const isSubExpanded = Boolean(q) || isSubActive || !expandedSections.has(`COLLAPSED__${subSecKey}`);
+
+                const subGroup = document.createElement('div');
+                subGroup.className = 'subsection-group my-1';
+
+                const subHeader = document.createElement('button');
+                subHeader.type = 'button';
+                subHeader.className = 'subsection-toggle-btn w-full flex items-center justify-between px-2 py-1.2 rounded-md text-[11px] font-bold text-slate-700 hover:bg-slate-100 hover:text-indigo-700 transition-colors cursor-pointer group text-left bg-slate-50/80 border border-slate-200/70 shadow-3xs';
+                subHeader.innerHTML = `
+                  <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
+                    <span class="material-symbols-outlined text-[13px] text-slate-400 group-hover:text-indigo-600 transition-transform duration-150 sub-chevron shrink-0 ${isSubExpanded ? 'rotate-90 text-indigo-600' : ''}">chevron_right</span>
+                    <span class="material-symbols-outlined text-[14px] text-indigo-500 shrink-0">folder</span>
+                    <span class="truncate font-bold text-slate-800 group-hover:text-indigo-700">${subName}</span>
+                  </div>
+                  <span class="text-[9px] text-slate-400 font-medium px-1.5 py-0.2 bg-white rounded-full border border-slate-200/80 shrink-0">${subIndices.length}</span>
+                `;
+
+                const subChildren = document.createElement('div');
+                subChildren.className = `subsection-children ml-3 pl-2 border-l-2 border-indigo-200/70 space-y-0.5 mt-0.5 mb-1 ${isSubExpanded ? '' : 'hidden'}`;
+                subChildren.dataset.subSecKey = subSecKey;
+
+                subHeader.addEventListener('click', () => {
+                  const currentlyHidden = subChildren.classList.contains('hidden');
+                  if (currentlyHidden) {
+                    subChildren.classList.remove('hidden');
+                    subHeader.querySelector('.sub-chevron').classList.add('rotate-90', 'text-indigo-600');
+                    expandedSections.delete(`COLLAPSED__${subSecKey}`);
+                  } else {
+                    subChildren.classList.add('hidden');
+                    subHeader.querySelector('.sub-chevron').classList.remove('rotate-90', 'text-indigo-600');
+                    expandedSections.add(`COLLAPSED__${subSecKey}`);
+                  }
+                });
+
+                subIndices.forEach((globalIdx) => {
+                  subChildren.appendChild(createTopicItem(globalIdx));
+                });
+
+                subGroup.appendChild(subHeader);
+                subGroup.appendChild(subChildren);
+                secChildren.appendChild(subGroup);
+              });
+            }
 
             secGroup.appendChild(secHeader);
             secGroup.appendChild(secChildren);
@@ -1257,6 +1334,14 @@
           bcSection.classList.add('hidden');
           bcSectionSep.classList.add('hidden');
         }
+        if (topic.subsection) {
+          bcSubsection.textContent = topic.subsection;
+          bcSubsection.classList.remove('hidden');
+          bcSubsectionSep.classList.remove('hidden');
+        } else {
+          bcSubsection.classList.add('hidden');
+          bcSubsectionSep.classList.add('hidden');
+        }
         bcTitle.textContent = topic.title;
         if (topic.examTag) {
           bcExamTag.textContent = formatExamTag(topic.examTag);
@@ -1269,7 +1354,7 @@
         topicBadgeSubject.textContent = topic.subject;
         topicBadgeChapter.textContent = topic.chapter;
         if (topic.section && topic.section !== topic.chapter) {
-          topicSectionText.textContent = topic.section;
+          topicSectionText.textContent = topic.subsection ? `${topic.section} › ${topic.subsection}` : topic.section;
           topicBadgeSection.classList.remove('hidden');
         } else {
           topicBadgeSection.classList.add('hidden');
