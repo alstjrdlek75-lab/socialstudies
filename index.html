@@ -414,11 +414,11 @@
         </button>
       </div>
       <div class="flex items-center gap-1">
-        <button id="btn-prev-topic" class="px-2 md:px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button">
+        <button id="btn-prev-topic" class="px-2 md:px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button" title="이전 주제 (방향키 좌, Cmd+좌, Cmd+,)">
           <span class="material-symbols-outlined text-[15px]">chevron_left</span>
           <span>이전</span>
         </button>
-        <button id="btn-next-topic" class="px-2 md:px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button">
+        <button id="btn-next-topic" class="px-2 md:px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button" title="다음 주제 (방향키 우, Cmd+우, Cmd+.)">
           <span>다음</span>
           <span class="material-symbols-outlined text-[15px]">chevron_right</span>
         </button>
@@ -3033,13 +3033,13 @@
           return;
         }
 
-        // 9. Topic Navigation: Left / Right Arrow keys
-        if (e.key === 'ArrowLeft' && !e.altKey) {
+        // 9. Topic Navigation: Left / Right Arrow keys / Cmd+, / Cmd+.
+        if ((e.key === 'ArrowLeft' && !e.altKey) || ((e.ctrlKey || e.metaKey) && (e.key === 'ArrowLeft' || e.key === ',' || e.key === '<'))) {
           e.preventDefault();
           btnPrevTopic.click();
           return;
         }
-        if (e.key === 'ArrowRight' && !e.altKey) {
+        if ((e.key === 'ArrowRight' && !e.altKey) || ((e.ctrlKey || e.metaKey) && (e.key === 'ArrowRight' || e.key === '.' || e.key === '>'))) {
           e.preventDefault();
           btnNextTopic.click();
           return;
