@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 720" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <!-- Title Header -->
-  <rect x="0" y="0" width="980" height="60" fill="#f8fafc" />
-  <text x="490" y="38" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">외부효과 4대 케이스 종합 도해 (생산·소비 측면 × 외부경제·불경제)</text>
-  <line x1="0" y1="60" x2="980" y2="60" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="0" y="0" width="1000" height="55" fill="#f8fafc" />
+  <text x="500" y="35" font-size="19" font-weight="bold" text-anchor="middle" fill="#0f172a">외부효과 4대 케이스 종합 도해 (생산·소비 측면 × 외부경제·불경제)</text>
+  <line x1="0" y1="55" x2="1000" y2="55" stroke="#cbd5e1" stroke-width="1.5" />
 
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
@@ -14,212 +14,216 @@
     <marker id="arr-sub" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a" />
     </marker>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
       <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.06" />
     </filter>
   </defs>
 
   <!-- ==================== QUADRANT 1: [Case 1] 생산의 외부불경제 ==================== -->
-  <g transform="translate(30, 80)">
-    <rect x="0" y="0" width="445" height="300" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <rect x="0" y="0" width="445" height="36" rx="10" fill="#fee2e2" />
-    <path d="M 0 26 L 0 36 L 445 36 L 445 26 Z" fill="#fee2e2" />
-    <text x="16" y="24" font-size="14" font-weight="bold" fill="#b91c1c">[Case 1] 생산의 외부불경제 (공해, 환경오염) ➔ 과다 생산</text>
+  <g transform="translate(25, 70)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Header -->
+    <rect x="0" y="0" width="465" height="36" rx="10" fill="#fee2e2" />
+    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#fee2e2" />
+    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#b91c1c">[Case 1] 생산의 외부불경제 (공해, 환경오염) ➔ 과다 생산</text>
 
-    <!-- Header badge -->
-    <rect x="15" y="44" width="415" height="20" rx="4" fill="#fef2f2" stroke="#fecaca" stroke-width="1" />
-    <text x="222" y="58" font-size="11" font-weight="bold" text-anchor="middle" fill="#991b1b">• SMC = PMC + 외부비용 &gt; PMC | Q_시장 &gt; Q_최적 (과다생산) | 피구세(t)</text>
+    <!-- Subtitle badge (placed cleanly at y=42..64) -->
+    <rect x="15" y="42" width="435" height="22" rx="4" fill="#fef2f2" stroke="#fecaca" stroke-width="1" />
+    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#991b1b">SMC = PMC + 외부비용 &gt; PMC | 과다생산(Qm &gt; Q*) | 피구세(t = EMC)</text>
 
-    <!-- Axes -->
-    <line x1="55" y1="250" x2="410" y2="250" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="55" y1="250" x2="55" y2="68" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="415" y="254" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
-    <text x="50" y="62" font-size="11" font-weight="bold" fill="#475569">가격(P)</text>
-    <text x="44" y="262" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (70, 290) -->
+    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
+    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">가격(P)</text>
+    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
 
-    <!-- Demand: D = PMB = SMB -->
-    <line x1="80" y1="95" x2="360" y2="240" stroke="#2563eb" stroke-width="2.2" />
-    <text x="365" y="244" font-size="11" font-weight="bold" fill="#2563eb">D = PMB = SMB</text>
+    <!-- Demand: D = PMB = SMB (y = 0.5*x + 65) -->
+    <line x1="90" y1="110" x2="380" y2="255" stroke="#2563eb" stroke-width="2.2" />
+    <text x="385" y="260" font-size="11" font-weight="bold" fill="#2563eb">D = PMB = SMB</text>
 
-    <!-- Supply: PMC -->
-    <line x1="100" y1="230" x2="350" y2="105" stroke="#16a34a" stroke-width="2" />
-    <text x="355" y="110" font-size="11" font-weight="bold" fill="#16a34a">S = PMC</text>
+    <!-- Supply: PMC (y = -0.5*x + 300) -->
+    <line x1="90" y1="255" x2="380" y2="110" stroke="#16a34a" stroke-width="2" />
+    <text x="385" y="112" font-size="11" font-weight="bold" fill="#16a34a">S = PMC</text>
 
-    <!-- Supply: SMC = PMC + EMC (shifted up/left) -->
-    <line x1="70" y1="185" x2="320" y2="60" stroke="#dc2626" stroke-width="2.5" />
-    <text x="315" y="55" font-size="11" font-weight="bold" fill="#dc2626">SMC (사회의 진정한 비용)</text>
+    <!-- Supply: SMC = PMC + EMC (y = -0.5*x + 240) -->
+    <line x1="90" y1="195" x2="310" y2="85" stroke="#dc2626" stroke-width="2.5" />
+    <text x="315" y="88" font-size="11" font-weight="bold" fill="#dc2626">SMC (사회적 한계비용)</text>
 
-    <!-- DWL Polygon: between Q* and Qm. Points: E*(195,155) -> (255,185) -> (255,122) -->
-    <polygon points="195,155 255,185 255,93" fill="#fecaca" fill-opacity="0.85" stroke="#dc2626" stroke-width="1.2" />
-    <text x="218" y="145" font-size="10" font-weight="bold" fill="#b91c1c">DWL</text>
+    <!-- DWL Polygon: E*(175, 152.5) -> Em(235, 182.5) -> (235, 122.5) -->
+    <polygon points="175,152.5 235,182.5 235,122.5" fill="#fecaca" fill-opacity="0.85" stroke="#dc2626" stroke-width="1.2" />
+    <text x="210" y="152" font-size="10.5" font-weight="bold" fill="#b91c1c">DWL</text>
 
-    <!-- Optimum E* (195, 155) -->
-    <circle cx="195" cy="155" r="4" fill="#dc2626" />
-    <line x1="195" y1="155" x2="195" y2="250" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="188" y="265" font-size="11" font-weight="bold" fill="#dc2626">Q* (최적)</text>
-    <text x="160" y="145" font-size="11" font-weight="bold" fill="#dc2626">E*</text>
+    <!-- Optimum E* (175, 152.5) -->
+    <circle cx="175" cy="152.5" r="4.5" fill="#dc2626" />
+    <line x1="175" y1="152.5" x2="175" y2="290" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="175" y="306" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Q* (최적)</text>
+    <text x="155" y="145" font-size="11" font-weight="bold" fill="#dc2626">E*</text>
 
-    <!-- Market Em (255, 185) -->
-    <circle cx="255" cy="185" r="4" fill="#16a34a" />
-    <line x1="255" y1="185" x2="255" y2="250" stroke="#16a34a" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="245" y="265" font-size="11" font-weight="bold" fill="#16a34a">Qm (시장)</text>
-    <text x="262" y="195" font-size="11" font-weight="bold" fill="#16a34a">Em</text>
+    <!-- Market Em (235, 182.5) -->
+    <circle cx="235" cy="182.5" r="4.5" fill="#16a34a" />
+    <line x1="235" y1="182.5" x2="235" y2="290" stroke="#16a34a" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="235" y="306" font-size="11" font-weight="bold" fill="#16a34a" text-anchor="middle">Qm (시장)</text>
+    <text x="245" y="195" font-size="11" font-weight="bold" fill="#16a34a">Em</text>
 
-    <!-- Tax arrow -->
-    <line x1="330" y1="140" x2="330" y2="85" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-tax)" />
-    <text x="338" y="115" font-size="10" font-weight="bold" fill="#dc2626">피구세(t)</text>
+    <!-- Tax arrow: at x=280, from PMC (160) up to SMC (100) -->
+    <line x1="285" y1="152" x2="285" y2="105" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-tax)" />
+    <text x="292" y="132" font-size="10" font-weight="bold" fill="#dc2626">피구세(t)</text>
   </g>
 
   <!-- ==================== QUADRANT 2: [Case 2] 생산의 외부경제 ==================== -->
-  <g transform="translate(505, 80)">
-    <rect x="0" y="0" width="445" height="300" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <rect x="0" y="0" width="445" height="36" rx="10" fill="#dcfce7" />
-    <path d="M 0 26 L 0 36 L 445 36 L 445 26 Z" fill="#dcfce7" />
-    <text x="16" y="24" font-size="14" font-weight="bold" fill="#15803d">[Case 2] 생산의 외부경제 (R&amp;D 기술개발, 양봉업) ➔ 과소 생산</text>
+  <g transform="translate(510, 70)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Header -->
+    <rect x="0" y="0" width="465" height="36" rx="10" fill="#dcfce7" />
+    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#dcfce7" />
+    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#15803d">[Case 2] 생산의 외부경제 (R&amp;D 기술개발, 양봉업) ➔ 과소 생산</text>
 
-    <!-- Header badge -->
-    <rect x="15" y="44" width="415" height="20" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
-    <text x="222" y="58" font-size="11" font-weight="bold" text-anchor="middle" fill="#166534">• SMC = PMC - 외부편익 &lt; PMC | Q_시장 &lt; Q_최적 (과소생산) | 피구보조금(s)</text>
+    <!-- Subtitle badge -->
+    <rect x="15" y="42" width="435" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#166534">SMC = PMC - 외부편익 &lt; PMC | 과소생산(Qm &lt; Q*) | 피구보조금(s = EMB)</text>
 
-    <!-- Axes -->
-    <line x1="55" y1="250" x2="410" y2="250" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="55" y1="250" x2="55" y2="68" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="415" y="254" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
-    <text x="50" y="62" font-size="11" font-weight="bold" fill="#475569">가격(P)</text>
-    <text x="44" y="262" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (70, 290) -->
+    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
+    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">가격(P)</text>
+    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
 
-    <!-- Demand: D = PMB = SMB -->
-    <line x1="80" y1="95" x2="360" y2="240" stroke="#2563eb" stroke-width="2.2" />
-    <text x="365" y="244" font-size="11" font-weight="bold" fill="#2563eb">D = PMB = SMB</text>
+    <!-- Demand: D = PMB = SMB (y = 0.5*x + 65) -->
+    <line x1="90" y1="110" x2="380" y2="255" stroke="#2563eb" stroke-width="2.2" />
+    <text x="385" y="260" font-size="11" font-weight="bold" fill="#2563eb">D = PMB = SMB</text>
 
-    <!-- Supply: PMC (Upper) -->
-    <line x1="80" y1="195" x2="320" y2="70" stroke="#dc2626" stroke-width="2" />
-    <text x="325" y="75" font-size="11" font-weight="bold" fill="#dc2626">S = PMC</text>
+    <!-- Supply: PMC (y = -0.5*x + 240) -->
+    <line x1="90" y1="195" x2="310" y2="85" stroke="#dc2626" stroke-width="2" />
+    <text x="315" y="88" font-size="11" font-weight="bold" fill="#dc2626">S = PMC</text>
 
-    <!-- Supply: SMC = PMC - EMB (shifted down/right) -->
-    <line x1="110" y1="240" x2="350" y2="115" stroke="#16a34a" stroke-width="2.5" />
-    <text x="355" y="120" font-size="11" font-weight="bold" fill="#16a34a">SMC (사회의 비용)</text>
+    <!-- Supply: SMC = PMC - EMB (y = -0.5*x + 300) -->
+    <line x1="90" y1="255" x2="380" y2="110" stroke="#16a34a" stroke-width="2.5" />
+    <text x="385" y="112" font-size="11" font-weight="bold" fill="#16a34a">SMC (사회적 한계비용)</text>
 
-    <!-- DWL Polygon: between Qm(195,155) and Q*(255,185). Points: Em(195,155) -> (195,215) -> E*(255,185) -->
-    <polygon points="195,155 195,198 255,185" fill="#bbf7d0" fill-opacity="0.85" stroke="#16a34a" stroke-width="1.2" />
-    <text x="210" y="180" font-size="10" font-weight="bold" fill="#15803d">DWL</text>
+    <!-- DWL Polygon: Em(175, 152.5) -> (175, 212.5) -> E*(235, 182.5) -->
+    <polygon points="175,152.5 175,212.5 235,182.5" fill="#bbf7d0" fill-opacity="0.85" stroke="#16a34a" stroke-width="1.2" />
+    <text x="185" y="185" font-size="10.5" font-weight="bold" fill="#15803d">DWL</text>
 
-    <!-- Market Em (195, 155) -->
-    <circle cx="195" cy="155" r="4" fill="#dc2626" />
-    <line x1="195" y1="155" x2="195" y2="250" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="182" y="265" font-size="11" font-weight="bold" fill="#dc2626">Qm (시장)</text>
-    <text x="165" y="150" font-size="11" font-weight="bold" fill="#dc2626">Em</text>
+    <!-- Market Em (175, 152.5) -->
+    <circle cx="175" cy="152.5" r="4.5" fill="#dc2626" />
+    <line x1="175" y1="152.5" x2="175" y2="290" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="175" y="306" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Qm (시장)</text>
+    <text x="155" y="145" font-size="11" font-weight="bold" fill="#dc2626">Em</text>
 
-    <!-- Optimum E* (255, 185) -->
-    <circle cx="255" cy="185" r="4" fill="#16a34a" />
-    <line x1="255" y1="185" x2="255" y2="250" stroke="#16a34a" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="248" y="265" font-size="11" font-weight="bold" fill="#16a34a">Q* (최적)</text>
-    <text x="265" y="190" font-size="11" font-weight="bold" fill="#16a34a">E*</text>
+    <!-- Optimum E* (235, 182.5) -->
+    <circle cx="235" cy="182.5" r="4.5" fill="#16a34a" />
+    <line x1="235" y1="182.5" x2="235" y2="290" stroke="#16a34a" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="235" y="306" font-size="11" font-weight="bold" fill="#16a34a" text-anchor="middle">Q* (최적)</text>
+    <text x="245" y="195" font-size="11" font-weight="bold" fill="#16a34a">E*</text>
 
-    <!-- Subsidy arrow -->
-    <line x1="150" y1="135" x2="150" y2="190" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-sub)" />
-    <text x="156" y="165" font-size="10" font-weight="bold" fill="#16a34a">보조금(s)</text>
+    <!-- Subsidy arrow: at x=125, from PMC (177.5) down to SMC (237.5) -->
+    <line x1="125" y1="183" x2="125" y2="230" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-sub)" />
+    <text x="132" y="210" font-size="10" font-weight="bold" fill="#16a34a">보조금(s)</text>
   </g>
 
   <!-- ==================== QUADRANT 3: [Case 3] 소비의 외부불경제 ==================== -->
-  <g transform="translate(30, 400)">
-    <rect x="0" y="0" width="445" height="300" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <rect x="0" y="0" width="445" height="36" rx="10" fill="#fee2e2" />
-    <path d="M 0 26 L 0 36 L 445 36 L 445 26 Z" fill="#fee2e2" />
-    <text x="16" y="24" font-size="14" font-weight="bold" fill="#b91c1c">[Case 3] 소비의 외부불경제 (간접흡연, 음주소란) ➔ 과다 소비</text>
+  <g transform="translate(25, 435)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Header -->
+    <rect x="0" y="0" width="465" height="36" rx="10" fill="#fee2e2" />
+    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#fee2e2" />
+    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#b91c1c">[Case 3] 소비의 외부불경제 (간접흡연, 음주소란) ➔ 과다 소비</text>
 
-    <!-- Header badge -->
-    <rect x="15" y="44" width="415" height="20" rx="4" fill="#fef2f2" stroke="#fecaca" stroke-width="1" />
-    <text x="222" y="58" font-size="11" font-weight="bold" text-anchor="middle" fill="#991b1b">• SMB = PMB - 외부비용 &lt; PMB | Q_시장 &gt; Q_최적 (과다소비) | 세금/소비규제</text>
+    <!-- Subtitle badge -->
+    <rect x="15" y="42" width="435" height="22" rx="4" fill="#fef2f2" stroke="#fecaca" stroke-width="1" />
+    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#991b1b">SMB = PMB - 외부비용 &lt; PMB | 과다소비(Qm &gt; Q*) | 조세 부과 / 소비 규제</text>
 
-    <!-- Axes -->
-    <line x1="55" y1="250" x2="410" y2="250" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="55" y1="250" x2="55" y2="68" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="415" y="254" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
-    <text x="50" y="62" font-size="11" font-weight="bold" fill="#475569">가격(P)</text>
-    <text x="44" y="262" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (70, 290) -->
+    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
+    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">가격(P)</text>
+    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
 
-    <!-- Supply: S = PMC = SMC -->
-    <line x1="80" y1="235" x2="350" y2="105" stroke="#16a34a" stroke-width="2.2" />
-    <text x="355" y="110" font-size="11" font-weight="bold" fill="#16a34a">S = PMC = SMC</text>
+    <!-- Supply: S = PMC = SMC (y = -0.5*x + 300) -->
+    <line x1="90" y1="255" x2="380" y2="110" stroke="#16a34a" stroke-width="2.2" />
+    <text x="385" y="112" font-size="11" font-weight="bold" fill="#16a34a">S = PMC = SMC</text>
 
-    <!-- Demand: PMB (Upper) -->
-    <line x1="100" y1="90" x2="370" y2="225" stroke="#2563eb" stroke-width="2" />
-    <text x="375" y="230" font-size="11" font-weight="bold" fill="#2563eb">PMB (사적 편익)</text>
+    <!-- Demand: PMB (y = 0.5*x + 65) -->
+    <line x1="90" y1="110" x2="380" y2="255" stroke="#2563eb" stroke-width="2" />
+    <text x="385" y="260" font-size="11" font-weight="bold" fill="#2563eb">PMB (사적 한계편익)</text>
 
-    <!-- Demand: SMB = PMB - EMC (Lower/Left) -->
-    <line x1="70" y1="135" x2="330" y2="260" stroke="#dc2626" stroke-width="2.5" />
-    <text x="325" y="270" font-size="11" font-weight="bold" fill="#dc2626">SMB (사회적 편익)</text>
+    <!-- Demand: SMB = PMB - EMC (y = 0.5*x + 125) -->
+    <line x1="90" y1="170" x2="310" y2="280" stroke="#dc2626" stroke-width="2.5" />
+    <text x="315" y="284" font-size="11" font-weight="bold" fill="#dc2626">SMB (사회적 한계편익)</text>
 
-    <!-- DWL Polygon: between Q*(190,180) and Qm(250,150). Points: E*(190,180) -> (250,150) -> (250,215) -->
-    <polygon points="190,180 250,150 250,225" fill="#fecaca" fill-opacity="0.85" stroke="#dc2626" stroke-width="1.2" />
-    <text x="220" y="185" font-size="10" font-weight="bold" fill="#b91c1c">DWL</text>
+    <!-- DWL Polygon: E*(175, 212.5) -> Em(235, 182.5) -> (235, 242.5) -->
+    <polygon points="175,212.5 235,182.5 235,242.5" fill="#fecaca" fill-opacity="0.85" stroke="#dc2626" stroke-width="1.2" />
+    <text x="210" y="215" font-size="10.5" font-weight="bold" fill="#b91c1c">DWL</text>
 
-    <!-- Optimum E* (190, 180) -->
-    <circle cx="190" cy="180" r="4" fill="#dc2626" />
-    <line x1="190" y1="180" x2="190" y2="250" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="180" y="265" font-size="11" font-weight="bold" fill="#dc2626">Q* (최적)</text>
-    <text x="160" y="185" font-size="11" font-weight="bold" fill="#dc2626">E*</text>
+    <!-- Optimum E* (175, 212.5) -->
+    <circle cx="175" cy="212.5" r="4.5" fill="#dc2626" />
+    <line x1="175" y1="212.5" x2="175" y2="290" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="175" y="306" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Q* (최적)</text>
+    <text x="155" y="216" font-size="11" font-weight="bold" fill="#dc2626">E*</text>
 
-    <!-- Market Em (250, 150) -->
-    <circle cx="250" cy="150" r="4" fill="#2563eb" />
-    <line x1="250" y1="150" x2="250" y2="250" stroke="#2563eb" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="240" y="265" font-size="11" font-weight="bold" fill="#2563eb">Qm (시장)</text>
-    <text x="260" y="145" font-size="11" font-weight="bold" fill="#2563eb">Em</text>
+    <!-- Market Em (235, 182.5) -->
+    <circle cx="235" cy="182.5" r="4.5" fill="#2563eb" />
+    <line x1="235" y1="182.5" x2="235" y2="290" stroke="#2563eb" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="235" y="306" font-size="11" font-weight="bold" fill="#2563eb" text-anchor="middle">Qm (시장)</text>
+    <text x="245" y="178" font-size="11" font-weight="bold" fill="#2563eb">Em</text>
 
-    <!-- Tax arrow -->
-    <line x1="160" y1="125" x2="160" y2="175" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-tax)" />
-    <text x="166" y="152" font-size="10" font-weight="bold" fill="#dc2626">세금/규제</text>
+    <!-- Tax arrow: at x=130, from PMB (130) down to SMB (190) -->
+    <line x1="130" y1="135" x2="130" y2="182" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-tax)" />
+    <text x="136" y="162" font-size="10" font-weight="bold" fill="#dc2626">세금/규제</text>
   </g>
 
   <!-- ==================== QUADRANT 4: [Case 4] 소비의 외부경제 ==================== -->
-  <g transform="translate(505, 400)">
-    <rect x="0" y="0" width="445" height="300" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <rect x="0" y="0" width="445" height="36" rx="10" fill="#dcfce7" />
-    <path d="M 0 26 L 0 36 L 445 36 L 445 26 Z" fill="#dcfce7" />
-    <text x="16" y="24" font-size="14" font-weight="bold" fill="#15803d">[Case 4] 소비의 외부경제 (백신접종, 교육) ➔ 과소 소비</text>
+  <g transform="translate(510, 435)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Header -->
+    <rect x="0" y="0" width="465" height="36" rx="10" fill="#dcfce7" />
+    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#dcfce7" />
+    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#15803d">[Case 4] 소비의 외부경제 (백신접종, 교육) ➔ 과소 소비</text>
 
-    <!-- Header badge -->
-    <rect x="15" y="44" width="415" height="20" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
-    <text x="222" y="58" font-size="11" font-weight="bold" text-anchor="middle" fill="#166534">• SMB = PMB + 외부편익 &gt; PMB | Q_시장 &lt; Q_최적 (과소소비) | 보조금/바우처</text>
+    <!-- Subtitle badge -->
+    <rect x="15" y="42" width="435" height="22" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#166534">SMB = PMB + 외부편익 &gt; PMB | 과소소비(Qm &lt; Q*) | 보조금/바우처</text>
 
-    <!-- Axes -->
-    <line x1="55" y1="250" x2="410" y2="250" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="55" y1="250" x2="55" y2="68" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="415" y="254" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
-    <text x="50" y="62" font-size="11" font-weight="bold" fill="#475569">가격(P)</text>
-    <text x="44" y="262" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (70, 290) -->
+    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">수량(Q)</text>
+    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">가격(P)</text>
+    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
 
-    <!-- Supply: S = PMC = SMC -->
-    <line x1="80" y1="235" x2="350" y2="105" stroke="#16a34a" stroke-width="2.2" />
-    <text x="355" y="110" font-size="11" font-weight="bold" fill="#16a34a">S = PMC = SMC</text>
+    <!-- Supply: S = PMC = SMC (y = -0.5*x + 300) -->
+    <line x1="90" y1="255" x2="380" y2="110" stroke="#16a34a" stroke-width="2.2" />
+    <text x="385" y="112" font-size="11" font-weight="bold" fill="#16a34a">S = PMC = SMC</text>
 
-    <!-- Demand: PMB (Lower) -->
-    <line x1="70" y1="145" x2="330" y2="270" stroke="#2563eb" stroke-width="2" />
-    <text x="325" y="280" font-size="11" font-weight="bold" fill="#2563eb">PMB (사적 편익)</text>
+    <!-- Demand: PMB (y = 0.5*x + 125) -->
+    <line x1="90" y1="170" x2="310" y2="280" stroke="#2563eb" stroke-width="2" />
+    <text x="315" y="284" font-size="11" font-weight="bold" fill="#2563eb">PMB (사적 한계편익)</text>
 
-    <!-- Demand: SMB = PMB + EMB (Upper/Right) -->
-    <line x1="100" y1="85" x2="370" y2="220" stroke="#7c3aed" stroke-width="2.5" />
-    <text x="375" y="225" font-size="11" font-weight="bold" fill="#7c3aed">SMB (사회적 편익)</text>
+    <!-- Demand: SMB = PMB + EMB (y = 0.5*x + 65) -->
+    <line x1="90" y1="110" x2="380" y2="255" stroke="#7c3aed" stroke-width="2.5" />
+    <text x="385" y="260" font-size="11" font-weight="bold" fill="#7c3aed">SMB (사회적 한계편익)</text>
 
-    <!-- DWL Polygon: between Qm(190,180) and Q*(250,150). Points: Em(190,180) -> (190,118) -> E*(250,150) -->
-    <polygon points="190,180 190,123 250,150" fill="#bbf7d0" fill-opacity="0.85" stroke="#16a34a" stroke-width="1.2" />
-    <text x="200" y="152" font-size="10" font-weight="bold" fill="#15803d">DWL</text>
+    <!-- DWL Polygon: Em(175, 212.5) -> (175, 152.5) -> E*(235, 182.5) -->
+    <polygon points="175,212.5 175,152.5 235,182.5" fill="#bbf7d0" fill-opacity="0.85" stroke="#16a34a" stroke-width="1.2" />
+    <text x="185" y="185" font-size="10.5" font-weight="bold" fill="#15803d">DWL</text>
 
-    <!-- Market Em (190, 180) -->
-    <circle cx="190" cy="180" r="4" fill="#2563eb" />
-    <line x1="190" y1="180" x2="190" y2="250" stroke="#2563eb" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="180" y="265" font-size="11" font-weight="bold" fill="#2563eb">Qm (시장)</text>
-    <text x="160" y="185" font-size="11" font-weight="bold" fill="#2563eb">Em</text>
+    <!-- Market Em (175, 212.5) -->
+    <circle cx="175" cy="212.5" r="4.5" fill="#2563eb" />
+    <line x1="175" y1="212.5" x2="175" y2="290" stroke="#2563eb" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="175" y="306" font-size="11" font-weight="bold" fill="#2563eb" text-anchor="middle">Qm (시장)</text>
+    <text x="155" y="216" font-size="11" font-weight="bold" fill="#2563eb">Em</text>
 
-    <!-- Optimum E* (250, 150) -->
-    <circle cx="250" cy="150" r="4" fill="#7c3aed" />
-    <line x1="250" y1="150" x2="250" y2="250" stroke="#7c3aed" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="242" y="265" font-size="11" font-weight="bold" fill="#7c3aed">Q* (최적)</text>
-    <text x="260" y="145" font-size="11" font-weight="bold" fill="#7c3aed">E*</text>
+    <!-- Optimum E* (235, 182.5) -->
+    <circle cx="235" cy="182.5" r="4.5" fill="#7c3aed" />
+    <line x1="235" y1="182.5" x2="235" y2="290" stroke="#7c3aed" stroke-dasharray="3,3" stroke-width="1.2" />
+    <text x="235" y="306" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Q* (최적)</text>
+    <text x="245" y="178" font-size="11" font-weight="bold" fill="#7c3aed">E*</text>
 
-    <!-- Subsidy arrow -->
-    <line x1="140" y1="175" x2="140" y2="120" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-sub)" />
-    <text x="146" y="145" font-size="10" font-weight="bold" fill="#16a34a">보조금(s)</text>
+    <!-- Subsidy arrow: at x=125, from PMB (187.5) up to SMB (127.5) -->
+    <line x1="125" y1="182" x2="125" y2="135" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-sub)" />
+    <text x="132" y="160" font-size="10" font-weight="bold" fill="#16a34a">보조금(s)</text>
   </g>
 </svg>
