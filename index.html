@@ -29,26 +29,34 @@
     .math-frac {
       display: inline-flex;
       flex-direction: column;
-      vertical-align: -0.65em;
+      vertical-align: -0.55em;
       text-align: center;
-      padding: 0 0.18em;
-      font-family: 'Cambria Math', 'KaTeX_Math', 'Times New Roman', serif;
+      padding: 0 0.22em;
+      font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
       font-style: italic;
+      font-weight: normal;
+      line-height: 1;
     }
     .math-frac > .num {
       display: block;
-      border-bottom: 1.5px solid currentColor;
-      padding: 0 0.2em 1px 0.2em;
-      line-height: 1.1;
-      font-size: 0.88em;
+      border-bottom: 1.2px solid currentColor;
+      padding: 0 0.15em 1px 0.15em;
+      line-height: 1.15;
+      font-size: 0.84em;
       text-align: center;
     }
     .math-frac > .den {
       display: block;
-      padding: 1px 0.2em 0 0.2em;
-      line-height: 1.1;
-      font-size: 0.88em;
+      padding: 1px 0.15em 0 0.15em;
+      line-height: 1.15;
+      font-size: 0.84em;
       text-align: center;
+    }
+    .math-sym {
+      font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: normal;
+      padding: 0 0.08em;
     }
     .math-box {
       display: inline-flex;
@@ -58,18 +66,20 @@
       border-radius: 6px;
       padding: 3px 10px;
       margin: 2px 0;
-      font-family: 'Cambria Math', 'KaTeX_Math', 'Times New Roman', serif;
+      font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
     }
 
     /* Authentic Masking Tape (마스킹 테이프) */
     .mask-tape {
-      display: inline-block;
+      display: inline-inline-flex;
+      display: inline-flex;
+      align-items: center;
       cursor: pointer;
       position: relative;
       transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-      vertical-align: baseline;
+      vertical-align: -0.22em;
       border-radius: 4px;
-      padding: 1px 7px;
+      padding: 2px 8px;
       margin: 0 2px;
       font-weight: 700;
     }
@@ -338,7 +348,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260908_2035"></script>
+  <script src="topics-data.js?v=20260908_2042"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260908_1955"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
