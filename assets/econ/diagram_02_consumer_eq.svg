@@ -1,50 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
     </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
   </defs>
 
   <!-- Header -->
-  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">무차별곡선과 예산선에 의한 소비자 균형</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="0" y="0" width="960" height="48" fill="#f8fafc" />
+  <text x="480" y="31" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">무차별곡선과 예산선에 의한 소비자 균형</text>
+  <line x1="0" y1="48" x2="960" y2="48" stroke="#e2e8f0" stroke-width="1.5" />
 
   <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 소비자 균형 조건: MRSxy = Px / Py ➔ MUx / Px = MUy / Py (한계효용 균등의 법칙)</text>
+  <rect x="130" y="58" width="700" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="480" y="75" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">
+    • 소비자 균형 조건: MRSxy = Px / Py ➔ 1원당 한계효용 균등 (MUx / Px = MUy / Py)
+  </text>
 
-  <!-- Axes: Origin (100, 460) -->
-  <line x1="100" y1="460" x2="800" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="100" y1="460" x2="100" y2="100" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="810" y="465" font-size="12" font-weight="bold" fill="#475569">X재 소비량 (Qx)</text>
-  <text x="100" y="92" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">Y재 소비량 (Qy)</text>
-  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+  <!-- Summary Card (Top-Right) -->
+  <g transform="translate(710, 92)" filter="url(#shadow)">
+    <rect x="0" y="0" width="235" height="156" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="235" height="26" rx="8" fill="#f1f5f9" />
+    <path d="M 0 16 L 0 26 L 235 26 L 235 16 z" fill="#f1f5f9" />
+    <text x="12" y="18" font-size="11.5" font-weight="bold" fill="#1e293b">📊 소비자 균형 조건 요약</text>
 
-  <!-- Budget Line: M/Py at (100, 160) to M/Px at (650, 460) -->
-  <line x1="100" y1="160" x2="650" y2="460" stroke="#dc2626" stroke-width="3" />
-  <text x="50" y="165" font-size="11.5" font-weight="bold" fill="#dc2626">M / Py</text>
-  <text x="640" y="480" font-size="11.5" font-weight="bold" fill="#dc2626">M / Px</text>
-  <text x="550" y="380" font-size="12" font-weight="bold" fill="#dc2626">예산선 (기울기 = -Px/Py)</text>
+    <text x="12" y="44" font-size="11" font-weight="bold" fill="#1d4ed8">① 접점 조건 (Tangency)</text>
+    <text x="20" y="60" font-size="9.5" fill="#475569">MRSxy = Px / Py (무차별곡선 기울기 = 예산선 기울기)</text>
 
-  <!-- Indifference Curves (Convex to origin) -->
-  <!-- IC0 (lower utility): passes below tangent -->
-  <path d="M 130 380 Q 220 330, 480 390" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4" />
-  <text x="490" y="395" font-size="11" font-weight="bold" fill="#64748b">U0 (낮은 효용)</text>
+    <text x="12" y="80" font-size="11" font-weight="bold" fill="#166534">② 한계효용 균등의 법칙</text>
+    <text x="20" y="96" font-size="9.5" fill="#475569">MUx / Px = MUy / Py (화폐 1원당 한계효용 일치)</text>
 
-  <!-- IC1 (tangent at E(375, 310)): -->
-  <path d="M 160 220 Q 300 290, 680 320" fill="none" stroke="#2563eb" stroke-width="3.5" />
-  <text x="690" y="325" font-size="12.5" font-weight="bold" fill="#2563eb">U1 (극대화 효용)</text>
+    <line x1="10" y1="108" x2="225" y2="108" stroke="#e2e8f0" stroke-width="1" />
 
-  <!-- IC2 (unreachable): above budget line -->
-  <path d="M 230 140 Q 420 210, 780 240" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4" />
-  <text x="790" y="245" font-size="11" font-weight="bold" fill="#64748b">U2 (예산 초과, 도달 불가)</text>
+    <text x="12" y="126" font-size="10.5" font-weight="bold" fill="#dc2626">③ 예산제약 충족: Px·X + Py·Y = M</text>
+    <text x="12" y="144" font-size="9.5" fill="#64748b">➔ 제한된 예산 하에서 효용(U)의 극대화 달성</text>
+  </g>
 
-  <!-- Equilibrium Point E (375, 310) -->
-  <circle cx="375" cy="310" r="5.5" fill="#1d4ed8" />
-  <line x1="375" y1="310" x2="375" y2="460" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.2" />
-  <line x1="100" y1="310" x2="375" y2="310" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.2" />
-  <text x="375" y="478" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">X* (최적 소비량)</text>
-  <text x="65" y="315" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Y*</text>
-  <text x="390" y="300" font-size="13" font-weight="bold" fill="#1d4ed8">E (소비자 균형점: MRSxy = Px/Py)</text>
+  <!-- Axes: Origin (100, 470) -->
+  <line x1="100" y1="470" x2="780" y2="470" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <line x1="100" y1="470" x2="100" y2="92" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <text x="790" y="475" font-size="12" font-weight="bold" fill="#334155">X재 소비량 (Qx)</text>
+  <text x="100" y="84" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">Y재 소비량 (Qy)</text>
+  <text x="86" y="484" font-size="11" fill="#94a3b8">0</text>
+
+  <!-- Budget Set Shading (Feasible Region) -->
+  <polygon points="100,150 100,470 650,470" fill="#fef2f2" fill-opacity="0.4" />
+
+  <!-- Budget Line: M/Py (100, 150) to M/Px (650, 470) -->
+  <line x1="100" y1="150" x2="650" y2="470" stroke="#dc2626" stroke-width="3" />
+  <rect x="25" y="140" width="70" height="22" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+  <text x="60" y="155" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">M / Py</text>
+
+  <rect x="620" y="478" width="60" height="22" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+  <text x="650" y="493" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">M / Px</text>
+
+  <!-- Budget line slope label badge -->
+  <rect x="470" y="415" width="160" height="22" rx="4" fill="#ffffff" stroke="#fca5a5" stroke-width="1" filter="url(#shadow)" />
+  <text x="550" y="430" font-size="10.5" font-weight="bold" fill="#dc2626" text-anchor="middle">예산선 (기울기 = -Px/Py)</text>
+
+  <!-- Indifference Curves -->
+  <!-- U0 (Lower utility, inside budget set) -->
+  <path d="M 140 310 C 190 360, 260 380, 350 385 C 440 390, 520 400, 620 410" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4" />
+  <rect x="625" y="400" width="95" height="20" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="672" y="414" font-size="10" font-weight="bold" fill="#64748b" text-anchor="middle">U0 (낮은 효용)</text>
+
+  <!-- U1 (Maximized Utility: Tangent to budget line at E(350, 295)) -->
+  <path d="M 180 170 C 230 235, 290 280, 350 295 C 430 315, 560 338, 700 355" fill="none" stroke="#2563eb" stroke-width="3.5" />
+  <rect x="705" y="344" width="115" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="762" y="359" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">U1 (극대화 효용)</text>
+
+  <!-- U2 (Unattainable Utility: Outside budget set) -->
+  <path d="M 230 110 C 310 160, 420 200, 520 220 C 620 240, 720 255, 800 265" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4" />
+  <rect x="805" y="254" width="140" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="875" y="269" font-size="10" font-weight="bold" fill="#64748b" text-anchor="middle">U2 (도달 불가: 예산 초과)</text>
+
+  <!-- Equilibrium Point E (350, 295) -->
+  <circle cx="350" cy="295" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <line x1="350" y1="295" x2="350" y2="470" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.5" />
+  <line x1="100" y1="295" x2="350" y2="295" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.5" />
+
+  <rect x="315" y="478" width="70" height="22" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+  <text x="350" y="493" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">X* (최적소비)</text>
+
+  <rect x="35" y="284" width="60" height="22" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+  <text x="65" y="299" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Y*</text>
+
+  <!-- Callout Badge for Equilibrium Point E (Positioned cleanly above-right at y=190, completely away from curves) -->
+  <line x1="350" y1="295" x2="400" y2="245" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="3,2" />
+  <g transform="translate(400, 195)" filter="url(#shadow)">
+    <rect x="0" y="0" width="260" height="52" rx="7" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" />
+    <rect x="0" y="0" width="260" height="22" rx="7" fill="#eff6ff" />
+    <path d="M 0 14 L 0 22 L 260 22 L 260 14 z" fill="#eff6ff" />
+    <text x="10" y="15" font-size="11" font-weight="bold" fill="#1e40af">소비자 균형점 E (최적 소비 조합)</text>
+    <text x="10" y="34" font-size="10" font-weight="bold" fill="#2563eb">• 무차별곡선 접선기울기 = 예산선 기울기</text>
+    <text x="10" y="46" font-size="9.5" fill="#475569">• MRSxy = Px / Py ➔ MUx/Px = MUy/Py</text>
+  </g>
 </svg>
