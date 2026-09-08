@@ -302,6 +302,8 @@
   </script>
   <!-- Load complete authentic syllabus data -->
   <script src="topics-data.js?v=20260908_1010"></script>
+  <!-- Load supplementary background knowledge database -->
+  <script src="explanations-data.js?v=20260908_1020"></script>
 </head>
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -508,9 +510,16 @@
                 <span>마스킹 복원</span>
               </button>
             </div>
-            <div class="text-xs text-slate-500 flex items-center gap-1.5 font-mono">
-              <span class="material-symbols-outlined text-[15px] text-slate-400">description</span>
-              <span id="topic-page-ref">PDF p.1 / 33</span>
+            <div class="flex items-center gap-2">
+              <button id="btn-open-explanation" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-indigo-700 bg-slate-100 hover:bg-indigo-50 border border-slate-200/90 hover:border-indigo-200 shadow-2xs transition-all cursor-pointer group" type="button" title="이해를 돕기 위한 보충·배경 해설 보기 (암기 불필요, 참고용) [단축키: H]">
+                <span class="material-symbols-outlined text-[16px] text-indigo-500 group-hover:scale-110 transition-transform">help</span>
+                <span>보충 해설</span>
+                <span id="explanation-has-badge" class="w-1.5 h-1.5 rounded-full bg-indigo-600 hidden"></span>
+              </button>
+              <div class="text-xs text-slate-500 flex items-center gap-1.5 font-mono">
+                <span class="material-symbols-outlined text-[15px] text-slate-400">description</span>
+                <span id="topic-page-ref">PDF p.1 / 33</span>
+              </div>
             </div>
           </div>
 
@@ -719,6 +728,56 @@
     </div>
   </div>
 
+  <!-- SUPPLEMENTARY EXPLANATION SLIDE-OVER DRAWER -->
+  <div id="explanation-modal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex justify-end hidden transition-opacity duration-200">
+    <div id="explanation-sheet" class="bg-white w-full max-w-xl md:max-w-2xl h-full shadow-2xl border-l border-slate-200 flex flex-col transform translate-x-full transition-transform duration-200 ease-out">
+      
+      <!-- Drawer Header -->
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold shrink-0">
+            <span class="material-symbols-outlined text-[20px]">help</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm md:text-base text-slate-900 flex items-center gap-2">
+              <span>보충·배경 해설</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-200 text-slate-700">참고용</span>
+            </h3>
+            <p class="text-[11px] text-slate-500 truncate max-w-[280px] sm:max-w-md" id="explanation-drawer-subtitle">
+              <!-- Topic Title Injected -->
+            </p>
+          </div>
+        </div>
+        <button id="close-explanation-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors cursor-pointer" type="button" title="해설 닫기 [Esc]">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Anti-Overshadowing Notice Banner -->
+      <div class="p-3.5 bg-amber-50/90 border-b border-amber-200 text-amber-950 flex items-start gap-2.5 text-xs leading-relaxed">
+        <span class="material-symbols-outlined text-amber-600 text-[18px] shrink-0 mt-0.5">tips_and_updates</span>
+        <div>
+          <strong class="font-bold text-amber-900 block mb-0.5">⚠️ 수험 가이드: 주객전도 주의! (외우지 마세요)</strong>
+          <span>본 해설은 난해한 개념의 배경과 맥락 이해를 돕기 위한 <b>단순 참고 자료</b>입니다. 임용 합격을 위해 암기해야 할 대상은 오직 <b>본문의 단권화 서브노트와 마스킹 테이프</b>입니다. 이 해설은 편안한 마음으로 읽고 넘어가세요.</span>
+        </div>
+      </div>
+
+      <!-- Drawer Content Scroll Area -->
+      <div class="flex-1 overflow-y-auto p-4 md:p-6 space-y-5" id="explanation-drawer-body">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="p-3 border-t border-slate-100 flex items-center justify-between bg-slate-50 text-xs">
+        <span class="text-slate-400 font-mono text-[11px]">[단축키: H 또는 Esc]</span>
+        <button id="btn-close-explanation-bottom" class="px-4 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold transition-all text-xs cursor-pointer" type="button">
+          닫기 (서브노트 본문 복귀)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- FLOATING MASKING TAPE ACTION BUTTON (Drag to Mask) -->
   <button id="floating-mask-btn" class="fixed z-50 hidden bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none" type="button" title="선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]">
     <span class="material-symbols-outlined text-[15px]">label</span>
@@ -871,6 +930,15 @@
       const diffUserLen = document.getElementById('diff-user-len');
       const diffModelLen = document.getElementById('diff-model-len');
       const diffPassBtn = document.getElementById('diff-pass-btn');
+
+      const btnOpenExplanation = document.getElementById('btn-open-explanation');
+      const explanationHasBadge = document.getElementById('explanation-has-badge');
+      const explanationModal = document.getElementById('explanation-modal');
+      const explanationSheet = document.getElementById('explanation-sheet');
+      const closeExplanationBtn = document.getElementById('close-explanation-btn');
+      const btnCloseExplanationBottom = document.getElementById('btn-close-explanation-bottom');
+      const explanationDrawerSubtitle = document.getElementById('explanation-drawer-subtitle');
+      const explanationDrawerBody = document.getElementById('explanation-drawer-body');
 
       const pomodoroBtn = document.getElementById('pomodoro-btn');
       const pomodoroDisplay = document.getElementById('pomodoro-display');
@@ -1444,6 +1512,10 @@
 
         isAllRevealed = false;
         updateRevealButton(false);
+        updateExplanationBadge();
+        if (explanationModal && !explanationModal.classList.contains('hidden')) {
+          openExplanation();
+        }
       }
 
       // Update Topic Retention Status in UI
@@ -2324,6 +2396,181 @@
         handleGrade('pass');
       });
 
+      // Helper: Escape HTML
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // Update Explanation Button Badge (Dot indicator if curated note or user note exists)
+      function updateExplanationBadge() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+        const exp = (window.TOPIC_EXPLANATIONS && window.TOPIC_EXPLANATIONS[topic.id]) || null;
+        let memo = '';
+        try {
+          memo = localStorage.getItem(`edurecall_memo_${topic.id}`) || '';
+        } catch (e) {}
+        if (explanationHasBadge) {
+          if (exp || memo.trim().length > 0) {
+            explanationHasBadge.classList.remove('hidden');
+          } else {
+            explanationHasBadge.classList.add('hidden');
+          }
+        }
+      }
+
+      // Open Supplementary Explanation Drawer
+      function openExplanation() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+
+        if (explanationDrawerSubtitle) {
+          explanationDrawerSubtitle.textContent = `[${topic.subject}] ${topic.title}`;
+        }
+
+        const exp = (window.TOPIC_EXPLANATIONS && window.TOPIC_EXPLANATIONS[topic.id]) || null;
+        let userMemo = '';
+        try {
+          userMemo = localStorage.getItem(`edurecall_memo_${topic.id}`) || '';
+        } catch (e) {}
+
+        let html = '';
+
+        if (exp) {
+          html += `
+            <div class="bg-indigo-50/70 border border-indigo-100 rounded-2xl p-4 text-indigo-950 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="px-2 py-0.5 rounded-md bg-indigo-200/80 text-indigo-900 text-[11px] font-bold">핵심 의문점</span>
+                <h4 class="font-bold text-sm md:text-[15px]">${escapeHtml(exp.title || topic.title)}</h4>
+              </div>
+              <p class="text-xs md:text-sm text-indigo-900 leading-relaxed font-semibold">
+                🤔 ${escapeHtml(exp.question || '왜 이런 개념과 제도가 필요할까요?')}
+              </p>
+            </div>
+
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
+                <span>1. 입법 및 이론적 배경 (왜 생겼을까?)</span>
+              </h4>
+              <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-700 leading-relaxed space-y-2">
+                ${escapeHtml(exp.background)}
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
+                <span>2. 한 번에 이해하는 쉬운 비유와 사례</span>
+              </h4>
+              <div class="bg-emerald-50/60 border border-emerald-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-800 leading-relaxed">
+                ${escapeHtml(exp.analogy)}
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0"></span>
+                <span>3. 서브노트 본문과의 연결고리 (시험 인출 포인트)</span>
+              </h4>
+              <div class="bg-indigo-50/60 border border-indigo-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-indigo-950 leading-relaxed font-medium">
+                ${escapeHtml(exp.subnoteBridge)}
+              </div>
+            </div>
+          `;
+        } else {
+          html += `
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center space-y-2.5">
+              <div class="w-10 h-10 rounded-full bg-slate-200/80 text-slate-500 flex items-center justify-center mx-auto">
+                <span class="material-symbols-outlined text-[24px]">menu_book</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-800">기본 서브노트 집중 권장 단원</h4>
+              <p class="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">
+                이 주제는 본문의 <b>단권화 서브노트</b>와 <b>마스킹 테이프 키워드</b> 암기만으로 시험 대비에 충분한 핵심 표준 단원입니다.<br>
+                배경 설명에 시간을 쓰기보다 <b>원문 인출 및 백지 복습</b>에 집중하는 것이 합격에 훨씬 효과적입니다.
+              </p>
+            </div>
+          `;
+        }
+
+        html += `
+          <div class="space-y-2 pt-3 border-t border-slate-200/80">
+            <div class="flex items-center justify-between">
+              <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px] text-amber-500">edit_note</span>
+                <span>나만의 보충 메모 (강의 필기 / 판례 / 코멘트)</span>
+              </h4>
+              <span id="memo-save-status" class="text-[10px] text-slate-400 font-medium">자동 저장</span>
+            </div>
+            <textarea id="topic-user-memo" placeholder="이 주제에 대해 교수님이나 강사님이 강조한 배경 설명, 판례 번호, 나만의 이해 팁을 자유롭게 메모하세요. (브라우저에 자동 영구 저장됩니다)" class="w-full h-32 p-3 text-xs md:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-500 focus:outline-none transition-all leading-relaxed resize-y font-sans">${escapeHtml(userMemo)}</textarea>
+          </div>
+        `;
+
+        explanationDrawerBody.innerHTML = html;
+
+        const memoTextarea = document.getElementById('topic-user-memo');
+        const memoStatus = document.getElementById('memo-save-status');
+        if (memoTextarea) {
+          memoTextarea.addEventListener('input', () => {
+            try {
+              localStorage.setItem(`edurecall_memo_${topic.id}`, memoTextarea.value);
+              if (memoStatus) {
+                memoStatus.textContent = '저장됨 ✓';
+                memoStatus.classList.add('text-emerald-600');
+                setTimeout(() => {
+                  if (memoStatus) {
+                    memoStatus.textContent = '자동 저장';
+                    memoStatus.classList.remove('text-emerald-600');
+                  }
+                }, 1500);
+              }
+              updateExplanationBadge();
+            } catch (e) {}
+          });
+        }
+
+        explanationModal.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          explanationSheet.classList.remove('translate-x-full');
+        });
+      }
+
+      function closeExplanation() {
+        explanationSheet.classList.add('translate-x-full');
+        setTimeout(() => {
+          explanationModal.classList.add('hidden');
+        }, 200);
+      }
+
+      function toggleExplanation() {
+        if (explanationModal.classList.contains('hidden')) {
+          openExplanation();
+        } else {
+          closeExplanation();
+        }
+      }
+
+      if (btnOpenExplanation) {
+        btnOpenExplanation.addEventListener('click', openExplanation);
+      }
+      if (closeExplanationBtn) {
+        closeExplanationBtn.addEventListener('click', closeExplanation);
+      }
+      if (btnCloseExplanationBottom) {
+        btnCloseExplanationBottom.addEventListener('click', closeExplanation);
+      }
+      if (explanationModal) {
+        explanationModal.addEventListener('click', (e) => {
+          if (e.target === explanationModal) closeExplanation();
+        });
+      }
+
       // Pomodoro Timer
       let pomoSecs = 25 * 60;
       let pomoRunning = false;
@@ -2411,6 +2658,13 @@
           return;
         }
 
+        // Shortcut: [H] or [?] Toggle Supplementary Explanation Drawer
+        if ((e.key === 'h' || e.key === 'H' || e.key === '?') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          toggleExplanation();
+          return;
+        }
+
         if (e.code === 'Space' || ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey)) {
           e.preventDefault();
           toggleMasterReveal();
@@ -2446,6 +2700,10 @@
         } else if (e.code === 'Escape') {
           if (sidebarDrawer && !sidebarDrawer.classList.contains('-translate-x-full') && window.innerWidth < 768) {
             closeMobileSidebar();
+            return;
+          }
+          if (explanationModal && !explanationModal.classList.contains('hidden')) {
+            closeExplanation();
             return;
           }
           if (!diffModal.classList.contains('hidden')) {
