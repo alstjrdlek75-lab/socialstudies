@@ -552,7 +552,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260909_1945"></script>
+  <script src="topics-data.js?v=20260909_2000"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260909_1630"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
@@ -1558,9 +1558,9 @@
           secMap.get(sec).push(globalIdx);
         });
 
-        // Ensure active topic's section and subsection are expanded
+        // Ensure active topic's section and subsection are expanded (for non-exam subjects)
         const activeTopic = TOPICS[currentTopicIndex];
-        if (activeTopic) {
+        if (activeTopic && activeSubject !== '기출') {
           const activeSec = (activeTopic.section && activeTopic.section !== activeTopic.chapter) ? activeTopic.section : activeTopic.chapter;
           expandedSections.delete(`COLLAPSED__${activeTopic.chapter}__${activeSec}`);
           if (activeTopic.subsection) {
@@ -1637,7 +1637,16 @@
             // Multiple Topics: Render Clickable Accordion Folder
             const secKey = `${chName}__${secName}`;
             const isSecActive = indices.includes(currentTopicIndex);
-            const isExpanded = Boolean(q) || isSecActive || !expandedSections.has(`COLLAPSED__${secKey}`);
+            const isExamSubject = (activeSubject === '기출');
+            let isExpanded;
+            if (Boolean(q)) {
+              isExpanded = true;
+            } else if (isExamSubject) {
+              // In 기출 tab: Default is collapsed! Only open if user explicitly clicked to expand
+              isExpanded = expandedSections.has(`EXPANDED__${secKey}`);
+            } else {
+              isExpanded = isSecActive || !expandedSections.has(`COLLAPSED__${secKey}`);
+            }
 
             const secGroup = document.createElement('div');
             secGroup.className = 'section-group';
@@ -1666,10 +1675,12 @@
                 secChildren.classList.remove('hidden');
                 secHeader.querySelector('.sec-chevron').classList.add('rotate-90', 'text-indigo-600');
                 expandedSections.delete(`COLLAPSED__${secKey}`);
+                expandedSections.add(`EXPANDED__${secKey}`);
               } else {
                 secChildren.classList.add('hidden');
                 secHeader.querySelector('.sec-chevron').classList.remove('rotate-90', 'text-indigo-600');
                 expandedSections.add(`COLLAPSED__${secKey}`);
+                expandedSections.delete(`EXPANDED__${secKey}`);
               }
             });
 
@@ -1736,7 +1747,14 @@
 
                 const subSecKey = `${secKey}__${subName}`;
                 const isSubActive = subIndices.includes(currentTopicIndex);
-                const isSubExpanded = Boolean(q) || isSubActive || !expandedSections.has(`COLLAPSED__${subSecKey}`);
+                let isSubExpanded;
+                if (Boolean(q)) {
+                  isSubExpanded = true;
+                } else if (isExamSubject) {
+                  isSubExpanded = expandedSections.has(`EXPANDED__${subSecKey}`);
+                } else {
+                  isSubExpanded = isSubActive || !expandedSections.has(`COLLAPSED__${subSecKey}`);
+                }
 
                 const subGroup = document.createElement('div');
                 subGroup.className = 'subsection-group my-1';
@@ -1763,10 +1781,12 @@
                     subChildren.classList.remove('hidden');
                     subHeader.querySelector('.sub-chevron').classList.add('rotate-90', 'text-indigo-600');
                     expandedSections.delete(`COLLAPSED__${subSecKey}`);
+                    expandedSections.add(`EXPANDED__${subSecKey}`);
                   } else {
                     subChildren.classList.add('hidden');
                     subHeader.querySelector('.sub-chevron').classList.remove('rotate-90', 'text-indigo-600');
                     expandedSections.add(`COLLAPSED__${subSecKey}`);
+                    expandedSections.delete(`EXPANDED__${subSecKey}`);
                   }
                 });
 
@@ -1920,6 +1940,12 @@
           if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         }
 
+        // Guarantee all details/solution toggles are closed by default
+        subnoteContainer.querySelectorAll('details').forEach(d => {
+          d.open = false;
+          d.removeAttribute('open');
+        });
+
         // Normalize group headers to guarantee uniform layout and typography
         sanitizeAndNormalizeGroupHeaders(subnoteContainer);
 
@@ -1958,14 +1984,16 @@
 
           if (isCur) {
             item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all';
-            // Ensure parent section is expanded
-            const secChildren = item.closest('.section-children');
-            if (secChildren && secChildren.classList.contains('hidden')) {
-              secChildren.classList.remove('hidden');
-              const secGroup = secChildren.closest('.section-group');
-              if (secGroup) {
-                const chevron = secGroup.querySelector('.sec-chevron');
-                if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
+            // Ensure parent section is expanded (for non-exam subjects)
+            if (activeSubject !== '기출') {
+              const secChildren = item.closest('.section-children');
+              if (secChildren && secChildren.classList.contains('hidden')) {
+                secChildren.classList.remove('hidden');
+                const secGroup = secChildren.closest('.section-group');
+                if (secGroup) {
+                  const chevron = secGroup.querySelector('.sec-chevron');
+                  if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
+                }
               }
             }
             item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -2174,7 +2202,12 @@
       function saveCurrentTopicCustomContent() {
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
-        localStorage.setItem(`edurecall_custom_${topic.id}`, subnoteContainer.innerHTML);
+        const tempDiv = subnoteContainer.cloneNode(true);
+        tempDiv.querySelectorAll('details').forEach(d => {
+          d.open = false;
+          d.removeAttribute('open');
+        });
+        localStorage.setItem(`edurecall_custom_${topic.id}`, tempDiv.innerHTML);
         if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
       }
 
@@ -2678,6 +2711,14 @@
       }
 
       function setSubjectTab(subj, autoSelectTopic = false, keepMobileDrawer = false) {
+        if (subj === '기출') {
+          // Reset expanded sections for 기출 tab so all accordion toggles start cleanly closed by default
+          Array.from(expandedSections).forEach(key => {
+            if (key.includes('기출') || key.startsWith('EXPANDED__')) {
+              expandedSections.delete(key);
+            }
+          });
+        }
         activeSubject = subj;
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
         updateSubjectTabStyles();
