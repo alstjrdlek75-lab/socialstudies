@@ -673,6 +673,12 @@
           <span>다음</span>
           <span class="material-symbols-outlined text-[15px]">chevron_right</span>
         </button>
+        <span class="text-slate-300">|</span>
+        <!-- Toggle Right Essay/FAP Tab in Fixed Sub-header -->
+        <button id="btn-toggle-essay-subhead" class="flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 및 자가채점(FAP) 서술창 접기/열기 [단축키: W]">
+          <span class="material-symbols-outlined text-[17px] text-blue-600" id="subhead-essay-icon">dock_to_right</span>
+          <span class="font-bold text-[11px]" id="subhead-essay-text">인출·FAP</span>
+        </button>
       </div>
     </div>
   </div>
@@ -836,8 +842,8 @@
               <span id="reveal-btn-label"><span class="hidden sm:inline">정답 전체 공개 [Space]</span><span class="sm:hidden">정답 공개</span></span>
             </button>
 
-            <!-- Wide View / Essay Pad Toggle Button (only on xl screens where 2 columns exist) -->
-            <button id="btn-toggle-essay-pad" type="button" class="hidden xl:flex px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 본문을 넓게 봅니다 [단축키: W]">
+            <!-- Wide View / Essay Pad Toggle Button (available on all screens) -->
+            <button id="btn-toggle-essay-pad" type="button" class="flex px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 및 자가채점(FAP) 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
               <span class="material-symbols-outlined text-[16px] text-slate-600" id="toggle-essay-icon">fit_screen</span>
               <span id="toggle-essay-label">와이드 보기</span>
             </button>
@@ -1088,6 +1094,12 @@
     </div>
   </div>
 
+  <!-- FLOATING RIGHT EDGE DOCK BUTTON (Persistent FAB tab, visible when essay aside is collapsed) -->
+  <button id="btn-floating-essay-dock" class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-2 sm:px-2.5 py-3.5 rounded-l-2xl shadow-2xl flex flex-col items-center gap-1.5 border border-r-0 border-blue-400 cursor-pointer hover:pl-3.5 active:scale-95 transition-all select-none group" type="button" title="우측 백지 인출 및 자가채점(FAP) 서술창 열기 [단축키: W]">
+    <span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">dock_to_right</span>
+    <span class="text-[11px] font-bold tracking-wider" style="writing-mode: vertical-rl;">인출·FAP [W]</span>
+  </button>
+
   <!-- FLOATING MASKING TAPE ACTION BUTTON (Drag to Mask) -->
   <button id="floating-mask-btn" class="fixed z-50 hidden bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none" type="button" title="선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]">
     <span class="material-symbols-outlined text-[15px]">label</span>
@@ -1219,14 +1231,19 @@
       const toggleEssayIcon = document.getElementById('toggle-essay-icon');
       const toggleEssayLabel = document.getElementById('toggle-essay-label');
       const btnCollapseEssayAside = document.getElementById('btn-collapse-essay-aside');
+      const btnToggleEssaySubhead = document.getElementById('btn-toggle-essay-subhead');
+      const subheadEssayIcon = document.getElementById('subhead-essay-icon');
+      const subheadEssayText = document.getElementById('subhead-essay-text');
+      const btnFloatingEssayDock = document.getElementById('btn-floating-essay-dock');
 
       function updateEssayToggleUI(isCollapsed) {
+        // 1. In-page Mode Controls button
         if (toggleEssayIcon && toggleEssayLabel) {
           if (isCollapsed) {
             toggleEssayIcon.textContent = 'dock_to_right';
             toggleEssayLabel.textContent = '서술창 열기';
             if (btnToggleEssayPad) {
-              btnToggleEssayPad.title = '우측 백지 인출 서술창 열기 [단축키: W]';
+              btnToggleEssayPad.title = '우측 백지 인출 및 자가채점(FAP) 서술창 열기 [단축키: W]';
               btnToggleEssayPad.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-300');
               btnToggleEssayPad.classList.remove('bg-white', 'text-slate-700');
             }
@@ -1240,6 +1257,34 @@
             }
           }
         }
+
+        // 2. Fixed sub-header button
+        if (btnToggleEssaySubhead) {
+          if (isCollapsed) {
+            if (subheadEssayIcon) subheadEssayIcon.textContent = 'dock_to_right';
+            if (subheadEssayText) subheadEssayText.textContent = '인출·FAP 열기';
+            btnToggleEssaySubhead.title = '우측 백지 인출 및 자가채점(FAP) 서술창 열기 [단축키: W]';
+            btnToggleEssaySubhead.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-300');
+            btnToggleEssaySubhead.classList.remove('bg-white', 'text-slate-700');
+          } else {
+            if (subheadEssayIcon) subheadEssayIcon.textContent = 'fit_screen';
+            if (subheadEssayText) subheadEssayText.textContent = '인출·FAP 접기';
+            btnToggleEssaySubhead.title = '우측 서술창을 접고 본문을 넓게 봅니다 [단축키: W]';
+            btnToggleEssaySubhead.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-300');
+            btnToggleEssaySubhead.classList.add('bg-white', 'text-slate-700');
+          }
+        }
+
+        // 3. Floating Right Edge Dock Tab (FAB)
+        if (btnFloatingEssayDock) {
+          if (isCollapsed) {
+            btnFloatingEssayDock.classList.remove('hidden');
+            btnFloatingEssayDock.classList.add('flex');
+          } else {
+            btnFloatingEssayDock.classList.add('hidden');
+            btnFloatingEssayDock.classList.remove('flex');
+          }
+        }
       }
 
       function toggleEssayPad() {
@@ -1250,7 +1295,16 @@
           localStorage.setItem('edurecall_essay_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateEssayToggleUI(willCollapse);
-        showToast(willCollapse ? '와이드 보기로 전환했습니다 (W로 서술창 다시 열기)' : '2단 분할 보기로 전환했습니다 (W로 와이드 전환)', willCollapse ? 'fit_screen' : 'dock_to_right');
+        showToast(willCollapse ? '서술창을 접었습니다 (우측 탭 또는 W로 다시 열기)' : '백지 인출 및 FAP 서술창을 열었습니다 (단축키: W)', willCollapse ? 'fit_screen' : 'dock_to_right');
+
+        if (!willCollapse && window.innerWidth < 1280) {
+          setTimeout(() => {
+            const asideEl = document.getElementById('essay-aside');
+            if (asideEl) {
+              asideEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
+        }
       }
 
       function setEssayPadCollapsed(collapsed) {
@@ -1259,6 +1313,15 @@
           localStorage.setItem('edurecall_essay_collapsed', collapsed ? 'true' : 'false');
         } catch (e) {}
         updateEssayToggleUI(collapsed);
+
+        if (!collapsed && window.innerWidth < 1280) {
+          setTimeout(() => {
+            const asideEl = document.getElementById('essay-aside');
+            if (asideEl) {
+              asideEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
+        }
       }
 
       if (btnToggleEssayPad) {
@@ -1266,6 +1329,12 @@
       }
       if (btnCollapseEssayAside) {
         btnCollapseEssayAside.addEventListener('click', toggleEssayPad);
+      }
+      if (btnToggleEssaySubhead) {
+        btnToggleEssaySubhead.addEventListener('click', toggleEssayPad);
+      }
+      if (btnFloatingEssayDock) {
+        btnFloatingEssayDock.addEventListener('click', toggleEssayPad);
       }
 
       const bcSubject = document.getElementById('bc-subject');
@@ -2724,12 +2793,28 @@
       });
 
       if (scBtnEssay) scBtnEssay.addEventListener('click', () => {
-        essayInput.focus();
-        essayInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (document.body.classList.contains('essay-collapsed')) {
+          setEssayPadCollapsed(false);
+        }
+        setTimeout(() => {
+          if (essayInput) {
+            essayInput.focus();
+            essayInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 80);
         showToast('서술 입력란 포커스 [Tab]', 'keyboard');
       });
 
       if (scBtnGrade) scBtnGrade.addEventListener('click', () => {
+        if (document.body.classList.contains('essay-collapsed')) {
+          setEssayPadCollapsed(false);
+        }
+        setTimeout(() => {
+          const gradeContainer = document.querySelector('.grade-btn')?.parentElement;
+          if (gradeContainer) {
+            gradeContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 80);
         showToast('자가채점 단축키: [P/⌘P] 완벽인출 | [A/⌘A] 부분성공 | [F/⌘F] 오답', 'psychology');
       });
 
@@ -3364,11 +3449,18 @@
           return;
         }
 
-        // 1. [Tab] Focus essay input
+        // 1. [Tab] Focus essay input (Auto-uncollapses essay aside if collapsed)
         if (e.key === 'Tab' && activeEl !== essayInput) {
           e.preventDefault();
-          essayInput.focus();
-          essayInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (document.body.classList.contains('essay-collapsed')) {
+            setEssayPadCollapsed(false);
+          }
+          setTimeout(() => {
+            if (essayInput) {
+              essayInput.focus();
+              essayInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          }, 80);
           showToast('서술 입력란 포커스 [Tab]', 'keyboard');
           return;
         }
@@ -3741,6 +3833,13 @@
           document.body.classList.add('sidebar-collapsed');
           updateSidebarToggleUI(true);
         }
+
+        // One-time fix: reset previously stuck collapsed state so right tab is visible immediately
+        if (!localStorage.getItem('edurecall_essay_collapsed_restored_v1')) {
+          try { localStorage.removeItem('edurecall_essay_collapsed'); } catch (e) {}
+          try { localStorage.setItem('edurecall_essay_collapsed_restored_v1', 'true'); } catch (e) {}
+        }
+
         const savedEssayCollapsed = localStorage.getItem('edurecall_essay_collapsed');
         if (savedEssayCollapsed === 'true') {
           setEssayPadCollapsed(true);
