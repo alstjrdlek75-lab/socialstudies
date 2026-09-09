@@ -221,19 +221,9 @@
       font-size: calc(16px * var(--content-font-scale, 1.15));
     }
 
-    #subnote-content-container .recall-item {
-      font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
-      line-height: 1.8 !important;
-    }
-
-    #subnote-content-container .recall-item.pl-6,
-    #subnote-content-container .recall-item.text-xs {
-      font-size: calc(14.5px * var(--content-font-scale, 1.15)) !important;
-      line-height: 1.75 !important;
-    }
-
+    /* 1. Group Headers (e.g. (1) 국민경제 균형식과 소득지출분석) */
     #subnote-content-container .topic-group > div:first-child .font-bold,
-    #subnote-content-container .topic-group > div:first-child .font-bold span {
+    #subnote-content-container .topic-group > div:first-child .font-bold span:not(.exam-badge) {
       font-size: calc(17px * var(--content-font-scale, 1.15)) !important;
       line-height: 1.5 !important;
     }
@@ -248,7 +238,123 @@
       flex-shrink: 0 !important;
     }
 
-    /* Prevent toolbar buttons from wrapping text mid-syllable */
+    /* 2. Primary Recall Items (e.g. ①개방 국민경제 균형식과 저축) */
+    #subnote-content-container .recall-item {
+      font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.8 !important;
+    }
+
+    /* 3. Universal Tailwind font-size override inside subnote container */
+    #subnote-content-container .text-xs,
+    #subnote-content-container [class*="text-xs"],
+    #subnote-content-container .md\:text-xs,
+    #subnote-content-container .text-\[10px\],
+    #subnote-content-container .text-\[11px\] {
+      font-size: calc(13.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.7 !important;
+    }
+
+    #subnote-content-container .text-sm,
+    #subnote-content-container [class*="text-sm"],
+    #subnote-content-container .md\:text-sm,
+    #subnote-content-container .text-\[14px\] {
+      font-size: calc(15px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    #subnote-content-container .md\:text-\[15px\],
+    #subnote-content-container .text-\[15px\] {
+      font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.8 !important;
+    }
+
+    #subnote-content-container .text-base,
+    #subnote-content-container [class*="text-base"],
+    #subnote-content-container .md\:text-base,
+    #subnote-content-container .text-\[16px\] {
+      font-size: calc(17px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.6 !important;
+    }
+
+    /* 4. Sub-bullets, child lines, and descriptions inside recall-items */
+    #subnote-content-container .recall-item > div,
+    #subnote-content-container .recall-item div,
+    #subnote-content-container .recall-item p,
+    #subnote-content-container .recall-item li,
+    #subnote-content-container .recall-item ul,
+    #subnote-content-container .recall-item ol {
+      font-size: calc(14.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    #subnote-content-container .recall-item.pl-6 {
+      font-size: calc(14.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    /* 5. Problem prompt & calculation boxes (📝 [실전 기출 문제 & 심층 계산 풀이]) */
+    #subnote-content-container .group-content > div:not(.recall-item),
+    #subnote-content-container .group-content > div:not(.recall-item) p,
+    #subnote-content-container .group-content > div:not(.recall-item) div {
+      font-size: calc(14.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    #subnote-content-container .group-content > div:not(.recall-item) strong.block {
+      font-size: calc(15.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.5 !important;
+    }
+
+    /* 6. Comparison Tables inside subnote container */
+    #subnote-content-container table,
+    #subnote-content-container thead,
+    #subnote-content-container tbody,
+    #subnote-content-container tr,
+    #subnote-content-container th,
+    #subnote-content-container td {
+      font-size: calc(14px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.6 !important;
+    }
+
+    /* 7. Inline text styling, formulas, math fractions, sub/sup */
+    #subnote-content-container strong,
+    #subnote-content-container b,
+    #subnote-content-container em,
+    #subnote-content-container i,
+    #subnote-content-container span:not(.exam-badge):not(.material-symbols-outlined) {
+      font-size: inherit !important;
+      line-height: inherit !important;
+    }
+
+    #subnote-content-container sub,
+    #subnote-content-container sup {
+      font-size: 0.72em !important;
+      line-height: 0 !important;
+    }
+
+    #subnote-content-container .math-frac {
+      font-size: 1.05em !important;
+    }
+    #subnote-content-container .math-frac > .num,
+    #subnote-content-container .math-frac > .den {
+      font-size: 0.82em !important;
+    }
+    #subnote-content-container .math-sym,
+    #subnote-content-container .math-box {
+      font-size: inherit !important;
+    }
+    #subnote-content-container .katex {
+      font-size: 1.08em !important;
+    }
+
+    /* 8. Diagram captions & header */
+    #subnote-content-container .diagram-caption,
+    #subnote-content-container img + div {
+      font-size: calc(13px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.5 !important;
+    }
+
+    /* 9. Prevent toolbar buttons from wrapping text mid-syllable */
     .mode-pill {
       white-space: nowrap !important;
       flex-shrink: 0 !important;
@@ -271,25 +377,60 @@
       line-height: inherit !important;
     }
 
+    /* 10. Supplementary Explanation Drawer Scaling */
+    #explanation-drawer-body {
+      font-size: calc(14.5px * var(--content-font-scale, 1.15));
+    }
+    #explanation-drawer-body h4 {
+      font-size: calc(15.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.5 !important;
+    }
+    #explanation-drawer-body p,
+    #explanation-drawer-body div:not([class*="rounded-full"]):not([class*="material-symbols-outlined"]) {
+      font-size: calc(14px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+    #explanation-drawer-body strong,
+    #explanation-drawer-body b,
+    #explanation-drawer-body em,
+    #explanation-drawer-body i,
+    #explanation-drawer-body span:not([class*="rounded-full"]):not([class*="material-symbols-outlined"]) {
+      font-size: inherit !important;
+      line-height: inherit !important;
+    }
+    #explanation-drawer-body textarea {
+      font-size: calc(14px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
+    /* 11. Essay & Diff View Scaling */
+    #essay-prompt-box,
+    #essay-prompt-box * {
+      font-size: calc(14.5px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+    }
+
     #essay-input {
       font-size: calc(15px * var(--content-font-scale, 1.15)) !important;
       line-height: 1.75 !important;
     }
 
-    #diff-user-box, #diff-model-box {
+    #diff-user-box, #diff-model-box,
+    #diff-user-box *, #diff-model-box * {
       font-size: calc(15px * var(--content-font-scale, 1.15)) !important;
       line-height: 1.75 !important;
     }
 
-    /* Exam Year Badges (Tiny, Compact & Strictly Inline) */
+    /* 12. Exam Year Badges (Tiny, Compact & Strictly Inline) */
     .exam-badge,
+    #subnote-content-container .exam-badge,
     #subnote-content-container .topic-group > div:first-child .font-bold .exam-badge,
     #subnote-content-container .topic-group > div:first-child .font-bold span .exam-badge {
       display: inline-flex !important;
       align-items: center !important;
       padding: 0 4px !important;
       margin: 0 4px !important;
-      font-size: 10px !important;
+      font-size: calc(10.5px * max(0.9, min(1.25, var(--content-font-scale, 1.15)))) !important;
       line-height: 1.2 !important;
       font-weight: 700 !important;
       letter-spacing: normal !important;
@@ -348,9 +489,9 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260909_1030"></script>
+  <script src="topics-data.js?v=20260909_1100"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260909_1050"></script>
+  <script src="explanations-data.js?v=20260909_1100"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1058,7 +1199,7 @@
       const btnFontDown = document.getElementById('btn-font-down');
 
       function applyFontScale(scale, notify = false) {
-        currentFontScale = Math.min(180, Math.max(80, scale));
+        currentFontScale = Math.min(200, Math.max(70, scale));
         if (fontScaleText) fontScaleText.textContent = `${currentFontScale}%`;
         
         const ratio = (currentFontScale / 100).toFixed(2);
@@ -1066,9 +1207,12 @@
         if (subnoteContainer) {
           subnoteContainer.style.setProperty('--content-font-scale', ratio);
         }
+        if (explanationDrawerBody) {
+          explanationDrawerBody.style.setProperty('--content-font-scale', ratio);
+        }
         localStorage.setItem('edurecall_font_scale', currentFontScale);
         if (notify) {
-          showToast(`본문 글자 크기: ${currentFontScale}%`, 'format_size');
+          showToast(`글자 크기: ${currentFontScale}%`, 'format_size');
         }
       }
 
