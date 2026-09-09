@@ -464,6 +464,25 @@
         display: flex !important;
       }
     }
+    /* Essay Pad Collapsed (Wide View) State */
+    body.essay-collapsed #essay-aside {
+      display: none !important;
+    }
+    body.essay-collapsed #subnote-section {
+      grid-column: span 12 / span 12 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    /* Natural Korean Typography: prevent mid-syllable word breaking */
+    #subnote-content-container,
+    #subnote-content-container .topic-group,
+    #subnote-content-container .recall-item,
+    #subnote-content-container .recall-item div,
+    #subnote-content-container .recall-item p,
+    #subnote-content-container .recall-item span {
+      word-break: keep-all !important;
+      overflow-wrap: break-word !important;
+    }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
@@ -489,7 +508,7 @@
     };
   </script>
   <!-- Load complete authentic syllabus data -->
-  <script src="topics-data.js?v=20260909_1255"></script>
+  <script src="topics-data.js?v=20260909_1305"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260909_1100"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
@@ -684,10 +703,10 @@
 
   <!-- MAIN AREA CONTAINER -->
   <div id="main-content-wrapper" class="md:pl-sidebar-width flex-1 flex flex-col transition-all duration-300 ease-in-out" style="padding-top: 6.5rem;">
-    <main class="w-full max-w-7xl mx-auto p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+    <main id="main-content-grid" class="w-full max-w-[1600px] 2xl:max-w-[1760px] mx-auto p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
 
-      <!-- LEFT/CENTER: Sub-note Authentic Content & Recall Deck (70%) -->
-      <section class="xl:col-span-8 flex flex-col gap-4 min-w-0">
+      <!-- LEFT/CENTER: Sub-note Authentic Content & Recall Deck (70% or 100% in wide mode) -->
+      <section id="subnote-section" class="xl:col-span-8 2xl:col-span-9 flex flex-col gap-4 min-w-0 transition-all duration-200">
 
         <!-- Topic Banner Card -->
         <div class="bg-white rounded-2xl border border-border p-5 shadow-xs flex flex-col gap-3">
@@ -781,6 +800,12 @@
               <span class="material-symbols-outlined text-[16px] text-lime-800" id="reveal-eye-icon">visibility</span>
               <span id="reveal-btn-label">정답 전체 공개 [Space]</span>
             </button>
+
+            <!-- Wide View / Essay Pad Toggle Button -->
+            <button id="btn-toggle-essay-pad" type="button" class="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 본문을 넓게 봅니다 [단축키: W]">
+              <span class="material-symbols-outlined text-[16px] text-slate-600" id="toggle-essay-icon">fit_screen</span>
+              <span id="toggle-essay-label">와이드 보기</span>
+            </button>
           </div>
         </div>
 
@@ -791,8 +816,8 @@
 
       </section>
 
-      <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading (30%) -->
-      <aside class="xl:col-span-4 flex flex-col gap-4 min-w-0">
+      <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading (30% or 0% in wide mode) -->
+      <aside id="essay-aside" class="xl:col-span-4 2xl:col-span-3 flex flex-col gap-4 min-w-0 transition-all duration-200">
 
         <!-- Essay Recall Textarea Card -->
         <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3">
@@ -807,6 +832,9 @@
               </button>
               <button id="btn-clear-essay" class="p-1 text-slate-400 hover:text-slate-700 rounded" title="지우기">
                 <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+              <button id="btn-collapse-essay-aside" class="p-1 text-slate-400 hover:text-slate-700 rounded transition-colors" title="서술창 접기 (와이드 뷰) [단축키: W]" type="button">
+                <span class="material-symbols-outlined text-[16px]">close_fullscreen</span>
               </button>
             </div>
           </div>
@@ -1123,6 +1151,59 @@
           localStorage.setItem('edurecall_sidebar_collapsed', collapsed ? 'true' : 'false');
         } catch (e) {}
         updateSidebarToggleUI(collapsed);
+      }
+
+      const btnToggleEssayPad = document.getElementById('btn-toggle-essay-pad');
+      const toggleEssayIcon = document.getElementById('toggle-essay-icon');
+      const toggleEssayLabel = document.getElementById('toggle-essay-label');
+      const btnCollapseEssayAside = document.getElementById('btn-collapse-essay-aside');
+
+      function updateEssayToggleUI(isCollapsed) {
+        if (toggleEssayIcon && toggleEssayLabel) {
+          if (isCollapsed) {
+            toggleEssayIcon.textContent = 'dock_to_right';
+            toggleEssayLabel.textContent = '서술창 열기';
+            if (btnToggleEssayPad) {
+              btnToggleEssayPad.title = '우측 백지 인출 서술창 열기 [단축키: W]';
+              btnToggleEssayPad.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-300');
+              btnToggleEssayPad.classList.remove('bg-white', 'text-slate-700');
+            }
+          } else {
+            toggleEssayIcon.textContent = 'fit_screen';
+            toggleEssayLabel.textContent = '와이드 보기';
+            if (btnToggleEssayPad) {
+              btnToggleEssayPad.title = '우측 서술창을 접고 본문을 넓게 봅니다 [단축키: W]';
+              btnToggleEssayPad.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-300');
+              btnToggleEssayPad.classList.add('bg-white', 'text-slate-700');
+            }
+          }
+        }
+      }
+
+      function toggleEssayPad() {
+        const isCurrentlyCollapsed = document.body.classList.contains('essay-collapsed');
+        const willCollapse = !isCurrentlyCollapsed;
+        document.body.classList.toggle('essay-collapsed', willCollapse);
+        try {
+          localStorage.setItem('edurecall_essay_collapsed', willCollapse ? 'true' : 'false');
+        } catch (e) {}
+        updateEssayToggleUI(willCollapse);
+        showToast(willCollapse ? '와이드 보기로 전환했습니다 (W로 서술창 다시 열기)' : '2단 분할 보기로 전환했습니다 (W로 와이드 전환)', willCollapse ? 'fit_screen' : 'dock_to_right');
+      }
+
+      function setEssayPadCollapsed(collapsed) {
+        document.body.classList.toggle('essay-collapsed', collapsed);
+        try {
+          localStorage.setItem('edurecall_essay_collapsed', collapsed ? 'true' : 'false');
+        } catch (e) {}
+        updateEssayToggleUI(collapsed);
+      }
+
+      if (btnToggleEssayPad) {
+        btnToggleEssayPad.addEventListener('click', toggleEssayPad);
+      }
+      if (btnCollapseEssayAside) {
+        btnCollapseEssayAside.addEventListener('click', toggleEssayPad);
       }
 
       const bcSubject = document.getElementById('bc-subject');
@@ -3233,7 +3314,14 @@
           return;
         }
 
-        // 7. [Space] or [T] Toggle master reveal
+        // 7. [W] or [w] Toggle Wide View / Essay Pad
+        if ((e.key === 'w' || e.key === 'W') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          toggleEssayPad();
+          return;
+        }
+
+        // 8. [Space] or [T] Toggle master reveal
         if (e.code === 'Space' || ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey)) {
           e.preventDefault();
           toggleMasterReveal();
@@ -3426,6 +3514,8 @@
         localStorage.removeItem('edurecall_custom_ECON-009');
         localStorage.removeItem('edurecall_custom_ECON-010');
         localStorage.removeItem('edurecall_custom_ECON-012');
+        localStorage.removeItem('edurecall_custom_ECON-014');
+        localStorage.removeItem('edurecall_custom_ECON-015');
         localStorage.removeItem('edurecall_custom_ECON-016');
         localStorage.removeItem('edurecall_custom_ECON-018');
         localStorage.removeItem('edurecall_custom_ECON-019');
@@ -3495,6 +3585,12 @@
         if (savedCollapsed === 'true' && window.innerWidth >= 768) {
           document.body.classList.add('sidebar-collapsed');
           updateSidebarToggleUI(true);
+        }
+        const savedEssayCollapsed = localStorage.getItem('edurecall_essay_collapsed');
+        if (savedEssayCollapsed === 'true') {
+          setEssayPadCollapsed(true);
+        } else {
+          updateEssayToggleUI(false);
         }
       } catch (e) {}
 
