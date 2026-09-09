@@ -592,6 +592,9 @@
       <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="경제학" type="button">
         경제학 <span class="opacity-75 text-[11px]" id="count-econ">(6)</span>
       </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="가이드" type="button">
+        가이드 <span class="opacity-75 text-[11px]" id="count-guide">(0)</span>
+      </button>
     </nav>
 
     <!-- Top Tools (Pomodoro, Global Stats, Mobile Menu) -->
@@ -703,6 +706,7 @@
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제학</button>
+      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="가이드" type="button">가이드</button>
     </div>
 
     <!-- Sidebar Header & Search -->
@@ -3619,7 +3623,7 @@
       });
 
       function updateSubjectCountBadges() {
-        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0 };
+        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '가이드': 0 };
         TOPICS.forEach(t => { if (counts[t.subject] !== undefined) counts[t.subject]++; });
         const map = {
           'count-edu': counts['사회과교육론'],
@@ -3627,6 +3631,7 @@
           'count-soc': counts['사회학'],
           'count-pol': counts['정치학'],
           'count-econ': counts['경제학'],
+          'count-guide': counts['가이드'],
           'count-all': TOPICS.length
         };
         Object.keys(map).forEach(id => {
@@ -3670,7 +3675,7 @@
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
       } else if (targetTopic) {
         activeSubject = targetTopic.subject;
-      } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학'].includes(savedSubject)) {
+      } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학', '가이드'].includes(savedSubject)) {
         activeSubject = savedSubject;
       }
 
