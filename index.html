@@ -619,14 +619,14 @@
   <!-- SUB-HEADER (Breadcrumb, Prev/Next, Shortcuts Hint) -->
   <div class="fixed top-16 left-0 right-0 h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-6 text-xs">
     <div class="flex items-center gap-2 overflow-hidden min-w-0">
-      <!-- Sidebar Toggle Button (Desktop & Mobile) -->
-      <button id="btn-toggle-sidebar" class="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
+      <!-- Sidebar Toggle Button (Desktop Only) -->
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
         <span class="material-symbols-outlined text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
-      <span class="text-slate-400 shrink-0">|</span>
+      <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
       <!-- Breadcrumb -->
-      <div class="flex items-center gap-1.5 overflow-hidden text-slate-700 font-semibold cursor-pointer hover:text-blue-700 transition-colors" id="bc-container" title="목차 열기 (클릭)">
+      <div class="flex items-center gap-1.5 overflow-hidden text-slate-700 font-semibold" id="bc-container">
         <span class="text-blue-700 font-bold shrink-0" id="bc-subject">사회과교육론</span>
         <span class="text-slate-400 shrink-0 hidden sm:inline" id="bc-chapter-sep">/</span>
         <span class="text-slate-700 shrink-0 truncate max-w-[120px] md:max-w-[180px] hidden sm:inline" id="bc-chapter">1.사회과 교육의 전통</span>
@@ -1090,12 +1090,6 @@
     </div>
   </div>
 
-  <!-- FLOATING RIGHT EDGE DOCK BUTTON (Persistent FAB tab, visible when essay aside is collapsed) -->
-  <button id="btn-floating-essay-dock" class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-2 sm:px-2.5 py-3.5 rounded-l-2xl shadow-2xl flex flex-col items-center gap-1.5 border border-r-0 border-blue-400 cursor-pointer hover:pl-3.5 active:scale-95 transition-all select-none group" type="button" title="우측 백지 인출 및 자가채점(FAP) 서술창 열기 [단축키: W]">
-    <span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">dock_to_right</span>
-    <span class="text-[11px] font-bold tracking-wider" style="writing-mode: vertical-rl;">인출·FAP [W]</span>
-  </button>
-
   <!-- FLOATING MASKING TAPE ACTION BUTTON (Drag to Mask) -->
   <button id="floating-mask-btn" class="fixed z-50 hidden bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none" type="button" title="선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]">
     <span class="material-symbols-outlined text-[15px]">label</span>
@@ -1230,7 +1224,6 @@
       const btnToggleEssaySubhead = document.getElementById('btn-toggle-essay-subhead');
       const subheadEssayIcon = document.getElementById('subhead-essay-icon');
       const subheadEssayText = document.getElementById('subhead-essay-text');
-      const btnFloatingEssayDock = document.getElementById('btn-floating-essay-dock');
 
       function updateEssayToggleUI(isCollapsed) {
         // 1. In-page Mode Controls button
@@ -1270,17 +1263,6 @@
             btnToggleEssaySubhead.classList.add('bg-white', 'text-slate-700');
           }
         }
-
-        // 3. Floating Right Edge Dock Tab (FAB)
-        if (btnFloatingEssayDock) {
-          if (isCollapsed) {
-            btnFloatingEssayDock.classList.remove('hidden');
-            btnFloatingEssayDock.classList.add('flex');
-          } else {
-            btnFloatingEssayDock.classList.add('hidden');
-            btnFloatingEssayDock.classList.remove('flex');
-          }
-        }
       }
 
       function toggleEssayPad() {
@@ -1291,7 +1273,7 @@
           localStorage.setItem('edurecall_essay_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateEssayToggleUI(willCollapse);
-        showToast(willCollapse ? '서술창을 접었습니다 (우측 탭 또는 W로 다시 열기)' : '백지 인출 및 FAP 서술창을 열었습니다 (단축키: W)', willCollapse ? 'fit_screen' : 'dock_to_right');
+        showToast(willCollapse ? '서술창을 접었습니다 (상단 인출·FAP 버튼 또는 W로 다시 열기)' : '백지 인출 및 FAP 서술창을 열었습니다 (단축키: W)', willCollapse ? 'fit_screen' : 'dock_to_right');
 
         if (!willCollapse && window.innerWidth < 1280) {
           setTimeout(() => {
@@ -1328,9 +1310,6 @@
       }
       if (btnToggleEssaySubhead) {
         btnToggleEssaySubhead.addEventListener('click', toggleEssayPad);
-      }
-      if (btnFloatingEssayDock) {
-        btnFloatingEssayDock.addEventListener('click', toggleEssayPad);
       }
 
       const bcSubject = document.getElementById('bc-subject');
@@ -2824,9 +2803,7 @@
 
       if (bcContainer) {
         bcContainer.addEventListener('click', () => {
-          if (window.innerWidth < 1024) {
-            openMobileSidebar();
-          } else if (document.body.classList.contains('sidebar-collapsed')) {
+          if (window.innerWidth >= 1024 && document.body.classList.contains('sidebar-collapsed')) {
             setSidebarCollapsed(false);
           }
         });
