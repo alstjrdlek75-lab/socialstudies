@@ -592,9 +592,6 @@
       <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="경제학" type="button">
         경제학 <span class="opacity-75 text-[11px]" id="count-econ">(6)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="ALL" type="button">
-        전체보기 <span class="opacity-75 text-[11px]" id="count-all">(558)</span>
-      </button>
     </nav>
 
     <!-- Top Tools (Pomodoro, Global Stats, Mobile Menu) -->
@@ -706,7 +703,6 @@
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제학</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="ALL" type="button">전체</button>
     </div>
 
     <!-- Sidebar Header & Search -->
@@ -3693,7 +3689,8 @@
       const targetTopic = TOPICS[initialIndex];
       const savedSubject = localStorage.getItem('edurecall_active_subject');
       if (savedSubject === 'ALL') {
-        activeSubject = 'ALL';
+        activeSubject = targetTopic ? targetTopic.subject : '사회과교육론';
+        try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
       } else if (targetTopic) {
         activeSubject = targetTopic.subject;
       } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학'].includes(savedSubject)) {
