@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="108%" height="110%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.04" />
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
+  <text x="460" y="32" font-size="17" font-weight="700" text-anchor="middle" fill="#0f172a">국민소득의 처분과 누출(Leakages)·주입(Injections) 균형 모형</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- Subtitle Badge -->
+  <rect x="110" y="62" width="700" height="26" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="460" y="79" font-size="11.5" font-weight="600" text-anchor="middle" fill="#1d4ed8">• 총소득 처분(Y = C+S+T)과 총지출(Y = C+I+G+X-M)의 일치를 통한 누출·주입 균형 조건 도출</text>
+
+  <!-- SECTION 1 & 2: Two Perspectives (Side by Side) -->
+  <!-- Left Box: Income Disposition -->
+  <g transform="translate(50, 102)">
+    <rect x="0" y="0" width="395" height="105" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)" />
+    <rect x="0" y="0" width="395" height="28" rx="8" fill="#f8fafc" />
+    <rect x="0" y="20" width="395" height="8" fill="#f8fafc" />
+    <line x1="0" y1="28" x2="395" y2="28" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="19" font-size="12.5" font-weight="700" fill="#1e40af">① 국민소득의 처분 (총소득·총공급 관점)</text>
+    
+    <text x="16" y="48" font-size="11.5" fill="#475569">가계가 벌어들인 소득(Y)은 소비(C), 저축(S), 세금(T)으로 배분</text>
+    <rect x="16" y="58" width="363" height="34" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="197" y="80" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="middle">Y = C + S + T</text>
+  </g>
+
+  <!-- Right Box: Aggregate Expenditure -->
+  <g transform="translate(475, 102)">
+    <rect x="0" y="0" width="395" height="105" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)" />
+    <rect x="0" y="0" width="395" height="28" rx="8" fill="#f8fafc" />
+    <rect x="0" y="20" width="395" height="8" fill="#f8fafc" />
+    <line x1="0" y1="28" x2="395" y2="28" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="19" font-size="12.5" font-weight="700" fill="#1e40af">② 총지출 관점 (지출국민소득)</text>
+    
+    <text x="16" y="48" font-size="11.5" fill="#475569">국민경제 전체 총지출은 소비(C), 투자(I), 정부지출(G), 순수출(X-M)</text>
+    <rect x="16" y="58" width="363" height="34" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="197" y="80" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="middle">Y = C + I + G + X - M</text>
+  </g>
+
+  <!-- SECTION 3: Derivation Step -->
+  <g transform="translate(50, 222)">
+    <rect x="0" y="0" width="820" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+    <text x="20" y="22" font-size="12" font-weight="700" fill="#0f172a">③ 양변 결합 및 수식 정리 과정</text>
+    <line x1="20" y1="29" x2="800" y2="29" stroke="#e2e8f0" stroke-width="1" />
+    
+    <text x="30" y="44" font-size="12" font-weight="600" fill="#334155">C + S + T = C + I + G + X - M</text>
+    <text x="280" y="44" font-size="11.5" fill="#64748b">➔ (공통 소비 C 소거)</text>
+    <text x="410" y="44" font-size="12" font-weight="700" fill="#1e293b">S + T = I + G + X - M</text>
+    <text x="610" y="44" font-size="11.5" fill="#64748b">➔ (수입 -M 좌변 이항)</text>
+    <text x="735" y="44" font-size="12" font-weight="700" fill="#2563eb">S + T + M = I + G + X</text>
+  </g>
+
+  <!-- SECTION 4: Leakage = Injection Main Box -->
+  <g transform="translate(50, 288)">
+    <rect x="0" y="0" width="820" height="105" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)" />
+    <rect x="0" y="0" width="820" height="28" rx="8" fill="#f8fafc" />
+    <rect x="0" y="20" width="820" height="8" fill="#f8fafc" />
+    <line x1="0" y1="28" x2="820" y2="28" stroke="#e2e8f0" stroke-width="1" />
+    <text x="20" y="19" font-size="12.5" font-weight="700" fill="#0f172a">④ 소득 순환의 누출(Leakages)과 주입(Injections) 균형 조건</text>
+
+    <!-- Left Leakages -->
+    <g transform="translate(20, 38)">
+      <rect x="0" y="0" width="365" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+      <text x="16" y="22" font-size="11.5" font-weight="700" fill="#334155">누출 (Leakages) : 소득 순환에서 빠져나가는 요소</text>
+      <text x="182" y="44" font-size="15" font-weight="700" fill="#1e293b" text-anchor="middle">S + T + M <tspan font-size="12" font-weight="500" fill="#64748b">(저축 + 조세 + 수입)</tspan></text>
+    </g>
+
+    <!-- Center Equals -->
+    <circle cx="410" cy="65" r="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
+    <text x="410" y="72" font-size="20" font-weight="700" fill="#2563eb" text-anchor="middle">=</text>
+
+    <!-- Right Injections -->
+    <g transform="translate(435, 38)">
+      <rect x="0" y="0" width="365" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+      <text x="16" y="22" font-size="11.5" font-weight="700" fill="#334155">주입 (Injections) : 소득 순환에 새로 유입되는 요소</text>
+      <text x="182" y="44" font-size="15" font-weight="700" fill="#1e293b" text-anchor="middle">I + G + X <tspan font-size="12" font-weight="500" fill="#64748b">(투자 + 정부지출 + 수출)</tspan></text>
+    </g>
+  </g>
+
+  <!-- SECTION 5: Y-form Representation -->
+  <g transform="translate(50, 407)">
+    <rect x="0" y="0" width="820" height="65" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2" />
+    <text x="20" y="24" font-size="12" font-weight="700" fill="#1d4ed8">⑤ Y 형태로 표현할 경우 (S + T = Y - C 대입):</text>
+    <text x="30" y="49" font-size="13.5" font-weight="700" fill="#0f172a">(Y - C) + M = I + G + X</text>
+    <text x="270" y="49" font-size="14" font-weight="700" fill="#2563eb">⟺</text>
+    <text x="305" y="49" font-size="13.5" font-weight="700" fill="#1d4ed8">Y - C + M = I + G + X</text>
+    <text x="630" y="49" font-size="11.5" font-weight="600" fill="#475569">[총공급·처분 관점 = 총지출 관점]</text>
+  </g>
+</svg>
