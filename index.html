@@ -350,7 +350,7 @@
   <!-- Load complete authentic syllabus data -->
   <script src="topics-data.js?v=20260909_1030"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260908_1955"></script>
+  <script src="explanations-data.js?v=20260909_1040"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2769,7 +2769,7 @@
             <div class="space-y-1.5">
               <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
-                <span>2. 한 번에 이해하는 쉬운 비유와 사례</span>
+                <span>${escapeHtml(exp.analogyTitle || '2. 핵심 쟁점 및 심층 비교·사례')}</span>
               </h4>
               <div class="bg-emerald-50/60 border border-emerald-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-800 leading-relaxed space-y-3">
                 ${formatExplanationText(exp.analogy, 'emerald')}
