@@ -12802,6 +12802,1077 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
+    "id": "EXAM-2021-B-01",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "1번. 세계시민교육과 다문화주의 (동화주의 vs 다문화주의) [2점]",
+    "examTag": "2021 B1",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 다음은 가상의 온라인 학술대회 장면이다. 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-slate-100 rounded-lg text-center font-bold text-slate-800 text-xs md:text-sm\">\n      [20○○년 ○○학회 정기 학술대회: 현대 사회과교육의 새로운 방향]\n    </div>\n    <div class=\"grid grid-cols-2 gap-3 text-xs md:text-sm\">\n      <div class=\"p-3 bg-slate-50 border border-slate-200 rounded-xl\">\n        <p class=\"font-bold text-blue-800 mb-1\">김 교수 :</p>\n        <p>저는 새로운 시민성에 관해 말하고자 합니다. 세계시민교육에서는 기본적으로 세계 시민성을 강조하고 있습니다. 이뿐 아니라 현대사회 시민이 한 국가의 국민이면서 동시에 세계시민이자 지역 공동체 주민이라는 점에 주목하여 새로운 시민성인 ( ㉠ )도 강조되고 있습니다.</p>\n      </div>\n      <div class=\"p-3 bg-slate-50 border border-slate-200 rounded-xl\">\n        <p class=\"font-bold text-indigo-800 mb-1\">이 교수 :</p>\n        <p>저는 다문화교육에 관한 2가지 상반된 시각인 ( ㉡ )와/과 다문화주의를 소개하고자 합니다. 용광로 이데올로기로도 불리는 ( ㉡ ) 관점은 주류 집단 문화를 중심으로 사회 통합을 추구한다는 점에서 한계가 분명합니다. 따라서 다문화주의에 기반한 다문화교육의 방향을 제시하고자 합니다.</p>\n      </div>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 다중시민성(다원적 시민성, 복합시민성, 다층적 시민성)\n㉡ 동화주의(동화론)",
+    "targetKeywords": [
+      "다중시민성",
+      "동화주의"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-02",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "2번. 계약의 성립(청약과 승낙) 및 소비자의 청약철회권 [2점]",
+    "examTag": "2021 B2",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음은 소비자의 권리에 대한 설명이다. 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>계약은 일반적으로 청약과 ( ㉠ )에 의해 성립한다. 청약은 상대방에게 도달한 때에 그 효력이 발생하며, 이때부터는 청약자가 마음대로 청약의 효력이 발생하지 않도록 막을 수 없다. 이것을 청약의 구속력이라고 한다. 본래 청약은 그 자체만으로는 계약이 성립하지 않지만, 청약이 있으면 그 상대방은 이를 신뢰하고 계약 체결에 대한 준비를 할 수 있다. 그럼에도 불구하고 청약자가 청약을 마음대로 없었던 것으로 할 수 있다면 거래의 안전을 유지할 수 없고, 상대방에게 부당한 손해를 줄 염려가 있기 때문에 청약의 구속력을 인정하는 것이다. 그러나 할부거래법, 방문판매법, 전자상거래법 등 특수한 소비자 계약을 규율하는 법에서는 소비자를 보호하기 위하여 ( ㉡ )(이)라는 권리를 인정하고 있다. 이는 특수한 방식으로 계약을 체결한 소비자가 충동 구매한 것에 대해 재고할 수 있도록 하고, 구매 의사가 변경된 경우에는 아무런 부담을 갖지 않고 계약을 해소할 수 있도록 하기 위함이다. 다만 이것은 기간의 제한이 있다. 예컨대 할부거래법에 의하면 계약서를 받거나 재화를 공급받은 날로부터 7일 이내에 이 권리를 행사하여야 한다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 승낙\n㉡ 청약철회(청약철회권)",
+    "targetKeywords": [
+      "승낙",
+      "청약철회"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-03",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "3번. 사회과 교육과정 변천 및 로스(E. Ross)의 교사 역할 [4점]",
+    "examTag": "2021 B3",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. (가)는 교육과정 시기별 고등학교 사회과 과목 편성 자료이며, (나)는 교사 간 대화 내용이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-3 rounded-xl border border-slate-200 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">(가)</p>\n      <div class=\"space-y-2\">\n        <p><b>A :</b> [선택교육과정－ 일반 과목] 사회, 한국 지리, 세계 지리, 한국사, 동아시아사, 세계사, 경제, ( ㉠ ), 사회․문화</p>\n        <p><b>B :</b> [선택 중심 교육과정－ 공통 과목] 통합사회, 한국사 / [선택 중심 교육과정－ 일반 선택] 한국지리, 세계지리, 동아시아사, 세계사, …(후략)…</p>\n        <p><b>C :</b> 사회, 역사, 한국 지리, 세계 지리, 경제 지리, 한국 문화사, 세계 역사의 이해, 동아시아사, …(후략)…</p>\n        <p class=\"text-slate-500\">* A～C는 각각 2007 개정, 2009 개정, 2015 개정 교육과정 중 하나이다.</p>\n      </div>\n    </div>\n    <div class=\"bg-slate-50/70 p-3 rounded-xl border border-slate-200 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p><b>이 교사 :</b> 저는 B의 통합사회 과목을 담당하고 있는데, 공식적 교육과정이 실제 수업에서도 똑같이 구현되어야 한다고 봅니다. 그래서 교육과정을 토대로 제작된 교과서 내용을 있는 그대로만 가르치고 있습니다.</p>\n      <p><b>수석 교사 :</b> 로스(E. Ross)는 교육 활동에서 교사가 교육과정을 어떻게 활용하는가에 따라 ( ㉡ ), 교육과정 조정자, <u>㉢ 교육과정 이론가</u>의 세 가지 유형을 제시하였습니다. 선생님은 ( ㉡ ) 유형에 해당한다고 볼 수 있습니다.</p>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A～C를 시기순(과거→현재)으로 배열할 것.</p>\n      <p>◦ 괄호 안의 ㉠에 해당하는 과목은 직전 교육과정의 어떤 과목들이 합쳐진 것인지 설명할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 용어를 쓰고, 밑줄 친 ㉢의 유형에서는 교사가 어떤 역할을 수행하는지 1가지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 시기순 배열:\nC(2007 개정) → A(2009 개정) → B(2015 개정)\n\n2. ㉠ 과목의 구성:\n㉠ 과목은 '법과 정치'이며, 직전 교육과정(2007 개정)의 '법과 사회' 과목과 '정치' 과목이 합쳐진 것이다.\n\n3. ㉡ 및 ㉢의 교사 역할:\n- ㉡: 교육과정 전달자(교수자, curriculum deliverer)\n- ㉢(교육과정 이론가)의 역할: 국가 교육과정이나 기존 지식을 무비판적으로 수용하지 않고 비판적으로 검토·연구하며, 교육과정의 사회정치적 맥락과 함의를 반성적으로 고찰하여 대안적 교육과정 이론과 실제를 능동적으로 창조·재구성하는 연구자 역할을 수행한다.",
+    "targetKeywords": [
+      "C → A → B",
+      "법과 정치",
+      "법과 사회",
+      "정치",
+      "교육과정 전달자",
+      "비판적"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-04",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "4번. 가치교육 접근법 (가치명료화, 가치주입, 가치탐구) [4점]",
+    "examTag": "2021 B4",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음은 서로 다른 가치교육 접근법 A～C에 대한 토론 내용이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>이 교수 :</b> 래쓰, 하민과 사이먼(L. Raths, M. Harmin, & S. Simon)은 가치 문제를 개인의 가치 결핍으로 간주하고, 가치 문제를 겪는 사람들의 징후를 무관심, 변덕, 자신감 부족 등의 8가지 범주로 설명하였습니다. 이들은 가치 혼란 행동 징후를 감소하는 방안으로 선택의 단계, 선택을 소중하게 여기는 단계, 행동의 단계로 이어지는 A를 제안하였습니다.</p>\n    <p><b>권 교수 :</b> 하지만 A는 가치 상대주의를 전제하고 있어 한계가 있습니다. 진정한 가치교육 방법이라면 옳은 것을 옳다고, 그른 것을 그르다고 말할 수 있어야 합니다. 우리 사회의 핵심적 가치와 도덕을 주입 또는 교화와 같은 방식으로 가르치는 B가 필요합니다.</p>\n    <p><b>임 교수 :</b> 콜버그(L. Kohlberg)는 B가 <u>덕목 주머니(bag of virtues)를 통째로 주입하는 것에 불과하다고 비판</u>했습니다. A와 B의 한계를 고려할 때, 뱅크스(J. Banks)가 제안한 C가 타당한 방법이라고 생각합니다. C에서는 학생들이 자신의 가치 원천과 다른 사람들의 가치 원천을 인식하고 가치 충돌 양상을 살펴보도록 합니다. 그리고 대안 가치를 모색하고 그 결과를 예측해 봄으로써, 인식 가능한 여러 가치들로부터 자유롭게 선택하도록 합니다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A와 C의 명칭을 순서대로 쓸 것.</p>\n      <p>◦ ‘교사 역할’과 관련하여 B의 입장에서 A에 대한 비판점을 서술할 것.</p>\n      <p>◦ ‘가치 갈등 해결’과 관련하여 밑줄 친 주장의 이유를 설명할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. A와 C의 명칭:\nA: 가치명료화(가치명료화 접근법)\nC: 가치탐구모형(가치분석 접근법)\n\n2. B(가치주입) 입장에서 A(가치명료화)의 '교사 역할' 비판:\n가치명료화에서 교사는 가치중립적인 촉진자·조력자의 태도를 취함으로써, 사회적으로 바람직하고 정의로운 규범적 가치를 학생들에게 적극적으로 가르치거나 도덕적 안내자 역할을 하지 못하고 방임한다는 비판을 받는다.\n\n3. 밑줄 친 주장의 이유(콜버그의 가치 갈등 해결 관점):\n단순히 특정 덕목들을 나열하여 주입하는 방식은 실제 삶에서 서로 다른 덕목들 간에 충돌과 갈등이 발생했을 때(예: 정직과 효도, 준법과 생명 등), 어느 덕목을 우선해야 하는지에 대한 도덕적 추론 능력과 갈등 해결 기준을 제공하지 못하기 때문이다.",
+    "targetKeywords": [
+      "가치명료화",
+      "가치탐구모형",
+      "가치중립적",
+      "도덕적 추론"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-05",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "5번. 직소(Jigsaw) 협동학습과 평가의 내용타당도 [4점]",
+    "examTag": "2021 B5",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. (가)는 예비 교사가 만든 교수․학습 지도안의 일부 내용이고, (나)는 이에 대한 예비 교사와 지도 교사의 대화 내용이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-3 rounded-xl border border-slate-200 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">(가)</p>\n      <p>단원 : Ⅱ. 개인과 사회 구조 3. 일탈 행동의 원인과 대책<br>학습 목표 : 일탈 행동을 다양한 이론적 관점에서 설명할 수 있다.<br>대상 : ○○고등학교 2학년 4반 (인원: 30명)</p>\n      <p class=\"font-bold text-slate-800 mt-2\">교수․학습 과정 (전개) :</p>\n      <p>∙ 적용 교수․학습 모형 : 직소(Jigsaw) 모형<br>\n      ∙ 모둠별 활동<br>\n      - <u>㉠ 원모둠</u> : 과제 분담<br>\n      ※ 주제 : 일탈 행동에 대한 다양한 이론적 관점<br>\n      - 하위 주제 1 : 일탈 행동의 의미<br>\n      - 하위 주제 2 : 일탈 이론 A<br>\n      - 하위 주제 3 : 일탈 이론 B<br>\n      - 하위 주제 4 : 일탈 이론 C<br>\n      - 하위 주제 5 : 일탈 행동에 대한 대책<br>\n      - 전문가 모둠 : 전문가 주제별 학습<br>\n      - 원모둠 : 동료 교수</p>\n      <p class=\"font-bold text-slate-800 mt-2\">[형성 평가] 다음 자료는 갑국 청소년의 일탈 행동에 관한 통계 자료이다. 이에 대한 옳은 분석만을 &lt;보기&gt;에서 고른 것은?</p>\n      <div class=\"p-2 bg-white rounded border border-slate-300 font-mono text-center text-xs\">\n        &lt;흡연 경험&gt; 2015년 15%, 2020년 10% | &lt;음주 경험&gt; 2015년 10%, 2020년 10%\n      </div>\n      <p class=\"text-xs\">&lt;보 기&gt; ㄱ. 2015년에 비해 2020년의 흡연 경험 비율은 감소하였다. ㄴ. 2015년에 비해 2020년의 음주 경험 비율은 증가하였다. ㄷ. 2020년의 흡연 경험 비율과 음주 경험 비율은 동일하다. ㄹ. 2015년의 흡연 경험 비율과 2020년의 음주 경험 비율은 동일하다.<br>① ㄱ, ㄴ ② ㄱ, ㄷ ③ ㄴ, ㄷ ④ ㄴ, ㄹ ⑤ ㄷ, ㄹ</p>\n    </div>\n    <div class=\"bg-slate-50/70 p-3 rounded-xl border border-slate-200 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p><b>예비 교사 :</b> 교수․학습 지도안을 다시 살펴보니 보완할 점이 있습니다. 특히 <u>㉡ 학습 목표와 수업 내용에 비추어 보면 이 형성 평가 문항은 ( )이/가 부족하다고 생각됩니다.</u></p>\n      <p><b>지도 교사 :</b> 분석 내용이 정확합니다.</p>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ (가)의 자료를 토대로 밑줄 친 ㉠에서 하나의 원모둠을 몇 명씩 구성하는 것이 가장 적절한지 쓰고, 그 이유를 설명할 것.</p>\n      <p>◦ (나)의 ( ) 안에 들어갈 평가학적 용어를 쓰고, 밑줄 친 ㉡의 이유를 설명할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 원모둠 구성 인원 및 이유:\n- 인원: 5명(총 6개 모둠)\n- 이유: 직소 모형에서는 분담된 하위 과제마다 1명씩 전문가로 활동해야 하는데, 분담 과제의 하위 주제가 총 5개(하위주제 1~5)로 구성되어 있고 전체 인원이 30명이므로, 각 모둠원이 1개씩 고유한 과제를 맡기 위해서는 1개 원모둠을 5명씩 구성하는 것이 가장 적합하다.\n\n2. ( )의 용어 및 ㉡의 이유:\n- 용어: 내용타당도(타당도)\n- ㉡의 이유: 본시 학습 목표와 수업 내용은 '일탈 행동을 다양한 이론적 관점(기능론, 낙인론, 차별교제론 등)에서 설명하는 것'인데, 제시된 형성평가 문항은 단순 통계 자료의 비율 증감 판독 능력만을 묻고 있어 의도한 학습 목표와 수업 내용을 제대로 측정하지 못하기 때문이다.",
+    "targetKeywords": [
+      "5명",
+      "5개",
+      "내용타당도",
+      "학습 목표",
+      "일탈 이론"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-06",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "6번. 의원내각제의 정당체제(다당제 연립내각, 양당제) [4점]",
+    "examTag": "2021 B6",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>의원내각제의 특징을 일반화하기는 쉽지 않다. 특정 국가의 정치적 상황, 특히 정당 체제에 따라 다르게 나타날 수 있기 때문이다.</p>\n    <p>일반적으로 행정부의 불안정성은 의원내각제의 단점으로 평가된다. 의원내각제에서 행정부는 의회의 신임에 의존하기 때문에 총리나 내각이 임기 만료 전이라도 사퇴할 수 있으며, 이는 행정부의 불안정성을 야기한다는 것이다. 그러나 의원내각제 국가에서 행정부의 빈번한 교체는 주로 정당 체제 중 하나인 ( ㉠ )하에서 발견되는 현상이다. 이 정당 체제에서는 의회 의석의 과반수를 차지하는 정당이 없을 때 주로 정당 간 연합에 의한 ( ㉡ )을/를 구성하게 된다. 이 경우 행정부가 의회의 신임을 상실할 가능성이 높아진다. 반면 다른 정당 체제의 의원내각제 국가에서는 행정부가 잦은 교체 없이 안정적으로 유지된다.</p>\n    <p>의원내각제의 장점으로 평가되고 있는 책임 정부(responsible government) 실현도 정당 체제에 따라 다르게 나타날 수 있다. 의원내각제에서의 행정부는 의회의 신임을 유지하는 한에서만 통치할 수 있다. 의회가 행정부에게 책임을 묻고 물러나게 할 수 있는 권한을 보유하고 있기 때문이다. 즉 의회의 우월적 지위를 기반으로 하여 의회에 책임을 지는 행정부를 실현할 수 있다. 그러나 이러한 장점은 양당 체제의 의원내각제 국가에서는 제대로 나타나지 않을 수 있다. 특히 <u>㉢ 양당 체제에서 나타나는 행정부 수반 선출과 내각 구성 방식으로 인해</u> <u>㉣ 의회의 우월성 확보를 통한 책임 정부 실현이 어려울 수 있다.</u></p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 개념을 순서대로 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉢의 내용을 서술하고, 이에 근거해 밑줄 친 ㉣의 이유를 1가지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 다당제\n㉡ 연립내각(연립정부)\n\n2. ㉢의 내용 및 ㉣의 이유:\n- ㉢의 내용: 총선거에서 과반 의석을 획득한 다수당의 당수가 당연직으로 총리(행정부 수반)가 되고, 다수당 소속 의원들이 각료로 입각하여 단독 내각을 구성한다.\n- ㉣의 이유: 엄격한 정당 규율 하에서 의회의 다수당과 내각이 일체화되어 내각이 의회를 실질적으로 지배(의회에 대한 내각의 우위)하므로, 의회가 내각에 대해 비판·견제하고 엄격한 책임을 묻는 의회의 우월성이 실현되기 어렵다.",
+    "targetKeywords": [
+      "다당제",
+      "연립내각",
+      "다수당의 당수",
+      "내각의 의회 지배"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-07",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "7번. 비교우위론과 기회비용 및 교역 후 소비 가능량 [4점]",
+    "examTag": "2021 B7",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 갑국의 교역 전후 상황에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>그림은 두 재화 X재, Y재에 대한 갑국의 생산 가능 곡선을 나타낸다. 현재 A에서 생산 및 소비를 하고 있는 갑국은 비교 우위가 있는 재화에 특화하여 교역에 참여하기로 하였다. 해외 시장에서 X재와 Y재는 1:2의 비율로 거래되고 있고, 갑국이 교역에 참여하더라도 해외 시장에서 거래 비율은 변하지 않는다.</p>\n    <div class=\"p-3 bg-white rounded-lg border border-slate-300 font-mono text-xs md:text-sm text-center\">\n      생산가능곡선: Y절편 24, X절편 8 (직선 형태)<br>\n      현재 생산 및 소비점 A: X재 4개, Y재 12개<br>\n      해외 교역조건: 1 X = 2 Y\n    </div>\n    <p class=\"text-xs text-slate-500\">(단, X재와 Y재는 완전 경쟁 시장에서 거래된다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국의 X재와 Y재의 기회비용을 구하고, 어떤 재화에 비교 우위가 있는지 서술할 것.</p>\n      <p>◦ 갑국이 교역에 참여하더라도 X재와 Y재 현재 소비량이 줄어들지 않기를 원한다면, 교역을 통해 갑국이 최대로 소비할 수 있는 X재와 Y재 각각의 수량을 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 기회비용 및 비교우위:\n- 갑국의 생산가능곡선: Y = 24 - 3X\n- X재 1단위 생산의 기회비용 = Y재 3단위\n- Y재 1단위 생산의 기회비용 = X재 1/3단위\n- 비교: 해외시장에서 Y재 1단위의 교역조건은 X재 1/2단위(=0.5단위)이므로, 갑국의 Y재 기회비용(1/3단위)이 해외보다 더 낮다. 따라서 갑국은 'Y재'에 비교우위가 있다(전량 Y재 24개 특화 생산).\n\n2. 최대 소비 수량 (현재 소비량 X=4, Y=12 이상 유지 조건):\n- Y재 24개를 생산한 후 교역선: Y = 24 - 2X (해외교역조건 1X = 2Y)\n- X재를 최대로 소비할 때 (Y재를 현재 소비량 12개만 남길 때): 12 = 24 - 2X ➔ X재 최대 수량 = 6개\n- Y재를 최대로 소비할 때 (X재를 현재 소비량 4개만 교환할 때): Y = 24 - 2(4) = 16 ➔ Y재 최대 수량 = 16개",
+    "targetKeywords": [
+      "Y재 3단위",
+      "X재 1/3단위",
+      "Y재에 비교우위",
+      "X재 6개",
+      "Y재 16개"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-08",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "8번. 여가-노동 공급곡선 및 최적 여가시간 도출 [4점]",
+    "examTag": "2021 B8",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음은 여가 수요와 노동 공급에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑은 하루 24시간 중 여가(<i>L</i>)로 <i>l</i>시간을 즐기고 (24 - <i>l</i>)시간만큼 일한다. 여가는 식사, 수면, 오락 등 모든 비노동 활동을 포함한다. 시간당 임금이 <i>w</i>일 때 하루 소득은 <i>w</i>(24 - <i>l</i>)이 되고 전액을 복합재(<i>Y</i>) 구매에 사용하여 <i>y</i>만큼 소비한다. 여가의 가격(<i>P<sub>L</sub></i>)은 <i>w</i>이고 복합재의 가격(<i>P<sub>Y</sub></i>)은 1이다.</p>\n    <p>여가와 복합재 소비에 대한 갑의 효용과 한계 효용은 다음과 같다.</p>\n    <div class=\"p-2.5 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n      <p>효용 : <i>U</i>(<i>l</i>, <i>y</i>) = (<i>l</i> - 4)<i>y</i></p>\n      <p>여가의 한계 효용 : <i>MU<sub>L</sub></i> = <i>y</i></p>\n      <p>복합재의 한계 효용 : <i>MU<sub>Y</sub></i> = <i>l</i> - 4</p>\n    </div>\n    <p>갑은 자신에게 주어진 <u>㉠ 예산제약</u> 내에서 복합재에 대한 여가의 한계 대체율(<i>MRS<sub>L,Y</sub></i>)과 상대 가격(<i>P<sub>L</sub> / P<sub>Y</sub></i>)이 같은 <u>㉡ 접점조건</u>을 고려하여 최적의 하루 여가 시간(<i>l</i><sup>*</sup>)을 선택할 때 효용이 극대화된다는 것을 안다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑이 효용을 극대화하기 위해 고려하는 두 조건인 밑줄 친 ㉠, ㉡을 순서대로 쓸 것.</p>\n      <p>◦ 갑이 효용을 극대화하는 최적의 하루 여가 시간(<i>l</i><sup>*</sup>)을 구하고, 임금(<i>w</i>)과의 관계를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 두 조건식:\n- ㉠ 예산제약식: wl + y = 24w (또는 y = w(24 - l))\n- ㉡ 접점조건식: MRSL,Y = MUL / MUY = y / (l - 4) = PL / PY = w ➔ y = w(l - 4)\n\n2. 최적 여가시간(l*) 및 임금과의 관계:\n- 접점조건 y = w(l - 4)를 예산제약식에 대입:\n  wl + w(l - 4) = 24w ➔ 2wl - 4w = 24w ➔ 2wl = 28w ➔ l* = 14시간\n- 임금과의 관계:\n  최적 여가시간은 14시간으로, 임금(w)의 크기와 상관없이 항상 일정하다(독립적이다). 이는 임금 상승에 따른 대체효과(여가 감소)와 소득효과(여가 증가)의 크기가 정확히 상쇄되기 때문이다.",
+    "targetKeywords": [
+      "wl + y = 24w",
+      "y / (l - 4) = w",
+      "14시간",
+      "일정하다",
+      "상쇄"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-09",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "9번. 고프먼의 극작술(인상관리)과 상호작용 [4점]",
+    "examTag": "2021 B9",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>『일상생활에서의 자아의 표현(The Presentation of Self in Everyday Life, 1959)』이라는 저서를 발표한 미국의 사회학자 A는 사회 속에서 개인이 자아와 사회 현실을 어떻게 전략적으로 구성하는지를 상호작용 과정 연구를 통해 밝혀내고 ( ㉠ ) 이론을 제시하였다. 개인의 사회적 역할은 자신의 감정이나 태도에 의해 결정되기보다는 자신에게 주어진 대본, 제공된 무대 및 소품 그리고 자신을 바라보는 관객에 의해서 더 많이 결정된다고 보았다.</p>\n    <p>A는 자신의 ( ㉠ ) 이론을 보다 구체적으로 설명하기 위하여 ( ㉡ ) 개념을 제시하였다. A는 일상생활에서의 다양한 상호작용 중에서 <u>㉢ 특정 유형의 상호작용 과정</u>에 주목하였다. A에 따르면, 사람들은 상호작용을 할 때 다른 사람들이 자신을 어떻게 보느냐에 따라서 행동하고 자신이 기대하는 대로 다른 사람들이 반응하도록 하기 위하여 ( ㉡ )을/를 한다. ( ㉡ )은/는 의도된 행동뿐만 아니라 의도하지 않은 몸짓, 부당한 강요 그리고 실수와 같은 예기치 않은 행동들에 대처하는 방법 등도 포함한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 용어를 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉢에 해당하는 상호작용 유형을 ㉠ 이론에 입각하여 쓰고, ㉠ 이론에 대해 구조기능주의 관점에서 제기할 수 있는 문제점을 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 연극학적(극작술, dramaturgy, 연극학적 분석)\n㉡ 인상관리(impression management)\n\n2. ㉢ 상호작용 유형 및 구조기능주의 비판:\n- ㉢ 유형: 초점화된 상호작용(focused interaction, 집중적 상호작용)\n- 구조기능주의 관점의 문제점: 미시적 수준의 개인 간 일상적 상호작용과 상황 정의에만 지나치게 초점을 맞추어, 개인의 행위를 규정하고 구속하는 거시적인 사회 구조와 사회제도 및 사회 통합 메커니즘의 영향력을 간과하였다.",
+    "targetKeywords": [
+      "극작술",
+      "인상관리",
+      "초점화된 상호작용",
+      "사회 구조",
+      "거시적"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-10",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "10번. 베네딕트의 문화의 유형(아폴로형, 디오니소스형) [4점]",
+    "examTag": "2021 B10",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>문화인류학자 A에 의하면, 문화는 수많은 요소로 구성되어 있지만 중요한 것은 그 문화가 어떤 특질들을 포함하고 있는지가 아니라, 그것들이 통합되어 있는 방식이다. 이런 관점에서 보면, 두 사회가 같은 문화 요소들을 지녔더라도 그것들 간의 배열이 다르다면 상이한 사회를 낳게 된다는 것이다. 즉 문화의 ( ㉠ )은/는 각 문화의 부분들 상호 간의 관계에서 나타나는 고유의 특징적인 형식을 말한다.</p>\n    <p>A는 문화의 ( ㉠ )을/를 상세하게 기술하고 분석함으로써 “문화는 확대된 인성이다”라는 자신의 주장을 경험적으로 뒷받침하고자 하였다. 이를 위해 캐나다 북서해안 지역의 콰키우틀(Kwakiutl)과 미국의 서남부 지역의 주니(Zuni) 원주민 사회의 인성 유형을 연구하였다. 이 연구에서 두 사회의 특징적인 인성이 서로 상반된 특성을 지니고 있고 뚜렷한 차이가 나는 문화를 갖고 있음을 발견하였다. A는 이렇게 서로 상반된 두 사회의 문화 차이를, 니체(F. Nietzsche)가 그리스 신화를 분석하면서 상반된 인간상에 사용한 용어를 빌려 <u>㉡ 두 가지 형식의 문화</u>로 설명하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 개념을 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉡이 무엇인지 제시하고, 각각의 인성적 특성을 1가지씩 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠:\n문화의 유형(patterns of culture, 문화 패턴)\n\n2. ㉡의 두 가지 형식 및 인성적 특성:\n- ㉡: 아폴로형 문화와 디오니소스형 문화\n- 주니족(아폴로형): 온화함, 중용, 자기 절제와 조화를 중시하며 감정의 극단적 표출을 피하는 정적인 인성 특성을 보인다.\n- 콰키우틀족(디오니소스형): 열정적이고 극단적인 감정 표현을 추구하며, 자기를 과시하고 도취적인 황홀경을 지향하는 역동적·격정적인 인성 특성을 보인다.",
+    "targetKeywords": [
+      "문화의 유형",
+      "아폴로형",
+      "디오니소스형",
+      "중용",
+      "절제",
+      "열정"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-11",
+    "subject": "기출",
+    "chapter": "2021학년도 기출",
+    "section": "전공 B",
+    "title": "11번. 공작물 점유자·소유자 책임 및 공동불법행위 [4점]",
+    "examTag": "2021 B11",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-3 rounded-xl border border-slate-200 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">(가)</p>\n      <p>갑은 자신의 소유 건물에서 직접 점포를 운영하기가 여의치 않자 을과 보증금 1억 원, 차임 월 100만 원으로 하는 임대차 계약을 체결하고, 그 후 임차인 을이 점포를 운영하고 있었다. 그런데 어느 날 이 점포의 천장이 붕괴되는 사고가 발생하였다. 이 사고로 점포를 방문한 A가 큰 부상을 입었고, A는 갑과 을을 상대로 손해배상을 청구하는 소송을 제기하였다. 이 사건에서는 천장의 설치 또는 보존상의 하자가 문제되었는데, 재판 절차에서 갑과 을은 사고 방지에 필요한 주의의무를 다하여 과실이 없음이 인정되었다.</p>\n    </div>\n    <div class=\"bg-slate-50/70 p-3 rounded-xl border border-slate-200 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p>이 사건에서 점포 천장에 대한 부실 공사가 인정되었다. 천장 공사는 공사업자인 병과 정이 각각 나누어 맡았었다. 그 누구도 손해배상을 하지 않자 A는 병과 정을 상대로 손해배상을 청구하는 소송을 제기하였다. 재판 절차에서 병과 정은 서로 자신에게는 잘못이 없다고 주장하였다. 두 명 가운데 부실 공사에 대한 과실이 있었지만 병과 정 중 정확히 누구에게 있었는지는 밝혀지지 않았다. 법원에서 인정된 A의 총손해액은 1천만 원이다.</p>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ (가)에서 갑과 을에게 손해배상 책임이 인정되는지 여부 및 그 이유를 서술할 것.</p>\n      <p>◦ (나)에서 A가 병에게 청구할 수 있는 최대 금액을 쓰고, 그 이유를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. (가)에서 갑과 을의 손해배상 책임 및 이유:\n- 점유자 을: 손해 방지에 필요한 주의의무를 다하여 과실이 없음이 증명되었으므로 민법 제758조 제1항 단서에 의해 손해배상 책임이 면책된다(책임 불인정).\n- 소유자 갑: 공작물 점유자가 면책된 때에는 소유자가 무과실책임을 부담하므로, 갑에게 과실이 없더라도 A에 대한 손해배상 책임이 인정된다.\n\n2. (나)에서 A가 병에게 청구할 수 있는 최대 금액 및 이유:\n- 최대 금액: 1천만 원(전액)\n- 이유: 민법 제760조 제2항(가해자 불명의 공동불법행위)에 따라 수인이 공동하여 손해를 가한 경우 누구의 행위로 손해가 발생했는지 알 수 없는 때에도 연대하여 손해를 배상할 책임(부진정연대채무)이 있으므로, 피해자 A는 연대채무자인 병에게 손해액 전액인 1천만 원을 청구할 수 있다.",
+    "targetKeywords": [
+      "을 면책",
+      "갑 무과실책임",
+      "1천만 원",
+      "부진정연대채무",
+      "공동불법행위"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-01",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "1번. 표준화 및 2015 개정 핵심 역량 [2점]",
+    "examTag": "2022 A1",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>◦ 1990년대 이후 미국 사회과 교육과정의 지배적인 추세는 표준화(standardization)였다. 학생들의 성취 수준 향상과 학교의 책무성 강화를 위해 거의 모든 주에서 사회과 표준을 제정하고, 학생들의 학업 성취 수준이 표준에 얼마나 도달하는지 평가하였다. 그리고 그 결과에 따라 학교 예산 지원과 교원 승급 등을 차등화하였는데 이러한 평가를 ( ㉠ )(이)라고 한다.</p>\n    <p>◦ 우리나라의 2015 개정 교육과정은 미래 사회의 창의․융합형 인재가 갖추어야 할 자기 관리, 지식 정보 처리, 창의적 사고, 심미적 감성 등 모두 여섯 가지의 핵심 ( ㉡ )을/를 강조하고 있다. 총론의 이러한 취지에 따라 개별 교과에서도 각자의 성격에 부합하는 교과 ( ㉡ )을/를 설정하였는데 사회과는 창의적 사고력, 비판적 사고력, 문제 해결력 및 의사 결정력, 의사소통 및 협업 능력, 정보 활용 능력을 제시하고 있다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 고부담 평가(고부담 시험, high-stakes test)\n㉡ 역량(핵심역량)",
+    "targetKeywords": [
+      "고부담 평가",
+      "역량"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-02",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "2번. 바, 바스와 셔미스의 사회과교육 모형 [2점]",
+    "examTag": "2022 A2",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. (가), (나)는 서로 다른 시기의 우리나라 사회과 교육과정 목표의 일부를 발췌한 것이다. 바, 바스와 셔미스(R. Barr, J. Barth, & S. Shermis)의 분류에 근거하여 (가), (나)에서 가장 강조되고 있는 사회과교육의 모형을 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(가)</p>\n      <p>우리나라의 발전을 위하여 노력한 조상의 불굴한 정신을 본받아 새나라 건설의 의욕을 북돋우고, 세계에 있어서의 우리나라의 지위를 이해시킴으로써 애국 애족의 정신과 반공 민주 국가 건설의 신념을 기른다. 사회생활의 변천 과정과 민주적 제 원칙 및 기능을 이해시켜, 민주주의에 대한 확고한 신념을 갖게 하고, 우리나라가 발전하도록 하며 나아가서 국제 협조에 공헌하는 마음과 태도를 기른다. 인간 생활의 오랜 시간적 경과에 따른 역사적 발전을 이해시키고, 조상들의 노력으로 창조한 문화유산을 계승하여, 새로운 문화 발전과 사회생활의 향상을 위하여 이바지하려는 마음과 태도를 기른다.</p>\n    </div>\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p>사회생활에 관한 기본적 지식과 정치․경제․사회․문화 현상에 대한 기본적인 원리를 종합적으로 이해하고, 현대 사회의 성격 및 민주적 사회생활을 위하여 해결해야 할 여러 문제를 파악한다. 사회현상과 문제를 파악하는 데 필요한 지식과 정보를 획득, 분석, 조직, 활용하는 능력을 기르며, 사회생활에서 나타나는 여러 문제를 합리적으로 해결하기 위한 탐구 능력, 의사 결정 능력 및 사회 참여 능력을 기른다. 개인과 사회생활을 민주적으로 운영하고, 우리 사회가 당면한 문제들에 관심을 가지고 민주 국가 발전과 세계의 발전에 적극적으로 이바지하려는 태도를 가진다.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "(가) 시민성 전달 모형\n(나) 반성적 탐구 모형",
+    "targetKeywords": [
+      "시민성 전달 모형",
+      "반성적 탐구 모형"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-03",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "3번. 머튼의 기능과 역기능, 명시적·잠재적 기능 [2점]",
+    "examTag": "2022 A3",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>뒤르켐(E. Durkheim)의 영향을 받은 대표적인 기능론자인 머튼(R. Merton)은 ‘기능’을 두 가지 차원에서 구분하여 기능주의적 분석을 더욱 구체화하였다. 그는 사회 체계의 유지․존속에 대한 기여라는 차원에서 기능과 역기능으로 구분하였고, 또 다른 차원에서는 ( ㉠ ) 기능과 ( ㉡ ) 기능으로 구분하였다.</p>\n    <p>머튼은 둘 간의 차이를 설명하기 위해 애리조나와 뉴멕시코의 호피족(Hopi tribe)이 행하는 기우제의 일종인 우무(雨舞, rain dance)를 예로 들었다. 머튼에 따르면, 우무가 농사에 필요한 비를 내리게 해 줄 것이라는 호피족의 믿음에서 비롯되었다는 점은 우무의 ( ㉠ ) 기능에 해당하며, 우무가 호피족 사회의 집단 결속을 증진하는 부수적인 효과를 가져온다는 측면은 우무의 ( ㉡ ) 기능에 해당한다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 명시적(manifest)\n㉡ 잠재적(latent)",
+    "targetKeywords": [
+      "명시적",
+      "잠재적"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-04",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "4번. 권리 보호 및 사법권의 독립 [2점]",
+    "examTag": "2022 A4",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>◦ 2015 개정 사회과 교육과정 중 발췌</p>\n    <p class=\"pl-3\">[9사(일사)05-01]에서는 법이 권위적인 통치 수단 및 처벌을 위한 도구라기보다는 분쟁과 갈등을 해결하고, 개인의 ( ㉠ )을/를 보호하기 위한 도구임을 이해한다. 이를 통해 준법 생활의 중요성을 인식한다.</p>\n    <p class=\"pl-3\">[9사(일사)05-03]에서는 법적 분쟁 해결 절차로서 재판의 의미와 기능을 민사재판, 형사재판을 중심으로 파악한다. 또한 ( ㉡ )의 독립, 공개 재판주의와 증거 재판주의, 심급 제도를 중심으로 공정한 재판을 위한 제도에 대해 탐구한다.<br>…(하략)…</p>\n    <p>◦ 민법 제2조 ① ( ㉠ )의 행사와 의무의 이행은 신의에 좇아 성실히 하여야 한다.</p>\n    <p>◦ 대한민국 헌법 제101조 ① ( ㉡ )은/는 법관으로 구성된 법원에 속한다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 권리\n㉡ 사법권",
+    "targetKeywords": [
+      "권리",
+      "사법권"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-05",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "5번. 모의재판 수업과 검사·변호인 지위 [4점]",
+    "examTag": "2022 A5",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. (가)는 사회과 모의재판 수업 장면의 일부이고, (나)는 수업 목표와 수업을 마친 학생이 작성한 자기 평가의 내용이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(가)</p>\n      <div class=\"space-y-1 font-mono text-xs md:text-sm\">\n        <p>재판장 : 다음으로 피고인에 대한 1심 재판의 신문을 시작하겠습니다.</p>\n        <p>( A ) : 피고인은 2021년 10월 10일 피해자의 집에 들어가 흉기로 협박하고 금품을 갈취한 사실이 있나요?</p>\n        <p>피고인 : 예.</p>\n        <p>재판장 : 피고인은 지금 죄를 인정하는 건가요?</p>\n        <p>피고인 : …… 아, 아닙니다. 저는 그날 그 집에 들어간 적이 없습니다.</p>\n        <p>( A ) : 이상입니다.</p>\n        <p class=\"text-center text-slate-400\">…(중략)…</p>\n        <p>( B ) : 피고인에게 묻겠습니다. 피고인은 지금 너무나 억울한 심정이지요?</p>\n        <p>피고인 : …….</p>\n        <p>( B ) : 피고인?</p>\n        <p>피고인 : 아, 예. …… 억울합니다.</p>\n        <p>( B ) : 이상입니다.</p>\n        <p>재판장 : 이것으로 피고인 신문을 마치겠습니다. 이어서 최종 의견 진술을 듣겠습니다.</p>\n        <p>( A ) : 재판장님. 피고인은 지금 증인의 명백한 증언에도 불구하고 거짓말을 하고 있습니다. 피고인에게 강도죄를 적용하여 징역 5년을 선고해 주시기 바랍니다.</p>\n        <p>( B ) : 재판장님. 피고인이 사건 현장에 있었다는 것은 증인의 일방적인 주장일 뿐입니다. 피고인에게 무죄를 선고해 주십시오.</p>\n        <p>재판장 : 피고인은 최종 진술하세요.</p>\n        <p>피고인 : …… 전 정말 억울합니다.</p>\n        <p class=\"text-center text-slate-400\">…(하략)…</p>\n      </div>\n    </div>\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p>◦ 수업 목표 : 재판의 절차와 등장인물의 지위에 맞게 모의재판에서 실제 법률 용어를 사용하여 자기가 맡은 역할을 수행할 수 있다.</p>\n      <p>◦ 학생의 자기 평가 : 이렇게 수업을 해 보니 교과서를 통해 재판이 어떻게 진행되는지 배울 때보다 <u>㉠ 훨씬 잘 이해할 수 있었다.</u> 그런데 다른 친구들은 실연 전에 재판 과정에 맞게 자기 대사를 정확하게 작성했는데, 나는 그러지 못해서 아쉬웠다.</p>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 실제 재판에서 A, B에 해당하는 재판 절차상 지위의 명칭을 순서대로 쓸 것.</p>\n      <p>◦ 모의재판의 장점을 활용하여 밑줄 친 ㉠의 이유를 서술할 것.</p>\n      <p>◦ 학생의 자기 평가를 참고하여 수업을 보완하기 위해 교사가 무엇을 했어야 하는지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 재판 절차상 지위 명칭:\nA: 검사\nB: 변호인(변호사)\n\n2. ㉠의 이유:\n모의재판은 실제 재판 절차를 직접 시연하고 체험하는 역할놀이(시뮬레이션) 방식을 활용하므로, 복잡하고 추상적인 법적 절차와 법률 용어를 구체적이고 생생하게 체득하여 학습자의 이해도와 흥미를 높일 수 있기 때문이다.\n\n3. 교사의 보완점:\n실연 전에 모의재판 대본(시나리오) 작성 요령과 예시 자료를 미리 제공하거나, 학생들이 재판 절차에 부합하는 대사를 바르게 작성할 수 있도록 사전 피드백 및 안내(비계 설정)를 제공했어야 한다.",
+    "targetKeywords": [
+      "검사",
+      "변호인",
+      "체험",
+      "대본"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-06",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "6번. 뱅크스 가치탐구모형 및 의사결정모형 [4점]",
+    "examTag": "2022 A6",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 수업 협의록을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>교 사 :</b> ‘난민 수용’을 소재로 사회과 수업을 구현해 보고자 합니다. 어떤 수업 모형을 적용하는 것이 적절할지 말씀해 주세요.</p>\n    <p><b>교생 1 :</b> 정의적 영역의 문제를 탐구하기 위해 ‘뱅크스(J. Banks)의 가치탐구 모형’이 적절하다고 봅니다. 이 모형은 &lt; 문제 제기 → 가치 관련 행동의 진술 → 행동과 관련된 가치의 확인 및 진술 → ( ㉠ ) → 가치의 원천 진술 → 대안적인 가치의 진술 → 결과 예측 → 가치 선택 → 행동 &gt;의 절차로 진행할 수 있습니다. 난민 수용을 인권의 측면에서 보아야 하는지, 국가별 수용 난민 수는 얼마나 되는지 등의 문제를 이 모형을 통해 탐구해 보아야 합니다.</p>\n    <p><b>교생 2 :</b> 저는 인지적 영역의 문제를 탐구하기 위해 사회탐구 모형이 필요하다고 봅니다. 사회탐구는 &lt; 문제 제기 → 가설 설정 → 용어 정의 및 개념화 → 자료 수집 → 자료 분석 → 가설 검증 및 일반화, 이론 도출 &gt;의 절차로 진행할 수 있습니다. 국가별 난민 인정 기준에 차이가 있는지, 우리나라 난민 인정 비율은 매년 얼마나 되는지 등을 이 모형을 적용하여 알아보아야 합니다.</p>\n    <p><b>교 사 :</b> 두 분이 서로 다른 영역에 대해 말씀하고 계셔서 우선 ( ㉡ )이/가 필요하군요. 제가 보기에 이 수업을 구현하기 위해서는 두 분이 제시한 모형을 모두 포함한 수업 모형 A가 적절합니다. A의 절차는 다음과 같습니다.</p>\n    <div class=\"p-3 bg-white rounded-lg border border-slate-300 text-center font-bold text-xs md:text-sm space-y-1.5 text-slate-700\">\n      <div>문제 제기</div>\n      <div>↓</div>\n      <div class=\"p-1 bg-indigo-50 border border-indigo-200 rounded text-indigo-800\">( ㉡ )</div>\n      <div>↓</div>\n      <div class=\"flex justify-center gap-4\">\n        <div class=\"p-1 bg-blue-50 border border-blue-200 rounded w-28\">사회탐구</div>\n        <div class=\"p-1 bg-emerald-50 border border-emerald-200 rounded w-28\">가치탐구</div>\n      </div>\n      <div>↓</div>\n      <div>대안 탐색</div>\n      <div>↓</div>\n      <div>결과 예측</div>\n      <div>↓</div>\n      <div>선택 및 결론</div>\n      <div>↓</div>\n      <div>행동</div>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 단계를 쓸 것.</p>\n      <p>◦ A 수업 모형이 무엇인지 쓰고, 괄호 안의 ㉡에 해당하는 단계를 쓸 것.</p>\n      <p>◦ 교생 1의 발언 중에서 ‘뱅크스(J. Banks)의 가치탐구 모형’에 부합하지 않는 부분을 찾아 쓰고 그 이유를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠: 가치 갈등의 명료화(가치 갈등 명료화)\n2. A 수업 모형: 뱅크스의 의사결정모형(합리적 의사결정모형)\n   ㉡: 사회문제(문제) 규명(명료화 및 정의)\n3. 부합하지 않는 부분과 이유:\n- 부합하지 않는 부분: \"국가별 수용 난민 수는 얼마나 되는지 등의 문제\"\n- 이유: 국가별 수용 난민 수를 파악하는 것은 경험적 자료를 통해 검증하는 사실적·인지적 탐구(사회탐구)의 영역이지, 바람직한 가치를 규명하고 선택하는 가치탐구의 영역이 아니기 때문이다.",
+    "targetKeywords": [
+      "가치 갈등",
+      "의사결정모형",
+      "사회문제 규명"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-07",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "7번. 엘리트 순환론, 다원주의 및 무임승차 [4점]",
+    "examTag": "2022 A7",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>민주주의가 실제로 어떻게 작동하는지에 대한 논쟁이 계속되고 있다. ‘엘리트주의’에 의하면 지배를 위해 필요한 자원은 항상 불평등하게 배분된다. 따라서 모든 사회에서 소수 엘리트 집단이 다수 피치자 집단을 지배하는 현상이 나타난다. 물론 한 사회의 엘리트 집단은 영속적인 것이 아니다. 파레토(V. Pareto)는 ( ㉠ ) 이론에서 엘리트 집단은 피치자 집단으로부터 보충되거나 총체적으로 교체되는 과정을 겪기도 한다고 설명한다.</p>\n    <p>반면, 달(R. Dahl)을 포함한 ( ㉡ ) 관점의 옹호론자들은 정치권력이 사회 집단에 균등하게 배분되어 있다고 주장하면서 엘리트주의를 비판한다. 이들에 의하면 다양한 이익을 대표하는 집단들이 상호 경쟁을 통해 정책 결정에 영향을 미치고 있다는 것이다.</p>\n    <p>그러나 이러한 주장도 ‘합리적 선택 이론’에 의한 비판에 직면한다. 예를 들어 올슨(M. Olson)은 환경, 인권 등과 같이 공익을 추구하는 사회 집단의 경우, 개인에게 자발적 참여와 활동의 동기를 부여할 수 있는 유인이 약하다고 주장한다. 왜냐하면 이들 집단이 추구하는 목표의 공공재적 특성으로 인해, 개인은 비용을 지불하지 않고도 혜택을 누리는 ( ㉢ ) 기회를 부여받기 때문이다. 그 결과 이들 집단의 조직화 정도와 정책 결정 과정에서의 영향력은 다른 집단에 비해 낮다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 용어를 쓰고, ㉡의 관점에서 주장하는 국가의 역할을 1가지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉢:\n㉠ 엘리트 순환(엘리트 주유, circulation of elites)\n㉢ 무임승차(free-rider)\n\n2. ㉡ 및 국가의 역할:\n- ㉡: 다원주의(다원론)\n- 국가의 역할: 국가는 특정 계급이나 집단의 이익에 종속되지 않고, 다양한 이익집단 간의 경쟁과 갈등을 공정하게 조정하고 중재하는 '중립적 심판관(중재자)'의 역할을 수행한다.",
+    "targetKeywords": [
+      "엘리트 순환",
+      "무임승차",
+      "다원주의",
+      "중립적 심판관"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-08",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "8번. 대통령제의 이원적 정통성과 분점정부 [4점]",
+    "examTag": "2022 A8",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>대통령제는 권력 분립의 원리에 기초하여 조직된 민주주의 정부 형태이다. 권력 분립의 원리는 정부의 세 가지 기능(입법/행정/사법)을 각각 독립적인 기관에 위임하고 상호 견제하게 하는 것이다.</p>\n    <p>대통령제에 대한 비판론자들은 대통령제가 정치 체제의 위기를 초래할 수 있다고 주장한다. 특히 린츠(J. Linz)는 대통령제의 ( ㉠ ) 문제를 위기의 원인으로 지목한다. ( ㉠ )은/는 대통령과 의회 모두 선거를 통해 국민으로부터 권력을 위임받았다는 것을 의미한다. 이로 인해 대통령과 의회 사이에 입법을 둘러싼 교착 상태가 빈번하게 발생한다. 비판론자들은 이를 근거로 시급히 해결해야 할 사회 문제에 대통령제가 신속하게 대응하지 못할 수 있으며, 특정 상황에서는 정치 체제의 유지 자체가 어려워질 수 있다고 주장한다. 반면 권력 분립의 원리가 아닌 입법부와 행정부 간 권력 ( ㉡ )의 원리에 의해 구성된 의원내각제에서는 ( ㉠ ) 문제가 근원적으로 나타나지 않는다.</p>\n    <p>그러나 대통령제에 이 같은 문제가 있다는 것을 일반화하는 것은 경계해야 한다. 왜냐하면 <u>㉢ 분점 정부(divided government)</u> 상황에서 <u>㉣ 교착 상태의 가능성이 높고</u>, <u>㉤ 단점 정부(unified government)</u> 상황에서는 그렇지 않기 때문이다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉢의 의미를 활용하여 밑줄 친 ㉣의 이유를 서술할 것.</p>\n      <p>◦ 밑줄 친 ㉤의 의미를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 이원적 정통성(이중적 정통성, dual legitimacy)\n㉡ 융합\n\n2. ㉣의 이유:\n분점 정부는 대통령의 소속 정당과 의회의 다수당이 서로 다른 여소야대 상태를 의미하므로, 대통령과 야당 다수의 의회가 서로 국민적 정통성을 내세우며 정책과 법안을 둘러싸고 대립·거부권을 행사하여 입법 교착 상태에 빠질 가능성이 높기 때문이다.\n\n3. ㉤ 단점 정부의 의미:\n대통령의 소속 정당과 의회의 다수당이 일치하는 여대야소의 정부 형태를 의미한다.",
+    "targetKeywords": [
+      "이원적 정통성",
+      "융합",
+      "분점 정부",
+      "단점 정부"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-09",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "9번. 감자 시장 균형 및 가격지지 정책(정부 수매) [4점]",
+    "examTag": "2022 A9",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국에서 감자에 대한 시장수요곡선과 시장공급곡선은 각각 <i>Q<sub>D</sub></i> = 10 - 0.5<i>P</i> 및 <i>Q<sub>S</sub></i> = -2 + <i>P</i> 이다. 갑국 정부는 감자 농가의 소득을 증대하기 위해 감자의 시장가격을 균형가격보다 높은 수준인 단위당 10달러에서 유지하는 정책을 시행하기로 결정하였다. 이를 위해 갑국 정부는 <u>감자 농가의 초과 생산량을 시장에서 구매해 주는 방식</u>을 고려하고 있다.</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량(백만), <i>P</i>는 단위당 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국 정부의 개입이 없는 경우, 감자 시장의 균형가격과 균형 거래량이 각각 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 정부가 감자를 구매하는 데 지출하는 비용이 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 생산자의 이익에 어떠한 변화가 있는지 시행 전과 후의 생산자 잉여의 크기를 각각 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.",
+    "targetKeywords": [
+      "8달러",
+      "6",
+      "30",
+      "18",
+      "32"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-10",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "10번. 울리히 벡의 위험 사회와 성찰적 근대성 [4점]",
+    "examTag": "2022 A10",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>현대인들은 일상적으로 크고 작은 사건과 사고들을 접하며 살아간다. TV와 인터넷 등을 통해 전해지는 각종 사건․사고 중 상당수는 특정 시점에 특정 사회에서만 발생하는, 나와 상관없는 일이 아니라 누구에게나 닥칠 수 있는 위협이자 위해이다. 이렇듯 현대 사회는 예측과 통제가 어려운 온갖 ( ㉠ )(으)로 가득 차 있다. 그럼에도 불구하고 현대인들은 그것의 근원을 거부하지 못하고 감수할 수밖에 없는 상황에서 살아가고 있다. 이는 특정 지역이나 국가에만 국한된 문제가 아니라 전 지구적으로 상존하고 있는 문제이다. 사회학자 벡(U. Beck)은 이러한 특성을 강조하면서 현대 사회를 ( ㉠ ) 사회라고 규정하였다. 벡은 전통 사회의 ( ㉠ )와/과 현대 사회의 그것은 <u>㉡ 파생되는 근원이 다르기 때문에</u> 과거와 같은 방식으로 문제를 인식하고 대응해서는 쉽게 해결할 수 없다고 경고하였다.</p>\n    <p>또한 벡은 산업 사회의 발전이 이성에 대한 믿음, 과학 기술에 대한 신뢰, 생산력 발전과 경제 성장에 대한 기대와 같은 근대성(modernity)의 뿌리에서 유래한 것인데, 전쟁, 핵 위협, 감시 체계, 환경 위기 등으로 인해 이러한 근대성에 대한 근본적인 의문이 제기되었다고 진단하였다. 따라서 근대성의 뿌리에 대한 반성을 통해 다음 단계로 나아가야 하는데, 이를 ( ㉢ )적 근대성이라고 하였다. 여기에서 ( ㉢ )(이)란 물질적 부를 생산하기 위해 조직화된 산업 사회의 토대가 되는 원칙에 대한 비판적 고찰을 의미한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 전통 사회와 현대 사회에서 밑줄 친 ㉡이 어떻게 다른지 “전통 사회에서는 ……(이)며, 현대 사회에서는 ……(이)다.”라는 문장 구조로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉢:\n㉠ 위험(risk)\n㉢ 성찰(reflexive, 성찰적)\n\n2. ㉡의 차이 서술:\n전통 사회에서는 자연재해나 신의 섭리와 같은 자연적·외재적 요인에서 기인하는 자연적 위험(외부적 위험)이며, 현대 사회에서는 과학기술의 발전과 산업화 등 인간의 결정과 행위로 인해 인위적으로 만들어진 문명적 위험(제조된 위험)이다.",
+    "targetKeywords": [
+      "위험",
+      "성찰",
+      "자연적",
+      "인위적"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-11",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "11번. 원인에 있어서 자유로운 행위 및 실질적·형식적 범죄 [4점]",
+    "examTag": "2022 A11",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>교 사 :</b> 범죄 성립과 형벌 부과를 위해서는 책임이 전제되어야 한다는 형법 원칙을 책임주의라고 합니다. 그러므로 심신장애로 사물을 변별할 능력이나 의사를 결정할 능력이 없는 사람의 행위는 범죄가 성립하지 않습니다. 그러면 A가 원수를 살해하고 싶지만 용기가 없어 주저하다, 술의 힘을 빌려서 살해하려고 술을 마시고 만취 상태에서 원수를 죽였다면 A를 살인죄로 처벌할 수 있을까요?</p>\n    <p><b>학생 갑 :</b> 원수를 죽인 실행 행위 당시 심신장애로 사물을 변별할 능력이나 의사를 결정할 능력이 없으므로 <u>㉠ 처벌할 수 없다고 생각합니다.</u></p>\n    <p><b>학생 을 :</b> A의 행위는 반사회적 행위잖아요. 술의 힘을 빌려서 원수를 살해하려는 고의를 가지고 술을 먹은 원인 행위 때 그런 능력이 있었으니 처벌할 수 있다고 생각합니다.</p>\n    <p><b>학생 병 :</b> 저는 A를 처벌해야 한다는 것과 처벌할 수 있다는 것은 다른 차원의 문제라고 생각합니다. 을의 주장은 지난 시간에 배운 범죄 개념에서 <u>㉡ 실질적 범죄 개념</u>에 따른 주장일 뿐입니다. <u>㉢ 형식적 범죄 개념</u>에 따르면 <u>㉣ 실제로 A를 처벌하기 위해서는 현행 형법에 명시적인 규정이 필요하다고 생각합니다.</u></p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠과 같이 갑이 판단하는 이유를 범죄 성립 요건 중 하나를 포함하여 서술할 것.</p>\n      <p>◦ 밑줄 친 ㉡에 따르면 범죄가 어떻게 정의되는지 위 글에서 사용된 용어를 포함하여 서술할 것.</p>\n      <p>◦ 밑줄 친 ㉢에 따르면 범죄가 어떻게 정의되는지 범죄 성립 요건을 활용하여 서술하고, 밑줄 친 ㉣과 가장 관련이 깊은 형법의 기능을 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠의 이유:\n행위와 책임의 동시존재 원칙에 따라, 살인의 실행 행위 시점에 사물변별 및 의사결정 능력이 없는 심신상실 상태였으므로 범죄 성립 요건 중 '책임(책임능력)'이 조각되기 때문이다.\n\n2. ㉡ 실질적 범죄 개념의 정의:\n사회의 법질서와 공동생활의 평화를 침해하는 '반사회적 행위'를 범죄로 정의한다.\n\n3. ㉢ 형식적 범죄 개념의 정의 및 ㉣의 형법 기능:\n- 형식적 범죄 개념: 형벌법규에 규정된 '구성요건에 해당하고 위법하며 책임 있는 행위'를 범죄로 정의한다.\n- 형법의 기능: 보장적 기능(죄형법정주의에 근거하여 국가 형벌권의 자의적 행사로부터 국민의 자유와 권리를 보장하는 기능)",
+    "targetKeywords": [
+      "책임",
+      "반사회적 행위",
+      "구성요건",
+      "위법",
+      "보장적 기능"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-12",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 A",
+    "title": "12번. 미성년자의 행위능력과 영업의 허락 [4점]",
+    "examTag": "2022 A12",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>개인용 노트북을 물색하던 18세의 갑은 친권자 을의 동의 없이 행위능력자 병으로부터 시가 300만 원인 노트북을 대폭 할인받아 100만 원에 구매하였다. 한 달 후 갑은 을로부터 평소 꿈이었던 컴퓨터 부품 소매점을 운영해도 좋다는 허락을 받았다. 이후 아직 18세인 갑은 컴퓨터 부품 소매점 개업을 준비하던 중 영업에 필요한 컴퓨터 부품을 을의 동의 없이 독자적으로 행위능력자 정으로부터 구매하였다.</p>\n    <p><b>교 수 :</b> 갑은 경제적으로 매우 유리한 계약을 병과 체결했으니 이 계약은 유효하다고 보아야 할까요?</p>\n    <p><b>학 생 :</b> 아닙니다. 경제적으로 유리한 매매계약이지만 민법 제5조 제1항 단서에서 말하는 단순히 ‘( ㉠ ) 행위’에 해당하지 않으므로 갑이 단독으로 유효한 행위를 할 수 있는 경우에 해당하지 않는다고 봐야 합니다.</p>\n    <p><b>교 수 :</b> 맞습니다. 그러면 민법상 을이 자신의 동의를 얻지 않았다는 이유로 갑과 정 사이의 거래를 취소할 수 있을까요?</p>\n    <p><b>학 생 :</b> ( ㉡ )</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 들어갈 내용을 “…… (이)거나 ……”라는 구조로 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 을이 갑과 정 사이의 거래를 취소할 수 있는지 여부를 쓰고 그 근거를 ‘행위능력’이라는 용어를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠:\n권리만을 얻거나 의무만을 면하는(행위)\n\n2. ㉡의 내용:\n취소할 수 없다. 법정대리인 을로부터 특정한 영업(컴퓨터 부품 소매점 운영)을 허락받은 미성년자 갑은 그 영업에 관하여는 성년자와 동일한 '행위능력'을 가지므로, 영업 준비에 필요한 부품 매매계약을 단독으로 완전히 유효하게 체결할 수 있기 때문이다.",
+    "targetKeywords": [
+      "권리만을 얻거나 의무만을 면하는",
+      "취소할 수 없다",
+      "행위능력"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-01",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "1번. 부르디외의 자본 형태 (문화 자본, 사회 자본) [2점]",
+    "examTag": "2022 B1",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>부르디외(P. Bourdieu)는 계급 위치를 결정짓는 네 가지 형태의 자본을 제시하였다. 첫째, 경제 자본은 물질적 자원을 의미한다. 부르디외는 경제 자본이 현대 사회에서 계급을 결정하는 데 여전히 중요하지만 그것만을 강조하면 계급을 제대로 이해할 수 없다고 하면서 다른 세 가지 자본의 영향력도 무시할 수 없다고 하였다. 둘째, ( ㉠ )은/는 개인의 지식, 취향, 스타일 등을 의미하는 것으로 직접적인 소유나 증여의 형태를 띠지 않으면서도 경제 활동에 다양한 방식으로 활용되어 경제 자본으로 전환될 수 있다. 그런 맥락에서 은폐 효과를 지니고 있으며 또한 사회화 등을 통해 자녀에게 전수되어 ‘상속받은 재산’과 같다는 평가를 받기도 한다. 셋째, ( ㉡ )은/는 친구나 여타 다른 관계로 형성된 사회적 연결망 또는 인적 네트워크를 뜻하는 것으로 친밀한 사람들과 지속적인 관계를 맺으면서 얻는 자원을 의미한다. 넷째, 상징 자본은 명망이나 평판과 같이 자신에 대한 타인의 평가에 관련된 것으로 사회적 지위 개념과 유사하다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 문화 자본(cultural capital)\n㉡ 사회 자본(social capital)",
+    "targetKeywords": [
+      "문화 자본",
+      "사회 자본"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-02",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "2번. 근로기준법상 소정근로시간과 단시간근로자 [2점]",
+    "examTag": "2022 B2",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 근로기준법상의 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>근로기준법은 법정근로시간의 범위 내에서 근로자와 사용자가 합의한 근로시간을 ( ㉠ )(이)라고 정의하고 있다(동법 제2조 제1항 제8호). 근로자는 합의한 ( ㉠ ) 동안 근로의무를 부담하고, 사용자는 근로의무 이행에 대하여 임금을 지급하게 된다. 또한 근로기준법은 1주 동안의 ( ㉠ )이/가 그 사업장에서 같은 종류의 업무에 종사하는 통상 근로자에 비하여 짧은 근로자를 ( ㉡ )(이)라고 정의하고 있다(동법 제2조 제1항 제9호). ( ㉡ )도 근로자이므로 노동조합법, 근로기준법, 최저임금법 등의 적용을 받는다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 소정근로시간\n㉡ 단시간근로자",
+    "targetKeywords": [
+      "소정근로시간",
+      "단시간근로자"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-03",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "3번. 경험중심 및 학문중심 교육과정, 타바의 일반화 학습 [4점]",
+    "examTag": "2022 B3",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음은 사회과 교육과정에 대한 강의 내용의 일부이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>교수 :</b> 사회과 교육과정의 조직 형태로서 ( ㉠ ) 교육과정은 학습자를 둘러싸고 있는 일상의 생활을 중심으로 교육과정을 조직하는 방식입니다. 이는 듀이(J. Dewey)로 대표되는 진보주의 교육 철학의 영향을 받아 사회과에서 크게 유행하였습니다.</p>\n    <p><b>학생 :</b> 교수님, 그래도 사회과에서는 사회과학적 지식을 가르치는 것이 가장 중요하지 않습니까? 저는 <u>㉡ 학문중심 교육과정</u>처럼 교육과정의 내용을 사실, 개념, 일반화, 이론 체계와 같은 ( ㉢ )을/를 따라서 조직하는 것이 좋은 방식이라고 생각합니다.</p>\n    <p><b>교수 :</b> 예, 타당한 의견입니다. 또한 구체적인 사실과 일반화의 관계를 경험적으로 증명하는 일반화 학습은 ( ㉢ )을/를 이해하는 좋은 방법의 하나입니다. 타바(H. Taba)는 일반화 학습을 위한 교수 기법으로, 구체적인 사례의 자료를 기록하는 표인 ( ㉣ )을/를 개발하였습니다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉡의 단점을 1가지 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉣에 해당하는 용어를 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉢:\n㉠ 경험중심(생활중심)\n㉢ 지식의 구조\n\n2. ㉡ 학문중심 교육과정의 단점:\n순수 사회과학적 지식과 학문 체계에 지나치게 치중하여, 학습자의 흥미와 발달 단계를 소홀히 하거나 실생활에서 직면하는 복잡한 사회문제 해결 능력을 기르는 데 취약하다.\n\n3. ㉣:\n자료제시표(자료검색표, data retrieval chart)",
+    "targetKeywords": [
+      "경험중심",
+      "지식의 구조",
+      "자료제시표"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-04",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "4번. 성취기준과 수행평가 및 문항 변별도 [4점]",
+    "examTag": "2022 B4",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. (가)는 ‘사회문제 탐구’ 과목의 평가 계획의 일부이고, (나)는 평가 후 교사 협의록의 일부이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-2\">(가)</p>\n      <div class=\"border border-slate-300 rounded-lg overflow-hidden text-xs md:text-sm bg-white\">\n        <div class=\"p-2.5 bg-slate-100 font-bold border-b border-slate-200\">\n          A : 학교 공동체에서 발생하는 폭력 문제의 심각성을 인식하고, 사회문제 탐구 절차를 적용하여 학교 폭력 문제에 대한 탐구 계획을 수립한다.\n        </div>\n        <div class=\"grid grid-cols-3 divide-x divide-slate-200 text-center border-b border-slate-200 font-semibold bg-slate-50\">\n          <div class=\"p-2\">평가 유형</div>\n          <div class=\"p-2\">지필 평가</div>\n          <div class=\"p-2\">B</div>\n        </div>\n        <div class=\"grid grid-cols-3 divide-x divide-slate-200 text-center border-b border-slate-200\">\n          <div class=\"p-2 font-medium\">반영 비율</div>\n          <div class=\"p-2\">30%</div>\n          <div class=\"p-2\">60% (체크리스트 10%)</div>\n        </div>\n        <div class=\"grid grid-cols-3 divide-x divide-slate-200 text-center\">\n          <div class=\"p-2 font-medium\">평가 방법</div>\n          <div class=\"p-2\">선다형</div>\n          <div class=\"p-2\">탐구 계획서 작성 - 자신이 설정한 학교 폭력 문제에 대한 탐구 계획 수립하기</div>\n        </div>\n      </div>\n    </div>\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p><b>교사 1 :</b> 저는 A, 교수․학습 방법, 평가가 연계성을 갖는 것이 중요하다고 생각합니다. A는 7차 교육과정에서부터 제시되었는데 기존의 교육과정에서 단원명과 내용 요소를 나열했던 것과 달리 진술문의 형태로 내용 요소와 행동 요소를 결합하여 제시하고 있습니다.</p>\n      <p><b>교사 2 :</b> 객관성 측면에서 보면 지필 평가의 비율이 B보다 더 높았어야 할 것 같다는 생각이 듭니다. 왜냐하면 B의 경우, 채점자의 주관적 판단이 개입할 가능성이 지필 평가보다 크기 때문입니다.</p>\n      <p><b>교사 1 :</b> 저는 지필 평가보다 <u>㉠ B가 A 도달 여부를 확인하기에 더 적절한 평가 유형</u>이라고 생각합니다. 예를 들어 ‘토론 기능’을 평가할 때 토론에 대한 지필 평가보다는 실제 토론을 하는 과정에서 발현되는 기능을 평가하는 것이 더 적절하기 때문입니다.</p>\n      <p><b>교사 2 :</b> 지필 평가 문항 분석 결과도 살펴보아야 한다고 생각합니다. 정답률이 90% 이상인 문항이 전체 10문항 중 8문항이나 되는 것으로 보아서 난이도 조절을 잘못한 것 같습니다. 이렇게 정답률이 높으면 결과적으로 ( ㉡ )에 문제가 발생할 가능성이 높습니다. 성취도가 높은 학생과 낮은 학생을 구분해 내기가 어렵습니다.</p>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A, B에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ A의 행동 요소에 근거하여 밑줄 친 ㉠의 이유를 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는, 문항 분석에서 고려해야 할 용어를 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. A, B:\nA: 성취기준(성취 목표)\nB: 수행평가\n\n2. ㉠의 이유:\nA의 행동 요소가 '탐구 절차를 적용하여 학교 폭력 문제에 대한 탐구 계획을 수립한다'이므로, 단순히 지필 시험으로 아는 것을 측정하기보다 학생이 직접 탐구 계획서를 작성하는 실제적 산출물과 수행 과정을 평가하는 수행평가(B)가 더 적합하기 때문이다.\n\n3. ㉡:\n변별도(문항변별도)",
+    "targetKeywords": [
+      "성취기준",
+      "수행평가",
+      "탐구 계획을 수립",
+      "변별도"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-05",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "5번. 속성 모형과 원형 모형 및 평등선거의 실질적 가치 [4점]",
+    "examTag": "2022 B5",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음은 개념학습의 유형에 대한 수업의 한 장면이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>교수 :</b> A 모형은 학생들에게 개념을 가르칠 때 개념의 속성을 중심으로 가르치는 것입니다. 이 모형에 따라 개념을 학습하는 단계는 &lt; 문제 제기 → 속성 제시와 정의 → 결정적 ․ 비결정적 속성 검토 → ( ㉠ ) → 가설 검증 → 개념 분석 → 관련 문제 검토 → 평가 &gt;입니다.</p>\n    <p>B 모형은 사회․문화적 환경에서 학생이 직접 겪은 경험이나 기대, 행동 등을 중심으로 개념을 가르치는 것입니다. 이 모형에 따라 개념을 학습하는 단계는 &lt; 문제 제기 → 상황 및 경험 진술 → ( ㉠ ) → 속성 검토 → 개념 분석 → 문제 분석 → 평가 &gt;입니다. 그렇다면, 민주선거의 원칙 중 ‘평등선거’ 개념을 A모형으로 설명할 경우, ‘평등선거’ 개념의 속성은 무엇일까요?</p>\n    <p><b>학생 :</b> 모든 유권자가 동일하게 1표씩 갖는 것입니다.</p>\n    <p><b>교수 :</b> 그렇죠. 그런데 가상의 국가에 갑과 을, 2개의 선거구가 있고 각 선거구에서 1명의 대표를 선출하며 모든 유권자가 동일하게 1표씩 갖는다고 가정해 봅시다. 갑의 유권자가 100명이고 을의 유권자가 1,000명이면 갑의 유권자 1명은 을의 유권자 1명의 10배에 상응하는 표를 가진 셈입니다. 이런 점을 고려해 볼 때 ‘평등선거’ 개념의 속성에는 ( ㉡ )도 있습니다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A, B 모형이 무엇인지 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉡에 들어갈 내용을 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. A, B 모형:\nA: 속성 모형(고전 모형)\nB: 원형 모형\n\n2. ㉠:\n예와 비례 검토(사례 검토)\n\n3. ㉡:\n모든 유권자의 표가 지니는 실질적인 가치가 동등해야 한다는 것(1표의 투표 가치의 평등)",
+    "targetKeywords": [
+      "속성 모형",
+      "원형 모형",
+      "예와 비례",
+      "투표 가치의 평등"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-06",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "6번. 사표와 정당명부식 비례대표제 (폐쇄형·개방형) [4점]",
+    "examTag": "2022 B6",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>일부 정치학자들은 소선거구 단순다수제가 민주적 대표성을 가진 의회를 구성하지 못한다고 비판한다. 소수 집단이 지지하는 정당이 의석을 차지할 가능성이 거의 없기 때문이다. 그 정당의 후보를 선택한 유권자의 표는 ( ㉠ )이/가 된다. 그들은 비례대표제가 이러한 문제를 해결하는 대안이라고 주장한다. 이 제도에서는 각 정당이 득표한 만큼 의석을 차지한다.</p>\n    <p>비례대표제의 대표적 유형은 정당명부식 비례대표제이다. 이 제도에서 정당은 각 선거구별로 후보 명부를 제출하고 득표율에 따라 의석을 배분받는다. 그리고 후보 순위에 따라 당선자를 결정하게 된다. 후보 명부는 크게 두 가지 유형으로 나뉜다. 첫 번째 유형은 정당이 후보 순위를 정해 놓은 ( ㉡ )(이)고, 두 번째 유형은 정당이 후보 순위를 정해 놓지 않은 ( ㉢ )(이)다. 전자를 운용하는 국가의 경우 유권자는 정당에 투표한다. 후자의 경우에는 특정 정당의 명부에 있는 후보에게 투표하며, 그것은 그 정당의 득표로 계산되는 동시에 후보의 순위를 정하는 데 사용된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉡, ㉢에 해당하는 용어를 순서대로 쓰고, ㉡에 비해 ㉢이 가지는 장점을 1가지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠:\n사표(wasted vote)\n\n2. ㉡, ㉢ 및 장점:\n- ㉡: 폐쇄형 명부(구속명부식 비례대표제)\n- ㉢: 개방형 명부(자유명부식 비례대표제)\n- ㉢의 장점: 정당 지도부가 일방적으로 당선 순위를 결정하지 않고, 유권자가 원하는 후보에게 직접 표를 던져 순위를 결정하므로 유권자의 인물 선택권(후보 선택의 자율성)이 확대되고 민주적 대표성이 높아진다.",
+    "targetKeywords": [
+      "사표",
+      "폐쇄형 명부",
+      "개방형 명부",
+      "선택권"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-07",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "7번. 독점기업의 균형 및 자중손실(DWL) 계산 [4점]",
+    "examTag": "2022 B7",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 독점기업 갑이 당면하는 시장 수요 및 비용 함수에 관한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>◦ 시장 수요 : <i>Q</i> = 170 - <i>P</i></p>\n    <p>◦ 한계수입(<i>MR</i>) : 170 - 2<i>Q</i></p>\n    <p>◦ 총비용(<i>TC</i>) : 50<i>Q</i> + <i>Q</i><sup>2</sup></p>\n    <p>◦ 한계비용(<i>MC</i>) : 50 + 2<i>Q</i></p>\n    <p>◦ 평균비용(<i>AC</i>) : ( )</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량, <i>P</i>는 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ ( ) 안에 들어갈 수식을 쓸 것.</p>\n      <p>◦ 독점기업 갑의 균형가격 및 균형 거래량이 각각 얼마인지 쓰고, 이를 완전경쟁시장일 때의 균형가격 및 균형 거래량 크기와 비교하여 서술할 것.</p>\n      <p>◦ 독점으로 인한 자중손실(deadweight loss)이 얼마인지 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. AC 수식:\nAC = TC / Q = 50 + Q\n\n2. 독점 균형 vs 완전경쟁 비교:\n- 독점: MR = MC ➔ 170 - 2Q = 50 + 2Q ➔ 4Q = 120 ➔ Qm = 30, Pm = 170 - 30 = 140\n- 완전경쟁: P = MC ➔ 170 - Q = 50 + 2Q ➔ 3Q = 120 ➔ Qc = 40, Pc = 170 - 40 = 130\n- 비교: 독점기업의 균형가격은 140, 균형 거래량은 30이며, 완전경쟁시장(가격 130, 거래량 40)에 비해 가격은 10만큼 더 높고 거래량은 10만큼 더 적다.\n\n3. 자중손실(DWL):\nQm = 30일 때 MC = 50 + 2(30) = 110\nDWL = 1/2 × (Pm - MC) × (Qc - Qm) = 1/2 × (140 - 110) × (40 - 30) = 1/2 × 30 × 10 = 150",
+    "targetKeywords": [
+      "50 + Q",
+      "140",
+      "30",
+      "130",
+      "40",
+      "150"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-08",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "8번. 케인즈 소비함수 및 생애주기이론의 소비 퍼즐 [4점]",
+    "examTag": "2022 B8",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>소비 이론의 하나인 A 이론의 <u>㉠ 소비함수</u>에 의하면 이자율은 사람들의 소비에 영향을 미치지 못하며, 사람들은 소득이 증가하더라도 소득의 증가분 전부를 소비하지 않고 그중 일부만을 소비를 증가시키는 데 사용한다. 또한 소득이 증가할수록 ( ㉡ )이/가 감소한다. 그런데 장기 시계열 자료를 이용하여 분석한 실증 연구에서 소득이 증가하더라도 ( ㉡ )이/가 일정하게 유지된다는 사실이 발견됨에 따라 다양한 소비 이론이 등장하였다.</p>\n    <p>그중 하나인 생애 주기 이론(life-cycle theory)에 의하면 사람들이 소비를 결정할 때에는 현재의 소득뿐 아니라 평생 동안의 소득을 계산하여 각 기간의 소비에 배분한다. 예를 들어 소득이 작은 유년기에는 청장년기에 소득이 커질 것을 예상하여 소득보다 높은 소비 수준을 유지한다. 또한, 이 이론은 장기적으로는 소득이 증가하더라도 ( ㉡ )이/가 감소하지 않고 유지된다는 사실을 설명하는 데에 이용된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A 이론의 명칭을 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉠에 해당하는 수식을 쓰고, 수식에서 상수와 계수가 무엇을 의미하는지 순서대로 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 용어를 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. A 이론: 절대소득가설(케인즈의 절대소득이론)\n\n2. ㉠ 수식 및 의미:\n- 수식: C = a + bY (단, a > 0, 0 < b < 1)\n- 상수의 의미: 소득이 0일 때도 최소한으로 유지해야 하는 '기초소비(독립소비)'를 의미한다.\n- 계수의 의미: 소득 1단위 증가에 따른 소비 증가분을 나타내는 '한계소비성향(MPC)'을 의미한다.\n\n3. ㉡: 평균소비성향(APC)",
+    "targetKeywords": [
+      "절대소득가설",
+      "기초소비",
+      "한계소비성향",
+      "평균소비성향"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-09",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "9번. 사회조사 연구 설계(통제변수, 표집 편향, 연구윤리) [4점]",
+    "examTag": "2022 B9",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>최근 우리 사회에서는 거의 모든 중ㆍ고등학생들이 스마트폰을 사용하고 있다. 이에 연구자 A와 B는 스마트폰의 사용이 중ㆍ고등학생들에게 미치는 영향을 알아보기 위해서 각각 연구를 수행하였다.</p>\n    <p>연구자 A는 중ㆍ고등학생 1,000명을 대상으로 설문 조사를 수행하였다. A는 조사 대상을 구하는 데 어려움이 있어서 자신이 개인적으로 알고 있는 교사들에게 부탁하여 그들이 담당하고 있는 학급을 대상으로 자료를 수집하였다. 스마트폰의 사용 정도는 스마트폰 중독 정도와 스마트폰 사용 시간으로 측정하였고, 주관적 행복감은 6문항으로 측정하였다. 또한 주관적 행복감과 스마트폰 사용의 관계에 영향을 미치는 다른 변수의 영향을 배제하기 위한 ( ㉠ ) 변수로 부모와의 관계, 부모의 계층을 설정하였다.</p>\n    <p>연구자 B는 중ㆍ고등학생 80명을 대상으로 학생과 부모에게 동의를 받고, 무작위로 각각 40명씩 2개의 집단으로 구분하였다. 스마트폰 사용의 영향을 분명하게 찾아내기 위해서 한 집단에는 한 달 동안 스마트폰으로 하루에 18시간씩 게임이나 영상 시청 등의 앱을 사용하도록 하고, 다른 한 집단에는 스마트폰을 전혀 사용하지 못하도록 하였다. 한 달 후에 B는 두 집단의 주관적 행복감을 측정하여 그 결과를 비교하였다.</p>\n    <p>한편 이들의 연구를 평가한 연구자 C는 A의 연구가 <u>㉡ 자료 수집 과정에 문제가 있음</u>을 지적하였고, B의 연구는 <u>㉢ 연구 윤리에 문제가 있음</u>을 지적하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n      <p>◦ A 연구에서의 종속 변수를 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉡을 ‘모집단’과 ‘표본’이라는 용어를 포함하여 서술하고, 밑줄 친 ㉢의 내용을 구체적으로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠: 통제(control, 통제변수)\n2. 종속 변수: 주관적 행복감\n3. ㉡과 ㉢의 내용:\n- ㉡: 연구자 A가 편의표집(지인 교사 학급 대상)을 사용하여 자료를 수집함으로써, '표본'이 전체 중·고등학생이라는 '모집단'을 제대로 대표하지 못하여 표본의 대표성이 결여되었다는 문제점이 있다.\n- ㉢: 연구자 B는 청소년 피험자들에게 한 달 동안 매일 18시간씩 스마트폰을 과도하게 사용하게 하거나 아예 전면 차단하게 함으로써, 학생들의 학업, 일상생활, 신체적·정신적 건강에 심각한 유해와 위험을 초래하여 연구 대상자의 보호 의무를 위배하였다.",
+    "targetKeywords": [
+      "통제변수",
+      "주관적 행복감",
+      "모집단",
+      "표본",
+      "대표성"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-10",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "10번. 신사회운동과 과거 노동·계급운동의 비교 [4점]",
+    "examTag": "2022 B10",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>1960년대 후반에서 1970년대에 들어서면서 전 세계적으로 많은 국가에서 사회운동이 폭발적으로 증가하였다. 이른바 ( ㉠ ) 운동이라고 불리는 새로운 유형의 사회운동이 매우 활발하게 전개된 것이다. 이는 그 이전의 사회운동, 즉 자본주의 사회의 계급 갈등에서 기인한 ( ㉡ ) 운동이나 사회민주주의를 지향하는 정치 운동과는 성격이 판이하게 달랐다.</p>\n    <p>사회운동에 대한 이론가들의 분석에 따르면, ( ㉠ ) 운동은 이슈와 주체 측면에서 이전의 사회운동과 큰 차이가 있다. 먼저 운동의 이슈 측면에서 볼 때, 이전의 사회운동이 경제적 불평등이나 계급, ( ㉡ ), 분배 등의 문제에 치중하였다면, ( ㉠ ) 운동은 탈물질적․탈계급적 가치를 지향하면서 과학기술 발달에 따른 병폐, 시민적 자율성 침해, 권위주의적 지배, 삶의 질과 대안적 삶의 추구, 다양성과 정체성의 인정 등의 문제에 주목하였다. 다음으로 운동의 주체 측면에서 차이를 살펴보면, ( ㉢ )</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢에 들어갈 내용을 “이전의 사회운동은(에서는) ……(이)며, ㉠ 운동은(에서는) ……(이)다.”라는 문장 구조로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 신사회(new social movement, 신사회운동)\n㉡ 노동(노동자)\n\n2. ㉢ 문장:\n이전의 사회운동은(에서는) 노동자(프롤레타리아) 계급이나 특정 계급이 주도적인 주체(이)며, 신사회운동은(에서는) 신중간계층(전문직, 지식인, 청년, 여성 등)을 비롯한 다양한 배경의 시민들이 탈계급적으로 참여하는 다원적 주체(이)다.",
+    "targetKeywords": [
+      "신사회운동",
+      "노동",
+      "노동자 계급",
+      "신중간계층"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-11",
+    "subject": "기출",
+    "chapter": "2022학년도 기출",
+    "section": "전공 B",
+    "title": "11번. 통신비밀보호법과 위헌법률심판, 헌법불합치 [4점]",
+    "examTag": "2022 B11",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 헌법재판소의 결정례를 요약한 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>통신비밀보호법 제6조 제7항 단서 중 전기통신에 관한 ‘통신제한조치기간의 연장’에 관한 부분(이하 ‘이 조항’)은 범죄 수사를 위하여 통신제한조치를 받고 있는 자에게 법원의 허가를 통하여 그 통신제한조치기간을 2개월의 범위 내에서 횟수 제한 없이 연장을 받을 수 있도록 하는 근거이다. 갑은 이 조항에 근거하여 총 14회(총 30개월)에 걸쳐 연장된 통신제한조치에 따라 증거를 수집당한 자이다. 그는 형사소송 계속 중 이 조항이 헌법에 위반된다는 이유로 법원에 ( ㉠ ) 제청 신청을 하였다. 법원은 이를 받아들여 이 조항에 대해 ( ㉠ )을/를 제청하였다.<br>…(중략)…</p>\n    <p>이 조항은 법이 정한 통신제한조치의 허가 요건이 존속하는 경우에 효과적으로 범죄 수사 목적을 달성하여 국가안전보장과 질서유지를 도모하기 위한 것으로 그 입법 목적의 정당성이 인정되고, 통신제한조치기간 연장은 이 목적을 달성하기 위한 적합한 수단이다. 그러나 통신제한조치기간 연장을 허가함에 있어 총연장 기간 또는 총연장 횟수의 제한을 두고, 그 연장 기간 동안 범죄 혐의를 입증하지 못하는 경우 제한 조치를 중단하게 하여도, 제한을 할 필요가 있으면 법원에 새로운 허가를 청구할 수 있으므로 이로써 수사 목적을 달성하는 데 충분하다. 또한 법원이 통신제한조치기간을 연장함에 있어 법 운용자의 남용을 막을 수 있는 최소한의 한계를 설정하지 않았으므로 이 조항은 ( ㉡ )에 위반된다. …(중략)… 그리고 법익 균형성 요건도 갖추지 못하여 위헌이다.</p>\n    <p>결론적으로 이 조항은 국민의 자유권적 기본권 중 ( ㉢ )을/를 침해하여 헌법에 위반되나, 단순위헌결정을 선고하여 당장 효력을 상실시킬 경우 ( ㉣ )하기 때문에 헌법불합치 결정을 선고하되 입법자의 개선 입법이 있을 때까지 잠정적으로 적용한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 헌법재판의 유형을 쓸 것.</p>\n      <p>◦ 과잉금지 원칙의 4 가지 세부 원칙 중 괄호 안의 ㉡에 해당하는 것을 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 용어를 쓰고, 괄호 안의 ㉣에 들어갈 내용을 “……이/가 사라져 ……상태가 발생”이라는 문장 구조로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠: 위헌법률심판(위헌제청)\n2. ㉡: 침해의 최소성(최소침해성의 원칙)\n3. ㉢ 및 ㉣의 내용:\n- ㉢: 통신의 자유(통신비밀의 자유)\n- ㉣: 통신제한조치기간 연장을 허가할 법적 근거(규정)이/가 사라져 수사에 중대한 장애를 초래하는 법적 공백(용인하기 어려운 무법)상태가 발생",
+    "targetKeywords": [
+      "위헌법률심판",
+      "침해의 최소성",
+      "통신의 자유",
+      "법적 공백"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-01",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "1번. 2015 개정 교육과정 선택 과목(진로 선택, 정치와 법) [2점]",
+    "examTag": "2023 A1",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 괄호 안의 ㉠에 해당하는 용어와 괄호 안의 ㉡에 해당하는 과목명을 2015 개정 사회과 교육과정에 근거하여 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>송 교사 :</b> 선생님들은 2015 개정 교육과정의 고등학교 사회과 선택 과목에 대해 어떻게 생각하시는지 궁금합니다.</p>\n    <p><b>윤 교사 :</b> 저는 ‘사회문제 탐구’ 과목을 수업하면서 보람을 느끼고 있습니다. 그동안 탐구 수업을 실행할 기회가 많지 않았는데, 학생 스스로 탐구를 수행할 수 있도록 단원이 구성되어 잘 활용하고 있습니다.</p>\n    <p><b>최 교사 :</b> 저도 동의합니다. ‘사회문제 탐구’ 과목은 선택 과목 중에서도 일반 선택 과목이 아니라 ( ㉠ ) 과목입니다. ( ㉠ ) 과목은 교과 간 융합학습, 진로 안내학습, 교과별 심화학습, 실생활 체험학습 등을 위해 신설되었습니다.</p>\n    <p><b>홍 교사 :</b> 저는 일반사회 영역의 일반 선택 3과목 중 ‘( ㉡ )’ 과목을 가르치면서 자부심을 느끼고 있습니다. 민주주의와 헌법에 대한 이해 등을 다루고 있어 시민교육을 위한 핵심 과목이라고 생각해요.</p>\n    <p><b>이 교사 :</b> 같은 일반 선택에 속하는 ‘사회·문화’ 과목이나 ‘경제’ 과목 역시 시민교육의 핵심 소양을 다루고 있다는 점에서는 마찬가지 아닐까요? 저는 그래서 언제나 일반사회 전공 교사로서 자부심을 느끼고 있답니다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 진로 선택(진로선택 과목)\n㉡ 정치와 법",
+    "targetKeywords": [
+      "진로 선택",
+      "정치와 법"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-02",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "2번. 바, 바스와 셔미스의 사회과 전통 [2점]",
+    "examTag": "2023 A2",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>이 교사 :</b> ‘정치과정과 시민참여’ 단원을 처음 가르치게 되었는데, 어떤 방법으로 접근해야 할지 고민이 됩니다. 선생님들은 평소에 이 단원에 대해 어떻게 수업하고 계시나요?</p>\n    <p><b>김 교사 :</b> 저는 민주주의의 핵심이 시민의 정치 참여라고 생각합니다. 그래서 이 단원을 가르칠 때 “시민으로서 투표에 꼭 참여해야 한다.”라고 늘 강조하고 있어요. 투표 참여를 강조하다 보면, 학생이 투표의 중요성을 인식하게 되고 나중에 선거권을 갖게 되었을 때 적극적으로 투표에 참여하는 시민이 될 것입니다. 저는 이것이 우리나라 민주주의의 유지와 발전에 큰 도움이 될 것이라고 믿어요.</p>\n    <p><b>박 교사 :</b> 저는 학생들에게 무엇보다도 중요한 것이 탐구력이라고 생각합니다. 정치 단원에서도 이러한 부분을 소홀히 해서는 안 된다고 봅니다. 그래서 저는 정치 참여를 주제로 학생이 가설을 설정하고, 가설에 따라 자료를 수집․분석하여 결론을 도출하게 하는 수업을 진행하고 있어요. 학생이 스스로 탐구를 수행하도록 도와주는 것이야말로 사회과 수업에서 진정으로 지향해야 할 사항이 아닐까요?</p>\n    <p><b>이 교사 :</b> 바, 바스와 셔미스(R. Barr, J. Barth, & S. Shermis)의 분류에 따르면 김 선생님은 ( ㉠ )(으)로서의 사회과 전통을, 박 선생님은 ( ㉡ )(으)로서의 사회과 전통을 지지하시는군요. 저도 제가 갖고 있는 사회과에 대한 생각을 다시 돌아보고 ‘정치과정과 시민참여’ 단원의 수업 계획을 세워 보겠습니다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 시민성 전달(시민성 전달 모형)\n㉡ 사회과학(사회과학 모형)",
+    "targetKeywords": [
+      "시민성 전달",
+      "사회과학"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-03",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "3번. 미드의 자아 발달 단계(게임 단계, 일반화된 타자) [2점]",
+    "examTag": "2023 A3",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>미드(G. H. Mead)는 자아 형성과 발달에 있어서 역할 취득의 중요성을 강조하였다. 그는 자아 형성과 발달이 몇 가지 단계를 거치게 된다고 주장하였다.</p>\n    <p>첫 번째, ‘준비’ 단계는 의미에 대한 이해 없이 타인의 행동이나 말을 단순히 흉내 내거나 모방하는 단계이다. 이때는 주변 사람들이 만들어 내는 자극에 대해 어느 정도 반응을 하고 아주 제한적으로 역할 모방을 한다. 두 번째, ‘놀이’ 단계는 놀이를 통하여 다른 사람의 역할이 가지는 의미를 이해하게 되는 단계이다. 이때는 의미 없는 모방이나 흉내를 넘어서 자아상이 도출될 수 있는 최초의 역할 취득이 이루어진다. 세 번째, ‘( ㉠ )’ 단계는 실제로 구체적인 역할을 취득하여 일관되고 적절한 행동을 할 수 있는 능력을 가지게 되는 단계이다. 이 단계를 거치면서 개인이 정해진 규칙을 인지하고 어떤 역할과 태도를 취해야 하는지를 이해하게 되면, 사회화 과정 전체의 통일성을 표상하는 ( ㉡ )의 역할과 태도를 인식할 수 있게 된다. 이를 통해 개인은 공동체의 보편적인 신념, 가치, 규범을 내면화하게 된다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 게임(game, 단체놀이)\n㉡ 일반화된 타자(generalized other)",
+    "targetKeywords": [
+      "게임",
+      "일반화된 타자"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-04",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "4번. 헌법 제33조 근로3권 (단결권, 단체행동권) [2점]",
+    "examTag": "2023 A4",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>시민법적 자유 아래에서 근로자가 인간의 존엄성을 보장받기 위해서는 사용자와 실질적으로 대등한 관계에서 근로조건을 결정․개선할 수 있어야 한다. 이를 위해 우리 헌법 제33조에서는 근로3권(노동3권)을 보장하고 있다. 우선 ( ㉠ )은/는 근로자가 근로조건의 향상을 위하여 단결체의 조직 및 가입을 보장하는 권리이다. 이것은 근로조건의 향상을 위하여 보장된 것이며 근로자끼리의 공제나 정치운동을 주된 목적으로 하기 위하여 보장된 것이 아니다. 한편 근로조건은 근로자가 사용자와 개별적으로 정하는 것보다 단체교섭으로 정하는 것이 근로자에게 유리하기 때문에, 이를 권리로 보장한다. 그런데 교섭이 원만하게 이루어지지 않은 경우, 노동조합이 자기의 주장을 실력행사로써 관철하기 위하여 집단행위를 할 수 있는 ( ㉡ )을/를 권리로 보장한다. ( ㉡ )은/는 근로자가 파업이나 태업 등 그 주장을 관철할 목적으로 업무를 저해하는 행위인 쟁의행위를 할 수 있는 권리를 말한다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 단결권\n㉡ 단체행동권",
+    "targetKeywords": [
+      "단결권",
+      "단체행동권"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-05",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "5번. 탄력적 환경확대법과 나선형 교육과정의 원리 [4점]",
+    "examTag": "2023 A5",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>교수 :</b> 지금까지 사회과 내용의 범위와 계열을 조직하는 대표적 원리인 ( ㉠ )와/과 나선형 교육과정의 원리에 대해 학습했습니다. 이제 각 원리가 2015 개정 사회과 교육과정에 어떻게 적용되어 있는지 문서를 통해 살펴봅시다. 먼저 ( ㉠ )의 원리가 반영된 사례를 찾아볼까요?</p>\n    <p><b>학생 1 :</b> ‘사회’ 과목 교육과정을 보니, 기본적으로 초등학교 3～4학년은 우리 고장과 우리 지역, 초등학교 5～6학년은 우리나라와 지구촌에 대해 학습하도록 되어 있습니다. 그런데 초등학교 3～4학년에서도 지구촌 사례를 배울 수 있도록 하여 탄력적 ( ㉠ )을/를 적용하고 있습니다.</p>\n    <p><b>교수 :</b> 잘 찾았군요. 나선형 교육과정의 원리가 드러난 부분도 찾아보세요.</p>\n    <p><b>학생 2 :</b> 성취기준 [4사04-03]에 ‘자원의 ( ㉡ )(으)로 경제활동에서 선택의 문제가 발생함을 파악하고’, [9사(일사)08-01]에 ‘경제활동에서 ( ㉡ )(으)로 인한 합리적 선택의 필요성을 이해하고’, [12경제01-01]에 ‘사람들의 경제생활에서 ( ㉡ )이/가 존재함을 인식하고 합리적 선택의 필요성을 이해한다.’가 제시되어 있습니다.</p>\n    <p><b>교수 :</b> 여기에 나선형 교육과정의 원리가 드러난다고 생각하는 이유는 무엇인가요?</p>\n    <p><b>학생 2 :</b> ( ㉡ )(이)라는 개념이 초등학교, 중학교, 고등학교에서 반복되고 있기 때문입니다.</p>\n    <p><b>교수 :</b> 답변이 불충분하네요. 보충하자면, 나선형 교육과정의 원리는 동일한 개념을 단순히 반복하는 것이 아니라, ( ㉢ ).</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 사회과 교육과정 조직 원리의 명칭을 쓰고, 이에 대한 비판점을 1가지 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 개념을 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 내용을 나선형 교육과정의 의미에 부합하게 문장으로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠ 및 비판점:\n- ㉠: 환경확대법(환경확대법의 원리)\n- 비판점: 정보통신기술과 대중매체의 발달로 인해 현대 아동들은 물리적으로 가까운 공간보다 먼 지구촌의 정보를 먼저 또는 쉽게 접할 수 있으므로, 공간적 거리의 확장이 아동의 인지 발달 및 경험 수준과 반드시 일치하지 않는다는 비판이 있다.\n\n2. ㉡:\n희소성(자원의 희소성)\n\n3. ㉢의 서술:\n학년이 올라감에 따라 동일한 핵심 개념을 다루되, 내용의 폭이 점차 넓어지고(심화되고) 탐구의 수준과 깊이가 심화·발전되도록 조직하는 것이다.",
+    "targetKeywords": [
+      "환경확대법",
+      "희소성",
+      "심화",
+      "발전"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-06",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "6번. 수행평가(관찰법, 동료평가, 루브릭 평가기준) [4점]",
+    "examTag": "2023 A6",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. (가)는 예비교사가 작성한 수행평가 계획의 일부이고, (나)는 지도교사가 (가)에 대하여 지도한 내용의 일부이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(가)</p>\n      <p>◦ 평가 과제 : 모둠별로 사회집단에서 나타나는 차별 사례를 조사하고, 해결 방안을 제시하는 보고서를 작성한다.</p>\n      <p>◦ 평가 방법 : 연구 보고서법, ( ㉠ )법, 자기 평가</p>\n      <p>◦ 평가 시 유의사항<br>∙ ( ㉠ )법을 활용하여, 모둠별로 사례를 조사하는 단계에서 개별 학생들이 모둠 구성원과 상호작용하는 과정을 교사가 ( ㉠ )하면서 평정척도법으로 측정한다.<br>…(하략)…</p>\n      <p>◦ 평가 기준표<br>\n        <div class=\"mt-1 border border-slate-300 rounded bg-white overflow-hidden text-xs text-center\">\n          <div class=\"grid grid-cols-5 divide-x divide-slate-200 bg-slate-100 font-semibold p-1.5\">\n            <div>평가 방법</div><div class=\"col-span-2\">평가 항목</div><div>우수</div><div>보통</div>\n          </div>\n          <div class=\"grid grid-cols-5 divide-x divide-slate-200 p-1.5\">\n            <div>연구 보고서법</div><div class=\"col-span-2\">보고서의 완성도</div><div>-</div><div>-</div>\n          </div>\n        </div>\n      </p>\n    </div>\n    <div class=\"bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n      <p class=\"font-bold text-slate-900 mb-1\">(나)</p>\n      <p>수행평가를 적절하게 계획하였군요. 다만, 몇 가지 수정ㆍ보완을 제안합니다.</p>\n      <p>첫째, 평가 방법에서는 평가 주체를 다양화하면서도 무임승차 문제를 예방하기 위해 모둠 내 구성원들이 서로 평가하는 ( ㉡ )을/를 추가할 것을 제안합니다.</p>\n      <p>둘째, 연구 보고서의 경우 평가 항목을 ‘보고서의 완성도’라는 하나의 항목보다는 ‘사례의 적합성’, ‘조사 내용의 충실성’, ‘분석 내용의 타당성’, ‘해결 방안의 적절성’과 같이 여러 항목으로 세분화하고, 항목별로 각각의 수행 수준에 해당하는 학생의 행동 특징을 구체적으로 기술할 것을 추천합니다. 이렇게 하면, 평가 전에는 ‘학생이 ( ㉢ )’(이)라는 장점이 있고, 평가 후에는 ‘학생이 ( ㉣ )’(이)라는 장점이 있습니다.</p>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어와 괄호 안의 ㉡에 해당하는 평가 방법을 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢, ㉣에 해당하는 내용을 1가지씩 순서대로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 관찰(관찰법)\n㉡ 동료 평가(상호 평가)\n\n2. ㉢, ㉣의 장점 서술:\n- ㉢(평가 전): 자신이 도달해야 할 구체적인 수행 기준과 목표 행동을 명확히 파악하여 과제를 주도적으로 수행할 수 있다.\n- ㉣(평가 후): 자신의 수행 수준과 강·약점에 대한 구체적인 피드백을 받아 스스로 반성하고 후속 학습을 개선할 수 있다.",
+    "targetKeywords": [
+      "관찰",
+      "동료 평가",
+      "수행 기준",
+      "피드백"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-07",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "7번. 루소의 일반의지와 시민 지위, 공리주의, 공론장 [4점]",
+    "examTag": "2023 A7",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>공공선(the public good)이 무엇인지에 대해서는 다양한 견해가 있다. 루소(J. J. Rousseau)는 공공선을 일반의지와 연관하여 설명하였다. 루소가 생각하는 일반의지는 항상 옳고 정의로우며, 공익을 위한 것이다. 루소에 따르면, <u>㉠ 일반의지(general will)</u>는 나 자신과의 자발적 계약으로 만들어진 산물이기 때문에 그것에 따라 행동하는 한, 나는 항상 자유롭고 동시에 타인의 자유도 보장할 수 있다. 그 안에서 개인의 자유는 시민적 자유의 형태로 발전하며, 공공선이 실현된다.</p>\n    <p>한편 ( ㉡ ) 입장에서는 공공선을 모두 또는 다수에게 좋은 것을 의미하는 것으로 본다. 이러한 관점에서 공공선은 어떤 사회의 총체적 효용(aggregate utility)을 극대화하는 것이다. 그러므로 공공선 실현을 위한 정부의 정책과 제도의 목표는 ‘최대 다수의 최대 행복’을 증진시키는 데 두어야 한다.</p>\n    <p>이와는 달리 숙의 민주주의 입장에서는 시민들의 사려 깊은 토론과 민주적 절차를 거쳐 정당한 결정에 도달하는 과정에서 공공선이 실현된다고 본다. 이와 관련하여 하버마스(J. Habermas)는 ‘의사소통적 상호작용이 이루어질 수 있는 사회적 삶의 영역’을 의미하는 개념인 ( ㉢ )을/를 제시하면서, 시민들의 적극적 참여와 토론을 가능하게 해 줄 ( ㉢ )의 활성화를 제안하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠의 관점에서 ‘법에 관한 시민의 이중적 지위’에 대해 “시민은 ～이면서 ～이다.”라는 방식으로 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 관점과 괄호 안의 ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 시민의 이중적 지위 서술:\n시민은 일반의지에 따라 법을 직접 제정하는 주권자(입법자)이면서, 자신이 제정한 그 법에 복종하는 수범자(신민)이다.\n\n2. ㉡, ㉢:\n㉡ 공리주의(utilitarianism)\n㉢ 공론장(공론 영역, public sphere)",
+    "targetKeywords": [
+      "주권자",
+      "수범자",
+      "공리주의",
+      "공론장"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-08",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "8번. 복합적 상호의존, 현실주의 및 주권 [4점]",
+    "examTag": "2023 A8",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>국제정치에서 국제기구가 등장하게 된 배경과 역할에 대해서는 다양한 관점이 존재한다.</p>\n    <p>자유주의 관점은 국제기구가 국가들의 이익을 반영하는 국제정치의 주요한 초국가행위자로서, 국제사회에서 국가의 영역을 넘어서는 독립적 영향력과 자율성을 갖는다고 본다. 특히 코헤인과 나이(R. Keohane & J. S. Nye)는 국제사회의 행위자들 간 ( ㉠ )이/가 다양해지고 심화되는 상황에 주목하였다. 그들은 국가와 비국가행위자 사이의 연계성과 의사소통이 증가하면서 국제기구의 영향력이 커지게 된다는 ‘복합적 ( ㉠ ) 이론’을 제시하였다.</p>\n    <p>( ㉡ ) 관점은 국제관계의 중심적 행위자를 국가라고 보며 국제관계를 국가 간 힘의 정치로 파악한다. 또한 강대국이든 약소국이든 상관없이 모든 국가가 자국의 이익을 우선적으로 추구한다고 본다. 여기서 말하는 자국의 이익이란 상대적 이익인데, 이것은 자국의 이익이 협력하는 상대 국가가 갖는 이익보다 더 커야 한다는 것을 의미한다. 이로 인해 국제사회에서 국가 간 협력의 가능성은 낮아진다.</p>\n    <p>한편 구성주의 관점에서는 국제기구를 국제사회 행위자들의 상호작용에 의해 만들어지는 결과물로 본다. 이러한 시각에서 국제 협력의 정도는 개별 국가가 자신의 정체성과 이익을 어떻게 규정하고 해석하느냐에 따라 달라진다. 이 관점에서는 ‘배타적인 최고 권력이자 대외적 자립’을 의미하는 개념인 ( ㉢ )조차도 고정불변의 것이 아니라, 국제사회의 다양한 행위자들의 상호작용과 인식에 따라 달라질 수 있다고 본다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 관점을 쓰고, 이 관점에서 보는 국제기구의 역할을 ‘강대국’이라는 단어를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉢:\n㉠ 상호의존(interdependence)\n㉢ 주권(sovereignty)\n\n2. ㉡ 및 국제기구의 역할:\n- ㉡: 현실주의(신현실주의)\n- 역할: 국제기구는 독립적인 자율성을 지닌 행위자가 아니라, '강대국'이 자신의 국가 이익과 권력을 증진하고 관철하기 위한 수단(도구)에 불과하다.",
+    "targetKeywords": [
+      "상호의존",
+      "주권",
+      "현실주의",
+      "강대국",
+      "수단"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-09",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "9번. 10분위분배율, 로렌츠곡선, 지니계수 [4점]",
+    "examTag": "2023 A9",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><u>㉠ 10분위분배율</u>은 상이한 소득계층 간에 총소득이 어떻게 분배되어 있는가를 진단할 수 있는 대표적인 지표 중 하나이다. 한 나라의 전체 가계를 소득수준에 따라 최하위 가계에서 최상위 가계까지 배열하였다고 하자. 이렇게 정렬한 가계들을 10등분하고 등분된 계층별 소득분포자료로부터 분배의 불평등도를 측정한다. 10분위분배율은 이러한 계층별 소득분포자료에서 ( ㉡ )을/를 ( ㉢ )(으)로 나눈 값을 말한다. 10분위분배율은 특정 소득계층의 소득분배 상태에 중점을 두기 때문에, 전 소득계층의 소득분배 상태를 진단할 때에는 로렌츠곡선과 <u>㉣ 지니계수</u>를 사용한다. 로렌츠곡선은 계층별 소득분포자료에서 가계의 누적 비율과 소득의 누적점유율 사이의 대응관계를 그림으로 나타낸 것이며, 지니계수는 로렌츠곡선에서의 소득분배 상태를 숫자로 표시한 것이다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉡, ㉢에 해당하는 내용을 순서대로 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉠이 작아진다면 소득분배 상태가 어떻게 변하는지를 서술할 것.</p>\n      <p>◦ 밑줄 친 ㉣이 작아진다면 소득분배 상태가 어떻게 변하는지를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉡, ㉢:\n㉡ 최하위 40%(제1~4분위) 계층의 소득 점유율(소득 합계)\n㉢ 최상위 20%(제9~10분위) 계층의 소득 점유율(소득 합계)\n\n2. ㉠(10분위분배율)이 작아질 때:\n소득분배가 더 불평등해진다(불평등도가 심화된다).\n\n3. ㉣(지니계수)이 작아질 때:\n소득분배가 더 평등해진다(불평등도가 완화·개선된다).",
+    "targetKeywords": [
+      "최하위 40%",
+      "최상위 20%",
+      "불평등",
+      "평등"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-10",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "10번. 자문화중심주의와 극단적 문화상대주의의 한계 [4점]",
+    "examTag": "2023 A10",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>대체로 사람들은 자신이 누리는 생활양식을 유일한 문화라 여기고 다른 유형의 생활양식은 낯설고 열등한 것이라고 생각하면서 성장한다. 문화 인류학자들은 이렇게 생각하는 태도를 ( ㉠ )(이)라고 부른다. 이러한 태도는 종교적 선교나 식민 지배 등 타문화를 변화시키려 했던 행위로 이어져 인류 사회에 끊임없는 분쟁을 불러왔다.</p>\n    <p>이와는 반대로 ( ㉡ )은/는 각각의 문화를 타문화의 기준으로 판단하는 것이 아니라 해당 문화의 고유한 가치가 존재한다고 전제한 후, 어떤 문화도 다른 문화보다 우월하지 않다는 입장을 취하는 것이다. 이러한 입장은 다름을 인정하는 태도에서 출발한다. 하지만 <u>㉢ 특정한 문화에서 어떤 일이 일어나도 전혀 상관하지 않아야 하고, 문제를 제기하거나 변화시켜서는 안 된다고 보는 것은</u> 경계할 필요가 있다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉠ 태도의 긍정적 측면 1가지와 밑줄 친 ㉢에 나타난 태도의 문제점 1가지를 순서대로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 자문화중심주의\n㉡ 문화상대주의\n\n2. ㉠의 긍정적 측면과 ㉢의 문제점:\n- ㉠의 긍정적 측면: 자기 문화에 대한 자긍심과 자부심을 높이고, 사회 구성원 간의 연대감과 사회 통합을 강화하는 데 기여한다.\n- ㉢의 문제점: 극단적 문화상대주의에 빠져 인류의 보편적 가치(인권 존중, 생명 존중, 자유와 평등 등)를 침해하는 비인도적 관습(명예살인, 식인, 전족 등)까지 무비판적으로 정당화하고 용인하게 된다.",
+    "targetKeywords": [
+      "자문화중심주의",
+      "문화상대주의",
+      "사회 통합",
+      "인류 보편적 가치"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-11",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "11번. 민법 제110조 사기·강박과 선의의 제3자 보호 [4점]",
+    "examTag": "2023 A11",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <div class=\"bg-white p-3 rounded-lg border border-slate-300 font-mono text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">&lt;자료 1&gt; 민법 제110조</p>\n      <p>① ( ㉠ )(이)나 강박에 의한 의사표시는 취소할 수 있다.</p>\n      <p>② …(중략)…</p>\n      <p>③ 전2항의 의사표시의 취소는 ( ㉡ )하지 못한다.</p>\n    </div>\n    <div class=\"bg-white p-3 rounded-lg border border-slate-300 text-xs md:text-sm\">\n      <p class=\"font-bold text-slate-900 mb-1\">&lt;자료 2&gt;</p>\n      <p>갑 소유의 A건물을 을에게 팔지 않으면 갑에게 위해를 가하겠다고 을이 협박하자, 갑은 이를 못 이겨 A건물(시가 10억 원)을 을에게 2억 원에 매각하고 2020년 6월 1일에 등기를 이전해 주었다.</p>\n    </div>\n    <p><b>교수 :</b> 민법에서 정하고 있는 ‘비정상적 의사표시’ 규정 중 하나인 민법 제110조와 관련하여 공부해 보도록 하겠습니다. &lt;자료 1&gt;에 따르면 &lt;자료 2&gt;의 사례에서 갑은 A건물의 매매를 취소할 수 있을까요?</p>\n    <p><b>학생 :</b> 네, 취소할 수 있습니다.</p>\n    <p><b>교수 :</b> 맞습니다. 그러면 심화학습을 해 보도록 하겠습니다. 위 &lt;자료 2&gt;에서 이하의 사실이 추가되었다고 가정해 봅시다. 을은 자신에게 등기명의가 있음을 기화로, &lt;자료 2&gt;의 사정을 전혀 몰랐던 병에게 A건물을 10억 원에 전매하여 같은 해 7월 1일에 등기를 이전해 주었습니다. 그리고 갑은 같은 해 8월 1일, 을에 대한 A건물의 매매를 취소한다는 의사표시를 하였습니다. 본 사례가 ‘강박에 의한 의사표시’에 해당한다면, 갑은 A건물을 병으로부터 반환받을 수 있을까요?</p>\n    <p><b>학생 :</b> 갑은 A건물을 병으로부터 ( ㉢ ).</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 내용을 쓰고, 그 근거를 괄호 안의 ㉡에 들어갈 내용을 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠:\n사기\n\n2. ㉢의 내용 및 근거 서술:\n- ㉢: 반환받을 수 없다.\n- 근거: 민법 제110조 제3항에 따라 강박에 의한 의사표시의 취소는 '선의의 제3자에게 대항(㉡)'하지 못하는데, 병은 갑과 을 사이의 강박 사정을 전혀 알지 못한 선의의 제3자이므로 갑은 취소의 효과를 병에게 주장하여 소유권 반환을 청구할 수 없기 때문이다.",
+    "targetKeywords": [
+      "사기",
+      "반환받을 수 없다",
+      "선의의 제3자에게 대항"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-A-12",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 A",
+    "title": "12번. 공무원의 직무집행과 위법명령 복종, 강요된 행위 [4점]",
+    "examTag": "2023 A12",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음은 대법원의 판례를 발췌하여 수정한 것이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑은 고문치사로 기소되어 제1심과 제2심에서 징역을 선고받고 대법원에 상고를 하였다. 이에 대해 대법원은 다음과 같은 취지로 판단하였다.</p>\n    <p>공무원이 그 직무를 수행함에 있어서 상관은 직원에 대해 적법한 행위를 명령할 권한이 있다. 직원이 소속 상관의 적법한 명령에 따라 한 행위는 ( ㉠ )에 해당하여 위법성이 조각된다. 그러나 공무원이 그 직무를 수행함에 있어서 상관은 직원에 대해 범죄행위 등 위법한 행위를 명령할 권한은 없다. 따라서 직원인 갑은 참고인으로 소환된 사람에게 가혹행위를 하라는 것과 같은 소속 상관의 명백한 위법명령을 따라야 할 의무가 없다.</p>\n    <p>갑은 자기가 근무하는 조직에서 직원은 상관의 명령에 절대 복종하여야 한다는 것이 불문율이라고 주장한다. 그러나 우리 법질서는 신체의 자유를 중대하게 침해하는 고문을 금지한다. 따라서 상관의 명령에 의한 고문치사와 같은 범법행위가 저항할 수 없는 폭력이나 자기 또는 친족의 생명, 신체에 대한 위해를 방어할 방법이 없는 협박에 의한 행위인 ( ㉡ )에 해당하여 ( ㉢ )이/가 조각된다고 볼 수는 없다. 따라서 원심의 판단은 정당하다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 용어를 쓰고, ㉢이 조각될 때 행위자를 벌하지 않는 이유를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 정당행위\n㉡ 강요된 행위\n\n2. ㉢ 및 불벌의 이유:\n- ㉢: 책임(책임능력/책임성)\n- 불벌의 이유: 저항할 수 없는 폭력이나 방어할 수 없는 협박 하에서는 행위자에게 법에 부합하는 적법행위를 할 것을 기대할 수 없기 때문이다(적법행위에 대한 기대불가능성).",
+    "targetKeywords": [
+      "정당행위",
+      "강요된 행위",
+      "책임",
+      "기대불가능성"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-01",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "1번. 스멜서의 부가가치 이론과 자원동원론 [2점]",
+    "examTag": "2023 B1",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>집합행동과 사회운동의 발생을 설명하기 위해 스멜서(N. Smelser)는 사회구조적 요인을 강조하는 ( ㉠ ) 이론을 제시하였다. 그에 따르면, 집합행동과 사회운동은 명확한 단계를 가진 과정을 통해 출현하고, 각각에 연속적 과정이 추가되면서 발전하게 된다. 스멜서는 사회운동이 발전하려면 6가지 요소가 연쇄적으로 필요하다고 주장하면서, 그 6가지로 ‘구조적 유인성, 구조적 긴장, 일반화된 신념의 전파, 촉발 요인, 행동을 위한 동원, 사회통제 기제의 작용’을 강조하였다. 스멜서의 이론은 이러한 ( ㉠ ) 과정을 통해 사회운동의 형성과 발전을 분석하려고 시도했으나 사회운동의 조직화 등에 대한 체계적인 설명을 제공하지 못했다는 비판을 받았다.</p>\n    <p>한편, ( ㉡ ) 이론은 사회운동이 성공하려면 어떤 조건을 갖추어야 하는가에 초점을 두고 있다. 이 이론에서는 이익집단들이 이익이나 권력을 극대화하기 위해 사회운동에 자신들이 가진 인적․재정적․물적․정치적 자원을 최대한 활용하는 것을 합리적 행위로 본다. 또한 이러한 행위 능력의 정도와 ( ㉡ )의 조직화 수준, 정치적 전략 등을 사회운동 분석의 중심 요인으로 강조하였다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 부가가치(가치부가, value-added)\n㉡ 자원동원(자원동원론, resource mobilization)",
+    "targetKeywords": [
+      "부가가치",
+      "자원동원"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-02",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "2번. 법률관계의 의무와 권능 [2점]",
+    "examTag": "2023 B2",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 글에서 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>법률관계는 ‘법에 의하여 두둔되고 보호되는 자’와 ‘법에 의하여 구속되는 자’와의 관계로 나타난다. 여기서 권리는 두둔되는 자의 지위에서 갖는 것이고, ( ㉠ )은/는 구속되는 자의 지위에서 갖는 것이다. 권리란 일정한 구체적 이익을 누릴 수 있도록 법에 의하여 주어진 힘을 말하고, ( ㉠ )(이)란 법에 의하여 강요되는 일정한 법률상의 구속을 말한다. ( ㉠ )을/를 위반하면 그 이행을 소로써 강제하거나 손해배상을 청구할 수 있다.</p>\n    <p>한편 권리와 구별되는 개념 중 하나로 ( ㉡ )이/가 있다. 대리인의 대리권(민법 제114조), 법인의 이사의 대표권(민법 제59조), 대통령의 법률안 거부권(헌법 제53조) 등이 ( ㉡ )의 대표적인 예이다.</p>\n  </div>\n</div>",
+    "defaultAnswer": "㉠ 의무\n㉡ 권한(권능)",
+    "targetKeywords": [
+      "의무",
+      "권한",
+      "권능"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-03",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "3번. 사회과 통합 유형(학제적 통합, 다학문적 통합) [4점]",
+    "examTag": "2023 B3",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>교수 :</b> 사회과 교육과정 시기별로 통합은 다양한 형태로 시도되어 왔습니다. 오늘은 제7차 교육과정 시기의 ‘인간 사회와 환경’ 과목과 2015 개정 교육과정 시기의 ‘통합사회’ 과목을 비교해 보겠습니다. 먼저 과목의 성격 면에서 비교하면, ‘인간 사회와 환경’은 선택 과목 중 ( ㉠ ) 과목으로, ‘통합사회’는 ( ㉡ ) 과목으로 개설되어 학생의 과목 이수 측면에서 차이가 있습니다. 그리고 통합의 유형 면에서, ‘인간 사회와 환경’은 학문적 형태의 통합 유형 중 <u>㉢ 학제적 통합</u>임을 명시하고 있습니다. &lt;자료&gt;를 보면서, 학문적 형태의 통합 유형 중 <u>㉣ 하나의 주제에 대하여 다양한 학문이 독립성을 유지하면서 각각의 관점에서 다루는 전문 지식을 결합한 통합</u>에 해당할 여지는 없는지도 살펴봅시다. 그리고 ‘통합사회’와 비교하면서 사회과 통합의 다양한 방식을 이해해 봅시다.</p>\n    <div class=\"border border-slate-300 rounded-lg overflow-hidden text-xs md:text-sm bg-white p-3\">\n      <p class=\"font-bold text-slate-900 mb-1\">&lt;자료&gt; ‘인간 사회와 환경’ 과목의 내용 체계표 일부</p>\n      <div class=\"grid grid-cols-2 divide-x divide-slate-200 border-t border-slate-200 pt-2\">\n        <div class=\"pr-2 space-y-1.5\">\n          <p class=\"font-bold text-blue-800\">[인간 사회와 환경의 구조]</p>\n          <p>∙ 인간과 환경<br>∙ 인간과 시간<br>∙ 인간과 사회</p>\n          <p class=\"font-bold text-blue-800 mt-2\">[인간 사회의 탐구]</p>\n          <p>∙ 지역 조사와 분석<br>∙ 역사 이해와 탐구<br>∙ 사회 조사 방법</p>\n        </div>\n        <div class=\"pl-2 space-y-1.5\">\n          <p class=\"font-bold text-blue-800\">[산업화와 현대 사회]</p>\n          <p>∙ 산업화의 지리적 배경<br>∙ 산업화의 발달 과정<br>∙ 현대 사회의 구조</p>\n          <p class=\"font-bold text-blue-800 mt-2\">[지역화와 지방 자치]</p>\n          <p>∙ 지역화와 지역성<br>∙ 지역의 역사와 문화<br>∙ 지역 사회의 정치와 경제</p>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡을 해당 교육과정 시기의 용어로 순서대로 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉢의 의미를 서술할 것.</p>\n      <p>◦ 밑줄 친 ㉣에 해당하는 학문적 형태의 통합 유형을 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 심화 선택(선택 과목)\n㉡ 공통(공통 과목)\n\n2. ㉢ 학제적 통합의 의미:\n개별 분과학문의 고유한 경계를 허물고, 여러 학문 간의 지식, 개념, 탐구 방법을 유기적·종합적으로 결합하여 새로운 통합적 주제나 개념 틀을 구성하는 통합 방식이다.\n\n3. ㉣:\n다학문적 통합(다교과적 통합, multidisciplinary integration)",
+    "targetKeywords": [
+      "심화 선택",
+      "공통",
+      "학제적 통합",
+      "다학문적 통합"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-04",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "4번. 가치명료화 접근법과 콜버그의 도덕발달 모형 [4점]",
+    "examTag": "2023 B4",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>장 교사 :</b> 이번에 학생회에서 어려운 이웃을 돕기 위한 기부 캠페인을 실시하네요. 사회과 수업에서 이 내용을 다루어 보면 어떨까요?</p>\n    <p><b>최 교사 :</b> 좋은 생각입니다. 요즘 우리 사회에서는 더불어 살아가는 삶의 의미와 가치가 약화되고 있어요. 어느 누구도 학생들에게 공동체적 삶의 가치를 가르치거나 보여 주지 못하는 것 같습니다. 그래서 저는 어려운 이웃을 돕는 사람들을 소개하면서 기부와 같은 선행이 매우 중요한 덕목이라고 강조하는 수업을 하겠습니다.</p>\n    <p><b>김 교사 :</b> 저는 가치를 형성하는 과정이 중요하다고 생각합니다. 그래서 크게 ‘선택-( ㉠ )-행동’의 단계로 이루어지는, 래쓰, 하민과 사이먼(L. E. Raths, M. Harmin, & S. B. Simon)이 제안한 가치명료화 접근법을 수업에 적용하고 싶습니다.</p>\n    <p><b>이 교사 :</b> 이 주제에 대해 ( ㉡ )을/를 적용해 보면 어떨까요? 기부와 관련한 딜레마 상황에서 학생의 입장과 그러한 판단을 하게 된 이유를 듣고, 교사가 추가 질문을 하면서 학생이 인지적으로 갈등하게 하여 현재보다 한 단계 더 높은 단계에서 사고할 수 있도록 지도할 수 있을 것입니다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠의 하위 단계 2가지를 서술할 것.</p>\n      <p>◦ 김 교사의 입장에서 최 교사의 수업에 대한 비판점 1가지를 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 가치교육 방법의 명칭을 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠(존중/긍지)의 하위 단계 2가지:\n- 선택한 가치를 소중히 여기기(자신의 가치를 기쁘게 받아들이기)\n- 선택한 가치를 다른 사람들에게 공개적으로 확언(공언)하기\n\n2. 최 교사 수업에 대한 비판점:\n특정 가치(기부와 선행)를 사전에 정답으로 정해놓고 학생들에게 일방적으로 주입하거나 교화하려 하여, 학생들이 스스로의 가치 평가 과정을 거쳐 주체적으로 가치를 명료화할 기회를 박탈한다.\n\n3. ㉡:\n도덕성 발달(도덕 딜레마 토론 모형, 콜버그의 도덕발달 접근법)",
+    "targetKeywords": [
+      "소중히 여기기",
+      "공개적으로 확언",
+      "가치명료화",
+      "도덕성 발달"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-05",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "5번. 과학적 탐구 문제와 가설 설정 및 조작적 정의, 메타인지 [4점]",
+    "examTag": "2023 B5",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p><b>수석교사 :</b> 탐구학습 모형을 활용한 수업은 계획대로 진행되었나요?</p>\n    <p><b>민 교사 :</b> 저는 <u>㉠ 한 학생이 ‘장수는 인류를 향한 신의 축복인가?’라고 탐구 문제를 설정하였기에 이를 수정하도록 지도하였고</u>, 학생은 탐구 문제를 적절하게 수정하였습니다. 그 후 저는 학생들에게 ‘고령화 현상’을 주제로 하는 적절한 가설의 예로 ( ㉡ )을/를 제시하였습니다.</p>\n    <p><b>수석교사 :</b> 학생이 탐구 문제와 가설을 제대로 설정하도록 지도하였군요.</p>\n    <p><b>임 교사 :</b> 저는 청소년 비행과 관련한 사회 문제에 대해 모둠별로 탐구하도록 하였습니다. 한 모둠이 ‘또래와의 관계가 청소년 비행에 영향을 미칠 것이다.’라는 가설을 설정하였는데, 자료를 수집하는 단계에서 모둠의 구성원들이 ‘또래와의 관계’, ‘청소년’, ‘비행’ 등의 용어를 각자 다른 의미로 사용하여 문제가 생겼어요.</p>\n    <p><b>수석교사 :</b> 다음에는 자료 수집 전에 학생들에게 ( ㉢ )을/를 하라고 지도하시면 좋겠네요.</p>\n    <p><b>강 교사 :</b> 저는 학생들이 탐구를 수행하는 과정에서 오류가 없는지 스스로 점검할 수 있는 질문을 제시하여, 학생들이 자신의 사고 과정을 반성하고 통제하는 고차사고력인 ( ㉣ )을/를 함양하도록 하였습니다.</p>\n    <p><b>수석교사 :</b> 잘 지도하셨습니다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠과 같이 지도한 이유를 탐구 문제의 특성을 고려하여 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉡에 해당하는 내용을 ‘삶의 만족도’와 ‘경제적 수준’이라는 단어를 포함하여 문장으로 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 내용과 괄호 안의 ㉣에 해당하는 용어를 순서대로 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠과 같이 지도한 이유:\n사회탐구의 문제는 경험적 자료를 통해 참·거짓을 검증할 수 있는 사실 문제여야 하는데, '신의 축복인가'라는 질문은 개인의 신념이나 가치관에 따라 달라지는 가치판단 문제여서 경험적으로 검증할 수 없기 때문이다.\n\n2. ㉡ 가설 예시:\n노인의 경제적 수준이 높을수록 삶의 만족도가 높을 것이다.(또는 경제적 수준은 삶의 만족도에 정(+)의 영향을 미칠 것이다.)\n\n3. ㉢, ㉣:\n㉢ 개념의 조작적 정의(용어 정의 및 개념화)\n㉣ 메타인지(초인지, 반성적 사고)",
+    "targetKeywords": [
+      "경험적으로 검증",
+      "사실 문제",
+      "삶의 만족도",
+      "경제적 수준",
+      "개념의 조작적 정의",
+      "메타인지"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-06",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "6번. 선거제도 변천(중선거구제, 소선거구제)과 지역주의 [4점]",
+    "examTag": "2023 B6",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>선거제도 변경은 현실의 정치 지형을 변화시키기도 한다. 제9대 국회의원 선거(1973년)에서는 직전의 국회의원 선거구 제도와 달리 ( ㉠ )을/를 도입하면서, 선거구 전체 수를 153개에서 73개로 줄였다. 또한 도시 선거구 수를 줄이고, 농촌과 도시를 통합한 통합 선거구를 만들었다. 선거 결과 여당인 민주공화당과 야당인 신민당 후보가 한 선거구에서 동반 당선되는 현상이 다수의 선거구에서 나타났다.</p>\n    <p>한편, 제13대 국회의원 선거(1988년)에서는 승자독식의 성격을 갖는 ( ㉡ )(으)로 변경하였다. 선거 결과 여당인 민주정의당이 전체 국회의석 299석 중 125석을 차지해 제1당이 되었다. 지역구 의석은 총 224석이었는데, 민주정의당은 대구․경북 지역에서 29석 중 25석을, 평화민주당은 광주․호남 지역에서 37석 중 36석을, 통일민주당은 부산 지역에서 15석 중 14석을 석권했다. 이는 ( ㉢ )에 의한 정치균열을 확연히 보여 주는 것이며, ( ㉢ ) 정당체제의 본격화를 의미한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉡과 비교할 때 괄호 안의 ㉠이 갖는 장점을 1가지 서술할 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 용어를 쓸 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 중선거구제(2인 선거구제)\n㉡ 소선거구제(단순다수대표제)\n\n2. ㉠(중선거구제)의 장점:\n1개 선거구에서 2인 이상을 선출하므로 낙선자에게 투표된 사표(死票)가 적게 발생하고 소수 정당이나 신진 정치인의 의회 진출 가능성이 높아진다.\n\n3. ㉢: 지역주의(지역감정, 지역 균열)",
+    "targetKeywords": [
+      "중선거구제",
+      "소선거구제",
+      "사표",
+      "지역주의"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-07",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "7번. 환경오염의 한계피해비용(MDC)과 한계저감비용(MAC) [4점]",
+    "examTag": "2023 B7",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>□□지역의 환경오염과 관련된 사회적 총비용은, 오염배출로 인해 지역 주민이 부담해야 하는 피해비용과 오염배출량을 줄이기 위해 기업이 부담해야 하는 저감비용으로 구성된다고 가정하자.</p>\n    <p>□□지역에서 환경오염을 유발하는 ○○기업의 오염배출량(<i>E</i>)에 의해 지역 주민이 부담해야 하는 한계피해비용(Marginal Damage Cost, <i>MDC</i>) 함수는 <i>MDC</i> = 3<i>E</i> 로 주어져 있다. 오염배출량이 적을 때는 <i>MDC</i>가 작지만 오염배출량이 증가할수록 피해를 입는 주민 수가 늘어나는 등의 이유로 <i>MDC</i>는 커지게 된다. ○○기업이 오염배출량을 줄이려면 저감비용을 부담해야 하며, 한계저감비용(Marginal Abatement Cost, <i>MAC</i>) 함수는 <i>MAC</i> = 300 - 3<i>E</i> 로 주어져 있다. 오염배출량 수준이 높고 저감을 시작하는 단계에서 ○○기업은 손쉽고 저렴한 저감방법을 사용하므로 <i>MAC</i>가 작다. 하지만 오염배출량을 줄이고 저감량을 늘릴수록 새로운 저감설비를 설치하는 등의 이유로 <i>MAC</i>는 커지게 된다.</p>\n    <p>현재 <u>㉠ ○○기업은 아무런 제한 없이 오염물질을 저감하지 않은 채 배출하면서 생산활동을 하고 있다.</u> 이에 대해 정부는 <u>㉡ 사회적 총비용을 최소화하는 수준으로 오염배출량을 제한하는 정책</u>을 시행할 예정이다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠의 경우 ○○기업의 오염배출량이 얼마인지 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉠의 경우 □□지역의 피해비용이 얼마인지 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉡을 시행할 때 오염배출량이 얼마인지를 쓰고, 밑줄 친 ㉠의 상황과 비교하여 사회적 총비용의 크기에 어떤 변화가 있는지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠의 오염배출량:\n저감을 전혀 하지 않으므로 MAC = 0 ➔ 300 - 3E = 0 ➔ E = 100단위\n\n2. ㉠의 피해비용:\nMDC 적분 면적 = 1/2 × 100 × (3 × 100) = 1/2 × 100 × 300 = 15,000\n\n3. ㉡의 배출량 및 사회적 총비용 변화:\n- 사회적 최적 오염배출량: MDC = MAC ➔ 3E = 300 - 3E ➔ 6E = 300 ➔ E* = 50단위\n- 총비용 변화: 오염배출량을 100에서 50으로 줄이면, 50~100 구간에서 한계피해비용(MDC)이 한계저감비용(MAC)보다 큰 영역(삼각형 면적: 1/2 × (100 - 50) × (300 - 0) = 7,500)만큼 사회적 총비용이 감소(절감)한다.",
+    "targetKeywords": [
+      "100",
+      "15,000",
+      "50",
+      "감소"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-08",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "8번. 케인즈 폐쇄경제 모형의 균형소득 및 재정 상태 [4점]",
+    "examTag": "2023 B8",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음은 폐쇄 경제인 갑국에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200 font-mono\">\n    <p>◦ <i>Y</i> = <i>C</i> + <i>I</i> + <i>G</i></p>\n    <p>◦ <i>C</i> = 3/4 (<i>Y</i> - <i>T</i>)</p>\n    <p>◦ <i>T</i> = <i>tY</i></p>\n    <p>◦ <i>t</i> = 0.2, <i>I</i> = <i>G</i> = 80</p>\n    <p class=\"text-xs text-slate-500 font-sans\">(단, <i>Y</i>는 국민소득, <i>C</i>는 소비, <i>I</i>는 투자, <i>G</i>는 정부지출, <i>T</i>는 조세, <i>t</i>는 소득세율을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국의 균형국민소득이 얼마인지 쓸 것.</p>\n      <p>◦ 국민소득이 균형일 때 <i>T</i>가 얼마인지 쓰고, 이때 갑국 정부의 재정 상태가 어떠한지 서술할 것.</p>\n      <p>◦ 갑국 정부가 목표 국민소득 수준을 600으로 설정한다면, 현재 상태에서 <i>G</i>를 어떻게 변화시켜야 하는지 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 균형국민소득:\nC = 0.75(Y - 0.2Y) = 0.6Y\nY = 0.6Y + 80 + 80 = 0.6Y + 160 ➔ 0.4Y = 160 ➔ Y* = 400\n\n2. 조세수입(T) 및 재정 상태:\nT = 0.2 × 400 = 80\n정부지출 G = 80이므로 세수와 지출이 일치(T = G = 80)하여 정부의 재정 상태는 '균형재정'이다.\n\n3. 목표소득 600 달성을 위한 정부지출(G) 변화:\n정부지출 승수 = 1 / (1 - 0.6) = 1 / 0.4 = 2.5\n국민소득 증분 ΔY = 600 - 400 = 200\n필요한 정부지출 증분 ΔG = 200 / 2.5 = 80\n따라서 현재 상태에서 G를 80만큼 증가시켜야 한다(G를 160으로 확대).",
+    "targetKeywords": [
+      "400",
+      "80",
+      "균형재정",
+      "80만큼 증가"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-09",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "9번. 준실험 설계와 독립·종속변수 및 통제 조치 [4점]",
+    "examTag": "2023 B9",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>연구자 갑은 □□초등학교 2학년 2개 학급을 무작위로 선정하여 해당 학급 학생들을 대상으로 연구 자료를 수집하기로 하였다. 학부모들에게 사전 동의를 구하였으며 학생들에게는 사후에 설명하기로 하고, 다음과 같이 자료를 수집․분석하였다.</p>\n    <p>해당 학급 담임교사 을과 병은 각각 수업을 마친 후, 칠판에 ‘약속 지키기’라고 쓰고 자기 학급 학생(각각 20명) 모두에게 5,000원짜리 지폐가 들어 있는 봉투를 나누어 주었다. 그리고 <u>지켜야 할 약속은 ‘내일 학교에 올 때, 나눠 준 봉투에 1,000원짜리 지폐 4장, 500원짜리 동전 1개, 100원짜리 동전 5개로 바꾸어 담아 오고 다른 돈은 가져오지 않기’라고 알려 주면서, 이 두 가지 약속을 지킨 학생들에게 그 돈을 용돈으로 주겠다고 하였다.</u> 다음날 두 학급 학생들은 모두 약속을 지켰고, 그 돈은 학생들의 용돈이 되었다. 을은 ‘독거노인의 겨울나기’라는 10분짜리 동영상을 자기 학급 학생들에게 보여 주고 나서 교탁 위에 성금함을 올려놓은 후 “우리 학교에서는 홀로 사는 할아버지와 할머니를 돕기 위해 성금을 모으고 있으니 성금을 낼 사람은 교탁 위에 있는 성금자 명단에 자기 이름을 쓰고 성금함에 성금을 넣은 후 집에 가세요.”라고 말하고 곧장 교실에서 나갔다.</p>\n    <p>같은 시각 병은 자기 학급 학생들에게 동영상을 보여 주지 않고 교탁 위에 성금함을 올려놓은 후 “우리 학교에서는 홀로 사는 할아버지와 할머니를 돕기 위해 성금을 모으고 있으니 성금을 낼 사람은 교탁 위에 있는 성금자 명단에 자기 이름을 쓰고 성금함에 성금을 넣은 후 집에 가세요.”라고 말하고 곧장 교실에서 나갔다.</p>\n    <p>학생들이 모두 귀가한 후, 갑은 수집된 자료를 분석하여 2개 학급의 모금 결과에 차이가 있다는 것을 발견하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑의 연구에서 독립변수를 쓸 것.</p>\n      <p>◦ 갑의 연구에서 종속변수 2가지를 측정 가능한 형태로 쓸 것.</p>\n      <p>◦ 밑줄 친 내용과 같은 조치를 취한 이유를 ‘독립변수’와 ‘종속변수’라는 단어를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. 독립변수:\n'독거노인의 겨울나기' 동영상 시청 여부(동영상 시청)\n\n2. 종속변수 2가지:\n- 성금(기부) 참여 여부(성금자 수 또는 참여 비율)\n- 기부한 성금의 액수(모금 금액)\n\n3. 밑줄 친 조치를 취한 이유:\n학생들이 보유한 용돈의 총액과 화폐 구성의 차이라는 외생변수가 '종속변수'(성금 참여 및 액수)에 미치는 영향을 사전에 통제하여, '독립변수'(동영상 시청 여부)가 '종속변수'에 미치는 순수한 인과효과를 정확히 검증하기 위함이다.",
+    "targetKeywords": [
+      "동영상 시청 여부",
+      "성금 참여 여부",
+      "성금 액수",
+      "독립변수",
+      "종속변수",
+      "외생변수 통제"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-10",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "10번. 뒤르켐의 사회적 사실과 사회분업(기계적·유기적 연대) [4점]",
+    "examTag": "2023 B10",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>사회학자 뒤르켐(E. Durkheim)은 ( ㉠ )이/가 사회학의 연구 대상이며, 단순히 개인적인 사실을 모아 놓은 것이 아니라 근본적으로 다른 성격을 지닌 것이라고 주장하였다. 그에 따르면, ( ㉠ )은/는 개인에게 영향을 미치는 외재적 실재이다. 예컨대, 규범이나 법, 관습, 종교, 제도와 같은 것은 그 사회의 성격을 보여 주면서 개인에게 강력한 영향력을 행사하지만 개인적인 차원으로 환원하여 설명할 수 없다는 것이다.</p>\n    <p>이러한 관점에서 뒤르켐은 ‘( ㉡ )’, ‘자살’과 같은 사회 현상에 주목하고 관련 저서를 발표하였다. 그는 ( ㉡ )이/가 발달한 산업 사회에서는 사회 구성원 간 유기적 연대가 주로 나타나고, 전통 사회에서는 기계적 연대가 주로 나타난다고 주장하였다. 또한 기계적 연대와 유기적 연대의 차이에 대하여 ( ㉢ )라고 설명하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 괄호 안의 ㉢에 해당하는 내용을 “기계적 연대는 ～을/를 바탕으로, 유기적 연대는 ～을/를 바탕으로 사회 구성원 간 결속이 이루어지는 것이다.”라는 문장 구조로 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉡:\n㉠ 사회적 사실(social facts)\n㉡ 분업(사회분업, division of labour)\n\n2. ㉢ 문장 서술:\n기계적 연대는 구성원들 간의 동질성(강한 집합의식)을 바탕으로, 유기적 연대는 사회적 분업화에 따른 상호의존성(이질성과 기능적 보완성)을 바탕으로 사회 구성원 간 결속이 이루어지는 것이다.",
+    "targetKeywords": [
+      "사회적 사실",
+      "분업",
+      "동질성",
+      "상호의존성"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-11",
+    "subject": "기출",
+    "chapter": "2023학년도 기출",
+    "section": "전공 B",
+    "title": "11번. 대한민국 정부형태와 국무총리의 위상 및 권한 [4점]",
+    "examTag": "2023 B11",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>◦ 2015 개정 사회과 교육과정의 성취기준 중 일부<br>\n    [12정법02-01] 민주 국가의 ( ㉠ )을/를 이해하고, 우리 헌법에 나타난 우리나라의 ( ㉠ )을/를 탐구한다.</p>\n    <p>◦ 헌법재판소 결정례(89헌마86) 중 발췌 수정<br>\n    우리나라의 ( ㉠ )은/는 의원내각제적 요소도 있으나 기본적으로는 대통령제이다. <u>㉡ 우리 헌법상 국무총리의 권한 중에 대통령의 권한행사에 대하여 견제적 기능을 할 수 있는 권한이 있기는 하다.</u> 그러나 대통령제임에도 우리 헌법이 국무총리제도를 둔 이유 중 하나는 미국과 같은 ( ㉢ ) 제도를 두지 않았기 때문에 대통령 유고 시 그 권한 대행자가 필요하다는 데 있다. 더구나 대통령에게 법적 제한 없는 국무총리해임권이 있는 점, 행정권 행사에 관한 최고․최후의 결정권자는 대통령이라고 해석되는 점 등을 고려하여 총체적으로 보면, 우리 헌법상 국무총리 지위의 바탕은 그가 대통령의 첫째가는 보좌기관인 점에 있다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n      <p>◦ 밑줄 친 ㉡에 해당하는 권한 중 대통령의 인사 권한에 관여하는 권한 2가지를 서술할 것.</p>\n    </div>\n  </div>\n</div>",
+    "defaultAnswer": "1. ㉠, ㉢:\n㉠ 정부 형태\n㉢ 부통령(vice president)\n\n2. 대통령의 인사 권한에 관여하는 국무총리의 권한 2가지:\n- 국무위원 임명제청권(헌법 제87조 제1항: 국무위원은 국무총리의 제청으로 대통령이 임명한다)\n- 국무위원 해임건의권(헌법 제87조 제3항: 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다)",
+    "targetKeywords": [
+      "정부 형태",
+      "부통령",
+      "국무위원 임명제청권",
+      "국무위원 해임건의권"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
     "id": "GUIDE-001",
     "subject": "가이드",
     "chapter": "EduRecall 사용 가이드",

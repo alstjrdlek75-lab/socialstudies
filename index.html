@@ -552,7 +552,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260909_1915"></script>
+  <script src="topics-data.js?v=20260909_1925"></script>
   <!-- Load supplementary background knowledge database -->
   <script src="explanations-data.js?v=20260909_1630"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
@@ -592,8 +592,11 @@
       <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="경제학" type="button">
         경제학 <span class="opacity-75 text-[11px]" id="count-econ">(6)</span>
       </button>
+      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="기출" type="button">
+        기출 <span class="opacity-75 text-[11px]" id="count-exam">(57)</span>
+      </button>
       <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="가이드" type="button">
-        가이드 <span class="opacity-75 text-[11px]" id="count-guide">(0)</span>
+        가이드 <span class="opacity-75 text-[11px]" id="count-guide">(1)</span>
       </button>
     </nav>
 
@@ -706,6 +709,7 @@
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제학</button>
+      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="기출" type="button">기출</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="가이드" type="button">가이드</button>
     </div>
 
@@ -3623,7 +3627,7 @@
       });
 
       function updateSubjectCountBadges() {
-        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '가이드': 0 };
+        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '가이드': 0 };
         TOPICS.forEach(t => { if (counts[t.subject] !== undefined) counts[t.subject]++; });
         const map = {
           'count-edu': counts['사회과교육론'],
@@ -3631,6 +3635,7 @@
           'count-soc': counts['사회학'],
           'count-pol': counts['정치학'],
           'count-econ': counts['경제학'],
+          'count-exam': counts['기출'],
           'count-guide': counts['가이드'],
           'count-all': TOPICS.length
         };
@@ -3675,7 +3680,7 @@
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
       } else if (targetTopic) {
         activeSubject = targetTopic.subject;
-      } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학', '가이드'].includes(savedSubject)) {
+      } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학', '기출', '가이드'].includes(savedSubject)) {
         activeSubject = savedSubject;
       }
 
