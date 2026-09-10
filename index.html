@@ -552,9 +552,9 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260910_1657"></script>
+  <script src="topics-data.js?v=20260910_1710"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260910_1657"></script>
+  <script src="explanations-data.js?v=20260910_1710"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1824,6 +1824,11 @@
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
 
+        // Reset any selection range and floating buttons from previous topic
+        lastValidSelectionRange = null;
+        lastValidSelectionText = '';
+        hideFloatingMaskBtn();
+
         // Auto-switch active subject if current topic belongs to another subject and filter is not ALL
         if (activeSubject !== 'ALL' && topic.subject !== activeSubject) {
           activeSubject = topic.subject;
@@ -2277,57 +2282,123 @@
         }
       }
 
-      function addTapeToCurrentSelection() {
+      function addTapeToCurrentSelection(isManualClick = false) {
         let sel = window.getSelection();
         let range = (sel && !sel.isCollapsed && sel.rangeCount > 0) ? sel.getRangeAt(0) : null;
         let selectedText = (sel && !sel.isCollapsed) ? sel.toString().trim() : '';
 
         // Fallback to cached selection for tablet touch / virtual tap compatibility
         if ((!range || !selectedText) && lastValidSelectionRange && lastValidSelectionText) {
-          range = lastValidSelectionRange;
-          selectedText = lastValidSelectionText;
+          try {
+            if (subnoteContainer && subnoteContainer.contains(lastValidSelectionRange.commonAncestorContainer)) {
+              range = lastValidSelectionRange;
+              selectedText = lastValidSelectionText;
+            } else {
+              lastValidSelectionRange = null;
+              lastValidSelectionText = '';
+            }
+          } catch (e) {
+            lastValidSelectionRange = null;
+            lastValidSelectionText = '';
+          }
         }
 
-        if (!range || !selectedText) {
-          showToast('마스킹할 텍스트를 먼저 드래그해주세요', 'info');
+        if (!range || !selectedText || selectedText.length === 0) {
+          if (isManualClick) {
+            showToast('마스킹할 본문 텍스트를 드래그해주세요', 'info');
+          }
           return;
         }
 
         // Check if selection is inside subnoteContainer
-        const commonNode = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
-          ? range.commonAncestorContainer
-          : range.commonAncestorContainer.parentElement;
+        let commonNode = range.commonAncestorContainer;
+        if (commonNode && commonNode.nodeType !== Node.ELEMENT_NODE) {
+          commonNode = commonNode.parentElement;
+        }
         if (!commonNode || !subnoteContainer.contains(commonNode)) {
-          showToast('서브노트 본문 영역 내의 텍스트만 마스킹할 수 있습니다', 'warning');
-          return;
+          return; // Silent return outside subnote
         }
 
-        // Prevent nested masking tape
-        const checkAncestor = (node) => {
-          if (!node) return null;
-          let curr = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-          return curr ? curr.closest('.mask-tape') : null;
-        };
+        // Find any existing .mask-tape elements that intersect the range
+        const allTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape'));
+        const intersectingTapes = allTapes.filter(tape => {
+          try {
+            return range.intersectsNode(tape);
+          } catch (e) {
+            return tape.contains(range.startContainer) || tape.contains(range.endContainer) || range.contains(tape);
+          }
+        });
 
-        if (checkAncestor(range.commonAncestorContainer) || checkAncestor(range.startContainer) || checkAncestor(range.endContainer)) {
-          showToast('이미 마스킹 테이프가 적용되어 있는 부분입니다', 'info');
-          return;
+        // Case 1: If user selected strictly inside or exactly an existing tape, toggle or remove it cleanly
+        if (intersectingTapes.length === 1) {
+          const singleTape = intersectingTapes[0];
+          const tapeText = (singleTape.getAttribute('data-text') || singleTape.textContent).trim();
+          if (selectedText === tapeText || (singleTape.contains(range.startContainer) && singleTape.contains(range.endContainer))) {
+            removeTape(singleTape);
+            try { sel?.removeAllRanges(); } catch (e) {}
+            lastValidSelectionRange = null;
+            lastValidSelectionText = '';
+            hideFloatingMaskBtn();
+            return;
+          }
         }
 
+        // Case 2: If the selection overlaps one or more existing tapes, cleanly unwrap them so we can merge
+        if (intersectingTapes.length > 0) {
+          intersectingTapes.forEach(t => {
+            const parent = t.parentNode;
+            if (parent) {
+              while (t.firstChild) parent.insertBefore(t.firstChild, t);
+              parent.removeChild(t);
+              parent.normalize();
+            }
+          });
+          try {
+            selectedText = range.toString().trim() || selectedText;
+          } catch (e) {}
+        }
+
+        // Create the new mask tape span
         const span = document.createElement('span');
         span.className = 'mask-tape is-taped';
         span.setAttribute('data-tape', 'true');
         span.setAttribute('data-text', selectedText);
 
-        try {
-          range.surroundContents(span);
-        } catch (err) {
-          const fragment = range.extractContents();
-          span.appendChild(fragment);
-          range.insertNode(span);
+        let wrappedSuccessfully = false;
+        // Attempt safe split if within single text node
+        if (range.startContainer === range.endContainer && range.startContainer.nodeType === Node.TEXT_NODE) {
+          try {
+            const textNode = range.startContainer;
+            textNode.splitText(range.endOffset);
+            const middleNode = textNode.splitText(range.startOffset);
+            middleNode.parentNode.insertBefore(span, middleNode);
+            span.appendChild(middleNode);
+            wrappedSuccessfully = true;
+          } catch (e) {
+            wrappedSuccessfully = false;
+          }
         }
 
+        if (!wrappedSuccessfully) {
+          try {
+            range.surroundContents(span);
+            wrappedSuccessfully = true;
+          } catch (err) {
+            try {
+              const fragment = range.extractContents();
+              span.appendChild(fragment);
+              range.insertNode(span);
+              wrappedSuccessfully = true;
+            } catch (err2) {
+              console.warn('Masking fallback:', err2);
+              return;
+            }
+          }
+        }
+
+        span.normalize();
         bindSingleTape(span);
+
         try { sel?.removeAllRanges(); } catch (e) {}
         lastValidSelectionRange = null;
         lastValidSelectionText = '';
@@ -2337,7 +2408,7 @@
         updateTapeCountBadge();
 
         const previewText = selectedText.length > 12 ? selectedText.slice(0, 12) + '...' : selectedText;
-        showToast(`'${previewText}' 마스킹 테이프가 추가되었습니다 [M]`, 'label');
+        showToast(`'${previewText}' 마스킹 완료 [M]`, 'label');
       }
 
       let currentFloatingMode = 'add'; // 'add' or 'delete'
@@ -2848,9 +2919,9 @@
         }
 
         if (hasSelection) {
-          addTapeToCurrentSelection();
+          addTapeToCurrentSelection(false);
         } else {
-          showToast('본문 글자를 드래그한 후 [M] 또는 이 버튼을 누르면 테이프가 생성됩니다', 'info');
+          showToast('마스킹할 본문 텍스트를 드래그해주세요', 'info');
         }
       }
 
@@ -3696,11 +3767,10 @@
               lastValidSelectionText = '';
             } else if (isMKey) {
               e.preventDefault();
-              addTapeToCurrentSelection();
+              addTapeToCurrentSelection(false);
             }
-          } else if (isMKey) {
-            showToast('본문 글자를 드래그한 후 [M]을 누르면 테이프가 붙고, 우클릭 시 삭제됩니다', 'info');
           }
+          // Silent when no selection: never pop up unnecessary toasts
           return;
         }
 
