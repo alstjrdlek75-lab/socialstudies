@@ -3447,16 +3447,24 @@
           `;
         }
 
+        const memoTitle = (topic.subject === '법학')
+          ? '나만의 단권화 메모 (판례·조문·추가 필기)'
+          : '나만의 단권화 메모 (핵심 개념·추가 필기)';
+
+        const memoPlaceholder = (topic.subject === '법학')
+          ? '이 주제와 관련된 주요 판례 요지, 법조문 해석, 보충 필기 내용을 자유롭게 기록하세요. (브라우저 자동 저장)'
+          : '이 주제와 관련된 주요 학자 이론, 핵심 논거, 보충 필기 내용을 자유롭게 기록하세요. (브라우저 자동 저장)';
+
         html += `
           <div class="space-y-2 pt-3 border-t border-slate-200/80">
             <div class="flex items-center justify-between">
               <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[16px] text-amber-500">edit_note</span>
-                <span>나만의 보충 메모 (강의 필기 / 판례 / 코멘트)</span>
+                <span>${escapeHtml(memoTitle)}</span>
               </h4>
               <span id="memo-save-status" class="text-[10px] text-slate-400 font-medium">자동 저장</span>
             </div>
-            <textarea id="topic-user-memo" placeholder="이 주제에 대해 교수님이나 강사님이 강조한 배경 설명, 판례 번호, 나만의 이해 팁을 자유롭게 메모하세요. (브라우저에 자동 영구 저장됩니다)" class="w-full h-32 p-3 text-xs md:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-500 focus:outline-none transition-all leading-relaxed resize-y font-sans">${escapeHtml(userMemo)}</textarea>
+            <textarea id="topic-user-memo" placeholder="${escapeHtml(memoPlaceholder)}" class="w-full h-32 p-3 text-xs md:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-500 focus:outline-none transition-all leading-relaxed resize-y font-sans">${escapeHtml(userMemo)}</textarea>
           </div>
         `;
 
