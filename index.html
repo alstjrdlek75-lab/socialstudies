@@ -3387,6 +3387,10 @@
         let html = '';
 
         if (exp) {
+          const bgTitle = exp.backgroundTitle || (topic.subject === '법학'
+            ? '1. 입법 취지 및 이론적 배경'
+            : '1. 이론적 배경 및 문제의식');
+
           html += `
             <div class="bg-indigo-50/70 border border-indigo-100 rounded-2xl p-4 text-indigo-950 shadow-2xs">
               <div class="flex items-center gap-2 mb-1.5">
@@ -3401,7 +3405,7 @@
             <div class="space-y-1.5">
               <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
-                <span>1. 입법 및 이론적 배경 (왜 생겼을까?)</span>
+                <span>${escapeHtml(bgTitle)}</span>
               </h4>
               <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-4 text-xs md:text-[13.5px] text-slate-700 leading-relaxed space-y-3">
                 ${formatExplanationText(exp.background, 'slate')}
@@ -3421,7 +3425,7 @@
             <div class="space-y-1.5">
               <h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                 <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0"></span>
-                <span>3. 서브노트 본문과의 연결고리 (시험 인출 포인트)</span>
+                <span>${escapeHtml(exp.bridgeTitle || '3. 서브노트 본문과의 연결고리 (핵심 인출 포인트)')}</span>
               </h4>
               <div class="bg-indigo-50/60 border border-indigo-200/70 rounded-xl p-4 text-xs md:text-[13.5px] text-indigo-950 leading-relaxed font-medium space-y-3">
                 ${formatExplanationText(exp.subnoteBridge, 'indigo')}
