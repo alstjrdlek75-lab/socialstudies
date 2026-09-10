@@ -543,8 +543,11 @@
 
     /* =========================================================
        DARK MODE HIGH-CONTRAST OVERRIDES
-       - High contrast, eye-comfort dark theme
-       - Does NOT modify topics-data.js (preserves data integrity)
+       - Comprehensive, high-contrast, eye-comfort dark theme
+       - Fixes sidebar visibility (Image 1)
+       - Fixes subject tabs visibility & active state (Image 2)
+       - Fixes topic banner & mode controls bar white cards (Image 3)
+       - Does NOT modify topics-data.js (preserves data integrity 100%)
        ========================================================= */
     html.dark {
       color-scheme: dark;
@@ -555,6 +558,7 @@
       color: #f1f5f9 !important;
     }
 
+    /* Scrollbars */
     html.dark ::-webkit-scrollbar-thumb {
       background: #334155;
     }
@@ -562,26 +566,91 @@
       background: #475569;
     }
 
+    /* Universal Dark Mode Background & Border Defaults */
+    html.dark .bg-surface {
+      background-color: #0b0f19 !important;
+    }
+    html.dark .bg-white {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+    }
+    html.dark .border-border,
+    html.dark .border-slate-200,
+    html.dark .border-slate-100 {
+      border-color: #1e293b !important;
+    }
+
+    /* Universal High-Contrast Text Rules for Dark Mode */
+    html.dark .text-slate-900 {
+      color: #f8fafc !important;
+    }
+    html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-700 {
+      color: #e2e8f0 !important;
+    }
+    html.dark .text-slate-600 {
+      color: #cbd5e1 !important;
+    }
+    html.dark .text-slate-500 {
+      color: #94a3b8 !important;
+    }
+    html.dark .text-slate-400 {
+      color: #94a3b8 !important;
+    }
+
+    /* Universal Slate Backgrounds in Dark Mode */
+    html.dark .bg-slate-50,
+    html.dark .bg-slate-50\/50,
+    html.dark .bg-slate-50\/80 {
+      background-color: #131d31 !important;
+    }
+    html.dark .bg-slate-100,
+    html.dark .bg-slate-100\/80 {
+      background-color: #1e293b !important;
+    }
+
+    /* Hover Utilities in Dark Mode */
+    html.dark .hover\:bg-slate-50:hover,
+    html.dark .hover\:bg-slate-100:hover,
+    html.dark .hover\:bg-slate-200:hover {
+      background-color: #1e293b !important;
+    }
+
     /* Fixed App Header */
     html.dark header {
       background-color: rgba(15, 23, 42, 0.95) !important;
       border-color: #1e293b !important;
     }
-    html.dark header .text-slate-900,
-    html.dark header .text-slate-800 {
-      color: #f8fafc !important;
+
+    /* Header Subject Tabs (Image 2 Fix) */
+    html.dark #subject-tabs {
+      background-color: #131d31 !important;
+      border-color: #1e293b !important;
     }
-    html.dark header .text-slate-500,
-    html.dark header .text-slate-600 {
-      color: #94a3b8 !important;
+    html.dark #subject-tabs .subject-tab-btn {
+      color: #cbd5e1 !important;
+      background-color: transparent !important;
     }
-    html.dark header .subject-tab-btn:not(.active) {
-      color: #94a3b8 !important;
-    }
-    html.dark header .subject-tab-btn:not(.active):hover {
-      color: #f8fafc !important;
+    html.dark #subject-tabs .subject-tab-btn:hover {
+      color: #ffffff !important;
       background-color: #1e293b !important;
     }
+    html.dark #subject-tabs .subject-tab-btn.active,
+    html.dark #subject-tabs .subject-tab-btn.bg-white,
+    html.dark #subject-tabs .subject-tab-btn[class*="bg-white"] {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    }
+    html.dark #subject-tabs .subject-tab-btn.active span,
+    html.dark #subject-tabs .subject-tab-btn.bg-white span,
+    html.dark #subject-tabs .subject-tab-btn[class*="bg-white"] span {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* Header Tools */
     html.dark #pomodoro-btn,
     html.dark #theme-toggle-btn,
     html.dark #btn-mobile-toc {
@@ -593,7 +662,7 @@
     html.dark #theme-toggle-btn:hover,
     html.dark #btn-mobile-toc:hover {
       background-color: #334155 !important;
-      color: #f8fafc !important;
+      color: #ffffff !important;
     }
     html.dark header .bg-blue-50 {
       background-color: rgba(30, 58, 138, 0.3) !important;
@@ -614,6 +683,12 @@
     html.dark #bc-container #bc-subject {
       color: #60a5fa !important;
     }
+    html.dark #bc-container #bc-chapter {
+      color: #e2e8f0 !important;
+    }
+    html.dark #bc-container #bc-title {
+      color: #f8fafc !important;
+    }
     html.dark #bc-container #bc-section {
       background-color: rgba(79, 70, 229, 0.25) !important;
       border-color: rgba(99, 102, 241, 0.35) !important;
@@ -624,7 +699,8 @@
     html.dark #btn-next-topic,
     html.dark #btn-toggle-essay-subhead,
     html.dark #sc-btn-essay,
-    html.dark #sc-btn-grade {
+    html.dark #sc-btn-grade,
+    html.dark #sc-btn-theme {
       background-color: #1e293b !important;
       border-color: #334155 !important;
       color: #cbd5e1 !important;
@@ -634,9 +710,10 @@
     html.dark #btn-next-topic:hover,
     html.dark #btn-toggle-essay-subhead:hover,
     html.dark #sc-btn-essay:hover,
-    html.dark #sc-btn-grade:hover {
+    html.dark #sc-btn-grade:hover,
+    html.dark #sc-btn-theme:hover {
       background-color: #334155 !important;
-      color: #f8fafc !important;
+      color: #ffffff !important;
     }
     html.dark #sc-btn-add {
       background-color: rgba(101, 163, 13, 0.2) !important;
@@ -658,16 +735,25 @@
       border-color: rgba(163, 230, 53, 0.45) !important;
       color: #d9f99d !important;
     }
-    html.dark #sc-btn-theme {
-      background-color: #1e293b !important;
-      border-color: #334155 !important;
-      color: #f1f5f9 !important;
-    }
 
-    /* Left Sidebar TOC Drawer */
+    /* Left Sidebar TOC Drawer (Image 1 Fix) */
     html.dark #sidebar-drawer {
       background-color: #0f172a !important;
       border-color: #1e293b !important;
+    }
+    html.dark #sidebar-drawer .bg-white {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #sidebar-drawer .border-b,
+    html.dark #sidebar-drawer .border-t {
+      border-color: #1e293b !important;
+    }
+    html.dark #sidebar-subject-label {
+      color: #f8fafc !important;
+    }
+    html.dark #sidebar-topic-count {
+      color: #60a5fa !important;
     }
     html.dark #sidebar-search {
       background-color: #1e293b !important;
@@ -675,44 +761,172 @@
       color: #f8fafc !important;
     }
     html.dark #sidebar-search::placeholder {
-      color: #64748b !important;
-    }
-    html.dark .toc-topic-item {
-      color: #cbd5e1 !important;
-    }
-    html.dark .toc-topic-item:hover {
-      background-color: #1e293b !important;
-      color: #f8fafc !important;
-    }
-    html.dark .toc-topic-item.active {
-      background-color: rgba(37, 99, 235, 0.25) !important;
-      color: #60a5fa !important;
-      border-color: #3b82f6 !important;
-    }
-    html.dark .category-header,
-    html.dark .chapter-header {
       color: #94a3b8 !important;
     }
-    html.dark #sidebar-drawer .bg-slate-50,
-    html.dark #sidebar-drawer .bg-slate-100 {
-      background-color: #1e293b !important;
-    }
-    html.dark #sidebar-drawer .border-slate-200,
-    html.dark #sidebar-drawer .border-slate-100 {
+    html.dark #mobile-subject-tabs {
+      background-color: #131d31 !important;
       border-color: #1e293b !important;
     }
-
-    /* Main Subnote Topic Cards & Content Containers */
-    html.dark #main-content {
-      background-color: #0b0f19 !important;
+    html.dark .mobile-subj-tab {
+      color: #cbd5e1 !important;
+      border-color: transparent !important;
     }
-    html.dark #topic-header {
+    html.dark .mobile-subj-tab:hover {
+      color: #ffffff !important;
+      background-color: #334155 !important;
+    }
+    html.dark .mobile-subj-tab.active,
+    html.dark .mobile-subj-tab.bg-white,
+    html.dark .mobile-subj-tab.bg-blue-600 {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+      border-color: #2563eb !important;
+    }
+
+    /* Sidebar Chapter & Section Folders (High Contrast) */
+    html.dark .chapter-header {
+      border-color: #1e293b !important;
+    }
+    html.dark .chapter-header span,
+    html.dark .chapter-header .text-slate-800 {
+      color: #f1f5f9 !important;
+      font-weight: 800 !important;
+    }
+    html.dark .chapter-header .text-slate-400 {
+      color: #94a3b8 !important;
+    }
+    html.dark .section-toggle-btn {
+      color: #e2e8f0 !important;
+    }
+    html.dark .section-toggle-btn:hover {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+    }
+    html.dark .section-toggle-btn span.text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .section-toggle-btn .text-slate-400 {
+      color: #94a3b8 !important;
+    }
+    html.dark .section-toggle-btn span.rounded-full {
+      background-color: #1e293b !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark .section-children {
+      border-color: #334155 !important;
+    }
+
+    /* Sidebar Topic Items (High Contrast) */
+    html.dark .sidebar-topic-item {
+      color: #e2e8f0 !important;
+    }
+    html.dark .sidebar-topic-item:hover {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+    }
+    html.dark .sidebar-topic-item.bg-blue-50 {
+      background-color: rgba(37, 99, 235, 0.35) !important;
+      border-color: rgba(59, 130, 246, 0.5) !important;
+      color: #bfdbfe !important;
+    }
+    html.dark .sidebar-topic-item .text-slate-700,
+    html.dark .sidebar-topic-item .text-slate-800,
+    html.dark .sidebar-topic-item .text-slate-900 {
+      color: #e2e8f0 !important;
+    }
+    html.dark .sidebar-topic-item span.text-indigo-500 {
+      color: #a5b4fc !important;
+    }
+    html.dark #sidebar-pass-count {
+      color: #94a3b8 !important;
+    }
+
+    /* Main Subnote Column: Banner Card & Controls Bar (Image 3 Fix) */
+    html.dark #subnote-section > div.bg-white,
+    html.dark #subnote-section .bg-white {
       background-color: #0f172a !important;
       border-color: #1e293b !important;
     }
-    html.dark #topic-header h1 {
+    html.dark #topic-title {
       color: #f8fafc !important;
     }
+    html.dark #topic-badge-chapter {
+      background-color: #1e293b !important;
+      color: #cbd5e1 !important;
+      border: 1px solid #334155 !important;
+    }
+    html.dark #topic-badge-tape {
+      background-color: rgba(132, 204, 22, 0.15) !important;
+      color: #bef264 !important;
+      border-color: rgba(163, 230, 53, 0.4) !important;
+    }
+    html.dark #btn-open-explanation {
+      background-color: #1e293b !important;
+      color: #a5b4fc !important;
+      border-color: #334155 !important;
+    }
+    html.dark #btn-open-explanation:hover {
+      background-color: #312e81 !important;
+      color: #c7d2fe !important;
+    }
+    html.dark #topic-page-ref {
+      color: #94a3b8 !important;
+    }
+    html.dark #topic-keywords-tags span {
+      background-color: #1e293b !important;
+      color: #94a3b8 !important;
+      border-color: #334155 !important;
+    }
+
+    /* Mode Controls Bar Buttons (Image 3 Fix) */
+    html.dark .mode-pill:not(.bg-lime-600):not(.active) {
+      color: #94a3b8 !important;
+    }
+    html.dark .mode-pill:not(.bg-lime-600):not(.active):hover {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark #btn-apply-tape-inline {
+      background-color: rgba(132, 204, 22, 0.18) !important;
+      color: #bef264 !important;
+      border-color: rgba(163, 230, 53, 0.45) !important;
+    }
+    html.dark #btn-apply-tape-inline:hover {
+      background-color: rgba(132, 204, 22, 0.28) !important;
+    }
+    html.dark #subnote-section .bg-slate-100 {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #btn-font-down,
+    html.dark #btn-font-up {
+      color: #cbd5e1 !important;
+    }
+    html.dark #btn-font-down:hover,
+    html.dark #btn-font-up:hover {
+      background-color: #334155 !important;
+      color: #ffffff !important;
+    }
+    html.dark #btn-reveal-all {
+      background-color: rgba(132, 204, 22, 0.18) !important;
+      color: #bef264 !important;
+      border-color: rgba(163, 230, 53, 0.45) !important;
+    }
+    html.dark #btn-reveal-all:hover {
+      background-color: rgba(132, 204, 22, 0.28) !important;
+    }
+    html.dark #btn-toggle-essay-pad {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #btn-toggle-essay-pad:hover {
+      background-color: #334155 !important;
+      color: #ffffff !important;
+    }
+
+    /* Subnote Content Cards (.topic-group, preserving topics-data.js) */
     html.dark #subnote-content-container .topic-group {
       background-color: #0f172a !important;
       border-color: #1e293b !important;
@@ -732,28 +946,8 @@
     html.dark #subnote-content-container .recall-item b {
       color: #f8fafc !important;
     }
-    html.dark #subnote-content-container .text-slate-900,
-    html.dark #subnote-content-container .text-slate-800,
-    html.dark #subnote-content-container .text-slate-700 {
-      color: #cbd5e1 !important;
-    }
-    html.dark #subnote-content-container .text-slate-600,
-    html.dark #subnote-content-container .text-slate-500 {
-      color: #94a3b8 !important;
-    }
-    html.dark #subnote-content-container .bg-slate-50,
-    html.dark #subnote-content-container .bg-slate-100,
-    html.dark #subnote-content-container .bg-gray-50,
-    html.dark #subnote-content-container .bg-white {
-      background-color: #131d31 !important;
-    }
-    html.dark #subnote-content-container .border-slate-100,
-    html.dark #subnote-content-container .border-slate-200,
-    html.dark #subnote-content-container .border-slate-300 {
-      border-color: #1e293b !important;
-    }
 
-    /* Highlight Boxes Scoped to Dark Palette */
+    /* Highlight Boxes in Subnote */
     html.dark #subnote-content-container .bg-blue-50,
     html.dark #subnote-content-container .bg-blue-50\/80,
     html.dark #subnote-content-container [class*="bg-blue-50"] {
@@ -884,33 +1078,9 @@
       color: #fda4af !important;
     }
 
-    /* Sticky Floating Toolbar */
-    html.dark #subnote-toolbar-sticky {
-      background-color: rgba(15, 23, 42, 0.94) !important;
-      border-color: #1e293b !important;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
-    }
-    html.dark #subnote-toolbar-sticky .mode-pill:not(.active) {
-      color: #94a3b8 !important;
-    }
-    html.dark #subnote-toolbar-sticky .mode-pill:not(.active):hover {
-      background-color: #1e293b !important;
-      color: #f1f5f9 !important;
-    }
-    html.dark #btn-toggle-essay-pad,
-    html.dark #btn-open-explanation {
-      background-color: #1e293b !important;
-      border-color: #334155 !important;
-      color: #cbd5e1 !important;
-    }
-    html.dark #btn-toggle-essay-pad:hover,
-    html.dark #btn-open-explanation:hover {
-      background-color: #334155 !important;
-      color: #f8fafc !important;
-    }
-
-    /* Right Aside: Essay Pad & FAP Self-Grading */
-    html.dark #essay-pad-aside {
+    /* Right Column (Essay Aside & SM-2 Self-Grading) */
+    html.dark #essay-aside > div.bg-white,
+    html.dark #essay-aside .bg-white {
       background-color: #0f172a !important;
       border-color: #1e293b !important;
     }
@@ -919,21 +1089,27 @@
       border-color: #334155 !important;
       color: #f8fafc !important;
     }
+    html.dark #essay-input:focus {
+      background-color: #0f172a !important;
+      border-color: #3b82f6 !important;
+    }
     html.dark #essay-input::placeholder {
       color: #64748b !important;
     }
-    html.dark #model-answer-container {
-      background-color: #131d31 !important;
-      border-color: #1e293b !important;
-      color: #cbd5e1 !important;
+    html.dark .grade-btn[data-grade="fail"] {
+      background-color: rgba(239, 68, 68, 0.2) !important;
+      border-color: rgba(239, 68, 68, 0.4) !important;
+      color: #fca5a5 !important;
     }
-    html.dark #essay-pad-aside .bg-slate-50,
-    html.dark #essay-pad-aside .bg-slate-100 {
-      background-color: #1e293b !important;
+    html.dark .grade-btn[data-grade="ambiguous"] {
+      background-color: rgba(245, 158, 11, 0.2) !important;
+      border-color: rgba(245, 158, 11, 0.4) !important;
+      color: #fde68a !important;
     }
-    html.dark #essay-pad-aside .border-slate-200,
-    html.dark #essay-pad-aside .border-slate-100 {
-      border-color: #1e293b !important;
+    html.dark .grade-btn[data-grade="pass"] {
+      background-color: rgba(37, 99, 235, 0.2) !important;
+      border-color: rgba(59, 130, 246, 0.4) !important;
+      color: #93c5fd !important;
     }
 
     /* Supplementary Explanation Drawer */
@@ -946,29 +1122,18 @@
       background-color: #131d31 !important;
       border-color: #1e293b !important;
     }
-    html.dark #explanation-sheet .bg-slate-50,
-    html.dark #explanation-sheet .bg-slate-50\/80 {
-      background-color: #131d31 !important;
-      border-color: #1e293b !important;
-    }
-    html.dark #explanation-sheet .text-slate-900,
-    html.dark #explanation-sheet .text-slate-800 {
-      color: #f8fafc !important;
-    }
-    html.dark #explanation-sheet .text-slate-600,
-    html.dark #explanation-sheet .text-slate-700 {
-      color: #cbd5e1 !important;
-    }
     html.dark #explanation-sheet .bg-amber-50\/90 {
       background-color: rgba(120, 53, 15, 0.3) !important;
       border-color: rgba(245, 158, 11, 0.35) !important;
       color: #fde68a !important;
     }
+    html.dark #topic-user-memo,
     html.dark #user-memo-input {
       background-color: #1e293b !important;
       border-color: #334155 !important;
       color: #f8fafc !important;
     }
+    html.dark #topic-user-memo::placeholder,
     html.dark #user-memo-input::placeholder {
       color: #64748b !important;
     }
@@ -979,6 +1144,15 @@
     }
     html.dark #btn-close-explanation-bottom:hover {
       background-color: #334155 !important;
+    }
+
+    /* Modals & Dialogs */
+    html.dark #diff-modal .bg-white,
+    html.dark #exam-modal .bg-white,
+    html.dark [role="dialog"] {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+      color: #f1f5f9 !important;
     }
 
     /* Mobile Bottom Navigation Bar */
@@ -3387,14 +3561,14 @@
       function updateSubjectTabStyles() {
         subjectTabs.forEach(b => {
           if (b.dataset.subject === activeSubject) {
-            b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs';
+            b.className = 'subject-tab-btn active px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs';
           } else {
             b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
           }
         });
         mobileSubjTabs.forEach(b => {
           if (b.dataset.subject === activeSubject) {
-            b.className = 'mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-blue-600 text-white shadow-xs border border-blue-600';
+            b.className = 'mobile-subj-tab active px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-blue-600 text-white shadow-xs border border-blue-600';
           } else {
             b.className = 'mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 transition-all whitespace-nowrap border border-transparent';
           }
