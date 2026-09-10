@@ -552,9 +552,9 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260910_1630"></script>
+  <script src="topics-data.js?v=20260910_1636"></script>
   <!-- Load supplementary background knowledge database -->
-  <script src="explanations-data.js?v=20260910_1630"></script>
+  <script src="explanations-data.js?v=20260910_1636"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -827,11 +827,11 @@
           </div>
 
           <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap justify-between w-full sm:w-auto">
-            <!-- Add Tape & Delete guide badge -->
-            <span class="hidden md:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-lime-50/90 border border-lime-300/80 text-lime-900 text-xs font-semibold select-none shadow-2xs whitespace-nowrap shrink-0" title="본문 글자 드래그 후 [M] 추가, 마우스 우클릭 또는 Option/Cmd+클릭으로 삭제">
-              <span class="material-symbols-outlined text-[14px] text-lime-700">edit_note</span>
+            <!-- Add Tape & Delete guide button (Interactive on Tablet & Desktop) -->
+            <button id="btn-apply-tape-inline" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 text-xs font-bold select-none shadow-2xs whitespace-nowrap shrink-0 cursor-pointer active:scale-95 transition-all" title="본문 글자 드래그 후 누르면 마스킹 테이프가 생성됩니다 (단축키: M / ⌘M)">
+              <span class="material-symbols-outlined text-[15px] text-lime-800">draw</span>
               <span>드래그 <b>[M]</b> 추가 / <b>우클릭</b> 삭제</span>
-            </span>
+            </button>
 
             <!-- Font Scale Controller -->
             <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
@@ -2255,29 +2255,56 @@
         showToast(`'${previewText}' 마스킹 테이프가 삭제되었습니다 [우클릭/삭제]`, 'delete');
       }
 
-      function addTapeToCurrentSelection() {
+      // Tablet & Touch Selection Persistence Cache
+      let lastValidSelectionRange = null;
+      let lastValidSelectionText = '';
+
+      function updateCachedSelection() {
         const sel = window.getSelection();
-        if (!sel || sel.isCollapsed || !sel.rangeCount) {
-          showToast('마스킹할 텍스트를 먼저 마우스로 드래그해주세요', 'info');
-          return;
+        if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
+          try {
+            const range = sel.getRangeAt(0);
+            const node = range.commonAncestorContainer;
+            const el = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+            if (el && subnoteContainer.contains(el)) {
+              const text = sel.toString().trim();
+              if (text) {
+                lastValidSelectionRange = range.cloneRange();
+                lastValidSelectionText = text;
+              }
+            }
+          } catch (e) {}
+        }
+      }
+
+      function addTapeToCurrentSelection() {
+        let sel = window.getSelection();
+        let range = (sel && !sel.isCollapsed && sel.rangeCount > 0) ? sel.getRangeAt(0) : null;
+        let selectedText = (sel && !sel.isCollapsed) ? sel.toString().trim() : '';
+
+        // Fallback to cached selection for tablet touch / virtual tap compatibility
+        if ((!range || !selectedText) && lastValidSelectionRange && lastValidSelectionText) {
+          range = lastValidSelectionRange;
+          selectedText = lastValidSelectionText;
         }
 
-        const selectedText = sel.toString().trim();
-        if (!selectedText) {
-          showToast('마스킹할 텍스트를 먼저 마우스로 드래그해주세요', 'info');
+        if (!range || !selectedText) {
+          showToast('마스킹할 텍스트를 먼저 드래그해주세요', 'info');
           return;
         }
-
-        const range = sel.getRangeAt(0);
 
         // Check if selection is inside subnoteContainer
-        if (!subnoteContainer.contains(range.commonAncestorContainer)) {
+        const commonNode = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+          ? range.commonAncestorContainer
+          : range.commonAncestorContainer.parentElement;
+        if (!commonNode || !subnoteContainer.contains(commonNode)) {
           showToast('서브노트 본문 영역 내의 텍스트만 마스킹할 수 있습니다', 'warning');
           return;
         }
 
         // Prevent nested masking tape
         const checkAncestor = (node) => {
+          if (!node) return null;
           let curr = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
           return curr ? curr.closest('.mask-tape') : null;
         };
@@ -2301,7 +2328,9 @@
         }
 
         bindSingleTape(span);
-        sel.removeAllRanges();
+        try { sel?.removeAllRanges(); } catch (e) {}
+        lastValidSelectionRange = null;
+        lastValidSelectionText = '';
         hideFloatingMaskBtn();
 
         saveCurrentTopicCustomContent();
@@ -2320,18 +2349,24 @@
       }
 
       function checkTextSelection() {
-        const sel = window.getSelection();
-        if (!sel || sel.isCollapsed || !sel.rangeCount) {
-          hideFloatingMaskBtn();
-          return;
+        let sel = window.getSelection();
+        let range = (sel && !sel.isCollapsed && sel.rangeCount > 0) ? sel.getRangeAt(0) : null;
+        let text = (sel && !sel.isCollapsed) ? sel.toString().trim() : '';
+
+        if (!range || !text) {
+          if (lastValidSelectionRange && lastValidSelectionText) {
+            range = lastValidSelectionRange;
+            text = lastValidSelectionText;
+          } else {
+            hideFloatingMaskBtn();
+            return;
+          }
         }
-        const text = sel.toString().trim();
-        if (!text) {
-          hideFloatingMaskBtn();
-          return;
-        }
-        const range = sel.getRangeAt(0);
-        if (!subnoteContainer.contains(range.commonAncestorContainer)) {
+
+        const commonNode = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+          ? range.commonAncestorContainer
+          : range.commonAncestorContainer.parentElement;
+        if (!commonNode || !subnoteContainer.contains(commonNode)) {
           hideFloatingMaskBtn();
           return;
         }
@@ -2342,9 +2377,7 @@
           return;
         }
 
-        const parentTape = (range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
-          ? range.commonAncestorContainer
-          : range.commonAncestorContainer.parentElement)?.closest('.mask-tape');
+        const parentTape = commonNode.closest('.mask-tape');
 
         if (parentTape) {
           currentFloatingMode = 'delete';
@@ -2371,7 +2404,14 @@
         }
 
         if (floatingMaskBtn) {
-          const btnTop = rect.top > 80 ? (rect.top - 8) : (rect.bottom + 12);
+          const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+          let btnTop;
+          if (isTouch) {
+            // Position below selection on touch devices to avoid collision with iOS/Android native callout
+            btnTop = (rect.bottom + 14 < window.innerHeight - 60) ? (rect.bottom + 14) : Math.max(16, rect.top - 42);
+          } else {
+            btnTop = rect.top > 80 ? (rect.top - 8) : (rect.bottom + 12);
+          }
           floatingMaskBtn.style.top = `${btnTop}px`;
           floatingMaskBtn.style.left = `${Math.min(window.innerWidth - 80, Math.max(80, rect.left + (rect.width / 2)))}px`;
           floatingMaskBtn.classList.remove('hidden');
@@ -2792,17 +2832,39 @@
       const scBtnReveal = document.getElementById('sc-btn-reveal');
       const scBtnEssay = document.getElementById('sc-btn-essay');
       const scBtnGrade = document.getElementById('sc-btn-grade');
+      const btnApplyTapeInline = document.getElementById('btn-apply-tape-inline');
 
       if (scBtnSidebar) scBtnSidebar.addEventListener('click', toggleDesktopSidebar);
 
-      if (scBtnAdd) scBtnAdd.addEventListener('click', () => {
-        const sel = window.getSelection();
-        if (sel && !sel.isCollapsed && sel.toString().trim()) {
+      function handleManualAddTape(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        let sel = window.getSelection();
+        let hasSelection = (sel && !sel.isCollapsed && sel.toString().trim().length > 0);
+        if (!hasSelection && lastValidSelectionRange && lastValidSelectionText) {
+          hasSelection = true;
+        }
+
+        if (hasSelection) {
           addTapeToCurrentSelection();
         } else {
           showToast('본문 글자를 드래그한 후 [M] 또는 이 버튼을 누르면 테이프가 생성됩니다', 'info');
         }
-      });
+      }
+
+      if (scBtnAdd) {
+        scBtnAdd.addEventListener('mousedown', (e) => e.preventDefault());
+        scBtnAdd.addEventListener('touchend', (e) => handleManualAddTape(e), { passive: false });
+        scBtnAdd.addEventListener('click', (e) => handleManualAddTape(e));
+      }
+
+      if (btnApplyTapeInline) {
+        btnApplyTapeInline.addEventListener('mousedown', (e) => e.preventDefault());
+        btnApplyTapeInline.addEventListener('touchend', (e) => handleManualAddTape(e), { passive: false });
+        btnApplyTapeInline.addEventListener('click', (e) => handleManualAddTape(e));
+      }
 
       if (scBtnDel) scBtnDel.addEventListener('click', () => {
         showToast('테이프를 마우스 우클릭하거나 ⌥/⌘+클릭하면 즉시 삭제됩니다', 'delete');
@@ -2901,50 +2963,70 @@
         btnResetCustomTape.addEventListener('click', resetTopicCustomContent);
       }
 
+      function handleFloatingMaskBtnAction(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
+          targetTapesToDelete.forEach(t => removeTape(t));
+          hideFloatingMaskBtn();
+          try { window.getSelection()?.removeAllRanges(); } catch (err) {}
+          lastValidSelectionRange = null;
+          lastValidSelectionText = '';
+        } else {
+          addTapeToCurrentSelection();
+        }
+      }
+
       if (floatingMaskBtn) {
         floatingMaskBtn.addEventListener('mousedown', (e) => {
           e.preventDefault(); // Don't lose current selection
         });
-        floatingMaskBtn.addEventListener('touchstart', (e) => {
-          e.preventDefault(); // Don't lose current selection on touch
+        floatingMaskBtn.addEventListener('touchend', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handleFloatingMaskBtnAction(e);
         }, { passive: false });
         floatingMaskBtn.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
-          if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
-            targetTapesToDelete.forEach(t => removeTape(t));
-            hideFloatingMaskBtn();
-            window.getSelection()?.removeAllRanges();
-          } else {
-            addTapeToCurrentSelection();
-          }
+          handleFloatingMaskBtnAction(e);
         });
       }
 
       // Drag and touch selection events on subnote container
       subnoteContainer.addEventListener('mouseup', () => {
+        updateCachedSelection();
         setTimeout(checkTextSelection, 10);
       });
       subnoteContainer.addEventListener('touchend', () => {
+        updateCachedSelection();
         setTimeout(checkTextSelection, 40);
+        setTimeout(checkTextSelection, 160);
       });
       subnoteContainer.addEventListener('keyup', () => {
+        updateCachedSelection();
         setTimeout(checkTextSelection, 10);
       });
       document.addEventListener('selectionchange', () => {
+        updateCachedSelection();
         const sel = window.getSelection();
-        if (sel && !sel.isCollapsed && subnoteContainer.contains(sel.anchorNode)) {
+        if (sel && !sel.isCollapsed) {
           setTimeout(checkTextSelection, 30);
         }
       });
       document.addEventListener('mousedown', (e) => {
-        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target)) {
+        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target) && (!btnApplyTapeInline || !btnApplyTapeInline.contains(e.target))) {
           hideFloatingMaskBtn();
         }
       });
       document.addEventListener('touchstart', (e) => {
-        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target)) {
-          hideFloatingMaskBtn();
+        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target) && (!btnApplyTapeInline || !btnApplyTapeInline.contains(e.target))) {
+          const sel = window.getSelection();
+          if (!sel || sel.isCollapsed) {
+            hideFloatingMaskBtn();
+          }
         }
       }, { passive: true });
       window.addEventListener('scroll', () => {
@@ -3595,20 +3677,28 @@
           return;
         }
 
-        // 8. [M] or [Cmd+M] or [Backspace] or [Delete] for Tapes
-        if (((e.key === 'm' || e.key === 'M') || e.code === 'Delete' || e.code === 'Backspace') && !e.altKey) {
-          const sel = window.getSelection();
-          if (sel && !sel.isCollapsed && sel.toString().trim()) {
-            if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
+        // 8. [M] or [Cmd+M] or [ㅡ] or [Backspace] or [Delete] for Tapes (Tablet & IME Multi-layout support)
+        const isMKey = (e.key === 'm' || e.key === 'M' || e.key === 'ㅡ' || e.code === 'KeyM' || e.keyCode === 77 || e.which === 77);
+        if ((isMKey || e.code === 'Delete' || e.code === 'Backspace') && !e.altKey) {
+          let sel = window.getSelection();
+          let hasSelection = (sel && !sel.isCollapsed && sel.toString().trim().length > 0);
+          if (!hasSelection && lastValidSelectionRange && lastValidSelectionText) {
+            hasSelection = true;
+          }
+
+          if (hasSelection) {
+            if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0 && (e.code === 'Delete' || e.code === 'Backspace')) {
               e.preventDefault();
               targetTapesToDelete.forEach(t => removeTape(t));
               hideFloatingMaskBtn();
-              sel.removeAllRanges();
-            } else if (e.key === 'm' || e.key === 'M') {
+              try { sel?.removeAllRanges(); } catch (err) {}
+              lastValidSelectionRange = null;
+              lastValidSelectionText = '';
+            } else if (isMKey) {
               e.preventDefault();
               addTapeToCurrentSelection();
             }
-          } else if (e.key === 'm' || e.key === 'M') {
+          } else if (isMKey) {
             showToast('본문 글자를 드래그한 후 [M]을 누르면 테이프가 붙고, 우클릭 시 삭제됩니다', 'info');
           }
           return;
