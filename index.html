@@ -4,6 +4,19 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>일반사회 단권화 서브노트 - 시험 대비</title>
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('edurecall_theme');
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/png" href="assets/edu_cover_1x1.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
@@ -527,6 +540,470 @@
       word-break: keep-all !important;
       overflow-wrap: break-word !important;
     }
+
+    /* =========================================================
+       DARK MODE HIGH-CONTRAST OVERRIDES
+       - High contrast, eye-comfort dark theme
+       - Does NOT modify topics-data.js (preserves data integrity)
+       ========================================================= */
+    html.dark {
+      color-scheme: dark;
+    }
+
+    html.dark body {
+      background-color: #0b0f19 !important;
+      color: #f1f5f9 !important;
+    }
+
+    html.dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+    html.dark ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    /* Fixed App Header */
+    html.dark header {
+      background-color: rgba(15, 23, 42, 0.95) !important;
+      border-color: #1e293b !important;
+    }
+    html.dark header .text-slate-900,
+    html.dark header .text-slate-800 {
+      color: #f8fafc !important;
+    }
+    html.dark header .text-slate-500,
+    html.dark header .text-slate-600 {
+      color: #94a3b8 !important;
+    }
+    html.dark header .subject-tab-btn:not(.active) {
+      color: #94a3b8 !important;
+    }
+    html.dark header .subject-tab-btn:not(.active):hover {
+      color: #f8fafc !important;
+      background-color: #1e293b !important;
+    }
+    html.dark #pomodoro-btn,
+    html.dark #theme-toggle-btn,
+    html.dark #btn-mobile-toc {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #pomodoro-btn:hover,
+    html.dark #theme-toggle-btn:hover,
+    html.dark #btn-mobile-toc:hover {
+      background-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+    html.dark header .bg-blue-50 {
+      background-color: rgba(30, 58, 138, 0.3) !important;
+      border-color: rgba(59, 130, 246, 0.3) !important;
+    }
+    html.dark #global-stat-text {
+      color: #93c5fd !important;
+    }
+
+    /* Sub-header (Fixed Top-16) */
+    html.dark .fixed.top-16 {
+      background-color: rgba(15, 23, 42, 0.92) !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #bc-container span {
+      color: #94a3b8 !important;
+    }
+    html.dark #bc-container #bc-subject {
+      color: #60a5fa !important;
+    }
+    html.dark #bc-container #bc-section {
+      background-color: rgba(79, 70, 229, 0.25) !important;
+      border-color: rgba(99, 102, 241, 0.35) !important;
+      color: #a5b4fc !important;
+    }
+    html.dark #btn-toggle-sidebar,
+    html.dark #btn-prev-topic,
+    html.dark #btn-next-topic,
+    html.dark #btn-toggle-essay-subhead,
+    html.dark #sc-btn-essay,
+    html.dark #sc-btn-grade {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #btn-toggle-sidebar:hover,
+    html.dark #btn-prev-topic:hover,
+    html.dark #btn-next-topic:hover,
+    html.dark #btn-toggle-essay-subhead:hover,
+    html.dark #sc-btn-essay:hover,
+    html.dark #sc-btn-grade:hover {
+      background-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+    html.dark #sc-btn-add {
+      background-color: rgba(101, 163, 13, 0.2) !important;
+      border-color: rgba(132, 204, 22, 0.4) !important;
+      color: #bef264 !important;
+    }
+    html.dark #sc-btn-del {
+      background-color: rgba(225, 29, 72, 0.2) !important;
+      border-color: rgba(244, 63, 94, 0.4) !important;
+      color: #fda4af !important;
+    }
+    html.dark #sc-btn-mode {
+      background-color: rgba(5, 150, 105, 0.2) !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      color: #6ee7b7 !important;
+    }
+    html.dark #sc-btn-reveal {
+      background-color: rgba(132, 204, 22, 0.25) !important;
+      border-color: rgba(163, 230, 53, 0.45) !important;
+      color: #d9f99d !important;
+    }
+    html.dark #sc-btn-theme {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #f1f5f9 !important;
+    }
+
+    /* Left Sidebar TOC Drawer */
+    html.dark #sidebar-drawer {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #sidebar-search {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+    html.dark #sidebar-search::placeholder {
+      color: #64748b !important;
+    }
+    html.dark .toc-topic-item {
+      color: #cbd5e1 !important;
+    }
+    html.dark .toc-topic-item:hover {
+      background-color: #1e293b !important;
+      color: #f8fafc !important;
+    }
+    html.dark .toc-topic-item.active {
+      background-color: rgba(37, 99, 235, 0.25) !important;
+      color: #60a5fa !important;
+      border-color: #3b82f6 !important;
+    }
+    html.dark .category-header,
+    html.dark .chapter-header {
+      color: #94a3b8 !important;
+    }
+    html.dark #sidebar-drawer .bg-slate-50,
+    html.dark #sidebar-drawer .bg-slate-100 {
+      background-color: #1e293b !important;
+    }
+    html.dark #sidebar-drawer .border-slate-200,
+    html.dark #sidebar-drawer .border-slate-100 {
+      border-color: #1e293b !important;
+    }
+
+    /* Main Subnote Topic Cards & Content Containers */
+    html.dark #main-content {
+      background-color: #0b0f19 !important;
+    }
+    html.dark #topic-header {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #topic-header h1 {
+      color: #f8fafc !important;
+    }
+    html.dark #subnote-content-container .topic-group {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    }
+    html.dark #subnote-content-container .topic-group-header {
+      background-color: #131d31 !important;
+      border-color: #1e293b !important;
+      color: #f8fafc !important;
+    }
+    html.dark #subnote-content-container .recall-item {
+      background-color: transparent !important;
+      border-color: #1e293b !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #subnote-content-container .recall-item strong,
+    html.dark #subnote-content-container .recall-item b {
+      color: #f8fafc !important;
+    }
+    html.dark #subnote-content-container .text-slate-900,
+    html.dark #subnote-content-container .text-slate-800,
+    html.dark #subnote-content-container .text-slate-700 {
+      color: #cbd5e1 !important;
+    }
+    html.dark #subnote-content-container .text-slate-600,
+    html.dark #subnote-content-container .text-slate-500 {
+      color: #94a3b8 !important;
+    }
+    html.dark #subnote-content-container .bg-slate-50,
+    html.dark #subnote-content-container .bg-slate-100,
+    html.dark #subnote-content-container .bg-gray-50,
+    html.dark #subnote-content-container .bg-white {
+      background-color: #131d31 !important;
+    }
+    html.dark #subnote-content-container .border-slate-100,
+    html.dark #subnote-content-container .border-slate-200,
+    html.dark #subnote-content-container .border-slate-300 {
+      border-color: #1e293b !important;
+    }
+
+    /* Highlight Boxes Scoped to Dark Palette */
+    html.dark #subnote-content-container .bg-blue-50,
+    html.dark #subnote-content-container .bg-blue-50\/80,
+    html.dark #subnote-content-container [class*="bg-blue-50"] {
+      background-color: rgba(30, 58, 138, 0.25) !important;
+      border-color: rgba(59, 130, 246, 0.35) !important;
+      color: #93c5fd !important;
+    }
+    html.dark #subnote-content-container .text-blue-900,
+    html.dark #subnote-content-container .text-blue-800,
+    html.dark #subnote-content-container .text-blue-700 {
+      color: #93c5fd !important;
+    }
+    html.dark #subnote-content-container .bg-amber-50,
+    html.dark #subnote-content-container .bg-amber-50\/80,
+    html.dark #subnote-content-container [class*="bg-amber-50"],
+    html.dark #subnote-content-container [class*="bg-yellow-50"] {
+      background-color: rgba(120, 53, 15, 0.25) !important;
+      border-color: rgba(245, 158, 11, 0.35) !important;
+      color: #fde68a !important;
+    }
+    html.dark #subnote-content-container .text-amber-900,
+    html.dark #subnote-content-container .text-amber-800,
+    html.dark #subnote-content-container .text-amber-700,
+    html.dark #subnote-content-container .text-yellow-900,
+    html.dark #subnote-content-container .text-yellow-800 {
+      color: #fde68a !important;
+    }
+    html.dark #subnote-content-container .bg-emerald-50,
+    html.dark #subnote-content-container [class*="bg-emerald-50"],
+    html.dark #subnote-content-container [class*="bg-green-50"] {
+      background-color: rgba(6, 78, 59, 0.25) !important;
+      border-color: rgba(16, 185, 129, 0.35) !important;
+      color: #a7f3d0 !important;
+    }
+    html.dark #subnote-content-container .text-emerald-900,
+    html.dark #subnote-content-container .text-emerald-800,
+    html.dark #subnote-content-container .text-green-900 {
+      color: #a7f3d0 !important;
+    }
+    html.dark #subnote-content-container .bg-rose-50,
+    html.dark #subnote-content-container [class*="bg-rose-50"],
+    html.dark #subnote-content-container [class*="bg-red-50"] {
+      background-color: rgba(136, 19, 55, 0.25) !important;
+      border-color: rgba(244, 63, 94, 0.35) !important;
+      color: #fecdd3 !important;
+    }
+    html.dark #subnote-content-container .text-rose-900,
+    html.dark #subnote-content-container .text-rose-800,
+    html.dark #subnote-content-container .text-red-900 {
+      color: #fecdd3 !important;
+    }
+    html.dark #subnote-content-container .bg-purple-50,
+    html.dark #subnote-content-container .bg-indigo-50,
+    html.dark #subnote-content-container [class*="bg-indigo-50"] {
+      background-color: rgba(76, 29, 149, 0.25) !important;
+      border-color: rgba(139, 92, 246, 0.35) !important;
+      color: #ddd6fe !important;
+    }
+    html.dark #subnote-content-container .text-purple-900,
+    html.dark #subnote-content-container .text-purple-800,
+    html.dark #subnote-content-container .text-indigo-900,
+    html.dark #subnote-content-container .text-indigo-800 {
+      color: #ddd6fe !important;
+    }
+
+    /* Subnote Tables */
+    html.dark #subnote-content-container table {
+      border-color: #1e293b !important;
+    }
+    html.dark #subnote-content-container th {
+      background-color: #172554 !important;
+      color: #f1f5f9 !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #subnote-content-container td {
+      background-color: #0f172a !important;
+      color: #cbd5e1 !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #subnote-content-container tr:hover td {
+      background-color: #131d31 !important;
+    }
+
+    /* Masking Tapes in Dark Mode */
+    html.dark .mask-tape.is-taped {
+      background: linear-gradient(180deg, #1e3a1e 0%, #142814 100%) !important;
+      color: transparent !important;
+      border-top: 1px solid #2d5a2d !important;
+      border-bottom: 2px solid #65a30d !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    }
+    html.dark .mask-tape.is-taped:hover {
+      background: linear-gradient(180deg, #274b27 0%, #1a361a 100%) !important;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6) !important;
+    }
+    html.dark .mask-tape.is-peeled {
+      background-color: rgba(132, 204, 22, 0.15) !important;
+      color: #bef264 !important;
+      border-bottom: 1.5px solid #65a30d !important;
+      text-decoration-color: #84cc16 !important;
+    }
+    html.dark .mask-tape.is-peeled:hover {
+      background-color: rgba(132, 204, 22, 0.25) !important;
+    }
+    html.dark .tape-typing-input {
+      background-color: #0b0f19 !important;
+      border: 2px solid #65a30d !important;
+      color: #bef264 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    }
+    html.dark .tape-typing-input:focus {
+      background-color: #131d31 !important;
+      border-color: #60a5fa !important;
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25) !important;
+    }
+    html.dark .tape-typing-input::placeholder {
+      color: #84cc16 !important;
+      opacity: 0.7 !important;
+    }
+    html.dark .tape-typing-input.is-correct {
+      border-color: #10b981 !important;
+      background-color: rgba(16, 185, 129, 0.2) !important;
+      color: #6ee7b7 !important;
+    }
+    html.dark .tape-typing-input.is-wrong {
+      border-color: #f43f5e !important;
+      background-color: rgba(244, 63, 94, 0.2) !important;
+      color: #fda4af !important;
+    }
+
+    /* Sticky Floating Toolbar */
+    html.dark #subnote-toolbar-sticky {
+      background-color: rgba(15, 23, 42, 0.94) !important;
+      border-color: #1e293b !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+    }
+    html.dark #subnote-toolbar-sticky .mode-pill:not(.active) {
+      color: #94a3b8 !important;
+    }
+    html.dark #subnote-toolbar-sticky .mode-pill:not(.active):hover {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark #btn-toggle-essay-pad,
+    html.dark #btn-open-explanation {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #btn-toggle-essay-pad:hover,
+    html.dark #btn-open-explanation:hover {
+      background-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+
+    /* Right Aside: Essay Pad & FAP Self-Grading */
+    html.dark #essay-pad-aside {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #essay-input {
+      background-color: #131d31 !important;
+      border-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+    html.dark #essay-input::placeholder {
+      color: #64748b !important;
+    }
+    html.dark #model-answer-container {
+      background-color: #131d31 !important;
+      border-color: #1e293b !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #essay-pad-aside .bg-slate-50,
+    html.dark #essay-pad-aside .bg-slate-100 {
+      background-color: #1e293b !important;
+    }
+    html.dark #essay-pad-aside .border-slate-200,
+    html.dark #essay-pad-aside .border-slate-100 {
+      border-color: #1e293b !important;
+    }
+
+    /* Supplementary Explanation Drawer */
+    html.dark #explanation-sheet {
+      background-color: #0f172a !important;
+      border-color: #1e293b !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark #explanation-sheet .bg-white {
+      background-color: #131d31 !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #explanation-sheet .bg-slate-50,
+    html.dark #explanation-sheet .bg-slate-50\/80 {
+      background-color: #131d31 !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #explanation-sheet .text-slate-900,
+    html.dark #explanation-sheet .text-slate-800 {
+      color: #f8fafc !important;
+    }
+    html.dark #explanation-sheet .text-slate-600,
+    html.dark #explanation-sheet .text-slate-700 {
+      color: #cbd5e1 !important;
+    }
+    html.dark #explanation-sheet .bg-amber-50\/90 {
+      background-color: rgba(120, 53, 15, 0.3) !important;
+      border-color: rgba(245, 158, 11, 0.35) !important;
+      color: #fde68a !important;
+    }
+    html.dark #user-memo-input {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+    html.dark #user-memo-input::placeholder {
+      color: #64748b !important;
+    }
+    html.dark #btn-close-explanation-bottom {
+      background-color: #1e293b !important;
+      border: 1px solid #334155 !important;
+      color: #f8fafc !important;
+    }
+    html.dark #btn-close-explanation-bottom:hover {
+      background-color: #334155 !important;
+    }
+
+    /* Mobile Bottom Navigation Bar */
+    html.dark #mobile-bottom-bar {
+      background-color: rgba(15, 23, 42, 0.96) !important;
+      border-color: #1e293b !important;
+    }
+    html.dark #mobile-bottom-bar button {
+      color: #94a3b8 !important;
+    }
+    html.dark #mobile-bottom-bar button:hover {
+      color: #60a5fa !important;
+    }
+    html.dark #mobile-nav-reveal {
+      color: #a3e635 !important;
+    }
+    html.dark #mobile-nav-reveal:hover {
+      color: #bef264 !important;
+    }
+    html.dark #mobile-nav-explanation {
+      color: #818cf8 !important;
+    }
+    html.dark #mobile-nav-explanation:hover {
+      color: #a5b4fc !important;
+    }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
@@ -601,6 +1078,13 @@
 
     <!-- Top Tools (Pomodoro, Global Stats, Mobile Menu) -->
     <div class="flex items-center gap-2 lg:gap-3">
+      <!-- Theme Toggle Button (Light/Dark Mode) -->
+      <button id="theme-toggle-btn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" title="테마 전환: 다크모드 / 라이트모드 [단축키: D]" aria-label="다크모드 전환">
+        <span class="material-symbols-outlined text-[17px] text-amber-500 block dark:hidden" id="theme-icon-light">dark_mode</span>
+        <span class="material-symbols-outlined text-[17px] text-amber-400 hidden dark:block" id="theme-icon-dark">light_mode</span>
+        <span class="hidden sm:inline text-[11px] font-medium" id="theme-text">다크</span>
+      </button>
+
       <!-- Mobile TOC Button (visible only on mobile/tablet < lg) -->
       <button id="btn-mobile-toc" class="lg:hidden flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-800 transition-all active:scale-95 shadow-2xs" type="button" aria-label="목차 열기">
         <span class="material-symbols-outlined text-[18px] text-blue-600">menu</span>
@@ -664,6 +1148,9 @@
         </button>
         <button id="sc-btn-grade" class="px-1.5 py-0.5 bg-white border border-slate-200 rounded font-mono text-slate-700 cursor-pointer hover:bg-slate-100 transition-all active:scale-95 flex items-center gap-1" title="자가채점: P(완벽인출), A(세모), F(오답) (단축키: P / A / F 또는 ⌘P / ⌘A / ⌘F)" type="button">
           <span id="label-sc-grade">[F/A/P] 자가채점</span>
+        </button>
+        <button id="sc-btn-theme" class="px-1.5 py-0.5 bg-slate-100 text-slate-800 border border-slate-300 rounded font-semibold cursor-pointer hover:bg-slate-200 transition-all active:scale-95 flex items-center gap-1" title="다크모드 / 라이트모드 전환 [단축키: D]" type="button">
+          <span id="label-sc-theme">[D] 테마</span>
         </button>
       </div>
       <div class="flex items-center gap-1">
@@ -1384,6 +1871,51 @@
       const pomodoroBtn = document.getElementById('pomodoro-btn');
       const pomodoroDisplay = document.getElementById('pomodoro-display');
       const pomodoroIcon = document.getElementById('pomodoro-icon');
+
+      // Theme Control (Dark / Light Mode)
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
+      const scBtnTheme = document.getElementById('sc-btn-theme');
+      const themeText = document.getElementById('theme-text');
+
+      function isDarkMode() {
+        return document.documentElement.classList.contains('dark');
+      }
+
+      function updateThemeUI(isDark) {
+        if (themeText) {
+          themeText.textContent = isDark ? '라이트' : '다크';
+        }
+        if (themeToggleBtn) {
+          themeToggleBtn.title = isDark ? '라이트 모드로 전환 [단축키: D]' : '다크 모드로 전환 [단축키: D]';
+        }
+        if (scBtnTheme) {
+          scBtnTheme.title = isDark ? '라이트 모드로 전환 [단축키: D]' : '다크 모드로 전환 [단축키: D]';
+        }
+      }
+
+      function applyTheme(isDark, notify = true) {
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+          try { localStorage.setItem('edurecall_theme', 'dark'); } catch (e) {}
+          if (notify) showToast('다크 모드 적용 [단축키: D]', 'dark_mode');
+        } else {
+          document.documentElement.classList.remove('dark');
+          try { localStorage.setItem('edurecall_theme', 'light'); } catch (e) {}
+          if (notify) showToast('라이트 모드 적용 [단축키: D]', 'light_mode');
+        }
+        updateThemeUI(isDark);
+      }
+
+      function toggleTheme() {
+        applyTheme(!isDarkMode(), true);
+      }
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+      }
+      if (scBtnTheme) {
+        scBtnTheme.addEventListener('click', toggleTheme);
+      }
 
       
       // Font Scale Controller
@@ -3806,6 +4338,14 @@
           return;
         }
 
+        // 8-1. [D] or [d] or [ㅇ] Toggle Dark/Light Theme Mode
+        const isDKey = (e.key === 'd' || e.key === 'D' || e.key === 'ㅇ' || e.code === 'KeyD' || e.keyCode === 68 || e.which === 68);
+        if (isDKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          toggleTheme();
+          return;
+        }
+
         // 8. [M] or [Cmd+M] or [ㅡ] or [Backspace] or [Delete] for Tapes (Tablet & IME Multi-layout support)
         const isMKey = (e.key === 'm' || e.key === 'M' || e.key === 'ㅡ' || e.code === 'KeyM' || e.keyCode === 77 || e.which === 77);
         if (isMKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
@@ -4078,6 +4618,15 @@
       updateSubjectCountBadges();
       updateOverallStats();
       setSubjectTab(activeSubject, false);
+      updateThemeUI(isDarkMode());
+
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('edurecall_theme')) {
+            applyTheme(e.matches, false);
+          }
+        });
+      }
 
       try {
         const savedCollapsed = localStorage.getItem('edurecall_sidebar_collapsed');
