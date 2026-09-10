@@ -553,8 +553,7 @@
   </script>
   <!-- Core Topic Data (Loaded first) -->
   <script src="topics-data.js?v=20260910_1732"></script>
-  <script src="exam-data.js?v=20260910_1700"></script>
-  <script src="explanations-data.js?v=20260910_1733"></script>
+  <script src="explanations-data.js?v=20260910_1800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -827,10 +826,10 @@
           </div>
 
           <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap justify-between w-full sm:w-auto">
-            <!-- Add Tape & Delete guide button (Interactive on Tablet & Desktop) -->
-            <button id="btn-apply-tape-inline" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 text-xs font-bold select-none shadow-2xs whitespace-nowrap shrink-0 cursor-pointer active:scale-95 transition-all" title="본문 글자 드래그 후 누르면 마스킹 테이프가 생성됩니다 (단축키: M / ⌘M)">
-              <span class="material-symbols-outlined text-[15px] text-lime-800">draw</span>
-              <span>드래그 <b>[M]</b> 추가 / <b>우클릭</b> 삭제</span>
+            <!-- Add Tape Button (Interactive on Tablet, Mobile & Desktop) -->
+            <button id="btn-apply-tape-inline" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 text-xs font-bold select-none shadow-2xs whitespace-nowrap shrink-0 cursor-pointer active:scale-95 transition-all" title="본문 글자 드래그/선택 후 누르면 마스킹 테이프가 생성됩니다 (단축키: M 또는 ㅡ)">
+              <span class="material-symbols-outlined text-[15px] text-lime-800">label</span>
+              <span>테이프 붙이기 <b>[M]</b></span>
             </button>
 
             <!-- Font Scale Controller -->
@@ -1098,11 +1097,6 @@
     </div>
   </div>
 
-  <!-- FLOATING MASKING TAPE ACTION BUTTON (Drag to Mask) -->
-  <button id="floating-mask-btn" class="fixed z-50 hidden bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none" type="button" title="선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]">
-    <span class="material-symbols-outlined text-[15px]">label</span>
-    <span>테이프 붙이기 [M]</span>
-  </button>
 
   <!-- TOAST NOTIFICATION -->
   <div id="toast" class="fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
@@ -1337,7 +1331,6 @@
       const topicBadgeTape = document.getElementById('topic-badge-tape');
       const topicTapeCount = document.getElementById('topic-tape-count');
       const btnResetCustomTape = document.getElementById('btn-reset-custom-tape');
-      const floatingMaskBtn = document.getElementById('floating-mask-btn');
       const topicPageRef = document.getElementById('topic-page-ref');
       const topicTitle = document.getElementById('topic-title');
       const topicKeywordsTags = document.getElementById('topic-keywords-tags');
@@ -2135,13 +2128,39 @@
 
       // Authentic Masking Tape Functions
       function bindSingleTape(tape) {
-        tape.title = '클릭: 떼기/가리기 | 마우스 우클릭 또는 Option/Cmd+클릭: 테이프 삭제';
+        tape.title = '클릭: 떼기/가리기 | 길게 누르기 또는 마우스 우클릭: 테이프 삭제';
 
-        // Right-Click (contextmenu): instant delete (Mac trackpad two-finger tap or Ctrl+click)
+        // Right-Click (contextmenu): instant delete (Mac trackpad two-finger tap or Ctrl+click or long-press on mobile)
         tape.addEventListener('contextmenu', (e) => {
           e.preventDefault();
           e.stopPropagation();
           removeTape(tape);
+        });
+
+        // Touch long-press support for tablet & mobile
+        let touchTimer = null;
+        let isLongPress = false;
+        tape.addEventListener('touchstart', (e) => {
+          isLongPress = false;
+          touchTimer = setTimeout(() => {
+            isLongPress = true;
+            removeTape(tape);
+          }, 500);
+        }, { passive: true });
+        tape.addEventListener('touchmove', () => {
+          if (touchTimer) {
+            clearTimeout(touchTimer);
+            touchTimer = null;
+          }
+        }, { passive: true });
+        tape.addEventListener('touchend', () => {
+          if (touchTimer) {
+            clearTimeout(touchTimer);
+            touchTimer = null;
+          }
+          if (isLongPress) {
+            e.preventDefault();
+          }
         });
 
         // Prevent unwanted text drag/selection on Mac when modifier is held
@@ -2154,6 +2173,10 @@
         // Left-Click: toggle (or delete if modifier held)
         tape.addEventListener('click', (e) => {
           e.stopPropagation();
+          if (isLongPress) {
+            isLongPress = false;
+            return;
+          }
           if (tape.classList.contains('is-typing-mode')) {
             return; // let typing input handle its own events
           }
@@ -2411,82 +2434,9 @@
         showToast(`'${previewText}' 마스킹 완료 [M]`, 'label');
       }
 
-      let currentFloatingMode = 'add'; // 'add' or 'delete'
-      let targetTapesToDelete = [];
-
+      // Floating button removed: masking is cleanly invoked via top toolbar button [M] or keyboard [M] / [ㅡ]
       function hideFloatingMaskBtn() {
-        if (floatingMaskBtn) floatingMaskBtn.classList.add('hidden');
-        targetTapesToDelete = [];
-      }
-
-      function checkTextSelection() {
-        let sel = window.getSelection();
-        let range = (sel && !sel.isCollapsed && sel.rangeCount > 0) ? sel.getRangeAt(0) : null;
-        let text = (sel && !sel.isCollapsed) ? sel.toString().trim() : '';
-
-        if (!range || !text) {
-          if (lastValidSelectionRange && lastValidSelectionText) {
-            range = lastValidSelectionRange;
-            text = lastValidSelectionText;
-          } else {
-            hideFloatingMaskBtn();
-            return;
-          }
-        }
-
-        const commonNode = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
-          ? range.commonAncestorContainer
-          : range.commonAncestorContainer.parentElement;
-        if (!commonNode || !subnoteContainer.contains(commonNode)) {
-          hideFloatingMaskBtn();
-          return;
-        }
-
-        const rect = range.getBoundingClientRect();
-        if (rect.width === 0 && rect.height === 0) {
-          hideFloatingMaskBtn();
-          return;
-        }
-
-        const parentTape = commonNode.closest('.mask-tape');
-
-        if (parentTape) {
-          currentFloatingMode = 'delete';
-          targetTapesToDelete = [parentTape];
-          floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
-          floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 [M/Del]</span>';
-          floatingMaskBtn.title = '이 마스킹 테이프를 완전히 삭제합니다 [단축키: M 또는 Delete]';
-        } else {
-          // Check if selection intersects any tapes
-          const containedTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape')).filter(t => range.intersectsNode(t));
-          if (containedTapes.length > 0) {
-            currentFloatingMode = 'delete';
-            targetTapesToDelete = containedTapes;
-            floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
-            floatingMaskBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 (${containedTapes.length}개) [M/Del]</span>`;
-            floatingMaskBtn.title = '선택 영역 내 마스킹 테이프들을 삭제합니다';
-          } else {
-            currentFloatingMode = 'add';
-            targetTapesToDelete = [];
-            floatingMaskBtn.className = 'fixed z-50 bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
-            floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">label</span><span>테이프 붙이기 [M]</span>';
-            floatingMaskBtn.title = '선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]';
-          }
-        }
-
-        if (floatingMaskBtn) {
-          const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-          let btnTop;
-          if (isTouch) {
-            // Position below selection on touch devices to avoid collision with iOS/Android native callout
-            btnTop = (rect.bottom + 14 < window.innerHeight - 60) ? (rect.bottom + 14) : Math.max(16, rect.top - 42);
-          } else {
-            btnTop = rect.top > 80 ? (rect.top - 8) : (rect.bottom + 12);
-          }
-          floatingMaskBtn.style.top = `${btnTop}px`;
-          floatingMaskBtn.style.left = `${Math.min(window.innerWidth - 80, Math.max(80, rect.left + (rect.width / 2)))}px`;
-          floatingMaskBtn.classList.remove('hidden');
-        }
+        // No-op
       }
 
       // 6. Mode Switcher (Tape, Type, Study, Blur, Cloze)
@@ -3034,80 +2984,28 @@
         btnResetCustomTape.addEventListener('click', resetTopicCustomContent);
       }
 
-      function handleFloatingMaskBtnAction(e) {
-        if (e) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-        if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
-          targetTapesToDelete.forEach(t => removeTape(t));
-          hideFloatingMaskBtn();
-          try { window.getSelection()?.removeAllRanges(); } catch (err) {}
-          lastValidSelectionRange = null;
-          lastValidSelectionText = '';
-        } else {
-          addTapeToCurrentSelection();
-        }
-      }
-
-      if (floatingMaskBtn) {
-        floatingMaskBtn.addEventListener('mousedown', (e) => {
-          e.preventDefault(); // Don't lose current selection
-        });
-        floatingMaskBtn.addEventListener('touchend', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          handleFloatingMaskBtnAction(e);
-        }, { passive: false });
-        floatingMaskBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          handleFloatingMaskBtnAction(e);
-        });
-      }
-
-      // Drag and touch selection events on subnote container
+      // Selection persistence for top toolbar action button [M] & shortcuts
       subnoteContainer.addEventListener('mouseup', () => {
         updateCachedSelection();
-        setTimeout(checkTextSelection, 10);
       });
       subnoteContainer.addEventListener('touchend', () => {
         updateCachedSelection();
-        setTimeout(checkTextSelection, 40);
-        setTimeout(checkTextSelection, 160);
       });
       subnoteContainer.addEventListener('keyup', () => {
         updateCachedSelection();
-        setTimeout(checkTextSelection, 10);
       });
       document.addEventListener('selectionchange', () => {
         updateCachedSelection();
-        const sel = window.getSelection();
-        if (sel && !sel.isCollapsed) {
-          setTimeout(checkTextSelection, 30);
-        }
       });
-      document.addEventListener('mousedown', (e) => {
-        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target) && (!btnApplyTapeInline || !btnApplyTapeInline.contains(e.target))) {
-          hideFloatingMaskBtn();
-        }
-      });
-      document.addEventListener('touchstart', (e) => {
-        if (floatingMaskBtn && !floatingMaskBtn.contains(e.target) && (!btnApplyTapeInline || !btnApplyTapeInline.contains(e.target))) {
+      document.addEventListener('pointerdown', (e) => {
+        if (!subnoteContainer.contains(e.target) && (!btnApplyTapeInline || !btnApplyTapeInline.contains(e.target))) {
           const sel = window.getSelection();
           if (!sel || sel.isCollapsed) {
-            hideFloatingMaskBtn();
+            lastValidSelectionRange = null;
+            lastValidSelectionText = '';
           }
         }
-      }, { passive: true });
-      window.addEventListener('scroll', () => {
-        const sel = window.getSelection();
-        if (!sel || sel.isCollapsed) {
-          hideFloatingMaskBtn();
-        } else {
-          checkTextSelection();
-        }
-      }, { passive: true });
+      });
 
       if (btnRevealAll) {
         btnRevealAll.addEventListener('click', () => toggleMasterReveal());
@@ -3750,28 +3648,36 @@
 
         // 8. [M] or [Cmd+M] or [ㅡ] or [Backspace] or [Delete] for Tapes (Tablet & IME Multi-layout support)
         const isMKey = (e.key === 'm' || e.key === 'M' || e.key === 'ㅡ' || e.code === 'KeyM' || e.keyCode === 77 || e.which === 77);
-        if ((isMKey || e.code === 'Delete' || e.code === 'Backspace') && !e.altKey) {
+        if (isMKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
           let sel = window.getSelection();
           let hasSelection = (sel && !sel.isCollapsed && sel.toString().trim().length > 0);
           if (!hasSelection && lastValidSelectionRange && lastValidSelectionText) {
             hasSelection = true;
           }
-
           if (hasSelection) {
-            if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0 && (e.code === 'Delete' || e.code === 'Backspace')) {
+            e.preventDefault();
+            addTapeToCurrentSelection(false);
+          }
+          return;
+        }
+
+        if ((e.code === 'Delete' || e.code === 'Backspace') && !e.altKey && !e.ctrlKey && !e.metaKey) {
+          let sel = window.getSelection();
+          let range = (sel && !sel.isCollapsed && sel.rangeCount > 0) ? sel.getRangeAt(0) : (lastValidSelectionRange || null);
+          if (range) {
+            const allTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape'));
+            const intersectingTapes = allTapes.filter(t => {
+              try { return range.intersectsNode(t); } catch(err) { return false; }
+            });
+            if (intersectingTapes.length > 0) {
               e.preventDefault();
-              targetTapesToDelete.forEach(t => removeTape(t));
-              hideFloatingMaskBtn();
+              intersectingTapes.forEach(t => removeTape(t));
               try { sel?.removeAllRanges(); } catch (err) {}
               lastValidSelectionRange = null;
               lastValidSelectionText = '';
-            } else if (isMKey) {
-              e.preventDefault();
-              addTapeToCurrentSelection(false);
+              return;
             }
           }
-          // Silent when no selection: never pop up unnecessary toasts
-          return;
         }
 
         // 9. Topic Navigation: Left / Right Arrow keys / Cmd+, / Cmd+.
