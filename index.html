@@ -553,7 +553,7 @@
   </script>
   <!-- Core Topic Data (Loaded first) -->
   <script src="topics-data.js?v=20260910_1732"></script>
-  <script src="explanations-data.js?v=20260910_1800"></script>
+  <script src="explanations-data.js?v=20260910_1802"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1097,6 +1097,11 @@
     </div>
   </div>
 
+  <!-- FLOATING MASKING TAPE ACTION BUTTON (Shows dynamically on text drag) -->
+  <button id="floating-mask-btn" class="fixed z-50 hidden bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none pointer-events-auto" type="button" title="선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]">
+    <span class="material-symbols-outlined text-[15px]">label</span>
+    <span>테이프 붙이기 [M]</span>
+  </button>
 
   <!-- TOAST NOTIFICATION -->
   <div id="toast" class="fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
@@ -1331,6 +1336,7 @@
       const topicBadgeTape = document.getElementById('topic-badge-tape');
       const topicTapeCount = document.getElementById('topic-tape-count');
       const btnResetCustomTape = document.getElementById('btn-reset-custom-tape');
+      const floatingMaskBtn = document.getElementById('floating-mask-btn');
       const topicPageRef = document.getElementById('topic-page-ref');
       const topicTitle = document.getElementById('topic-title');
       const topicKeywordsTags = document.getElementById('topic-keywords-tags');
@@ -2434,9 +2440,101 @@
         showToast(`'${previewText}' 마스킹 완료 [M]`, 'label');
       }
 
-      // Floating button removed: masking is cleanly invoked via top toolbar button [M] or keyboard [M] / [ㅡ]
+      let currentFloatingMode = 'add'; // 'add' or 'delete'
+      let targetTapesToDelete = [];
+
       function hideFloatingMaskBtn() {
-        // No-op
+        if (floatingMaskBtn) {
+          floatingMaskBtn.classList.add('hidden');
+        }
+        currentFloatingMode = 'add';
+        targetTapesToDelete = [];
+      }
+
+      function checkTextSelection() {
+        if (!floatingMaskBtn || !subnoteContainer) return;
+
+        const sel = window.getSelection();
+        // Strictly require an ACTIVE, non-collapsed selection
+        if (!sel || sel.isCollapsed || sel.rangeCount === 0) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        const selectedText = sel.toString().trim();
+        if (!selectedText || selectedText.length === 0) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        let range;
+        try {
+          range = sel.getRangeAt(0);
+        } catch (e) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        if (!range) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        const commonNode = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+          ? range.commonAncestorContainer
+          : range.commonAncestorContainer.parentElement;
+
+        if (!commonNode || !subnoteContainer.contains(commonNode)) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        const rect = range.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) {
+          hideFloatingMaskBtn();
+          return;
+        }
+
+        const parentTape = commonNode.closest('.mask-tape');
+
+        if (parentTape) {
+          currentFloatingMode = 'delete';
+          targetTapesToDelete = [parentTape];
+          floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+          floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 [M/Del]</span>';
+          floatingMaskBtn.title = '이 마스킹 테이프를 완전히 삭제합니다 [단축키: M 또는 Delete]';
+        } else {
+          const allTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape'));
+          const containedTapes = allTapes.filter(t => {
+            try { return range.intersectsNode(t); } catch (e) { return false; }
+          });
+
+          if (containedTapes.length > 0) {
+            currentFloatingMode = 'delete';
+            targetTapesToDelete = containedTapes;
+            floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+            floatingMaskBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 (${containedTapes.length}개) [M/Del]</span>`;
+            floatingMaskBtn.title = '선택 영역 내 마스킹 테이프들을 삭제합니다';
+          } else {
+            currentFloatingMode = 'add';
+            targetTapesToDelete = [];
+            floatingMaskBtn.className = 'fixed z-50 bg-lime-600 hover:bg-lime-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-lime-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+            floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">label</span><span>테이프 붙이기 [M]</span>';
+            floatingMaskBtn.title = '선택한 글자에 연두색 마스킹 테이프 붙이기 [단축키 M]';
+          }
+        }
+
+        const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        let btnTop;
+        if (isTouch) {
+          btnTop = (rect.bottom + 14 < window.innerHeight - 60) ? (rect.bottom + 14) : Math.max(16, rect.top - 42);
+        } else {
+          btnTop = rect.top > 80 ? (rect.top - 8) : (rect.bottom + 12);
+        }
+
+        floatingMaskBtn.style.top = `${btnTop}px`;
+        floatingMaskBtn.style.left = `${Math.min(window.innerWidth - 80, Math.max(80, rect.left + (rect.width / 2)))}px`;
+        floatingMaskBtn.classList.remove('hidden');
       }
 
       // 6. Mode Switcher (Tape, Type, Study, Blur, Cloze)
@@ -2984,28 +3082,78 @@
         btnResetCustomTape.addEventListener('click', resetTopicCustomContent);
       }
 
-      // Selection persistence for top toolbar action button [M] & shortcuts
+      function handleFloatingMaskBtnAction(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
+          targetTapesToDelete.forEach(t => removeTape(t));
+          try { window.getSelection()?.removeAllRanges(); } catch (err) {}
+          lastValidSelectionRange = null;
+          lastValidSelectionText = '';
+        } else {
+          addTapeToCurrentSelection(true);
+        }
+        hideFloatingMaskBtn();
+      }
+
+      if (floatingMaskBtn) {
+        floatingMaskBtn.addEventListener('mousedown', (e) => {
+          e.preventDefault(); // Keep selection
+        });
+        floatingMaskBtn.addEventListener('touchend', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handleFloatingMaskBtnAction(e);
+        }, { passive: false });
+        floatingMaskBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handleFloatingMaskBtnAction(e);
+        });
+      }
+
+      // Selection listeners: Show floating button on drag, hide immediately when collapsed
       subnoteContainer.addEventListener('mouseup', () => {
         updateCachedSelection();
+        setTimeout(checkTextSelection, 10);
       });
       subnoteContainer.addEventListener('touchend', () => {
         updateCachedSelection();
+        setTimeout(checkTextSelection, 40);
       });
       subnoteContainer.addEventListener('keyup', () => {
         updateCachedSelection();
+        setTimeout(checkTextSelection, 10);
       });
       document.addEventListener('selectionchange', () => {
         updateCachedSelection();
-      });
-      document.addEventListener('pointerdown', (e) => {
-        if (!subnoteContainer.contains(e.target) && (!btnApplyTapeInline || !btnApplyTapeInline.contains(e.target))) {
-          const sel = window.getSelection();
-          if (!sel || sel.isCollapsed) {
-            lastValidSelectionRange = null;
-            lastValidSelectionText = '';
-          }
+        const sel = window.getSelection();
+        if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) {
+          checkTextSelection();
+        } else {
+          hideFloatingMaskBtn();
         }
       });
+      document.addEventListener('pointerdown', (e) => {
+        if (floatingMaskBtn && floatingMaskBtn.contains(e.target)) return;
+        if (btnApplyTapeInline && btnApplyTapeInline.contains(e.target)) return;
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed) {
+          hideFloatingMaskBtn();
+          lastValidSelectionRange = null;
+          lastValidSelectionText = '';
+        }
+      });
+      window.addEventListener('scroll', () => {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || !sel.toString().trim()) {
+          hideFloatingMaskBtn();
+        } else {
+          checkTextSelection();
+        }
+      }, { passive: true });
 
       if (btnRevealAll) {
         btnRevealAll.addEventListener('click', () => toggleMasterReveal());
@@ -3675,6 +3823,7 @@
               try { sel?.removeAllRanges(); } catch (err) {}
               lastValidSelectionRange = null;
               lastValidSelectionText = '';
+              hideFloatingMaskBtn();
               return;
             }
           }
