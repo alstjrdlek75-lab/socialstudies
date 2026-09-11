@@ -538,9 +538,11 @@
     @media (min-width: 1024px) and (max-width: 1280px) {
       #sidebar-drawer {
         width: 16.5rem !important;
+        bottom: 3.5rem !important;
       }
       #main-content-wrapper {
         padding-left: 16.5rem !important;
+        padding-bottom: 4.5rem !important;
       }
       body.sidebar-collapsed #main-content-wrapper {
         padding-left: 0 !important;
@@ -548,6 +550,21 @@
       #main-content-grid {
         padding: 1rem !important;
         gap: 1rem !important;
+      }
+      #mobile-bottom-bar {
+        display: flex !important;
+      }
+    }
+    /* Touch devices and tablets up to 1400px (iPad Pro, etc.) */
+    @media (hover: none) and (pointer: coarse) and (max-width: 1400px) {
+      #mobile-bottom-bar {
+        display: flex !important;
+      }
+      #main-content-wrapper {
+        padding-bottom: 4.5rem !important;
+      }
+      #sidebar-drawer {
+        bottom: 3.5rem !important;
       }
     }
     .subject-tab-btn {
@@ -1417,7 +1434,7 @@
   </aside>
 
   <!-- MAIN AREA CONTAINER -->
-  <div id="main-content-wrapper" class="lg:pl-sidebar-width flex-1 flex flex-col transition-all duration-300 ease-in-out pb-20 lg:pb-0 pt-[5.75rem] sm:pt-[6.5rem]">
+  <div id="main-content-wrapper" class="lg:pl-sidebar-width flex-1 flex flex-col transition-all duration-300 ease-in-out pb-20 xl:pb-0 pt-[5.75rem] sm:pt-[6.5rem]">
     <main id="main-content-grid" class="w-full max-w-[1600px] 2xl:max-w-[1760px] mx-auto p-3 sm:p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6 items-start">
 
       <!-- LEFT/CENTER: Sub-note Authentic Content & Recall Deck (70% or 100% in wide mode) -->
@@ -1788,32 +1805,32 @@
   </button>
 
   <!-- TOAST NOTIFICATION -->
-  <div id="toast" class="fixed bottom-16 sm:bottom-6 right-4 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
+  <div id="toast" class="fixed bottom-16 xl:bottom-6 right-4 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
     <span class="material-symbols-outlined text-[18px] text-blue-400" id="toast-icon">info</span>
     <span id="toast-msg">알림</span>
   </div>
 
-  <!-- MOBILE / TABLET BOTTOM NAVIGATION BAR (Thumb Friendly, visible only on < lg) -->
-  <nav id="mobile-bottom-bar" class="lg:hidden fixed bottom-0 left-0 right-0 h-14 bg-white/95 backdrop-blur-md border-t border-slate-200 z-40 flex items-center justify-around px-2 shadow-lg select-none" aria-label="모바일 하단 탐색바">
+  <!-- MOBILE / TABLET BOTTOM NAVIGATION BAR (Thumb Friendly, visible on mobile & tablets < xl) -->
+  <nav id="mobile-bottom-bar" class="xl:hidden fixed bottom-0 left-0 right-0 h-14 bg-white/95 backdrop-blur-md border-t border-slate-200 z-40 flex items-center justify-around px-2 sm:px-6 shadow-lg select-none" aria-label="하단 탐색바">
     <button id="mobile-nav-prev" class="flex-1 flex flex-col items-center justify-center py-1 text-slate-600 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="이전 주제">
-      <span class="material-symbols-outlined text-[20px]">chevron_left</span>
-      <span class="text-[10px] font-medium">이전</span>
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]">chevron_left</span>
+      <span class="text-[10px] sm:text-[11px] font-medium">이전</span>
     </button>
     <button id="mobile-nav-toc" class="flex-1 flex flex-col items-center justify-center py-1 text-slate-600 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="목차 열기">
-      <span class="material-symbols-outlined text-[20px]">menu_open</span>
-      <span class="text-[10px] font-medium">목차</span>
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]">menu_open</span>
+      <span class="text-[10px] sm:text-[11px] font-medium">목차</span>
     </button>
     <button id="mobile-nav-reveal" class="flex-1 flex flex-col items-center justify-center py-1 text-lime-700 hover:text-lime-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="정답 공개/가리기">
-      <span class="material-symbols-outlined text-[20px]" id="mobile-reveal-icon">visibility</span>
-      <span class="text-[10px] font-bold" id="mobile-reveal-label">정답</span>
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="mobile-reveal-icon">visibility</span>
+      <span class="text-[10px] sm:text-[11px] font-bold" id="mobile-reveal-label">정답</span>
     </button>
     <button id="mobile-nav-explanation" class="flex-1 flex flex-col items-center justify-center py-1 text-indigo-600 hover:text-indigo-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="보충 해설 열기">
-      <span class="material-symbols-outlined text-[20px]">help</span>
-      <span class="text-[10px] font-medium">해설</span>
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]">help</span>
+      <span class="text-[10px] sm:text-[11px] font-medium">해설</span>
     </button>
     <button id="mobile-nav-next" class="flex-1 flex flex-col items-center justify-center py-1 text-slate-600 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="다음 주제">
-      <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-      <span class="text-[10px] font-medium">다음</span>
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]">chevron_right</span>
+      <span class="text-[10px] sm:text-[11px] font-medium">다음</span>
     </button>
   </nav>
 
@@ -3982,7 +3999,7 @@
       const mobileNavNext = document.getElementById('mobile-nav-next');
 
       if (mobileNavPrev) mobileNavPrev.addEventListener('click', () => btnPrevTopic.click());
-      if (mobileNavToc) mobileNavToc.addEventListener('click', openMobileSidebar);
+      if (mobileNavToc) mobileNavToc.addEventListener('click', toggleDesktopSidebar);
       if (mobileNavReveal) mobileNavReveal.addEventListener('click', () => toggleMasterReveal());
       if (mobileNavExplanation) mobileNavExplanation.addEventListener('click', toggleExplanation);
       if (mobileNavNext) mobileNavNext.addEventListener('click', () => btnNextTopic.click());
