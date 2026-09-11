@@ -2835,6 +2835,22 @@
           if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         }
 
+        // --- Cleanup stray 'visibility' strings from previous bugs ---
+        subnoteContainer.querySelectorAll('.font-bold').forEach(fontBold => {
+          fontBold.querySelectorAll('span').forEach(s => {
+            if (s.textContent && s.textContent.endsWith('visibility')) {
+               s.textContent = s.textContent.replace(/visibility$/, '').trim();
+            }
+          });
+          // Also check text nodes directly inside fontBold
+          Array.from(fontBold.childNodes).forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent.includes('visibility')) {
+              node.textContent = node.textContent.replace(/visibility/g, '').trim();
+            }
+          });
+        });
+        // -----------------------------------------------------------
+
         // Guarantee all details/solution toggles are closed by default
         subnoteContainer.querySelectorAll('details').forEach(d => {
           d.open = false;
@@ -2935,7 +2951,7 @@
               return;
             }
             const txt = node.textContent.trim();
-            if (txt) {
+            if (txt && txt !== 'visibility') {
               let titleSpan = fontBold.querySelector('span:last-child');
               if (titleSpan) {
                 titleSpan.textContent = (titleSpan.textContent.trim() + ' ' + txt).trim();
