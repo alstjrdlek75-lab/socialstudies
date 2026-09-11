@@ -2213,7 +2213,7 @@
 
       // Helper: Format examTag for display
       function formatExamTag(tag) {
-        if (!tag) return '';
+        if (!tag || tag === '이론핵심') return '';
         const formatted = tag.replace(/(^|[\s,])(\d{2})(?=\b)/g, "$1'$2");
         return `[기출 ${formatted}]`;
       }
@@ -2323,12 +2323,13 @@
 
               const displayName = (topic.section && topic.section !== chName) ? topic.section : topic.title;
 
+              const formattedTag = formatExamTag(topic.examTag);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${gradeIcon || '<span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>'}
                   <span class="truncate font-semibold">${displayName}</span>
                 </div>
-                ${topic.examTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formatExamTag(topic.examTag)}</span>` : ''}
+                ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedTag}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -2412,12 +2413,13 @@
                 ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
                 : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
 
+              const formattedSecTag = formatExamTag(topic.examTag);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${gradeIcon}
                   <span class="truncate">${topic.title}</span>
                 </div>
-                ${topic.examTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formatExamTag(topic.examTag)}</span>` : ''}
+                ${formattedSecTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedSecTag}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -2583,8 +2585,9 @@
           bcSubsectionSep.classList.add('hidden');
         }
         bcTitle.textContent = topic.title;
-        if (topic.examTag) {
-          bcExamTag.textContent = formatExamTag(topic.examTag);
+        const currentExamTag = formatExamTag(topic.examTag);
+        if (currentExamTag) {
+          bcExamTag.textContent = currentExamTag;
           bcExamTag.classList.remove('hidden');
         } else {
           bcExamTag.classList.add('hidden');
@@ -2599,8 +2602,8 @@
         } else {
           topicBadgeSection.classList.add('hidden');
         }
-        if (topic.examTag) {
-          topicBadgeExam.textContent = formatExamTag(topic.examTag);
+        if (currentExamTag) {
+          topicBadgeExam.textContent = currentExamTag;
           topicBadgeExam.classList.remove('hidden');
         } else {
           topicBadgeExam.classList.add('hidden');
