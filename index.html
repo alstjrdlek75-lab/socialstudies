@@ -1385,6 +1385,18 @@
           </button>
         </div>
       </div>
+      <!-- Additional Filters: Today's Review & Bookmarks -->
+      <div class="flex items-center gap-2">
+        <button id="btn-filter-srs" class="flex-1 flex justify-center items-center gap-1 text-[11px] font-semibold py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition-colors">
+          <span class="material-symbols-outlined text-[14px] text-emerald-500">calendar_today</span>
+          <span>오늘 복습</span>
+          <span id="srs-badge" class="ml-0.5 px-1.5 py-0.5 rounded-full bg-slate-100 text-[10px] text-slate-500 hidden">0</span>
+        </button>
+        <button id="btn-filter-bookmark" class="flex-1 flex justify-center items-center gap-1 text-[11px] font-semibold py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition-colors">
+          <span class="material-symbols-outlined text-[14px] text-amber-400">star</span>
+          <span>오답 노트</span>
+        </button>
+      </div>
       <!-- Search Input -->
       <div class="relative flex items-center">
         <span class="material-symbols-outlined absolute left-2 text-slate-400 text-[16px]">search</span>
@@ -1454,13 +1466,18 @@
           </div>
 
           <!-- Main Title -->
-          <div>
-            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight" id="topic-title">
-              1.시민성 전달 모형 22,23,26(단답)
-            </h1>
-            <!-- Keywords list -->
-            <div class="flex flex-wrap gap-1.5 mt-2 sm:mt-2.5" id="topic-keywords-tags">
-              <!-- Injected by JS -->
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight flex items-center gap-2">
+                <span id="topic-title">1.시민성 전달 모형 22,23,26(단답)</span>
+                <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-100 transition-colors cursor-pointer text-slate-300 hover:text-amber-400" title="내 오답노트에 담기 (북마크)">
+                  <span class="material-symbols-outlined text-[28px]" id="icon-bookmark">star</span>
+                </button>
+              </h1>
+              <!-- Keywords list -->
+              <div class="flex flex-wrap gap-1.5 mt-2 sm:mt-2.5" id="topic-keywords-tags">
+                <!-- Injected by JS -->
+              </div>
             </div>
           </div>
         </div>
@@ -1805,6 +1822,8 @@
       let isAllRevealed = false;
       let activeSubject = '사회과교육론';
       let searchQuery = '';
+      let isFilterSrs = false;
+      let isFilterBookmark = false;
       let filteredIndices = [];
       const expandedSections = new Set();
 
@@ -1820,10 +1839,15 @@
       const sidebarTree = document.getElementById('sidebar-tree');
       const sidebarSearch = document.getElementById('sidebar-search');
       const btnClearSearch = document.getElementById('btn-clear-search');
+      const btnFilterSrs = document.getElementById('btn-filter-srs');
+      const btnFilterBookmark = document.getElementById('btn-filter-bookmark');
+      const srsBadge = document.getElementById('srs-badge');
       const sidebarSubjectLabel = document.getElementById('sidebar-subject-label');
       const sidebarTopicCount = document.getElementById('sidebar-topic-count');
       const sidebarPassCount = document.getElementById('sidebar-pass-count');
       const globalStatText = document.getElementById('global-stat-text');
+      const btnToggleBookmark = document.getElementById('btn-toggle-bookmark');
+      const iconBookmark = document.getElementById('icon-bookmark');
 
       function openMobileSidebar() {
         if (!sidebarDrawer || !mobileBackdrop) return;
@@ -2144,14 +2168,43 @@
         } catch(e) { return {}; }
       }
 
+      function getStoredBookmarks() {
+        try {
+          return JSON.parse(localStorage.getItem('edurecall_bookmarks')) || [];
+        } catch(e) { return []; }
+      }
+
+      function toggleBookmark(topicId) {
+        try {
+          let marks = getStoredBookmarks();
+          const isBookmarked = marks.includes(topicId);
+          if (isBookmarked) {
+            marks = marks.filter(id => id !== topicId);
+          } else {
+            marks.push(topicId);
+          }
+          localStorage.setItem('edurecall_bookmarks', JSON.stringify(marks));
+          return !isBookmarked;
+        } catch(e) { return false; }
+      }
+
       function saveGrade(topicId, grade) {
         try {
           const map = getStoredGrades();
           const prev = map[topicId] || { count: 0, grade: null, timestamp: 0 };
+          
+          const now = Date.now();
+          const oneDay = 24 * 60 * 60 * 1000;
+          let nextReview = now;
+          if (grade === 'fail') nextReview += 1 * oneDay;
+          else if (grade === 'ambiguous') nextReview += 3 * oneDay;
+          else if (grade === 'pass') nextReview += 7 * oneDay;
+
           map[topicId] = {
             grade: grade,
             count: prev.count + 1,
-            timestamp: Date.now()
+            timestamp: now,
+            nextReview: nextReview
           };
           localStorage.setItem('edurecall_subnote_grades', JSON.stringify(map));
           updateOverallStats();
@@ -2222,7 +2275,27 @@
       function renderSidebar() {
         sidebarTree.innerHTML = '';
         const grades = getStoredGrades();
+        const bookmarks = getStoredBookmarks();
         const q = searchQuery.trim().toLowerCase();
+        const now = Date.now();
+
+        // Count how many total need review
+        let srsCount = 0;
+        TOPICS.forEach(t => {
+          const g = grades[t.id];
+          if (g && g.nextReview && g.nextReview <= now) {
+            srsCount++;
+          }
+        });
+        if(srsBadge) {
+          if (srsCount > 0) {
+            srsBadge.textContent = srsCount;
+            srsBadge.classList.remove('hidden');
+            srsBadge.classList.add('bg-red-100', 'text-red-600', 'font-bold');
+          } else {
+            srsBadge.classList.add('hidden');
+          }
+        }
 
         filteredIndices = [];
         TOPICS.forEach((topic, idx) => {
@@ -2235,7 +2308,19 @@
             topic.defaultAnswer.toLowerCase().includes(q) ||
             (topic.targetKeywords && topic.targetKeywords.some(k => k.toLowerCase().includes(q)))
           );
-          if (matchSubj && matchSearch) {
+          
+          let matchSrs = true;
+          if (isFilterSrs) {
+            const g = grades[topic.id];
+            matchSrs = g && g.nextReview && g.nextReview <= now;
+          }
+          
+          let matchBookmark = true;
+          if (isFilterBookmark) {
+            matchBookmark = bookmarks.includes(topic.id);
+          }
+
+          if (matchSubj && matchSearch && matchSrs && matchBookmark) {
             filteredIndices.push(idx);
           }
         });
@@ -2617,6 +2702,13 @@
         const totalPages = getSubjectTotalPages(topic.subject);
         topicPageRef.textContent = totalPages ? `PDF p.${topic.page || 1} / ${totalPages}` : `PDF p.${topic.page || 1}`;
         topicTitle.textContent = topic.title;
+        
+        // Update Bookmark Icon State
+        if (iconBookmark) {
+          const isBookmarked = getStoredBookmarks().includes(topic.id);
+          iconBookmark.classList.toggle('text-amber-400', isBookmarked);
+          iconBookmark.classList.toggle('text-slate-300', !isBookmarked);
+        }
 
         // Keywords Chips
         topicKeywordsTags.innerHTML = '';
@@ -3653,6 +3745,34 @@
       if (btnCollapseSidebar) btnCollapseSidebar.addEventListener('click', () => setSidebarCollapsed(true));
       if (hintToggleSidebar) hintToggleSidebar.addEventListener('click', toggleDesktopSidebar);
 
+      if (btnFilterSrs) {
+        btnFilterSrs.addEventListener('click', () => {
+          isFilterSrs = !isFilterSrs;
+          btnFilterSrs.classList.toggle('bg-emerald-50', isFilterSrs);
+          btnFilterSrs.classList.toggle('border-emerald-300', isFilterSrs);
+          renderSidebar();
+        });
+      }
+      if (btnFilterBookmark) {
+        btnFilterBookmark.addEventListener('click', () => {
+          isFilterBookmark = !isFilterBookmark;
+          btnFilterBookmark.classList.toggle('bg-amber-50', isFilterBookmark);
+          btnFilterBookmark.classList.toggle('border-amber-300', isFilterBookmark);
+          renderSidebar();
+        });
+      }
+      if (btnToggleBookmark) {
+        btnToggleBookmark.addEventListener('click', () => {
+          const topic = TOPICS[currentTopicIndex];
+          if (!topic) return;
+          const isBookmarked = toggleBookmark(topic.id);
+          iconBookmark.classList.toggle('text-amber-400', isBookmarked);
+          iconBookmark.classList.toggle('text-slate-300', !isBookmarked);
+          showToast(isBookmarked ? '오답노트에 추가되었습니다 ⭐' : '오답노트에서 제거되었습니다', 'star');
+          renderSidebar(); // Update sidebar immediately
+        });
+      }
+
       // Shortcut Toolbar Quick Actions
       const scBtnSidebar = document.getElementById('sc-btn-sidebar');
       const scBtnAdd = document.getElementById('sc-btn-add');
@@ -3916,6 +4036,45 @@
         if (pos >= 0 && pos < filteredIndices.length - 1) renderTopic(filteredIndices[pos + 1]);
         else renderTopic(filteredIndices[0]);
       });
+
+      // Mobile Swipe Gestures
+      const subnoteContainer = document.getElementById('subnote-content-container');
+      if (subnoteContainer) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let lastTapTime = 0;
+
+        subnoteContainer.addEventListener('touchstart', (e) => {
+          // Ignore if touching on essay input or buttons
+          if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        subnoteContainer.addEventListener('touchend', (e) => {
+          if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
+          touchEndX = e.changedTouches[0].screenX;
+          const deltaX = touchEndX - touchStartX;
+
+          if (Math.abs(deltaX) > 60) {
+            // Swipe detected
+            if (deltaX < 0) {
+              btnNextTopic.click();
+            } else {
+              btnPrevTopic.click();
+            }
+          } else {
+            // Check double tap
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTapTime;
+            if (tapLength < 300 && tapLength > 0) {
+              const btnReveal = document.getElementById('btn-reveal-all');
+              if (btnReveal) btnReveal.click();
+              e.preventDefault(); // Prevent default double-tap zoom
+            }
+            lastTapTime = currentTime;
+          }
+        });
+      }
 
       // Reset All Grades
       document.getElementById('btn-reset-grades').addEventListener('click', () => {
