@@ -4020,43 +4020,7 @@
         else renderTopic(filteredIndices[0]);
       });
 
-      // Mobile Swipe Gestures
-      if (subnoteContainer) {
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let lastTapTime = 0;
 
-        subnoteContainer.addEventListener('touchstart', (e) => {
-          // Ignore if touching on essay input or buttons
-          if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
-          touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        subnoteContainer.addEventListener('touchend', (e) => {
-          if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.closest('button')) return;
-          touchEndX = e.changedTouches[0].screenX;
-          const deltaX = touchEndX - touchStartX;
-
-          if (Math.abs(deltaX) > 60) {
-            // Swipe detected
-            if (deltaX < 0) {
-              btnNextTopic.click();
-            } else {
-              btnPrevTopic.click();
-            }
-          } else {
-            // Check double tap
-            const currentTime = new Date().getTime();
-            const tapLength = currentTime - lastTapTime;
-            if (tapLength < 300 && tapLength > 0) {
-              const btnReveal = document.getElementById('btn-reveal-all');
-              if (btnReveal) btnReveal.click();
-              e.preventDefault(); // Prevent default double-tap zoom
-            }
-            lastTapTime = currentTime;
-          }
-        });
-      }
 
       // Reset All Grades
       document.getElementById('btn-reset-grades').addEventListener('click', () => {
