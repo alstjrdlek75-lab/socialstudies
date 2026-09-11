@@ -1466,14 +1466,17 @@
           </div>
 
           <!-- Main Title -->
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight flex items-center gap-2">
-                <span id="topic-title">1.시민성 전달 모형 22,23,26(단답)</span>
-                <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-100 transition-colors cursor-pointer text-slate-300 hover:text-amber-400" title="내 오답노트에 담기 (북마크)">
-                  <span class="material-symbols-outlined text-[28px]" id="icon-bookmark">star</span>
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight inline" id="topic-title">
+                  1.시민성 전달 모형 22,23,26(단답)
+                </h1>
+                <button id="btn-toggle-bookmark" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer" type="button" title="내 오답노트에 담기 (북마크)">
+                  <span class="material-symbols-outlined text-[18px] text-slate-400" id="icon-bookmark">star</span>
+                  <span id="bookmark-status-text">오답노트</span>
                 </button>
-              </h1>
+              </div>
               <!-- Keywords list -->
               <div class="flex flex-wrap gap-1.5 mt-2 sm:mt-2.5" id="topic-keywords-tags">
                 <!-- Injected by JS -->
@@ -2502,6 +2505,7 @@
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${gradeIcon}
+                  ${bookmarks.includes(topic.id) ? '<span class="material-symbols-outlined text-[13px] text-amber-500 shrink-0">star</span>' : ''}
                   <span class="truncate">${topic.title}</span>
                 </div>
                 ${formattedSecTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedSecTag}</span>` : ''}
@@ -2703,11 +2707,19 @@
         topicPageRef.textContent = totalPages ? `PDF p.${topic.page || 1} / ${totalPages}` : `PDF p.${topic.page || 1}`;
         topicTitle.textContent = topic.title;
         
-        // Update Bookmark Icon State
-        if (iconBookmark) {
+        // Update Bookmark Button & Icon State
+        if (btnToggleBookmark && iconBookmark) {
           const isBookmarked = getStoredBookmarks().includes(topic.id);
-          iconBookmark.classList.toggle('text-amber-400', isBookmarked);
-          iconBookmark.classList.toggle('text-slate-300', !isBookmarked);
+          const bookmarkText = document.getElementById('bookmark-status-text');
+          if (isBookmarked) {
+            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
+            iconBookmark.className = 'material-symbols-outlined text-[18px] text-amber-500';
+            if (bookmarkText) bookmarkText.textContent = '오답노트 ★';
+          } else {
+            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
+            iconBookmark.className = 'material-symbols-outlined text-[18px] text-slate-400';
+            if (bookmarkText) bookmarkText.textContent = '오답노트';
+          }
         }
 
         // Keywords Chips
@@ -3766,8 +3778,16 @@
           const topic = TOPICS[currentTopicIndex];
           if (!topic) return;
           const isBookmarked = toggleBookmark(topic.id);
-          iconBookmark.classList.toggle('text-amber-400', isBookmarked);
-          iconBookmark.classList.toggle('text-slate-300', !isBookmarked);
+          const bookmarkText = document.getElementById('bookmark-status-text');
+          if (isBookmarked) {
+            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
+            iconBookmark.className = 'material-symbols-outlined text-[18px] text-amber-500';
+            if (bookmarkText) bookmarkText.textContent = '오답노트 ★';
+          } else {
+            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
+            iconBookmark.className = 'material-symbols-outlined text-[18px] text-slate-400';
+            if (bookmarkText) bookmarkText.textContent = '오답노트';
+          }
           showToast(isBookmarked ? '오답노트에 추가되었습니다 ⭐' : '오답노트에서 제거되었습니다', 'star');
           renderSidebar(); // Update sidebar immediately
         });
@@ -4038,7 +4058,6 @@
       });
 
       // Mobile Swipe Gestures
-      const subnoteContainer = document.getElementById('subnote-content-container');
       if (subnoteContainer) {
         let touchStartX = 0;
         let touchEndX = 0;
