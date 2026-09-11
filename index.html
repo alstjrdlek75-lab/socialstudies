@@ -380,6 +380,10 @@
       cursor: pointer;
     }
 
+    .material-symbols-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24 !important;
+    }
+
     #subnote-content-container p {
       font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
       line-height: 1.8 !important;
@@ -2477,7 +2481,7 @@
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${gradeIcon}
-                  ${bookmarks.includes(topic.id) ? '<span class="material-symbols-outlined text-[13px] text-amber-500 shrink-0">star</span>' : ''}
+                  ${bookmarks.includes(topic.id) ? '<span class="material-symbols-outlined material-symbols-filled text-[13px] text-amber-500 shrink-0">star</span>' : ''}
                   <span class="truncate">${topic.title}</span>
                 </div>
                 ${formattedSecTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedSecTag}</span>` : ''}
@@ -2684,9 +2688,9 @@
           const isBookmarked = getStoredBookmarks().includes(topic.id);
           const bookmarkText = document.getElementById('bookmark-status-text');
           if (isBookmarked) {
-            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
-            iconBookmark.className = 'material-symbols-outlined text-[18px] text-amber-500';
-            if (bookmarkText) bookmarkText.textContent = '오답노트 ★';
+            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-800 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
+            iconBookmark.className = 'material-symbols-outlined material-symbols-filled text-[18px] text-amber-500';
+            if (bookmarkText) bookmarkText.textContent = '오답노트';
           } else {
             btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
             iconBookmark.className = 'material-symbols-outlined text-[18px] text-slate-400';
@@ -3743,9 +3747,9 @@
           const isBookmarked = toggleBookmark(topic.id);
           const bookmarkText = document.getElementById('bookmark-status-text');
           if (isBookmarked) {
-            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
-            iconBookmark.className = 'material-symbols-outlined text-[18px] text-amber-500';
-            if (bookmarkText) bookmarkText.textContent = '오답노트 ★';
+            btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-800 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
+            iconBookmark.className = 'material-symbols-outlined material-symbols-filled text-[18px] text-amber-500';
+            if (bookmarkText) bookmarkText.textContent = '오답노트';
           } else {
             btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
             iconBookmark.className = 'material-symbols-outlined text-[18px] text-slate-400';
