@@ -1413,7 +1413,7 @@
       <div class="flex items-center">
         <button id="btn-filter-bookmark" class="w-full flex justify-center items-center gap-1.5 text-[11px] font-bold py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-amber-50 hover:border-amber-300 hover:text-amber-700 transition-colors cursor-pointer shadow-2xs" type="button">
           <span class="material-symbols-outlined text-[15px] text-amber-400">star</span>
-          <span>오답 노트만 모아보기</span>
+          <span>중요 주제만 모아보기</span>
         </button>
       </div>
       <!-- Search Input -->
@@ -1491,9 +1491,9 @@
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight inline" id="topic-title">
                   1.시민성 전달 모형 22,23,26(단답)
                 </h1>
-                <button id="btn-toggle-bookmark" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer" type="button" title="내 오답노트에 담기 (북마크)">
+                <button id="btn-toggle-bookmark" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer" type="button" title="중요 주제로 등록 (별표)">
                   <span class="material-symbols-outlined text-[18px] text-slate-400" id="icon-bookmark">star</span>
-                  <span id="bookmark-status-text">오답노트</span>
+                  <span id="bookmark-status-text">중요</span>
                 </button>
               </div>
               <!-- Keywords list -->
@@ -2791,11 +2791,11 @@
           if (isBookmarked) {
             btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-800 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
             iconBookmark.className = 'material-symbols-outlined material-symbols-filled text-[18px] text-amber-500';
-            if (bookmarkText) bookmarkText.textContent = '오답노트';
+            if (bookmarkText) bookmarkText.textContent = '중요';
           } else {
             btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
             iconBookmark.className = 'material-symbols-outlined text-[18px] text-slate-400';
-            if (bookmarkText) bookmarkText.textContent = '오답노트';
+            if (bookmarkText) bookmarkText.textContent = '중요';
           }
         }
 
@@ -3702,14 +3702,14 @@
           }, 300);
         }
 
-        const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
-        const modKey = isMacPlatform ? '⌘' : 'Ctrl+';
-        if (grade === 'pass') {
-          showToast(`[P / ${modKey}P] 완벽 인출 성공! (복습 ${res.count}회차)`, 'verified');
-        } else if (grade === 'ambiguous') {
-          showToast(`[A / ${modKey}A] 부분 성공 (보완 필요)`, 'help');
-        } else if (grade === 'fail') {
-          showToast(`[F / ${modKey}F] 오답 노트에 등록되었습니다`, 'cancel');
+        if (grade == 4 || grade === 'pass') {
+          showToast('[4] 쉬움! 복습 주기가 연장되었습니다', 'verified');
+        } else if (grade == 3) {
+          showToast('[3] 알맞음! 안정적으로 기억에 정착 중입니다', 'verified');
+        } else if (grade == 2 || grade === 'ambiguous') {
+          showToast('[2] 어려움! 복습 주기가 짧게 유지됩니다', 'help');
+        } else if (grade == 1 || grade === 'fail') {
+          showToast('[1] 다시! 곧 재복습 일정이 잡힙니다', 'cancel');
         }
       }
 
@@ -3820,13 +3820,13 @@
           if (isBookmarked) {
             btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-amber-50 text-amber-800 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
             iconBookmark.className = 'material-symbols-outlined material-symbols-filled text-[18px] text-amber-500';
-            if (bookmarkText) bookmarkText.textContent = '오답노트';
+            if (bookmarkText) bookmarkText.textContent = '중요';
           } else {
             btnToggleBookmark.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-white hover:bg-amber-50 hover:border-amber-300 text-slate-600 hover:text-amber-700 shadow-2xs text-xs font-bold shrink-0 transition-all cursor-pointer';
             iconBookmark.className = 'material-symbols-outlined text-[18px] text-slate-400';
-            if (bookmarkText) bookmarkText.textContent = '오답노트';
+            if (bookmarkText) bookmarkText.textContent = '중요';
           }
-          showToast(isBookmarked ? '오답노트에 추가되었습니다 ⭐' : '오답노트에서 제거되었습니다', 'star');
+          showToast(isBookmarked ? '중요 주제로 등록되었습니다 ⭐' : '중요 표시가 해제되었습니다', 'star');
           renderSidebar(); // Update sidebar immediately
         });
       }
@@ -3908,7 +3908,7 @@
             gradeContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }, 80);
-        showToast('자가채점 단축키: [P/⌘P] 완벽인출 | [A/⌘A] 부분성공 | [F/⌘F] 오답', 'psychology');
+        showToast('FSRS 단축키: [1] 다시 | [2] 어려움 | [3] 알맞음 | [4] 쉬움', 'psychology');
       });
 
       // OS-aware shortcut badge labels (Mac: ⌘, Win: Ctrl)
