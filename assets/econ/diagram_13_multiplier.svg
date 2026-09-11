@@ -75,7 +75,7 @@
     <text x="35" y="188" font-size="11.5" font-weight="bold" fill="#15803d">➔ 순 승수효과는 정확히 1배!</text>
 
     <line x1="25" y1="210" x2="225" y2="210" stroke="#e2e8f0" />
-    <text x="25" y="235" font-size="12" font-weight="bold" fill="#0f172a">• 핵심 결론 (임용 빈출):</text>
+    <text x="25" y="235" font-size="12" font-weight="bold" fill="#0f172a">• 핵심 결론:</text>
     <text x="35" y="260" font-size="12" font-weight="bold" fill="#15803d">ΔY = 1 × ΔG</text>
     <text x="35" y="285" font-size="11" fill="#475569">적자재정을 편성하지 않아도</text>
     <text x="35" y="305" font-size="11" font-weight="bold" fill="#15803d">지출액만큼 국민소득이 증가함</text>
