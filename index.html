@@ -1583,21 +1583,21 @@
               <span class="material-symbols-outlined text-blue-600 text-[18px]">psychology</span>
               <span class="font-bold text-sm text-slate-900">메타인지 자가 평가</span>
             </div>
-            <span class="text-[11px] text-slate-400">단축키: F / A / P</span>
+            <span class="text-[11px] text-slate-400">단축키: 1 / 2 / 3</span>
           </div>
 
           <div class="grid grid-cols-3 gap-2">
             <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95" data-grade="fail" type="button">
               <span class="text-sm font-bold">F (Fail)</span>
-              <span class="text-[10px] text-red-600 font-medium">인출 실패 [F]</span>
+              <span class="text-[10px] text-red-600 font-medium">인출 실패 [1]</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95" data-grade="ambiguous" type="button">
               <span class="text-sm font-bold">A (Ambiguous)</span>
-              <span class="text-[10px] text-amber-600 font-medium">부분 성공 [A]</span>
+              <span class="text-[10px] text-amber-600 font-medium">부분 성공 [2]</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95" data-grade="pass" type="button">
               <span class="text-sm font-bold">P (Pass)</span>
-              <span class="text-[10px] text-blue-600 font-medium">완벽 인출 [P]</span>
+              <span class="text-[10px] text-blue-600 font-medium">완벽 인출 [3]</span>
             </button>
           </div>
 
@@ -4466,27 +4466,24 @@
           return;
         }
 
-        // 4. Self-Grading Shortcuts:
-        // [P] or [Cmd+P] or [Ctrl+P] or [3] or [ㅔ] -> Pass
-        const isPKey = (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ' || e.code === 'KeyP' || e.keyCode === 80);
-        if ((isPKey || e.key === '3') || ((e.ctrlKey || e.metaKey) && isPKey)) {
-          e.preventDefault(); // intercepts Mac Print dialog!
+        // 4. Self-Grading Shortcuts (1, 2, 3 only):
+        // [3] -> Pass
+        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
           handleGrade('pass');
           return;
         }
 
-        // [F] or [Cmd+F] or [Ctrl+F] or [1] or [ㄹ] -> Fail
-        const isFKey = (e.key === 'f' || e.key === 'F' || e.key === 'ㄹ' || e.code === 'KeyF' || e.keyCode === 70);
-        if ((isFKey || e.key === '1') || ((e.ctrlKey || e.metaKey) && isFKey)) {
-          e.preventDefault(); // intercepts browser Find dialog!
+        // [1] -> Fail
+        if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
           handleGrade('fail');
           return;
         }
 
-        // [A] or [Cmd+A] or [Ctrl+A] or [2] or [ㅁ] -> Ambiguous
-        const isAKey = (e.key === 'a' || e.key === 'A' || e.key === 'ㅁ' || e.code === 'KeyA' || e.keyCode === 65);
-        if ((isAKey || e.key === '2') || ((e.ctrlKey || e.metaKey) && isAKey)) {
-          e.preventDefault(); // intercepts select all!
+        // [2] -> Ambiguous
+        if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
           handleGrade('ambiguous');
           return;
         }
