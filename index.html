@@ -4464,50 +4464,57 @@
         }
 
         // 4. Self-Grading Shortcuts:
-        // [P] or [Cmd+P] or [Ctrl+P] or [3] -> Pass
-        if ((e.key === 'p' || e.key === 'P' || e.key === '3') || ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P'))) {
+        // [P] or [Cmd+P] or [Ctrl+P] or [3] or [ㅔ] -> Pass
+        const isPKey = (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ' || e.code === 'KeyP' || e.keyCode === 80);
+        if ((isPKey || e.key === '3') || ((e.ctrlKey || e.metaKey) && isPKey)) {
           e.preventDefault(); // intercepts Mac Print dialog!
           handleGrade('pass');
           return;
         }
 
-        // [F] or [Cmd+F] or [Ctrl+F] or [1] -> Fail
-        if ((e.key === 'f' || e.key === 'F' || e.key === '1') || ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F'))) {
+        // [F] or [Cmd+F] or [Ctrl+F] or [1] or [ㄹ] -> Fail
+        const isFKey = (e.key === 'f' || e.key === 'F' || e.key === 'ㄹ' || e.code === 'KeyF' || e.keyCode === 70);
+        if ((isFKey || e.key === '1') || ((e.ctrlKey || e.metaKey) && isFKey)) {
           e.preventDefault(); // intercepts browser Find dialog!
           handleGrade('fail');
           return;
         }
 
-        // [A] or [Cmd+A] or [Ctrl+A] or [2] -> Ambiguous
-        if ((e.key === 'a' || e.key === 'A' || e.key === '2') || ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'A'))) {
+        // [A] or [Cmd+A] or [Ctrl+A] or [2] or [ㅁ] -> Ambiguous
+        const isAKey = (e.key === 'a' || e.key === 'A' || e.key === 'ㅁ' || e.code === 'KeyA' || e.keyCode === 65);
+        if ((isAKey || e.key === '2') || ((e.ctrlKey || e.metaKey) && isAKey)) {
           e.preventDefault(); // intercepts select all!
           handleGrade('ambiguous');
           return;
         }
 
-        // 5. [I] Toggle direct typing mode
-        if ((e.key === 'i' || e.key === 'I') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 5. [I] or [ㅑ] Toggle direct typing mode
+        const isIKey = (e.key === 'i' || e.key === 'I' || e.key === 'ㅑ' || e.code === 'KeyI' || e.keyCode === 73);
+        if (isIKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           applyMode(currentMode === 'type' ? 'tape' : 'type');
           return;
         }
 
-        // 6. [H] or [?] Toggle Supplementary Explanation Drawer
-        if ((e.key === 'h' || e.key === 'H' || e.key === '?') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 6. [H] or [ㅗ] or [?] Toggle Supplementary Explanation Drawer
+        const isHKey = (e.key === 'h' || e.key === 'H' || e.key === 'ㅗ' || e.key === '?' || e.code === 'KeyH' || e.keyCode === 72 || e.which === 72);
+        if (isHKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleExplanation();
           return;
         }
 
-        // 7. [W] or [w] Toggle Wide View / Essay Pad
-        if ((e.key === 'w' || e.key === 'W') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 7. [W] or [ㅈ] Toggle Wide View / Essay Pad
+        const isWKey = (e.key === 'w' || e.key === 'W' || e.key === 'ㅈ' || e.code === 'KeyW' || e.keyCode === 87);
+        if (isWKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleEssayPad();
           return;
         }
 
-        // 8. [Space] or [T] Toggle master reveal
-        if (e.code === 'Space' || ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey)) {
+        // 8. [Space] or [T] or [ㅅ] Toggle master reveal
+        const isTKey = (e.key === 't' || e.key === 'T' || e.key === 'ㅅ' || e.code === 'KeyT' || e.keyCode === 84);
+        if (e.code === 'Space' || (isTKey && !e.ctrlKey && !e.metaKey && !e.altKey)) {
           e.preventDefault();
           toggleMasterReveal();
           return;
