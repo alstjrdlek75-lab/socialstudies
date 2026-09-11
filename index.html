@@ -1272,6 +1272,9 @@
 
     <!-- Subject Selector Navigation -->
     <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1" data-subject="오늘 복습" type="button">
+        <span class="material-symbols-outlined text-[14px]">event_available</span> 오늘 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due">(0)</span>
+      </button>
       <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-bold transition-all bg-white text-blue-700 shadow-xs whitespace-nowrap shrink-0" data-subject="사회과교육론" type="button">
         사회과교육론 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-edu">(99)</span>
       </button>
@@ -1385,7 +1388,8 @@
 
     <!-- Mobile Subject Tabs inside Drawer -->
     <div class="lg:hidden p-2 bg-slate-50 border-b border-slate-200 overflow-x-auto flex items-center gap-1 text-xs no-scrollbar" id="mobile-subject-tabs">
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-white text-blue-700 shadow-xs border border-slate-200" data-subject="사회과교육론" type="button">사교론</button>
+      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-white text-blue-700 shadow-xs border border-slate-200 flex items-center gap-1" data-subject="오늘 복습" type="button"><span class="material-symbols-outlined text-[13px]">event_available</span> 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due-mobile">(0)</span></button>
+          <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-white text-blue-700 shadow-xs border border-slate-200 flex items-center gap-1" data-subject="사회과교육론" type="button">사교론</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="법학" type="button">법학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치학</button>
@@ -2310,6 +2314,7 @@
           const pct = Math.round((passedCount / total) * 100);
           if (globalStatText) globalStatText.innerHTML = `<span class="hidden xl:inline">안정화: </span>${passedCount} / ${total} (${pct}%)`;
           if (sidebarPassCount) sidebarPassCount.textContent = `안정화: ${passedCount}개`;
+          updateSubjectCountBadges();
         } catch(e) {}
       }
 
@@ -2369,8 +2374,18 @@
         const q = searchQuery.trim().toLowerCase();
 
         filteredIndices = [];
+        const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+        const nowTime = new Date().getTime();
         TOPICS.forEach((topic, idx) => {
-          const matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
+          let matchSubj = false;
+          if (activeSubject === '오늘 복습') {
+            const card = fsrsMap[topic.id];
+            if (card && card.state !== 0 && card.due && new Date(card.due).getTime() <= nowTime) {
+              matchSubj = true;
+            }
+          } else {
+            matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
+          }
           const matchSearch = !q || (
             topic.title.toLowerCase().includes(q) ||
             topic.chapter.toLowerCase().includes(q) ||
@@ -3701,16 +3716,16 @@
       function updateSubjectTabStyles() {
         subjectTabs.forEach(b => {
           if (b.dataset.subject === activeSubject) {
-            b.className = 'subject-tab-btn active px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-bold transition-all bg-white text-blue-700 shadow-xs whitespace-nowrap shrink-0';
+            b.className = 'subject-tab-btn active px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-bold transition-all bg-white text-blue-700 shadow-xs whitespace-nowrap shrink-0 flex items-center gap-1';
           } else {
-            b.className = 'subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0';
+            b.className = 'subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1';
           }
         });
         mobileSubjTabs.forEach(b => {
           if (b.dataset.subject === activeSubject) {
-            b.className = 'mobile-subj-tab active px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-blue-600 text-white shadow-xs border border-blue-600';
+            b.className = 'mobile-subj-tab active px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-blue-600 text-white shadow-xs border border-blue-600 flex items-center gap-1';
           } else {
-            b.className = 'mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 transition-all whitespace-nowrap border border-transparent';
+            b.className = 'mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 transition-all whitespace-nowrap border border-transparent flex items-center gap-1';
           }
         });
       }
@@ -4788,9 +4803,20 @@
       });
 
       function updateSubjectCountBadges() {
-        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '가이드': 0 };
-        TOPICS.forEach(t => { if (counts[t.subject] !== undefined) counts[t.subject]++; });
+        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '가이드': 0, '오늘 복습': 0 };
+        const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+        const nowTime = new Date().getTime();
+
+        TOPICS.forEach(t => { 
+          if (counts[t.subject] !== undefined) counts[t.subject]++; 
+          const card = fsrsMap[t.id];
+          if (card && card.state !== 0 && card.due && new Date(card.due).getTime() <= nowTime) {
+            counts['오늘 복습']++;
+          }
+        });
         const map = {
+          'count-due': counts['오늘 복습'],
+          'count-due-mobile': counts['오늘 복습'],
           'count-edu': counts['사회과교육론'],
           'count-law': counts['법학'],
           'count-soc': counts['사회학'],
@@ -4841,7 +4867,7 @@
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
       } else if (targetTopic) {
         activeSubject = targetTopic.subject;
-      } else if (savedSubject && ['사회과교육론', '법학', '사회학', '정치학', '경제학', '기출', '가이드'].includes(savedSubject)) {
+      } else if (savedSubject && ['오늘 복습', '사회과교육론', '법학', '사회학', '정치학', '경제학', '기출', '가이드'].includes(savedSubject)) {
         activeSubject = savedSubject;
       }
 
