@@ -1224,6 +1224,7 @@
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/fsrs.umd.js"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -1620,23 +1621,27 @@
           <div class="flex items-center justify-between border-b border-slate-100 pb-2">
             <div class="flex items-center gap-1.5">
               <span class="material-symbols-outlined text-blue-600 text-[18px]">psychology</span>
-              <span class="font-bold text-sm text-slate-900">메타인지 자가 평가</span>
+              <span class="font-bold text-sm text-slate-900">FSRS 간격 반복</span>
             </div>
-            <span class="text-[11px] text-slate-400">단축키: 1 / 2 / 3</span>
+            <span class="text-[11px] text-slate-400">단축키: 1/2/3/4</span>
           </div>
 
-          <div class="grid grid-cols-3 gap-2">
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95" data-grade="fail" type="button">
-              <span class="text-sm font-bold">F (Fail)</span>
-              <span class="text-[10px] text-red-600 font-medium">인출 실패 [1]</span>
+          <div class="grid grid-cols-4 gap-1.5" id="fsrs-buttons-container">
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95" data-grade="1" type="button">
+              <span class="text-xs font-bold">다시</span>
+              <span class="text-[10px] text-red-600 font-medium" id="fsrs-ivl-1">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95" data-grade="ambiguous" type="button">
-              <span class="text-sm font-bold">A (Ambiguous)</span>
-              <span class="text-[10px] text-amber-600 font-medium">부분 성공 [2]</span>
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95" data-grade="2" type="button">
+              <span class="text-xs font-bold">어려움</span>
+              <span class="text-[10px] text-amber-600 font-medium" id="fsrs-ivl-2">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95" data-grade="pass" type="button">
-              <span class="text-sm font-bold">P (Pass)</span>
-              <span class="text-[10px] text-blue-600 font-medium">완벽 인출 [3]</span>
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95" data-grade="3" type="button">
+              <span class="text-xs font-bold">알맞음</span>
+              <span class="text-[10px] text-emerald-600 font-medium" id="fsrs-ivl-3">-</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95" data-grade="4" type="button">
+              <span class="text-xs font-bold">쉬움</span>
+              <span class="text-[10px] text-blue-600 font-medium" id="fsrs-ivl-4">-</span>
             </button>
           </div>
 
@@ -2207,39 +2212,105 @@
         } catch(e) { return false; }
       }
 
-      function saveGrade(topicId, grade) {
-        try {
-          const map = getStoredGrades();
-          const prev = map[topicId] || { count: 0, grade: null, timestamp: 0 };
-          
-          const now = Date.now();
-          const oneDay = 24 * 60 * 60 * 1000;
-          let nextReview = now;
-          if (grade === 'fail') nextReview += 1 * oneDay;
-          else if (grade === 'ambiguous') nextReview += 3 * oneDay;
-          else if (grade === 'pass') nextReview += 7 * oneDay;
+      
+      // --- FSRS Integration ---
+      const fsrsEngine = window.FSRS ? new window.FSRS.FSRS() : null;
+      
+      function formatFSRSInterval(diffMs) {
+        if (!diffMs || diffMs <= 0) return '지금';
+        const mins = Math.round(diffMs / 60000);
+        if (mins < 60) return `${mins}분`;
+        const hours = Math.round(mins / 60);
+        if (hours < 24) return `${hours}시간`;
+        const days = Math.round(hours / 24);
+        if (days < 30) return `${days}일`;
+        const months = Math.round(days / 30);
+        if (months < 12) return `${months}개월`;
+        return `${Math.round(months / 12)}년`;
+      }
 
-          map[topicId] = {
-            grade: grade,
-            count: prev.count + 1,
-            timestamp: now,
-            nextReview: nextReview
-          };
-          localStorage.setItem('edurecall_subnote_grades', JSON.stringify(map));
+      function getFSRSCard(topicId) {
+        try {
+          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          if (map[topicId]) {
+            // Rehydrate Date objects
+            const c = map[topicId];
+            if (c.due) c.due = new Date(c.due);
+            if (c.last_review) c.last_review = new Date(c.last_review);
+            return c;
+          }
+        } catch(e) {}
+        return window.FSRS.createEmptyCard();
+      }
+
+      function saveGrade(topicId, gradeNum) { // gradeNum: 1, 2, 3, 4
+        if (!fsrsEngine) return null;
+        try {
+          const card = getFSRSCard(topicId);
+          const now = new Date();
+          const scheduling = fsrsEngine.repeat(card, now);
+          
+          let nextCard;
+          if (gradeNum == 1) nextCard = scheduling[window.FSRS.Rating.Again].card;
+          else if (gradeNum == 2) nextCard = scheduling[window.FSRS.Rating.Hard].card;
+          else if (gradeNum == 3) nextCard = scheduling[window.FSRS.Rating.Good].card;
+          else if (gradeNum == 4) nextCard = scheduling[window.FSRS.Rating.Easy].card;
+
+          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          map[topicId] = nextCard;
+          localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
+          
           updateOverallStats();
           renderSidebar();
           updateTopicRetentionView(topicId);
-          return map[topicId];
-        } catch(e) { return null; }
+          return nextCard;
+        } catch(e) { console.error(e); return null; }
+      }
+
+      function updateTopicRetentionView(topicId) {
+        const card = getFSRSCard(topicId);
+        const info = getStoredGrades()[topicId] || { count: 0 }; // Keep legacy count if needed, or just use card.reps
+        
+        topicRetentionText.textContent = `누적 복습: ${card.reps}회`;
+        
+        const now = new Date();
+        
+        // Calculate preview intervals for buttons
+        if (fsrsEngine && window.FSRS) {
+           const scheduling = fsrsEngine.repeat(card, now);
+           document.getElementById('fsrs-ivl-1').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Again].card.due.getTime() - now.getTime());
+           document.getElementById('fsrs-ivl-2').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Hard].card.due.getTime() - now.getTime());
+           document.getElementById('fsrs-ivl-3').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Good].card.due.getTime() - now.getTime());
+           document.getElementById('fsrs-ivl-4').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Easy].card.due.getTime() - now.getTime());
+        }
+
+        if (card.state === window.FSRS.State.Review) {
+          topicMasteryLabel.textContent = '장기 기억 정착 (Review)';
+          topicMasteryBar.style.width = Math.min(100, Math.max(20, (card.stability / 30) * 100)) + '%';
+          topicMasteryBar.className = 'bg-emerald-600 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = `다음 복습: ${formatFSRSInterval(card.due.getTime() - now.getTime())} 후`;
+        } else if (card.state === window.FSRS.State.Learning || card.state === window.FSRS.State.Relearning) {
+          topicMasteryLabel.textContent = '학습 진행 중 (Learning)';
+          topicMasteryBar.style.width = '30%';
+          topicMasteryBar.className = 'bg-amber-500 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = `다음 복습: ${formatFSRSInterval(card.due.getTime() - now.getTime())} 후`;
+        } else {
+          topicMasteryLabel.textContent = '미학습 상태 (New)';
+          topicMasteryBar.style.width = '10%';
+          topicMasteryBar.className = 'bg-slate-300 h-full transition-all duration-300';
+          topicReviewSchedule.textContent = '다음 복습: 지금 (0회차)';
+        }
       }
 
       function updateOverallStats() {
-        const map = getStoredGrades();
-        const passedCount = Object.keys(map).filter(k => map[k].grade === 'pass').length;
-        const total = TOPICS.length;
-        const pct = Math.round((passedCount / total) * 100);
-        if (globalStatText) globalStatText.innerHTML = `<span class="hidden xl:inline">완료: </span>${passedCount} / ${total} (${pct}%)`;
-        if (sidebarPassCount) sidebarPassCount.textContent = `암기 완료: ${passedCount}개`;
+        try {
+          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          const passedCount = Object.values(map).filter(c => c.state === window.FSRS.State.Review).length;
+          const total = TOPICS.length;
+          const pct = Math.round((passedCount / total) * 100);
+          if (globalStatText) globalStatText.innerHTML = `<span class="hidden xl:inline">안정화: </span>${passedCount} / ${total} (${pct}%)`;
+          if (sidebarPassCount) sidebarPassCount.textContent = `안정화: ${passedCount}개`;
+        } catch(e) {}
       }
 
       // Subject total PDF pages helper (dynamic calculation from syllabus data)
@@ -2819,40 +2890,7 @@
         }
       }
 
-      // Update Topic Retention Status in UI
-      function updateTopicRetentionView(topicId) {
-        const grades = getStoredGrades();
-        const info = grades[topicId] || { count: 0, grade: null };
-
-        topicRetentionText.textContent = `인출 기록 ${info.count}회`;
-
-        if (info.grade === 'pass' && info.count >= 3) {
-          topicMasteryLabel.textContent = '장기 기억 정착 (3회차 이상)';
-          topicMasteryBar.style.width = '100%';
-          topicMasteryBar.className = 'bg-emerald-600 h-full transition-all duration-300';
-          topicReviewSchedule.textContent = '다음 복습: 7일 후 (D+7)';
-        } else if (info.grade === 'pass') {
-          topicMasteryLabel.textContent = '인출 성공 단계';
-          topicMasteryBar.style.width = '65%';
-          topicMasteryBar.className = 'bg-blue-600 h-full transition-all duration-300';
-          topicReviewSchedule.textContent = '다음 복습: 3일 후 (D+3)';
-        } else if (info.grade === 'ambiguous') {
-          topicMasteryLabel.textContent = '부분 숙지 (보완 필요)';
-          topicMasteryBar.style.width = '40%';
-          topicMasteryBar.className = 'bg-amber-500 h-full transition-all duration-300';
-          topicReviewSchedule.textContent = '다음 복습: 내일 (D+1)';
-        } else if (info.grade === 'fail') {
-          topicMasteryLabel.textContent = '오답/미숙지 (재학습 필요)';
-          topicMasteryBar.style.width = '20%';
-          topicMasteryBar.className = 'bg-red-500 h-full transition-all duration-300';
-          topicReviewSchedule.textContent = '다음 복습: 오늘';
-        } else {
-          topicMasteryLabel.textContent = '미인출 상태';
-          topicMasteryBar.style.width = '10%';
-          topicMasteryBar.className = 'bg-slate-300 h-full transition-all duration-300';
-          topicReviewSchedule.textContent = '다음 복습: 오늘';
-        }
-      }
+      
 
       // Sanitize and normalize group headers to prevent split titles or stray elements
       function sanitizeAndNormalizeGroupHeaders(container) {
@@ -3637,9 +3675,12 @@
         const res = saveGrade(topic.id, grade);
 
         // Visual bounce animation on corresponding grade button in sidebar/drawer
-        const targetBtn = Array.from(gradeBtns).find(b => b.dataset.grade === grade);
+        const targetBtn = Array.from(gradeBtns).find(b => String(b.dataset.grade) === String(grade));
         if (targetBtn) {
-          const ringColor = grade === 'pass' ? 'ring-blue-400' : (grade === 'ambiguous' ? 'ring-amber-400' : 'ring-red-400');
+          let ringColor = 'ring-blue-400';
+          if (grade == 1) ringColor = 'ring-red-400';
+          else if (grade == 2) ringColor = 'ring-amber-400';
+          else if (grade == 3) ringColor = 'ring-emerald-400';
           targetBtn.classList.add('ring-4', 'ring-offset-1', ringColor, 'scale-105');
           setTimeout(() => {
             targetBtn.classList.remove('ring-4', 'ring-offset-1', ringColor, 'scale-105');
@@ -4067,7 +4108,7 @@
       diffModal.addEventListener('click', (e) => { if (e.target === diffModal) closeDiff(); });
       diffPassBtn.addEventListener('click', () => {
         closeDiff();
-        handleGrade('pass');
+        handleGrade(3);
       });
 
       // Helper: Escape HTML
@@ -4552,19 +4593,19 @@
           // [Cmd+Enter] or [Cmd+P] or [Ctrl+P] -> Pass (Never opens Print dialog!)
           if ((e.ctrlKey || e.metaKey) && (e.key === 'Enter' || e.key === 'p' || e.key === 'P')) {
             e.preventDefault();
-            handleGrade('pass');
+            handleGrade(3);
             return;
           }
           // [Cmd+F] or [Ctrl+F] -> Fail (Never opens browser search!)
           if ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F')) {
             e.preventDefault();
-            handleGrade('fail');
+            handleGrade(1);
             return;
           }
           // [Cmd+Shift+A] or [Alt+A] or [Option+A] -> Ambiguous
           if (((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'a' || e.key === 'A')) || (e.altKey && (e.key === 'a' || e.key === 'A'))) {
             e.preventDefault();
-            handleGrade('ambiguous');
+            handleGrade(2);
             return;
           }
           return;
@@ -4591,24 +4632,30 @@
         }
 
         // 4. Self-Grading Shortcuts (1, 2, 3 only):
-        // [3] -> Pass
+        // [3] -> Good
         if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade('pass');
+          handleGrade(3);
+          return;
+        }
+        // [4] -> Easy
+        if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(4);
           return;
         }
 
         // [1] -> Fail
         if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade('fail');
+          handleGrade(1);
           return;
         }
 
         // [2] -> Ambiguous
         if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade('ambiguous');
+          handleGrade(2);
           return;
         }
 

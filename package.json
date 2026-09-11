@@ -2,5 +2,9 @@
   "name": "edurecall",
   "version": "1.0.0",
   "description": "EduRecall - 중등 임용 사회과 서브노트 액티브 리콜 & 마스킹 테이프 시스템",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "fsrs-browser": "^6.6.0",
+    "ts-fsrs": "^5.4.2"
+  }
 }
