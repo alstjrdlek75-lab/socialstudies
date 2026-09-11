@@ -534,6 +534,27 @@
       max-width: 100% !important;
       width: 100% !important;
     }
+    /* Tablet Optimized Layout (1024px - 1280px) */
+    @media (min-width: 1024px) and (max-width: 1280px) {
+      #sidebar-drawer {
+        width: 16.5rem !important;
+      }
+      #main-content-wrapper {
+        padding-left: 16.5rem !important;
+      }
+      body.sidebar-collapsed #main-content-wrapper {
+        padding-left: 0 !important;
+      }
+      #main-content-grid {
+        padding: 1rem !important;
+        gap: 1rem !important;
+      }
+    }
+    .subject-tab-btn {
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      flex-shrink: 0 !important;
+    }
     /* Natural Korean Typography: prevent mid-syllable word breaking */
     #subnote-content-container,
     #subnote-content-container .topic-group,
@@ -1218,51 +1239,51 @@
 <body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
   <!-- TOP APP HEADER -->
-  <header class="fixed top-0 left-0 right-0 h-14 sm:h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-3 sm:px-4 lg:px-6">
-    <div class="flex items-center gap-2 sm:gap-4 min-w-0">
-      <div class="flex items-center gap-2 min-w-0">
+  <header class="fixed top-0 left-0 right-0 h-14 sm:h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6">
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <div class="flex items-center gap-2 shrink-0">
         <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 shrink-0" />
-        <div class="min-w-0">
+        <div class="shrink-0">
           <div class="flex items-center gap-2">
-            <span class="font-bold text-sm sm:text-base tracking-tight text-slate-900 whitespace-nowrap truncate">일반사회 단권화 서브노트</span>
+            <span class="font-bold text-sm sm:text-[15px] xl:text-base tracking-tight text-slate-900 whitespace-nowrap">일반사회 단권화 서브노트</span>
           </div>
-          <div class="text-[11px] text-slate-500 font-medium hidden sm:block">일반사회 시험 대비</div>
+          <div class="text-[11px] text-slate-500 font-medium whitespace-nowrap hidden sm:block">일반사회 시험 대비</div>
         </div>
       </div>
     </div>
 
     <!-- Subject Selector Navigation -->
-    <nav class="hidden lg:flex items-center gap-1.5 bg-slate-100/80 p-1 rounded-xl border border-slate-200" id="subject-tabs">
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs" data-subject="사회과교육론" type="button">
-        사회과교육론 <span class="opacity-75 text-[11px]" id="count-edu">(99)</span>
+    <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-bold transition-all bg-white text-blue-700 shadow-xs whitespace-nowrap shrink-0" data-subject="사회과교육론" type="button">
+        사회과교육론 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-edu">(99)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="법학" type="button">
-        법학 <span class="opacity-75 text-[11px]" id="count-law">(173)</span>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0" data-subject="법학" type="button">
+        법학 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-law">(173)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="사회학" type="button">
-        사회학 <span class="opacity-75 text-[11px]" id="count-soc">(151)</span>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0" data-subject="사회학" type="button">
+        사회학 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-soc">(151)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="정치학" type="button">
-        정치학 <span class="opacity-75 text-[11px]" id="count-pol">(129)</span>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0" data-subject="정치학" type="button">
+        정치학 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-pol">(129)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="경제학" type="button">
-        경제학 <span class="opacity-75 text-[11px]" id="count-econ">(6)</span>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0" data-subject="경제학" type="button">
+        경제학 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-econ">(6)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="기출" type="button">
-        기출 <span class="opacity-75 text-[11px]" id="count-exam">(213)</span>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0" data-subject="기출" type="button">
+        기출 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-exam">(213)</span>
       </button>
-      <button class="subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" data-subject="가이드" type="button">
-        가이드 <span class="opacity-75 text-[11px]" id="count-guide">(1)</span>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0" data-subject="가이드" type="button">
+        가이드 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-guide">(1)</span>
       </button>
     </nav>
 
     <!-- Top Tools (Pomodoro, Global Stats, Mobile Menu) -->
-    <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0">
+    <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-3 shrink-0">
       <!-- Theme Toggle Button (Light/Dark Mode) -->
-      <button id="theme-toggle-btn" class="w-8 h-8 sm:w-auto sm:px-2.5 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" title="테마 전환: 다크모드 / 라이트모드 [단축키: D]" aria-label="다크모드 전환">
+      <button id="theme-toggle-btn" class="w-8 h-8 xl:w-auto xl:px-2.5 xl:py-1.5 flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" title="테마 전환: 다크모드 / 라이트모드 [단축키: D]" aria-label="다크모드 전환">
         <span class="material-symbols-outlined text-[17px] text-amber-500 block dark:hidden" id="theme-icon-light">dark_mode</span>
         <span class="material-symbols-outlined text-[17px] text-amber-400 hidden dark:block" id="theme-icon-dark">light_mode</span>
-        <span class="hidden sm:inline text-[11px] font-medium" id="theme-text">다크</span>
+        <span class="hidden xl:inline text-[11px] font-medium" id="theme-text">다크</span>
       </button>
 
       <!-- Mobile TOC Button (visible only on mobile/tablet < lg) -->
@@ -1271,44 +1292,44 @@
       </button>
 
       <!-- Pomodoro -->
-      <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" title="클릭: 25분 타이머 시작/일시정지 | 더블클릭: 리셋">
-        <span class="material-symbols-outlined text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
-        <span class="font-mono font-bold text-xs" id="pomodoro-display">25:00</span>
+      <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" title="클릭: 25분 타이머 시작/일시정지 | 더블클릭: 리셋">
+        <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
+        <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
       </button>
 
       <!-- Global Progress -->
-      <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-xs text-blue-800 font-medium">
-        <span class="material-symbols-outlined text-[15px] text-blue-600">check_circle</span>
-        <span id="global-stat-text">완료: 0 / 569 (0%)</span>
+      <div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 xl:px-3 xl:py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-[11px] xl:text-xs text-blue-800 font-medium shrink-0">
+        <span class="material-symbols-outlined text-[14px] xl:text-[15px] text-blue-600">check_circle</span>
+        <span id="global-stat-text"><span class="hidden xl:inline">완료: </span>0 / 569 (0%)</span>
       </div>
     </div>
   </header>
 
   <!-- SUB-HEADER (Breadcrumb, Prev/Next, Shortcuts Hint) -->
-  <div id="sub-header" class="fixed top-14 sm:top-16 left-0 right-0 h-9 sm:h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-6 text-xs">
-    <div class="flex items-center gap-2 overflow-hidden min-w-0 flex-1">
+  <div id="sub-header" class="fixed top-14 sm:top-16 left-0 right-0 h-9 sm:h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs">
+    <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
-      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
-        <span class="material-symbols-outlined text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
       <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
       <!-- Breadcrumb -->
-      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-slate-700 font-semibold min-w-0 flex-1 py-0.5" id="bc-container">
+      <div class="flex items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar text-slate-700 font-semibold min-w-0 flex-1 py-0.5 text-[11px] sm:text-xs" id="bc-container">
         <span class="text-blue-700 font-bold shrink-0" id="bc-subject">사회과교육론</span>
         <span class="text-slate-400 shrink-0 hidden sm:inline" id="bc-chapter-sep">/</span>
-        <span class="text-slate-700 shrink-0 truncate max-w-[120px] md:max-w-[180px] hidden sm:inline" id="bc-chapter">1.사회과 교육의 전통</span>
+        <span class="text-slate-700 shrink-0 truncate max-w-[140px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px] hidden sm:inline" id="bc-chapter">1.사회과 교육의 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-section-sep">/</span>
-        <span class="text-indigo-800 font-bold shrink-0 truncate max-w-[140px] md:max-w-[180px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200 hidden" id="bc-section">1-1. 세 가지 전통</span>
+        <span class="text-indigo-800 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200 hidden" id="bc-section">1-1. 세 가지 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-subsection-sep">/</span>
-        <span class="text-amber-900 font-bold shrink-0 truncate max-w-[130px] md:max-w-[170px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-300 hidden" id="bc-subsection">세부단원</span>
+        <span class="text-amber-900 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-300 hidden" id="bc-subsection">세부단원</span>
         <span class="text-slate-400 shrink-0">/</span>
-        <span class="text-slate-900 font-extrabold truncate max-w-[200px] sm:max-w-[280px] md:max-w-none" id="bc-title">1.시민성 전달 모형</span>
+        <span class="text-slate-900 font-extrabold truncate max-w-[220px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-none" id="bc-title">1.시민성 전달 모형</span>
         <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
 
-    <div class="hidden sm:flex items-center gap-2 shrink-0">
+    <div class="hidden sm:flex items-center gap-1.5 sm:gap-2 shrink-0">
       <div class="flex items-center gap-1">
         <button id="btn-prev-topic" class="px-2 md:px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center gap-0.5 font-medium transition-colors" type="button" title="이전 주제 (방향키 좌, Cmd+좌, Cmd+,)">
           <span class="material-symbols-outlined text-[15px]">chevron_left</span>
@@ -1320,8 +1341,8 @@
         </button>
         <span class="text-slate-300 hidden lg:inline">|</span>
         <!-- Toggle Right Essay/FAP Tab in Fixed Sub-header -->
-        <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 및 자가채점(FAP) 서술창 접기/열기 [단축키: W]">
-          <span class="material-symbols-outlined text-[17px] text-blue-600" id="subhead-essay-icon">dock_to_right</span>
+        <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 및 자가채점(FAP) 서술창 접기/열기 [단축키: W]">
+          <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="subhead-essay-icon">dock_to_right</span>
           <span class="font-bold text-[11px]" id="subhead-essay-text">인출·FAP</span>
         </button>
       </div>
@@ -2200,7 +2221,7 @@
         const passedCount = Object.keys(map).filter(k => map[k].grade === 'pass').length;
         const total = TOPICS.length;
         const pct = Math.round((passedCount / total) * 100);
-        if (globalStatText) globalStatText.textContent = `완료: ${passedCount} / ${total} (${pct}%)`;
+        if (globalStatText) globalStatText.innerHTML = `<span class="hidden xl:inline">완료: </span>${passedCount} / ${total} (${pct}%)`;
         if (sidebarPassCount) sidebarPassCount.textContent = `암기 완료: ${passedCount}개`;
       }
 
@@ -3622,9 +3643,9 @@
       function updateSubjectTabStyles() {
         subjectTabs.forEach(b => {
           if (b.dataset.subject === activeSubject) {
-            b.className = 'subject-tab-btn active px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-blue-700 shadow-xs';
+            b.className = 'subject-tab-btn active px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-bold transition-all bg-white text-blue-700 shadow-xs whitespace-nowrap shrink-0';
           } else {
-            b.className = 'subject-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+            b.className = 'subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0';
           }
         });
         mobileSubjTabs.forEach(b => {
