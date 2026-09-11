@@ -2364,7 +2364,7 @@
 
               const displayName = (topic.section && topic.section !== chName) ? topic.section : topic.title;
 
-              const formattedTag = formatExamTag(topic.examTag);
+              const formattedTag = (topic.subject === '기출') ? '' : formatExamTag(topic.examTag);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${gradeIcon || '<span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>'}
@@ -2454,7 +2454,7 @@
                 ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
                 : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
 
-              const formattedSecTag = formatExamTag(topic.examTag);
+              const formattedSecTag = (topic.subject === '기출') ? '' : formatExamTag(topic.examTag);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${gradeIcon}
