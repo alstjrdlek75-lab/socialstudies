@@ -3763,8 +3763,19 @@
         if (autoSelectTopic) {
           const q = searchQuery.toLowerCase().trim();
           const matchIndices = [];
+          const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          const nowTime = new Date().getTime();
+          
           TOPICS.forEach((topic, idx) => {
-            const matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
+            let matchSubj = false;
+            if (activeSubject === '오늘 복습') {
+              const card = fsrsMap[topic.id];
+              if (card && card.state !== 0 && card.due && new Date(card.due).getTime() <= nowTime) {
+                matchSubj = true;
+              }
+            } else {
+              matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
+            }
             const matchQuery = !q || (
               topic.title.toLowerCase().includes(q) ||
               (topic.chapter && topic.chapter.toLowerCase().includes(q)) ||
