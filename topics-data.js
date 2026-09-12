@@ -19916,5 +19916,115 @@ window.ALL_TOPICS = [
       "상대가격",
       "생산성"
     ]
+  },
+  {
+    "id": "EXAM-2008-13",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-2. 소비자이론",
+    "title": "[2008학년도] 13번. 이자율 변화와 소비지출 (대체효과, 소득효과)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 철수와 영희는 이자율 정책이 소비지출에 미치는 영향을 탐구하려고 한다. 다음의 대화를 읽고 ㉠, ㉡과 관련된 경제학 용어를 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>철수 : 이자율이 올라가면 소비지출이 증가할까, 감소할까?</p>\n    <p>영희 : ㉠<u>이자율이 오르면 내가 현재 소비하지 않고 저축하는 것이 미래에 더 많이 소비할 수 있게 하지. 그러면 현재의 소비가 줄어들 거야.</u></p>\n    <p>철수 : 아니야. ㉡<u>이자율이 오르면 나의 저축으로 인한 이자수입이 증가할 거야. 그러면 그 수입 증가로 소비가 늘어날 거야.</u></p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 대체효과\n∙ ㉡: 소득효과\n\n해설:\n이자율이 상승할 때 가계의 소비 및 저축 결정은 두 가지 효과의 합으로 나타납니다.\n- 대체효과(㉠): 현재 소비의 기회비용(미래에 얻을 수 있는 이자)이 증가하므로, 현재 소비를 줄이고 저축(미래 소비)을 늘리는 효과입니다.\n- 소득효과(㉡): 이자율 상승으로 인해 자산 소득(이자수입)이 증가하여 실질적인 부(소득)가 커지므로, 정상재인 현재 소비를 늘리는 효과입니다. (저축자인 경우)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ 대체효과, ㉡ 소득효과",
+    "targetKeywords": [
+      "대체효과",
+      "소득효과",
+      "이자율",
+      "저축",
+      "현재소비"
+    ]
+  },
+  {
+    "id": "EXAM-2008-14",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2008학년도] 14번. 코즈의 정리를 통한 외부효과 해결",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 다음에서 ㉠의 사례를 수치를 포함하여 제시하고, 금연이 강제되었을 때보다 ㉠을 따를 때의 사회적 이득 증가분을 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>동수와 민성이는 한 집에 살고 있으며, 동수는 흡연자이고 민성이는 비흡연자이다. 동수가 흡연할 경우의 만족도(편익)를 돈으로 환산하면 하루 500원이고, 민성이가 담배연기로부터 받는 불쾌감(비용)을 돈으로 환산하면 하루 300원이라 하자. 이 경우 민성이가 동수에게 담배를 피우지 못하게 하는 것은 효율적인 자원배분의 상태가 아니다. 동수는 담배를 피우지 못하게 하는 방안보다, 담배를 피울 수 있으면서도 ㉠<u>더 나은 상태에 도달할 수 있는 방안</u>을 민성이에게 제안하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠의 사례 : _________________________________</p>\n    <p>∙ 사회적 이득 증가분 : __________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠의 사례: 동수가 민성이에게 300원 초과 500원 미만의 금액(예: 400원)을 보상으로 지불하고 담배를 피우는 방안.\n∙ 사회적 이득 증가분: 200원 (또는 동수의 순편익 100원 + 민성의 순편익 100원 = 200원)\n\n해설:\n코즈의 정리(Coase Theorem)에 관한 문제입니다. 재산권이 명확히 확정되어 있고 거래비용이 없다면, 당사자 간의 자발적 협상을 통해 외부효과를 내재화하여 효율적인 자원 배분에 도달할 수 있습니다.\n- 동수의 흡연 편익(500원)이 민성이의 피해 비용(300원)보다 크므로, 사회적으로는 동수가 흡연하는 것이 이득입니다.\n- 금연 강제 시 사회적 잉여는 0입니다. 흡연 시 사회적 잉여는 500 - 300 = 200원입니다. 따라서 금연 강제 대비 사회적 이득 증가분은 200원입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "동수가 400원 보상하고 흡연 / 사회적 이득 200원 증가",
+    "targetKeywords": [
+      "코즈의 정리",
+      "외부효과",
+      "보상",
+      "자발적 협상",
+      "사회적 잉여"
+    ]
+  },
+  {
+    "id": "EXAM-2008-15",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2008학년도] 15번. 통화주의자(준칙주의)와 신화폐수량설",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 15번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    15. (가)에서 ㉠이 어떤 정책인지 적고, (나)의 ㉡, ㉢에 들어갈 숫자를 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p><b>(가)</b><br>통화주의(Monetarism)는 '화폐가 가장 중요하다'고 주장한다. 이는 통화정책이 재정정책보다 거시경제에 미치는 영향이 훨씬 더 강력하다는 주장이다. 하지만 그렇다고 해서 통화주의가 재량적(discretionary) 통화정책을 권하지는 않으며, 오히려 ㉠<u>일정한 통화 증가율을 정하여 민간에 공포한 후 그대로 시행하는 것</u>이 좋다고 주장한다.</p>\n    <p><b>(나)</b><br>통화주의는 신화폐수량설을 따른다. 이에 따르면 통화량이 400조 원이며, 명목GDP가 800조 원인 경제에서 화폐의 유통속도는 ( ㉡ )이(가) 된다. 또한 A국의 화폐유통속도가 안정적이라고 할 때, 실질소득 증가율이 5%인 상황에서 물가 상승률을 2%로 유지하려면 통화량의 증가율은 ( ㉢ )%로 유지하여야 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉢ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: k% 준칙 (또는 준칙에 입각한 통화정책, 고정 통화증가율 준칙)\n∙ ㉡: 2\n∙ ㉢: 7\n\n해설:\n- ㉠ 프리드먼(M. Friedman) 등 통화주의자들은 재량적 개입이 오히려 경제 불안정을 초래한다고 보아, 경제성장률에 맞춰 통화량을 매년 일정 비율(k%)로 공급하는 '준칙주의(k% rule)'를 주장했습니다.\n- ㉡ 교환방정식 MV = PY (M: 통화량, V: 유통속도, PY: 명목GDP)에서 400 × V = 800 이므로 화폐 유통속도(V)는 2입니다.\n- ㉢ 교환방정식을 변화율 형태로 바꾸면: 통화증가율(ΔM/M) + 유통속도증가율(ΔV/V) = 물가상승률(ΔP/P) + 실질소득증가율(ΔY/Y)\n  유통속도가 안정적(ΔV/V = 0)이라고 가정했으므로,\n  통화증가율 = 물가상승률(2%) + 실질소득증가율(5%) = 7%가 되어야 합니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ k% 준칙, ㉡ 2, ㉢ 7",
+    "targetKeywords": [
+      "통화주의",
+      "k% 준칙",
+      "준칙주의",
+      "신화폐수량설",
+      "화폐유통속도"
+    ]
+  },
+  {
+    "id": "EXAM-2007-12",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2007학년도] 12번. 이부가격제와 소비자 잉여 (헬스장 회원권)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2007학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. ㉠과 ㉡에 나타난 개념에 해당하는 부분을 그래프상의 기호로 표시하고, 철수가 동호의 '㉡ 제의'를 받아들일 때의 헬스 이용 빈도와 '공짜로 회원 대우'를 받을 때의 이용 빈도를 그래프상의 구간을 기호로 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>철수는 친구인 동호가 대규모 헬스장을 개업했다는 말을 듣고 찾아갔다. 동호의 헬스장은 가입비를 납부한 회원에게는 회원 요금을, 회원이 아닌 사람에게는 그보다 비싼 일반 요금을 받고 있었다.</p>\n    <p>철수 : 동호야, 회원 가입비는 얼마냐? 그리고 요금은?</p>\n    <p>동호 : 가입비는 백만 원인데, 회원은 일반 요금의 3분의 1만 내면 돼. 왜, 가입하게?</p>\n    <p>철수 : 가입비가 비싸다. 싸게 해줄 수 없니?</p>\n    <p>동호 : ㉠<u>그럼 네가 회원 가입비로 최대 얼마까지 낼 용의가 있는지 정직하게 말해 봐.</u></p>\n    <p>철수 : 그건 좀 그렇다. 가입비 없이 회원 요금만 받으면 안 되니?</p>\n    <p>동호 : 그건 안돼. 대신 ㉡<u>내가 너한테 (가입비를 낸 만큼의 혜택을) 보조해 줄 테니까, 헬스장에 와서는 그냥 일반 요금 내고 이용해라.</u> 얼마면 회원 대우해주는 셈이 되겠니?</p>\n    <p>[그래프 정보: Y축 다른 모든 상품, X축 헬스 이용 빈도. 무차별곡선 i0, i1. <br>일반 요금 예산선 bn, 회원 요금 예산선 bv. 무차별곡선과 예산선의 접점들(d, e, f, g 등)이 표시되어 있음]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉡ 제의를 받아들일 때의 이용빈도 : ____________</p>\n    <p>∙ 공짜로 회원 대우를 받을 때의 이용빈도 : _________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 선분 ab (또는 가입비에 해당하는 예산선 Y축 절편의 차이. 일반요금 효용 i0를 유지하면서 회원요금을 적용받기 위해 낼 용의가 있는 최대 금액인 소비자 잉여분)\n∙ ㉡: 선분 ac (또는 보조금 크기. 동등변화/보상변화의 개념)\n∙ ㉡ 제의를 받아들일 때의 이용빈도: m (또는 k, 상황에 따라 그래프 교점 판독 요망 - 일반요금 예산선이 보조금만큼 상향이동한 점의 X좌표)\n∙ 공짜로 회원 대우를 받을 때의 이용빈도: v (회원 예산선 bv가 그대로 적용될 때 무차별곡선 i1과의 접점의 X좌표)\n\n해설:\n이부가격제(가입비+이용료)와 무차별곡선을 결합한 소비자이론 심화 문제입니다.\n- 가입비(기본요금)의 최대 낼 용의(㉠)는 낮은 이용료를 적용받음으로써 증가하는 효용을 기존 효용수준(i0)으로 되돌려 놓는 금액인 '보상변화'의 크기입니다.\n- 가입비를 면제받고 일반요금을 내면서 동등한 혜택을 받기 위한 보조금(㉡)은 회원 가입 시 달성하는 효용(i1)을 일반요금 하에서 달성하게 해주는 '동등변화'의 크기입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ ab ㉡ ac / 이용빈도 판독 요망",
+    "targetKeywords": [
+      "이부가격제",
+      "무차별곡선",
+      "보상변화",
+      "동등변화",
+      "소비자잉여"
+    ]
+  },
+  {
+    "id": "EXAM-2007-13",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-3. 생산자이론",
+    "title": "[2007학년도] 13번. 생산시설 가동 여부와 고정비용, 매몰비용",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2007학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 경수는 신문 기사 (가)를 읽고 (나)와 같은 이론적 결과를 추론하였다. ㉠, ㉡에 들어갈 적합한 용어를 쓰고, ㉢에 적절한 내용을 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p><b>(가)</b><br>A제철은 준공 후 계속 놀리고 있는 강판 생산시설을 조만간 가동하기로 했다. 회사측 관계자는, \"이 시설을 놀리면 한 달에 10억 원의 손실이 발생하지만, 가동하면 손실을 3억 원으로 줄일 수 있다.\"라고 설명했다. A제철이 생산하는 강판은 국내외적으로 경쟁시장을 형성하고 있다.</p>\n    <p><b>(나)</b><br>현재 강판의 시장가격은 A제철의 강판 생산수준에서의 ( ㉠ ) 비용보다는 높지만, ( ㉡ ) 비용보다는 낮은 수준에 있는 것으로 추정할 수 있다. 또한, 단기적으로 A제철의 공급곡선은 ( ㉢ )(으)로 나타난다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉢ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 평균가변(AVC)\n∙ ㉡: 평균(ATC 또는 AC)\n∙ ㉢: 평균가변비용 곡선(AVC)의 최저점 이상의 한계비용(MC) 곡선\n\n해설:\n- 시설을 놀려도 발생하는 10억 원의 손실은 생산량과 무관하게 지출된 '고정비용(매몰비용)'입니다.\n- 가동 시 손실이 3억 원으로 줄어든다는 것은, 시장가격(P)이 제품을 생산하는 데 드는 단위당 평균가변비용(AVC)보다는 높아 총 수입(TR)이 가변비용(TVC)을 충당하고도 7억 원이 남아 고정비용 손실을 줄여주었다는 뜻입니다.\n- 그러나 여전히 3억 원의 손실이 발생하므로 시장가격은 전체 평균비용(ATC)보다는 낮은 상태입니다.\n- 완전경쟁시장에서 단기 공급곡선은 조업중단점(AVC 최저점) 이상의 한계비용(MC) 곡선 구간입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ 평균가변 ㉡ 평균 ㉢ 평균가변비용(AVC) 최저점 이상의 한계비용(MC) 곡선",
+    "targetKeywords": [
+      "평균가변비용",
+      "평균비용",
+      "고정비용",
+      "조업중단점",
+      "한계비용",
+      "공급곡선"
+    ]
+  },
+  {
+    "id": "EXAM-2006-14",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-2. 환율과국제수지",
+    "title": "[2006학년도] 14번. 물가 하락이 거시경제에 미치는 파급 경로",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2006학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 변동환율제도를 채택하고 있으며 자본 이동이 자유로운 소규모 개방경제를 상정하자. 물가 하락은 가계의 소비지출과 기업의 투자지출뿐 아니라 순수출에도 영향을 미친다. (A) 물가 하락이 화폐시장에서 이자율에 영향을 미치게 되는 과정을 쓰고, (B) 화폐시장에서의 이런 변화가 순수출에 어떤 경로로 영향을 미치게 되는지를 자본 유출입, 환율, 수출입에 대한 영향의 순서에 따라 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>∙ (A) : ____________________________________________________________________</p>\n    <p>∙ (B) : ____________________________________________________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ (A): 물가가 하락하면 거래적 화폐수요가 감소하여, 실질 화폐공급이 증가하는 효과가 나타나 화폐시장에서 이자율이 하락한다.\n∙ (B): 이자율이 하락하면 국내 자산 수익률이 낮아져 자본이 해외로 유출된다. 자본 유출은 외환시장에서 외환 수요를 증가시켜 환율을 상승(자국통화가치 하락)시킨다. 환율 상승은 수출품의 가격경쟁력을 높여 수출을 증가시키고 수입을 감소시켜 순수출을 증가시킨다.\n\n해설:\n거시경제의 이자율 경로와 환율 경로를 묻는 전형적인 서술형 문제입니다. 물가 하락(P↓) -> 화폐수요(Md) 하락 -> 이자율(r) 하락 -> 자본 유출(CF↑) -> 환율(e) 상승 -> 순수출(NX) 증가의 메커니즘을 명확히 서술해야 합니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "(A) 화폐수요 감소로 이자율 하락, (B) 자본유출 -> 환율상승 -> 순수출증가",
+    "targetKeywords": [
+      "물가 하락",
+      "화폐수요",
+      "이자율",
+      "자본 유출입",
+      "환율",
+      "순수출"
+    ]
   }
 ];
