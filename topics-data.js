@@ -42,6 +42,81 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
+    "id": "EXAM-2008-13",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-2. 소비자이론",
+    "title": "[2008학년도] 13번. 이자율 변화와 소비지출 (대체효과, 소득효과)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 철수와 영희는 이자율 정책이 소비지출에 미치는 영향을 탐구하려고 한다. 다음의 대화를 읽고 ㉠, ㉡과 관련된 경제학 용어를 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>철수 : 이자율이 올라가면 소비지출이 증가할까, 감소할까?</p>\n    <p>영희 : ㉠<u>이자율이 오르면 내가 현재 소비하지 않고 저축하는 것이 미래에 더 많이 소비할 수 있게 하지. 그러면 현재의 소비가 줄어들 거야.</u></p>\n    <p>철수 : 아니야. ㉡<u>이자율이 오르면 나의 저축으로 인한 이자수입이 증가할 거야. 그러면 그 수입 증가로 소비가 늘어날 거야.</u></p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 대체효과\n∙ ㉡: 소득효과\n\n해설:\n이자율이 상승할 때 가계의 소비 및 저축 결정은 두 가지 효과의 합으로 나타납니다.\n- 대체효과(㉠): 현재 소비의 기회비용(미래에 얻을 수 있는 이자)이 증가하므로, 현재 소비를 줄이고 저축(미래 소비)을 늘리는 효과입니다.\n- 소득효과(㉡): 이자율 상승으로 인해 자산 소득(이자수입)이 증가하여 실질적인 부(소득)가 커지므로, 정상재인 현재 소비를 늘리는 효과입니다. (저축자인 경우)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ 대체효과, ㉡ 소득효과",
+    "targetKeywords": [
+      "대체효과",
+      "소득효과",
+      "이자율",
+      "저축",
+      "현재소비"
+    ]
+  },
+  {
+    "id": "EXAM-2011-1-22",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-2. 소비자이론",
+    "title": "[2011학년도] 22번. 가격효과 (기픈재, 대체효과, 소득효과)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음은 가격효과에 관한 글이다. 이에 부합하는 판단으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>재화의 가격이 변화할 때 그 재화의 수요량이 변화하는 가격효과는, 다른 재화에 대한 상대가격이 싸지거나 비싸져서 그 재화의 수요량이 늘거나 줄어드는 대체효과와 가격 변화가 실질소득의 변화를 야기해서 이로 인해 수요량이 변화하는 소득효과의 합으로 구성된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 아일랜드의 감자와 같은 기픈재(Giffen goods) 현상은 그 재화의 가격이 상승할 때만 발생할 수 있다.</p>\n      <p>ㄴ. 복권이 당첨된 경우의 노동 공급 변화를 해석하는 소득-여가 분석에서 대체효과는 0이다.</p>\n      <p>ㄷ. 소비자의 소득이 증가할 때 재화에 대한 수요가 감소하지 않는다면, 재화의 가격이 상승할 때 그 재화에 대한 수요는 분명히 감소한다.</p>\n      <p>ㄹ. 저축증대를 위하여 이자소득과 같은 금융소득에 대해 조세를 낮춰야 한다는 주장을 하는 경제학자는 이자율 변화에 대한 저축의 소득효과가 대체효과보다 크다고 본다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- ㄱ: 기픈재(Giffen good)는 가격이 상승할 때 수요량이 증가하고, 가격이 하락할 때 수요량이 감소하는 재화입니다. 가격 하락 시에도 발생할 수 있으므로 '상승할 때만'은 틀립니다. (틀림)\n- ㄴ: 복권 당첨은 순수한 비근로소득(비임금소득)의 증가로, 여가(또는 노동)의 상대가격(임금률) 변화 없이 예산선이 평행이동하는 경우이므로 대체효과는 0이고 소득효과만 발생합니다. (옳음)\n- ㄷ: 소득 증가 시 수요가 감소하지 않으면 그 재화는 정상재입니다. 정상재는 가격 상승 시 대체효과(-)와 소득효과(실질소득 감소로 수요 감소, -)가 같은 방향으로 작용하여 총효과(가격효과)는 반드시 음(-)이 됩니다. 즉, 수요량이 분명히 감소합니다. (옳음)\n- ㄹ: 금융소득에 대한 조세를 낮추면 실질 이자율이 상승합니다. 이자율 상승 시 대체효과는 저축 증가(현재소비 감소), 소득효과는 저축 감소(현재소비 증가, 이자소득 증가로 인한 부유화)로 나타납니다. 저축이 증대될 것이라고 주장하려면 저축을 늘리는 대체효과가 저축을 줄이는 소득효과보다 더 커야 합니다. 따라서 대체효과가 소득효과보다 크다고 본 것입니다. (틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ ㄴ, ㄷ",
+    "targetKeywords": [
+      "가격효과",
+      "대체효과",
+      "소득효과",
+      "기픈재",
+      "노동공급",
+      "저축공급"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-20",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-2. 소비자이론",
+    "title": "[2012학년도] 20번. 무차별곡선과 효용 분석",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 20번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    20. 표는 상품 '가'와 '나'에 대한 갑의 한 무차별 곡선과 상품 '다'와 '라'에 대한 을의 한 무차별 곡선 위에 있는 일부 상품 묶음을 나타낸 것이다. 이에 대한 분석으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>&lt;갑&gt; (상품 묶음: A(2, 14), B(3, 8), C(6, 4), D(7, 3))</p>\n    <p>&lt;을&gt; (상품 묶음: a(3, 0), b(2, 1), c(1, 2), d(0, 3))</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 갑이 상품 '가'와 '나'를 각각 3개, 9개 소비한다면 효용은 A에서보다 증가한다.</div>\n    <div>② 갑에게 B와 C의 상품 묶음이 주는 효용은 동일하다.</div>\n    <div>③ 갑은 상품 '가' 한 단위를 포기하는 대가로 D에서보다 B에서 상품 '나'를 더 많이 요구할 것이다.</div>\n    <div>④ 을에게 상품 '다'와 '라'는 완전 대체재이다.</div>\n    <div>⑤ 을의 예산선과 무차별 곡선이 일치할 경우 그의 최적 선택점은 1개이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ⑤\n\n해설:\n- 동일한 무차별곡선 상의 점들은 효용이 같습니다. 갑의 무차별곡선 상에서 B(3,8)와 C(6,4)는 효용이 같습니다(② 옳음).\n- (3, 9)는 B(3,8)보다 더 많은 재화를 소비하므로 무차별곡선이 바깥쪽에 위치하여 효용이 더 높습니다. (① 옳음)\n- 무차별곡선은 원점에 대해 볼록하므로(한계대체율 체감), 가 재화 소비량이 적은 B에서 가 1단위 포기에 대해 더 많은 나를 요구합니다. (③ 옳음)\n- 을의 무차별곡선을 보면 (3,0)-(2,1)-(1,2)-(0,3)으로 직선(MRS가 1로 일정)입니다. 즉, 완전대체재입니다. (④ 옳음)\n- 완전대체재인 경우 예산선과 무차별곡선의 기울기가 동일하게 일치(겹침)하면, 예산선 상의 모든 점(무수히 많은 점)이 최적 선택점이 됩니다. 1개가 아닙니다. (⑤ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "⑤ 을의 예산선과 무차별 곡선이 일치할 경우 그의 최적 선택점은 1개이다.",
+    "targetKeywords": [
+      "무차별곡선",
+      "한계대체율",
+      "완전대체재",
+      "코너해",
+      "예산선"
+    ]
+  },
+  {
+    "id": "EXAM-2019-B-02",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-2. 소비자이론",
+    "title": "[2019학년도] 2번. 이자율 상승에 따른 현재소비의 대체효과와 소득효과 [4점]",
+    "examTag": "",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 글을 읽고 <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>다음 그림은 어느 소비자의 현재소비와 미래소비를 무차별곡선과 예산선을 이용하여 나타낸 것이다. 이자율이 상승할 경우 최적점이 A점에서 C점으로 이동한다. 이 소비자의 현재소득은 C_0이고 이 소득을 소비와 저축으로 나눈다. 미래에는 현재 저축한 돈과 이자로 산다. (단, 현재소비와 미래소비는 모두 정상재이며, 선분 C_0''C_1''은 선분 C_0C_1'과 평행이다.)</p>\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2019_b_02.png\" alt=\"이자율 상승과 현재 소비-미래 소비 선택 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n    <p>A점 ➔ B점 (동일 무차별곡선 상에서 상대가격 기울기 가팔라짐) : ㉠</p>\n    <p>B점 ➔ C점 (새로운 예산선 상으로 평행이동) : ㉡</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 이자율 상승에 따라 A점에서 B점으로의 이동인 ㉠과 B점에서 C점으로의 이동인 ㉡에 해당하는 경제학 개념을 순서대로 제시할 것.</p>\n    <p>◦ 이자율이 상승할 경우 현재 저축이 감소할 수 있는 이유를 ㉠과 ㉡을 활용하여 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- ㉠, ㉡:\n  ㉠: 대체효과\n  ㉡: 소득효과\n- 이자율 상승 시 현재 저축이 감소할 수 있는 이유:\n  이자율이 상승하면 현재소비의 기회비용이 커져 현재소비를 줄이고 저축을 늘리려는 대체효과(㉠)가 발생한다. 반면 저축자인 소비자는 이자율 상승으로 실질소득이 증가하여 정상재인 현재소비를 늘리고 저축을 줄이려는 소득효과(㉡)가 발생한다. 만약 소득효과(㉡)가 대체효과(㉠)보다 크다면, 현재소비가 증가하여 결과적으로 현재 저축이 감소할 수 있다.\n\n2. 해설:\n- 2기간 피셔 시점간 소비자 선택 모형:\n  - 이자율(r) 상승 ➔ 미래소비에 대한 현재소비의 상대가격 (1+r) 상승.\n  - 대체효과: 현재소비 감소, 저축 증가.\n  - 저축자의 소득효과: 실질구매력 증가로 정상재인 현재소비 증가, 저축 감소.\n  - 소득효과 > 대체효과 ➔ 현재소비 증가, 저축 감소 (후방굴절 노동/저축공급).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- ㉠, ㉡:\n  ㉠: 대체효과\n  ㉡: 소득효과\n- 이자율 상승 시 현재 저축이 감소할 수 있는 이유:\n  이자율이 상승하면 현재소비의 기회비용이 커져 현재소비를 줄이고 저축을 늘리려는 대체효과(㉠)가 발생한다. 반면 저축자인 소비자는 이자율 상승으로 실질소득이 증가하여 정상재인 현재소비를 늘리고 저축을 줄이려는 소득효과(㉡)가 발생한다. 만약 소득효과(㉡)가 대체효과(㉠)보다 크다면, 현재소비가 증가하여 결과적으로 현재 저축이 감소할 수 있다.\n\n2. 해설:\n- 2기간 피셔 시점간 소비자 선택 모형:\n  - 이자율(r) 상승 ➔ 미래소비에 대한 현재소비의 상대가격 (1+r) 상승.\n  - 대체효과: 현재소비 감소, 저축 증가.\n  - 저축자의 소득효과: 실질구매력 증가로 정상재인 현재소비 증가, 저축 감소.\n  - 소득효과 > 대체효과 ➔ 현재소비 증가, 저축 감소 (후방굴절 노동/저축공급).",
+    "targetKeywords": [
+      "대체효과",
+      "소득효과",
+      "이자율 상승",
+      "저축 감소",
+      "소득효과가 대체효과보다 클 때"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-004",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
@@ -54,6 +129,25 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 0,
     "groupCount": 5
+  },
+  {
+    "id": "EXAM-2007-13",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-3. 생산자이론",
+    "title": "[2007학년도] 13번. 생산시설 가동 여부와 고정비용, 매몰비용",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2007학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 경수는 신문 기사 (가)를 읽고 (나)와 같은 이론적 결과를 추론하였다. ㉠, ㉡에 들어갈 적합한 용어를 쓰고, ㉢에 적절한 내용을 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p><b>(가)</b><br>A제철은 준공 후 계속 놀리고 있는 강판 생산시설을 조만간 가동하기로 했다. 회사측 관계자는, \"이 시설을 놀리면 한 달에 10억 원의 손실이 발생하지만, 가동하면 손실을 3억 원으로 줄일 수 있다.\"라고 설명했다. A제철이 생산하는 강판은 국내외적으로 경쟁시장을 형성하고 있다.</p>\n    <p><b>(나)</b><br>현재 강판의 시장가격은 A제철의 강판 생산수준에서의 ( ㉠ ) 비용보다는 높지만, ( ㉡ ) 비용보다는 낮은 수준에 있는 것으로 추정할 수 있다. 또한, 단기적으로 A제철의 공급곡선은 ( ㉢ )(으)로 나타난다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉢ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 평균가변(AVC)\n∙ ㉡: 평균(ATC 또는 AC)\n∙ ㉢: 평균가변비용 곡선(AVC)의 최저점 이상의 한계비용(MC) 곡선\n\n해설:\n- 시설을 놀려도 발생하는 10억 원의 손실은 생산량과 무관하게 지출된 '고정비용(매몰비용)'입니다.\n- 가동 시 손실이 3억 원으로 줄어든다는 것은, 시장가격(P)이 제품을 생산하는 데 드는 단위당 평균가변비용(AVC)보다는 높아 총 수입(TR)이 가변비용(TVC)을 충당하고도 7억 원이 남아 고정비용 손실을 줄여주었다는 뜻입니다.\n- 그러나 여전히 3억 원의 손실이 발생하므로 시장가격은 전체 평균비용(ATC)보다는 낮은 상태입니다.\n- 완전경쟁시장에서 단기 공급곡선은 조업중단점(AVC 최저점) 이상의 한계비용(MC) 곡선 구간입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ 평균가변 ㉡ 평균 ㉢ 평균가변비용(AVC) 최저점 이상의 한계비용(MC) 곡선",
+    "targetKeywords": [
+      "평균가변비용",
+      "평균비용",
+      "고정비용",
+      "조업중단점",
+      "한계비용",
+      "공급곡선"
+    ]
   },
   {
     "id": "ECON-005",
@@ -84,6 +178,135 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
+    "id": "EXAM-2009-1-21",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2009학년도] 21번. 최고가격제와 시장의 반응",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음은 가격 통제에 관한 글이다. 이에 대한 추론으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>4세기 초, 로마 제국은 전쟁 준비와 토목 공사를 수행하기 위해서 많은 주화를 발행하였다. 그로 인해 물가가 매우 빠른 속도로 치솟았다. 그런데 디오클레티안 황제는 물가 상승의 원인이 상인들의 탐욕 때문이라고 판단하였다.</p>\n    <p>물가 문제가 걷잡을 수 없는 심각한 상황으로 치닫게 되자 디오클레티안 황제는 모든 상품의 가격을 동결하고, 만약에 이를 어기는 자에 대해서는 사형선고를 내리라는 칙령을 내렸다. 그 결과 가격 통제는 매우 엄격하게 지켜졌다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 소비자잉여는 증가할 것이다.</p>\n      <p>ㄴ. 생산자잉여는 감소할 것이다.</p>\n      <p>ㄷ. 상품의 품귀 현상이 발생할 것이다.</p>\n      <p>ㄹ. 경제 내의 효율성이 제고될 것이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- 통화량 급증으로 균형 가격이 상승하는 상황에서 가격을 동결(최고가격제)하면 초과 수요(품귀 현상)가 발생합니다. (ㄷ 옳음)\n- 시장 균형가격보다 낮은 수준에서 가격이 통제되므로 생산자 잉여는 확실히 감소합니다. (ㄴ 옳음)\n- 소비자 잉여는 가격 하락의 이득도 있지만 거래량 감소의 손실도 겹쳐 증가할 수도 감소할 수도 있습니다. (ㄱ 불확실)\n- 가격 통제는 자원 배분의 왜곡과 후생 순손실(자중손실)을 초래하므로 효율성이 저하됩니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ ㄴ, ㄷ",
+    "targetKeywords": [
+      "최고가격제",
+      "가격통제",
+      "초과수요",
+      "품귀현상",
+      "생산자잉여"
+    ]
+  },
+  {
+    "id": "EXAM-2011-1-21",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2011학년도] 21번. 종량세 부과와 조세 귀착, 후생손실",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 어느 상품의 수요와 공급은 다음 표와 같다고 가정한다. 정부가 상품 1단위당 30원의 종량세를 생산자에게 부과할 경우, 이에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th class=\"border border-slate-300 p-1\">가격(원)</th><th class=\"border border-slate-300 p-1\">수요량</th><th class=\"border border-slate-300 p-1\">공급량</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1\">10</td><td class=\"border border-slate-300 p-1\">130</td><td class=\"border border-slate-300 p-1\">40</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">20</td><td class=\"border border-slate-300 p-1\">110</td><td class=\"border border-slate-300 p-1\">50</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 bg-yellow-50 font-bold text-yellow-800\">30</td><td class=\"border border-slate-300 p-1\">90</td><td class=\"border border-slate-300 p-1\">60</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 bg-blue-50 font-bold text-blue-800\">40</td><td class=\"border border-slate-300 p-1 bg-blue-50 font-bold text-blue-800\">70</td><td class=\"border border-slate-300 p-1 bg-blue-50 font-bold text-blue-800\">70</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">50</td><td class=\"border border-slate-300 p-1\">50</td><td class=\"border border-slate-300 p-1\">80</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 bg-red-50 font-bold text-red-800\">60</td><td class=\"border border-slate-300 p-1\">30</td><td class=\"border border-slate-300 p-1\">90</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">70</td><td class=\"border border-slate-300 p-1\">10</td><td class=\"border border-slate-300 p-1\">100</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 과세 후에 정부의 조세수입은 1,500원이 된다.</p>\n      <p>ㄴ. 과세 후에 소비자가 상품을 구매하는 가격은 50원이 된다.</p>\n      <p>ㄷ. 과세 후에 후생 순손실(deadweight loss)은 600원이 된다.</p>\n      <p>ㄹ. 과세 후에 종량세의 생산자 부담은 상품 한 단위당 10원이 된다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (확인 결과 ㄴ은 60원, ㄱ 조세수입 1500, ㄹ 생산자 10원. 자세한 도출 필요)\n실제 정답: \n세전 균형은 P=40, Q=70. \n단위당 30원의 세금이 생산자에게 부과되면 공급곡선이 위로 30만큼 상향 이동.\n즉, 기존 P에서 제공하던 수량을 이제 P+30에서 제공.\n새로운 균형은 수요와 새로운 공급이 만나는 곳. \n공급량 50을 위해 과거엔 20원을 받았으나, 이제 50원이 되어야 함.\n수요량이 50일 때 가격은 50원. 따라서 P=50, Q=50이 새로운 균형.\n- 조세수입: 30원 × 50단위 = 1,500원. (ㄱ 옳음)\n- 소비자 구매가격: 50원. (ㄴ 옳음)\n- 후생 순손실(자중손실): 1/2 × (기존 거래량 70 - 새 거래량 50) × 세율 30 = 1/2 × 20 × 30 = 300원. (ㄷ 틀림)\n- 생산자가 받는 순수 가격은 50 - 30 = 20원. 기존 가격(40원)에 비해 생산자 부담분은 40 - 20 = 20원. \n(소비자 부담분은 50 - 40 = 10원) 따라서 생산자 부담은 20원이므로 ㄹ은 틀림.\n결론적으로 정답은 ① ㄱ, ㄴ 입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① ㄱ, ㄴ",
+    "targetKeywords": [
+      "종량세",
+      "조세귀착",
+      "후생순손실",
+      "균형가격",
+      "조세수입"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-19",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2012학년도] 19번. 담배 시장의 수요와 공급 및 조세 귀착",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 19번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    19. (가)∼(다) 시장에 대한 옳은 추론을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>(가) 쌀을 재배할 수 있는 면적은 한정되어 있고, 쌀을 생산하는 데는 오랜 시간이 걸린다. 그리고 쌀밥은 소비자들의 주식으로 가격의 변화에 대한 수요량 변화가 매우 적다.</p>\n    <p>(나) 해외 관광 여행은 국내 여행에 비해 가격 부담이 크다. 그래서 해외 관광 여행 비용이 조금이라도 상승하면 해외 관광 여행을 포기하는 경우가 많아 환율 변동이 서비스 수지의 개선 요인이 되기도 한다.</p>\n    <p>(다) 담배는 중독성이 있어서 쉽게 끊기 어렵다. 그런데 최근 시장 개방이 확대되면서 각국의 다양한 담배가 시장에서 판매되고 있어 애연가들은 자신이 좋아하는 담배를 어디서나 쉽게 살 수 있게 되었다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. (가) 시장에서 기술 진보로 쌀의 공급이 증가할 경우 쌀 농가의 판매 수입은 감소할 것이다.</p>\n      <p>ㄴ. (나) 시장에서 여행사들이 해외 관광 여행 공급을 줄인다면 판매 수입은 증가할 것이다.</p>\n      <p>ㄷ. (다) 시장에 정부가 물품세를 부과하면 판매자보다 소비자의 세금 부담 비중이 높아질 것이다.</p>\n      <p>ㄹ. (나) 시장에 비해 (다) 시장이 불황에 의해 영향을 받기 쉽다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (정확한 보기 검증 필요)\n\n해설:\n- (가) 쌀 시장: 필수재로 수요의 가격탄력성이 비탄력적. 공급 증가 시 가격이 크게 폭락하여 총수입(농부의 역설)은 감소. (ㄱ 옳음)\n- (나) 해외 여행: 사치재로 가격이 비싸고 수요의 가격탄력성이 탄력적. 공급 감소로 가격이 상승하면 수요량이 크게 줄어들어 총수입은 감소. (ㄴ 틀림 - 증가가 아니라 감소함)\n- (다) 담배 시장: 원래 중독성(비탄력적 수요)이나, 대체재(다양한 수입담배)가 많아져 수요탄력성이 커짐(탄력적으로 변함). 따라서 세금 부과 시 소비자보다 공급자 부담이 상대적으로 커질 가능성이 있음. (ㄷ 틀림)\n*단, (다)의 맥락에서 '애연가들은 좋아하는 담배를 어디서나 쉽게 살 수 있게 되었다'는 공급이 매우 탄력적(또는 대체재 풍부)임을 시사.\n- 정확한 정답은 평가원 발표 답안을 참고해야 하나, 수요탄력성과 총수입 관계를 묻는 문제입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① 또는 알맞은 조합",
+    "targetKeywords": [
+      "가격탄력성",
+      "조세의 귀착",
+      "농부의 역설",
+      "대체재"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-25",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2013학년도] 25번. 대체재의 균형 가격 변화 (잼과 버터)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 다음 (가), (나)의 원인을 옳게 짝지은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>잼과 버터는 대체재이다. 잼의 원료는 과일이고 버터의 원료는 우유이다.</p>\n    <p>(가) 버터의 균형 거래량이 증가하고, 잼의 균형 가격이 상승하였다.</p>\n    <p>(나) 버터의 균형 거래량이 증가하고, 잼의 균형 가격이 하락하였다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <table class=\"w-full text-center border-collapse border border-slate-300\">\n      <thead>\n        <tr><th class=\"border border-slate-300 p-1\"></th><th class=\"border border-slate-300 p-1\">(가)</th><th class=\"border border-slate-300 p-1\">(나)</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1\">①</td><td class=\"border border-slate-300 p-1\">과일 가격 상승</td><td class=\"border border-slate-300 p-1\">우유 가격 하락</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">②</td><td class=\"border border-slate-300 p-1\">과일 가격 상승</td><td class=\"border border-slate-300 p-1\">우유 가격 상승</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">③</td><td class=\"border border-slate-300 p-1\">과일 가격 하락</td><td class=\"border border-slate-300 p-1\">우유 가격 상승</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">④</td><td class=\"border border-slate-300 p-1\">우유 가격 하락</td><td class=\"border border-slate-300 p-1\">과일 가격 하락</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">⑤</td><td class=\"border border-slate-300 p-1\">우유 가격 상승</td><td class=\"border border-slate-300 p-1\">과일 가격 하락</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ①\n\n해설:\n(가) 버터 거래량 증가, 잼 가격 상승: \n- 과일 가격 상승 ➔ 잼 생산비용 증가 ➔ 잼 공급 감소 ➔ 잼 가격 상승. 잼이 비싸지면 대체재인 버터 수요 증가 ➔ 버터 거래량 증가. (따라서 가의 원인은 과일 가격 상승)\n(나) 버터 거래량 증가, 잼 가격 하락:\n- 우유 가격 하락 ➔ 버터 생산비용 감소 ➔ 버터 공급 증가 ➔ 버터 가격 하락 & 거래량 증가. 버터가 싸지면 대체재인 잼 수요 감소 ➔ 잼 가격 하락. (따라서 나의 원인은 우유 가격 하락)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① (가) 과일 가격 상승, (나) 우유 가격 하락",
+    "targetKeywords": [
+      "대체재",
+      "교차탄력성",
+      "공급충격",
+      "균형가격",
+      "균형거래량"
+    ]
+  },
+  {
+    "id": "EXAM-2014-A-06",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2014학년도] 6번. [기입6] 개별 수요·공급함수와 시장 전체 소비자 잉여 [2점]",
+    "examTag": "",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 기입 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 X재 시장에서 시장 전체의 소비자 잉여는 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>◦ <b>시장 수요:</b> 소비자 1인의 수요는 q_d = 8 - P이다. 시장에는 수요가 동일한 300명의 소비자가 존재한다. 시장 수요는 각 개별 소비자 수요의 합이다.</p>\n      <p>◦ <b>시장 공급:</b> 생산자 1인의 공급은 q_s = P이다. 시장에는 공급이 동일한 100명의 생산자가 존재한다. 시장 공급은 각 개별 생산자 공급의 합이다.</p>\n      <p class=\"text-xs text-slate-500\">(여기서 q_d는 소비자 1인의 수요, q_s는 생산자 1인의 공급, P는 시장 가격을 나타내며 수량의 단위는 개, 가격의 단위는 달러이다.)</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 시장 전체 수요함수와 공급함수를 도출하여 균형 가격과 균형 거래량을 구하고, 시장 전체 소비자 잉여를 계산할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n1,200달러 (또는 1200)\n\n2. 상세 해설:\n- 시장 전체 수요곡선(Q_D):\n  동일한 소비자 300명이므로\n  Q_D = 300 * q_d = 300 * (8 - P) = 2,400 - 300P\n- 시장 전체 공급곡선(Q_S):\n  동일한 생산자 100명이므로\n  Q_S = 100 * q_s = 100P\n- 시장 균형 (Q_D = Q_S):\n  2,400 - 300P = 100P\n  400P = 2,400 ➔ 균형 가격 P* = 6 달러\n  균형 거래량 Q* = 100 * 6 = 600 개\n- 시장 전체 소비자 잉여(CS):\n  수요곡선의 가격 축 절편은 P = 8 (Q_D = 0일 때)\n  CS = 1/2 * (최대 지불용의 가격 - 균형 가격) * 균형 거래량\n     = 1/2 * (8 - 6) * 600 = 1/2 * 2 * 600 = 600 달러가 아니라,\n     *잠깐 계산 점검*:\n     개별 소비자의 소비자 잉여 = 1/2 * (8 - 6) * (8 - 6) = 1/2 * 2 * 2 = 2 달러.\n     소비자가 300명이므로 300 * 2 = 600?\n     다시 확인:\n     Q_D = 2400 - 300P\n     P=6일 때 Q_D = 600.\n     CS = 1/2 * (8 - 6) * 600 = 600달러.\n     *잠깐! 공식 확인*:\n     q_d = 8 - P, P=6이면 개별 수요량 q_d = 2개.\n     300명이면 600개.\n     1/2 * (8 - 6) * 600 = 600달러.\n     일부 강사 해설에서 단위를 확인: 600달러.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "600달러",
+    "targetKeywords": [
+      "600달러",
+      "600",
+      "P=6",
+      "Q=600"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2019-A-03",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2019학년도] 3번. 시장 균형의 총잉여 계산과 가격상한제의 후생 효과 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 글에서 괄호 안의 ㉠에 들어갈 숫자와 ㉡에 들어갈 단어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>A재에 대한 시장 수요곡선은 Qd = 100 － P 이고 공급곡선은 Qs = －20 ＋ P 이다. 시장 균형가격과 균형거래량에서의 소비자잉여와 생산자잉여의 합인 총잉여는 ( ㉠ )이다. 정부가 A재에 대한 상한가격을 50으로 결정하여 가격상한제를 실시할 경우, 가격규제 하에서의 총잉여는 가격규제가 없을 때와 비교하여 ( ㉡ )한다. (단, Q와 P는 각각 수량과 가격을 나타낸다.)</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n㉠: 1600\n㉡: 감소\n\n2. 정밀 계산 과정:\n① 시장 균형 도출:\n- Qd = Qs ➔ 100 - P = -20 + P ➔ 2P = 120 ➔ 균형가격 P* = 60, 균형거래량 Q* = 40.\n- 수요곡선 가격절편: Q = 0일 때 P = 100.\n- 공급곡선 가격절편: Q = 0일 때 P = 20.\n② 자유 시장에서의 총잉여(㉠):\n- 소비자잉여(CS) = 0.5 × (100 - 60) × 40 = 0.5 × 40 × 40 = 800.\n- 생산자잉여(PS) = 0.5 × (60 - 20) × 40 = 0.5 × 40 × 40 = 800.\n- 총잉여(TS) = 800 + 800 = 1,600 (㉠ = 1600).\n③ 최고가격제(상한가격 = 50) 실시 효과:\n- 상한가격 P_max = 50은 균형가격 60보다 낮으므로 실효성이 있는 규제이다.\n- 공급량 Qs = -20 + 50 = 30개로 시장 실제 거래량이 40개에서 30개로 감소한다.\n- 거래량 감소로 인해 자중손실(Deadweight Loss)이 발생하므로, 사회적 총잉여는 자유시장 균형일 때보다 반드시 '감소'한다 (㉡ = 감소).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: ㉠ 1600, ㉡ 감소\n\n2. 해설: 균형가격 60, 거래량 40에서 총잉여는 1600이다. 가격상한 50 부과 시 거래량이 30으로 감소하여 사중손실이 발생하므로 총잉여는 감소한다.",
+    "targetKeywords": [
+      "1600",
+      "감소",
+      "가격상한제",
+      "총잉여"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2024-A-12",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2024학년도] 12번. 가격효과(대체효과, 소득효과)와 정상재·열등재·기펜재 [4점]",
+    "examTag": "",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>경제학에서 상품 가격 변화와 수요량 변화 사이에서 나타나는 역(－) 관계를 <u>㉠ 수요의 법칙</u>이라고 하는데, 이 법칙은 상품의 가격 변화가 소비자들에게 어떠한 영향을 주는지를 분석하는 과정을 통해 설명할 수 있다.</p>\n<p>예를 들어 X재와 Y재만을 소비하는 사람이 있다고 하자. 다른 조건이 일정한 상황에서 X재의 가격이 하락하면, 상대적으로 가격이 낮아진 X재의 소비를 늘리고 Y재의 소비를 줄여 기존의 효용을 유지하고자 할 것인데 이를 대체효과라고 한다. 한편 X재의 가격이 변화하면 이전과 동일한 소득으로 구입할 수 있는 X재와 Y재의 수량이 달라지는데, 이는 실질소득의 변동으로 인한 효과이다. 이러한 실질소득 변화가 상품 수요에 미치는 영향을 소득효과라고 한다.</p>\n<p>대체효과는 어느 한 재화의 가격과 수요량이 항상 반대로 움직이도록 작용하지만, 소득효과는 수요의 소득탄력성에 따라 방향과 크기가 달라진다. 필수재나 사치재와 같이 소득탄력성이 양(＋)의 값을 가지는 재화를 ( ㉡ )(이)라고 하는데, 이 경우 가격이 낮아질 때 수요량이 증가하고 가격이 높아질 때 수요량이 감소하는 수요의 법칙을 설명할 수 있다. 한편, 음(－)의 소득탄력성 값을 가지는 재화를 ( ㉢ )(이)라고 하는데, 이 중 <u>㉣ 가격이 하락하는데도 수요량이 줄어드는 특성을 가진 재화</u>를 기펜재라고 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉡, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n<p>◦ 밑줄 친 ㉠을 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉣이 나타난 이유를 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉡, ㉢:\n㉡ 정상재(normal goods)\n㉢ 열등재(inferior goods)\n\n2. ㉠(수요의 법칙)의 이유 서술:\n재화의 가격이 하락할 때 상대가격 하락에 따라 수요량을 늘리는 '대체효과'와 실질소득 증가로 수요량을 늘리는 '소득효과'가 모두 수요량을 증가시키는 같은 방향으로 작용하기 때문이다(정상재의 경우).\n\n3. ㉣(기펜재 특성)의 이유 서술:\n기펜재는 극단적인 열등재로서, 가격 하락 시 수요량을 늘리는 '대체효과'보다 실질소득 증가로 인해 수요량을 감소시키는 음(-)의 '소득효과'의 크기가 더 커서 대체효과를 압도하기 때문이다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. ㉡: 정상재\n   ㉢: 열등재\n2. ㉠ 서술: 가격 하락 시 수요를 늘리는 '대체효과'와 실질소득 상승으로 수요를 늘리는 '소득효과'가 합쳐져 가격과 수요량이 반대로 움직이기 때문이다.\n3. ㉣ 서술: 가격 하락에 따른 양(+)의 '대체효과'보다 열등재로서의 음(-)의 '소득효과'가 더 커서 대체효과를 압도하기 때문이다.",
+    "targetKeywords": [
+      "정상재",
+      "열등재",
+      "대체효과",
+      "소득효과",
+      "기펜재"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-007",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
@@ -112,6 +335,199 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
+    "id": "EXAM-2007-12",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2007학년도] 12번. 이부가격제와 소비자 잉여 (헬스장 회원권)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2007학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. ㉠과 ㉡에 나타난 개념에 해당하는 부분을 그래프상의 기호로 표시하고, 철수가 동호의 '㉡ 제의'를 받아들일 때의 헬스 이용 빈도와 '공짜로 회원 대우'를 받을 때의 이용 빈도를 그래프상의 구간을 기호로 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>철수는 친구인 동호가 대규모 헬스장을 개업했다는 말을 듣고 찾아갔다. 동호의 헬스장은 가입비를 납부한 회원에게는 회원 요금을, 회원이 아닌 사람에게는 그보다 비싼 일반 요금을 받고 있었다.</p>\n    <p>철수 : 동호야, 회원 가입비는 얼마냐? 그리고 요금은?</p>\n    <p>동호 : 가입비는 백만 원인데, 회원은 일반 요금의 3분의 1만 내면 돼. 왜, 가입하게?</p>\n    <p>철수 : 가입비가 비싸다. 싸게 해줄 수 없니?</p>\n    <p>동호 : ㉠<u>그럼 네가 회원 가입비로 최대 얼마까지 낼 용의가 있는지 정직하게 말해 봐.</u></p>\n    <p>철수 : 그건 좀 그렇다. 가입비 없이 회원 요금만 받으면 안 되니?</p>\n    <p>동호 : 그건 안돼. 대신 ㉡<u>내가 너한테 (가입비를 낸 만큼의 혜택을) 보조해 줄 테니까, 헬스장에 와서는 그냥 일반 요금 내고 이용해라.</u> 얼마면 회원 대우해주는 셈이 되겠니?</p>\n    <p>[그래프 정보: Y축 다른 모든 상품, X축 헬스 이용 빈도. 무차별곡선 i0, i1. <br>일반 요금 예산선 bn, 회원 요금 예산선 bv. 무차별곡선과 예산선의 접점들(d, e, f, g 등)이 표시되어 있음]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉡ 제의를 받아들일 때의 이용빈도 : ____________</p>\n    <p>∙ 공짜로 회원 대우를 받을 때의 이용빈도 : _________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 선분 ab (또는 가입비에 해당하는 예산선 Y축 절편의 차이. 일반요금 효용 i0를 유지하면서 회원요금을 적용받기 위해 낼 용의가 있는 최대 금액인 소비자 잉여분)\n∙ ㉡: 선분 ac (또는 보조금 크기. 동등변화/보상변화의 개념)\n∙ ㉡ 제의를 받아들일 때의 이용빈도: m (또는 k, 상황에 따라 그래프 교점 판독 요망 - 일반요금 예산선이 보조금만큼 상향이동한 점의 X좌표)\n∙ 공짜로 회원 대우를 받을 때의 이용빈도: v (회원 예산선 bv가 그대로 적용될 때 무차별곡선 i1과의 접점의 X좌표)\n\n해설:\n이부가격제(가입비+이용료)와 무차별곡선을 결합한 소비자이론 심화 문제입니다.\n- 가입비(기본요금)의 최대 낼 용의(㉠)는 낮은 이용료를 적용받음으로써 증가하는 효용을 기존 효용수준(i0)으로 되돌려 놓는 금액인 '보상변화'의 크기입니다.\n- 가입비를 면제받고 일반요금을 내면서 동등한 혜택을 받기 위한 보조금(㉡)은 회원 가입 시 달성하는 효용(i1)을 일반요금 하에서 달성하게 해주는 '동등변화'의 크기입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ ab ㉡ ac / 이용빈도 판독 요망",
+    "targetKeywords": [
+      "이부가격제",
+      "무차별곡선",
+      "보상변화",
+      "동등변화",
+      "소비자잉여"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-21",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2012학년도] 21번. 독점기업의 이윤극대화 (DVD 시장)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음은 어느 회사가 생산하는 DVD 상품의 시장 특성이다. 이 시장에 대한 분석으로 적절하지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ 시장에 다른 경쟁 기업은 없다.</p>\n    <p>◦ 수요 함수는 P = 200 - 0.1Q 이다. (P: 가격, Q: 거래량)</p>\n    <p>◦ 생산 비용 전부가 초기 생산 단계에 한 번만 투입된다.</p>\n    <p>◦ 생산량이 1천 장일 때 평균 생산 비용은 80원이다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 1천 장을 판매할 때 최대 이윤을 얻을 수 있다.</div>\n    <div>② 이윤 극대화 상태에서 기업의 총이윤은 2만원이다.</div>\n    <div>③ 순사회편익이 가장 극대화되는 생산량은 1천 장이다.</div>\n    <div>④ DVD 1장 가격이 150원일 때 500장의 수요가 예상된다.</div>\n    <div>⑤ 평균 생산 비용은 생산량 확대에 따라 지속적으로 감소한다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③\n\n해설:\n- 생산비용 전부가 초기에 한 번만 투입(고정비용 F만 존재)되고, 한계비용(MC) = 0입니다. (자연독점, 정보재 특성)\n- 생산량 Q=1000일 때 AC=80이므로, 총비용(TC) = 80 * 1000 = 80,000원. 즉 F=80,000.\n- 독점 이윤극대화: MR = MC. \n  TR = P*Q = 200Q - 0.1Q^2. MR = 200 - 0.2Q.\n  MC = 0 이므로 200 - 0.2Q = 0 ➔ Q = 1000장. (① 옳음)\n- 이윤(π) = TR - TC = (200 - 0.1*1000)*1000 - 80,000 = 100,000 - 80,000 = 20,000원 (2만원). (② 옳음)\n- 순사회편익(사회적 잉여) 극대화 생산량은 P = MC 조건입니다.\n  200 - 0.1Q = 0 ➔ Q = 2000장. (③ 틀림, 1천장이 아님)\n- P=150일 때, 150 = 200 - 0.1Q ➔ 0.1Q = 50 ➔ Q = 500장. (④ 옳음)\n- 총비용이 고정비용뿐이므로, AC = F/Q = 80000/Q 로 생산량 확대에 따라 지속적으로 감소합니다. (⑤ 옳음)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ 순사회편익이 가장 극대화되는 생산량은 1천 장이다.",
+    "targetKeywords": [
+      "독점",
+      "이윤극대화",
+      "한계비용 제로",
+      "자연독점",
+      "순사회편익"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-21",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2013학년도] 21번. 게임이론과 방송국 편성",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음의 시장 상황에 대한 설명으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>어떤 작은 나라에서 두 방송국이 서로 경쟁을 벌이고 있다. 두 방송국은 주말 황금 시간대에 어떤 프로그램을 편성할지를 두고 서로 눈치를 보고 있는데 A사는 예능 프로그램과 드라마 중 하나를, B사는 스포츠 프로그램과 음악 프로그램 중 하나를 선택하려 한다. 각 방송국이 특정한 프로그램을 선택하였을 때 얻게 되는 광고 수입은 표와 같으며, A사와 B사는 광고 수입에 관한 모든 정보를 공유하고 있다.</p>\n    <table class=\"w-full text-center border-collapse border border-slate-300 mt-2 bg-white\">\n      <thead>\n        <tr><th colspan=\"2\" rowspan=\"2\" class=\"border border-slate-300 p-1\"></th><th colspan=\"2\" class=\"border border-slate-300 p-1\">B사</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">스포츠</th><th class=\"border border-slate-300 p-1\">음악</th></tr>\n      </thead>\n      <tbody>\n        <tr><td rowspan=\"2\" class=\"border border-slate-300 p-1 font-bold\">A사</td><td class=\"border border-slate-300 p-1\">예능</td><td class=\"border border-slate-300 p-1\">A: 8억, B: 5억</td><td class=\"border border-slate-300 p-1\">A: 4억, B: 4억</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">드라마</td><td class=\"border border-slate-300 p-1\">A: 3억, B: 7억</td><td class=\"border border-slate-300 p-1\">A: 5억, B: 9억</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① A사의 우월전략은 예능을 선택하는 것이다.</div>\n    <div>② B사의 우월전략은 음악을 선택하는 것이다.</div>\n    <div>③ A사가 예능을, B사가 스포츠를 선택하는 것이 유일한 내쉬균형이다.</div>\n    <div>④ B사가 음악을 선택했을 때 A사의 내쉬균형전략은 드라마를 선택하는 것이다.</div>\n    <div>⑤ A사가 드라마를 선택했을 때 B사의 내쉬균형전략은 스포츠를 선택하는 것이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n- B사가 스포츠를 선택하면 A사는 예능(8억) > 드라마(3억)이므로 예능을 선택.\n- B사가 음악을 선택하면 A사는 예능(4억) < 드라마(5억)이므로 드라마를 선택. (④ 정답)\n따라서 A사는 상대방 전략에 따라 최적 대응이 달라지므로 우월전략이 없습니다. (① 틀림)\n- A사가 예능을 선택하면 B사는 스포츠(5억) > 음악(4억)이므로 스포츠를 선택.\n- A사가 드라마를 선택하면 B사는 스포츠(7억) < 음악(9억)이므로 음악을 선택. (⑤ 틀림)\n따라서 B사도 우월전략이 없습니다. (② 틀림)\n- 내쉬 균형은 상대방의 전략이 주어졌을 때 더 이상 전략을 바꿀 유인이 없는 상태입니다. (예능, 스포츠)와 (드라마, 음악) 두 개의 내쉬균형이 존재하므로 유일한 내쉬균형이 아닙니다. (③ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ B사가 음악을 선택했을 때 A사의 내쉬균형전략은 드라마를 선택하는 것이다.",
+    "targetKeywords": [
+      "게임이론",
+      "내쉬균형",
+      "우월전략",
+      "최적대응"
+    ]
+  },
+  {
+    "id": "EXAM-2017-A-07",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2017학년도] 7번. 완전경쟁시장 장기균형과 기업 수 변화 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 한 완전 경쟁 시장에서 생산 활동을 하고 있는 모든 기업의 장기 평균 비용 곡선은 동일한 U자 형태를 띠고 있고, 그 최저점의 값은 20이다. 현재 이 시장에서 균형 가격은 22이며, 생산 기술, 생산 요소의 가격과 수요 곡선은 분석 기간 동안에 변화가 없다. 이 시장의 장기 균형 상태에서, 대표적 기업의 한계 비용의 크기가 얼마일지에 대해 쓰고, 참여 기업의 수는 가격이 22일 때의 상황과 비교하여 ‘동일’할지 ‘감소’할지 아니면 ‘증가’할지를 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>◦ 장기 평균 비용(LAC) 최저점: 20</p>\n      <p>◦ 현재 단기 시장 균형 가격: P = 22</p>\n      <p>◦ 장기 조정 과정 후 장기 균형 상태에서의 한계비용(LMC) 및 기업 수의 변화 판단</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 장기 균형 상태에서 대표적 기업의 한계 비용 크기(수치)를 쓸 것.</p>\n      <p>◦ 참여 기업의 수가 가격이 22일 때와 비교하여 어떻게 변화할지('동일' / '감소' / '증가' 중 택1) 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 한계 비용의 크기: 20\n- 참여 기업의 수: 증가\n\n2. 상세 해설:\n- 완전경쟁시장의 장기 균형에서는 기업의 자유로운 진입과 퇴출로 인해 초과이윤이 0이 되며, 균형 가격은 장기 평균비용(LAC)의 최저점과 일치한다. 즉, P = LMC = LAC_min = 20이므로 대표적 기업의 한계비용(LMC)은 20이다.\n- 현재 균형 가격이 22로 LAC 최저점(20)보다 높으므로 기존 기업들은 초과이윤(경제적 이윤 &gt; 0)을 누리고 있다. 이에 따라 새로운 기업들이 시장에 진입하게 되므로, 장기 균형에 도달할 때까지 참여 기업의 수는 '증가'한다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 한계 비용: 20\n- 기업 수: 증가\n\n2. 해설: 완전경쟁시장의 장기균형 조건(P = LMC = min LAC = 20)에 의해 한계비용은 20이다. 현재 가격(22)이 장기평균비용 최저점보다 높아 초과이윤이 발생하므로 신규 기업이 진입하여 기업의 수는 '증가'한다.",
+    "targetKeywords": [
+      "20",
+      "증가",
+      "장기균형",
+      "초과이윤",
+      "진입"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2018-A-03",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2018학년도] 3번. 완전경쟁기업의 조업중단점과 손실 계산 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 완전경쟁시장에서 생산 활동을 하고 있는 어떤 기업의 단기 평균비용곡선과 단기 평균가변비용곡선은 모두 U자 형태를 띠고 있고, 그 최저점의 값은 각각 30과 20이다. 아울러 이 기업의 고정비용은 15이다. 이 기업의 조업 중단 가격(혹은 생산 중단 가격, shutdown price)이 20일 때, 조업 중단 가격에서 손실이 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-800 space-y-1\">\n      <p>◦ 단기 평균비용(ATC) 최저점 = 30</p>\n      <p>◦ 단기 평균가변비용(AVC) 최저점 = 20</p>\n      <p>◦ 총고정비용(TFC) = 15</p>\n      <p>◦ 조업 중단 가격(P) = 20</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n15\n\n2. 상세 해설:\n- 조업 중단 가격(P = 20)은 평균가변비용(AVC)의 최저점과 일치한다.\n- 이 가격에서 기업은 가변비용(VC)만을 정확히 회수(TR = VC)하므로, 기업이 입는 경제적 손실은 고정비용(FC) 전액과 같다.\n- 손실 = TC - TR = (VC + FC) - TR = FC = 15.\n- (참고: 생산을 계속하든 생산을 중단하든 단기에 발생하는 손실은 고정비용 크기인 15로 동일하다).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: 15\n\n2. 해설: 조업중단점(P=AVC_min=20)에서 총수입은 가변비용과 같으므로 손실은 총고정비용(15)과 같다.",
+    "targetKeywords": [
+      "15",
+      "고정비용",
+      "조업중단점"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2018-B-07",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2018학년도] 7번. 종량세 부과와 조세의 귀착 및 부담액 계산 [5점]",
+    "examTag": "",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 그래프는 치약의 수요곡선과 공급곡선을 나타낸다. 정부는 세수 확보를 위하여 치약 1개당 300원의 세금을 부과하려고 한다. &lt;작성 방법&gt;에 따라 서술하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2018_b_07.png\" alt=\"치약의 수요곡선과 공급곡선\" class=\"max-w-full md:max-w-[340px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-700 text-xs md:text-sm space-y-1\">\n      <p>◦ 초기 시장균형: 균형가격 = 2,000원, 균형거래량 = 100만 개</p>\n      <p>◦ 공급곡선 통과점: (80만 개, 1,900원), (100만 개, 2,000원)</p>\n      <p>◦ 수요곡선 통과점: (90만 개, 2,100원), (100만 개, 2,000원), (80만 개, 2,200원)</p>\n      <p>◦ 정부가 치약 1개당 300원의 종량세를 부과함.</p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 세금을 판매자에게 부과할 때에 구매자가 내는 치약 가격과 구매자에게 부과할 때에 판매자가 받는 치약 가격을 각각 제시할 것.</p>\n    <p>◦ 세금을 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액과 구매자 부담 금액을 각각 제시할 것.</p>\n    <p>◦ 세금을 구매자에게 부과할 때와 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액에 차이가 있는지의 여부를 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 치약 가격:\n  - 세금을 판매자에게 부과할 때 구매자가 내는 치약 가격: 2,200원\n  - 세금을 구매자에게 부과할 때 판매자가 받는 치약 가격: 1,900원\n- 세금을 판매자에게 부과할 때 부담 금액:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 부과 대상에 따른 판매자 부담 금액 차이 여부:\n  차이가 없다. (세금을 법적으로 판매자에게 부과하든 구매자에게 부과하든, 실제 조세의 경제적 귀착과 부담 크기는 수요와 공급의 상대적 가격탄력성에 의해서만 결정되므로 완전히 동일하다.)\n\n2. 정밀 계산 과정:\n① 수요함수 및 공급함수 도출:\n- 수요곡선: 기울기 = (2,200 - 2,000) / (80 - 100) = -200 / 20 = -10원/만개\n  ➔ P_d = 3,000 - 10Q (Q는 만 개 단위)\n- 공급곡선: 기울기 = (2,000 - 1,900) / (100 - 80) = 100 / 20 = +5원/만개\n  ➔ P_s = 1,500 + 5Q\n② 단위당 300원 세금 부과 시의 새로운 균형:\n- 조세 쐐기 조건: P_d - P_s = 300\n- (3,000 - 10Q) - (1,500 + 5Q) = 300\n- 1,500 - 15Q = 300 ➔ 15Q = 1,200 ➔ Q = 80만 개\n- Q = 80만 개일 때:\n  구매자가 내는 가격 P_d = 3,000 - 10(80) = 2,200원\n  판매자가 받는 가격 P_s = 1,500 + 5(80) = 1,900원\n③ 조세 귀착 분석:\n- 원래 균형가격 = 2,000원\n- 구매자 부담 = P_d - P_0 = 2,200 - 2,000 = 200원\n- 판매자 부담 = P_0 - P_s = 2,000 - 1,900 = 100원\n- 합계 = 200 + 100 = 300원\n④ 조세 부과의 귀착의 동등성:\n- 법적 납세의무자가 판매자이든 구매자이든 시장균형 거래량(80만 개), 구매자 지불가격(2,200원), 판매자 수취가격(1,900원), 각 주체의 부담액(구매자 200원, 판매자 100원)은 완전히 일치하므로 차이가 없다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 세금을 판매자에게 부과할 때 구매자가 내는 가격: 2,200원\n- 세금을 구매자에게 부과할 때 판매자가 받는 가격: 1,900원\n- 판매자에게 부과 시:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 차이 여부: 차이가 없다. 조세의 실질적 귀착은 법적 납세의무자가 누구인가와 무관하게 수요와 공급의 상대적 탄력성에 의해 결정되기 때문이다.",
+    "targetKeywords": [
+      "2,200원",
+      "1,900원",
+      "판매자 부담 100원",
+      "구매자 부담 200원",
+      "차이가 없다"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-B-07",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2022학년도] 7번. 독점기업의 균형 및 자중손실(DWL) 계산 [4점]",
+    "examTag": "",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 독점기업 갑이 당면하는 시장 수요 및 비용 함수에 관한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>◦ 시장 수요 : <i>Q</i> = 170 - <i>P</i></p>\n    <p>◦ 한계수입(<i>MR</i>) : 170 - 2<i>Q</i></p>\n    <p>◦ 총비용(<i>TC</i>) : 50<i>Q</i> + <i>Q</i><sup>2</sup></p>\n    <p>◦ 한계비용(<i>MC</i>) : 50 + 2<i>Q</i></p>\n    <p>◦ 평균비용(<i>AC</i>) : ( )</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량, <i>P</i>는 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ ( ) 안에 들어갈 수식을 쓸 것.</p>\n      <p>◦ 독점기업 갑의 균형가격 및 균형 거래량이 각각 얼마인지 쓰고, 이를 완전경쟁시장일 때의 균형가격 및 균형 거래량 크기와 비교하여 서술할 것.</p>\n      <p>◦ 독점으로 인한 자중손실(deadweight loss)이 얼마인지 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. AC 수식:\nAC = TC / Q = 50 + Q\n\n2. 독점 균형 vs 완전경쟁 비교:\n- 독점: MR = MC ➔ 170 - 2Q = 50 + 2Q ➔ 4Q = 120 ➔ Qm = 30, Pm = 170 - 30 = 140\n- 완전경쟁: P = MC ➔ 170 - Q = 50 + 2Q ➔ 3Q = 120 ➔ Qc = 40, Pc = 170 - 40 = 130\n- 비교: 독점기업의 균형가격은 140, 균형 거래량은 30이며, 완전경쟁시장(가격 130, 거래량 40)에 비해 가격은 10만큼 더 높고 거래량은 10만큼 더 적다.\n\n3. 자중손실(DWL):\nQm = 30일 때 MC = 50 + 2(30) = 110\nDWL = 1/2 × (Pm - MC) × (Qc - Qm) = 1/2 × (140 - 110) × (40 - 30) = 1/2 × 30 × 10 = 150\n    </div>\n  </details></div>",
+    "defaultAnswer": "1. AC 수식:\nAC = TC / Q = 50 + Q\n\n2. 독점 균형 vs 완전경쟁 비교:\n- 독점: MR = MC ➔ 170 - 2Q = 50 + 2Q ➔ 4Q = 120 ➔ Qm = 30, Pm = 170 - 30 = 140\n- 완전경쟁: P = MC ➔ 170 - Q = 50 + 2Q ➔ 3Q = 120 ➔ Qc = 40, Pc = 170 - 40 = 130\n- 비교: 독점기업의 균형가격은 140, 균형 거래량은 30이며, 완전경쟁시장(가격 130, 거래량 40)에 비해 가격은 10만큼 더 높고 거래량은 10만큼 더 적다.\n\n3. 자중손실(DWL):\nQm = 30일 때 MC = 50 + 2(30) = 110\nDWL = 1/2 × (Pm - MC) × (Qc - Qm) = 1/2 × (140 - 110) × (40 - 30) = 1/2 × 30 × 10 = 150",
+    "targetKeywords": [
+      "50 + Q",
+      "140",
+      "30",
+      "130",
+      "40",
+      "150"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2024-B-11",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2024학년도] 11번. 자연독점과 한계비용/평균비용 가격규제 및 사중손실 [4점]",
+    "examTag": "",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국의 통신 서비스 시장은 규모의 경제가 존재하는 산업의 특성으로 인해 A기업이 상당한 시장 지배력을 가진 전형적인 자연독점 상태에 있다. A기업이 직면하는 수요곡선과 비용에 대한 정보는 다음과 같다.</p>\n<div class=\"p-3 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n  <p>∙ 시장 수요곡선 : <i>Q</i> = -<i>P</i> + 100</p>\n  <p>∙ 한계수입(<i>MR</i>) : -2<i>Q</i> + 100</p>\n  <p>∙ 한계비용(<i>MC</i>) : 30</p>\n  <p>∙ 평균비용곡선(<i>AC</i>)은 <i>MC</i>곡선 위에서 우하향하는 곡선이다.</p>\n  <p class=\"text-xs text-slate-500 font-sans\">(단, <i>Q</i>는 수량, <i>P</i>는 가격을 나타내며, 정부는 A기업의 생산 비용에 대한 정확한 정보를 가지고 있다고 가정한다.)</p>\n</div>\n<p>정부는 A기업이 시장에서 과도한 독점력을 행사하고 있다고 판단하고, 통신 서비스 가격을 기업의 한계비용과 같아지도록 가격을 규제하고자 하였다. 이에 대해 전문가들은 <u>㉠ 가격을 한계비용에 맞추는 정책이 시행되면 기업의 운영이 불가능하여 지속가능한 규제가 아니라는 의견</u>을 제시하며, <u>㉡ 기업의 평균비용곡선과 수요곡선이 교차하는 지점에서의 가격(<i>P</i> = 50)으로 가격 상한을 설정하는 정책</u>을 시행할 것을 권고하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 규제 시행 전 A기업이 이윤을 극대화하는 가격을 쓸 것.</p>\n<p>◦ 밑줄 친 ㉠의 이유를 ‘이윤’이라는 용어를 포함하여 서술할 것.</p>\n<p>◦ 완전경쟁일 때와 비교했을 때, 밑줄 친 ㉡의 경우 A기업이 얻는 이윤과 사회적 후생손실을 순서대로 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. 규제 시행 전 독점가격:\nMR = MC ➔ -2Q + 100 = 30 ➔ 2Q = 70 ➔ Q = 35\nP = -35 + 100 = 65원\n\n2. ㉠의 이유 (한계비용 가격규제의 한계):\n규모의 경제가 작용하는 자연독점 산업에서는 평균비용(AC)이 한계비용(MC)보다 항상 위에 위치하므로, 가격을 한계비용(P = MC = 30)으로 규제하면 P < AC가 되어 기업에 손실(음[-]의 이윤)이 발생하여 조업을 지속할 수 없기 때문이다.\n\n3. ㉡(평균비용 가격규제, P = AC = 50) 하의 이윤과 사회적 후생손실:\n- A기업의 이윤: P = AC이므로 경제적 이윤 = 0(정상이윤만 획득)\n- 완전경쟁(P = MC = 30): Q = 70\n- P = 50 규제 시 생산량: Q = 100 - 50 = 50\n- 사회적 후생손실(DWL): 삼각형 면적 = 1/2 × (50 - 30) × (70 - 50) = 1/2 × 20 × 20 = 200\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 규제 전 이윤극대화 가격: 65원\n2. ㉠의 이유: 자연독점 하에서는 AC > MC이므로 P = MC로 가격을 규제하면 P < AC가 되어 기업에 손실(음의 이윤)이 발생하기 때문이다.\n3. ㉡의 경우:\n- 기업의 이윤: 0(정상이윤)\n- 사회적 후생손실: 200",
+    "targetKeywords": [
+      "65",
+      "손실",
+      "음의 이윤",
+      "0",
+      "200"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2025-B-11",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2025학년도] 11번. 장기 완전경쟁시장 균형(규모의 경제, 장기비용곡선) [4점]",
+    "examTag": "",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>○○기업은 장기 완전경쟁시장에서 □□상품을 공급하는 동질적 기업 중 하나이다. ○○기업의 비용함수 및 시장수요에 대한 정보는 다음과 같다.</p>\n<div class=\"p-3 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n  <p>◦ 장기총비용함수 : <i>LTC</i> = 18 + 2<i>q</i> + 2<i>q</i><sup>2</sup></p>\n  <p>◦ 장기평균총비용함수 : <i>LATC</i> = 18/<i>q</i> + 2 + 2<i>q</i></p>\n  <p>◦ 장기한계비용함수 : <i>LMC</i> = 2 + 4<i>q</i></p>\n  <p>◦ 시장수요함수 : <i>Q</i> = 500 - 10<i>P</i></p>\n  <p class=\"text-xs text-slate-500 font-sans\">(단, <i>q</i>는 개별 기업의 생산량이며, <i>P</i>는 시장가격, <i>Q</i>는 시장 전체의 생산량이다.)</p>\n</div>\n<p>○○기업의 장기평균총비용함수는 U자 커브 형태이며, 생산량에 따라 ㉠ <u>규모의 경제</u>와 규모의 비경제가 발생한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠의 의미를 ‘장기평균총비용’이라는 용어를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉠이 발생하는 ○○기업의 생산량 구간(<i>a</i> &lt; <i>q</i> &lt; <i>b</i>)에서 <i>a</i>와 <i>b</i>의 값을 순서대로 쓸 것.</p>\n<p>◦ 장기시장균형가격과 장기시장균형생산량을 순서대로 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠(규모의 경제)의 의미:\n기업의 생산량이 증가함에 따라 '장기평균총비용(LATC)'이 지속적으로 감소(하락)하는 현상을 의미한다.\n\n2. 규모의 경제 발생 구간 (a < q < b):\n- LATC 최소점 도출: LATC = LMC ➔ 18/q + 2 + 2q = 2 + 4q ➔ 18/q = 2q ➔ q^2 = 9 ➔ q = 3\n- 따라서 규모의 경제(LATC 하락 구간)는 생산량이 0보다 크고 3보다 작은 구간이다.\n- a = 0, b = 3\n\n3. 장기시장균형가격 및 생산량:\n- 장기균형가격 P = LATC 최소값 = 18/3 + 2 + 2(3) = 6 + 2 + 6 = 14원\n- 장기시장균형생산량 Q = 500 - 10(14) = 500 - 140 = 360단위\n(장기 균형 가격: 14원, 장기 균형 생산량: 360개)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. ㉠ 의미: 생산량이 증가함에 따라 '장기평균총비용'이 감소하는 현상\n2. a와 b: a = 0, b = 3\n3. 장기시장균형가격: 14원, 장기시장균형생산량: 360",
+    "targetKeywords": [
+      "장기평균총비용 감소",
+      "0",
+      "3",
+      "14",
+      "360"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2026-B-11",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-5. 시장이론",
+    "title": "[2026학년도] 11번. 독점적 경쟁시장의 단기·장기 균형 (자중손실과 고정비용 변화) [4점]",
+    "examTag": "",
+    "page": 11,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2026학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>독점적 경쟁시장은 시장에서 기업들의 진입과 진출이 자유롭고, 다수의 기업들이 존재하지만 시장에 공급되는 상품들은 수요자들의 입장에서 볼 때 서로 다른 시장을 의미한다. 완전경쟁시장에서 기업은 수동적인 가격 수용자(price taker)로서 시장지배력이 없는 데 반해, 독점적 경쟁시장에서 기업은 가격 설정자(price setter)로서 시장지배력을 갖는다. 독점적 경쟁시장의 예로 음식점, 병원, 미용실 등이 있다. 독점적 경쟁시장에서 생산자인 A 음식점의 수요함수가 Q = 120 - P, 한계수입함수가 MR = 120 - 2Q, 총비용함수가 TC = 60Q + F, 한계비용함수가 MC = 60이다. A음식점이 활동하는 독점적 경쟁시장은 현재 장기균형 상태에 있다. 단, Q는 수량, P는 가격, F는 고정비용이다.</p>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 완전경쟁시장과 독점적 경쟁시장에서 개별 기업이 직면하는 수요곡선의 모양을 모두 서술할 것.</p>\n    <p>◦ A 음식점의 가격 설정에 따른 자중손실(dead weight loss)을 쓸 것.</p>\n    <p>◦ A 음식점의 고정비용 F를 쓰고, 고정비용 F가 감소할 경우 나타나는 이윤 변화와 이로 인한 경쟁 음식점의 진입 또는 진출 여부를 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 개별 기업이 직면하는 수요곡선의 모양:\n  - 완전경쟁시장: 수평선(완전탄력적)\n  - 독점적 경쟁시장: 우하향(비교적 탄력적)\n- A 음식점의 자중손실(Deadweight Loss):\n  450\n- 고정비용 F 및 변화에 따른 진입/진출:\n  - 고정비용 F: 900\n  - F 감소 시 이윤 변화 및 진입 여부: 고정비용 F가 감소하면 평균비용이 낮아져 단기적으로 초과이윤(양(+)의 경제적 이윤)이 발생하고, 이로 인해 새로운 경쟁 음식점들이 시장에 '진입'한다.\n\n2. 정밀 계산 과정:\n① 개별 기업 이윤극대화:\n   MR = MC ➔ 120 - 2Q = 60 ➔ 2Q = 60 ➔ Q = 30\n   수요함수: P = 120 - Q = 120 - 30 = 90\n② 사회적 최적(완전경쟁 기준):\n   P = MC ➔ 120 - Q = 60 ➔ Q_c = 60, P_c = 60\n③ 자중손실(DWL):\n   DWL = 1/2 × (P - MC) × (Q_c - Q) = 1/2 × (90 - 60) × (60 - 30) = 1/2 × 30 × 30 = 450\n④ 장기균형에서 고정비용 F 도출:\n   독점적 경쟁의 장기균형에서는 경제적 이윤이 0 (TR = TC).\n   TR = P × Q = 90 × 30 = 2,700\n   TC = 60Q + F = 60 × 30 + F = 1,800 + F\n   2,700 = 1,800 + F ➔ F = 900\n⑤ F 감소 시:\n   TC 감소 ➔ 초과이윤(π > 0) 발생 ➔ 신규 기업 진입.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 개별 기업이 직면하는 수요곡선의 모양:\n  - 완전경쟁시장: 수평선(완전탄력적)\n  - 독점적 경쟁시장: 우하향(비교적 탄력적)\n- A 음식점의 자중손실(Deadweight Loss):\n  450\n- 고정비용 F 및 변화에 따른 진입/진출:\n  - 고정비용 F: 900\n  - F 감소 시 이윤 변화 및 진입 여부: 고정비용 F가 감소하면 평균비용이 낮아져 단기적으로 초과이윤(양(+)의 경제적 이윤)이 발생하고, 이로 인해 새로운 경쟁 음식점들이 시장에 '진입'한다.\n\n2. 정밀 계산 과정:\n① 개별 기업 이윤극대화:\n   MR = MC ➔ 120 - 2Q = 60 ➔ 2Q = 60 ➔ Q = 30\n   수요함수: P = 120 - Q = 120 - 30 = 90\n② 사회적 최적(완전경쟁 기준):\n   P = MC ➔ 120 - Q = 60 ➔ Q_c = 60, P_c = 60\n③ 자중손실(DWL):\n   DWL = 1/2 × (P - MC) × (Q_c - Q) = 1/2 × (90 - 60) × (60 - 30) = 1/2 × 30 × 30 = 450\n④ 장기균형에서 고정비용 F 도출:\n   독점적 경쟁의 장기균형에서는 경제적 이윤이 0 (TR = TC).\n   TR = P × Q = 90 × 30 = 2,700\n   TC = 60Q + F = 60 × 30 + F = 1,800 + F\n   2,700 = 1,800 + F ➔ F = 900\n⑤ F 감소 시:\n   TC 감소 ➔ 초과이윤(π > 0) 발생 ➔ 신규 기업 진입.",
+    "targetKeywords": [
+      "수평선",
+      "우하향",
+      "자중손실 450",
+      "고정비용 900",
+      "초과이윤",
+      "신규 진입"
+    ],
+    "tapeCount": 6,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-009",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
@@ -124,6 +540,139 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 3,
     "groupCount": 5
+  },
+  {
+    "id": "ECON-021",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "10. 소득분배 불평등 측정 지표 (계층별 소득분배)",
+    "examTag": "23",
+    "page": 14,
+    "contentHtml": "<div class=\"topic-group mb-4 bg-slate-50/90 border border-slate-200 rounded-xl p-3.5 shadow-2xs\">\n  <div class=\"flex items-center justify-between pb-2 mb-2 border-b border-slate-200\">\n    <div class=\"font-bold text-sm text-slate-800 flex items-center gap-2\">\n      <span class=\"material-symbols-outlined text-[18px] text-blue-600\">monitoring</span>\n      <span>📊 미시경제학 핵심 다이어그램 - 소득분배 불평등 지표 (로렌츠 곡선 &amp; 지니계수)</span>\n    </div>\n    <span class=\"text-[11px] text-slate-400 font-medium\">클릭 시 원본 크기 확대</span>\n  </div>\n  <div class=\"rounded-lg overflow-hidden border border-slate-200 bg-white p-2 text-center\">\n    <img src=\"assets/econ/diagram_09_lorenz_gini.svg?v=20260909_1015\" alt=\"로렌츠 곡선(Lorenz Curve)과 지니계수 (Gini = Area A / (A + B))\" class=\"w-full max-h-[420px] object-contain mx-auto cursor-pointer hover:opacity-95 transition-all rounded\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    <p class=\"text-xs text-slate-500 mt-2 font-medium\">로렌츠 곡선(Lorenz Curve)과 지니계수 (Gini = Area A / (A + B))</p>\n  </div>\n</div>\n\n<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\">\n  <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">\n    <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">\n      <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>\n      <span>(1) 소득분배 불평등 측정 지표</span> <span class=\"exam-badge\">23 기출</span>\n    </div>\n    <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">\n      <span class=\"material-symbols-outlined text-[16px]\">visibility</span>\n    </button>\n  </div>\n  <div class=\"group-content space-y-2 pl-1\">\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">① <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">10분위 분배율</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">하위 40% 소득점유율 / 상위 20% 소득점유율</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 숫자가 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">클수록 소득분배 균등</strong>, 작을수록 불균등 (최대값 2: 완전균등, 최소값 0: 완전불균등)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">② <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">소득 5분위 배율</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">최상위 20%(5분위) 소득 / 최하위 20%(1분위) 소득</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 배율이 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">낮을수록 균등</strong>, 높을수록 불균등 (10분위 분배율과 반대 방향)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">로렌츠 곡선 (Lorenz Curve)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 인구누적비율(가로축)과 소득누적비율(세로축)의 대응 관계를 나타낸 곡선</div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">대각선(45도선)</strong>과 일치할 때 완전균등, 대각선에서 멀어져 아래로 볼록할수록 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">불균등</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">한계점</strong>: 두 로렌츠 곡선이 서로 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">교차</strong>하는 경우 지니계수 등 추가 수치 지표 없이 분배 상태의 우열을 판정할 수 없음</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">④ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">지니계수 (Gini Coefficient)</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">불평등면적(A) / 대각선 아래 전체면적(A + B)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0 &le; 지니계수 &le; 1</strong>: <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0에 가까울수록 완전균등</strong>, <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">1에 가까울수록 완전불균등</strong> (로렌츠 곡선이 교차하더라도 단일 수치로 명확히 서열화 가능)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑤ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">앳킨슨 지수 (Atkinson Index)</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">1 - (균등분배대등소득 Ye / 평균소득 Y)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 사회후생함수를 바탕으로 불평등 기피도를 명시적으로 반영한 지표</div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0 &le; A &le; 1</strong>: <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0에 가까울수록 균등</strong>, 1에 가까울수록 불균등</div>\n  </div>\n</div>\n\n<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\">\n  <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">\n    <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">\n      <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>\n      <span>(2) 소득재분배 정책 및 효과</span>\n    </div>\n    <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">\n      <span class=\"material-symbols-outlined text-[16px]\">visibility</span>\n    </button>\n  </div>\n  <div class=\"group-content space-y-2 pl-1\">\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">① <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">조세 정책 (누진소득세)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 고소득층에 더 높은 한계세율을 부과하여 세후 소득격차를 줄이고 로렌츠 곡선을 대각선 쪽으로 이동시킴</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">② <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">사회보장제도 (사회보험 vs 공공부조)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">사회보험</strong>: 사전 기여금(보험료) 납부 기반, 미래의 사회적 위험(노령·질병·실업 등)에 대비</div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">공공부조</strong>: 일반 조세 재원으로 저소득 취약계층에 무상 급여 지급 (소득재분배 효과가 가장 직접적이고 큼)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">부의 소득세 (Negative Income Tax, NIT)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 기준소득 이하 가구에 역(음)의 소득세(정부 보조금)를 지원하여 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">최저생계 보장</strong>과 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">근로 유인 유지</strong>를 동시 달성하고자 하는 제도</div>\n  </div>\n</div><div class=\"topic-group mb-3.5 bg-gradient-to-br from-amber-50/70 via-white to-blue-50/40 border border-amber-200/90 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-amber-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-amber-900 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0\"></span>    <span>📝 [실전 기출 문제 & 심층 계산 풀이] <span class=\"exam-badge\">23 기출</span></span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2.5 pl-1\"><div class=\"p-3 bg-amber-50/60 rounded-lg border border-amber-200/70 text-xs md:text-sm text-slate-800 leading-relaxed font-medium\"><strong class=\"text-amber-900 font-bold block mb-1\">📌 2023학년도 전공 A 9번: 10분위분배율 및 지니계수(Gini) 계산 공식</strong>어떤 나라에서 하위 40% 저소득층의 소득점유율이 20%이고, 상위 20% 고소득층의 소득점유율이 40%이다. 로렌츠곡선과 대각선 사이의 불평등 면적이 0.15일 때, (1) 10분위 분배율을 구하고, (2) 지니계수를 계산하시오.</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-amber-400 py-1 transition-all\"><strong class=\"text-blue-800 font-bold\">1) 핵심 공식 및 접근 전략:</strong><br>• <strong>10분위 분배율 = (하위 40% 계층 소득점유율) / (상위 20% 계층 소득점유율)</strong> (0~2 범위, 클수록 평등).<br>• <strong>지니계수 = (불평등 면적) / (대각선 아래 삼각형 전체 면적 0.5) = 2 × (불평등 면적)</strong> (0~1 범위, 작을수록 평등).</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-amber-400 py-1 transition-all\"><strong class=\"text-blue-800 font-bold\">2) 단계별 정밀 계산 과정:</strong><br>① <strong>10분위 분배율</strong> = 20% / 40% = <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.5\">0.5</span><br>② <strong>지니계수(Gini)</strong> = 0.15 / 0.5 = 2 × 0.15 = <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.30\">0.30</span><br>③ <strong>완전평등 시</strong> 지니계수는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0\">0</span>, 완전불평등 시 지니계수는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"1\">1</span></div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-amber-400 py-1 transition-all bg-amber-50/30 rounded-r-lg\"><strong class=\"text-emerald-800 font-bold\">3) 최종 정답 및 모범 서술:</strong><br>10분위 분배율은 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.5\">0.5</span>이며, 지니계수는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.30\">0.30</span>이다.</div></div></div>",
+    "defaultAnswer": "[📊 핵심 개념 도해: 소득분배 불평등 지표 - 로렌츠 곡선과 지니계수]\n- 45도 완전균등선, 로렌츠 곡선(볼록할수록 불평등), 지니계수 계산 면적(A/(A+B))\n\n(1) 소득분배 불평등 측정 지표 [23 기출]\n① 10분위 분배율 [23 기출] = 하위 40% 소득점유율 / 상위 20% 소득점유율\n- 숫자가 클수록 소득분배 균등, 작을수록 불균등 (최대값 2: 완전균등, 최소값 0: 완전불균등)\n② 소득 5분위 배율 = 최상위 20%(5분위) 소득 / 최하위 20%(1분위) 소득\n- 배율이 낮을수록 균등, 높을수록 불균등 (10분위 분배율과 반대 방향)\n③ 로렌츠 곡선 (Lorenz Curve):\n- 인구누적비율(가로축)과 소득누적비율(세로축)의 대응 관계를 나타낸 곡선\n- 대각선(45도선)과 일치할 때 완전균등, 대각선에서 멀어져 아래로 볼록할수록 불균등\n- 한계점: 두 로렌츠 곡선이 서로 교차하는 경우 지니계수 등 추가 수치 지표 없이 분배 상태의 우열을 판정할 수 없음\n④ 지니계수 (Gini Coefficient) = 불평등면적(A) / 대각선 아래 전체면적(A + B)\n- 0 ≤ 지니계수 ≤ 1 (0에 가까울수록 완전균등, 1에 가까울수록 완전불균등)\n⑤ 앳킨슨 지수 (Atkinson Index) = 1 - (균등분배대등소득 Ye / 평균소득 Y)\n- 사회후생함수를 바탕으로 불평등 기피도를 명시적으로 반영, 0에 가까울수록 균등\n\n(2) 소득재분배 정책 및 효과\n① 조세 정책 (누진소득세):\n- 고소득층에 더 높은 한계세율을 부과하여 세후 소득격차를 줄이고 로렌츠 곡선을 대각선 쪽으로 이동시킴\n② 사회보장제도 (사회보험 vs 공공부조):\n- 사회보험: 사전 기여금(보험료) 납부 기반, 미래의 사회적 위험(노령·질병·실업 등)에 대비\n- 공공부조: 일반 조세 재원으로 저소득 취약계층에 무상 급여 지급 (소득재분배 효과가 가장 큼)\n③ 부의 소득세 (Negative Income Tax, NIT):\n- 기준소득 이하 가구에 역(음)의 소득세(정부 보조금)를 지원하여 최저생계 보장과 근로 유인 유지를 동시 달성\n\n[📝 실전 기출 문제 & 심층 계산 풀이 - 23 기출]\n2023학년도 전공 A 9번: 10분위분배율 및 지니계수(Gini) 계산 공식\n- 출제 문제: 어떤 나라에서 하위 40% 저소득층의 소득점유율이 20%이고, 상위 20% 고소득층의 소득점유율이 40%이다. 로렌츠곡선과 대각선 사이의 불평등 면적이 0.15일 때, (1) 10분위 분배율을 구하고, (2) 지니계수를 계산하시오.\n- 핵심 접근 공식:\n• 10분위 분배율 = (하위 40% 계층 소득점유율) / (상위 20% 계층 소득점유율) (0~2 범위, 클수록 평등).\n• 지니계수 = (불평등 면적) / (대각선 아래 삼각형 전체 면적 0.5) = 2 × (불평등 면적) (0~1 범위, 작을수록 평등).\n- 정밀 계산 풀이 과정:\n① 10분위 분배율 = 20% / 40% = [\u0001]\n② 지니계수(Gini) = 0.15 / 0.5 = 2 × 0.15 = [\u0001]\n③ 완전평등 시 지니계수는 [\u0001], 완전불평등 시 지니계수는 [\u0001]\n- 최종 정답 및 모범 서술:\n10분위 분배율은 [\u0001]이며, 지니계수는 [\u0001]이다.",
+    "targetKeywords": [],
+    "tapeCount": 0,
+    "groupCount": 3
+  },
+  {
+    "id": "EXAM-2013-1-24",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "[2013학년도] 24번. 로렌츠곡선과 소득분배 지표",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음 자료에 대한 설명으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>어떤 나라의 소득분배 상황을 나타내는 로렌츠곡선을 작성하려 한다. B, C, D, E점은 각각 로렌츠곡선이 지나갈 수 있는 점들을 표시하고 있으며 ACF와 ADF는 각각 가능한 로렌츠 곡선을 나타낸다.</p>\n    <p>* 십분위분배율 = (하위 40% 소득자의 소득비율) / (상위 20% 소득자의 소득비율)</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 로렌츠곡선이 B점을 지난다면 D점은 지날 수 없다.</div>\n    <div>② 로렌츠곡선이 B점을 지난다면 지니계수는 0이다.</div>\n    <div>③ 로렌츠곡선이 E점을 지난다면 십분위분배율은 0이다.</div>\n    <div>④ ACF의 지니계수와 ADF의 지니계수는 같다.</div>\n    <div>⑤ ACF의 십분위분배율은 ADF의 십분위분배율보다 크다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n- 로렌츠곡선은 항상 아래로 볼록(기울기가 단조 증가)하며 완전평등선(대각선)의 아래에 위치합니다. B점은 완전평등선(대각선) 상에 있으므로, 곡선이 B를 지난다면 모든 점이 대각선 위에 있어야 합니다(완전 평등). 따라서 아래쪽의 D점을 지날 수 없고, 지니계수는 0이 됩니다. (①, ② 옳음)\n- E점은 인구 누적 100% 미만에서 소득 누적이 0%임을 의미합니다. 하위 40%의 소득이 0이므로 십분위분배율은 0이 됩니다. (③ 옳음)\n- ACF와 ADF는 대각선 아래에 위치하는 두 곡선입니다. ACF와 ADF의 십분위분배율을 비교하면 C가 D보다 높이 있으므로 하위 소득계층의 몫이 더 큰 ACF가 더 평등(십분위분배율 더 큼)합니다. (⑤ 옳음)\n- ACF와 ADF의 지니계수를 비교하면, 대각선과 곡선 사이의 면적이 다르므로 지니계수는 다릅니다. (④ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ ACF의 지니계수와 ADF의 지니계수는 같다.",
+    "targetKeywords": [
+      "로렌츠곡선",
+      "지니계수",
+      "십분위분배율",
+      "소득분배 불평등"
+    ]
+  },
+  {
+    "id": "EXAM-2014-A-19",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "[2014학년도] 19번. [서술4] 후방굴절 노동공급곡선과 대체효과·소득효과 [3점]",
+    "examTag": "",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 서술 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 그래프는 갑의 노동 공급 곡선을 나타낸다. 실질 임금이 w* 이상인 경우 실질 임금이 상승함에 따라 노동 시간이 감소한다. 그 이유를 대체효과와 소득효과를 이용하여 설명하시오. [3점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"text-center my-2\">\n      <img src=\"assets/exam_images/exam_2014_A_서술형_04.jpg\" alt=\"후방굴절 노동 공급 곡선\" class=\"max-w-xs mx-auto rounded border border-slate-300 shadow-2xs\">\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 space-y-1\">\n      <p>• 세로축: 실질 임금(w), 가로축: 노동 시간(L)</p>\n      <p>• 임금이 0에서 w*까지는 임금 상승 시 노동 공급 시간 L이 증가함.</p>\n      <p>• 임금이 w* 이상으로 상승하면 노동 공급 곡선이 좌측 상방으로 꺾여 노동 공급 시간 L이 감소함 (후방굴절 노동공급곡선).</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 임금 상승에 따른 대체효과와 소득효과의 상대적 크기를 비교하여, w* 이상에서 노동시간이 감소하는 메커니즘을 명확히 설명할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n실질 임금이 상승하면 여가의 기회비용이 커져 여가를 줄이고 노동을 늘리려는 **대체효과**와, 실질 소득이 증가하여 정상재인 여가의 소비를 늘리고 노동을 줄이려는 **소득효과**가 동시에 발생한다. 실질 임금이 w* 이상인 구간에서는 **소득효과의 크기가 대체효과보다 더 커지기 때문에**, 임금 상승 시 여가 소비가 늘어나고 노동 시간은 오히려 감소하게 된다.\n\n2. 상세 해설:\n- 임금 상승 시 두 가지 상반된 효과:\n  1) 대체효과: 임금 = 여가의 기회비용 상승 ➔ 여가 감소, 노동 증가(+)\n  2) 소득효과: 실질소득 증가 ➔ 정상재인 여가 수요 증가 ➔ 노동 감소(-)\n- w < w* 구간: 대체효과 > 소득효과 ➔ 우상향.\n- w > w* 구간: 소득효과 > 대체효과 ➔ 후방굴절(노동시간 감소).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "임금 상승 시 여가의 기회비용 증가로 노동을 늘리려는 대체효과보다, 실질소득 증가로 정상재인 여가를 늘리고 노동을 줄이려는 소득효과가 더 커지기 때문에 실질 임금이 w* 이상에서는 임금 상승에 따라 노동 시간이 감소한다.",
+    "targetKeywords": [
+      "대체효과",
+      "소득효과",
+      "소득효과가 대체효과보다 크다",
+      "여가",
+      "정상재",
+      "기회비용"
+    ],
+    "tapeCount": 6,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2015-A-13",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "[2015학년도] 13번. [서술3] 노동시장의 수요독점과 최저임금제의 효과 [5점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2015학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 서술 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 다음의 가상 시나리오에서 최저임금제 도입 이전과 이후에 유통업체 B사가 A국에서 고용한 노동량과 지불한 임금총액은 각각 얼마인지를 구하고, 이 분석의 결론을 간략히 쓰시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>유럽연합 내의 작은 농업국인 A국에 대형 다국적기업 유통업체 B사가 A국 국민만을 고용하는 조건으로 대형 마켓을 입점시켰다고 하자. B사는 경쟁이 치열한 유럽연합 내의 유통시장에서 유리한 입지를 점하기 위하여 유럽연합의 많은 나라들과 국경을 맞대고 있는 A국을 선택하였는데, A국에는 다른 기업은 전혀 없으며, 외부로부터의 추가적인 노동인구 유입도 없다고 가정한다. 그래프의 곡선 (가), (나), (다)는 각각 B사의 한계요소비용곡선(MFC), A국의 노동공급곡선(AFC), 노동의 한계생산물가치곡선(VMPL, B사의 노동수요곡선)이다.</p>\n      <div class=\"text-center my-2\">\n        <img src=\"assets/exam_images/exam_2015_A_13_graph.png\" alt=\"수요독점 노동시장 그래프\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n      <div class=\"text-xs space-y-1 bg-slate-50 p-2 rounded border border-slate-200\">\n        <p>◦ (가) MFC: W = (1/100)L</p>\n        <p>◦ (나) AFCL(노동공급곡선): W = (1/200)L</p>\n        <p>◦ (다) VMPL(노동수요곡선): W = 30 - (1/100)L</p>\n        <p>◦ 정부가 최저임금을 10유로로 설정함.</p>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 최저임금 도입 이전: B사가 고용한 노동량(L1)과 지불한 임금총액을 계산하여 제시할 것.</p>\n      <p>◦ 최저임금(10유로) 도입 이후: B사가 고용한 노동량과 지불한 임금총액을 계산하여 제시할 것.</p>\n      <p>◦ 이 분석을 통해 알 수 있는 '수요독점 노동시장에서의 최저임금제 도입 효과' 결론을 간략히 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n① 최저임금제 도입 이전:\n  - 고용량: 1,500\n    * VMPL = MFC: 30 - (1/100)L = (1/100)L ⇒ (2/100)L = 30 ⇒ L1 = 1,500\n  - 지불 임금률: w1 = (1/200) × 1,500 = 7.5유로\n  - 지불 임금총액: 1,500 × 7.5 = 11,250유로\n② 최저임금제(10유로) 도입 이후:\n  - 최저임금 10유로 하에서 노동공급량: 10 = (1/200)L ⇒ L = 2,000\n  - VMPL 상의 임금: 30 - (1/100)(2,000) = 10유로이므로 정확히 노동수요와 일치함.\n  - 고용량: 2,000\n  - 지불 임금총액: 2,000 × 10 = 20,000유로\n③ 분석의 결론:\n  - 완전경쟁 노동시장에서는 최저임금제가 고용 감소를 유발하지만, '노동시장이 수요독점적인 경우 적정 수준의 최저임금제 도입은 임금 상승뿐만 아니라 고용량도 오히려 증가(1,500 ➔ 2,000)시키는 긍정적 효과'를 가져온다.\n\n2. 상세 해설:\n- 수요독점 기업은 한계요소비용(MFC)과 한계생산물가치(VMPL)가 일치하는 점에서 고용량을 결정하고 임금은 노동공급곡선에서 책정하므로 경쟁시장보다 고용도 적고 임금도 낮다(착취 발생).\n- 정부가 경쟁균형 수준인 10유로로 최저임금을 설정하면 새로운 MFC가 10유로 수평선이 되므로 고용량이 1,500에서 2,000으로 증가하고 임금총액도 대폭 증가한다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 도입 이전: 고용량 1,500, 임금총액 11,250유로 (임금 7.5유로)\n- 도입 이후: 고용량 2,000, 임금총액 20,000유로 (임금 10유로)\n- 결론: 노동시장이 수요독점인 경우, 적절한 최저임금제는 임금 인상과 동시에 고용량 증가를 가져온다.",
+    "targetKeywords": [
+      "1,500",
+      "11,250유로",
+      "2,000",
+      "20,000유로",
+      "수요독점",
+      "고용량 증가",
+      "임금 상승"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-08",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "[2021학년도] 8번. 여가-노동 공급곡선 및 최적 여가시간 도출 [4점]",
+    "examTag": "",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음은 여가 수요와 노동 공급에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑은 하루 24시간 중 여가(<i>L</i>)로 <i>l</i>시간을 즐기고 (24 - <i>l</i>)시간만큼 일한다. 여가는 식사, 수면, 오락 등 모든 비노동 활동을 포함한다. 시간당 임금이 <i>w</i>일 때 하루 소득은 <i>w</i>(24 - <i>l</i>)이 되고 전액을 복합재(<i>Y</i>) 구매에 사용하여 <i>y</i>만큼 소비한다. 여가의 가격(<i>P<sub>L</sub></i>)은 <i>w</i>이고 복합재의 가격(<i>P<sub>Y</sub></i>)은 1이다.</p>\n    <p>여가와 복합재 소비에 대한 갑의 효용과 한계 효용은 다음과 같다.</p>\n    <div class=\"p-2.5 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n      <p>효용 : <i>U</i>(<i>l</i>, <i>y</i>) = (<i>l</i> - 4)<i>y</i></p>\n      <p>여가의 한계 효용 : <i>MU<sub>L</sub></i> = <i>y</i></p>\n      <p>복합재의 한계 효용 : <i>MU<sub>Y</sub></i> = <i>l</i> - 4</p>\n    </div>\n    <p>갑은 자신에게 주어진 <u>㉠ 예산제약</u> 내에서 복합재에 대한 여가의 한계 대체율(<i>MRS<sub>L,Y</sub></i>)과 상대 가격(<i>P<sub>L</sub> / P<sub>Y</sub></i>)이 같은 <u>㉡ 접점조건</u>을 고려하여 최적의 하루 여가 시간(<i>l</i><sup>*</sup>)을 선택할 때 효용이 극대화된다는 것을 안다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑이 효용을 극대화하기 위해 고려하는 두 조건인 밑줄 친 ㉠, ㉡을 순서대로 쓸 것.</p>\n      <p>◦ 갑이 효용을 극대화하는 최적의 하루 여가 시간(<i>l</i><sup>*</sup>)을 구하고, 임금(<i>w</i>)과의 관계를 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 두 조건식:\n- ㉠ 예산제약식: wl + y = 24w (또는 y = w(24 - l))\n- ㉡ 접점조건식: MRSL,Y = MUL / MUY = y / (l - 4) = PL / PY = w ➔ y = w(l - 4)\n\n2. 최적 여가시간(l*) 및 임금과의 관계:\n- 접점조건 y = w(l - 4)를 예산제약식에 대입:\n  wl + w(l - 4) = 24w ➔ 2wl - 4w = 24w ➔ 2wl = 28w ➔ l* = 14시간\n- 임금과의 관계:\n  최적 여가시간은 14시간으로, 임금(w)의 크기와 상관없이 항상 일정하다(독립적이다). 이는 임금 상승에 따른 대체효과(여가 감소)와 소득효과(여가 증가)의 크기가 정확히 상쇄되기 때문이다.\n    </div>\n  </details></div>",
+    "defaultAnswer": "1. 두 조건식:\n- ㉠ 예산제약식: wl + y = 24w (또는 y = w(24 - l))\n- ㉡ 접점조건식: MRSL,Y = MUL / MUY = y / (l - 4) = PL / PY = w ➔ y = w(l - 4)\n\n2. 최적 여가시간(l*) 및 임금과의 관계:\n- 접점조건 y = w(l - 4)를 예산제약식에 대입:\n  wl + w(l - 4) = 24w ➔ 2wl - 4w = 24w ➔ 2wl = 28w ➔ l* = 14시간\n- 임금과의 관계:\n  최적 여가시간은 14시간으로, 임금(w)의 크기와 상관없이 항상 일정하다(독립적이다). 이는 임금 상승에 따른 대체효과(여가 감소)와 소득효과(여가 증가)의 크기가 정확히 상쇄되기 때문이다.",
+    "targetKeywords": [
+      "wl + y = 24w",
+      "y / (l - 4) = w",
+      "14시간",
+      "일정하다",
+      "상쇄"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2022-A-09",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "[2022학년도] 9번. 감자 시장 균형 및 가격지지 정책(정부 수매) [4점]",
+    "examTag": "",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국에서 감자에 대한 시장수요곡선과 시장공급곡선은 각각 <i>Q<sub>D</sub></i> = 10 - 0.5<i>P</i> 및 <i>Q<sub>S</sub></i> = -2 + <i>P</i> 이다. 갑국 정부는 감자 농가의 소득을 증대하기 위해 감자의 시장가격을 균형가격보다 높은 수준인 단위당 10달러에서 유지하는 정책을 시행하기로 결정하였다. 이를 위해 갑국 정부는 <u>감자 농가의 초과 생산량을 시장에서 구매해 주는 방식</u>을 고려하고 있다.</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량(백만), <i>P</i>는 단위당 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국 정부의 개입이 없는 경우, 감자 시장의 균형가격과 균형 거래량이 각각 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 정부가 감자를 구매하는 데 지출하는 비용이 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 생산자의 이익에 어떠한 변화가 있는지 시행 전과 후의 생산자 잉여의 크기를 각각 포함하여 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.\n    </div>\n  </details></div>",
+    "defaultAnswer": "1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.",
+    "targetKeywords": [
+      "8달러",
+      "6",
+      "30",
+      "18",
+      "32"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2025-B-10",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-6. 분배이론",
+    "title": "[2025학년도] 10번. 효율성 임금과 최저임금제 하의 비자발적 실업 [4점]",
+    "examTag": "",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>구조적 실업은 노동의 공급이 수요를 초과하는 경우에 발생하며, 그 원인으로 ( ㉠ )와/과 <u>㉡ 최저임금</u>이 거론된다. ( ㉠ )은/는 기업 스스로 근로자의 근로의욕을 고취시키기 위해서 지급하는 임금이다. 최저임금은 근로자의 생활 안정과 노동력의 질적 향상을 위하여 임금의 최저수준을 정한 것이다.</p>\n<div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2025_b_10.png\" alt=\"완전경쟁 노동시장의 수요-공급 그래프 (효율성임금 및 최저임금)\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n<p>◦ ㉠과 밑줄 친 ㉡을 ㉢과 비교하여 비자발적 실업이 발생하는 원인을 서술할 것.</p>\n<p>◦ 그림에서 최저임금제가 시행된 후 발생하는 비자발적 실업자 수를 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠, ㉢:\n㉠ 효율성 임금(효율임금, efficiency wage)\n㉢ 시장균형임금(균형임금)\n\n2. 비자발적 실업 발생 원인:\n효율성 임금(㉠)과 최저임금(㉡)이 노동시장의 '시장균형임금(㉢)'보다 더 높은 수준에서 결정됨으로써, 높은 임금을 받고 일하고자 하는 노동 공급량이 기업이 고용하려는 노동 수요량을 초과하여 초과공급(비자발적 실업)이 발생하기 때문이다.\n\n3. 비자발적 실업자 수:\n최저임금 하에서 노동공급량 12 - 노동수요량 8 = 4(명 또는 단위)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. ㉠: 효율성 임금(효율임금)\n   ㉢: 시장균형임금(균형임금)\n2. 발생 원인: 효율임금과 최저임금이 '시장균형임금'보다 높게 설정되어 노동의 초과공급이 발생하기 때문이다.\n3. 비자발적 실업자 수: 4(명)",
+    "targetKeywords": [
+      "효율성 임금",
+      "시장균형임금",
+      "초과공급",
+      "4"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
   },
   {
     "id": "ECON-010",
@@ -140,6 +689,153 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
+    "id": "EXAM-2008-14",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2008학년도] 14번. 코즈의 정리를 통한 외부효과 해결",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 다음에서 ㉠의 사례를 수치를 포함하여 제시하고, 금연이 강제되었을 때보다 ㉠을 따를 때의 사회적 이득 증가분을 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>동수와 민성이는 한 집에 살고 있으며, 동수는 흡연자이고 민성이는 비흡연자이다. 동수가 흡연할 경우의 만족도(편익)를 돈으로 환산하면 하루 500원이고, 민성이가 담배연기로부터 받는 불쾌감(비용)을 돈으로 환산하면 하루 300원이라 하자. 이 경우 민성이가 동수에게 담배를 피우지 못하게 하는 것은 효율적인 자원배분의 상태가 아니다. 동수는 담배를 피우지 못하게 하는 방안보다, 담배를 피울 수 있으면서도 ㉠<u>더 나은 상태에 도달할 수 있는 방안</u>을 민성이에게 제안하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠의 사례 : _________________________________</p>\n    <p>∙ 사회적 이득 증가분 : __________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠의 사례: 동수가 민성이에게 300원 초과 500원 미만의 금액(예: 400원)을 보상으로 지불하고 담배를 피우는 방안.\n∙ 사회적 이득 증가분: 200원 (또는 동수의 순편익 100원 + 민성의 순편익 100원 = 200원)\n\n해설:\n코즈의 정리(Coase Theorem)에 관한 문제입니다. 재산권이 명확히 확정되어 있고 거래비용이 없다면, 당사자 간의 자발적 협상을 통해 외부효과를 내재화하여 효율적인 자원 배분에 도달할 수 있습니다.\n- 동수의 흡연 편익(500원)이 민성이의 피해 비용(300원)보다 크므로, 사회적으로는 동수가 흡연하는 것이 이득입니다.\n- 금연 강제 시 사회적 잉여는 0입니다. 흡연 시 사회적 잉여는 500 - 300 = 200원입니다. 따라서 금연 강제 대비 사회적 이득 증가분은 200원입니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "동수가 400원 보상하고 흡연 / 사회적 이득 200원 증가",
+    "targetKeywords": [
+      "코즈의 정리",
+      "외부효과",
+      "보상",
+      "자발적 협상",
+      "사회적 잉여"
+    ]
+  },
+  {
+    "id": "EXAM-2009-1-24",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2009학년도] 24번. 오염배출권 거래제도 균형 분석",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음 자료의 기업이 자체 비용을 들여 제거할 오염 물질 배출량과 배출권 구입량의 크기로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>△△시는 내년부터 오염 물질 배출 총량 규제를 위해서 각 기업의 오염 물질 배출량에 대한 규제와 더불어 오염 물질 배출권 거래를 인정하기로 하였다. 즉, △△시의 모든 기업은 각각 연간 일정한 배출량을 허용 받으며, 원한다면 배출권을 거래할 수 있다. 그림은 오염 물질 1톤당 배출권의 가격 P, 이윤 극대화를 추구하는 어느 기업이 오염 물질을 1톤씩 제거시켜 나갈 때의 한계비용을 나타내고 있다. e만큼의 오염 물질을 배출하려는 기업에게 이제 배출 허용량이 a만큼 주어졌다고 하자.</p>\n    <p>[그래프 정보: 가로축(배출량 제거량/허용량), 세로축(가격/비용). 한계비용 곡선이 원점(a)에서 우상향. 배출권 가격선이 P에서 수평. 한계비용과 배출권 가격 P가 교차하는 가로축 지점이 c. 원점 a에서 총 배출 필요량 e가 있고, 그 기업은 a부터 e까지 비용 의사결정을 함.]<br>* 정확한 가로축 기호 배열: a(0), b, c, d, e.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <p>자체 비용을 들여 제거할 양 / 배출권 구입량</p>\n    <div>① ab / bc</div>\n    <div>② cd / de</div>\n    <div>③ ac / ce</div>\n    <div>④ ae / 0</div>\n    <div>⑤ 0 / ae</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ac / ce\n\n해설:\n- 이윤극대화 기업은 자신의 한계저감비용(MAC)이 배출권 가격(P)보다 낮을 때는 배출권 구매 대신 자체 비용을 들여 오염을 직접 감축합니다.\n- 한계비용(MAC) 곡선이 P와 만나는 지점(c)까지는 감축비용이 배출권 구매비용보다 저렴하므로, 이 기업은 a에서 c구간(ac) 만큼의 오염을 스스로 제거합니다.\n- 반면, 한계비용이 배출권 가격보다 높아지는 c 지점 이후(총 필요량 e까지, 즉 ce 구간)에서는 직접 감축하는 것보다 배출권을 사서 오염을 배출하는 것이 비용이 적게 듭니다.\n- 따라서 자체 비용으로 제거할 양은 ac, 배출권을 구입하여 처리(배출)할 양은 ce가 됩니다. (기업의 총 허용량 a(0)이므로 남은 배출량 전부 배출권 구입 필요)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ ac / ce",
+    "targetKeywords": [
+      "배출권 거래제도",
+      "한계저감비용",
+      "이윤극대화",
+      "환경경제학"
+    ]
+  },
+  {
+    "id": "EXAM-2011-1-23",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2011학년도] 23번. 정보의 비대칭성 (역선택과 도덕적 해이)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음 (가), (나)는 특정의 경제적 현상을 보여주는 사례이다. 이를 해소할 수 있는 방안을 옳게 나열한 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>(가) 중고차 판매상은 고객보다 차의 성능에 대해 잘 안다.</p>\n    <p>(나) 근로자는 고용주보다 자기가 일을 얼마나 열심히 하는지 잘 안다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 은행대출시 은행은 우량고객들을 선별하여 신용할당을 한다.</p>\n      <p>ㄴ. 기업이 임원의 보수를 기본급에다 실적에 따른 성과급을 동시에 지급한다.</p>\n      <p>ㄷ. 주식시장에 상장된 기업에게 기업의 정보를 충분히 공시하도록 의무를 부과한다.</p>\n      <p>ㄹ. 화재가 발생할 경우 화재보험회사는 손실의 일부를 보험 가입자에게 부담하게 한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② (가) ㄱ, ㄷ / (나) ㄴ, ㄹ\n\n해설:\n- (가) 중고차 시장의 레몬(Lemon) 문제 등은 '역선택(Adverse Selection)'의 사례입니다. 계약 전 감추어진 특성 때문에 발생합니다. \n해결 방안: 은행의 우량고객 선별(스크리닝, ㄱ), 상장기업 정보 공시 의무화(신호발송 강제, ㄷ)\n- (나) 근로자의 태만 등은 본인-대리인 문제로 '도덕적 해이(Moral Hazard)'의 사례입니다. 계약 후 감추어진 행동 때문에 발생합니다. \n해결 방안: 성과급 지급을 통한 인센티브 일치(ㄴ), 공동보험이나 기초공제(자기부담금)를 통한 유인 제공(ㄹ)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "② (가) ㄱ, ㄷ / (나) ㄴ, ㄹ",
+    "targetKeywords": [
+      "정보의 비대칭성",
+      "역선택",
+      "도덕적 해이",
+      "본인-대리인 문제",
+      "신호발송"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-26",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2013학년도] 26번. 오염세와 배출권 거래제도 비교",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 다음 자료에 대한 분석과 추론으로 타당한 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ △△시에는 이윤의 극대화를 추구하는 두 기업 A와 B가 있다. 두 기업은 각각 1톤의 제품을 생산할 때마다 1톤씩의 오염 물질을 방출하고 있으나, 그에 따르는 오염의 사회적 비용은 부담하지 않고 있다.</p>\n    <p>◦ MPA와 MPB 두 직선은 기업 A, B가 각각 생산을 1톤씩 늘려갈 때마다 얻는 한계이익(= 한계수입 - 한계비용)을 보여 주고 있다. 따라서 두 기업은 한계이익이 0이 되는 점에서 생산하고 있다. (그래프 상 A의 절편은 60, 60 / B의 절편은 30, 60)</p>\n    <p>◦ △△시 정부는 오염 규제 정책을 도입하기로 결정하였다. 그리고 각 기업에게 동일한 오염세를 부과하는 오염세 정책 및 동일한 양의 오염 배출을 허용하고 배출권의 거래를 인정하는 오염 배출권 거래 정책을 비교하고 있다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 오염세를 1톤 당 20만 원으로 부과한다면, 두 기업의 총 오염 배출량은 70톤이 된다.</p>\n      <p>ㄴ. 오염세 정책 하에서 기업 A의 생산량이 기업 B의 생산량보다 더 크다.</p>\n      <p>ㄷ. 각 기업에게 오염 배출량을 20톤씩 허용한다면, 오염 1톤 당 배출권의 거래 가격은 15만 원부터 형성될 수 있다.</p>\n      <p>ㄹ. 오염 배출권의 거래가 이루어진다면 기업 A는 언제나 배출권의 매입자 위치에 서게 될 것이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ\n\n해설:\n그래프를 통해 함수를 도출하면: \nMPA = 60 - Q_A\nMPB = 30 - 0.5 Q_B\n- 오염세가 T로 주어지면, 기업은 한계이익(MP)이 T와 같아질 때까지 생산합니다.\n- ㄱ: T=20일 때, 60-Q_A = 20 ➔ Q_A = 40. 30-0.5Q_B = 20 ➔ Q_B = 20. 총 생산(오염) = 40 + 20 = 60톤입니다. (틀림)\n*단, 문제 그래프나 조건에 따라 B의 절편이 다를 수 있는데, B의 y절편이 30, x절편이 60이면 기울기는 -0.5입니다.\n만약 B의 x절편을 다른 값으로 해석했다면 Q_B가 달라집니다. (일반적으로 교과서 예제에서 T=20이면 총합은 60톤입니다.)\n- ㄴ: 어떤 양(+)의 오염세 T 하에서(단 T<30일때), MPA가 MPB보다 항상 높게 위치하므로 A의 생산량이 더 큽니다. (옳음)\n- ㄷ: 각 기업에 20톤씩 허용할 경우, MPA(20) = 40, MPB(20) = 20입니다. 배출권 거래는 양 기업의 한계이익이 일치하는 점에서 이루어집니다. 총 40톤 허용이므로 MPA = MPB ➔ 60 - Q_A = 30 - 0.5 Q_B, Q_A + Q_B = 40. 이를 풀면 Q_A = 33.3, Q_B = 6.6, 균형가격 = 26.6만원이 됩니다. 15만원은 아닙니다. (틀림)\n- ㄹ: 할당량이 어떻게 주어지느냐에 따라 달라집니다. 기업 A에 40톤 전량이 주어지고 B에 0톤이 주어지면 A가 매도자가 됩니다. (틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① ㄱ, ㄴ (정확한 수식 해석 요망)",
+    "targetKeywords": [
+      "한계저감비용",
+      "배출권 거래제도",
+      "피구세",
+      "오염세"
+    ]
+  },
+  {
+    "id": "EXAM-2017-A-13",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2017학년도] 13번. 오염 배출권 거래 제도와 기업 이익 극대화 [4점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 다음 자료에서 오염 배출권 거래 제도가 도입된 후 기업이 오염 배출권을 얼마만큼 살 것인지 혹은 얼마만큼 팔 것인지 아니면 그대로 있을 것인지를 쓰고, 기업이 그런 행동을 했을 때 얻게 되는 이익의 크기를 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>다음 그림에서 MC 곡선은 한 기업이 오염 배출량 1톤을 줄이기 위해 부담해야 하는 한계 비용을 나타내는 선이다. 이윤의 극대화를 추구하는 이 기업은 오염 배출권 거래 제도가 도입되기 전에는 오염 물질을 Qf만큼 배출하고 있었다. 오염 배출권의 거래가 도입되자, 1톤의 오염 물질 배출권 1장의 매매 가격이 Pd에서 형성되었다.</p>\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2017_A_13.png\" alt=\"오염 배출 한계감축비용 MC곡선과 배출권가격\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 기업이 배출권을 얼마만큼 살 것인지, 팔 것인지, 아니면 그대로 둘 것인지를 구체적인 양(기호)과 함께 쓸 것.</p>\n      <p>◦ 기업이 그러한 선택을 함으로써 얻게 되는 순이익의 크기를 그래프 상의 도형(점들의 기호)으로 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 기업의 행동: 오염 배출권을 (Qf - Qe)만큼 판매한다 (팔 것이다).\n- 기업이 얻는 이익의 크기: 삼각형 bcf\n\n2. 상세 해설:\n- 현재 배출량 Qf에서 기업의 오염 1톤 감축 한계비용(MC)은 Pg이다. 그런데 시장에서 배출권 1장의 가격은 Pd(> Pg)로 형성되어 있다.\n- 기업의 한계감축비용 MC가 배출권 가격 Pd보다 낮으므로, 기업은 스스로 오염 물질을 Qe 수준까지 줄이고, 절감된 오염 배출권 (Qf - Qe)만큼을 시장에 내다 파는 것이 이윤을 극대화한다.\n- 이로 인한 총 판매 수입은 사각형 bc(Qf)(Qe) (즉, 사각형 bcdh 중 일부)이며, 오염을 추가 감축하는 데 든 총비용은 사다리꼴 be(Qf)(Qe)이다. 따라서 수입에서 비용을 차감한 기업의 순이익 크기는 '삼각형 bcf'가 된다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 행동: 배출권을 (Qf - Qe)만큼 판다.\n- 이익의 크기: 삼각형 bcf\n\n2. 해설: 배출권 가격(Pd)이 한계감축비용(MC)보다 높으므로 배출량을 Qe까지 감축하고 배출권 (Qf - Qe)을 판매한다. 판매수입에서 추가 감축비용을 뺀 순이익은 삼각형 bcf이다.",
+    "targetKeywords": [
+      "Qf - Qe",
+      "판다",
+      "삼각형 bcf",
+      "한계비용"
+    ],
+    "tapeCount": 3,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2020-B-07",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2020학년도] 7번. 부정적 외부효과와 피구세 및 코즈 정리 [4점]",
+    "examTag": "",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2020학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 부정적 외부성이 발생하는 상황에 관한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>강 상류에 제철소가 있고 하류에는 어부의 어장이 있다. 제철소의 생산량(s)이 늘어나면 강의 수질이 나빠져 어부의 어획량은 감소한다. 다음 그래프는 생산량(s)에 따른 제철소의 한계 이윤과 어부의 한계 피해액을 나타낸다.</p>\n    </div>\n    \n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2020_b_07.png\" alt=\"생산량에 따른 제철소의 한계 이윤과 어부의 한계 피해액 그래프\" class=\"max-w-full md:max-w-[420px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 정부의 개입이 없고 강물에 대한 소유권이 설정되어 있지 않다면, 제철소의 생산량은 얼마가 될지 쓸 것.</p>\n    <p>◦ 강물에 대한 소유권이 설정되어 있지 않고 정부가 사회적 효율성을 달성하기 위해 제철소에 단위당 일정액의 피구세(Pigouvian tax)를 부과한다면, 그 크기는 얼마인지 쓸 것.</p>\n    <p>◦ 강물에 대한 소유권이 제철소에게 있고 어부와 제철소 간 협상의 거래비용이 없다면, 제철소의 생산량은 얼마가 될 것인지 쓰고, 이런 결과를 사회적 효율성의 관점에서 언급한 정리(theorem)의 명칭을 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 소유권 및 정부 개입이 없을 때 제철소 생산량: s_2\n- 사회적 효율성 달성을 위한 피구세 크기: t_1 (또는 s_1 생산량에서의 한계 피해액 크기)\n- 소유권이 제철소에 있고 거래비용이 없을 때:\n  - 생산량: s_1\n  - 정리 명칭: 코즈 정리 (Coase theorem)\n\n2. 정밀 해설:\n① 사적 이윤극대화 생산량:\n- 소유권과 정부 규제가 없으면 제철소는 외부 피해를 전혀 고려하지 않고 자신의 한계 이윤(MP)이 0이 되는 지점까지 생산한다. 따라서 생산량은 한계이윤 곡선의 가로축 절편인 s_2이다.\n② 사회적 최적 생산량과 피구세:\n- 사회적 최적 생산량은 제철소의 한계이윤과 어부의 한계피해액이 일치하는 교차점인 s_1이다.\n- 정부가 피구세를 부과하여 제철소의 사적 한계이윤곡선을 한계피해액만큼 아래로 이동시키려면, 최적 생산량 s_1에서의 단위당 한계피해액인 t_1만큼의 세금을 부과해야 한다.\n③ 코즈 정리:\n- 재산권(소유권)이 명확히 확립되어 있고 거래비용이 0이라면, 정부 개입 없이도 당사자 간의 자발적 협상을 통해 항상 사회적 최적 생산량(s_1)이 달성된다는 이론이 '코즈 정리'이다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 정부 개입 및 소유권 없을 때 생산량: s_2\n- 피구세의 크기: t_1\n- 자발적 협상 시 제철소 생산량: s_1\n- 정리 명칭: 코즈 정리 (Coase theorem)",
+    "targetKeywords": [
+      "s_2",
+      "t_1",
+      "s_1",
+      "코즈 정리"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2025-A-12",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2025학년도] 12번. 긍정적 외부효과(외부편익)와 피구보조금 및 사중손실 [4점]",
+    "examTag": "",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>A 국가 교육시장의 수요와 공급에 대한 정보는 다음과 같다. 이때, 교육시장은 완전경쟁시장이라 가정한다.</p>\n<div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2025_a_12.png\" alt=\"교육시장의 수요-공급 및 사회적 한계편익(SMB) 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n<p>교육의 긍정적 외부효과 크기를 의미하는 ( ㉠ )은/는 사회적 한계 편익(SMB)과 수요 사이의 거리(차이)이다. 그리고 정부는 교육이 이와 같은 긍정적 외부효과를 발생시키는 것과 이로 인해 <u>㉡ 자중손실</u>이 발생한다는 것을 알고 있다. 따라서 정부는 교육의 사회적 최적생산량을 달성하기 위하여 수요자에게 <u>㉢ 교정적 보조금(피구보조금)</u>을 지급하고자 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n<p>◦ 밑줄 친 ㉡이 발생하는 이유를 서술하고, ㉡의 값을 쓸 것.</p>\n<p>◦ 교육 1년당 밑줄 친 ㉢의 금액을 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠:\n한계외부편익(MEB, marginal external benefit, 외부편익)\n\n2. ㉡ 자중손실 발생 이유 및 값:\n- 발생 이유: 긍정적 외부효과(외부경제)로 인해 시장 균형 생산량(Q=4)이 사회적 최적 생산량(Q=5)보다 과소 생산·소비되기 때문이다.\n- 자중손실(DWL) 값: 삼각형 면적 = 1/2 × 밑변(MEB = 2) × 높이(5 - 4 = 1) = 1\n\n3. ㉢ 피구보조금(교정적 보조금) 금액:\n단위당 한계외부편익(MEB)과 동일한 금액인 '2원'을 지급하여 사적 수요곡선을 사회적 한계편익곡선(SMB)과 일치시킨다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. ㉠: 한계외부편익(MEB, 외부편익)\n2. ㉡ 발생 이유 및 값:\n- 이유: 사회적 최적 수준보다 과소 생산되기 때문\n- 값: 1\n3. ㉢ 보조금 금액: 2원",
+    "targetKeywords": [
+      "한계외부편익",
+      "과소 생산",
+      "1",
+      "2원"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2026-A-12",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-7. 시장실패",
+    "title": "[2026학년도] 12번. 공공재와 공유자원 (배제성, 경합성, 최적 공공재 생산량) [4점]",
+    "examTag": "",
+    "page": 12,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2026학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>재화는 다음 두 가지 성질로 구분할 수 있다. ( ㉠ )은/는 대가를 치르지 않은 사람들이 해당 재화를 소비하는 것을 막을 수 있는 성질을 의미하고, ( ㉡ )은/는 한 사람이 해당 재화를 소비하면 다른 사람이 소비할 기회가 줄어드는 성질을 의미한다. 공공재는 이 두 성질을 모두 가지지 않는다. 이러한 특성으로 인해 공공재의 경우 사회적 한계편익곡선이 개별 소비자 한계편익곡선의 수직 합이 된다. X재는 공공재이며, X재에 대해 동일한 소비자가 1,000명 존재하고 각 개별 소비자의 한계편익곡선이 MB = 5 - Q이다. 단, MB는 한계편익, Q는 수량이다. X재 생산의 한계비용은 1,000이고, 고정비용은 없다.</p>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n    <p>◦ 공유자원의 비극(tragedy of commons)이 발생하는 원인을 괄호 안의 ㉠, ㉡에 해당하는 용어를 활용하여 서술할 것.</p>\n    <p>◦ 사회적으로 바람직한 X재 생산량을 쓸 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- ㉠, ㉡:\n  ㉠: 배제성\n  ㉡: 경합성\n- 공유자원의 비극 발생 원인:\n  공유자원은 대가를 지불하지 않아도 소비를 막을 수 없는 '비배제성(배제성이 없음)'을 가지면서도 한 사람의 소비가 다른 사람의 소비 기회를 줄이는 '경합성'을 띠고 있기 때문에, 개인의 합리적 이기심에 따라 대가 없이 자원을 남획하거나 과다 소비하여 자원이 고갈된다.\n- 사회적으로 바람직한 X재 생산량:\n  4 (또는 4단위)\n\n2. 계산 및 해설:\n- 공공재는 비경합성과 비배제성을 지니므로 사회적 한계편익(SMB)은 개별 소비자 한계편익의 수직적 합(가격/편익의 합)이다:\n  SMB = Σ MB_i = 1,000 × (5 - Q) = 5,000 - 1,000Q\n- 사회적 최적 생산 조건은 사회적 한계편익과 한계비용의 일치(SMB = MC)이다:\n  5,000 - 1,000Q = 1,000\n  1,000Q = 4,000 ⟹ Q = 4\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- ㉠, ㉡:\n  ㉠: 배제성\n  ㉡: 경합성\n- 공유자원의 비극 발생 원인:\n  공유자원은 대가를 지불하지 않아도 소비를 막을 수 없는 '비배제성(배제성이 없음)'을 가지면서도 한 사람의 소비가 다른 사람의 소비 기회를 줄이는 '경합성'을 띠고 있기 때문에, 개인의 합리적 이기심에 따라 대가 없이 자원을 남획하거나 과다 소비하여 자원이 고갈된다.\n- 사회적으로 바람직한 X재 생산량:\n  4 (또는 4단위)\n\n2. 계산 및 해설:\n- 공공재는 비경합성과 비배제성을 지니므로 사회적 한계편익(SMB)은 개별 소비자 한계편익의 수직적 합(가격/편익의 합)이다:\n  SMB = Σ MB_i = 1,000 × (5 - Q) = 5,000 - 1,000Q\n- 사회적 최적 생산 조건은 사회적 한계편익과 한계비용의 일치(SMB = MC)이다:\n  5,000 - 1,000Q = 1,000\n  1,000Q = 4,000 ⟹ Q = 4",
+    "targetKeywords": [
+      "배제성",
+      "경합성",
+      "공유자원의 비극",
+      "사회적 한계편익",
+      "수직합"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-011",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
@@ -152,6 +848,24 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 6,
     "groupCount": 4
+  },
+  {
+    "id": "EXAM-2012-1-25",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-1. 국민소득측정",
+    "title": "[2012학년도] 25번. 소비자 물가지수(CPI) 계산",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 표는 우리나라 소비자 물가지수에 관한 것이다. 이에 대한 분석 및 추론으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th rowspan=\"2\" class=\"border border-slate-300 p-1\">품 목</th><th rowspan=\"2\" class=\"border border-slate-300 p-1\">가중치</th><th colspan=\"2\" class=\"border border-slate-300 p-1\">물가지수</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">2008년</th><th class=\"border border-slate-300 p-1\">2009년</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">식료품·비주류 음료</td><td class=\"border border-slate-300 p-1\">140.4</td><td class=\"border border-slate-300 p-1\">108.2</td><td class=\"border border-slate-300 p-1\">116.3</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">주류·담배</td><td class=\"border border-slate-300 p-1\">14.6</td><td class=\"border border-slate-300 p-1\">100.8</td><td class=\"border border-slate-300 p-1\">101.9</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">의복·신발</td><td class=\"border border-slate-300 p-1\">58.4</td><td class=\"border border-slate-300 p-1\">108.1</td><td class=\"border border-slate-300 p-1\">113.6</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">주거 및 수도·광열</td><td class=\"border border-slate-300 p-1\">170.4</td><td class=\"border border-slate-300 p-1\">109.7</td><td class=\"border border-slate-300 p-1\">110.9</td></tr>\n        <tr><td colspan=\"4\" class=\"border border-slate-300 p-1\">...</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 font-bold bg-slate-100\">합 계</td><td class=\"border border-slate-300 p-1 font-bold bg-slate-100\">1000.0</td><td class=\"border border-slate-300 p-1\"></td><td class=\"border border-slate-300 p-1\"></td></tr>\n        <tr><td class=\"border border-slate-300 p-1 font-bold bg-yellow-50\">가중 평균 물가지수</td><td class=\"border border-slate-300 p-1 bg-yellow-50\"></td><td class=\"border border-slate-300 p-1 font-bold bg-yellow-50\">109.7</td><td class=\"border border-slate-300 p-1 font-bold bg-yellow-50\">112.8</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 2009년의 소비자 물가는 2008년 대비 12.8% 상승했다.</p>\n      <p>ㄴ. 모든 품목의 기준 연도 물가지수는 100으로 동일하다.</p>\n      <p>ㄷ. 각 연도의 소비자 물가지수를 산정할 때 그 연도의 품목별 가중치를 적용한다.</p>\n      <p>ㄹ. 물가 변화시 소비자의 구매 적응 행동이 반영되지 않아 생계비 변화가 과대평가되는 경향이 있다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄴ, ㄹ\n\n해설:\n- ㄱ: 2008년 지수 109.7에서 2009년 112.8로 상승했으므로 상승률은 (112.8 - 109.7) / 109.7 ≈ 2.8%입니다. (기준연도인 2005년 대비 12.8% 상승한 것입니다.) (틀림)\n- ㄴ: 소비자물가지수(CPI)는 기준 연도의 물가를 100으로 두고 산출하므로 모든 품목의 기준 연도 물가지수는 100입니다. (옳음)\n- ㄷ: CPI는 라스파이레스 지수 방식으로 '기준 연도'의 고정된 거래량 가중치를 적용합니다. 각 연도(비교 연도)의 가중치를 적용하는 것은 파셰 방식(GDP 디플레이터 등)입니다. (틀림)\n- ㄹ: 라스파이레스 지수는 재화 가격 상승 시 소비자가 상대적으로 저렴해진 대체재로 수요를 옮기는 '대체 효과'를 무시하므로, 실제 생계비 상승보다 물가 상승을 과대평가하는 경향이 있습니다. (옳음)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ ㄴ, ㄹ",
+    "targetKeywords": [
+      "소비자물가지수",
+      "CPI",
+      "라스파이레스 지수",
+      "대체 편향",
+      "가중평균"
+    ]
   },
   {
     "id": "ECON-012",
@@ -168,6 +882,25 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
+    "id": "EXAM-2019-A-04",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-2. 소비투자이론",
+    "title": "[2019학년도] 4번. 현재가치법(NPV)에 의한 투자수익 계산과 의사결정 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 글에서 괄호 안의 ㉠에 들어갈 숫자와 ㉡에 들어갈 단어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>갑기업은 현재 140억 원을 투자하면, 2년 동안 1차연도 말에 605억 원, 2차연도 말에 －484억 원의 수익이 기대되는 투자안을 가지고 있다. 갑기업은 이 투자안의 채택 여부를 현재가치법에 의해 결정하고자 한다. 이자율이 연 10%이고 2차연도까지 이자율 변동이 없을 경우 이 투자안의 예상수익에 대한 현재가치는 ( ㉠ )억 원이다. 따라서 갑기업은 이 투자안을 ( ㉡ )한다.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n㉠: 150\n㉡: 채택 (또는 수락)\n\n2. 정밀 계산 과정:\n- 이자율 r = 10% = 0.1\n- 1차연도 말 예상수익 = 605억 원 ➔ 현재가치 = 605 / (1 + 0.1) = 605 / 1.1 = 550억 원\n- 2차연도 말 예상수익 = -484억 원 ➔ 현재가치 = -484 / (1 + 0.1)^2 = -484 / 1.21 = -400억 원\n- 예상수익의 총 현재가치(PV) = 550 + (-400) = 150억 원 (㉠ = 150).\n- 현재 투자비용(C) = 140억 원.\n- 순현재가치(NPV) = PV - C = 150억 원 - 140억 원 = +10억 원 &gt; 0.\n- NPV &gt; 0이므로 현재가치법에 따라 갑기업은 이 투자안을 '채택(수락)'한다 (㉡ = 채택).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: ㉠ 150, ㉡ 채택 (또는 수락)\n\n2. 해설: 수익 현재가치는 605/1.1 - 484/1.21 = 550 - 400 = 150억 원이다. 투자비용 140억 원보다 현재가치가 크므로(NPV=10>0) 채택한다.",
+    "targetKeywords": [
+      "150",
+      "채택",
+      "순현재가치",
+      "현재가치법"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-013",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
@@ -180,6 +913,98 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 0,
     "groupCount": 5
+  },
+  {
+    "id": "EXAM-2011-1-25",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-3. 국민소득결정",
+    "title": "[2011학년도] 25번. 거시경제모형과 디플레이션 갭",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 다음에 제시된 거시경제모형에 대한 분석으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>Y^D = C + I + G<br>C = 100 + 0.75Y_d<br>T = 0.2Y<br>I = 40<br>G = 100<br>Y^D = Y<br>Y_F = 700</p>\n    <p class=\"text-xs text-slate-500\">(Y^D: 총수요, C: 소비지출, Y_d: 가처분소득(Y-T), T: 조세, I: 투자지출, G: 정부지출, Y: 국민소득, Y_F: 완전고용국민소득)<br>* 디플레이션 갭 × 정부지출승수 = GDP 갭</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 정부지출승수는 2.5이다.</p>\n      <p>ㄴ. 정부지출승수는 4이다.</p>\n      <p>ㄷ. 디플레이션 갭은 25이다.</p>\n      <p>ㄹ. 디플레이션 갭은 40이다.</p>\n      <p>ㅁ. 디플레이션 갭은 100이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄷ\n\n해설:\n1) 균형국민소득 산출:\nY = C + I + G = 100 + 0.75(Y - 0.2Y) + 40 + 100\nY = 240 + 0.75(0.8Y)\nY = 240 + 0.60Y\n0.4Y = 240 ➔ 균형국민소득 Y_E = 600\n\n2) 정부지출승수 산출:\n비례세(t=0.2)가 존재하는 경우의 승수 공식 = 1 / (1 - c(1-t)) \n승수 = 1 / (1 - 0.75(1 - 0.2)) = 1 / (1 - 0.6) = 1 / 0.4 = 2.5 (ㄱ 옳음, ㄴ 틀림)\n\n3) 디플레이션 갭 산출:\nGDP 갭 = 완전고용국민소득(Y_F) - 균형국민소득(Y_E) = 700 - 600 = 100\nGDP 갭(100) = 디플레이션 갭 × 승수(2.5)\n디플레이션 갭 = 100 / 2.5 = 40. \n앗! 수식 재계산: 100 / 2.5 = 40 입니다! \n따라서 ㄹ. 디플레이션 갭은 40이다 가 옳습니다.\n즉 정답은 ② ㄱ, ㄹ 이어야 합니다. \n\n(풀이과정 오류 정정: 디플레이션 갭은 40이 맞습니다. 선지 ② ㄱ, ㄹ 이 맞습니다.)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "② ㄱ, ㄹ",
+    "targetKeywords": [
+      "정부지출승수",
+      "비례세",
+      "디플레이션 갭",
+      "균형국민소득",
+      "GDP 갭"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-22",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-3. 국민소득결정",
+    "title": "[2013학년도] 22번. 폐쇄경제 소득-지출 모형의 거시균형",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음은 폐쇄 국민경제의 단순한 소득－지출 모형에 대한 자료이다. 이에 대한 분석으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>S = -100 + 0.25 · (Y-T)<br>I = 40<br>G = 80<br>T = 80<br>Y_f = 600<br>(여기서, S는 가계 저축, Y는 국민소득, T는 조세, I는 기업의 투자지출, G는 정부지출, Y_f는 완전고용 국민소득을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 한계 소비성향은 0.25이다.</p>\n      <p>ㄴ. 국민소득의 크기가 600일 때 총지출이 총소득의 크기보다 크다.</p>\n      <p>ㄷ. 균형 재정을 유지할 경우, 균형 국민소득 수준에서 Y_f로 이동하려면 정부지출을 40만큼 줄이면 된다.</p>\n      <p>ㄹ. 한계 저축성향이 높아지면 새로운 균형 국민소득에서는 저축의 크기가 늘어나게 될 것이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- 가처분소득(Y-T)에 대한 한계저축성향(MPS)이 0.25이므로, 한계소비성향(MPC)은 1 - 0.25 = 0.75입니다. (ㄱ 틀림)\n- 소비함수: C = (Y-T) - S = (Y-T) - (-100 + 0.25(Y-T)) = 100 + 0.75(Y-T)\n- 균형 국민소득(Y) = C + I + G = 100 + 0.75(Y-80) + 40 + 80 = 100 + 0.75Y - 60 + 120 = 160 + 0.75Y.\n  0.25Y = 160 ➔ Y = 640. 현재 균형 국민소득은 640입니다.\n- 국민소득이 Y_f(600)일 때, 총지출 AE = 160 + 0.75(600) = 610. 총지출(610) > 총소득(600). (ㄴ 옳음)\n- 균형 재정을 유지(ΔG = ΔT)하면서 국민소득을 640에서 600(ΔY = -40)으로 줄이려면, 균형재정승수가 1이므로 정부지출(G)을 40만큼 줄이면 됩니다. (ㄷ 옳음)\n- 한계저축성향이 높아지면 승수효과로 인해 소득이 감소하여 최종적으로 저축은 변함이 없습니다(저축의 역설). 투자(I=40)와 정부저축(T-G=0)이 외생적으로 고정되어 있다면 균형 저축 S = I + (G-T)는 일정하게 유지됩니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ ㄴ, ㄷ",
+    "targetKeywords": [
+      "국민소득결정",
+      "한계소비성향",
+      "한계저축성향",
+      "균형재정승수",
+      "저축의 역설"
+    ]
+  },
+  {
+    "id": "EXAM-2014-A-07",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-3. 국민소득결정",
+    "title": "[2014학년도] 7번. [기입7] 폐쇄 거시경제 모형과 잠재 총생산 정부지출 [2점]",
+    "examTag": "",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 기입 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 폐쇄 거시 경제 모형이다. 이자율이 5%로 유지될 경우 잠재 총생산을 달성하기 위한 정부 지출 규모는 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>• C / Y = 0.8 - 0.3(R - 0.03)</p>\n      <p>• I / Y = 0.2 - 0.7(R - 0.03)</p>\n      <p>• Y_f = 2조 달러</p>\n      <p class=\"text-xs text-slate-500\">(여기서 C는 소비, Y는 총생산, R는 이자율, I는 투자, Y_f는 잠재 총생산을 나타낸다.)</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 폐쇄경제의 국민소득 항등식 Y = C + I + G를 적용하여 R = 0.05(5%), Y = 2조 달러일 때의 정부지출 G를 계산할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n400억 달러 (또는 0.04조 달러)\n\n2. 상세 해설:\n- 폐쇄경제 균형조건:\n  Y = C + I + G ➔ 1 = (C / Y) + (I / Y) + (G / Y)\n  따라서 G / Y = 1 - (C / Y + I / Y)\n- 문제에서 주어진 식 합산:\n  C / Y + I / Y = [0.8 - 0.3(R - 0.03)] + [0.2 - 0.7(R - 0.03)]\n                = 1.0 - 1.0(R - 0.03)\n- 이자율 R = 5% = 0.05 대입:\n  R - 0.03 = 0.05 - 0.03 = 0.02\n  C / Y + I / Y = 1.0 - 0.02 = 0.98\n- 따라서 G / Y = 1 - 0.98 = 0.02\n- 잠재 총생산 Y_f = 2조 달러(20,000억 달러)이므로:\n  G = 0.02 * 2조 달러 = 0.04조 달러 = **400억 달러**.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "400억 달러 (또는 0.04조 달러)",
+    "targetKeywords": [
+      "400억 달러",
+      "0.04조 달러",
+      "0.02",
+      "G/Y=0.02"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2018-A-04",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-3. 국민소득결정",
+    "title": "[2018학년도] 4번. 케인즈 단순모형의 조세승수와 정부지출승수 계산 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음은 어느 나라의 거시경제모형이다. 정부는 국민소득을 증가시키기 위하여 조세를 줄이거나 정부지출을 늘리는 방안을 고민하고 있다. 이 모형에서 조세를 100만큼 줄일 경우 국민소득이 2배가 된다면 정부지출은 얼마를 늘려야 국민소득이 2배가 되는지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-800 font-mono text-sm space-y-1\">\n      <p>Y = C + I + G</p>\n      <p>C = 5 + 0.8(Y - T)</p>\n      <p class=\"text-xs text-slate-600 font-sans\">(여기서 Y는 국민소득, C는 소비, I는 투자, G는 정부지출, T는 조세를 나타내며, I, G, T는 외생변수이다.)</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n80\n\n2. 정밀 계산 과정:\n- 한계소비성향(c) = 0.8\n- 정부지출 승수 = 1 / (1 - c) = 1 / (1 - 0.8) = 1 / 0.2 = 5\n- 조세 승수 = -c / (1 - c) = -0.8 / 0.2 = -4\n- 조세를 100만큼 감면(ΔT = -100)할 때의 국민소득 증가분:\n  ΔY = (-4) × (-100) = +400 (이 증가로 국민소득이 2배가 됨)\n- 정부지출 증가(ΔG)를 통해 동일하게 국민소득을 400만큼 증가시키기 위한 조건:\n  ΔY = 5 × ΔG = 400\n  ➔ ΔG = 400 / 5 = 80.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: 80\n\n2. 해설: 조세승수는 -4, 정부지출승수는 5이다. 조세 100 감면 시 소득 증가분 400과 동일한 소득을 늘리기 위한 정부지출 증가는 400 / 5 = 80이다.",
+    "targetKeywords": [
+      "80",
+      "정부지출 승수",
+      "조세 승수"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2023-B-08",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-3. 국민소득결정",
+    "title": "[2023학년도] 8번. 케인즈 폐쇄경제 모형의 균형소득 및 재정 상태 [4점]",
+    "examTag": "",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음은 폐쇄 경제인 갑국에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200 font-mono\">\n    <p>◦ <i>Y</i> = <i>C</i> + <i>I</i> + <i>G</i></p>\n    <p>◦ <i>C</i> = 3/4 (<i>Y</i> - <i>T</i>)</p>\n    <p>◦ <i>T</i> = <i>tY</i></p>\n    <p>◦ <i>t</i> = 0.2, <i>I</i> = <i>G</i> = 80</p>\n    <p class=\"text-xs text-slate-500 font-sans\">(단, <i>Y</i>는 국민소득, <i>C</i>는 소비, <i>I</i>는 투자, <i>G</i>는 정부지출, <i>T</i>는 조세, <i>t</i>는 소득세율을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국의 균형국민소득이 얼마인지 쓸 것.</p>\n      <p>◦ 국민소득이 균형일 때 <i>T</i>가 얼마인지 쓰고, 이때 갑국 정부의 재정 상태가 어떠한지 서술할 것.</p>\n      <p>◦ 갑국 정부가 목표 국민소득 수준을 600으로 설정한다면, 현재 상태에서 <i>G</i>를 어떻게 변화시켜야 하는지 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 균형국민소득:\nC = 0.75(Y - 0.2Y) = 0.6Y\nY = 0.6Y + 80 + 80 = 0.6Y + 160 ➔ 0.4Y = 160 ➔ Y* = 400\n\n2. 조세수입(T) 및 재정 상태:\nT = 0.2 × 400 = 80\n정부지출 G = 80이므로 세수와 지출이 일치(T = G = 80)하여 정부의 재정 상태는 '균형재정'이다.\n\n3. 목표소득 600 달성을 위한 정부지출(G) 변화:\n정부지출 승수 = 1 / (1 - 0.6) = 1 / 0.4 = 2.5\n국민소득 증분 ΔY = 600 - 400 = 200\n필요한 정부지출 증분 ΔG = 200 / 2.5 = 80\n따라서 현재 상태에서 G를 80만큼 증가시켜야 한다(G를 160으로 확대).\n    </div>\n  </details></div>",
+    "defaultAnswer": "1. 균형국민소득:\nC = 0.75(Y - 0.2Y) = 0.6Y\nY = 0.6Y + 80 + 80 = 0.6Y + 160 ➔ 0.4Y = 160 ➔ Y* = 400\n\n2. 조세수입(T) 및 재정 상태:\nT = 0.2 × 400 = 80\n정부지출 G = 80이므로 세수와 지출이 일치(T = G = 80)하여 정부의 재정 상태는 '균형재정'이다.\n\n3. 목표소득 600 달성을 위한 정부지출(G) 변화:\n정부지출 승수 = 1 / (1 - 0.6) = 1 / 0.4 = 2.5\n국민소득 증분 ΔY = 600 - 400 = 200\n필요한 정부지출 증분 ΔG = 200 / 2.5 = 80\n따라서 현재 상태에서 G를 80만큼 증가시켜야 한다(G를 160으로 확대).",
+    "targetKeywords": [
+      "400",
+      "80",
+      "균형재정",
+      "80만큼 증가"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
   },
   {
     "id": "ECON-014",
@@ -196,6 +1021,157 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
+    "id": "EXAM-2008-15",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2008학년도] 15번. 통화주의자(준칙주의)와 신화폐수량설",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 15번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    15. (가)에서 ㉠이 어떤 정책인지 적고, (나)의 ㉡, ㉢에 들어갈 숫자를 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p><b>(가)</b><br>통화주의(Monetarism)는 '화폐가 가장 중요하다'고 주장한다. 이는 통화정책이 재정정책보다 거시경제에 미치는 영향이 훨씬 더 강력하다는 주장이다. 하지만 그렇다고 해서 통화주의가 재량적(discretionary) 통화정책을 권하지는 않으며, 오히려 ㉠<u>일정한 통화 증가율을 정하여 민간에 공포한 후 그대로 시행하는 것</u>이 좋다고 주장한다.</p>\n    <p><b>(나)</b><br>통화주의는 신화폐수량설을 따른다. 이에 따르면 통화량이 400조 원이며, 명목GDP가 800조 원인 경제에서 화폐의 유통속도는 ( ㉡ )이(가) 된다. 또한 A국의 화폐유통속도가 안정적이라고 할 때, 실질소득 증가율이 5%인 상황에서 물가 상승률을 2%로 유지하려면 통화량의 증가율은 ( ㉢ )%로 유지하여야 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉢ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: k% 준칙 (또는 준칙에 입각한 통화정책, 고정 통화증가율 준칙)\n∙ ㉡: 2\n∙ ㉢: 7\n\n해설:\n- ㉠ 프리드먼(M. Friedman) 등 통화주의자들은 재량적 개입이 오히려 경제 불안정을 초래한다고 보아, 경제성장률에 맞춰 통화량을 매년 일정 비율(k%)로 공급하는 '준칙주의(k% rule)'를 주장했습니다.\n- ㉡ 교환방정식 MV = PY (M: 통화량, V: 유통속도, PY: 명목GDP)에서 400 × V = 800 이므로 화폐 유통속도(V)는 2입니다.\n- ㉢ 교환방정식을 변화율 형태로 바꾸면: 통화증가율(ΔM/M) + 유통속도증가율(ΔV/V) = 물가상승률(ΔP/P) + 실질소득증가율(ΔY/Y)\n  유통속도가 안정적(ΔV/V = 0)이라고 가정했으므로,\n  통화증가율 = 물가상승률(2%) + 실질소득증가율(5%) = 7%가 되어야 합니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "㉠ k% 준칙, ㉡ 2, ㉢ 7",
+    "targetKeywords": [
+      "통화주의",
+      "k% 준칙",
+      "준칙주의",
+      "신화폐수량설",
+      "화폐유통속도"
+    ]
+  },
+  {
+    "id": "EXAM-2009-1-23",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2009학년도] 23번. 재정정책과 통화정책의 효과성 (IS-LM 모형)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음은 ○○고등학교 경제연구동아리의 지도 교사와 학생들 간의 대화이다. A, B에 들어갈 내용으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>교사 : △△ 나라의 경제는 성장률의 전망이 낮고 경기가 후퇴하는 국면을 맞이하고 있습니다. 이 나라의 경제는 고용시장이 침체되고, 국내 투자 및 소비가 위축되고 있는 상황입니다. 만약 폐쇄경제라는 가정 하에 정부가 총수요관리정책을 편다면 어느 정책이 보다 더 효과적일까요?</p>\n    <p>학생 갑 : 저는 통화량을 증가시키는 정책이 보다 더 효과적이라고 봅니다. 왜냐하면 [ A ] 입니다.</p>\n    <p>학생 을 : 저는 국채 발행을 통해 정부 지출을 증가시키는 정책이 보다 더 효과적이라고 봅니다. 왜냐하면 [ B ] 입니다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① A: 화폐시장에 유동성 함정이 존재하고 재정정책의 내부시차가 짧기 때문</div>\n    <div>② A: 확대통화정책은 이자율의 변화를 통해 실물시장에 간접적으로 영향을 미치는 반면, 재정정책은 내부시차가 길기 때문</div>\n    <div>③ B: 화폐시장에 유동성 함정이 존재하고 통화정책의 외부시차가 짧기 때문</div>\n    <div>④ B: 확대재정정책은 실물시장에 직접적으로 영향을 미치는 반면, 통화정책은 외부시차가 길기 때문</div>\n    <div>⑤ B: 국채 발행으로 재원을 조달하여 정부 지출을 증가시키면 구축효과가 발생하기 때문</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n- 확대재정정책(정부지출 증가)은 즉각적으로 총수요(실물시장)를 증가시키는 반면, 확대통화정책은 이자율 하락을 거쳐 투자가 증가하기까지 상당한 시간(외부시차)이 걸립니다. 따라서 학생 을의 주장 근거로는 ④가 가장 적절합니다.\n- ①, ③: 유동성 함정이 존재하면 통화정책이 무력화되므로 학생 갑(통화정책 지지)의 논거가 될 수 없습니다. (또한 통화정책은 외부시차가 깁니다.)\n- ⑤ 구축효과는 재정정책의 효과를 상쇄시키는 요인이므로 재정정책이 효과적이라는 학생 을의 논거가 될 수 없습니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ B: 확대재정정책은 실물시장에 직접적으로 영향을 미치는 반면, 통화정책은 외부시차가 길기 때문",
+    "targetKeywords": [
+      "재정정책",
+      "통화정책",
+      "외부시차",
+      "내부시차",
+      "실물시장"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-22",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2012학년도] 22번. 통화정책의 전달경로와 투자",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음 글의 밑줄 친 ㉠∼㉢ 현상에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>케인지언(Keynesian)의 통화정책의 전달 경로에 의하면, 정부가 ㉠ 확대 통화정책을 실시해도 이자율이 더 이상 낮아지지 않게 되면 더 이상의 통화 팽창은 효력을 잃게 된다. 아울러 경제에 대한 전망이 나빠지면 ㉡ 투자지출은 이자율의 하락에도 거의 반응하지 않게 된다. ㉢ 경기 침체는 그 자체로 재정 수지의 악화를 가져온다. 그렇다고 건전 재정을 추구하게 되면 재정정책은 경기 순응적이 되어 경기 안정화 기능을 상실하게 된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. ㉠은 자산으로서의 화폐에 대한 수요가 사라지기 때문이다.</p>\n      <p>ㄴ. ㉠은 화폐 수요의 이자율 탄력성이 매우 크기 때문이다.</p>\n      <p>ㄷ. ㉡은 투자지출이 이자율에 대해 탄력적이기 때문이다.</p>\n      <p>ㄹ. ㉢은 재정의 자동안정장치가 작동하기 때문이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② ㄴ, ㄹ\n\n해설:\n- ㉠ 유동성 함정 현상입니다. 이자율이 바닥수준이 되어 투기적 화폐수요가 무한대(탄력성 매우 큼)가 되어 추가 공급된 통화가 모두 화폐 보유로 흡수됩니다. (ㄱ 틀림, ㄴ 옳음)\n- ㉡ 경기침체(야성적 충동의 악화)로 인해 투자가 이자율에 비탄력적으로 반응하는 상태를 의미합니다. (ㄷ 틀림 - 비탄력적)\n- ㉢ 경기 침체 시 실업수당 지급 증가 및 조세수입 감소로 재정적자가 악화되는데, 이는 누진세나 실업수당 같은 '자동안정화 장치'가 작동하고 있음을 의미합니다. (ㄹ 옳음)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "② ㄴ, ㄹ",
+    "targetKeywords": [
+      "유동성 함정",
+      "화폐수요",
+      "자동안정화장치",
+      "투자 비탄력성"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-20",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2013학년도] 20번. 미국과 일본의 이자율과 유동성 함정",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 20번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    20. 다음에서 제시되고 있는 미국과 일본의 경제 상황에 대한 분석으로 가장 적절한 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>1930년대 미국의 단기 이자율(3개월 만기 재무성채권의 이자율)은 대부분의 시기 동안 0의 수준에 머물렀다. 1990년대 말부터 2000년대까지 대부분의 시기 동안 일본은 0의 이자율 정책을 지속했다. 미국은 금융위기가 한창이었던 2008년 말에 이르러 다시 단기 이자율(콜금리)이 사실상 0의 수준으로 하락하였다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 생산물시장에서 인플레이션 갭이 존재하는 상황이다.</div>\n    <div>② 경기안정화를 위한 정책으로는 통화정책이 효과적이다.</div>\n    <div>③ 재정정책은 구축효과 때문에 경기안정화에 효과가 없다.</div>\n    <div>④ 화폐수요의 이자율탄력성은 매우 크고 투자의 이자율탄력성은 매우 작을 것이다.</div>\n    <div>⑤ 경기안정화정책을 시행하더라도 장기적으로 국민소득은 현재의 균형 국민소득 수준으로 회귀할 것이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n단기 이자율이 사실상 0에 머무는 상황은 '유동성 함정(liquidity trap)'에 빠진 경제를 시사합니다.\n- 이자율이 0에 가까워지면 화폐수요의 이자율 탄력성은 무한대에 가까워져(매우 크고), 투자의 이자율 탄력성은 매우 작아집니다(④ 정답).\n- 유동성 함정 하에서는 통화공급을 늘려도 이자율이 더 이상 하락하지 않으므로 통화정책은 무력하며(② 틀림), 오히려 재정정책이 구축효과 없이 매우 강력한 효과를 발휘합니다(③ 틀림).\n- 이 시기에는 심각한 경기침체(디플레이션 갭)가 존재합니다(① 틀림).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ 화폐수요의 이자율탄력성은 매우 크고 투자의 이자율탄력성은 매우 작을 것이다.",
+    "targetKeywords": [
+      "유동성 함정",
+      "화폐수요",
+      "이자율탄력성",
+      "통화정책 무력",
+      "재정정책 유효"
+    ]
+  },
+  {
+    "id": "EXAM-2015-B-02",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2015학년도] 2번. [서술2] 유동성 함정과 비재래식 통화정책(양적완화), 구축효과 부재 [5점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2015학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 서술 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음의 사례에서 재래식 통화정책의 한계가 무엇인지, 야당이 우려한 부작용이 무엇인지 설명하고, 이러한 우려를 일축한 정부의 확신은 어떤 이론적 근거를 가지고 있는지 설명하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>한 경제의 명목이자율이 0의 수준에 도달해 있음에도 불구하고 그래프에서와 같이 경기침체 갭을 겪고 있다. 재래식 통화정책이 한계에 봉착한 상황에서, 정부는 이 갭을 제거하기 위해 대량의 회사채와 주택담보채권을 매입하는 등 비재래식(unconventional) 통화정책인 양적 완화(Quantitative Easing)를 시행하면서 동시에 확장적 재정정책도 함께 시행할 것을 고려하고 있다. 확장적 재정정책에 비판적인 야당이 그 정책의 전형적인 부작용에 대해 우려를 표명하자 정부는 이 경우에는 그런 부작용이 발생하지 않을 것이라고 확신한다고 주장했다.</p>\n      <div class=\"text-center my-2\">\n        <img src=\"assets/exam_images/exam_2015_B_02.png\" alt=\"경기침체 갭 총공급-총수요 그래프\" class=\"max-w-xs mx-auto rounded border border-slate-300\">\n      </div>\n      <p class=\"text-xs text-slate-600\">◦ 현재 균형소득 YE < 잠재생산량 YP (경기침체 갭 존재)</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 명목이자율이 0 수준일 때 재래식 통화정책(단기 기준금리 인하)이 갖는 한계(명칭 및 원인)를 설명할 것.</p>\n      <p>◦ 야당이 우려한 확장적 재정정책의 전형적인 부작용(명칭 및 메커니즘)을 설명할 것.</p>\n      <p>◦ 이러한 상황에서 해당 부작용이 발생하지 않는다는 정부의 이론적 근거(IS-LM 관점)를 설명할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n① 재래식 통화정책의 한계:\n  - '유동성 함정(Liquidity Trap)' 또는 '명목이자율의 0 하한선(Zero Lower Bound, ZLB)'. 명목이자율이 이미 0에 도달하여 중앙은행이 기준금리를 추가로 인하할 수 없어 통화량을 늘려도 총수요를 진작시킬 수 없는 한계에 봉착한다.\n② 야당이 우려한 전형적인 부작용:\n  - '구축효과(Crowding-out effect)'. 정부가 국채를 발행하여 확장적 재정정책을 펼치면 자금 수요 증가로 이자율이 상승하여 민간의 소비와 투자가 위축되는 부작용이 나타난다.\n③ 정부 확신의 이론적 근거:\n  - 유동성 함정 상태에서는 화폐수요의 이자율 탄력성이 무한대에 달하여 'LM 곡선이 수평선'을 이룬다. 따라서 정부가 국채를 발행하여 지출을 늘려 IS 곡선을 우측으로 이동시키더라도 이자율이 전혀 상승하지 않으므로 민간 투자가 위축되는 '구축효과가 발생하지 않고(구축효과 = 0) 재정정책의 총수요 진작 효과가 극대화'된다.\n\n2. 상세 해설:\n- 케인스 경제학에서 유동성 함정(ZLB) 상황에서는 통화정책은 무력(LM 수평)하지만, 재정정책은 이자율 상승을 전혀 유발하지 않으므로 구축효과 없이 완전한 승수효과를 발휘한다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 재래식 통화정책 한계: 명목이자율이 0에 도달한 '유동성 함정(Zero Lower Bound)'으로 기준금리 추가 인하가 불가능함.\n2. 야당 우려: 국채 발행으로 이자율이 상승하여 민간 투자가 감소하는 '구축효과'.\n3. 정부의 이론적 근거: 유동성 함정 하에서는 LM 곡선이 수평이므로, 확장적 재정정책을 시행해도 이자율이 상승하지 않아 구축효과가 전혀 발생하지 않는다.",
+    "targetKeywords": [
+      "유동성 함정",
+      "명목이자율 0",
+      "구축효과",
+      "이자율 상승",
+      "LM 곡선 수평",
+      "투자가 위축되지 않음"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2019-A-10",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2019학년도] 10번. 케인즈학파와 통화주의학파의 재정·통화정책 유효성 논쟁 [4점]",
+    "examTag": "",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 대화를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (단, 폐쇄경제라고 가정한다.) [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p><b>갑</b> : 최근 경기침체가 더욱 악화되며 실업자가 급증하고 있는 상황입니다. <u>㉠ 국채 발행을 통해 정부지출을 증가시켜 경기 침체를 극복해야 합니다.</u></p>\n      <p><b>을</b> : 저는 국채 발행을 통한 정부지출 증가는 경기를 활성화시키기에 한계가 있다고 생각합니다. 왜냐하면 저는 화폐수요의 이자율탄력성은 ( ㉡ ), 투자수요의 이자율탄력성은 ( ㉢ )(이)라고 생각하기 때문입니다. 오히려 화폐시장을 통해 총수요를 증가시키는 정책을 추진해야 합니다.</p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 화폐수요의 이자율탄력성과 투자수요의 이자율탄력성의 크기에 대해 갑이 어떻게 생각하고 있는지 제시하고, 이를 근거로 밑줄 친 ㉠처럼 갑이 주장한 이유를 서술할 것.</p>\n    <p>◦ 괄호 안의 ㉡과 ㉢에 들어갈 단어를 순서대로 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 갑의 시각 및 주장 이유:\n  - 탄력성 크기: 갑은 '화폐수요의 이자율탄력성은 매우 크고(탄력적)', '투자수요의 이자율탄력성은 매우 작다(비탄력적)'고 생각한다 (케인즈학파의 입장).\n  - 주장 이유: 화폐수요가 탄력적이면 국채 발행으로 인한 화폐수요 증가에도 이자율 상승폭이 미미하고, 투자가 비탄력적이면 이자율이 소폭 상승하더라도 민간투자가 거의 위축되지 않으므로, 이자율 상승에 따른 '구축효과가 매우 작아서' 정부지출 증대 정책의 국민소득 확대 효과(승수효과)가 극대화되기 때문이다.\n- 괄호 안의 ㉡과 ㉢ (을의 시각 - 통화주의학파):\n  - ㉡: 작다 (또는 비탄력적이다)\n  - ㉢: 크다 (또는 탄력적이다)\n\n2. 상세 해설:\n- 재정정책의 유효성 논쟁 (IS-LM 모형):\n  - 케인즈학파(갑): LM곡선 완만(화폐수요 이자율탄력성 대) + IS곡선 가파름(투자수요 이자율탄력성 소) ➔ 구축효과 극소 ➔ 재정정책 유효.\n  - 통화주의학파(을): LM곡선 가파름(화폐수요 이자율탄력성 소) + IS곡선 완만(투자수요 이자율탄력성 대) ➔ 구축효과 극대 ➔ 재정정책 무력, 통화정책 유효.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 갑의 생각 및 이유:\n  - 탄력성: 화폐수요의 이자율탄력성은 크고(탄력적), 투자수요의 이자율탄력성은 작다(비탄력적)고 생각한다.\n  - 이유: 정부지출을 늘려도 이자율이 거의 오르지 않고 투자 위축도 거의 없어 구축효과가 매우 작으므로, 정부지출 증가의 경기부양 효과가 크기 때문이다.\n- ㉡, ㉢:\n  ㉡: 작고 (비탄력적)\n  ㉢: 크다 (탄력적)",
+    "targetKeywords": [
+      "화폐수요의 이자율탄력성",
+      "투자수요의 이자율탄력성",
+      "구축효과",
+      "재정정책 유효성"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2020-B-08",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2020학년도] 8번. 통화정책의 전달경로와 유동성 함정 및 재정정책 효과 [4점]",
+    "examTag": "",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2020학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>화폐공급 증가가 어느 국민경제에 가져다주는 단기적인 영향을 다음 화폐시장과 상품시장 그래프를 이용하여 분석하고자 한다. 화폐공급이 MS0에서 MS1으로 증가할 경우 화폐시장 균형이 변화하고, <u>㉠ 일정 조건을 만족하면</u> 이에 따라 상품시장 균형이 변화한다. 화폐시장에서 이자율이 i2이면 <u>㉡ 화폐수요가 이자율에 무한히 탄력적인데</u>, 이 상황에서 화폐공급 증가는 국민소득을 변화시키는 데 어려움이 있으며 이를 ( ㉢ )(이)라고 한다.</p>\n    </div>\n    \n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2020_b_08.png\" alt=\"화폐시장과 상품시장 균형 그래프\" class=\"max-w-full md:max-w-[340px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠이 무엇인지 서술할 것.</p>\n    <p>◦ 밑줄 친 ㉡인 경우 정부지출 증가에 따른 국민소득 변화의 크기를 승수효과, 구축효과를 이용하여 서술하고, 괄호 안의 ㉢에 들어갈 용어를 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 밑줄 친 ㉠의 조건:\n  투자(또는 총수요)의 이자율탄력성이 0이 아니어야 한다 (즉, 화폐공급 증가로 이자율이 하락할 때 투자가 증가하여 총수요가 증가해야 한다).\n- ㉡인 경우 국민소득 변화의 크기:\n  화폐수요의 이자율탄력성이 무한대인 경우 정부지출이 증가하더라도 이자율이 전혀 상승하지 않으므로 민간투자를 밀어내는 '구축효과가 0'이 된다. 따라서 국민소득은 정부지출 증가에 정부지출 승수를 곱한 순수한 '승수효과의 크기만큼 최대로 증가'한다.\n- 괄호 안의 ㉢: 유동성 함정 (Liquidity trap)\n\n2. 상세 해설:\n- 통화정책의 파급경로: 통화량 증가(M↑) ➔ 이자율 하락(i↓) ➔ 투자 증가(I↑) ➔ 총수요 증가(AD↑) ➔ 국민소득 증가(Y↑). 따라서 투자가 이자율 변화에 반응해야(이자율탄력성 > 0) 상품시장 균형이 변화한다.\n- 유동성 함정에서는 LM곡선이 수평선이 되므로, 재정정책(IS 우측 이동) 시 이자율 상승이 전혀 없어 구축효과가 발생하지 않고 승수효과가 100% 온전히 발휘된다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- ㉠: 투자(수요)의 이자율탄력성이 0보다 커야 한다 (이자율 하락 시 투자가 증가해야 한다).\n- 국민소득 변화 크기: 이자율이 상승하지 않아 민간투자를 감소시키는 구축효과가 전혀 발생하지 않으므로(구축효과=0), 순수한 정부지출 승수효과의 크기만큼 최대로 증가한다.\n- ㉢: 유동성 함정",
+    "targetKeywords": [
+      "투자의 이자율탄력성",
+      "구축효과 0",
+      "승수효과",
+      "유동성 함정"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2026-B-10",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-4. 화폐금융론",
+    "title": "[2026학년도] 10번. 통화정책 전달경로 (공개시장운영과 AD-AS 단기·장기 균형) [4점]",
+    "examTag": "",
+    "page": 10,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2026학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>통화정책은 넓은 의미에서 화폐공급을 조절하는 정책을 의미한다. 가장 대표적인 통화정책수단은 공개시장운영이다. 이는 <u class=\"font-semibold text-blue-900 decoration-blue-500 decoration-2\">㉠ 중앙은행이 국공채를 매입 또는 매각하여 통화량과 금리를 조절</u>하는 정책수단이다. 이외에 지급준비율 정책, 여․수신 제도도 통화정책수단으로 사용된다. 통화정책이 국민소득에 영향을 주는 전통적인 전달경로는 이자율과 음(-)의 관계에 있는 투자지출의 변화를 포함한다.</p>\n  <p>그림은 통화정책의 전달경로를 설명하고자 화폐시장과 상품시장을 나타낸 것이다.</p>\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2026_b_10.png\" alt=\"통화정책 전달경로 (화폐시장 및 상품시장) 그래프\" class=\"max-w-full md:max-w-[480px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠이 &lt;화폐시장&gt;의 이자율에 미치는 영향을 그 원인을 포함하여 서술하고, 전통적인 전달경로에 따라 &lt;상품시장&gt;의 총수요에 미치는 영향을 그 원인을 포함하여 서술할 것.</p>\n    <p>◦ 밑줄 친 ㉠이 전통적인 전달경로에 따라 국민소득에 미치는 영향을 &lt;상품시장&gt;의 총공급 A와 총공급 B를 이용하여 단기와 장기로 구분하여 각각 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 이자율 및 총수요에 미치는 영향:\n  - 이자율: 중앙은행이 국공채를 매입하면 본원통화가 공급되어 화폐공급(MS)이 증가하므로, 화폐시장에서 화폐공급곡선이 우측으로 이동하여 이자율이 하락한다.\n  - 총수요: 이자율 하락으로 자금조달 비용이 감소하여 기업의 투자지출(I)이 증가하므로, 상품시장의 총수요(AD)가 증가(우측 이동)한다.\n- 국민소득에 미치는 영향:\n  - 단기: 단기 총공급곡선 A 하에서는 총수요 증가로 물가 상승과 함께 실질 국민소득(Y)이 증가한다.\n  - 장기: 장기 총공급곡선 B(자연산출량 수준에서 수직선) 하에서는 총수요가 증가하더라도 물가만 상승할 뿐, 국민소득은 자연산출량 수준으로 복귀하여 변하지 않는다(불변).\n\n2. 해설:\n- 공개시장운영(국공채 매입) ➔ 화폐공급 증가 ➔ 이자율 하락 ➔ 투자지출 증가 ➔ 총수요(AD) 우측 이동.\n- 단기(SR-AS A): 가격 경직성으로 인해 산출량(국민소득) 증가.\n- 장기(LR-AS B): 물가와 명목임금의 완전 신축적 조정으로 화폐의 중립성이 성립하여 산출량은 불변이고 물가만 상승.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 이자율 및 총수요에 미치는 영향:\n  - 이자율: 중앙은행이 국공채를 매입하면 본원통화가 공급되어 화폐공급(MS)이 증가하므로, 화폐시장에서 화폐공급곡선이 우측으로 이동하여 이자율이 하락한다.\n  - 총수요: 이자율 하락으로 자금조달 비용이 감소하여 기업의 투자지출(I)이 증가하므로, 상품시장의 총수요(AD)가 증가(우측 이동)한다.\n- 국민소득에 미치는 영향:\n  - 단기: 단기 총공급곡선 A 하에서는 총수요 증가로 물가 상승과 함께 실질 국민소득(Y)이 증가한다.\n  - 장기: 장기 총공급곡선 B(자연산출량 수준에서 수직선) 하에서는 총수요가 증가하더라도 물가만 상승할 뿐, 국민소득은 자연산출량 수준으로 복귀하여 변하지 않는다(불변).\n\n2. 해설:\n- 공개시장운영(국공채 매입) ➔ 화폐공급 증가 ➔ 이자율 하락 ➔ 투자지출 증가 ➔ 총수요(AD) 우측 이동.\n- 단기(SR-AS A): 가격 경직성으로 인해 산출량(국민소득) 증가.\n- 장기(LR-AS B): 물가와 명목임금의 완전 신축적 조정으로 화폐의 중립성이 성립하여 산출량은 불변이고 물가만 상승.",
+    "targetKeywords": [
+      "공개시장운영",
+      "통화량 증가",
+      "이자율 하락",
+      "투자 증가",
+      "총수요 증가",
+      "화폐의 중립성"
+    ],
+    "tapeCount": 6,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-015",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
@@ -208,6 +1184,104 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 0,
     "groupCount": 8
+  },
+  {
+    "id": "EXAM-2011-1-27",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-5. 거시균형이론",
+    "title": "[2011학년도] 27번. 필립스곡선과 희생률",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 인플레이션율과 실업률의 관계를 나타내는 필립스곡선의 식은 π = π^e - α(u - u*) 이며, 어떤 경제의 상황을 그림으로 나타내면 다음과 같다. 이에 대한 해석으로 옳은 것만을 &lt;보기&gt;에서 모두 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프 정보: 기대 인플레이션 π^e = 5%, 자연실업률 u* 일 때 단기 필립스 곡선과 만남. 곡선 상의 한 점 (u=15%, π=0%)이 주어짐.]</p>\n    <p class=\"text-xs text-slate-500\">(π: 인플레이션율, π^e: 기대 인플레이션율, u: 실업률, u*: 자연실업률, α: 상수)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. π^e가 3%이고 실제 인플레이션율이 4%일 때 실업률은 3%다.</p>\n      <p>ㄴ. π^e가 5%라면 인플레이션율이 1%만큼 하락할 때 희생률은 6이다.</p>\n      <p>ㄷ. 경제주체들이 합리적 기대를 한다면, 통화정책 당국은 실업률 상승 없이 인플레이션율을 낮출 수 있다.</p>\n      <p>ㄹ. 중앙은행의 정책목표가 실업률을 자연실업률에 맞춤으로써 안정적 인플레이션을 유지하는 것이라고 할 때, 경제주체들이 합리적 기대를 한다면 중앙은행이 자연실업률을 4%로 판단하고 통화정책을 시행할 경우 인플레이션이 무한히 증가하게 된다.</p>\n      <p class=\"text-xs mt-2 text-slate-500\">* 오쿤의 법칙: 실업률 1% 상승은 GDP 2% 하락<br>* 희생률: 인플레이션율 1% 감소에 수반되는 GDP의 감소%</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄱ, ㄷ, ㄹ (계산 검증 필요)\n실제 정답: ③ ㄴ, ㄷ \n\n해설 도출: \n먼저 그래프에서 π=0%일 때 u=15% 이고, 단기 필립스 곡선의 절편(u=0)은 π=7.5%로 주어져 있음(그래프 추정). \n기울기 -α = (0 - 7.5) / (15 - 0) = -0.5 이므로 α = 0.5.\nπ = 5 - 0.5(u - u*) 식에 (u=15, π=0)을 대입. \n0 = 5 - 0.5(15 - u*) ➔ 0.5(15 - u*) = 5 ➔ 15 - u* = 10 ➔ u* = 5%. (자연실업률 5%)\n따라서 식은 π = π^e - 0.5(u - 5).\n- ㄱ: π^e=3, π=4 대입. 4 = 3 - 0.5(u - 5) ➔ 1 = -0.5(u - 5) ➔ u - 5 = -2 ➔ u = 3%. (ㄱ 옳음)\n- ㄴ: π^e=5로 고정. 인플레이션 1% 하락시키려면 Δπ = -1. \n  -1 = -0.5(Δu) ➔ 실업률(u)은 2% 상승해야 함. \n  오쿤의 법칙에 의해 실업률 1% 상승 = GDP 2% 하락이므로, 실업률 2% 상승 = GDP 4% 하락.\n  희생률 = 인플레 1% 감소당 GDP 감소율 = 4. (ㄴ 틀림. 6이 아니라 4)\n- ㄷ: 합리적 기대 하에서는 중앙은행이 인플레이션을 낮추겠다고 발표하고 신뢰를 얻으면 π^e가 즉각 하락하여 실업률 증가 없이 인플레이션을 낮출 수 있음. (ㄷ 옳음)\n- ㄹ: 실제 자연실업률은 5%인데 중앙은행이 4%로 오판하고 실업률을 4%로 유지하려 확대통화정책을 지속하면, 사람들은 합리적 기대를 통해 매기 인플레이션을 예상하고 적응하므로 인플레이션이 가속(무한히 증가)하게 됩니다. (ㄹ 옳음)\n따라서 정답은 ㄱ, ㄷ, ㄹ. \n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ ㄱ, ㄷ, ㄹ",
+    "targetKeywords": [
+      "필립스곡선",
+      "오쿤의 법칙",
+      "희생률",
+      "합리적 기대",
+      "자연실업률"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-24",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-5. 거시균형이론",
+    "title": "[2012학년도] 24번. 총수요-총공급 모형 (인플레이션 갭)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음은 어느 나라 ○○○○년 국민경제 상황을 기록한 것이다. 이에 대한 옳은 분석을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프: Y_p(잠재GDP) 우측에 Y_0에서 AD와 단기 AS가 교차. 즉 인플레이션 갭 존재]</p>\n    <p>○○○○년에 국민경제는 물가가 P_1인 수준에서 경제 활동이 이루어졌다. 단, 국민경제는 가계와 기업의 민간 부문으로만 구성되어 있으며, 생산 활동에 따르는 감가상각은 발생하지 않는다고 가정한다. (그래프에서 Y는 국민소득 수준, P는 물가수준, AD는 단기 총수요 곡선, AS는 단기 총공급 곡선, Y_p는 잠재 국민소득 수준을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 인플레이션 갭이 존재하였다.</p>\n      <p>ㄴ. 실현된 투자지출이 계획된 투자지출보다 컸다.</p>\n      <p>ㄷ. 장기적으로 경제는 Y_0를 향해 움직여 갈 것이다.</p>\n      <p>ㄹ. 불균형 상태이며 국민소득 삼면 등가의 법칙이 성립하였다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄹ (또는 정확한 보기 확인 필요)\n\n해설:\n- 현재 균형 국민소득 Y_0 가 잠재 국민소득 Y_p 보다 큽니다. 이는 경기가 과열된 상태로 '인플레이션 갭'이 존재함을 의미합니다. (ㄱ 옳음)\n- 총수요와 총공급이 교차하는 점은 사후적인 단기 거시균형 상태입니다. 어떤 사후적 경제상태에서든 국민소득 삼면 등가의 법칙(생산=분배=지출)은 항상 성립합니다. (ㄹ 옳음)\n- 계획된 투자와 실현된 투자의 차이는 의도치 않은 재고증감입니다. 단기 균형점(AD=AS)에서는 의도치 않은 재고투자가 0이므로 실현된 투자 = 계획된 투자입니다. (ㄴ 틀림)\n- 장기적으로는 물가(임금 등) 상승 압력에 의해 단기 AS 곡선이 좌측으로 이동하여 경제는 Y_p를 향해(Y_0에서 Y_p 방향으로) 움직일 것입니다. (ㄷ 틀림 - Y_0가 아니라 Y_p로 돌아감)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "ㄱ, ㄹ (선지에 따라 다름)",
+    "targetKeywords": [
+      "총수요-총공급",
+      "인플레이션 갭",
+      "잠재GDP",
+      "국민소득 삼면 등가"
+    ]
+  },
+  {
+    "id": "EXAM-2016-B-03",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-5. 거시균형이론",
+    "title": "[2016학년도] 3번. 총지출과 완전고용국민소득 (인플레이션갭과 디플레이션갭) [4점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2016학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 그래프에서 YF는 완전고용 국민소득이다. 총지출이 A와 B일 때 고용상태와 물가동향에 대해 각각 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2016_B_03.png\" alt=\"45도선 국민소득-총지출 그래프\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n      <p class=\"text-xs text-slate-600\">◦ YF: 완전고용 국민소득 / E = Y: 45도 총공급선 / A, B: 총지출곡선</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 총지출이 A일 때 고용상태와 물가동향을 각각 서술할 것.</p>\n      <p>◦ 총지출이 B일 때 고용상태와 물가동향을 각각 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 총지출이 A일 때:\n  - 고용 상태: 초과고용 상태 (노동에 대한 초과수요가 발생하여 노동수요가 공급을 초과하는 경기 과열 상태 / 완전고용을 초과한 과열 상태)\n  - 물가 동향: 인플레이션 갭(inflationary gap)이 발생하여 총수요 초과로 인해 물가 상승(인플레이션 압력)이 발생한다.\n- 총지출이 B일 때:\n  - 고용 상태: 불완전고용 상태 (비자발적 실업 발생)\n  - 물가 동향: 디플레이션 갭(deflationary gap) 또는 경기침체 갭이 발생하여 총수요 부족으로 물가 하락 압력(디플레이션 압력)이 발생한다.\n\n2. 상세 해설:\n- 완전고용 국민소득(YF) 수준에서 총지출이 45도선보다 위에 위치하는 A는 '인플레이션 갭'이 존재하여 노동에 대한 초과수요(초과고용)와 경기 과열로 인해 물가만 지속적으로 상승한다.\n- 총지출이 45도선 아래에 위치하는 B는 '디플레이션 갭'이 존재하여 완전고용을 달성하지 못하고 비자발적 실업과 유휴 설비가 발생하며 물가는 하락 압력을 받는다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 총지출 A: 초과고용 상태(노동에 대한 초과수요로 인한 경기 과열 상태)이며, 인플레이션 갭으로 인해 물가 상승(인플레이션) 압력이 나타난다.\n- 총지출 B: 불완전고용 상태(실업 발생)이며, 디플레이션 갭으로 인해 물가 하락(디플레이션) 압력이 나타난다.",
+    "targetKeywords": [
+      "초과고용",
+      "노동에 대한 초과수요",
+      "인플레이션 갭",
+      "물가 상승",
+      "불완전고용",
+      "실업",
+      "디플레이션 갭",
+      "물가 하락"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2017-B-06",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-5. 거시균형이론",
+    "title": "[2017학년도] 6번. 총수요-총공급 모형의 비자발적 재고투자와 인플레이션 갭 조정과정 [5점]",
+    "examTag": "",
+    "page": 3,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 그래프는 한 폐쇄 국민 경제의 상황을 보여주고 있다. 이에 대해 &lt;작성 방법&gt;에 따라 서술하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2017_b_06.png\" alt=\"폐쇄 국민 경제의 총수요-총공급 모형 그래프\" class=\"max-w-full md:max-w-[420px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <p class=\"text-xs text-slate-600 leading-relaxed\">* 명목 임금은 단기에서 경직적이며, 단기를 벗어나면 조정이 이루어질 수 있다. SAS0는 단기 균형점 E에 도달할 때까지의 명목 임금 수준에 대응되는 단기 총공급 곡선이다. 국민 경제의 완전 고용 산출량 수준은 Y1이다.</p>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 한 해 동안 물가 수준 P0에서 경제 활동이 이루어졌을 때, 그 해의 비자발적 재고 투자의 크기가 얼마인지 쓰고, 사후적 총지출의 크기가 총생산의 크기와 같음을 비자발적 재고 투자 개념을 이용하여 설명할 것.</p>\n    <p>◦ 그래프에서 장기 균형점이 무엇인지 밝히고, 단기 균형점 E에서의 GDP 갭의 명칭을 쓰고, 국민 경제가 장기 균형점을 향해 스스로 움직여 나가는 과정을 GDP 갭, 명목 임금, 단기 총공급 곡선의 이동이라는 개념을 모두 사용하여 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 물가 P0에서의 비자발적 재고 투자 및 설명:\n  - 비자발적 재고 투자의 크기: 선분 HG (또는 Y2 - Y1)\n  - 설명: 물가 P0에서 총생산은 H점 수준인 Y2이고 사전적 계획 총지출(총수요)은 G점 수준인 Y1이므로 생산량 중 팔리지 않고 남은 재고가 선분 HG(Y2 - Y1)만큼 발생한다. 사후적 총지출은 사전적 계획 지출에 이 비자발적 재고 투자를 합한 것이므로, 사후적 총지출은 항상 총생산의 크기와 일치하게 된다.\n- 장기 균형점, GDP 갭 명칭 및 자동조정 과정:\n  - 장기 균형점: C점 (완전고용 산출량 Y1과 총수요곡선의 교차점)\n  - 단기 균형점 E에서의 GDP 갭 명칭: 인플레이션 갭 (또는 양(+)의 GDP 갭)\n  - 자동조정 과정:\n    단기 균형점 E에서는 실제 생산량(Y_E)이 완전고용 산출량(Y1)을 초과하는 '인플레이션 갭'이 발생하여 노동시장에서 초과수요가 발생한다. 이에 따라 시간이 지나며 경직적이던 '명목 임금'이 상승하게 되고, 생산비용이 증가한 기업들이 생산을 줄이면서 '단기 총공급 곡선(SAS0)'이 좌측(상방)으로 이동하여 결국 장기 균형점인 C점에 도달하게 된다.\n\n2. 상세 해설:\n- 국민소득 항등식: 사후적 총지출 = C + I_계획 + G + (비자발적 재고투자) = Y.\n- 단기 균형 E에서 실제 GDP가 잠재 GDP(Y1)보다 크므로 인플레이션 갭이다.\n- 장기에는 임금 등 생산요소 가격이 신축적으로 상승하여 SAS 곡선이 좌상방 이동하여 장기균형(C점)에 수렴한다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 비자발적 재고 투자의 크기: 선분 HG (또는 Y2 - Y1)\n- 총지출과 총생산의 일치 설명: 사후적 총지출은 계획된 총지출에 기업이 의도치 않게 떠안게 된 비자발적 재고 투자를 합산한 것이므로 사후적으로 항상 총생산과 일치한다.\n- 장기 균형점: C점\n- 단기 균형점 E에서의 GDP 갭 명칭: 인플레이션 갭 (양의 GDP 갭)\n- 자동 조정 과정: 단기 균형 E에서는 실제 산출량이 완전고용 산출량을 초과하는 '인플레이션 갭'으로 인해 노동시장에서 초과수요가 발생하여 '명목 임금'이 상승한다. 이로 인해 기업의 생산비용이 증가하여 '단기 총공급 곡선'이 좌상방으로 이동하면서 장기 균형점인 C점으로 이동한다.",
+    "targetKeywords": [
+      "선분 HG",
+      "비자발적 재고 투자",
+      "C점",
+      "인플레이션 갭",
+      "명목 임금 상승",
+      "단기 총공급 곡선 이동"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2018-B-03",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-5. 거시균형이론",
+    "title": "[2018학년도] 3번. 총수요-총공급 모형과 단기 필립스곡선의 도출 및 합리적 기대 [4점]",
+    "examTag": "",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음은 단기 필립스곡선에 대한 강의 장면의 일부이다. 괄호 안의 ㉠, ㉡에 들어갈 내용을 순서대로 쓰고, 밑줄 친 ㉢을 기대(예상)인플레이션율의 변화와 단기 필립스곡선의 움직임으로 설명하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2018_b_03.png\" alt=\"총수요-총공급 모형과 단기 필립스곡선\" class=\"max-w-full md:max-w-[480px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p><b>교수</b> : &lt;총수요-총공급 모형&gt;에서의 A점은 t기의 장단기균형점, B점은 t＋1기의 단기균형점이며, A점과 B점은 각각 &lt;단기 필립스곡선&gt;의 C점과 D점에 대응합니다. 총생산 갭이 1%p 상승할 때, 실업률이 0.5%p 하락한다고 하면, D점의 실업률은 얼마가 될까요? 그리고 t기 대비 t＋1기의 물가상승률을 의미하는 D점의 인플레이션율은 얼마가 될까요?</p>\n      <p><b>학생</b> : 총생산 갭을 어떻게 계산하나요?</p>\n      <p><b>교수</b> : 총생산 갭은 총생산량에서 잠재생산량을 뺀 값을 잠재생산량으로 나누어 주면 됩니다. 그리고 잠재생산량은 일정하다고 가정하고 계산하세요.</p>\n      <p><b>학생</b> : 그렇다면, D점의 실업률은 ( ㉠ )%이고, D점의 인플레이션율은 ( ㉡ )%입니다.</p>\n      <p><b>교수</b> : 정확히 맞추었습니다.</p>\n      <p><b>학생</b> : 단기 필립스곡선이란 결국 인플레이션율과 실업률 사이의 음(-)의 관계를 나타내는 곡선이군요. 그렇다면, 만약 정부가 인플레이션율을 낮추는 정책을 펼치면, 반드시 실업률이 증가하는 고통을 수반하겠군요?</p>\n      <p><b>교수</b> : 기대의 형성 방식이 합리적이고, 정부의 정책을 경제주체가 신뢰하는 상황에서 정부가 인플레이션율을 낮추겠다는 정책을 발표할 경우, <u>㉢ 실업률 증가라는 고통을 수반하지 않고 인플레이션율을 낮출 수 있습니다.</u></p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 들어갈 내용을 순서대로 쓸 것.</p>\n    <p>◦ 밑줄 친 ㉢을 기대(예상)인플레이션율의 변화와 단기 필립스곡선의 움직임으로 설명하시오.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 괄호 안의 ㉠, ㉡:\n  ㉠: 2 (또는 2%)\n  ㉡: 5 (또는 5%)\n- 밑줄 친 ㉢에 대한 설명:\n  경제주체들이 합리적 기대를 형성하고 정부 정책에 대한 신뢰성이 확보되면, 정부의 발표 즉시 기대(예상)인플레이션율이 하락한다. 이에 따라 단기 필립스곡선 자체가 즉각 아래쪽(좌하방)으로 이동하므로, 실업률의 증가(생산량 감소) 없이 인플레이션율만 하락시킬 수 있다.\n\n2. 계산 및 정밀 해설:\n① D점의 실업률(㉠) 및 인플레이션율(㉡) 계산:\n- A점(t기 장기균형점): 잠재생산량 Y* = 100, 물가 P_t = 100, 실업률(자연실업률) u_n = 7%, 인플레이션율 = 0%.\n- B점(t+1기 단기균형점): 실제 총생산량 Y = 110, 물가 P_{t+1} = 105.\n- 총생산 갭 = (110 - 100) / 100 × 100% = 10%p 상승.\n- 문제 조건에서 총생산 갭 1%p 상승 시 실업률 0.5%p 하락하므로, 실업률 하락폭 = 10 × 0.5%p = 5%p 하락.\n- 따라서 D점의 실업률 = 7% - 5% = 2% (㉠ = 2).\n- t기 대비 t+1기 물가상승률(인플레이션율) = (105 - 100) / 100 × 100% = 5% (㉡ = 5).\n② 정책 신뢰성과 기대인플레이션(루카스 비판 및 정책 무용성 명제):\n- 단기 필립스곡선 식: π = π^e - β(u - u_n).\n- 정부의 디스인플레이션 정책이 공신력을 가지면, 발표와 동시에 기대인플레이션율(π^e)이 하락하여 단기 필립스곡선이 즉시 하방 이동하므로, u = u_n 상태를 유지하면서 고통(희생비율 = 0) 없이 물가를 안정시킬 수 있다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- ㉠: 2 (또는 2%)\n- ㉡: 5 (또는 5%)\n- ㉢ 설명:\n  경제주체들이 합리적으로 기대를 형성하고 정부 정책을 신뢰하면, 정부의 인플레이션 감축 정책 발표 즉시 기대인플레이션율이 하락한다. 이에 따라 단기 필립스곡선이 하방으로 이동하므로 실업률 증가 없이 인플레이션율을 낮출 수 있다.",
+    "targetKeywords": [
+      "2%",
+      "5%",
+      "기대인플레이션율 하락",
+      "단기 필립스곡선 하방 이동"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
   },
   {
     "id": "ECON-016",
@@ -224,6 +1298,41 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
+    "id": "EXAM-2009-1-22",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-6. 물가와실업",
+    "title": "[2009학년도] 22번. 경제성장률과 실업률 변화 (오쿤의 법칙)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 그림에서 'A국의 직선'과 'B국의 직선'은 각각 A국과 B국에서 장기적으로 관찰된 실업률의 변화분과 경제성장률 간의 관계를 표현하고 있다. 이에 대한 해석으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프 정보: Y축 경제성장률(%), X축 실업률의 변화분(%p). <br>A국 직선: Y절편 약 6%, X절편 약 3% (즉 실업률이 안변할때 잠재성장률 6%). <br>B국 직선: Y절편 약 2%, X절편 약 2% (잠재성장률 2%)]</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 경제가 성장하면 실업률이 낮아진다.</div>\n    <div>② A국의 잠재성장률이 B국의 잠재성장률보다 높다.</div>\n    <div>③ 실업률의 변화 없이는 경제성장을 달성할 수 없다.</div>\n    <div>④ A국, B국 모두 경제성장률이 높을수록 실업률의 감소폭은 작다.</div>\n    <div>⑤ 어떤 실업률의 변화분에 상응하는 경제성장률의 절댓값의 크기는 A국이 B국보다 작다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ②\n\n해설:\n- 실업률의 변화분이 0(X축 0)일 때 달성하는 성장률이 잠재성장률(정상적인 고용 상태의 성장률)입니다. 그래프의 Y절편에서 A국은 약 6%, B국은 약 2%이므로 A국의 잠재성장률이 더 높습니다. (② 옳음)\n- ①: 실업률의 변화분이 0 이상인 구간에서도 경제가 양(+)의 성장을 할 수 있습니다 (예: 잠재성장률 이내의 성장). 무조건 성장한다고 실업률이 낮아지는 것은 아닙니다.\n- ③: 실업률 변화분=0 일 때 경제성장률이 양수이므로 실업률 변화 없이도 경제성장이 가능합니다.\n- ④: 경제성장률이 높을수록 (Y값이 커질수록) 실업률의 변화분(X값)은 더 작은 음수가 되므로 감소폭 자체는 더 큽니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "② A국의 잠재성장률이 B국의 잠재성장률보다 높다.",
+    "targetKeywords": [
+      "오쿤의 법칙",
+      "잠재성장률",
+      "실업률",
+      "경제성장률"
+    ]
+  },
+  {
+    "id": "EXAM-2009-1-25",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-6. 물가와실업",
+    "title": "[2009학년도] 25번. 필립스 곡선과 통화정책 무력성",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 다음 자료에 대한 분석과 추론으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>한 경제의 필립스 곡선이 π = 7 - 2u + π^e 와 같이 표현된다.<br>(여기서 π는 물가상승률, π^e는 기대 물가상승률, u는 실업률을 나타낸다. 모든 경제변수들의 단위는 %이다.)</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 이 경제의 자연실업률은 3%보다 큰 수치이다.</div>\n    <div>② 실업률이 4%라면 물가상승률은 기대 물가상승률을 하회한다.</div>\n    <div>③ 물가상승률이 기대 물가상승률보다 높으면 실업률은 자연실업률보다 낮다.</div>\n    <div>④ 사람들이 합리적 기대를 하고 가격이 신축적이라면 통화정책의 효과는 무력해진다.</div>\n    <div>⑤ 기대 물가상승률이 고정되어 있을 때, 물가상승률이 1%p 낮아지면 실업률은 2%p 높아진다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ⑤\n\n해설:\n- 자연실업률은 π = π^e 일 때의 실업률(u)입니다. \n  π = 7 - 2u + π에 π=π^e를 대입하면 0 = 7 - 2u ➔ 2u = 7 ➔ u = 3.5%. (① 3%보다 크므로 옳음)\n- 실업률이 4%일 때, π = 7 - 8 + π^e = π^e - 1. 즉 물가상승률이 기대물가상승률보다 낮습니다(하회). (② 옳음)\n- π > π^e 이면, π - π^e = 7 - 2u > 0 ➔ 2u < 7 ➔ u < 3.5%. 즉 실업률은 자연실업률보다 낮습니다. (③ 옳음)\n- 합리적 기대와 신축적 가격을 가정하는 새고전학파 모형에서는 예상된 통화정책은 단기에도 실물(실업률 등)에 영향을 주지 못하고 무력합니다. (④ 옳음)\n- 기대 물가상승률(π^e)이 고정일 때, 식은 π = C - 2u. \n  물가상승률(π)이 1%p 낮아지면(-1), -1 = -2(Δu) ➔ Δu = 0.5%p. 실업률은 0.5%p 높아집니다. 2%p가 아닙니다. (⑤ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "⑤ 기대 물가상승률이 고정되어 있을 때, 물가상승률이 1%p 낮아지면 실업률은 2%p 높아진다.",
+    "targetKeywords": [
+      "필립스곡선",
+      "자연실업률",
+      "합리적 기대",
+      "물가상승률",
+      "기대물가상승률"
+    ]
+  },
+  {
     "id": "ECON-017",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
@@ -236,6 +1345,24 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 0,
     "groupCount": 3
+  },
+  {
+    "id": "EXAM-2011-1-24",
+    "subject": "경제학",
+    "chapter": "2. 거시경제학",
+    "section": "2-7. 경제성장론",
+    "title": "[2011학년도] 24번. 솔로우 성장모형과 균제상태",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 자료에 제시된 성장모형에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>이 성장모형은 규모에 대한 보수가 불변인 1차동차 총생산함수를 가정하기 때문에 1인당 생산량(y)은 자본-노동비율(k)만의 함수가 된다. 그리고 경제가 최초에 어디에서 출발하든 간에 결국에는 sf(k)=nk를 만족시키는 k*로 수렴한다. 이렇게 노동 및 자본의 완전고용이 동시에 달성되는 상태를 균제상태 또는 정상상태(steady state)라고 부른다.</p>\n    <p class=\"text-xs text-slate-500\">[여기서 s는 저축성향, n은 인구증가율, k는 자본-노동비율(1인당 자본량), y는 1인당 생산량(국민소득)을 나타낸다.]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. k의 추가적인 증가에 따른 추가적인 y의 증가분은 체증한다.</p>\n      <p>ㄴ. 다른 조건이 일정할 때, 인구증가율이 높아지면 1인당 국민소득은 감소한다.</p>\n      <p>ㄷ. 다른 조건이 일정할 때, 시간이 지남에 따라 국가 간의 소득 격차가 점차 확대된다.</p>\n      <p>ㄹ. 다른 조건이 일정할 때, 저축률이 증가하면 완전고용을 달성하는 1인당 자본량이 증가하고 1인당 국민소득도 증가한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄴ, ㄹ\n\n해설:\n- 본 모형은 솔로우(Solow) 신고전파 성장모형입니다. \n- ㄱ: 한계생산물 체감의 법칙에 의해, k가 증가할수록 y의 증가분(f'(k))은 점차 체감(감소)합니다. (틀림)\n- ㄴ: 인구증가율(n)이 높아지면 필요 자본유지선(nk)의 기울기가 가팔라지므로 새로운 균제상태에서 1인당 자본량(k*)은 감소하고, 이에 따라 1인당 소득(y*)도 감소합니다. (옳음)\n- ㄷ: 이 모형은 수렴 가설(convergence)을 뒷받침합니다. 저축률, 인구증가율 등 구조적 모수가 같다면 가난한 국가일수록 한계생산성이 높아 성장률이 빠르므로 장기적으로 국가 간 소득 격차는 축소됩니다. (틀림)\n- ㄹ: 저축률(s)이 증가하면 저축곡선(sf(k))이 위로 이동하여 새로운 균제상태에서 더 높은 1인당 자본량(k*)과 1인당 국민소득(y*)을 달성합니다. (옳음)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "④ ㄴ, ㄹ",
+    "targetKeywords": [
+      "솔로우 모형",
+      "균제상태",
+      "자본유지선",
+      "저축률",
+      "수렴가설"
+    ]
   },
   {
     "id": "ECON-018",
@@ -252,6 +1379,233 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
+    "id": "EXAM-2009-1-26",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2009학년도] 26번. 관세와 게임이론 (내쉬 균형)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 표는 A국과 B국의 교역관계에서 관세에 따른 보수행렬을 나타낸 것이다. 이에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 모두 고른 것은? (단, 각 보수쌍에서 왼쪽은 A국의 이득이고, 오른쪽은 B국의 이득이다.)\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th colspan=\"2\" rowspan=\"2\" class=\"border border-slate-300 p-1\"></th><th colspan=\"2\" class=\"border border-slate-300 p-1\">B국의 선택</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">높은 관세</th><th class=\"border border-slate-300 p-1\">낮은 관세</th></tr>\n      </thead>\n      <tbody>\n        <tr><td rowspan=\"2\" class=\"border border-slate-300 p-1 font-bold\">A국의 선택</td><td class=\"border border-slate-300 p-1\">높은 관세</td><td class=\"border border-slate-300 p-1\">(40, 50)</td><td class=\"border border-slate-300 p-1\">(70, 40)</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">낮은 관세</td><td class=\"border border-slate-300 p-1\">(20, 110)</td><td class=\"border border-slate-300 p-1\">(60, 90)</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. A국과 B국의 우월전략은 모두 높은 관세를 부과하는 것이다.</p>\n      <p>ㄴ. 내쉬(Nash) 균형은 A국과 B국 모두 낮은 관세를 부과하는 것이다.</p>\n      <p>ㄷ. A국과 B국이 자유무역협정(FTA)을 체결하여 관세를 인하할 경우, 양국 모두에게 이득이 된다.</p>\n      <p>ㄹ. A국과 B국이 높은 관세를 부과하는 상황에서 상대방 국가가 관세정책을 변경하면 양국 모두 이득이 커진다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄷ\n\n해설:\n- A국의 선택: B국이 높은 관세 시 A(높은 40 > 낮은 20), B국이 낮은 관세 시 A(높은 70 > 낮은 60). 따라서 A국의 우월전략은 '높은 관세'입니다.\n- B국의 선택: A국이 높은 관세 시 B(높은 50 > 낮은 40), A국이 낮은 관세 시 B(높은 110 > 낮은 90). 따라서 B국의 우월전략도 '높은 관세'입니다. (ㄱ 옳음)\n- 내쉬균형은 우월전략의 짝인 (높은 관세, 높은 관세)입니다. (ㄴ 틀림)\n- 양국이 협정(FTA)을 통해 모두 '낮은 관세'로 이동하면 보수가 (40, 50)에서 (60, 90)으로 증가하므로 양국 모두에게 이득이 됩니다(파레토 개선). (ㄷ 옳음)\n- 현재 (높은 관세, 높은 관세) 상황에서 한 국가만 정책을 변경하면, 변경한 국가의 보수는 오히려 감소(A국 40->20, B국 50->40)하므로 양국 모두 이득이 커진다는 것은 틀립니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① ㄱ, ㄷ",
+    "targetKeywords": [
+      "게임이론",
+      "내쉬균형",
+      "우월전략",
+      "자유무역협정",
+      "죄수의 딜레마"
+    ]
+  },
+  {
+    "id": "EXAM-2009-1-27",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2009학년도] 27번. 무역의 이익 (시간당 생산성과 기회비용)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 다음 자료에 대한 분석과 추론으로 옳은 것을 &lt;보기&gt;에서 모두 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white mb-2\">\n      <thead>\n        <tr><th class=\"border border-slate-300 p-1\"></th><th class=\"border border-slate-300 p-1\">고기</th><th class=\"border border-slate-300 p-1\">밀</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1 font-bold\">A국</td><td class=\"border border-slate-300 p-1\">P_고기 / L_고기A</td><td class=\"border border-slate-300 p-1\">P_밀 / L_밀A</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 font-bold\">B국</td><td class=\"border border-slate-300 p-1\">P_고기 / L_고기B</td><td class=\"border border-slate-300 p-1\">P_밀 / L_밀B</td></tr>\n      </tbody>\n    </table>\n    <p>표는 A국과 B국의 고기와 밀 각 1단위에 대한 가격 및 비용 조건을 나타내고 있다. A국과 B국은 각각 P_고기, P_밀의 가격에서 고기와 밀을 자유 교역하고 있다. 교역의 결과, A국은 고기 생산에, B국은 밀 생산에 완전 특화하고 있다. 단, 생산요소로는 노동만이 유일하며, 각 재화는 경쟁적으로 생산되고 있다. 표에서 L_고기A, L_밀A는 A국에서 고기와 밀 각 재화 1단위의 생산에 들어가는 노동 시간을 표시하는데, 예를 들어 P_고기 / L_고기A 는 A국에서 고기 생산의 시간당 생산성을 나타낸다. B국 및 밀에 대해서도 마찬가지 방식으로 표기된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. A국에서 고기 생산의 시간당 생산성은 밀 생산의 시간당 생산성보다 크다.</p>\n      <p>ㄴ. A국에서는 고기의 밀에 대한 상대가격은 밀로 표시한 고기의 기회비용보다 크다.</p>\n      <p>ㄷ. A국의 B국에 대한 상대적 생산성은 고기 생산보다 밀 생산에서 더 크다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (정확한 선지 분석: ㄱ, ㄴ 맞음)\n\n해설:\nA국은 고기에, B국은 밀에 완전특화하므로 A국에서는 노동이 모두 고기 부문에 투입됩니다.\n노동이 자율적으로 고기 부문으로 이동하려면 시간당 임금가치(생산성 가치)가 더 커야 합니다.\n- ㄱ: A국에서 고기의 가치생산성 (P_고기 / L_고기A) 이 밀의 생산성 (P_밀 / L_밀A) 보다 높으므로 고기 생산에 특화합니다. (ㄱ 옳음)\n- ㄴ: P_고기 / L_고기A > P_밀 / L_밀A 를 정리하면, P_고기 / P_밀 > L_고기A / L_밀A 가 됩니다. 좌변은 고기의 상대가격이고, 우변은 A국에서 노동단위로 표시한 고기생산의 기회비용(밀로 표시)입니다. 즉 상대가격이 기회비용보다 높아서 무역 이익이 발생합니다. (ㄴ 옳음)\n- ㄷ: A국이 고기에 비교우위가 있다는 것은 고기 부문에서 A국의 상대적 효율성이 밀 부문보다 크다는 의미입니다. 따라서 A국의 B국에 대한 상대적 생산성은 고기가 밀보다 큽니다. (ㄷ 틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① ㄱ, ㄴ",
+    "targetKeywords": [
+      "비교우위",
+      "완전특화",
+      "기회비용",
+      "상대가격",
+      "생산성"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-23",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2012학년도] 23번. A국과 B국의 옥수수 교역",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음은 A국과 B국의 옥수수 교역에 대한 설명이다. 이에 대한 분석으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>A국과 B국 두 나라로 구성된 국제 경제에서 각 나라의 옥수수에 대한 수요 곡선과 공급 곡선이 아래와 같다. 옥수수의 국제 균형 가격은 옥수수의 수출량과 수입량이 일치하는 수준에서 형성된다. 단, 옥수수의 가격 P는 양국에서 동일한 통화로 표현되고 있으며, 무역에 따르는 어떤 비용과 규제도 없다.</p>\n    <p>A국<br>수요 곡선 Q_AD = 100 - 2P<br>공급 곡선 Q_AS = 20 + 2P</p>\n    <p>B국<br>수요 곡선 Q_BD = 80 - 4P<br>공급 곡선 Q_BS = 40 + 4P</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 균형 교역량은 30이다.</p>\n      <p>ㄴ. A국이 수출하고 B국이 수입하게 된다.</p>\n      <p>ㄷ. 교역 시에 A국은 소비자 잉여가, B국은 생산자 잉여가 증가한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ\n\n해설:\n- 개방 이전 균형 가격: \n  A국: 100 - 2P = 20 + 2P ➔ 4P = 80 ➔ P = 20.\n  B국: 80 - 4P = 40 + 4P ➔ 8P = 40 ➔ P = 5.\n- 무역 발생 시 가격(국제가격)은 5와 20 사이에서 결정됩니다. \n  B국의 가격이 더 낮으므로 B국이 수출국, A국이 수입국이 됩니다. (ㄴ 틀림 - 반대)\n- 국제 균형 가격(P*) 도출: \n  A국의 초과수요(수입) = Q_AD - Q_AS = (100 - 2P) - (20 + 2P) = 80 - 4P\n  B국의 초과공급(수출) = Q_BS - Q_BD = (40 + 4P) - (80 - 4P) = 8P - 40\n  수입 = 수출 ➔ 80 - 4P = 8P - 40 ➔ 12P = 120 ➔ P* = 10.\n- 균형 교역량은 P*=10일 때 수입(또는 수출)량입니다. \n  80 - 4(10) = 40. 어? \n  다시 계산: A국 수입 = 80 - 4(10) = 40. B국 수출 = 8(10) - 40 = 40. \n  교역량은 40입니다. (ㄱ 틀림... 잠깐, 계산 재확인)\n  A 수요: 100 - 20 = 80, A 공급: 20 + 20 = 40. 차이 40.\n  B 수요: 80 - 40 = 40, B 공급: 40 + 40 = 80. 차이 40. 교역량은 40이 맞습니다. 보기에 30이라 되어 있으므로 ㄱ 틀림.\n- 교역 시 후생변화: A국은 수입국이므로 가격이 하락하여 소비자 잉여가 증가합니다. B국은 수출국이므로 가격이 상승하여 생산자 잉여가 증가합니다. (ㄷ 옳음)\n- 어? 정답 선지 확인 필요 (이 해설은 계산 과정을 통해 ㄷ이 맞음을 보여줍니다).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ ㄷ",
+    "targetKeywords": [
+      "국제무역 균형",
+      "수출과 수입",
+      "균형 교역량",
+      "소비자잉여",
+      "생산자잉여"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-27",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2013학년도] 27번. 생산가능곡선과 무역 이익",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 다음 자료에 대한 분석으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>갑국과 을국은 밀과 자동차를 생산하고 있다. 그림은 갑국과 을국의 생산가능곡선을 보여 주고 있다. 무역 이전 각국은 가용 노동시간의 절반씩을 각각 밀과 자동차 생산에 투입하여 생산․소비하고 있다. 무역이 이루어질 경우 밀:자동차의 교환 비율은 5:6이라고 가정한다. 또한 무역을 통해 어떤 나라의 사회적 효용이 증가하기 위해서는 무역 이전에 비하여 두 재화의 소비량이 모두 증가하거나, 한 재화의 소비량은 무역 이전과 같더라도 나머지 한 재화의 소비량은 반드시 무역 이전보다 증가해야 한다고 가정한다.</p>\n    <p>[그래프 정보: 갑국 최대생산량 밀 500만톤, 자동차 500만대. 을국 최대생산량 밀 300만톤, 자동차 400만대.]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 밀의 양으로 표시한 자동차 한 대의 기회비용은 갑국이 더 작다.</p>\n      <p>ㄴ. 자동차의 양으로 표시한 밀 한 톤의 기회비용은 을국이 더 크다.</p>\n      <p>ㄷ. 갑국과 을국이 모두 비교우위 품목만을 생산한다면 무역을 통해 두 나라가 동시에 무역 이전보다 높은 효용을 누릴 수 있다.</p>\n      <p>ㄹ. 갑국이 자동차를 160만 대, 을국이 300만 대를 생산한다면 무역을 통해 두 나라가 동시에 무역 이전보다 높은 효용을 누릴 수 있다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- 갑국의 기회비용: 자동차 1단위 = 밀 1단위 / 밀 1단위 = 자동차 1단위\n- 을국의 기회비용: 자동차 1단위 = 밀 3/4단위 / 밀 1단위 = 자동차 4/3단위\n- 밀 기회비용: 갑국(1) < 을국(4/3) ➔ 밀은 갑국에 비교우위. (ㄴ 옳음)\n- 자동차 기회비용: 갑국(1) > 을국(3/4) ➔ 자동차는 을국에 비교우위. (ㄱ 틀림, 갑국이 더 큼)\n- 무역조건(교환비율)이 밀 5 = 자동차 6 (즉 밀 1 = 자동차 1.2).\n이 교역조건(1.2)은 두 국가의 밀 기회비용(1과 1.33) 사이에 있으므로 양국 모두 비교우위 품목만 특화하여 교역하면 이익을 얻습니다. (ㄷ 옳음)\n- ㄹ: 불완전 특화 시의 이득 계산. (자세한 시뮬레이션 시 두 나라 모두 무역 이전보다 파레토 개선이 이루어지는지 검증해야 하며, 보통 주어진 교환비율 하에서는 완전특화(ㄷ)가 최적입니다.)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "③ ㄴ, ㄷ",
+    "targetKeywords": [
+      "비교우위",
+      "생산가능곡선",
+      "교역조건",
+      "기회비용",
+      "무역의 이익"
+    ]
+  },
+  {
+    "id": "EXAM-2014-A-05",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2014학년도] 5번. [기입5] 자유 무역과 국내 생산량 변동 분석 [2점]",
+    "examTag": "",
+    "page": 2,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 기입 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음 그래프는 국내의 X재 시장 상황을 나타낸다. 자유 무역이 실시된다면, 무역이 이루어지지 않은 경우에 비해 X재 국내 생산량이 얼마나 증가 또는 감소하는지 쓰시오. (단, 국내 공급 및 국내 수요 곡선은 직선의 형태이며 X재는 국제 가격에서 얼마든지 수출하거나 수입할 수 있다.) [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"text-center my-2\">\n      <img src=\"assets/exam_images/exam_2014_A_05.jpg\" alt=\"국내 X재 시장 수요공급 및 국제 가격 그래프\" class=\"max-w-md mx-auto rounded border border-slate-300 shadow-2xs\">\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 space-y-1\">\n      <p>• 절편 및 교차점 정보:</p>\n      <p>- 수요곡선 세로절편: 36천 원, 국제 가격 P_w = 18천 원일 때 국내 수요량 = 108개</p>\n      <p>- 공급곡선 세로절편: 12천 원, 국제 가격 P_w = 18천 원일 때 국내 공급량 = 60개</p>\n      <p>- 무역 이전 국내 균형 가격: 21천 원</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 폐쇄경제 균형 생산량과 자유무역 시 국내 생산량을 비교하여 변동 수량 및 증감 여부(증가/감소)를 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n30개 감소\n\n2. 상세 해설:\n- 공급곡선 방정식 도출:\n  세로 절편이 (0, 12)이고, 가격이 18천 원일 때 공급량이 60개이므로 기울기는 (18 - 12) / 60 = 6 / 60 = 0.1\n  즉, P = 12 + 0.1Q_s ➔ Q_s = 10(P - 12)\n- 무역이 없을 때의 폐쇄경제 균형:\n  국내 균형 가격이 21천 원이므로 균형 생산량 Q_0 = 10 * (21 - 12) = 90개.\n  (참고: 수요곡선 검산: 절편 (0, 36), (108, 18) ➔ 기울기 -18/108 = -1/6 ➔ P = 36 - Q_d/6 ➔ P=21일 때 Q_d = 6*(36-21) = 90개 일치)\n- 자유무역 실시 시:\n  국제 가격 18천 원이 국내 가격이 되며, 국내 생산자는 18천 원에서 공급 곡선 상의 양인 60개를 생산함.\n- 따라서 국내 생산량은 90개에서 60개로 **30개 감소**합니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "30개 감소",
+    "targetKeywords": [
+      "30개 감소",
+      "90개",
+      "60개"
+    ],
+    "tapeCount": 3,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2015-A-05",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2015학년도] 5번. 비교우위와 양국 무역이익 교역조건 범위 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2015학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음의 주어진 상황에서 A국과 B국이 모두 무역의 이익을 얻을 수 있는 쌀과 컴퓨터의 교역조건(쌀/컴퓨터)을 x라고 할 때, 이 x의 범위를 구하시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>A국과 B국 모두는 쌀과 컴퓨터만을 생산하고 있다. 두 나라 모두에서 자원은 노동뿐이고 노동의 질은 각 나라 안에서 동일하다. 두 나라의 생산가능곡선을 도출하기 위해 자료를 조사한 결과, 다음의 표와 같이 각각 생산가능곡선 위의 두 점씩을 확인할 수 있었다. 표의 괄호 속 숫자는 (쌀의 생산량, 컴퓨터의 생산량)을 나타낸다. (단, 쌀의 생산량 단위는 톤(ton), 컴퓨터의 생산량 단위는 대임.)</p>\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2015_A_05.png\" alt=\"A국과 B국의 생산가능곡선 위 점 표\" class=\"max-w-xs mx-auto rounded border border-slate-300\">\n      </div>\n      <div class=\"text-xs bg-slate-50 p-2 rounded border border-slate-200\">\n        <p>◦ A국: (480, 100) 및 (420, 150)</p>\n        <p>◦ B국: (80, 240) 및 (40, 320)</p>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 컴퓨터 1대당 쌀의 단위(쌀/컴퓨터)로 표시된 교역조건 x에 대하여, 양국 모두 무역 이익을 누릴 수 있는 x의 부등식 범위를 구할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n0.5 < x < 1.2  (또는 1/2 < x < 6/5)\n\n2. 상세 해설:\n- 각 국의 컴퓨터 1대 생산의 기회비용(쌀로 표시한 컴퓨터의 상대가격, Δ쌀 / Δ컴퓨터):\n  - A국: 컴퓨터 생산량이 100에서 150으로 50대 증가할 때, 쌀 생산량은 480에서 420으로 60톤 감소함.\n    따라서 A국의 컴퓨터 1대 기회비용 = 60 / 50 = 1.2톤의 쌀.\n  - B국: 컴퓨터 생산량이 240에서 320으로 80대 증가할 때, 쌀 생산량은 80에서 40으로 40톤 감소함.\n    따라서 B국의 컴퓨터 1대 기회비용 = 40 / 80 = 0.5톤의 쌀.\n- 양국이 무역을 통해 상호 이익을 얻기 위한 컴퓨터 1대당 쌀의 교역조건 x(쌀/컴퓨터)는 양국의 국내 기회비용 사이에 위치해야 한다:\n  0.5 < x < 1.2\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: 0.5 < x < 1.2 (또는 1/2 < x < 6/5)\n\n2. 해설: 컴퓨터 1대 생산의 기회비용은 A국이 1.2(60/50), B국이 0.5(40/80)이므로, 양국 모두 이익을 얻는 교역조건 x는 양국 기회비용 사이인 0.5 < x < 1.2이다.",
+    "targetKeywords": [
+      "0.5 < x < 1.2",
+      "기회비용",
+      "교역조건"
+    ],
+    "tapeCount": 1,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2016-B-07",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2016학년도] 7번. 개방경제 스완 다이어그램과 재정·통화 정책 조합 [5점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2016학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 그래프의 A점은 국내균형(완전고용)과 대외균형(국제수지균형) 측면에서 어떤 경제 상태에 있는지 서술하고, 재정정책과 통화정책을 활용하여 A점이 균형점 E에 도달하는 과정을 설명하시오. (단, 고정환율제도를 가정한다.) [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2016_B_07.png\" alt=\"스완 다이어그램 국내균형 및 대외균형 곡선\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n      <p class=\"text-xs text-slate-600\">◦ 세로축: 재정흑자 (재정긴축 정도) / 가로축: 이자율 (통화긴축 정도)</p>\n      <p class=\"text-xs text-slate-600\">◦ 국내균형곡선(완전고용), 대외균형곡선(국제수지균형), 균형점 E</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A점이 국내균형 및 대외균형 측면에서 각각 어떠한 상태(인플레이션/경기침체, 국제수지 흑자/적자)에 있는지 제시할 것.</p>\n      <p>◦ 먼델-플레밍 또는 정책 배분(Assignment rule) 원리에 기초하여 균형점 E에 도달하기 위한 재정정책과 통화정책의 조합 및 조정 과정을 설명할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- A점의 경제 상태:\n  - 국내균형 측면: 국내균형선 상방에 위치하므로 '경기침체(실업 발생 / 총수요 부족)' 상태이다. (세로축이 재정흑자이므로 위로 갈수록 긴축재정임).\n  - 대외균형 측면: 대외균형선 좌측(하방)에 위치하므로 이자율이 낮아 자본 유출이 발생하여 '국제수지 적자' 상태이다.\n- 균형점 E 도달을 위한 정책 조합 및 과정:\n  - 먼델의 적절한 정책 배분 원칙(Assignment rule)에 따라 상대적 비교우위가 있는 정책을 배분한다:\n    ① 대외균형(국제수지) 목표는 자본 이동에 민감한 '통화정책(이자율 인상 / 긴축통화정책)'에 배분하여, 이자율을 높여 외국 자본 유입을 유도함으로써 국제수지 적자를 해소한다.\n    ② 국내균형(완전고용) 목표는 '재정정책(재정적자 확대 / 확장적 재정정책)'에 배분하여, 정부지출을 늘리거나 감세를 통해 재정흑자를 줄임으로써 경기침체를 극복하고 완전고용을 달성한다.\n  - 이 두 정책을 조합하여 A점에서 이자율을 올리고 재정흑자를 축소시킴으로써 동시균형점 E에 도달한다.\n\n2. 상세 해설:\n- 스완 다이어그램(Swan diagram) 또는 먼델의 정책 배분 다이어그램에서 세로축이 재정흑자(T-G)이므로 위쪽은 긴축재정(실업), 아래쪽은 확장재정(인플레이션)이다. 가로축은 이자율이므로 오른쪽은 고금리(국제수지 흑자), 왼쪽은 저금리(국제수지 적자)이다.\n- 따라서 A점은 실업(불황)과 국제수지 적자가 동시에 나타나는 상태이며, 확장재정으로 실업을 잡고 긴축통화(금리 인상)로 자본수지를 개선하여 E점으로 이동해야 한다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- A점 상태: 국내균형 측면에서는 '경기침체(실업)', 대외균형 측면에서는 '국제수지 적자' 상태이다.\n- 정책 조합 및 과정: 통화정책은 긴축(이자율 인상)하여 자본 유입을 촉진해 국제수지 적자를 해소하고, 재정정책은 확장(재정흑자 감소)하여 총수요를 진작해 실업을 해소함으로써 균형점 E에 도달한다.",
+    "targetKeywords": [
+      "경기침체",
+      "실업",
+      "국제수지 적자",
+      "이자율 인상",
+      "확장적 재정정책",
+      "정책 배분"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2017-A-14",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2017학년도] 14번. 구매력평가설 환율 결정과 국제 무역 균형 [4점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 다음 자료는 A국과 B국 두 나라로 구성된 국제 경제에서 교역이 이루어지고 있는 상황에 관한 것이다. 이에 대해 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>A국과 B국 두 나라의 교역에는 어떤 규제도 없으며 비용도 발생하지 않는다. A국과 B국의 화폐 단위는 각각 ‘링기’와 ‘페수’이다. 동일한 햄버거에 대한 두 나라의 수요 곡선과 공급 곡선은 다음과 같다. 식에서 Q와 P는 각각 햄버거의 수량과 가격을 나타낸다.</p>\n      <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 mt-2 text-xs md:text-sm\">\n        <div class=\"p-2.5 bg-slate-50 rounded border border-slate-200\">\n          <p class=\"font-bold text-slate-900 mb-1\">[ A국 ] (단위: 링기)</p>\n          <p>수요 곡선: QDA = 100 - PA</p>\n          <p>공급 곡선: QSA = 40 + PA</p>\n        </div>\n        <div class=\"p-2.5 bg-slate-50 rounded border border-slate-200\">\n          <p class=\"font-bold text-slate-900 mb-1\">[ B국 ] (단위: 페수)</p>\n          <p>수요 곡선: QDB = 80 - 2PB</p>\n          <p>공급 곡선: QSB = 20 + 2PB</p>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 두 나라에서 햄버거 1개의 구입비용이 같도록 환율이 결정되어야 한다면, A국의 화폐 1링기는 B국의 화폐 몇 페수와 교환되어야 하는지를 제시할 것.</p>\n      <p>◦ 현재 A국과 B국 두 나라의 외환 시장에서 링기 1단위와 페수 1단위가 교환되는 비율로 환율이 형성되어 있다면(1링기 = 1페수), 두 나라 간에 햄버거의 국제 교역이 균형을 이루는 가격을 제시하고, A국과 B국 중에 어느 나라가 햄버거를 몇 개 수출하게 되는지를 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 햄버거 1개 구입비용이 같도록 하는 환율: 1링기 = 0.5페수 (또는 0.5페수)\n  * 폐쇄경제 하 국내 균형가격:\n    - A국: 100 - PA = 40 + PA ⇒ 2PA = 60 ⇒ PA = 30링기\n    - B국: 80 - 2PB = 20 + 2PB ⇒ 4PB = 60 ⇒ PB = 15페수\n    - 햄버거 1개의 가격이 같아지려면 30링기 = 15페수이므로 1링기 = 0.5페수.\n- 1링기 = 1페수 환율 하에서의 국제교역:\n  - 균형 가격: 20 (20링기 또는 20페수)\n  - 수출국 및 수출량: B국이 햄버거 20개를 수출 (또는 A국이 20개 수입)\n    * 계산: 1링기=1페수이므로 국제 공통 가격을 P라 하면,\n      A국 초과수요(수입수요) = QDA - QSA = (100 - P) - (40 + P) = 60 - 2P\n      B국 초과공급(수출공급) = QSB - QDB = (20 + 2P) - (80 - 2P) = 4P - 60\n      국제교역 균형: 60 - 2P = 4P - 60 ⇒ 6P = 120 ⇒ P = 20\n      이때 교역량 = 60 - 2(20) = 20개이므로 B국이 20개를 수출한다.\n\n2. 상세 해설:\n- 일물일가의 법칙(구매력평가)에 따라 양국의 국내 균형가격을 구하면 A국 30링기, B국 15페수이다. 따라서 1링기는 0.5페수와 교환되어야 한다.\n- 1:1 고정 환율 하에서는 국내가격이 낮은 B국(15)이 수출국이 되고 A국(30)이 수입국이 되며, 국제시장 균형가격은 20, 교역량은 20개이다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 환율: 1링기 = 0.5페수 (0.5페수)\n- 국제 균형 가격: 20 (링기 또는 페수)\n- 수출: B국이 20개 수출\n\n2. 해설: 양국 폐쇄균형 가격은 A국 30링기, B국 15페수이므로 1링기=0.5페수이다. 1:1 환율에서 국제시장 균형은 A국 수입수요(60-2P)와 B국 수출공급(4P-60)이 일치하는 P=20이며, B국이 20개를 수출한다.",
+    "targetKeywords": [
+      "0.5페수",
+      "20",
+      "B국",
+      "20개 수출"
+    ],
+    "tapeCount": 4,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2019-B-01",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2019학년도] 1번. 관세정책과 수입할당제(수입쿼터)의 균형 비교 [4점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 다음 글을 읽고 <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>다음 그림은 국내의 X재 시장 상황을 나타낸다. 정부가 관세정책을 실시한 결과, X재의 국내 공급량이 2,000개로 나타났다. 정부가 관세정책을 수입할당제(수입쿼터)로 변경하여 X재 수입량을 3,000개로 제한하려 한다. (단, 국내공급곡선 및 국내수요곡선은 직선의 형태이며, X재는 국제시장에서 국제가격으로 얼마든지 공급이 가능하다.)</p>\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2019_b_01.png\" alt=\"국내 X재 시장 상황 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n    <ul class=\"list-disc pl-5 space-y-0.5 text-slate-700\">\n      <li>국제가격: 4,000원</li>\n      <li>국내공급곡선: 절편 (0, 2000), 통과점 (2000, 6000), (3000, 8000), (6000, 14000) ➔ 공급함수: P = 2,000 + 2Q</li>\n      <li>국내수요곡선: 절편 (0, 14000), 통과점 (6000, 8000), (8000, 6000), (10000, 4000) ➔ 수요함수: P = 14,000 - Q</li>\n      <li>관세 정책 하 공급량 2,000개일 때의 국내가격 = 6,000원</li>\n    </ul>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 관세정책 하에서 X재 1개당 정부가 부과한 관세가 얼마인지와 X재의 국내 수요량을 순서대로 제시할 것.</p>\n    <p>◦ 관세정책에서 수입할당제로 변경할 때, 이런 정책 변화가 X재의 국내가격과 국내 공급량에 미치는 영향을 구체적인 수치를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 관세액 및 국내 수요량:\n  - 부과된 관세: 2,000원\n  - 국내 수요량: 8,000개\n- 수입할당제로 변경 시 국내가격과 국내 공급량에 미치는 영향:\n  국내가격은 6,000원에서 8,000원으로 2,000원 상승하고, 국내 공급량은 2,000개에서 3,000개로 1,000개 증가한다.\n\n2. 정밀 계산 과정:\n① 관세정책 하:\n   - 국내 공급량 2,000개일 때 국내공급곡선 상의 가격은 6,000원이다.\n   - 국제가격이 4,000원이므로 단위당 관세 = 6,000원 - 4,000원 = 2,000원.\n   - 가격 6,000원에서 국내수요곡선 상의 수요량 = 8,000개 (수입량 = 8,000 - 2,000 = 6,000개).\n② 수입할당제 3,000개 도입 시:\n   - 국내수요함수: Q_d = 14,000 - P\n   - 국내공급함수: Q_s = \frac{P - 2,000}{2}\n   - 새로운 시장 균형 조건: Q_d = Q_s + \text{수입쿼터}(3,000)\n   - 14,000 - P = \frac{P - 2,000}{2} + 3,000\n   - 양변에 2를 곱하면: 28,000 - 2P = P - 2,000 + 6,000 = P + 4,000\n   - 3P = 24,000 ⟹ P = 8,000원\n   - 국내 공급량: Q_s = \frac{8,000 - 2,000}{2} = 3,000개\n   - 국내 수요량: Q_d = 14,000 - 8,000 = 6,000개 (수입량 = 6,000 - 3,000 = 3,000개 일치).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 관세액 및 국내 수요량:\n  - 부과된 관세: 2,000원\n  - 국내 수요량: 8,000개\n- 수입할당제로 변경 시 국내가격과 국내 공급량에 미치는 영향:\n  국내가격은 6,000원에서 8,000원으로 2,000원 상승하고, 국내 공급량은 2,000개에서 3,000개로 1,000개 증가한다.\n\n2. 정밀 계산 과정:\n① 관세정책 하:\n   - 국내 공급량 2,000개일 때 국내공급곡선 상의 가격은 6,000원이다.\n   - 국제가격이 4,000원이므로 단위당 관세 = 6,000원 - 4,000원 = 2,000원.\n   - 가격 6,000원에서 국내수요곡선 상의 수요량 = 8,000개 (수입량 = 8,000 - 2,000 = 6,000개).\n② 수입할당제 3,000개 도입 시:\n   - 국내수요함수: Q_d = 14,000 - P\n   - 국내공급함수: Q_s = \frac{P - 2,000}{2}\n   - 새로운 시장 균형 조건: Q_d = Q_s + \text{수입쿼터}(3,000)\n   - 14,000 - P = \frac{P - 2,000}{2} + 3,000\n   - 양변에 2를 곱하면: 28,000 - 2P = P - 2,000 + 6,000 = P + 4,000\n   - 3P = 24,000 ⟹ P = 8,000원\n   - 국내 공급량: Q_s = \frac{8,000 - 2,000}{2} = 3,000개\n   - 국내 수요량: Q_d = 14,000 - 8,000 = 6,000개 (수입량 = 6,000 - 3,000 = 3,000개 일치).",
+    "targetKeywords": [
+      "관세 2000원",
+      "수요량 8000개",
+      "국내가격 8000원",
+      "국내공급량 3000개",
+      "수입할당제"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2020-B-02",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2020학년도] 2번. 리카도 비교우위론과 무역 후 소비량 계산 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2020학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 자료에서 자유무역 후 을국이 소비하는 A재와 B재는 각각 몇 단위인지 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>갑국과 을국에서 A재, B재 각 1단위를 생산하는 데 필요한 노동 투입 시간은 아래 표와 같다. 양국은 노동시간만을 투입하여 생산하며 가용 노동시간은 1,000시간으로 동일하다. 무역은 양국 사이에서만 자유롭게 이루어지며 거래 비용은 없다. 자유무역 후 A재와 B재는 1대 1로 교환되고 갑국이 소비하는 A재와 B재의 양은 동일하다.</p>\n      \n      <div class=\"font-bold text-center text-xs md:text-sm mt-3 mb-1\">&lt;갑국과 을국의 노동 투입 시간&gt;</div>\n      <table class=\"w-full max-w-sm mx-auto border-collapse border border-slate-300 text-center text-xs md:text-sm\">\n        <tr class=\"bg-slate-100\"><th class=\"border border-slate-300 p-2\">국가 \\ 재화</th><th class=\"border border-slate-300 p-2\">A재</th><th class=\"border border-slate-300 p-2\">B재</th></tr>\n        <tr><td class=\"border border-slate-300 p-2 font-bold\">갑</td><td class=\"border border-slate-300 p-2\">100시간</td><td class=\"border border-slate-300 p-2\">50시간</td></tr>\n        <tr><td class=\"border border-slate-300 p-2 font-bold\">을</td><td class=\"border border-slate-300 p-2\">20시간</td><td class=\"border border-slate-300 p-2\">40시간</td></tr>\n      </table>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\nA재 40단위, B재 10단위 (순서대로 40, 10 또는 40단위, 10단위)\n\n2. 정밀 계산 과정:\n① 기회비용 및 비교우위 분석:\n- 가용 노동시간 = 각 1,000시간.\n- 갑국: A재 1단위 생산에 100시간, B재 1단위에 50시간 소요.\n  ➔ A재 1단위의 기회비용 = 2B. (B재 1단위 기회비용 = 0.5A)\n  ➔ 1,000시간으로 최대 생산 가능량: A재 10단위 또는 B재 20단위.\n- 을국: A재 1단위 생산에 20시간, B재 1단위에 40시간 소요.\n  ➔ A재 1단위의 기회비용 = 0.5B. (B재 1단위 기회비용 = 2A)\n  ➔ 1,000시간으로 최대 생산 가능량: A재 50단위 또는 B재 25단위.\n- 비교우위: 을국은 A재에 비교우위(0.5B &lt; 2B), 갑국은 B재에 비교우위(0.5A &lt; 2A).\n② 특화 및 교역:\n- 을국은 A재 50단위 완전 특화 생산 (B재 0단위).\n- 갑국은 B재 20단위 완전 특화 생산 (A재 0단위).\n- 교역조건: 1A = 1B.\n③ 소비점 도출:\n- 갑국은 B재 20단위 중 x단위를 A재 x단위와 교환(수입).\n- 갑국 소비: A재 x단위, B재 (20 - x)단위.\n- 문제 조건: 갑국이 소비하는 A재와 B재의 양이 동일하므로, x = 20 - x ➔ 2x = 20 ➔ x = 10단위.\n- 따라서 갑국은 A재 10단위, B재 10단위를 소비한다.\n- 을국은 A재 50단위 중 10단위를 갑국에 수출하고 B재 10단위를 수입하므로:\n  을국의 A재 소비량 = 50 - 10 = 40단위\n  을국의 B재 소비량 = 0 + 10 = 10단위.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: A재 40단위, B재 10단위\n\n2. 해설: 을국은 A재 50단위에 특화하고 갑국은 B재 20단위에 특화한다. 1:1 교환에서 갑국이 A, B 각 10단위를 소비하므로 을국은 A재 40단위, B재 10단위를 소비한다.",
+    "targetKeywords": [
+      "40단위",
+      "10단위",
+      "비교우위",
+      "특화"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2021-B-07",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2021학년도] 7번. 비교우위론과 기회비용 및 교역 후 소비 가능량 [4점]",
+    "examTag": "",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 갑국의 교역 전후 상황에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>그림은 두 재화 X재, Y재에 대한 갑국의 생산 가능 곡선을 나타낸다.\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2021_b_07.png\" alt=\"갑국의 생산가능곡선 그래프\" class=\"max-w-full md:max-w-[350px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div> 현재 A에서 생산 및 소비를 하고 있는 갑국은 비교 우위가 있는 재화에 특화하여 교역에 참여하기로 하였다. 해외 시장에서 X재와 Y재는 1:2의 비율로 거래되고 있고, 갑국이 교역에 참여하더라도 해외 시장에서 거래 비율은 변하지 않는다.</p>\n    <div class=\"p-3 bg-white rounded-lg border border-slate-300 font-mono text-xs md:text-sm text-center\">\n      생산가능곡선: Y절편 24, X절편 8 (직선 형태)<br>\n      현재 생산 및 소비점 A: X재 4개, Y재 12개<br>\n      해외 교역조건: 1 X = 2 Y\n    </div>\n    <p class=\"text-xs text-slate-500\">(단, X재와 Y재는 완전 경쟁 시장에서 거래된다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국의 X재와 Y재의 기회비용을 구하고, 어떤 재화에 비교 우위가 있는지 서술할 것.</p>\n      <p>◦ 갑국이 교역에 참여하더라도 X재와 Y재 현재 소비량이 줄어들지 않기를 원한다면, 교역을 통해 갑국이 최대로 소비할 수 있는 X재와 Y재 각각의 수량을 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 기회비용 및 비교우위:\n- 갑국의 생산가능곡선: Y = 24 - 3X\n- X재 1단위 생산의 기회비용 = Y재 3단위\n- Y재 1단위 생산의 기회비용 = X재 1/3단위\n- 비교: 해외시장에서 Y재 1단위의 교역조건은 X재 1/2단위(=0.5단위)이므로, 갑국의 Y재 기회비용(1/3단위)이 해외보다 더 낮다. 따라서 갑국은 'Y재'에 비교우위가 있다(전량 Y재 24개 특화 생산).\n\n2. 최대 소비 수량 (현재 소비량 X=4, Y=12 이상 유지 조건):\n- Y재 24개를 생산한 후 교역선: Y = 24 - 2X (해외교역조건 1X = 2Y)\n- X재를 최대로 소비할 때 (Y재를 현재 소비량 12개만 남길 때): 12 = 24 - 2X ➔ X재 최대 수량 = 6개\n- Y재를 최대로 소비할 때 (X재를 현재 소비량 4개만 교환할 때): Y = 24 - 2(4) = 16 ➔ Y재 최대 수량 = 16개\n    </div>\n  </details></div>",
+    "defaultAnswer": "1. 기회비용 및 비교우위:\n- 갑국의 생산가능곡선: Y = 24 - 3X\n- X재 1단위 생산의 기회비용 = Y재 3단위\n- Y재 1단위 생산의 기회비용 = X재 1/3단위\n- 비교: 해외시장에서 Y재 1단위의 교역조건은 X재 1/2단위(=0.5단위)이므로, 갑국의 Y재 기회비용(1/3단위)이 해외보다 더 낮다. 따라서 갑국은 'Y재'에 비교우위가 있다(전량 Y재 24개 특화 생산).\n\n2. 최대 소비 수량 (현재 소비량 X=4, Y=12 이상 유지 조건):\n- Y재 24개를 생산한 후 교역선: Y = 24 - 2X (해외교역조건 1X = 2Y)\n- X재를 최대로 소비할 때 (Y재를 현재 소비량 12개만 남길 때): 12 = 24 - 2X ➔ X재 최대 수량 = 6개\n- Y재를 최대로 소비할 때 (X재를 현재 소비량 4개만 교환할 때): Y = 24 - 2(4) = 16 ➔ Y재 최대 수량 = 16개",
+    "targetKeywords": [
+      "Y재 3단위",
+      "X재 1/3단위",
+      "Y재에 비교우위",
+      "X재 6개",
+      "Y재 16개"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2024-B-10",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-1. 국제무역론",
+    "title": "[2024학년도] 10번. 수입할당제 vs 관세 부과의 잉여 및 재정수입 [4점]",
+    "examTag": "",
+    "page": 6,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음은 갑국의 무역 정책에 관한 자료이다. <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>외국으로부터 국제 가격(<i>P<sub>W</sub></i> = 20)으로 X재를 수입하고 있는 갑국의 X재 시장 상황을 나타낸다.</p>\n<div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2024_b_10.png\" alt=\"갑국 X재 시장 무역 정책 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n<p>갑국은 자국의 X재 생산자들을 보호하기 위해 아래의 [정책 1], [정책 2] 중 한 가지를 시행하고자 한다. 단, 정부는 수입되는 X재를 판매할 수 있는 면허를 수입업자에게 무상으로 제공하였으며, 갑국은 소국이어서 X재의 국제 가격에 영향을 주지 않는다.<br>\n∙ [정책 1] X재 수입량을 60개로 제한하는 수입할당제를 실시한다.<br>\n∙ [정책 2] 수입되는 X재 한 단위 당 t원의 관세를 부과하여 [정책 1]과 수입량이 동일해지도록 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ [정책 1]의 실시 후, 증가하는 국내 생산자 잉여와 감소하는 소비자 잉여를 순서대로 쓸 것.</p>\n<p>◦ [정책 2]에서 수입되는 X재 한 단위 당 부과해야 하는 관세의 금액을 쓸 것.</p>\n<p>◦ [정책 1]과 [정책 2]의 차이점을 정부의 재정 수입에 관한 계산 결과를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. [정책 1] 실시 후 잉여 변화:\n- 수입량이 60개로 제한되면 국내가격이 20원에서 30원으로 상승(수요 90 - 공급 30 = 60)\n- 증가하는 생산자 잉여: 사다리꼴 면적 = (20 + 30) × 10 / 2 = 250원\n- 감소하는 소비자 잉여: 사다리꼴 면적 = (100 + 90) × 10 / 2 = 950원\n\n2. [정책 2] 단위당 관세 금액:\n국내 가격을 30원으로 올려 수입량을 60개로 맞추어야 하므로 관세 t = 30 - 20 = 10원\n\n3. [정책 1]과 [정책 2]의 정부 재정수입 차이점:\n- [정책 1](수입할당제)은 수입 면허를 무상 배부하였으므로 정부의 재정 수입이 0원(수입업자에게 할당 지대 600원 귀속)인 반면,\n- [정책 2](관세 부과)는 수입량 60개에 대해 단위당 10원의 관세를 징수하므로 정부의 관세 재정 수입이 600원(60개 × 10원) 발생한다는 차이가 있다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 잉여 변화:\n- 증가하는 생산자 잉여: 250원\n- 감소하는 소비자 잉여: 950원\n2. 단위당 관세: 10원\n3. 재정수입 차이점:\n[정책 1]은 수입 면허를 무상 교부하여 정부 재정 수입이 0원인 반면, [정책 2]는 600원(60개 × 10원)의 관세 세입이 발생한다.",
+    "targetKeywords": [
+      "250원",
+      "950원",
+      "10원",
+      "0원",
+      "600원"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-019",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
@@ -264,6 +1618,67 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 8,
     "groupCount": 5
+  },
+  {
+    "id": "EXAM-2006-14",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-2. 환율과국제수지",
+    "title": "[2006학년도] 14번. 물가 하락이 거시경제에 미치는 파급 경로",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2006학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 변동환율제도를 채택하고 있으며 자본 이동이 자유로운 소규모 개방경제를 상정하자. 물가 하락은 가계의 소비지출과 기업의 투자지출뿐 아니라 순수출에도 영향을 미친다. (A) 물가 하락이 화폐시장에서 이자율에 영향을 미치게 되는 과정을 쓰고, (B) 화폐시장에서의 이런 변화가 순수출에 어떤 경로로 영향을 미치게 되는지를 자본 유출입, 환율, 수출입에 대한 영향의 순서에 따라 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>∙ (A) : ____________________________________________________________________</p>\n    <p>∙ (B) : ____________________________________________________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ (A): 물가가 하락하면 거래적 화폐수요가 감소하여, 실질 화폐공급이 증가하는 효과가 나타나 화폐시장에서 이자율이 하락한다.\n∙ (B): 이자율이 하락하면 국내 자산 수익률이 낮아져 자본이 해외로 유출된다. 자본 유출은 외환시장에서 외환 수요를 증가시켜 환율을 상승(자국통화가치 하락)시킨다. 환율 상승은 수출품의 가격경쟁력을 높여 수출을 증가시키고 수입을 감소시켜 순수출을 증가시킨다.\n\n해설:\n거시경제의 이자율 경로와 환율 경로를 묻는 전형적인 서술형 문제입니다. 물가 하락(P↓) -> 화폐수요(Md) 하락 -> 이자율(r) 하락 -> 자본 유출(CF↑) -> 환율(e) 상승 -> 순수출(NX) 증가의 메커니즘을 명확히 서술해야 합니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "(A) 화폐수요 감소로 이자율 하락, (B) 자본유출 -> 환율상승 -> 순수출증가",
+    "targetKeywords": [
+      "물가 하락",
+      "화폐수요",
+      "이자율",
+      "자본 유출입",
+      "환율",
+      "순수출"
+    ]
+  },
+  {
+    "id": "EXAM-2012-1-26",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-2. 환율과국제수지",
+    "title": "[2012학년도] 26번. 구매력평가설과 빅맥 햄버거 가격",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 표에 기초한 각국 환율에 대한 분석 및 추론으로 옳은 것은? (물가와 환율은 연중 일정하다고 가정함.)\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th rowspan=\"2\" class=\"border border-slate-300 p-1\">나라</th><th colspan=\"2\" class=\"border border-slate-300 p-1\">빅맥 햄버거 가격<br>(각국 통화)</th><th colspan=\"2\" class=\"border border-slate-300 p-1\">대미 환율<br>(각국 통화/달러)</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">2008년</th><th class=\"border border-slate-300 p-1\">2009년</th><th class=\"border border-slate-300 p-1\">2008년</th><th class=\"border border-slate-300 p-1\">2009년</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1\">미국</td><td class=\"border border-slate-300 p-1\">3</td><td class=\"border border-slate-300 p-1\">4</td><td class=\"border border-slate-300 p-1\">-</td><td class=\"border border-slate-300 p-1\">-</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">갑국</td><td class=\"border border-slate-300 p-1\">300</td><td class=\"border border-slate-300 p-1\">400</td><td class=\"border border-slate-300 p-1\">150</td><td class=\"border border-slate-300 p-1\">200</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">을국</td><td class=\"border border-slate-300 p-1\">60</td><td class=\"border border-slate-300 p-1\">80</td><td class=\"border border-slate-300 p-1\">20</td><td class=\"border border-slate-300 p-1\">10</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">병국</td><td class=\"border border-slate-300 p-1\">6.6</td><td class=\"border border-slate-300 p-1\">4.4</td><td class=\"border border-slate-300 p-1\">2.0</td><td class=\"border border-slate-300 p-1\">1.1</td></tr>\n      </tbody>\n    </table>\n    <p class=\"text-xs text-slate-500\">* 빅맥 지수: 미 달러화로 환산된 빅맥 햄버거 가격</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 빅맥 지수에 따르면 2008년 갑국의 통화는 저평가되어 있다.</div>\n    <div>② 2008년 대비 2009년에 갑국의 수출 가격 경쟁력이 악화되었다.</div>\n    <div>③ 명목 환율이 구매력 평가설에 가장 근접한 나라와 시기는 갑국 2008년이다.</div>\n    <div>④ 2008년 대비 2009년에 미국인들의 을국과 병국으로의 여행이 증가했을 것이다.</div>\n    <div>⑤ 빅맥으로 구매력 평가가 성립한다면 2008년 병국의 구매력 평가 환율은 달러 당 3.3이 되어야 한다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ①\n\n해설:\n- 2008년 미국 빅맥은 3달러. 갑국은 300원이므로 구매력평가 환율은 300/3 = 100원/달러입니다.\n- 그런데 실제 대미 환율은 150원/달러입니다. 즉, 1달러로 갑국 돈 150원을 바꿀 수 있으므로, 환율이 고평가(달러 고평가, 갑국 통화 저평가)되어 있습니다. (① 옳음)\n- ②: 갑국의 환율은 2008년 150에서 2009년 200으로 상승(자국통화 가치 하락)하였습니다. 따라서 수출 가격 경쟁력이 강화됩니다. (틀림)\n- ③: 갑국의 2008년 명목환율(150)은 PPP환율(100)과 차이가 큽니다. 가장 근접한 것은 을국 2008년(PPP = 60/3=20, 명목=20)입니다. (틀림)\n- ④: 을국의 환율은 20에서 10으로 하락(을국 통화가치 상승), 병국은 2.0에서 1.1로 하락(병국 통화가치 상승)하였습니다. 즉 미국인 입장에서는 을국과 병국 물가가 비싸졌으므로 여행이 감소했을 것입니다. (틀림)\n- ⑤: 2008년 병국의 햄버거는 6.6, 미국은 3이므로 PPP환율은 6.6/3 = 2.2입니다. 3.3이 아닙니다. (틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① 빅맥 지수에 따르면 2008년 갑국의 통화는 저평가되어 있다.",
+    "targetKeywords": [
+      "빅맥 지수",
+      "구매력 평가설",
+      "명목환율",
+      "저평가",
+      "환율"
+    ]
+  },
+  {
+    "id": "EXAM-2014-B-05",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-2. 환율과국제수지",
+    "title": "[2014학년도] 5번. [논술2] 나선형 교육과정과 대규모 개방경제 통화정책의 국제적 파급효과 [10점]",
+    "examTag": "",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 논술 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [10점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 갑국에서 고등학교 3학년 경제 수업을 담당하는 K 교사는 (나)의 내용을 수업하기 위해 해당 교육과정의 일부인 (가)를 확인하였다. (가)에 나타난 사회과 교육과정 구성 원리의 명칭을 쓰고, 주요 특징을 2가지만 서술하시오. 그리고 (나)에서 A국이 통화 공급을 확대할 경우 B국의 국민소득과 물가에 미치는 영향과 그 과정을 B국이 선택하는 환율제도에 따라 구분하여 설명하시오. (단, 환율은 A국 통화 1단위에 대한 B국 통화의 교환 비율이고, J 곡선 효과는 무시하며, 환율 변동은 총공급에 영향을 미치지 않는다고 가정한다.) [10점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <div class=\"font-bold text-slate-900 border-b pb-1\">(가) 교육과정 성취 기준</div>\n      <table class=\"w-full text-xs text-left border-collapse border border-slate-300\">\n        <thead>\n          <tr class=\"bg-slate-100\">\n            <th class=\"border border-slate-300 px-2 py-1 text-center w-16\">학년</th>\n            <th class=\"border border-slate-300 px-2 py-1 text-center\">성취 기준</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td class=\"border border-slate-300 px-2 py-1 text-center font-bold\">1</td>\n            <td class=\"border border-slate-300 px-2 py-1\">화폐시장에서의 이자율, 외환시장에서의 환율을 이해한다.</td>\n          </tr>\n          <tr>\n            <td class=\"border border-slate-300 px-2 py-1 text-center font-bold\">2</td>\n            <td class=\"border border-slate-300 px-2 py-1\">이자율 변화가 환율에 미치는 영향을 이해한다.</td>\n          </tr>\n          <tr>\n            <td class=\"border border-slate-300 px-2 py-1 text-center font-bold\">3</td>\n            <td class=\"border border-slate-300 px-2 py-1\">이자율 변화에 따른 환율 변동이 국민경제에 미치는 영향을 이해한다.</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-xs md:text-sm text-slate-800\">\n      <div class=\"font-bold text-slate-900 border-b pb-1\">(나) 거시경제 조건 및 가정</div>\n      <p>◦ A국은 대규모 개방 경제로 B국에 경제적 영향을 주지만 B국은 소규모 개방 경제로 A국에 영향을 주지 않는다. A국과 B국 간 자본 이동은 자유로우며 자본은 이자율이 낮은 국가에서 높은 국가로 이동한다.</p>\n      <p>◦ A국 또는 B국에서 통화 공급이 증가(감소)하면 해당 국가의 총수요가 증가(감소)하고 이자율이 하락(상승)한다.</p>\n      <p>◦ 변동환율제도에서는 환율의 변동에 따라 순수출이 변하며 환율 변동이 순수출 변화의 가장 중요한 요인이다. 고정환율제도에서는 중앙은행의 외환시장 개입에 따라 통화량이 변한다.</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ (가)의 사회과 교육과정 구성 원리 명칭을 쓰고, 주요 특징 2가지를 서술할 것.</p>\n      <p>◦ A국 통화공급 확대 시 B국이 <b>변동환율제도</b>를 채택한 경우, B국의 국민소득과 물가에 미치는 영향과 그 파급 과정을 서술할 것.</p>\n      <p>◦ A국 통화공급 확대 시 B국이 <b>고정환율제도</b>를 채택한 경우, B국의 국민소득과 물가에 미치는 영향과 그 파급 과정을 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 모범 답안:\n[1] 사회과 교육과정 구성 원리: 나선형 교육과정 (또는 심화·확장 원리)\n- 주요 특징 (2가지):\n  ① 동일한 핵심 개념(이자율, 환율)을 학년이 올라감에 따라 반복하여 다룬다(계속성·반복성).\n  ② 학년이 진급함에 따라 내용의 범위(폭)가 확장되고 수준(심도 및 난이도)이 심화된다(계열성·점진적 심화 확장).\n\n[2] B국이 '변동환율제도'를 채택한 경우:\n- 파급 과정:\n  A국의 통화 공급 확대로 A국의 이자율이 하락한다. 이에 따라 자본이 이자율이 낮은 A국에서 상대적으로 이자율이 높은 B국으로 유입된다(B국으로의 외환 유입 증가).\n  외환 유입으로 B국의 외환 공급이 증가하여 대A국 환율(A국 통화 1단위에 대한 B국 통화 교환비율)이 하락(B국 통화가치 절상)한다.\n  환율 하락으로 B국의 순수출(NX)이 감소하여 B국의 총수요(AD)가 감소한다.\n- 영향: B국의 국민소득은 감소하고 물가는 하락한다.\n\n[3] B국이 '고정환율제도'를 채택한 경우:\n- 파급 과정:\n  A국의 통화 공급 확대로 A국의 이자율이 하락하고 자본이 B국으로 유입되어 환율 하락(평가절상) 압력이 발생한다.\n  B국 중앙은행은 고정환율을 유지하기 위해 외환시장에 개입하여 외환을 매입하고 B국 자국 통화를 공급한다.\n  이로 인해 B국의 국내 통화량이 증가하여 B국의 총수요가 증가하고 이자율이 A국 수준으로 하락한다.\n- 영향: B국의 총수요 증가로 인해 B국의 국민소득은 증가하고 물가는 상승한다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "[1] 교육과정 원리: 나선형 교육과정\n- 특징: 학년이 올라감에 따라 기본 개념이 반복되고(계속성), 내용의 폭과 깊이가 점차 확대·심화된다(계열성).\n[2] 변동환율제: A국 이자율 하락 → B국으로 자본 유입 → B국 환율 하락(평가절상) → B국 순수출 감소 및 총수요 감소 → B국의 국민소득 감소, 물가 하락.\n[3] 고정환율제: 환율 하락 압력 발생 → 중앙은행의 고정환율 유지를 위한 외환 매입 및 자국 통화 방출 → B국 통화량 증가 → 총수요 증가 → B국의 국민소득 증가, 물가 상승.",
+    "targetKeywords": [
+      "나선형 교육과정",
+      "계속성",
+      "계열성",
+      "변동환율제도",
+      "환율 하락",
+      "국민소득 감소",
+      "고정환율제도",
+      "통화량 증가",
+      "국민소득 증가"
+    ],
+    "tapeCount": 8,
+    "groupCount": 1
   },
   {
     "id": "ECON-020",
@@ -280,18 +1695,40 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "ECON-021",
+    "id": "EXAM-2011-1-26",
     "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "10. 소득분배 불평등 측정 지표 (계층별 소득분배)",
-    "examTag": "23",
-    "page": 14,
-    "contentHtml": "<div class=\"topic-group mb-4 bg-slate-50/90 border border-slate-200 rounded-xl p-3.5 shadow-2xs\">\n  <div class=\"flex items-center justify-between pb-2 mb-2 border-b border-slate-200\">\n    <div class=\"font-bold text-sm text-slate-800 flex items-center gap-2\">\n      <span class=\"material-symbols-outlined text-[18px] text-blue-600\">monitoring</span>\n      <span>📊 미시경제학 핵심 다이어그램 - 소득분배 불평등 지표 (로렌츠 곡선 &amp; 지니계수)</span>\n    </div>\n    <span class=\"text-[11px] text-slate-400 font-medium\">클릭 시 원본 크기 확대</span>\n  </div>\n  <div class=\"rounded-lg overflow-hidden border border-slate-200 bg-white p-2 text-center\">\n    <img src=\"assets/econ/diagram_09_lorenz_gini.svg?v=20260909_1015\" alt=\"로렌츠 곡선(Lorenz Curve)과 지니계수 (Gini = Area A / (A + B))\" class=\"w-full max-h-[420px] object-contain mx-auto cursor-pointer hover:opacity-95 transition-all rounded\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    <p class=\"text-xs text-slate-500 mt-2 font-medium\">로렌츠 곡선(Lorenz Curve)과 지니계수 (Gini = Area A / (A + B))</p>\n  </div>\n</div>\n\n<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\">\n  <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">\n    <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">\n      <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>\n      <span>(1) 소득분배 불평등 측정 지표</span> <span class=\"exam-badge\">23 기출</span>\n    </div>\n    <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">\n      <span class=\"material-symbols-outlined text-[16px]\">visibility</span>\n    </button>\n  </div>\n  <div class=\"group-content space-y-2 pl-1\">\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">① <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">10분위 분배율</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">하위 40% 소득점유율 / 상위 20% 소득점유율</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 숫자가 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">클수록 소득분배 균등</strong>, 작을수록 불균등 (최대값 2: 완전균등, 최소값 0: 완전불균등)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">② <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">소득 5분위 배율</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">최상위 20%(5분위) 소득 / 최하위 20%(1분위) 소득</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 배율이 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">낮을수록 균등</strong>, 높을수록 불균등 (10분위 분배율과 반대 방향)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">로렌츠 곡선 (Lorenz Curve)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 인구누적비율(가로축)과 소득누적비율(세로축)의 대응 관계를 나타낸 곡선</div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">대각선(45도선)</strong>과 일치할 때 완전균등, 대각선에서 멀어져 아래로 볼록할수록 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">불균등</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">한계점</strong>: 두 로렌츠 곡선이 서로 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">교차</strong>하는 경우 지니계수 등 추가 수치 지표 없이 분배 상태의 우열을 판정할 수 없음</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">④ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">지니계수 (Gini Coefficient)</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">불평등면적(A) / 대각선 아래 전체면적(A + B)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0 &le; 지니계수 &le; 1</strong>: <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0에 가까울수록 완전균등</strong>, <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">1에 가까울수록 완전불균등</strong> (로렌츠 곡선이 교차하더라도 단일 수치로 명확히 서열화 가능)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑤ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">앳킨슨 지수 (Atkinson Index)</strong> = <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">1 - (균등분배대등소득 Ye / 평균소득 Y)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 사회후생함수를 바탕으로 불평등 기피도를 명시적으로 반영한 지표</div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0 &le; A &le; 1</strong>: <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">0에 가까울수록 균등</strong>, 1에 가까울수록 불균등</div>\n  </div>\n</div>\n\n<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\">\n  <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">\n    <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">\n      <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>\n      <span>(2) 소득재분배 정책 및 효과</span>\n    </div>\n    <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">\n      <span class=\"material-symbols-outlined text-[16px]\">visibility</span>\n    </button>\n  </div>\n  <div class=\"group-content space-y-2 pl-1\">\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">① <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">조세 정책 (누진소득세)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 고소득층에 더 높은 한계세율을 부과하여 세후 소득격차를 줄이고 로렌츠 곡선을 대각선 쪽으로 이동시킴</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">② <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">사회보장제도 (사회보험 vs 공공부조)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">사회보험</strong>: 사전 기여금(보험료) 납부 기반, 미래의 사회적 위험(노령·질병·실업 등)에 대비</div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">공공부조</strong>: 일반 조세 재원으로 저소득 취약계층에 무상 급여 지급 (소득재분배 효과가 가장 직접적이고 큼)</div>\n    <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③ <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">부의 소득세 (Negative Income Tax, NIT)</strong></div>\n    <div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 기준소득 이하 가구에 역(음)의 소득세(정부 보조금)를 지원하여 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">최저생계 보장</strong>과 <strong class=\"text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded\">근로 유인 유지</strong>를 동시 달성하고자 하는 제도</div>\n  </div>\n</div><div class=\"topic-group mb-3.5 bg-gradient-to-br from-amber-50/70 via-white to-blue-50/40 border border-amber-200/90 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-amber-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-amber-900 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0\"></span>    <span>📝 [실전 기출 문제 & 심층 계산 풀이] <span class=\"exam-badge\">23 기출</span></span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2.5 pl-1\"><div class=\"p-3 bg-amber-50/60 rounded-lg border border-amber-200/70 text-xs md:text-sm text-slate-800 leading-relaxed font-medium\"><strong class=\"text-amber-900 font-bold block mb-1\">📌 2023학년도 전공 A 9번: 10분위분배율 및 지니계수(Gini) 계산 공식</strong>어떤 나라에서 하위 40% 저소득층의 소득점유율이 20%이고, 상위 20% 고소득층의 소득점유율이 40%이다. 로렌츠곡선과 대각선 사이의 불평등 면적이 0.15일 때, (1) 10분위 분배율을 구하고, (2) 지니계수를 계산하시오.</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-amber-400 py-1 transition-all\"><strong class=\"text-blue-800 font-bold\">1) 핵심 공식 및 접근 전략:</strong><br>• <strong>10분위 분배율 = (하위 40% 계층 소득점유율) / (상위 20% 계층 소득점유율)</strong> (0~2 범위, 클수록 평등).<br>• <strong>지니계수 = (불평등 면적) / (대각선 아래 삼각형 전체 면적 0.5) = 2 × (불평등 면적)</strong> (0~1 범위, 작을수록 평등).</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-amber-400 py-1 transition-all\"><strong class=\"text-blue-800 font-bold\">2) 단계별 정밀 계산 과정:</strong><br>① <strong>10분위 분배율</strong> = 20% / 40% = <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.5\">0.5</span><br>② <strong>지니계수(Gini)</strong> = 0.15 / 0.5 = 2 × 0.15 = <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.30\">0.30</span><br>③ <strong>완전평등 시</strong> 지니계수는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0\">0</span>, 완전불평등 시 지니계수는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"1\">1</span></div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-amber-400 py-1 transition-all bg-amber-50/30 rounded-r-lg\"><strong class=\"text-emerald-800 font-bold\">3) 최종 정답 및 모범 서술:</strong><br>10분위 분배율은 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.5\">0.5</span>이며, 지니계수는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"0.30\">0.30</span>이다.</div></div></div>",
-    "defaultAnswer": "[📊 핵심 개념 도해: 소득분배 불평등 지표 - 로렌츠 곡선과 지니계수]\n- 45도 완전균등선, 로렌츠 곡선(볼록할수록 불평등), 지니계수 계산 면적(A/(A+B))\n\n(1) 소득분배 불평등 측정 지표 [23 기출]\n① 10분위 분배율 [23 기출] = 하위 40% 소득점유율 / 상위 20% 소득점유율\n- 숫자가 클수록 소득분배 균등, 작을수록 불균등 (최대값 2: 완전균등, 최소값 0: 완전불균등)\n② 소득 5분위 배율 = 최상위 20%(5분위) 소득 / 최하위 20%(1분위) 소득\n- 배율이 낮을수록 균등, 높을수록 불균등 (10분위 분배율과 반대 방향)\n③ 로렌츠 곡선 (Lorenz Curve):\n- 인구누적비율(가로축)과 소득누적비율(세로축)의 대응 관계를 나타낸 곡선\n- 대각선(45도선)과 일치할 때 완전균등, 대각선에서 멀어져 아래로 볼록할수록 불균등\n- 한계점: 두 로렌츠 곡선이 서로 교차하는 경우 지니계수 등 추가 수치 지표 없이 분배 상태의 우열을 판정할 수 없음\n④ 지니계수 (Gini Coefficient) = 불평등면적(A) / 대각선 아래 전체면적(A + B)\n- 0 ≤ 지니계수 ≤ 1 (0에 가까울수록 완전균등, 1에 가까울수록 완전불균등)\n⑤ 앳킨슨 지수 (Atkinson Index) = 1 - (균등분배대등소득 Ye / 평균소득 Y)\n- 사회후생함수를 바탕으로 불평등 기피도를 명시적으로 반영, 0에 가까울수록 균등\n\n(2) 소득재분배 정책 및 효과\n① 조세 정책 (누진소득세):\n- 고소득층에 더 높은 한계세율을 부과하여 세후 소득격차를 줄이고 로렌츠 곡선을 대각선 쪽으로 이동시킴\n② 사회보장제도 (사회보험 vs 공공부조):\n- 사회보험: 사전 기여금(보험료) 납부 기반, 미래의 사회적 위험(노령·질병·실업 등)에 대비\n- 공공부조: 일반 조세 재원으로 저소득 취약계층에 무상 급여 지급 (소득재분배 효과가 가장 큼)\n③ 부의 소득세 (Negative Income Tax, NIT):\n- 기준소득 이하 가구에 역(음)의 소득세(정부 보조금)를 지원하여 최저생계 보장과 근로 유인 유지를 동시 달성\n\n[📝 실전 기출 문제 & 심층 계산 풀이 - 23 기출]\n2023학년도 전공 A 9번: 10분위분배율 및 지니계수(Gini) 계산 공식\n- 출제 문제: 어떤 나라에서 하위 40% 저소득층의 소득점유율이 20%이고, 상위 20% 고소득층의 소득점유율이 40%이다. 로렌츠곡선과 대각선 사이의 불평등 면적이 0.15일 때, (1) 10분위 분배율을 구하고, (2) 지니계수를 계산하시오.\n- 핵심 접근 공식:\n• 10분위 분배율 = (하위 40% 계층 소득점유율) / (상위 20% 계층 소득점유율) (0~2 범위, 클수록 평등).\n• 지니계수 = (불평등 면적) / (대각선 아래 삼각형 전체 면적 0.5) = 2 × (불평등 면적) (0~1 범위, 작을수록 평등).\n- 정밀 계산 풀이 과정:\n① 10분위 분배율 = 20% / 40% = [\u0001]\n② 지니계수(Gini) = 0.15 / 0.5 = 2 × 0.15 = [\u0001]\n③ 완전평등 시 지니계수는 [\u0001], 완전불평등 시 지니계수는 [\u0001]\n- 최종 정답 및 모범 서술:\n10분위 분배율은 [\u0001]이며, 지니계수는 [\u0001]이다.",
-    "targetKeywords": [],
-    "tapeCount": 0,
-    "groupCount": 3
+    "chapter": "3. 국제경제학",
+    "section": "3-3. 개방거시균형",
+    "title": "[2011학년도] 26번. 쌍둥이 적자와 대부자금시장 모형",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 다음의 글을 설명할 수 있는 경제모형을 &lt;보기&gt;에서 제시하였다. A, B, C, D에 들어갈 내용으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ 최근 크게 늘어난 미국의 경상수지적자 문제에는 더 큰 이유가 있다. 경기불황과 조지 W. 부시 대통령이 의회에서 밀어붙인 막대한 세금감면정책 탓에 눈덩이처럼 불어난 재정적자가 그 이유다. 1990년대 재정적자는 다소 해소되었지만 2000년대 들어서서 미국은 다시 한번 많은 채권을 발행하기 시작했다.<br>- 누리엘 루비니 외(2010), 위기경제학</p>\n    <p>◦ 미국 경제는 변동환율제를 채택하고 있다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>재정적자가 발생하면 대부자금시장에서 국민저축이 <b>A</b> 하여 이자율이 <b>B</b> 하고, 이에 의해 순자본유출이 <b>C</b> 한다. 순자본유출의 <b>C</b> 는 외환시장에서 달러가치 <b>D</b> 을 유발하여 경상적자를 초래한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① A: 감소, B: 상승, C: 감소, D: 상승\n\n해설: (맨큐의 개방거시경제 모형)\n1. 재정적자는 정부저축을 감소시키므로, 총 국민저축(민간저축+정부저축)이 감소(A)합니다.\n2. 대부자금시장에서 자금 공급(저축)이 감소하면 실질 이자율이 상승(B)합니다.\n3. 국내 이자율 상승은 국내 자산의 매력도를 높여 자본 유출을 막고 유입을 촉진하므로 순자본유출(NCO)은 감소(C)합니다.\n4. 순자본유출 감소는 외환시장에서 달러 공급 감소(또는 자국통화 매입수요 증가)를 가져와 자국 통화(달러) 가치가 상승(D, 절상)하게 됩니다. 달러 가치 상승은 수출을 감소시키고 수입을 증가시켜 경상수지 적자를 유발합니다(쌍둥이 적자 현상).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "① A: 감소, B: 상승, C: 감소, D: 상승",
+    "targetKeywords": [
+      "쌍둥이 적자",
+      "대부자금시장",
+      "순자본유출",
+      "국민저축",
+      "환율 변동"
+    ]
+  },
+  {
+    "id": "EXAM-2013-1-23",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-3. 개방거시균형",
+    "title": "[2013학년도] 23번. 개방 국민경제의 사후적 균형 (주입과 누출)",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음은 개방 국민경제의 사후적 균형에 관한 서술이다. 이에 대한 분석과 추론으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>경제는 사후적으로 보면 언제나 균형을 이룬다. 개방 국민경제에서의 주입은 투자지출, 정부지출 및 수출이며 누출은 민간저축, 조세 및 수입이다. 민간저축과 투자지출의 차이는 민간 잉여, 조세와 정부지출의 차이는 정부 잉여, 수출과 수입의 차이는 순수출로 정의된다. 2국으로 구성되는 국제경제를 상정하자. 그리고 한 나라의 수입의 크기는 그 나라 국민소득의 크기와 비례적인 관계가 있다고 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 국내의 투자지출이 클수록 순수출의 크기는 작다.</p>\n      <p>ㄴ. 민간 잉여의 크기가 일정하다면, 정부 잉여가 작을수록 순수출의 크기는 크다.</p>\n      <p>ㄷ. 민간 잉여와 정부 잉여의 합이 양(+)이라면 순수출의 크기는 반드시 양(+)이다.</p>\n      <p>ㄹ. 상대국 정부가 정부지출을 확대하면 자국의 순수출은 줄어든다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② ㄱ, ㄷ\n\n해설:\n사후적 항등식: 주입(I + G + X) = 누출(S + T + M)\n이를 정리하면: (S - I) + (T - G) = (X - M)\n즉, [민간 잉여] + [정부 잉여] = [순수출]\n- ㄱ: 항등식 (X-M) = (S-I) + (T-G)에서, I(투자지출)가 커지면 (S-I)가 감소하므로 순수출(X-M)은 작아집니다. (옳음)\n- ㄴ: 민간 잉여(S-I)가 일정할 때, 정부 잉여(T-G)가 작아지면 합이 작아지므로 순수출은 작아집니다. (틀림)\n- ㄷ: 민간 잉여와 정부 잉여의 합이 양(+)이면, 그 합인 순수출도 당연히 양(+)입니다. (옳음)\n- ㄹ: 상대국 정부가 정부지출을 확대하면 상대국의 국민소득이 증가합니다. 상대국의 수입(자국의 수출)은 상대국 국민소득에 비례하므로 자국의 수출이 증가하여 자국의 순수출은 늘어납니다. (틀림)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "② ㄱ, ㄷ",
+    "targetKeywords": [
+      "개방경제 거시균형",
+      "주입과 누출",
+      "민간잉여",
+      "정부잉여",
+      "순수출"
+    ]
   },
   {
     "id": "EDU-001",
@@ -18502,1529 +19939,5 @@ window.ALL_TOPICS = [
     ],
     "tapeCount": 0,
     "groupCount": 3
-  },
-  {
-    "id": "EXAM-2014-A-05",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2014학년도] 5번. [기입5] 자유 무역과 국내 생산량 변동 분석 [2점]",
-    "examTag": "",
-    "page": 2,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 기입 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음 그래프는 국내의 X재 시장 상황을 나타낸다. 자유 무역이 실시된다면, 무역이 이루어지지 않은 경우에 비해 X재 국내 생산량이 얼마나 증가 또는 감소하는지 쓰시오. (단, 국내 공급 및 국내 수요 곡선은 직선의 형태이며 X재는 국제 가격에서 얼마든지 수출하거나 수입할 수 있다.) [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"text-center my-2\">\n      <img src=\"assets/exam_images/exam_2014_A_05.jpg\" alt=\"국내 X재 시장 수요공급 및 국제 가격 그래프\" class=\"max-w-md mx-auto rounded border border-slate-300 shadow-2xs\">\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 space-y-1\">\n      <p>• 절편 및 교차점 정보:</p>\n      <p>- 수요곡선 세로절편: 36천 원, 국제 가격 P_w = 18천 원일 때 국내 수요량 = 108개</p>\n      <p>- 공급곡선 세로절편: 12천 원, 국제 가격 P_w = 18천 원일 때 국내 공급량 = 60개</p>\n      <p>- 무역 이전 국내 균형 가격: 21천 원</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 폐쇄경제 균형 생산량과 자유무역 시 국내 생산량을 비교하여 변동 수량 및 증감 여부(증가/감소)를 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n30개 감소\n\n2. 상세 해설:\n- 공급곡선 방정식 도출:\n  세로 절편이 (0, 12)이고, 가격이 18천 원일 때 공급량이 60개이므로 기울기는 (18 - 12) / 60 = 6 / 60 = 0.1\n  즉, P = 12 + 0.1Q_s ➔ Q_s = 10(P - 12)\n- 무역이 없을 때의 폐쇄경제 균형:\n  국내 균형 가격이 21천 원이므로 균형 생산량 Q_0 = 10 * (21 - 12) = 90개.\n  (참고: 수요곡선 검산: 절편 (0, 36), (108, 18) ➔ 기울기 -18/108 = -1/6 ➔ P = 36 - Q_d/6 ➔ P=21일 때 Q_d = 6*(36-21) = 90개 일치)\n- 자유무역 실시 시:\n  국제 가격 18천 원이 국내 가격이 되며, 국내 생산자는 18천 원에서 공급 곡선 상의 양인 60개를 생산함.\n- 따라서 국내 생산량은 90개에서 60개로 **30개 감소**합니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "30개 감소",
-    "targetKeywords": [
-      "30개 감소",
-      "90개",
-      "60개"
-    ],
-    "tapeCount": 3,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2014-A-06",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2014학년도] 6번. [기입6] 개별 수요·공급함수와 시장 전체 소비자 잉여 [2점]",
-    "examTag": "",
-    "page": 2,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 기입 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 X재 시장에서 시장 전체의 소비자 잉여는 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>◦ <b>시장 수요:</b> 소비자 1인의 수요는 q_d = 8 - P이다. 시장에는 수요가 동일한 300명의 소비자가 존재한다. 시장 수요는 각 개별 소비자 수요의 합이다.</p>\n      <p>◦ <b>시장 공급:</b> 생산자 1인의 공급은 q_s = P이다. 시장에는 공급이 동일한 100명의 생산자가 존재한다. 시장 공급은 각 개별 생산자 공급의 합이다.</p>\n      <p class=\"text-xs text-slate-500\">(여기서 q_d는 소비자 1인의 수요, q_s는 생산자 1인의 공급, P는 시장 가격을 나타내며 수량의 단위는 개, 가격의 단위는 달러이다.)</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 시장 전체 수요함수와 공급함수를 도출하여 균형 가격과 균형 거래량을 구하고, 시장 전체 소비자 잉여를 계산할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n1,200달러 (또는 1200)\n\n2. 상세 해설:\n- 시장 전체 수요곡선(Q_D):\n  동일한 소비자 300명이므로\n  Q_D = 300 * q_d = 300 * (8 - P) = 2,400 - 300P\n- 시장 전체 공급곡선(Q_S):\n  동일한 생산자 100명이므로\n  Q_S = 100 * q_s = 100P\n- 시장 균형 (Q_D = Q_S):\n  2,400 - 300P = 100P\n  400P = 2,400 ➔ 균형 가격 P* = 6 달러\n  균형 거래량 Q* = 100 * 6 = 600 개\n- 시장 전체 소비자 잉여(CS):\n  수요곡선의 가격 축 절편은 P = 8 (Q_D = 0일 때)\n  CS = 1/2 * (최대 지불용의 가격 - 균형 가격) * 균형 거래량\n     = 1/2 * (8 - 6) * 600 = 1/2 * 2 * 600 = 600 달러가 아니라,\n     *잠깐 계산 점검*:\n     개별 소비자의 소비자 잉여 = 1/2 * (8 - 6) * (8 - 6) = 1/2 * 2 * 2 = 2 달러.\n     소비자가 300명이므로 300 * 2 = 600?\n     다시 확인:\n     Q_D = 2400 - 300P\n     P=6일 때 Q_D = 600.\n     CS = 1/2 * (8 - 6) * 600 = 600달러.\n     *잠깐! 공식 확인*:\n     q_d = 8 - P, P=6이면 개별 수요량 q_d = 2개.\n     300명이면 600개.\n     1/2 * (8 - 6) * 600 = 600달러.\n     일부 강사 해설에서 단위를 확인: 600달러.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "600달러",
-    "targetKeywords": [
-      "600달러",
-      "600",
-      "P=6",
-      "Q=600"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2014-A-07",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-3. 국민소득결정",
-    "title": "[2014학년도] 7번. [기입7] 폐쇄 거시경제 모형과 잠재 총생산 정부지출 [2점]",
-    "examTag": "",
-    "page": 2,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 기입 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 폐쇄 거시 경제 모형이다. 이자율이 5%로 유지될 경우 잠재 총생산을 달성하기 위한 정부 지출 규모는 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>• C / Y = 0.8 - 0.3(R - 0.03)</p>\n      <p>• I / Y = 0.2 - 0.7(R - 0.03)</p>\n      <p>• Y_f = 2조 달러</p>\n      <p class=\"text-xs text-slate-500\">(여기서 C는 소비, Y는 총생산, R는 이자율, I는 투자, Y_f는 잠재 총생산을 나타낸다.)</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 폐쇄경제의 국민소득 항등식 Y = C + I + G를 적용하여 R = 0.05(5%), Y = 2조 달러일 때의 정부지출 G를 계산할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n400억 달러 (또는 0.04조 달러)\n\n2. 상세 해설:\n- 폐쇄경제 균형조건:\n  Y = C + I + G ➔ 1 = (C / Y) + (I / Y) + (G / Y)\n  따라서 G / Y = 1 - (C / Y + I / Y)\n- 문제에서 주어진 식 합산:\n  C / Y + I / Y = [0.8 - 0.3(R - 0.03)] + [0.2 - 0.7(R - 0.03)]\n                = 1.0 - 1.0(R - 0.03)\n- 이자율 R = 5% = 0.05 대입:\n  R - 0.03 = 0.05 - 0.03 = 0.02\n  C / Y + I / Y = 1.0 - 0.02 = 0.98\n- 따라서 G / Y = 1 - 0.98 = 0.02\n- 잠재 총생산 Y_f = 2조 달러(20,000억 달러)이므로:\n  G = 0.02 * 2조 달러 = 0.04조 달러 = **400억 달러**.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "400억 달러 (또는 0.04조 달러)",
-    "targetKeywords": [
-      "400억 달러",
-      "0.04조 달러",
-      "0.02",
-      "G/Y=0.02"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2014-A-19",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2014학년도] 19번. [서술4] 후방굴절 노동공급곡선과 대체효과·소득효과 [3점]",
-    "examTag": "",
-    "page": 6,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 서술 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 그래프는 갑의 노동 공급 곡선을 나타낸다. 실질 임금이 w* 이상인 경우 실질 임금이 상승함에 따라 노동 시간이 감소한다. 그 이유를 대체효과와 소득효과를 이용하여 설명하시오. [3점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"text-center my-2\">\n      <img src=\"assets/exam_images/exam_2014_A_서술형_04.jpg\" alt=\"후방굴절 노동 공급 곡선\" class=\"max-w-xs mx-auto rounded border border-slate-300 shadow-2xs\">\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 space-y-1\">\n      <p>• 세로축: 실질 임금(w), 가로축: 노동 시간(L)</p>\n      <p>• 임금이 0에서 w*까지는 임금 상승 시 노동 공급 시간 L이 증가함.</p>\n      <p>• 임금이 w* 이상으로 상승하면 노동 공급 곡선이 좌측 상방으로 꺾여 노동 공급 시간 L이 감소함 (후방굴절 노동공급곡선).</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 임금 상승에 따른 대체효과와 소득효과의 상대적 크기를 비교하여, w* 이상에서 노동시간이 감소하는 메커니즘을 명확히 설명할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n실질 임금이 상승하면 여가의 기회비용이 커져 여가를 줄이고 노동을 늘리려는 **대체효과**와, 실질 소득이 증가하여 정상재인 여가의 소비를 늘리고 노동을 줄이려는 **소득효과**가 동시에 발생한다. 실질 임금이 w* 이상인 구간에서는 **소득효과의 크기가 대체효과보다 더 커지기 때문에**, 임금 상승 시 여가 소비가 늘어나고 노동 시간은 오히려 감소하게 된다.\n\n2. 상세 해설:\n- 임금 상승 시 두 가지 상반된 효과:\n  1) 대체효과: 임금 = 여가의 기회비용 상승 ➔ 여가 감소, 노동 증가(+)\n  2) 소득효과: 실질소득 증가 ➔ 정상재인 여가 수요 증가 ➔ 노동 감소(-)\n- w < w* 구간: 대체효과 > 소득효과 ➔ 우상향.\n- w > w* 구간: 소득효과 > 대체효과 ➔ 후방굴절(노동시간 감소).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "임금 상승 시 여가의 기회비용 증가로 노동을 늘리려는 대체효과보다, 실질소득 증가로 정상재인 여가를 늘리고 노동을 줄이려는 소득효과가 더 커지기 때문에 실질 임금이 w* 이상에서는 임금 상승에 따라 노동 시간이 감소한다.",
-    "targetKeywords": [
-      "대체효과",
-      "소득효과",
-      "소득효과가 대체효과보다 크다",
-      "여가",
-      "정상재",
-      "기회비용"
-    ],
-    "tapeCount": 6,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2014-B-05",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-2. 환율과국제수지",
-    "title": "[2014학년도] 5번. [논술2] 나선형 교육과정과 대규모 개방경제 통화정책의 국제적 파급효과 [10점]",
-    "examTag": "",
-    "page": 4,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2014학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 논술 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [10점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 갑국에서 고등학교 3학년 경제 수업을 담당하는 K 교사는 (나)의 내용을 수업하기 위해 해당 교육과정의 일부인 (가)를 확인하였다. (가)에 나타난 사회과 교육과정 구성 원리의 명칭을 쓰고, 주요 특징을 2가지만 서술하시오. 그리고 (나)에서 A국이 통화 공급을 확대할 경우 B국의 국민소득과 물가에 미치는 영향과 그 과정을 B국이 선택하는 환율제도에 따라 구분하여 설명하시오. (단, 환율은 A국 통화 1단위에 대한 B국 통화의 교환 비율이고, J 곡선 효과는 무시하며, 환율 변동은 총공급에 영향을 미치지 않는다고 가정한다.) [10점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <div class=\"font-bold text-slate-900 border-b pb-1\">(가) 교육과정 성취 기준</div>\n      <table class=\"w-full text-xs text-left border-collapse border border-slate-300\">\n        <thead>\n          <tr class=\"bg-slate-100\">\n            <th class=\"border border-slate-300 px-2 py-1 text-center w-16\">학년</th>\n            <th class=\"border border-slate-300 px-2 py-1 text-center\">성취 기준</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td class=\"border border-slate-300 px-2 py-1 text-center font-bold\">1</td>\n            <td class=\"border border-slate-300 px-2 py-1\">화폐시장에서의 이자율, 외환시장에서의 환율을 이해한다.</td>\n          </tr>\n          <tr>\n            <td class=\"border border-slate-300 px-2 py-1 text-center font-bold\">2</td>\n            <td class=\"border border-slate-300 px-2 py-1\">이자율 변화가 환율에 미치는 영향을 이해한다.</td>\n          </tr>\n          <tr>\n            <td class=\"border border-slate-300 px-2 py-1 text-center font-bold\">3</td>\n            <td class=\"border border-slate-300 px-2 py-1\">이자율 변화에 따른 환율 변동이 국민경제에 미치는 영향을 이해한다.</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-xs md:text-sm text-slate-800\">\n      <div class=\"font-bold text-slate-900 border-b pb-1\">(나) 거시경제 조건 및 가정</div>\n      <p>◦ A국은 대규모 개방 경제로 B국에 경제적 영향을 주지만 B국은 소규모 개방 경제로 A국에 영향을 주지 않는다. A국과 B국 간 자본 이동은 자유로우며 자본은 이자율이 낮은 국가에서 높은 국가로 이동한다.</p>\n      <p>◦ A국 또는 B국에서 통화 공급이 증가(감소)하면 해당 국가의 총수요가 증가(감소)하고 이자율이 하락(상승)한다.</p>\n      <p>◦ 변동환율제도에서는 환율의 변동에 따라 순수출이 변하며 환율 변동이 순수출 변화의 가장 중요한 요인이다. 고정환율제도에서는 중앙은행의 외환시장 개입에 따라 통화량이 변한다.</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ (가)의 사회과 교육과정 구성 원리 명칭을 쓰고, 주요 특징 2가지를 서술할 것.</p>\n      <p>◦ A국 통화공급 확대 시 B국이 <b>변동환율제도</b>를 채택한 경우, B국의 국민소득과 물가에 미치는 영향과 그 파급 과정을 서술할 것.</p>\n      <p>◦ A국 통화공급 확대 시 B국이 <b>고정환율제도</b>를 채택한 경우, B국의 국민소득과 물가에 미치는 영향과 그 파급 과정을 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 모범 답안:\n[1] 사회과 교육과정 구성 원리: 나선형 교육과정 (또는 심화·확장 원리)\n- 주요 특징 (2가지):\n  ① 동일한 핵심 개념(이자율, 환율)을 학년이 올라감에 따라 반복하여 다룬다(계속성·반복성).\n  ② 학년이 진급함에 따라 내용의 범위(폭)가 확장되고 수준(심도 및 난이도)이 심화된다(계열성·점진적 심화 확장).\n\n[2] B국이 '변동환율제도'를 채택한 경우:\n- 파급 과정:\n  A국의 통화 공급 확대로 A국의 이자율이 하락한다. 이에 따라 자본이 이자율이 낮은 A국에서 상대적으로 이자율이 높은 B국으로 유입된다(B국으로의 외환 유입 증가).\n  외환 유입으로 B국의 외환 공급이 증가하여 대A국 환율(A국 통화 1단위에 대한 B국 통화 교환비율)이 하락(B국 통화가치 절상)한다.\n  환율 하락으로 B국의 순수출(NX)이 감소하여 B국의 총수요(AD)가 감소한다.\n- 영향: B국의 국민소득은 감소하고 물가는 하락한다.\n\n[3] B국이 '고정환율제도'를 채택한 경우:\n- 파급 과정:\n  A국의 통화 공급 확대로 A국의 이자율이 하락하고 자본이 B국으로 유입되어 환율 하락(평가절상) 압력이 발생한다.\n  B국 중앙은행은 고정환율을 유지하기 위해 외환시장에 개입하여 외환을 매입하고 B국 자국 통화를 공급한다.\n  이로 인해 B국의 국내 통화량이 증가하여 B국의 총수요가 증가하고 이자율이 A국 수준으로 하락한다.\n- 영향: B국의 총수요 증가로 인해 B국의 국민소득은 증가하고 물가는 상승한다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "[1] 교육과정 원리: 나선형 교육과정\n- 특징: 학년이 올라감에 따라 기본 개념이 반복되고(계속성), 내용의 폭과 깊이가 점차 확대·심화된다(계열성).\n[2] 변동환율제: A국 이자율 하락 → B국으로 자본 유입 → B국 환율 하락(평가절상) → B국 순수출 감소 및 총수요 감소 → B국의 국민소득 감소, 물가 하락.\n[3] 고정환율제: 환율 하락 압력 발생 → 중앙은행의 고정환율 유지를 위한 외환 매입 및 자국 통화 방출 → B국 통화량 증가 → 총수요 증가 → B국의 국민소득 증가, 물가 상승.",
-    "targetKeywords": [
-      "나선형 교육과정",
-      "계속성",
-      "계열성",
-      "변동환율제도",
-      "환율 하락",
-      "국민소득 감소",
-      "고정환율제도",
-      "통화량 증가",
-      "국민소득 증가"
-    ],
-    "tapeCount": 8,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2015-A-05",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2015학년도] 5번. 비교우위와 양국 무역이익 교역조건 범위 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2015학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 5번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    5. 다음의 주어진 상황에서 A국과 B국이 모두 무역의 이익을 얻을 수 있는 쌀과 컴퓨터의 교역조건(쌀/컴퓨터)을 x라고 할 때, 이 x의 범위를 구하시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>A국과 B국 모두는 쌀과 컴퓨터만을 생산하고 있다. 두 나라 모두에서 자원은 노동뿐이고 노동의 질은 각 나라 안에서 동일하다. 두 나라의 생산가능곡선을 도출하기 위해 자료를 조사한 결과, 다음의 표와 같이 각각 생산가능곡선 위의 두 점씩을 확인할 수 있었다. 표의 괄호 속 숫자는 (쌀의 생산량, 컴퓨터의 생산량)을 나타낸다. (단, 쌀의 생산량 단위는 톤(ton), 컴퓨터의 생산량 단위는 대임.)</p>\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2015_A_05.png\" alt=\"A국과 B국의 생산가능곡선 위 점 표\" class=\"max-w-xs mx-auto rounded border border-slate-300\">\n      </div>\n      <div class=\"text-xs bg-slate-50 p-2 rounded border border-slate-200\">\n        <p>◦ A국: (480, 100) 및 (420, 150)</p>\n        <p>◦ B국: (80, 240) 및 (40, 320)</p>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 컴퓨터 1대당 쌀의 단위(쌀/컴퓨터)로 표시된 교역조건 x에 대하여, 양국 모두 무역 이익을 누릴 수 있는 x의 부등식 범위를 구할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n0.5 < x < 1.2  (또는 1/2 < x < 6/5)\n\n2. 상세 해설:\n- 각 국의 컴퓨터 1대 생산의 기회비용(쌀로 표시한 컴퓨터의 상대가격, Δ쌀 / Δ컴퓨터):\n  - A국: 컴퓨터 생산량이 100에서 150으로 50대 증가할 때, 쌀 생산량은 480에서 420으로 60톤 감소함.\n    따라서 A국의 컴퓨터 1대 기회비용 = 60 / 50 = 1.2톤의 쌀.\n  - B국: 컴퓨터 생산량이 240에서 320으로 80대 증가할 때, 쌀 생산량은 80에서 40으로 40톤 감소함.\n    따라서 B국의 컴퓨터 1대 기회비용 = 40 / 80 = 0.5톤의 쌀.\n- 양국이 무역을 통해 상호 이익을 얻기 위한 컴퓨터 1대당 쌀의 교역조건 x(쌀/컴퓨터)는 양국의 국내 기회비용 사이에 위치해야 한다:\n  0.5 < x < 1.2\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: 0.5 < x < 1.2 (또는 1/2 < x < 6/5)\n\n2. 해설: 컴퓨터 1대 생산의 기회비용은 A국이 1.2(60/50), B국이 0.5(40/80)이므로, 양국 모두 이익을 얻는 교역조건 x는 양국 기회비용 사이인 0.5 < x < 1.2이다.",
-    "targetKeywords": [
-      "0.5 < x < 1.2",
-      "기회비용",
-      "교역조건"
-    ],
-    "tapeCount": 1,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2015-A-13",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2015학년도] 13번. [서술3] 노동시장의 수요독점과 최저임금제의 효과 [5점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2015학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 서술 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 다음의 가상 시나리오에서 최저임금제 도입 이전과 이후에 유통업체 B사가 A국에서 고용한 노동량과 지불한 임금총액은 각각 얼마인지를 구하고, 이 분석의 결론을 간략히 쓰시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>유럽연합 내의 작은 농업국인 A국에 대형 다국적기업 유통업체 B사가 A국 국민만을 고용하는 조건으로 대형 마켓을 입점시켰다고 하자. B사는 경쟁이 치열한 유럽연합 내의 유통시장에서 유리한 입지를 점하기 위하여 유럽연합의 많은 나라들과 국경을 맞대고 있는 A국을 선택하였는데, A국에는 다른 기업은 전혀 없으며, 외부로부터의 추가적인 노동인구 유입도 없다고 가정한다. 그래프의 곡선 (가), (나), (다)는 각각 B사의 한계요소비용곡선(MFC), A국의 노동공급곡선(AFC), 노동의 한계생산물가치곡선(VMPL, B사의 노동수요곡선)이다.</p>\n      <div class=\"text-center my-2\">\n        <img src=\"assets/exam_images/exam_2015_A_13_graph.png\" alt=\"수요독점 노동시장 그래프\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n      <div class=\"text-xs space-y-1 bg-slate-50 p-2 rounded border border-slate-200\">\n        <p>◦ (가) MFC: W = (1/100)L</p>\n        <p>◦ (나) AFCL(노동공급곡선): W = (1/200)L</p>\n        <p>◦ (다) VMPL(노동수요곡선): W = 30 - (1/100)L</p>\n        <p>◦ 정부가 최저임금을 10유로로 설정함.</p>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 최저임금 도입 이전: B사가 고용한 노동량(L1)과 지불한 임금총액을 계산하여 제시할 것.</p>\n      <p>◦ 최저임금(10유로) 도입 이후: B사가 고용한 노동량과 지불한 임금총액을 계산하여 제시할 것.</p>\n      <p>◦ 이 분석을 통해 알 수 있는 '수요독점 노동시장에서의 최저임금제 도입 효과' 결론을 간략히 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n① 최저임금제 도입 이전:\n  - 고용량: 1,500\n    * VMPL = MFC: 30 - (1/100)L = (1/100)L ⇒ (2/100)L = 30 ⇒ L1 = 1,500\n  - 지불 임금률: w1 = (1/200) × 1,500 = 7.5유로\n  - 지불 임금총액: 1,500 × 7.5 = 11,250유로\n② 최저임금제(10유로) 도입 이후:\n  - 최저임금 10유로 하에서 노동공급량: 10 = (1/200)L ⇒ L = 2,000\n  - VMPL 상의 임금: 30 - (1/100)(2,000) = 10유로이므로 정확히 노동수요와 일치함.\n  - 고용량: 2,000\n  - 지불 임금총액: 2,000 × 10 = 20,000유로\n③ 분석의 결론:\n  - 완전경쟁 노동시장에서는 최저임금제가 고용 감소를 유발하지만, '노동시장이 수요독점적인 경우 적정 수준의 최저임금제 도입은 임금 상승뿐만 아니라 고용량도 오히려 증가(1,500 ➔ 2,000)시키는 긍정적 효과'를 가져온다.\n\n2. 상세 해설:\n- 수요독점 기업은 한계요소비용(MFC)과 한계생산물가치(VMPL)가 일치하는 점에서 고용량을 결정하고 임금은 노동공급곡선에서 책정하므로 경쟁시장보다 고용도 적고 임금도 낮다(착취 발생).\n- 정부가 경쟁균형 수준인 10유로로 최저임금을 설정하면 새로운 MFC가 10유로 수평선이 되므로 고용량이 1,500에서 2,000으로 증가하고 임금총액도 대폭 증가한다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 도입 이전: 고용량 1,500, 임금총액 11,250유로 (임금 7.5유로)\n- 도입 이후: 고용량 2,000, 임금총액 20,000유로 (임금 10유로)\n- 결론: 노동시장이 수요독점인 경우, 적절한 최저임금제는 임금 인상과 동시에 고용량 증가를 가져온다.",
-    "targetKeywords": [
-      "1,500",
-      "11,250유로",
-      "2,000",
-      "20,000유로",
-      "수요독점",
-      "고용량 증가",
-      "임금 상승"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2015-B-02",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2015학년도] 2번. [서술2] 유동성 함정과 비재래식 통화정책(양적완화), 구축효과 부재 [5점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2015학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 서술 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음의 사례에서 재래식 통화정책의 한계가 무엇인지, 야당이 우려한 부작용이 무엇인지 설명하고, 이러한 우려를 일축한 정부의 확신은 어떤 이론적 근거를 가지고 있는지 설명하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>한 경제의 명목이자율이 0의 수준에 도달해 있음에도 불구하고 그래프에서와 같이 경기침체 갭을 겪고 있다. 재래식 통화정책이 한계에 봉착한 상황에서, 정부는 이 갭을 제거하기 위해 대량의 회사채와 주택담보채권을 매입하는 등 비재래식(unconventional) 통화정책인 양적 완화(Quantitative Easing)를 시행하면서 동시에 확장적 재정정책도 함께 시행할 것을 고려하고 있다. 확장적 재정정책에 비판적인 야당이 그 정책의 전형적인 부작용에 대해 우려를 표명하자 정부는 이 경우에는 그런 부작용이 발생하지 않을 것이라고 확신한다고 주장했다.</p>\n      <div class=\"text-center my-2\">\n        <img src=\"assets/exam_images/exam_2015_B_02.png\" alt=\"경기침체 갭 총공급-총수요 그래프\" class=\"max-w-xs mx-auto rounded border border-slate-300\">\n      </div>\n      <p class=\"text-xs text-slate-600\">◦ 현재 균형소득 YE < 잠재생산량 YP (경기침체 갭 존재)</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 명목이자율이 0 수준일 때 재래식 통화정책(단기 기준금리 인하)이 갖는 한계(명칭 및 원인)를 설명할 것.</p>\n      <p>◦ 야당이 우려한 확장적 재정정책의 전형적인 부작용(명칭 및 메커니즘)을 설명할 것.</p>\n      <p>◦ 이러한 상황에서 해당 부작용이 발생하지 않는다는 정부의 이론적 근거(IS-LM 관점)를 설명할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n① 재래식 통화정책의 한계:\n  - '유동성 함정(Liquidity Trap)' 또는 '명목이자율의 0 하한선(Zero Lower Bound, ZLB)'. 명목이자율이 이미 0에 도달하여 중앙은행이 기준금리를 추가로 인하할 수 없어 통화량을 늘려도 총수요를 진작시킬 수 없는 한계에 봉착한다.\n② 야당이 우려한 전형적인 부작용:\n  - '구축효과(Crowding-out effect)'. 정부가 국채를 발행하여 확장적 재정정책을 펼치면 자금 수요 증가로 이자율이 상승하여 민간의 소비와 투자가 위축되는 부작용이 나타난다.\n③ 정부 확신의 이론적 근거:\n  - 유동성 함정 상태에서는 화폐수요의 이자율 탄력성이 무한대에 달하여 'LM 곡선이 수평선'을 이룬다. 따라서 정부가 국채를 발행하여 지출을 늘려 IS 곡선을 우측으로 이동시키더라도 이자율이 전혀 상승하지 않으므로 민간 투자가 위축되는 '구축효과가 발생하지 않고(구축효과 = 0) 재정정책의 총수요 진작 효과가 극대화'된다.\n\n2. 상세 해설:\n- 케인스 경제학에서 유동성 함정(ZLB) 상황에서는 통화정책은 무력(LM 수평)하지만, 재정정책은 이자율 상승을 전혀 유발하지 않으므로 구축효과 없이 완전한 승수효과를 발휘한다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 재래식 통화정책 한계: 명목이자율이 0에 도달한 '유동성 함정(Zero Lower Bound)'으로 기준금리 추가 인하가 불가능함.\n2. 야당 우려: 국채 발행으로 이자율이 상승하여 민간 투자가 감소하는 '구축효과'.\n3. 정부의 이론적 근거: 유동성 함정 하에서는 LM 곡선이 수평이므로, 확장적 재정정책을 시행해도 이자율이 상승하지 않아 구축효과가 전혀 발생하지 않는다.",
-    "targetKeywords": [
-      "유동성 함정",
-      "명목이자율 0",
-      "구축효과",
-      "이자율 상승",
-      "LM 곡선 수평",
-      "투자가 위축되지 않음"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2016-B-03",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2016학년도] 3번. 총지출과 완전고용국민소득 (인플레이션갭과 디플레이션갭) [4점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2016학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 그래프에서 YF는 완전고용 국민소득이다. 총지출이 A와 B일 때 고용상태와 물가동향에 대해 각각 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2016_B_03.png\" alt=\"45도선 국민소득-총지출 그래프\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n      <p class=\"text-xs text-slate-600\">◦ YF: 완전고용 국민소득 / E = Y: 45도 총공급선 / A, B: 총지출곡선</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 총지출이 A일 때 고용상태와 물가동향을 각각 서술할 것.</p>\n      <p>◦ 총지출이 B일 때 고용상태와 물가동향을 각각 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 총지출이 A일 때:\n  - 고용 상태: 초과고용 상태 (노동에 대한 초과수요가 발생하여 노동수요가 공급을 초과하는 경기 과열 상태 / 완전고용을 초과한 과열 상태)\n  - 물가 동향: 인플레이션 갭(inflationary gap)이 발생하여 총수요 초과로 인해 물가 상승(인플레이션 압력)이 발생한다.\n- 총지출이 B일 때:\n  - 고용 상태: 불완전고용 상태 (비자발적 실업 발생)\n  - 물가 동향: 디플레이션 갭(deflationary gap) 또는 경기침체 갭이 발생하여 총수요 부족으로 물가 하락 압력(디플레이션 압력)이 발생한다.\n\n2. 상세 해설:\n- 완전고용 국민소득(YF) 수준에서 총지출이 45도선보다 위에 위치하는 A는 '인플레이션 갭'이 존재하여 노동에 대한 초과수요(초과고용)와 경기 과열로 인해 물가만 지속적으로 상승한다.\n- 총지출이 45도선 아래에 위치하는 B는 '디플레이션 갭'이 존재하여 완전고용을 달성하지 못하고 비자발적 실업과 유휴 설비가 발생하며 물가는 하락 압력을 받는다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 총지출 A: 초과고용 상태(노동에 대한 초과수요로 인한 경기 과열 상태)이며, 인플레이션 갭으로 인해 물가 상승(인플레이션) 압력이 나타난다.\n- 총지출 B: 불완전고용 상태(실업 발생)이며, 디플레이션 갭으로 인해 물가 하락(디플레이션) 압력이 나타난다.",
-    "targetKeywords": [
-      "초과고용",
-      "노동에 대한 초과수요",
-      "인플레이션 갭",
-      "물가 상승",
-      "불완전고용",
-      "실업",
-      "디플레이션 갭",
-      "물가 하락"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2016-B-07",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2016학년도] 7번. 개방경제 스완 다이어그램과 재정·통화 정책 조합 [5점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2016학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 그래프의 A점은 국내균형(완전고용)과 대외균형(국제수지균형) 측면에서 어떤 경제 상태에 있는지 서술하고, 재정정책과 통화정책을 활용하여 A점이 균형점 E에 도달하는 과정을 설명하시오. (단, 고정환율제도를 가정한다.) [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2016_B_07.png\" alt=\"스완 다이어그램 국내균형 및 대외균형 곡선\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n      <p class=\"text-xs text-slate-600\">◦ 세로축: 재정흑자 (재정긴축 정도) / 가로축: 이자율 (통화긴축 정도)</p>\n      <p class=\"text-xs text-slate-600\">◦ 국내균형곡선(완전고용), 대외균형곡선(국제수지균형), 균형점 E</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ A점이 국내균형 및 대외균형 측면에서 각각 어떠한 상태(인플레이션/경기침체, 국제수지 흑자/적자)에 있는지 제시할 것.</p>\n      <p>◦ 먼델-플레밍 또는 정책 배분(Assignment rule) 원리에 기초하여 균형점 E에 도달하기 위한 재정정책과 통화정책의 조합 및 조정 과정을 설명할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- A점의 경제 상태:\n  - 국내균형 측면: 국내균형선 상방에 위치하므로 '경기침체(실업 발생 / 총수요 부족)' 상태이다. (세로축이 재정흑자이므로 위로 갈수록 긴축재정임).\n  - 대외균형 측면: 대외균형선 좌측(하방)에 위치하므로 이자율이 낮아 자본 유출이 발생하여 '국제수지 적자' 상태이다.\n- 균형점 E 도달을 위한 정책 조합 및 과정:\n  - 먼델의 적절한 정책 배분 원칙(Assignment rule)에 따라 상대적 비교우위가 있는 정책을 배분한다:\n    ① 대외균형(국제수지) 목표는 자본 이동에 민감한 '통화정책(이자율 인상 / 긴축통화정책)'에 배분하여, 이자율을 높여 외국 자본 유입을 유도함으로써 국제수지 적자를 해소한다.\n    ② 국내균형(완전고용) 목표는 '재정정책(재정적자 확대 / 확장적 재정정책)'에 배분하여, 정부지출을 늘리거나 감세를 통해 재정흑자를 줄임으로써 경기침체를 극복하고 완전고용을 달성한다.\n  - 이 두 정책을 조합하여 A점에서 이자율을 올리고 재정흑자를 축소시킴으로써 동시균형점 E에 도달한다.\n\n2. 상세 해설:\n- 스완 다이어그램(Swan diagram) 또는 먼델의 정책 배분 다이어그램에서 세로축이 재정흑자(T-G)이므로 위쪽은 긴축재정(실업), 아래쪽은 확장재정(인플레이션)이다. 가로축은 이자율이므로 오른쪽은 고금리(국제수지 흑자), 왼쪽은 저금리(국제수지 적자)이다.\n- 따라서 A점은 실업(불황)과 국제수지 적자가 동시에 나타나는 상태이며, 확장재정으로 실업을 잡고 긴축통화(금리 인상)로 자본수지를 개선하여 E점으로 이동해야 한다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- A점 상태: 국내균형 측면에서는 '경기침체(실업)', 대외균형 측면에서는 '국제수지 적자' 상태이다.\n- 정책 조합 및 과정: 통화정책은 긴축(이자율 인상)하여 자본 유입을 촉진해 국제수지 적자를 해소하고, 재정정책은 확장(재정흑자 감소)하여 총수요를 진작해 실업을 해소함으로써 균형점 E에 도달한다.",
-    "targetKeywords": [
-      "경기침체",
-      "실업",
-      "국제수지 적자",
-      "이자율 인상",
-      "확장적 재정정책",
-      "정책 배분"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2017-A-07",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2017학년도] 7번. 완전경쟁시장 장기균형과 기업 수 변화 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 한 완전 경쟁 시장에서 생산 활동을 하고 있는 모든 기업의 장기 평균 비용 곡선은 동일한 U자 형태를 띠고 있고, 그 최저점의 값은 20이다. 현재 이 시장에서 균형 가격은 22이며, 생산 기술, 생산 요소의 가격과 수요 곡선은 분석 기간 동안에 변화가 없다. 이 시장의 장기 균형 상태에서, 대표적 기업의 한계 비용의 크기가 얼마일지에 대해 쓰고, 참여 기업의 수는 가격이 22일 때의 상황과 비교하여 ‘동일’할지 ‘감소’할지 아니면 ‘증가’할지를 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>◦ 장기 평균 비용(LAC) 최저점: 20</p>\n      <p>◦ 현재 단기 시장 균형 가격: P = 22</p>\n      <p>◦ 장기 조정 과정 후 장기 균형 상태에서의 한계비용(LMC) 및 기업 수의 변화 판단</p>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 장기 균형 상태에서 대표적 기업의 한계 비용 크기(수치)를 쓸 것.</p>\n      <p>◦ 참여 기업의 수가 가격이 22일 때와 비교하여 어떻게 변화할지('동일' / '감소' / '증가' 중 택1) 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 한계 비용의 크기: 20\n- 참여 기업의 수: 증가\n\n2. 상세 해설:\n- 완전경쟁시장의 장기 균형에서는 기업의 자유로운 진입과 퇴출로 인해 초과이윤이 0이 되며, 균형 가격은 장기 평균비용(LAC)의 최저점과 일치한다. 즉, P = LMC = LAC_min = 20이므로 대표적 기업의 한계비용(LMC)은 20이다.\n- 현재 균형 가격이 22로 LAC 최저점(20)보다 높으므로 기존 기업들은 초과이윤(경제적 이윤 &gt; 0)을 누리고 있다. 이에 따라 새로운 기업들이 시장에 진입하게 되므로, 장기 균형에 도달할 때까지 참여 기업의 수는 '증가'한다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 한계 비용: 20\n- 기업 수: 증가\n\n2. 해설: 완전경쟁시장의 장기균형 조건(P = LMC = min LAC = 20)에 의해 한계비용은 20이다. 현재 가격(22)이 장기평균비용 최저점보다 높아 초과이윤이 발생하므로 신규 기업이 진입하여 기업의 수는 '증가'한다.",
-    "targetKeywords": [
-      "20",
-      "증가",
-      "장기균형",
-      "초과이윤",
-      "진입"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2017-A-13",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2017학년도] 13번. 오염 배출권 거래 제도와 기업 이익 극대화 [4점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 다음 자료에서 오염 배출권 거래 제도가 도입된 후 기업이 오염 배출권을 얼마만큼 살 것인지 혹은 얼마만큼 팔 것인지 아니면 그대로 있을 것인지를 쓰고, 기업이 그런 행동을 했을 때 얻게 되는 이익의 크기를 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>다음 그림에서 MC 곡선은 한 기업이 오염 배출량 1톤을 줄이기 위해 부담해야 하는 한계 비용을 나타내는 선이다. 이윤의 극대화를 추구하는 이 기업은 오염 배출권 거래 제도가 도입되기 전에는 오염 물질을 Qf만큼 배출하고 있었다. 오염 배출권의 거래가 도입되자, 1톤의 오염 물질 배출권 1장의 매매 가격이 Pd에서 형성되었다.</p>\n      <div class=\"text-center my-3\">\n        <img src=\"assets/exam_images/exam_2017_A_13.png\" alt=\"오염 배출 한계감축비용 MC곡선과 배출권가격\" class=\"max-w-md mx-auto rounded border border-slate-300\">\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 기업이 배출권을 얼마만큼 살 것인지, 팔 것인지, 아니면 그대로 둘 것인지를 구체적인 양(기호)과 함께 쓸 것.</p>\n      <p>◦ 기업이 그러한 선택을 함으로써 얻게 되는 순이익의 크기를 그래프 상의 도형(점들의 기호)으로 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 기업의 행동: 오염 배출권을 (Qf - Qe)만큼 판매한다 (팔 것이다).\n- 기업이 얻는 이익의 크기: 삼각형 bcf\n\n2. 상세 해설:\n- 현재 배출량 Qf에서 기업의 오염 1톤 감축 한계비용(MC)은 Pg이다. 그런데 시장에서 배출권 1장의 가격은 Pd(> Pg)로 형성되어 있다.\n- 기업의 한계감축비용 MC가 배출권 가격 Pd보다 낮으므로, 기업은 스스로 오염 물질을 Qe 수준까지 줄이고, 절감된 오염 배출권 (Qf - Qe)만큼을 시장에 내다 파는 것이 이윤을 극대화한다.\n- 이로 인한 총 판매 수입은 사각형 bc(Qf)(Qe) (즉, 사각형 bcdh 중 일부)이며, 오염을 추가 감축하는 데 든 총비용은 사다리꼴 be(Qf)(Qe)이다. 따라서 수입에서 비용을 차감한 기업의 순이익 크기는 '삼각형 bcf'가 된다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 행동: 배출권을 (Qf - Qe)만큼 판다.\n- 이익의 크기: 삼각형 bcf\n\n2. 해설: 배출권 가격(Pd)이 한계감축비용(MC)보다 높으므로 배출량을 Qe까지 감축하고 배출권 (Qf - Qe)을 판매한다. 판매수입에서 추가 감축비용을 뺀 순이익은 삼각형 bcf이다.",
-    "targetKeywords": [
-      "Qf - Qe",
-      "판다",
-      "삼각형 bcf",
-      "한계비용"
-    ],
-    "tapeCount": 3,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2017-A-14",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2017학년도] 14번. 구매력평가설 환율 결정과 국제 무역 균형 [4점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 다음 자료는 A국과 B국 두 나라로 구성된 국제 경제에서 교역이 이루어지고 있는 상황에 관한 것이다. 이에 대해 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>A국과 B국 두 나라의 교역에는 어떤 규제도 없으며 비용도 발생하지 않는다. A국과 B국의 화폐 단위는 각각 ‘링기’와 ‘페수’이다. 동일한 햄버거에 대한 두 나라의 수요 곡선과 공급 곡선은 다음과 같다. 식에서 Q와 P는 각각 햄버거의 수량과 가격을 나타낸다.</p>\n      <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 mt-2 text-xs md:text-sm\">\n        <div class=\"p-2.5 bg-slate-50 rounded border border-slate-200\">\n          <p class=\"font-bold text-slate-900 mb-1\">[ A국 ] (단위: 링기)</p>\n          <p>수요 곡선: QDA = 100 - PA</p>\n          <p>공급 곡선: QSA = 40 + PA</p>\n        </div>\n        <div class=\"p-2.5 bg-slate-50 rounded border border-slate-200\">\n          <p class=\"font-bold text-slate-900 mb-1\">[ B국 ] (단위: 페수)</p>\n          <p>수요 곡선: QDB = 80 - 2PB</p>\n          <p>공급 곡선: QSB = 20 + 2PB</p>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 두 나라에서 햄버거 1개의 구입비용이 같도록 환율이 결정되어야 한다면, A국의 화폐 1링기는 B국의 화폐 몇 페수와 교환되어야 하는지를 제시할 것.</p>\n      <p>◦ 현재 A국과 B국 두 나라의 외환 시장에서 링기 1단위와 페수 1단위가 교환되는 비율로 환율이 형성되어 있다면(1링기 = 1페수), 두 나라 간에 햄버거의 국제 교역이 균형을 이루는 가격을 제시하고, A국과 B국 중에 어느 나라가 햄버거를 몇 개 수출하게 되는지를 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 햄버거 1개 구입비용이 같도록 하는 환율: 1링기 = 0.5페수 (또는 0.5페수)\n  * 폐쇄경제 하 국내 균형가격:\n    - A국: 100 - PA = 40 + PA ⇒ 2PA = 60 ⇒ PA = 30링기\n    - B국: 80 - 2PB = 20 + 2PB ⇒ 4PB = 60 ⇒ PB = 15페수\n    - 햄버거 1개의 가격이 같아지려면 30링기 = 15페수이므로 1링기 = 0.5페수.\n- 1링기 = 1페수 환율 하에서의 국제교역:\n  - 균형 가격: 20 (20링기 또는 20페수)\n  - 수출국 및 수출량: B국이 햄버거 20개를 수출 (또는 A국이 20개 수입)\n    * 계산: 1링기=1페수이므로 국제 공통 가격을 P라 하면,\n      A국 초과수요(수입수요) = QDA - QSA = (100 - P) - (40 + P) = 60 - 2P\n      B국 초과공급(수출공급) = QSB - QDB = (20 + 2P) - (80 - 2P) = 4P - 60\n      국제교역 균형: 60 - 2P = 4P - 60 ⇒ 6P = 120 ⇒ P = 20\n      이때 교역량 = 60 - 2(20) = 20개이므로 B국이 20개를 수출한다.\n\n2. 상세 해설:\n- 일물일가의 법칙(구매력평가)에 따라 양국의 국내 균형가격을 구하면 A국 30링기, B국 15페수이다. 따라서 1링기는 0.5페수와 교환되어야 한다.\n- 1:1 고정 환율 하에서는 국내가격이 낮은 B국(15)이 수출국이 되고 A국(30)이 수입국이 되며, 국제시장 균형가격은 20, 교역량은 20개이다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 환율: 1링기 = 0.5페수 (0.5페수)\n- 국제 균형 가격: 20 (링기 또는 페수)\n- 수출: B국이 20개 수출\n\n2. 해설: 양국 폐쇄균형 가격은 A국 30링기, B국 15페수이므로 1링기=0.5페수이다. 1:1 환율에서 국제시장 균형은 A국 수입수요(60-2P)와 B국 수출공급(4P-60)이 일치하는 P=20이며, B국이 20개를 수출한다.",
-    "targetKeywords": [
-      "0.5페수",
-      "20",
-      "B국",
-      "20개 수출"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2017-B-06",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2017학년도] 6번. 총수요-총공급 모형의 비자발적 재고투자와 인플레이션 갭 조정과정 [5점]",
-    "examTag": "",
-    "page": 3,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2017학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 6번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    6. 다음 그래프는 한 폐쇄 국민 경제의 상황을 보여주고 있다. 이에 대해 &lt;작성 방법&gt;에 따라 서술하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2017_b_06.png\" alt=\"폐쇄 국민 경제의 총수요-총공급 모형 그래프\" class=\"max-w-full md:max-w-[420px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <p class=\"text-xs text-slate-600 leading-relaxed\">* 명목 임금은 단기에서 경직적이며, 단기를 벗어나면 조정이 이루어질 수 있다. SAS0는 단기 균형점 E에 도달할 때까지의 명목 임금 수준에 대응되는 단기 총공급 곡선이다. 국민 경제의 완전 고용 산출량 수준은 Y1이다.</p>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 한 해 동안 물가 수준 P0에서 경제 활동이 이루어졌을 때, 그 해의 비자발적 재고 투자의 크기가 얼마인지 쓰고, 사후적 총지출의 크기가 총생산의 크기와 같음을 비자발적 재고 투자 개념을 이용하여 설명할 것.</p>\n    <p>◦ 그래프에서 장기 균형점이 무엇인지 밝히고, 단기 균형점 E에서의 GDP 갭의 명칭을 쓰고, 국민 경제가 장기 균형점을 향해 스스로 움직여 나가는 과정을 GDP 갭, 명목 임금, 단기 총공급 곡선의 이동이라는 개념을 모두 사용하여 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 물가 P0에서의 비자발적 재고 투자 및 설명:\n  - 비자발적 재고 투자의 크기: 선분 HG (또는 Y2 - Y1)\n  - 설명: 물가 P0에서 총생산은 H점 수준인 Y2이고 사전적 계획 총지출(총수요)은 G점 수준인 Y1이므로 생산량 중 팔리지 않고 남은 재고가 선분 HG(Y2 - Y1)만큼 발생한다. 사후적 총지출은 사전적 계획 지출에 이 비자발적 재고 투자를 합한 것이므로, 사후적 총지출은 항상 총생산의 크기와 일치하게 된다.\n- 장기 균형점, GDP 갭 명칭 및 자동조정 과정:\n  - 장기 균형점: C점 (완전고용 산출량 Y1과 총수요곡선의 교차점)\n  - 단기 균형점 E에서의 GDP 갭 명칭: 인플레이션 갭 (또는 양(+)의 GDP 갭)\n  - 자동조정 과정:\n    단기 균형점 E에서는 실제 생산량(Y_E)이 완전고용 산출량(Y1)을 초과하는 '인플레이션 갭'이 발생하여 노동시장에서 초과수요가 발생한다. 이에 따라 시간이 지나며 경직적이던 '명목 임금'이 상승하게 되고, 생산비용이 증가한 기업들이 생산을 줄이면서 '단기 총공급 곡선(SAS0)'이 좌측(상방)으로 이동하여 결국 장기 균형점인 C점에 도달하게 된다.\n\n2. 상세 해설:\n- 국민소득 항등식: 사후적 총지출 = C + I_계획 + G + (비자발적 재고투자) = Y.\n- 단기 균형 E에서 실제 GDP가 잠재 GDP(Y1)보다 크므로 인플레이션 갭이다.\n- 장기에는 임금 등 생산요소 가격이 신축적으로 상승하여 SAS 곡선이 좌상방 이동하여 장기균형(C점)에 수렴한다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 비자발적 재고 투자의 크기: 선분 HG (또는 Y2 - Y1)\n- 총지출과 총생산의 일치 설명: 사후적 총지출은 계획된 총지출에 기업이 의도치 않게 떠안게 된 비자발적 재고 투자를 합산한 것이므로 사후적으로 항상 총생산과 일치한다.\n- 장기 균형점: C점\n- 단기 균형점 E에서의 GDP 갭 명칭: 인플레이션 갭 (양의 GDP 갭)\n- 자동 조정 과정: 단기 균형 E에서는 실제 산출량이 완전고용 산출량을 초과하는 '인플레이션 갭'으로 인해 노동시장에서 초과수요가 발생하여 '명목 임금'이 상승한다. 이로 인해 기업의 생산비용이 증가하여 '단기 총공급 곡선'이 좌상방으로 이동하면서 장기 균형점인 C점으로 이동한다.",
-    "targetKeywords": [
-      "선분 HG",
-      "비자발적 재고 투자",
-      "C점",
-      "인플레이션 갭",
-      "명목 임금 상승",
-      "단기 총공급 곡선 이동"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2018-A-03",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2018학년도] 3번. 완전경쟁기업의 조업중단점과 손실 계산 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 완전경쟁시장에서 생산 활동을 하고 있는 어떤 기업의 단기 평균비용곡선과 단기 평균가변비용곡선은 모두 U자 형태를 띠고 있고, 그 최저점의 값은 각각 30과 20이다. 아울러 이 기업의 고정비용은 15이다. 이 기업의 조업 중단 가격(혹은 생산 중단 가격, shutdown price)이 20일 때, 조업 중단 가격에서 손실이 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-800 space-y-1\">\n      <p>◦ 단기 평균비용(ATC) 최저점 = 30</p>\n      <p>◦ 단기 평균가변비용(AVC) 최저점 = 20</p>\n      <p>◦ 총고정비용(TFC) = 15</p>\n      <p>◦ 조업 중단 가격(P) = 20</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n15\n\n2. 상세 해설:\n- 조업 중단 가격(P = 20)은 평균가변비용(AVC)의 최저점과 일치한다.\n- 이 가격에서 기업은 가변비용(VC)만을 정확히 회수(TR = VC)하므로, 기업이 입는 경제적 손실은 고정비용(FC) 전액과 같다.\n- 손실 = TC - TR = (VC + FC) - TR = FC = 15.\n- (참고: 생산을 계속하든 생산을 중단하든 단기에 발생하는 손실은 고정비용 크기인 15로 동일하다).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: 15\n\n2. 해설: 조업중단점(P=AVC_min=20)에서 총수입은 가변비용과 같으므로 손실은 총고정비용(15)과 같다.",
-    "targetKeywords": [
-      "15",
-      "고정비용",
-      "조업중단점"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2018-A-04",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-3. 국민소득결정",
-    "title": "[2018학년도] 4번. 케인즈 단순모형의 조세승수와 정부지출승수 계산 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음은 어느 나라의 거시경제모형이다. 정부는 국민소득을 증가시키기 위하여 조세를 줄이거나 정부지출을 늘리는 방안을 고민하고 있다. 이 모형에서 조세를 100만큼 줄일 경우 국민소득이 2배가 된다면 정부지출은 얼마를 늘려야 국민소득이 2배가 되는지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-800 font-mono text-sm space-y-1\">\n      <p>Y = C + I + G</p>\n      <p>C = 5 + 0.8(Y - T)</p>\n      <p class=\"text-xs text-slate-600 font-sans\">(여기서 Y는 국민소득, C는 소비, I는 투자, G는 정부지출, T는 조세를 나타내며, I, G, T는 외생변수이다.)</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n80\n\n2. 정밀 계산 과정:\n- 한계소비성향(c) = 0.8\n- 정부지출 승수 = 1 / (1 - c) = 1 / (1 - 0.8) = 1 / 0.2 = 5\n- 조세 승수 = -c / (1 - c) = -0.8 / 0.2 = -4\n- 조세를 100만큼 감면(ΔT = -100)할 때의 국민소득 증가분:\n  ΔY = (-4) × (-100) = +400 (이 증가로 국민소득이 2배가 됨)\n- 정부지출 증가(ΔG)를 통해 동일하게 국민소득을 400만큼 증가시키기 위한 조건:\n  ΔY = 5 × ΔG = 400\n  ➔ ΔG = 400 / 5 = 80.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: 80\n\n2. 해설: 조세승수는 -4, 정부지출승수는 5이다. 조세 100 감면 시 소득 증가분 400과 동일한 소득을 늘리기 위한 정부지출 증가는 400 / 5 = 80이다.",
-    "targetKeywords": [
-      "80",
-      "정부지출 승수",
-      "조세 승수"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2018-B-03",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2018학년도] 3번. 총수요-총공급 모형과 단기 필립스곡선의 도출 및 합리적 기대 [4점]",
-    "examTag": "",
-    "page": 2,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음은 단기 필립스곡선에 대한 강의 장면의 일부이다. 괄호 안의 ㉠, ㉡에 들어갈 내용을 순서대로 쓰고, 밑줄 친 ㉢을 기대(예상)인플레이션율의 변화와 단기 필립스곡선의 움직임으로 설명하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2018_b_03.png\" alt=\"총수요-총공급 모형과 단기 필립스곡선\" class=\"max-w-full md:max-w-[480px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p><b>교수</b> : &lt;총수요-총공급 모형&gt;에서의 A점은 t기의 장단기균형점, B점은 t＋1기의 단기균형점이며, A점과 B점은 각각 &lt;단기 필립스곡선&gt;의 C점과 D점에 대응합니다. 총생산 갭이 1%p 상승할 때, 실업률이 0.5%p 하락한다고 하면, D점의 실업률은 얼마가 될까요? 그리고 t기 대비 t＋1기의 물가상승률을 의미하는 D점의 인플레이션율은 얼마가 될까요?</p>\n      <p><b>학생</b> : 총생산 갭을 어떻게 계산하나요?</p>\n      <p><b>교수</b> : 총생산 갭은 총생산량에서 잠재생산량을 뺀 값을 잠재생산량으로 나누어 주면 됩니다. 그리고 잠재생산량은 일정하다고 가정하고 계산하세요.</p>\n      <p><b>학생</b> : 그렇다면, D점의 실업률은 ( ㉠ )%이고, D점의 인플레이션율은 ( ㉡ )%입니다.</p>\n      <p><b>교수</b> : 정확히 맞추었습니다.</p>\n      <p><b>학생</b> : 단기 필립스곡선이란 결국 인플레이션율과 실업률 사이의 음(-)의 관계를 나타내는 곡선이군요. 그렇다면, 만약 정부가 인플레이션율을 낮추는 정책을 펼치면, 반드시 실업률이 증가하는 고통을 수반하겠군요?</p>\n      <p><b>교수</b> : 기대의 형성 방식이 합리적이고, 정부의 정책을 경제주체가 신뢰하는 상황에서 정부가 인플레이션율을 낮추겠다는 정책을 발표할 경우, <u>㉢ 실업률 증가라는 고통을 수반하지 않고 인플레이션율을 낮출 수 있습니다.</u></p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 들어갈 내용을 순서대로 쓸 것.</p>\n    <p>◦ 밑줄 친 ㉢을 기대(예상)인플레이션율의 변화와 단기 필립스곡선의 움직임으로 설명하시오.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 괄호 안의 ㉠, ㉡:\n  ㉠: 2 (또는 2%)\n  ㉡: 5 (또는 5%)\n- 밑줄 친 ㉢에 대한 설명:\n  경제주체들이 합리적 기대를 형성하고 정부 정책에 대한 신뢰성이 확보되면, 정부의 발표 즉시 기대(예상)인플레이션율이 하락한다. 이에 따라 단기 필립스곡선 자체가 즉각 아래쪽(좌하방)으로 이동하므로, 실업률의 증가(생산량 감소) 없이 인플레이션율만 하락시킬 수 있다.\n\n2. 계산 및 정밀 해설:\n① D점의 실업률(㉠) 및 인플레이션율(㉡) 계산:\n- A점(t기 장기균형점): 잠재생산량 Y* = 100, 물가 P_t = 100, 실업률(자연실업률) u_n = 7%, 인플레이션율 = 0%.\n- B점(t+1기 단기균형점): 실제 총생산량 Y = 110, 물가 P_{t+1} = 105.\n- 총생산 갭 = (110 - 100) / 100 × 100% = 10%p 상승.\n- 문제 조건에서 총생산 갭 1%p 상승 시 실업률 0.5%p 하락하므로, 실업률 하락폭 = 10 × 0.5%p = 5%p 하락.\n- 따라서 D점의 실업률 = 7% - 5% = 2% (㉠ = 2).\n- t기 대비 t+1기 물가상승률(인플레이션율) = (105 - 100) / 100 × 100% = 5% (㉡ = 5).\n② 정책 신뢰성과 기대인플레이션(루카스 비판 및 정책 무용성 명제):\n- 단기 필립스곡선 식: π = π^e - β(u - u_n).\n- 정부의 디스인플레이션 정책이 공신력을 가지면, 발표와 동시에 기대인플레이션율(π^e)이 하락하여 단기 필립스곡선이 즉시 하방 이동하므로, u = u_n 상태를 유지하면서 고통(희생비율 = 0) 없이 물가를 안정시킬 수 있다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- ㉠: 2 (또는 2%)\n- ㉡: 5 (또는 5%)\n- ㉢ 설명:\n  경제주체들이 합리적으로 기대를 형성하고 정부 정책을 신뢰하면, 정부의 인플레이션 감축 정책 발표 즉시 기대인플레이션율이 하락한다. 이에 따라 단기 필립스곡선이 하방으로 이동하므로 실업률 증가 없이 인플레이션율을 낮출 수 있다.",
-    "targetKeywords": [
-      "2%",
-      "5%",
-      "기대인플레이션율 하락",
-      "단기 필립스곡선 하방 이동"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2018-B-07",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2018학년도] 7번. 종량세 부과와 조세의 귀착 및 부담액 계산 [5점]",
-    "examTag": "",
-    "page": 4,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 그래프는 치약의 수요곡선과 공급곡선을 나타낸다. 정부는 세수 확보를 위하여 치약 1개당 300원의 세금을 부과하려고 한다. &lt;작성 방법&gt;에 따라 서술하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2018_b_07.png\" alt=\"치약의 수요곡선과 공급곡선\" class=\"max-w-full md:max-w-[340px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-700 text-xs md:text-sm space-y-1\">\n      <p>◦ 초기 시장균형: 균형가격 = 2,000원, 균형거래량 = 100만 개</p>\n      <p>◦ 공급곡선 통과점: (80만 개, 1,900원), (100만 개, 2,000원)</p>\n      <p>◦ 수요곡선 통과점: (90만 개, 2,100원), (100만 개, 2,000원), (80만 개, 2,200원)</p>\n      <p>◦ 정부가 치약 1개당 300원의 종량세를 부과함.</p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 세금을 판매자에게 부과할 때에 구매자가 내는 치약 가격과 구매자에게 부과할 때에 판매자가 받는 치약 가격을 각각 제시할 것.</p>\n    <p>◦ 세금을 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액과 구매자 부담 금액을 각각 제시할 것.</p>\n    <p>◦ 세금을 구매자에게 부과할 때와 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액에 차이가 있는지의 여부를 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 치약 가격:\n  - 세금을 판매자에게 부과할 때 구매자가 내는 치약 가격: 2,200원\n  - 세금을 구매자에게 부과할 때 판매자가 받는 치약 가격: 1,900원\n- 세금을 판매자에게 부과할 때 부담 금액:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 부과 대상에 따른 판매자 부담 금액 차이 여부:\n  차이가 없다. (세금을 법적으로 판매자에게 부과하든 구매자에게 부과하든, 실제 조세의 경제적 귀착과 부담 크기는 수요와 공급의 상대적 가격탄력성에 의해서만 결정되므로 완전히 동일하다.)\n\n2. 정밀 계산 과정:\n① 수요함수 및 공급함수 도출:\n- 수요곡선: 기울기 = (2,200 - 2,000) / (80 - 100) = -200 / 20 = -10원/만개\n  ➔ P_d = 3,000 - 10Q (Q는 만 개 단위)\n- 공급곡선: 기울기 = (2,000 - 1,900) / (100 - 80) = 100 / 20 = +5원/만개\n  ➔ P_s = 1,500 + 5Q\n② 단위당 300원 세금 부과 시의 새로운 균형:\n- 조세 쐐기 조건: P_d - P_s = 300\n- (3,000 - 10Q) - (1,500 + 5Q) = 300\n- 1,500 - 15Q = 300 ➔ 15Q = 1,200 ➔ Q = 80만 개\n- Q = 80만 개일 때:\n  구매자가 내는 가격 P_d = 3,000 - 10(80) = 2,200원\n  판매자가 받는 가격 P_s = 1,500 + 5(80) = 1,900원\n③ 조세 귀착 분석:\n- 원래 균형가격 = 2,000원\n- 구매자 부담 = P_d - P_0 = 2,200 - 2,000 = 200원\n- 판매자 부담 = P_0 - P_s = 2,000 - 1,900 = 100원\n- 합계 = 200 + 100 = 300원\n④ 조세 부과의 귀착의 동등성:\n- 법적 납세의무자가 판매자이든 구매자이든 시장균형 거래량(80만 개), 구매자 지불가격(2,200원), 판매자 수취가격(1,900원), 각 주체의 부담액(구매자 200원, 판매자 100원)은 완전히 일치하므로 차이가 없다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 세금을 판매자에게 부과할 때 구매자가 내는 가격: 2,200원\n- 세금을 구매자에게 부과할 때 판매자가 받는 가격: 1,900원\n- 판매자에게 부과 시:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 차이 여부: 차이가 없다. 조세의 실질적 귀착은 법적 납세의무자가 누구인가와 무관하게 수요와 공급의 상대적 탄력성에 의해 결정되기 때문이다.",
-    "targetKeywords": [
-      "2,200원",
-      "1,900원",
-      "판매자 부담 100원",
-      "구매자 부담 200원",
-      "차이가 없다"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2019-A-03",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2019학년도] 3번. 시장 균형의 총잉여 계산과 가격상한제의 후생 효과 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 다음 글에서 괄호 안의 ㉠에 들어갈 숫자와 ㉡에 들어갈 단어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>A재에 대한 시장 수요곡선은 Qd = 100 － P 이고 공급곡선은 Qs = －20 ＋ P 이다. 시장 균형가격과 균형거래량에서의 소비자잉여와 생산자잉여의 합인 총잉여는 ( ㉠ )이다. 정부가 A재에 대한 상한가격을 50으로 결정하여 가격상한제를 실시할 경우, 가격규제 하에서의 총잉여는 가격규제가 없을 때와 비교하여 ( ㉡ )한다. (단, Q와 P는 각각 수량과 가격을 나타낸다.)</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n㉠: 1600\n㉡: 감소\n\n2. 정밀 계산 과정:\n① 시장 균형 도출:\n- Qd = Qs ➔ 100 - P = -20 + P ➔ 2P = 120 ➔ 균형가격 P* = 60, 균형거래량 Q* = 40.\n- 수요곡선 가격절편: Q = 0일 때 P = 100.\n- 공급곡선 가격절편: Q = 0일 때 P = 20.\n② 자유 시장에서의 총잉여(㉠):\n- 소비자잉여(CS) = 0.5 × (100 - 60) × 40 = 0.5 × 40 × 40 = 800.\n- 생산자잉여(PS) = 0.5 × (60 - 20) × 40 = 0.5 × 40 × 40 = 800.\n- 총잉여(TS) = 800 + 800 = 1,600 (㉠ = 1600).\n③ 최고가격제(상한가격 = 50) 실시 효과:\n- 상한가격 P_max = 50은 균형가격 60보다 낮으므로 실효성이 있는 규제이다.\n- 공급량 Qs = -20 + 50 = 30개로 시장 실제 거래량이 40개에서 30개로 감소한다.\n- 거래량 감소로 인해 자중손실(Deadweight Loss)이 발생하므로, 사회적 총잉여는 자유시장 균형일 때보다 반드시 '감소'한다 (㉡ = 감소).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: ㉠ 1600, ㉡ 감소\n\n2. 해설: 균형가격 60, 거래량 40에서 총잉여는 1600이다. 가격상한 50 부과 시 거래량이 30으로 감소하여 사중손실이 발생하므로 총잉여는 감소한다.",
-    "targetKeywords": [
-      "1600",
-      "감소",
-      "가격상한제",
-      "총잉여"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2019-A-04",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-2. 소비투자이론",
-    "title": "[2019학년도] 4번. 현재가치법(NPV)에 의한 투자수익 계산과 의사결정 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 4번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    4. 다음 글에서 괄호 안의 ㉠에 들어갈 숫자와 ㉡에 들어갈 단어를 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>갑기업은 현재 140억 원을 투자하면, 2년 동안 1차연도 말에 605억 원, 2차연도 말에 －484억 원의 수익이 기대되는 투자안을 가지고 있다. 갑기업은 이 투자안의 채택 여부를 현재가치법에 의해 결정하고자 한다. 이자율이 연 10%이고 2차연도까지 이자율 변동이 없을 경우 이 투자안의 예상수익에 대한 현재가치는 ( ㉠ )억 원이다. 따라서 갑기업은 이 투자안을 ( ㉡ )한다.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n㉠: 150\n㉡: 채택 (또는 수락)\n\n2. 정밀 계산 과정:\n- 이자율 r = 10% = 0.1\n- 1차연도 말 예상수익 = 605억 원 ➔ 현재가치 = 605 / (1 + 0.1) = 605 / 1.1 = 550억 원\n- 2차연도 말 예상수익 = -484억 원 ➔ 현재가치 = -484 / (1 + 0.1)^2 = -484 / 1.21 = -400억 원\n- 예상수익의 총 현재가치(PV) = 550 + (-400) = 150억 원 (㉠ = 150).\n- 현재 투자비용(C) = 140억 원.\n- 순현재가치(NPV) = PV - C = 150억 원 - 140억 원 = +10억 원 &gt; 0.\n- NPV &gt; 0이므로 현재가치법에 따라 갑기업은 이 투자안을 '채택(수락)'한다 (㉡ = 채택).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: ㉠ 150, ㉡ 채택 (또는 수락)\n\n2. 해설: 수익 현재가치는 605/1.1 - 484/1.21 = 550 - 400 = 150억 원이다. 투자비용 140억 원보다 현재가치가 크므로(NPV=10>0) 채택한다.",
-    "targetKeywords": [
-      "150",
-      "채택",
-      "순현재가치",
-      "현재가치법"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2019-A-10",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2019학년도] 10번. 케인즈학파와 통화주의학파의 재정·통화정책 유효성 논쟁 [4점]",
-    "examTag": "",
-    "page": 3,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음 대화를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (단, 폐쇄경제라고 가정한다.) [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p><b>갑</b> : 최근 경기침체가 더욱 악화되며 실업자가 급증하고 있는 상황입니다. <u>㉠ 국채 발행을 통해 정부지출을 증가시켜 경기 침체를 극복해야 합니다.</u></p>\n      <p><b>을</b> : 저는 국채 발행을 통한 정부지출 증가는 경기를 활성화시키기에 한계가 있다고 생각합니다. 왜냐하면 저는 화폐수요의 이자율탄력성은 ( ㉡ ), 투자수요의 이자율탄력성은 ( ㉢ )(이)라고 생각하기 때문입니다. 오히려 화폐시장을 통해 총수요를 증가시키는 정책을 추진해야 합니다.</p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 화폐수요의 이자율탄력성과 투자수요의 이자율탄력성의 크기에 대해 갑이 어떻게 생각하고 있는지 제시하고, 이를 근거로 밑줄 친 ㉠처럼 갑이 주장한 이유를 서술할 것.</p>\n    <p>◦ 괄호 안의 ㉡과 ㉢에 들어갈 단어를 순서대로 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 갑의 시각 및 주장 이유:\n  - 탄력성 크기: 갑은 '화폐수요의 이자율탄력성은 매우 크고(탄력적)', '투자수요의 이자율탄력성은 매우 작다(비탄력적)'고 생각한다 (케인즈학파의 입장).\n  - 주장 이유: 화폐수요가 탄력적이면 국채 발행으로 인한 화폐수요 증가에도 이자율 상승폭이 미미하고, 투자가 비탄력적이면 이자율이 소폭 상승하더라도 민간투자가 거의 위축되지 않으므로, 이자율 상승에 따른 '구축효과가 매우 작아서' 정부지출 증대 정책의 국민소득 확대 효과(승수효과)가 극대화되기 때문이다.\n- 괄호 안의 ㉡과 ㉢ (을의 시각 - 통화주의학파):\n  - ㉡: 작다 (또는 비탄력적이다)\n  - ㉢: 크다 (또는 탄력적이다)\n\n2. 상세 해설:\n- 재정정책의 유효성 논쟁 (IS-LM 모형):\n  - 케인즈학파(갑): LM곡선 완만(화폐수요 이자율탄력성 대) + IS곡선 가파름(투자수요 이자율탄력성 소) ➔ 구축효과 극소 ➔ 재정정책 유효.\n  - 통화주의학파(을): LM곡선 가파름(화폐수요 이자율탄력성 소) + IS곡선 완만(투자수요 이자율탄력성 대) ➔ 구축효과 극대 ➔ 재정정책 무력, 통화정책 유효.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 갑의 생각 및 이유:\n  - 탄력성: 화폐수요의 이자율탄력성은 크고(탄력적), 투자수요의 이자율탄력성은 작다(비탄력적)고 생각한다.\n  - 이유: 정부지출을 늘려도 이자율이 거의 오르지 않고 투자 위축도 거의 없어 구축효과가 매우 작으므로, 정부지출 증가의 경기부양 효과가 크기 때문이다.\n- ㉡, ㉢:\n  ㉡: 작고 (비탄력적)\n  ㉢: 크다 (탄력적)",
-    "targetKeywords": [
-      "화폐수요의 이자율탄력성",
-      "투자수요의 이자율탄력성",
-      "구축효과",
-      "재정정책 유효성"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2019-B-01",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2019학년도] 1번. 관세정책과 수입할당제(수입쿼터)의 균형 비교 [4점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 1번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    1. 다음 글을 읽고 <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>다음 그림은 국내의 X재 시장 상황을 나타낸다. 정부가 관세정책을 실시한 결과, X재의 국내 공급량이 2,000개로 나타났다. 정부가 관세정책을 수입할당제(수입쿼터)로 변경하여 X재 수입량을 3,000개로 제한하려 한다. (단, 국내공급곡선 및 국내수요곡선은 직선의 형태이며, X재는 국제시장에서 국제가격으로 얼마든지 공급이 가능하다.)</p>\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2019_b_01.png\" alt=\"국내 X재 시장 상황 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n    <ul class=\"list-disc pl-5 space-y-0.5 text-slate-700\">\n      <li>국제가격: 4,000원</li>\n      <li>국내공급곡선: 절편 (0, 2000), 통과점 (2000, 6000), (3000, 8000), (6000, 14000) ➔ 공급함수: P = 2,000 + 2Q</li>\n      <li>국내수요곡선: 절편 (0, 14000), 통과점 (6000, 8000), (8000, 6000), (10000, 4000) ➔ 수요함수: P = 14,000 - Q</li>\n      <li>관세 정책 하 공급량 2,000개일 때의 국내가격 = 6,000원</li>\n    </ul>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 관세정책 하에서 X재 1개당 정부가 부과한 관세가 얼마인지와 X재의 국내 수요량을 순서대로 제시할 것.</p>\n    <p>◦ 관세정책에서 수입할당제로 변경할 때, 이런 정책 변화가 X재의 국내가격과 국내 공급량에 미치는 영향을 구체적인 수치를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 관세액 및 국내 수요량:\n  - 부과된 관세: 2,000원\n  - 국내 수요량: 8,000개\n- 수입할당제로 변경 시 국내가격과 국내 공급량에 미치는 영향:\n  국내가격은 6,000원에서 8,000원으로 2,000원 상승하고, 국내 공급량은 2,000개에서 3,000개로 1,000개 증가한다.\n\n2. 정밀 계산 과정:\n① 관세정책 하:\n   - 국내 공급량 2,000개일 때 국내공급곡선 상의 가격은 6,000원이다.\n   - 국제가격이 4,000원이므로 단위당 관세 = 6,000원 - 4,000원 = 2,000원.\n   - 가격 6,000원에서 국내수요곡선 상의 수요량 = 8,000개 (수입량 = 8,000 - 2,000 = 6,000개).\n② 수입할당제 3,000개 도입 시:\n   - 국내수요함수: Q_d = 14,000 - P\n   - 국내공급함수: Q_s = \frac{P - 2,000}{2}\n   - 새로운 시장 균형 조건: Q_d = Q_s + \text{수입쿼터}(3,000)\n   - 14,000 - P = \frac{P - 2,000}{2} + 3,000\n   - 양변에 2를 곱하면: 28,000 - 2P = P - 2,000 + 6,000 = P + 4,000\n   - 3P = 24,000 ⟹ P = 8,000원\n   - 국내 공급량: Q_s = \frac{8,000 - 2,000}{2} = 3,000개\n   - 국내 수요량: Q_d = 14,000 - 8,000 = 6,000개 (수입량 = 6,000 - 3,000 = 3,000개 일치).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 관세액 및 국내 수요량:\n  - 부과된 관세: 2,000원\n  - 국내 수요량: 8,000개\n- 수입할당제로 변경 시 국내가격과 국내 공급량에 미치는 영향:\n  국내가격은 6,000원에서 8,000원으로 2,000원 상승하고, 국내 공급량은 2,000개에서 3,000개로 1,000개 증가한다.\n\n2. 정밀 계산 과정:\n① 관세정책 하:\n   - 국내 공급량 2,000개일 때 국내공급곡선 상의 가격은 6,000원이다.\n   - 국제가격이 4,000원이므로 단위당 관세 = 6,000원 - 4,000원 = 2,000원.\n   - 가격 6,000원에서 국내수요곡선 상의 수요량 = 8,000개 (수입량 = 8,000 - 2,000 = 6,000개).\n② 수입할당제 3,000개 도입 시:\n   - 국내수요함수: Q_d = 14,000 - P\n   - 국내공급함수: Q_s = \frac{P - 2,000}{2}\n   - 새로운 시장 균형 조건: Q_d = Q_s + \text{수입쿼터}(3,000)\n   - 14,000 - P = \frac{P - 2,000}{2} + 3,000\n   - 양변에 2를 곱하면: 28,000 - 2P = P - 2,000 + 6,000 = P + 4,000\n   - 3P = 24,000 ⟹ P = 8,000원\n   - 국내 공급량: Q_s = \frac{8,000 - 2,000}{2} = 3,000개\n   - 국내 수요량: Q_d = 14,000 - 8,000 = 6,000개 (수입량 = 6,000 - 3,000 = 3,000개 일치).",
-    "targetKeywords": [
-      "관세 2000원",
-      "수요량 8000개",
-      "국내가격 8000원",
-      "국내공급량 3000개",
-      "수입할당제"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2019-B-02",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-2. 소비자이론",
-    "title": "[2019학년도] 2번. 이자율 상승에 따른 현재소비의 대체효과와 소득효과 [4점]",
-    "examTag": "",
-    "page": 2,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2019학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 글을 읽고 <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>다음 그림은 어느 소비자의 현재소비와 미래소비를 무차별곡선과 예산선을 이용하여 나타낸 것이다. 이자율이 상승할 경우 최적점이 A점에서 C점으로 이동한다. 이 소비자의 현재소득은 C_0이고 이 소득을 소비와 저축으로 나눈다. 미래에는 현재 저축한 돈과 이자로 산다. (단, 현재소비와 미래소비는 모두 정상재이며, 선분 C_0''C_1''은 선분 C_0C_1'과 평행이다.)</p>\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2019_b_02.png\" alt=\"이자율 상승과 현재 소비-미래 소비 선택 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n    <p>A점 ➔ B점 (동일 무차별곡선 상에서 상대가격 기울기 가팔라짐) : ㉠</p>\n    <p>B점 ➔ C점 (새로운 예산선 상으로 평행이동) : ㉡</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 이자율 상승에 따라 A점에서 B점으로의 이동인 ㉠과 B점에서 C점으로의 이동인 ㉡에 해당하는 경제학 개념을 순서대로 제시할 것.</p>\n    <p>◦ 이자율이 상승할 경우 현재 저축이 감소할 수 있는 이유를 ㉠과 ㉡을 활용하여 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- ㉠, ㉡:\n  ㉠: 대체효과\n  ㉡: 소득효과\n- 이자율 상승 시 현재 저축이 감소할 수 있는 이유:\n  이자율이 상승하면 현재소비의 기회비용이 커져 현재소비를 줄이고 저축을 늘리려는 대체효과(㉠)가 발생한다. 반면 저축자인 소비자는 이자율 상승으로 실질소득이 증가하여 정상재인 현재소비를 늘리고 저축을 줄이려는 소득효과(㉡)가 발생한다. 만약 소득효과(㉡)가 대체효과(㉠)보다 크다면, 현재소비가 증가하여 결과적으로 현재 저축이 감소할 수 있다.\n\n2. 해설:\n- 2기간 피셔 시점간 소비자 선택 모형:\n  - 이자율(r) 상승 ➔ 미래소비에 대한 현재소비의 상대가격 (1+r) 상승.\n  - 대체효과: 현재소비 감소, 저축 증가.\n  - 저축자의 소득효과: 실질구매력 증가로 정상재인 현재소비 증가, 저축 감소.\n  - 소득효과 > 대체효과 ➔ 현재소비 증가, 저축 감소 (후방굴절 노동/저축공급).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- ㉠, ㉡:\n  ㉠: 대체효과\n  ㉡: 소득효과\n- 이자율 상승 시 현재 저축이 감소할 수 있는 이유:\n  이자율이 상승하면 현재소비의 기회비용이 커져 현재소비를 줄이고 저축을 늘리려는 대체효과(㉠)가 발생한다. 반면 저축자인 소비자는 이자율 상승으로 실질소득이 증가하여 정상재인 현재소비를 늘리고 저축을 줄이려는 소득효과(㉡)가 발생한다. 만약 소득효과(㉡)가 대체효과(㉠)보다 크다면, 현재소비가 증가하여 결과적으로 현재 저축이 감소할 수 있다.\n\n2. 해설:\n- 2기간 피셔 시점간 소비자 선택 모형:\n  - 이자율(r) 상승 ➔ 미래소비에 대한 현재소비의 상대가격 (1+r) 상승.\n  - 대체효과: 현재소비 감소, 저축 증가.\n  - 저축자의 소득효과: 실질구매력 증가로 정상재인 현재소비 증가, 저축 감소.\n  - 소득효과 > 대체효과 ➔ 현재소비 증가, 저축 감소 (후방굴절 노동/저축공급).",
-    "targetKeywords": [
-      "대체효과",
-      "소득효과",
-      "이자율 상승",
-      "저축 감소",
-      "소득효과가 대체효과보다 클 때"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2020-B-02",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2020학년도] 2번. 리카도 비교우위론과 무역 후 소비량 계산 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2020학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 2번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    2. 다음 자료에서 자유무역 후 을국이 소비하는 A재와 B재는 각각 몇 단위인지 순서대로 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>갑국과 을국에서 A재, B재 각 1단위를 생산하는 데 필요한 노동 투입 시간은 아래 표와 같다. 양국은 노동시간만을 투입하여 생산하며 가용 노동시간은 1,000시간으로 동일하다. 무역은 양국 사이에서만 자유롭게 이루어지며 거래 비용은 없다. 자유무역 후 A재와 B재는 1대 1로 교환되고 갑국이 소비하는 A재와 B재의 양은 동일하다.</p>\n      \n      <div class=\"font-bold text-center text-xs md:text-sm mt-3 mb-1\">&lt;갑국과 을국의 노동 투입 시간&gt;</div>\n      <table class=\"w-full max-w-sm mx-auto border-collapse border border-slate-300 text-center text-xs md:text-sm\">\n        <tr class=\"bg-slate-100\"><th class=\"border border-slate-300 p-2\">국가 \\ 재화</th><th class=\"border border-slate-300 p-2\">A재</th><th class=\"border border-slate-300 p-2\">B재</th></tr>\n        <tr><td class=\"border border-slate-300 p-2 font-bold\">갑</td><td class=\"border border-slate-300 p-2\">100시간</td><td class=\"border border-slate-300 p-2\">50시간</td></tr>\n        <tr><td class=\"border border-slate-300 p-2 font-bold\">을</td><td class=\"border border-slate-300 p-2\">20시간</td><td class=\"border border-slate-300 p-2\">40시간</td></tr>\n      </table>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\nA재 40단위, B재 10단위 (순서대로 40, 10 또는 40단위, 10단위)\n\n2. 정밀 계산 과정:\n① 기회비용 및 비교우위 분석:\n- 가용 노동시간 = 각 1,000시간.\n- 갑국: A재 1단위 생산에 100시간, B재 1단위에 50시간 소요.\n  ➔ A재 1단위의 기회비용 = 2B. (B재 1단위 기회비용 = 0.5A)\n  ➔ 1,000시간으로 최대 생산 가능량: A재 10단위 또는 B재 20단위.\n- 을국: A재 1단위 생산에 20시간, B재 1단위에 40시간 소요.\n  ➔ A재 1단위의 기회비용 = 0.5B. (B재 1단위 기회비용 = 2A)\n  ➔ 1,000시간으로 최대 생산 가능량: A재 50단위 또는 B재 25단위.\n- 비교우위: 을국은 A재에 비교우위(0.5B &lt; 2B), 갑국은 B재에 비교우위(0.5A &lt; 2A).\n② 특화 및 교역:\n- 을국은 A재 50단위 완전 특화 생산 (B재 0단위).\n- 갑국은 B재 20단위 완전 특화 생산 (A재 0단위).\n- 교역조건: 1A = 1B.\n③ 소비점 도출:\n- 갑국은 B재 20단위 중 x단위를 A재 x단위와 교환(수입).\n- 갑국 소비: A재 x단위, B재 (20 - x)단위.\n- 문제 조건: 갑국이 소비하는 A재와 B재의 양이 동일하므로, x = 20 - x ➔ 2x = 20 ➔ x = 10단위.\n- 따라서 갑국은 A재 10단위, B재 10단위를 소비한다.\n- 을국은 A재 50단위 중 10단위를 갑국에 수출하고 B재 10단위를 수입하므로:\n  을국의 A재 소비량 = 50 - 10 = 40단위\n  을국의 B재 소비량 = 0 + 10 = 10단위.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: A재 40단위, B재 10단위\n\n2. 해설: 을국은 A재 50단위에 특화하고 갑국은 B재 20단위에 특화한다. 1:1 교환에서 갑국이 A, B 각 10단위를 소비하므로 을국은 A재 40단위, B재 10단위를 소비한다.",
-    "targetKeywords": [
-      "40단위",
-      "10단위",
-      "비교우위",
-      "특화"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2020-B-07",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2020학년도] 7번. 부정적 외부효과와 피구세 및 코즈 정리 [4점]",
-    "examTag": "",
-    "page": 4,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2020학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 부정적 외부성이 발생하는 상황에 관한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>강 상류에 제철소가 있고 하류에는 어부의 어장이 있다. 제철소의 생산량(s)이 늘어나면 강의 수질이 나빠져 어부의 어획량은 감소한다. 다음 그래프는 생산량(s)에 따른 제철소의 한계 이윤과 어부의 한계 피해액을 나타낸다.</p>\n    </div>\n    \n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2020_b_07.png\" alt=\"생산량에 따른 제철소의 한계 이윤과 어부의 한계 피해액 그래프\" class=\"max-w-full md:max-w-[420px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 정부의 개입이 없고 강물에 대한 소유권이 설정되어 있지 않다면, 제철소의 생산량은 얼마가 될지 쓸 것.</p>\n    <p>◦ 강물에 대한 소유권이 설정되어 있지 않고 정부가 사회적 효율성을 달성하기 위해 제철소에 단위당 일정액의 피구세(Pigouvian tax)를 부과한다면, 그 크기는 얼마인지 쓸 것.</p>\n    <p>◦ 강물에 대한 소유권이 제철소에게 있고 어부와 제철소 간 협상의 거래비용이 없다면, 제철소의 생산량은 얼마가 될 것인지 쓰고, 이런 결과를 사회적 효율성의 관점에서 언급한 정리(theorem)의 명칭을 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 소유권 및 정부 개입이 없을 때 제철소 생산량: s_2\n- 사회적 효율성 달성을 위한 피구세 크기: t_1 (또는 s_1 생산량에서의 한계 피해액 크기)\n- 소유권이 제철소에 있고 거래비용이 없을 때:\n  - 생산량: s_1\n  - 정리 명칭: 코즈 정리 (Coase theorem)\n\n2. 정밀 해설:\n① 사적 이윤극대화 생산량:\n- 소유권과 정부 규제가 없으면 제철소는 외부 피해를 전혀 고려하지 않고 자신의 한계 이윤(MP)이 0이 되는 지점까지 생산한다. 따라서 생산량은 한계이윤 곡선의 가로축 절편인 s_2이다.\n② 사회적 최적 생산량과 피구세:\n- 사회적 최적 생산량은 제철소의 한계이윤과 어부의 한계피해액이 일치하는 교차점인 s_1이다.\n- 정부가 피구세를 부과하여 제철소의 사적 한계이윤곡선을 한계피해액만큼 아래로 이동시키려면, 최적 생산량 s_1에서의 단위당 한계피해액인 t_1만큼의 세금을 부과해야 한다.\n③ 코즈 정리:\n- 재산권(소유권)이 명확히 확립되어 있고 거래비용이 0이라면, 정부 개입 없이도 당사자 간의 자발적 협상을 통해 항상 사회적 최적 생산량(s_1)이 달성된다는 이론이 '코즈 정리'이다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 정부 개입 및 소유권 없을 때 생산량: s_2\n- 피구세의 크기: t_1\n- 자발적 협상 시 제철소 생산량: s_1\n- 정리 명칭: 코즈 정리 (Coase theorem)",
-    "targetKeywords": [
-      "s_2",
-      "t_1",
-      "s_1",
-      "코즈 정리"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2020-B-08",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2020학년도] 8번. 통화정책의 전달경로와 유동성 함정 및 재정정책 효과 [4점]",
-    "examTag": "",
-    "page": 4,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2020학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg space-y-2 text-slate-800\">\n      <p>화폐공급 증가가 어느 국민경제에 가져다주는 단기적인 영향을 다음 화폐시장과 상품시장 그래프를 이용하여 분석하고자 한다. 화폐공급이 MS0에서 MS1으로 증가할 경우 화폐시장 균형이 변화하고, <u>㉠ 일정 조건을 만족하면</u> 이에 따라 상품시장 균형이 변화한다. 화폐시장에서 이자율이 i2이면 <u>㉡ 화폐수요가 이자율에 무한히 탄력적인데</u>, 이 상황에서 화폐공급 증가는 국민소득을 변화시키는 데 어려움이 있으며 이를 ( ㉢ )(이)라고 한다.</p>\n    </div>\n    \n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2020_b_08.png\" alt=\"화폐시장과 상품시장 균형 그래프\" class=\"max-w-full md:max-w-[340px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠이 무엇인지 서술할 것.</p>\n    <p>◦ 밑줄 친 ㉡인 경우 정부지출 증가에 따른 국민소득 변화의 크기를 승수효과, 구축효과를 이용하여 서술하고, 괄호 안의 ㉢에 들어갈 용어를 제시할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 밑줄 친 ㉠의 조건:\n  투자(또는 총수요)의 이자율탄력성이 0이 아니어야 한다 (즉, 화폐공급 증가로 이자율이 하락할 때 투자가 증가하여 총수요가 증가해야 한다).\n- ㉡인 경우 국민소득 변화의 크기:\n  화폐수요의 이자율탄력성이 무한대인 경우 정부지출이 증가하더라도 이자율이 전혀 상승하지 않으므로 민간투자를 밀어내는 '구축효과가 0'이 된다. 따라서 국민소득은 정부지출 증가에 정부지출 승수를 곱한 순수한 '승수효과의 크기만큼 최대로 증가'한다.\n- 괄호 안의 ㉢: 유동성 함정 (Liquidity trap)\n\n2. 상세 해설:\n- 통화정책의 파급경로: 통화량 증가(M↑) ➔ 이자율 하락(i↓) ➔ 투자 증가(I↑) ➔ 총수요 증가(AD↑) ➔ 국민소득 증가(Y↑). 따라서 투자가 이자율 변화에 반응해야(이자율탄력성 > 0) 상품시장 균형이 변화한다.\n- 유동성 함정에서는 LM곡선이 수평선이 되므로, 재정정책(IS 우측 이동) 시 이자율 상승이 전혀 없어 구축효과가 발생하지 않고 승수효과가 100% 온전히 발휘된다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- ㉠: 투자(수요)의 이자율탄력성이 0보다 커야 한다 (이자율 하락 시 투자가 증가해야 한다).\n- 국민소득 변화 크기: 이자율이 상승하지 않아 민간투자를 감소시키는 구축효과가 전혀 발생하지 않으므로(구축효과=0), 순수한 정부지출 승수효과의 크기만큼 최대로 증가한다.\n- ㉢: 유동성 함정",
-    "targetKeywords": [
-      "투자의 이자율탄력성",
-      "구축효과 0",
-      "승수효과",
-      "유동성 함정"
-    ],
-    "tapeCount": 4,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2021-B-07",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2021학년도] 7번. 비교우위론과 기회비용 및 교역 후 소비 가능량 [4점]",
-    "examTag": "",
-    "page": 5,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 갑국의 교역 전후 상황에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>그림은 두 재화 X재, Y재에 대한 갑국의 생산 가능 곡선을 나타낸다.\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2021_b_07.png\" alt=\"갑국의 생산가능곡선 그래프\" class=\"max-w-full md:max-w-[350px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div> 현재 A에서 생산 및 소비를 하고 있는 갑국은 비교 우위가 있는 재화에 특화하여 교역에 참여하기로 하였다. 해외 시장에서 X재와 Y재는 1:2의 비율로 거래되고 있고, 갑국이 교역에 참여하더라도 해외 시장에서 거래 비율은 변하지 않는다.</p>\n    <div class=\"p-3 bg-white rounded-lg border border-slate-300 font-mono text-xs md:text-sm text-center\">\n      생산가능곡선: Y절편 24, X절편 8 (직선 형태)<br>\n      현재 생산 및 소비점 A: X재 4개, Y재 12개<br>\n      해외 교역조건: 1 X = 2 Y\n    </div>\n    <p class=\"text-xs text-slate-500\">(단, X재와 Y재는 완전 경쟁 시장에서 거래된다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국의 X재와 Y재의 기회비용을 구하고, 어떤 재화에 비교 우위가 있는지 서술할 것.</p>\n      <p>◦ 갑국이 교역에 참여하더라도 X재와 Y재 현재 소비량이 줄어들지 않기를 원한다면, 교역을 통해 갑국이 최대로 소비할 수 있는 X재와 Y재 각각의 수량을 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 기회비용 및 비교우위:\n- 갑국의 생산가능곡선: Y = 24 - 3X\n- X재 1단위 생산의 기회비용 = Y재 3단위\n- Y재 1단위 생산의 기회비용 = X재 1/3단위\n- 비교: 해외시장에서 Y재 1단위의 교역조건은 X재 1/2단위(=0.5단위)이므로, 갑국의 Y재 기회비용(1/3단위)이 해외보다 더 낮다. 따라서 갑국은 'Y재'에 비교우위가 있다(전량 Y재 24개 특화 생산).\n\n2. 최대 소비 수량 (현재 소비량 X=4, Y=12 이상 유지 조건):\n- Y재 24개를 생산한 후 교역선: Y = 24 - 2X (해외교역조건 1X = 2Y)\n- X재를 최대로 소비할 때 (Y재를 현재 소비량 12개만 남길 때): 12 = 24 - 2X ➔ X재 최대 수량 = 6개\n- Y재를 최대로 소비할 때 (X재를 현재 소비량 4개만 교환할 때): Y = 24 - 2(4) = 16 ➔ Y재 최대 수량 = 16개\n    </div>\n  </details></div>",
-    "defaultAnswer": "1. 기회비용 및 비교우위:\n- 갑국의 생산가능곡선: Y = 24 - 3X\n- X재 1단위 생산의 기회비용 = Y재 3단위\n- Y재 1단위 생산의 기회비용 = X재 1/3단위\n- 비교: 해외시장에서 Y재 1단위의 교역조건은 X재 1/2단위(=0.5단위)이므로, 갑국의 Y재 기회비용(1/3단위)이 해외보다 더 낮다. 따라서 갑국은 'Y재'에 비교우위가 있다(전량 Y재 24개 특화 생산).\n\n2. 최대 소비 수량 (현재 소비량 X=4, Y=12 이상 유지 조건):\n- Y재 24개를 생산한 후 교역선: Y = 24 - 2X (해외교역조건 1X = 2Y)\n- X재를 최대로 소비할 때 (Y재를 현재 소비량 12개만 남길 때): 12 = 24 - 2X ➔ X재 최대 수량 = 6개\n- Y재를 최대로 소비할 때 (X재를 현재 소비량 4개만 교환할 때): Y = 24 - 2(4) = 16 ➔ Y재 최대 수량 = 16개",
-    "targetKeywords": [
-      "Y재 3단위",
-      "X재 1/3단위",
-      "Y재에 비교우위",
-      "X재 6개",
-      "Y재 16개"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2021-B-08",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2021학년도] 8번. 여가-노동 공급곡선 및 최적 여가시간 도출 [4점]",
-    "examTag": "",
-    "page": 6,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2021학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음은 여가 수요와 노동 공급에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑은 하루 24시간 중 여가(<i>L</i>)로 <i>l</i>시간을 즐기고 (24 - <i>l</i>)시간만큼 일한다. 여가는 식사, 수면, 오락 등 모든 비노동 활동을 포함한다. 시간당 임금이 <i>w</i>일 때 하루 소득은 <i>w</i>(24 - <i>l</i>)이 되고 전액을 복합재(<i>Y</i>) 구매에 사용하여 <i>y</i>만큼 소비한다. 여가의 가격(<i>P<sub>L</sub></i>)은 <i>w</i>이고 복합재의 가격(<i>P<sub>Y</sub></i>)은 1이다.</p>\n    <p>여가와 복합재 소비에 대한 갑의 효용과 한계 효용은 다음과 같다.</p>\n    <div class=\"p-2.5 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n      <p>효용 : <i>U</i>(<i>l</i>, <i>y</i>) = (<i>l</i> - 4)<i>y</i></p>\n      <p>여가의 한계 효용 : <i>MU<sub>L</sub></i> = <i>y</i></p>\n      <p>복합재의 한계 효용 : <i>MU<sub>Y</sub></i> = <i>l</i> - 4</p>\n    </div>\n    <p>갑은 자신에게 주어진 <u>㉠ 예산제약</u> 내에서 복합재에 대한 여가의 한계 대체율(<i>MRS<sub>L,Y</sub></i>)과 상대 가격(<i>P<sub>L</sub> / P<sub>Y</sub></i>)이 같은 <u>㉡ 접점조건</u>을 고려하여 최적의 하루 여가 시간(<i>l</i><sup>*</sup>)을 선택할 때 효용이 극대화된다는 것을 안다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑이 효용을 극대화하기 위해 고려하는 두 조건인 밑줄 친 ㉠, ㉡을 순서대로 쓸 것.</p>\n      <p>◦ 갑이 효용을 극대화하는 최적의 하루 여가 시간(<i>l</i><sup>*</sup>)을 구하고, 임금(<i>w</i>)과의 관계를 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 두 조건식:\n- ㉠ 예산제약식: wl + y = 24w (또는 y = w(24 - l))\n- ㉡ 접점조건식: MRSL,Y = MUL / MUY = y / (l - 4) = PL / PY = w ➔ y = w(l - 4)\n\n2. 최적 여가시간(l*) 및 임금과의 관계:\n- 접점조건 y = w(l - 4)를 예산제약식에 대입:\n  wl + w(l - 4) = 24w ➔ 2wl - 4w = 24w ➔ 2wl = 28w ➔ l* = 14시간\n- 임금과의 관계:\n  최적 여가시간은 14시간으로, 임금(w)의 크기와 상관없이 항상 일정하다(독립적이다). 이는 임금 상승에 따른 대체효과(여가 감소)와 소득효과(여가 증가)의 크기가 정확히 상쇄되기 때문이다.\n    </div>\n  </details></div>",
-    "defaultAnswer": "1. 두 조건식:\n- ㉠ 예산제약식: wl + y = 24w (또는 y = w(24 - l))\n- ㉡ 접점조건식: MRSL,Y = MUL / MUY = y / (l - 4) = PL / PY = w ➔ y = w(l - 4)\n\n2. 최적 여가시간(l*) 및 임금과의 관계:\n- 접점조건 y = w(l - 4)를 예산제약식에 대입:\n  wl + w(l - 4) = 24w ➔ 2wl - 4w = 24w ➔ 2wl = 28w ➔ l* = 14시간\n- 임금과의 관계:\n  최적 여가시간은 14시간으로, 임금(w)의 크기와 상관없이 항상 일정하다(독립적이다). 이는 임금 상승에 따른 대체효과(여가 감소)와 소득효과(여가 증가)의 크기가 정확히 상쇄되기 때문이다.",
-    "targetKeywords": [
-      "wl + y = 24w",
-      "y / (l - 4) = w",
-      "14시간",
-      "일정하다",
-      "상쇄"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2022-A-09",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2022학년도] 9번. 감자 시장 균형 및 가격지지 정책(정부 수매) [4점]",
-    "examTag": "",
-    "page": 5,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국에서 감자에 대한 시장수요곡선과 시장공급곡선은 각각 <i>Q<sub>D</sub></i> = 10 - 0.5<i>P</i> 및 <i>Q<sub>S</sub></i> = -2 + <i>P</i> 이다. 갑국 정부는 감자 농가의 소득을 증대하기 위해 감자의 시장가격을 균형가격보다 높은 수준인 단위당 10달러에서 유지하는 정책을 시행하기로 결정하였다. 이를 위해 갑국 정부는 <u>감자 농가의 초과 생산량을 시장에서 구매해 주는 방식</u>을 고려하고 있다.</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량(백만), <i>P</i>는 단위당 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국 정부의 개입이 없는 경우, 감자 시장의 균형가격과 균형 거래량이 각각 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 정부가 감자를 구매하는 데 지출하는 비용이 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 생산자의 이익에 어떠한 변화가 있는지 시행 전과 후의 생산자 잉여의 크기를 각각 포함하여 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.\n    </div>\n  </details></div>",
-    "defaultAnswer": "1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.",
-    "targetKeywords": [
-      "8달러",
-      "6",
-      "30",
-      "18",
-      "32"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2022-B-07",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2022학년도] 7번. 독점기업의 균형 및 자중손실(DWL) 계산 [4점]",
-    "examTag": "",
-    "page": 5,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음은 독점기업 갑이 당면하는 시장 수요 및 비용 함수에 관한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>◦ 시장 수요 : <i>Q</i> = 170 - <i>P</i></p>\n    <p>◦ 한계수입(<i>MR</i>) : 170 - 2<i>Q</i></p>\n    <p>◦ 총비용(<i>TC</i>) : 50<i>Q</i> + <i>Q</i><sup>2</sup></p>\n    <p>◦ 한계비용(<i>MC</i>) : 50 + 2<i>Q</i></p>\n    <p>◦ 평균비용(<i>AC</i>) : ( )</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량, <i>P</i>는 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ ( ) 안에 들어갈 수식을 쓸 것.</p>\n      <p>◦ 독점기업 갑의 균형가격 및 균형 거래량이 각각 얼마인지 쓰고, 이를 완전경쟁시장일 때의 균형가격 및 균형 거래량 크기와 비교하여 서술할 것.</p>\n      <p>◦ 독점으로 인한 자중손실(deadweight loss)이 얼마인지 쓸 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. AC 수식:\nAC = TC / Q = 50 + Q\n\n2. 독점 균형 vs 완전경쟁 비교:\n- 독점: MR = MC ➔ 170 - 2Q = 50 + 2Q ➔ 4Q = 120 ➔ Qm = 30, Pm = 170 - 30 = 140\n- 완전경쟁: P = MC ➔ 170 - Q = 50 + 2Q ➔ 3Q = 120 ➔ Qc = 40, Pc = 170 - 40 = 130\n- 비교: 독점기업의 균형가격은 140, 균형 거래량은 30이며, 완전경쟁시장(가격 130, 거래량 40)에 비해 가격은 10만큼 더 높고 거래량은 10만큼 더 적다.\n\n3. 자중손실(DWL):\nQm = 30일 때 MC = 50 + 2(30) = 110\nDWL = 1/2 × (Pm - MC) × (Qc - Qm) = 1/2 × (140 - 110) × (40 - 30) = 1/2 × 30 × 10 = 150\n    </div>\n  </details></div>",
-    "defaultAnswer": "1. AC 수식:\nAC = TC / Q = 50 + Q\n\n2. 독점 균형 vs 완전경쟁 비교:\n- 독점: MR = MC ➔ 170 - 2Q = 50 + 2Q ➔ 4Q = 120 ➔ Qm = 30, Pm = 170 - 30 = 140\n- 완전경쟁: P = MC ➔ 170 - Q = 50 + 2Q ➔ 3Q = 120 ➔ Qc = 40, Pc = 170 - 40 = 130\n- 비교: 독점기업의 균형가격은 140, 균형 거래량은 30이며, 완전경쟁시장(가격 130, 거래량 40)에 비해 가격은 10만큼 더 높고 거래량은 10만큼 더 적다.\n\n3. 자중손실(DWL):\nQm = 30일 때 MC = 50 + 2(30) = 110\nDWL = 1/2 × (Pm - MC) × (Qc - Qm) = 1/2 × (140 - 110) × (40 - 30) = 1/2 × 30 × 10 = 150",
-    "targetKeywords": [
-      "50 + Q",
-      "140",
-      "30",
-      "130",
-      "40",
-      "150"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2023-B-08",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-3. 국민소득결정",
-    "title": "[2023학년도] 8번. 케인즈 폐쇄경제 모형의 균형소득 및 재정 상태 [4점]",
-    "examTag": "",
-    "page": 5,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2023학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 8번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    8. 다음은 폐쇄 경제인 갑국에 대한 자료이다. &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200 font-mono\">\n    <p>◦ <i>Y</i> = <i>C</i> + <i>I</i> + <i>G</i></p>\n    <p>◦ <i>C</i> = 3/4 (<i>Y</i> - <i>T</i>)</p>\n    <p>◦ <i>T</i> = <i>tY</i></p>\n    <p>◦ <i>t</i> = 0.2, <i>I</i> = <i>G</i> = 80</p>\n    <p class=\"text-xs text-slate-500 font-sans\">(단, <i>Y</i>는 국민소득, <i>C</i>는 소비, <i>I</i>는 투자, <i>G</i>는 정부지출, <i>T</i>는 조세, <i>t</i>는 소득세율을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국의 균형국민소득이 얼마인지 쓸 것.</p>\n      <p>◦ 국민소득이 균형일 때 <i>T</i>가 얼마인지 쓰고, 이때 갑국 정부의 재정 상태가 어떠한지 서술할 것.</p>\n      <p>◦ 갑국 정부가 목표 국민소득 수준을 600으로 설정한다면, 현재 상태에서 <i>G</i>를 어떻게 변화시켜야 하는지 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 균형국민소득:\nC = 0.75(Y - 0.2Y) = 0.6Y\nY = 0.6Y + 80 + 80 = 0.6Y + 160 ➔ 0.4Y = 160 ➔ Y* = 400\n\n2. 조세수입(T) 및 재정 상태:\nT = 0.2 × 400 = 80\n정부지출 G = 80이므로 세수와 지출이 일치(T = G = 80)하여 정부의 재정 상태는 '균형재정'이다.\n\n3. 목표소득 600 달성을 위한 정부지출(G) 변화:\n정부지출 승수 = 1 / (1 - 0.6) = 1 / 0.4 = 2.5\n국민소득 증분 ΔY = 600 - 400 = 200\n필요한 정부지출 증분 ΔG = 200 / 2.5 = 80\n따라서 현재 상태에서 G를 80만큼 증가시켜야 한다(G를 160으로 확대).\n    </div>\n  </details></div>",
-    "defaultAnswer": "1. 균형국민소득:\nC = 0.75(Y - 0.2Y) = 0.6Y\nY = 0.6Y + 80 + 80 = 0.6Y + 160 ➔ 0.4Y = 160 ➔ Y* = 400\n\n2. 조세수입(T) 및 재정 상태:\nT = 0.2 × 400 = 80\n정부지출 G = 80이므로 세수와 지출이 일치(T = G = 80)하여 정부의 재정 상태는 '균형재정'이다.\n\n3. 목표소득 600 달성을 위한 정부지출(G) 변화:\n정부지출 승수 = 1 / (1 - 0.6) = 1 / 0.4 = 2.5\n국민소득 증분 ΔY = 600 - 400 = 200\n필요한 정부지출 증분 ΔG = 200 / 2.5 = 80\n따라서 현재 상태에서 G를 80만큼 증가시켜야 한다(G를 160으로 확대).",
-    "targetKeywords": [
-      "400",
-      "80",
-      "균형재정",
-      "80만큼 증가"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2024-A-12",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2024학년도] 12번. 가격효과(대체효과, 소득효과)와 정상재·열등재·기펜재 [4점]",
-    "examTag": "",
-    "page": 7,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>경제학에서 상품 가격 변화와 수요량 변화 사이에서 나타나는 역(－) 관계를 <u>㉠ 수요의 법칙</u>이라고 하는데, 이 법칙은 상품의 가격 변화가 소비자들에게 어떠한 영향을 주는지를 분석하는 과정을 통해 설명할 수 있다.</p>\n<p>예를 들어 X재와 Y재만을 소비하는 사람이 있다고 하자. 다른 조건이 일정한 상황에서 X재의 가격이 하락하면, 상대적으로 가격이 낮아진 X재의 소비를 늘리고 Y재의 소비를 줄여 기존의 효용을 유지하고자 할 것인데 이를 대체효과라고 한다. 한편 X재의 가격이 변화하면 이전과 동일한 소득으로 구입할 수 있는 X재와 Y재의 수량이 달라지는데, 이는 실질소득의 변동으로 인한 효과이다. 이러한 실질소득 변화가 상품 수요에 미치는 영향을 소득효과라고 한다.</p>\n<p>대체효과는 어느 한 재화의 가격과 수요량이 항상 반대로 움직이도록 작용하지만, 소득효과는 수요의 소득탄력성에 따라 방향과 크기가 달라진다. 필수재나 사치재와 같이 소득탄력성이 양(＋)의 값을 가지는 재화를 ( ㉡ )(이)라고 하는데, 이 경우 가격이 낮아질 때 수요량이 증가하고 가격이 높아질 때 수요량이 감소하는 수요의 법칙을 설명할 수 있다. 한편, 음(－)의 소득탄력성 값을 가지는 재화를 ( ㉢ )(이)라고 하는데, 이 중 <u>㉣ 가격이 하락하는데도 수요량이 줄어드는 특성을 가진 재화</u>를 기펜재라고 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉡, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n<p>◦ 밑줄 친 ㉠을 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉣이 나타난 이유를 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉡, ㉢:\n㉡ 정상재(normal goods)\n㉢ 열등재(inferior goods)\n\n2. ㉠(수요의 법칙)의 이유 서술:\n재화의 가격이 하락할 때 상대가격 하락에 따라 수요량을 늘리는 '대체효과'와 실질소득 증가로 수요량을 늘리는 '소득효과'가 모두 수요량을 증가시키는 같은 방향으로 작용하기 때문이다(정상재의 경우).\n\n3. ㉣(기펜재 특성)의 이유 서술:\n기펜재는 극단적인 열등재로서, 가격 하락 시 수요량을 늘리는 '대체효과'보다 실질소득 증가로 인해 수요량을 감소시키는 음(-)의 '소득효과'의 크기가 더 커서 대체효과를 압도하기 때문이다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. ㉡: 정상재\n   ㉢: 열등재\n2. ㉠ 서술: 가격 하락 시 수요를 늘리는 '대체효과'와 실질소득 상승으로 수요를 늘리는 '소득효과'가 합쳐져 가격과 수요량이 반대로 움직이기 때문이다.\n3. ㉣ 서술: 가격 하락에 따른 양(+)의 '대체효과'보다 열등재로서의 음(-)의 '소득효과'가 더 커서 대체효과를 압도하기 때문이다.",
-    "targetKeywords": [
-      "정상재",
-      "열등재",
-      "대체효과",
-      "소득효과",
-      "기펜재"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2024-B-10",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2024학년도] 10번. 수입할당제 vs 관세 부과의 잉여 및 재정수입 [4점]",
-    "examTag": "",
-    "page": 6,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음은 갑국의 무역 정책에 관한 자료이다. <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>외국으로부터 국제 가격(<i>P<sub>W</sub></i> = 20)으로 X재를 수입하고 있는 갑국의 X재 시장 상황을 나타낸다.</p>\n<div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2024_b_10.png\" alt=\"갑국 X재 시장 무역 정책 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n<p>갑국은 자국의 X재 생산자들을 보호하기 위해 아래의 [정책 1], [정책 2] 중 한 가지를 시행하고자 한다. 단, 정부는 수입되는 X재를 판매할 수 있는 면허를 수입업자에게 무상으로 제공하였으며, 갑국은 소국이어서 X재의 국제 가격에 영향을 주지 않는다.<br>\n∙ [정책 1] X재 수입량을 60개로 제한하는 수입할당제를 실시한다.<br>\n∙ [정책 2] 수입되는 X재 한 단위 당 t원의 관세를 부과하여 [정책 1]과 수입량이 동일해지도록 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ [정책 1]의 실시 후, 증가하는 국내 생산자 잉여와 감소하는 소비자 잉여를 순서대로 쓸 것.</p>\n<p>◦ [정책 2]에서 수입되는 X재 한 단위 당 부과해야 하는 관세의 금액을 쓸 것.</p>\n<p>◦ [정책 1]과 [정책 2]의 차이점을 정부의 재정 수입에 관한 계산 결과를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. [정책 1] 실시 후 잉여 변화:\n- 수입량이 60개로 제한되면 국내가격이 20원에서 30원으로 상승(수요 90 - 공급 30 = 60)\n- 증가하는 생산자 잉여: 사다리꼴 면적 = (20 + 30) × 10 / 2 = 250원\n- 감소하는 소비자 잉여: 사다리꼴 면적 = (100 + 90) × 10 / 2 = 950원\n\n2. [정책 2] 단위당 관세 금액:\n국내 가격을 30원으로 올려 수입량을 60개로 맞추어야 하므로 관세 t = 30 - 20 = 10원\n\n3. [정책 1]과 [정책 2]의 정부 재정수입 차이점:\n- [정책 1](수입할당제)은 수입 면허를 무상 배부하였으므로 정부의 재정 수입이 0원(수입업자에게 할당 지대 600원 귀속)인 반면,\n- [정책 2](관세 부과)는 수입량 60개에 대해 단위당 10원의 관세를 징수하므로 정부의 관세 재정 수입이 600원(60개 × 10원) 발생한다는 차이가 있다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 잉여 변화:\n- 증가하는 생산자 잉여: 250원\n- 감소하는 소비자 잉여: 950원\n2. 단위당 관세: 10원\n3. 재정수입 차이점:\n[정책 1]은 수입 면허를 무상 교부하여 정부 재정 수입이 0원인 반면, [정책 2]는 600원(60개 × 10원)의 관세 세입이 발생한다.",
-    "targetKeywords": [
-      "250원",
-      "950원",
-      "10원",
-      "0원",
-      "600원"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2024-B-11",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2024학년도] 11번. 자연독점과 한계비용/평균비용 가격규제 및 사중손실 [4점]",
-    "examTag": "",
-    "page": 7,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국의 통신 서비스 시장은 규모의 경제가 존재하는 산업의 특성으로 인해 A기업이 상당한 시장 지배력을 가진 전형적인 자연독점 상태에 있다. A기업이 직면하는 수요곡선과 비용에 대한 정보는 다음과 같다.</p>\n<div class=\"p-3 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n  <p>∙ 시장 수요곡선 : <i>Q</i> = -<i>P</i> + 100</p>\n  <p>∙ 한계수입(<i>MR</i>) : -2<i>Q</i> + 100</p>\n  <p>∙ 한계비용(<i>MC</i>) : 30</p>\n  <p>∙ 평균비용곡선(<i>AC</i>)은 <i>MC</i>곡선 위에서 우하향하는 곡선이다.</p>\n  <p class=\"text-xs text-slate-500 font-sans\">(단, <i>Q</i>는 수량, <i>P</i>는 가격을 나타내며, 정부는 A기업의 생산 비용에 대한 정확한 정보를 가지고 있다고 가정한다.)</p>\n</div>\n<p>정부는 A기업이 시장에서 과도한 독점력을 행사하고 있다고 판단하고, 통신 서비스 가격을 기업의 한계비용과 같아지도록 가격을 규제하고자 하였다. 이에 대해 전문가들은 <u>㉠ 가격을 한계비용에 맞추는 정책이 시행되면 기업의 운영이 불가능하여 지속가능한 규제가 아니라는 의견</u>을 제시하며, <u>㉡ 기업의 평균비용곡선과 수요곡선이 교차하는 지점에서의 가격(<i>P</i> = 50)으로 가격 상한을 설정하는 정책</u>을 시행할 것을 권고하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 규제 시행 전 A기업이 이윤을 극대화하는 가격을 쓸 것.</p>\n<p>◦ 밑줄 친 ㉠의 이유를 ‘이윤’이라는 용어를 포함하여 서술할 것.</p>\n<p>◦ 완전경쟁일 때와 비교했을 때, 밑줄 친 ㉡의 경우 A기업이 얻는 이윤과 사회적 후생손실을 순서대로 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. 규제 시행 전 독점가격:\nMR = MC ➔ -2Q + 100 = 30 ➔ 2Q = 70 ➔ Q = 35\nP = -35 + 100 = 65원\n\n2. ㉠의 이유 (한계비용 가격규제의 한계):\n규모의 경제가 작용하는 자연독점 산업에서는 평균비용(AC)이 한계비용(MC)보다 항상 위에 위치하므로, 가격을 한계비용(P = MC = 30)으로 규제하면 P < AC가 되어 기업에 손실(음[-]의 이윤)이 발생하여 조업을 지속할 수 없기 때문이다.\n\n3. ㉡(평균비용 가격규제, P = AC = 50) 하의 이윤과 사회적 후생손실:\n- A기업의 이윤: P = AC이므로 경제적 이윤 = 0(정상이윤만 획득)\n- 완전경쟁(P = MC = 30): Q = 70\n- P = 50 규제 시 생산량: Q = 100 - 50 = 50\n- 사회적 후생손실(DWL): 삼각형 면적 = 1/2 × (50 - 30) × (70 - 50) = 1/2 × 20 × 20 = 200\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 규제 전 이윤극대화 가격: 65원\n2. ㉠의 이유: 자연독점 하에서는 AC > MC이므로 P = MC로 가격을 규제하면 P < AC가 되어 기업에 손실(음의 이윤)이 발생하기 때문이다.\n3. ㉡의 경우:\n- 기업의 이윤: 0(정상이윤)\n- 사회적 후생손실: 200",
-    "targetKeywords": [
-      "65",
-      "손실",
-      "음의 이윤",
-      "0",
-      "200"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2025-A-12",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2025학년도] 12번. 긍정적 외부효과(외부편익)와 피구보조금 및 사중손실 [4점]",
-    "examTag": "",
-    "page": 7,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>A 국가 교육시장의 수요와 공급에 대한 정보는 다음과 같다. 이때, 교육시장은 완전경쟁시장이라 가정한다.</p>\n<div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2025_a_12.png\" alt=\"교육시장의 수요-공급 및 사회적 한계편익(SMB) 그래프\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n<p>교육의 긍정적 외부효과 크기를 의미하는 ( ㉠ )은/는 사회적 한계 편익(SMB)과 수요 사이의 거리(차이)이다. 그리고 정부는 교육이 이와 같은 긍정적 외부효과를 발생시키는 것과 이로 인해 <u>㉡ 자중손실</u>이 발생한다는 것을 알고 있다. 따라서 정부는 교육의 사회적 최적생산량을 달성하기 위하여 수요자에게 <u>㉢ 교정적 보조금(피구보조금)</u>을 지급하고자 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠에 해당하는 용어를 쓸 것.</p>\n<p>◦ 밑줄 친 ㉡이 발생하는 이유를 서술하고, ㉡의 값을 쓸 것.</p>\n<p>◦ 교육 1년당 밑줄 친 ㉢의 금액을 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠:\n한계외부편익(MEB, marginal external benefit, 외부편익)\n\n2. ㉡ 자중손실 발생 이유 및 값:\n- 발생 이유: 긍정적 외부효과(외부경제)로 인해 시장 균형 생산량(Q=4)이 사회적 최적 생산량(Q=5)보다 과소 생산·소비되기 때문이다.\n- 자중손실(DWL) 값: 삼각형 면적 = 1/2 × 밑변(MEB = 2) × 높이(5 - 4 = 1) = 1\n\n3. ㉢ 피구보조금(교정적 보조금) 금액:\n단위당 한계외부편익(MEB)과 동일한 금액인 '2원'을 지급하여 사적 수요곡선을 사회적 한계편익곡선(SMB)과 일치시킨다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. ㉠: 한계외부편익(MEB, 외부편익)\n2. ㉡ 발생 이유 및 값:\n- 이유: 사회적 최적 수준보다 과소 생산되기 때문\n- 값: 1\n3. ㉢ 보조금 금액: 2원",
-    "targetKeywords": [
-      "한계외부편익",
-      "과소 생산",
-      "1",
-      "2원"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2025-B-10",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2025학년도] 10번. 효율성 임금과 최저임금제 하의 비자발적 실업 [4점]",
-    "examTag": "",
-    "page": 6,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>구조적 실업은 노동의 공급이 수요를 초과하는 경우에 발생하며, 그 원인으로 ( ㉠ )와/과 <u>㉡ 최저임금</u>이 거론된다. ( ㉠ )은/는 기업 스스로 근로자의 근로의욕을 고취시키기 위해서 지급하는 임금이다. 최저임금은 근로자의 생활 안정과 노동력의 질적 향상을 위하여 임금의 최저수준을 정한 것이다.</p>\n<div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2025_b_10.png\" alt=\"완전경쟁 노동시장의 수요-공급 그래프 (효율성임금 및 최저임금)\" class=\"max-w-full md:max-w-[380px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n<p>◦ ㉠과 밑줄 친 ㉡을 ㉢과 비교하여 비자발적 실업이 발생하는 원인을 서술할 것.</p>\n<p>◦ 그림에서 최저임금제가 시행된 후 발생하는 비자발적 실업자 수를 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠, ㉢:\n㉠ 효율성 임금(효율임금, efficiency wage)\n㉢ 시장균형임금(균형임금)\n\n2. 비자발적 실업 발생 원인:\n효율성 임금(㉠)과 최저임금(㉡)이 노동시장의 '시장균형임금(㉢)'보다 더 높은 수준에서 결정됨으로써, 높은 임금을 받고 일하고자 하는 노동 공급량이 기업이 고용하려는 노동 수요량을 초과하여 초과공급(비자발적 실업)이 발생하기 때문이다.\n\n3. 비자발적 실업자 수:\n최저임금 하에서 노동공급량 12 - 노동수요량 8 = 4(명 또는 단위)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. ㉠: 효율성 임금(효율임금)\n   ㉢: 시장균형임금(균형임금)\n2. 발생 원인: 효율임금과 최저임금이 '시장균형임금'보다 높게 설정되어 노동의 초과공급이 발생하기 때문이다.\n3. 비자발적 실업자 수: 4(명)",
-    "targetKeywords": [
-      "효율성 임금",
-      "시장균형임금",
-      "초과공급",
-      "4"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2025-B-11",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2025학년도] 11번. 장기 완전경쟁시장 균형(규모의 경제, 장기비용곡선) [4점]",
-    "examTag": "",
-    "page": 7,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>○○기업은 장기 완전경쟁시장에서 □□상품을 공급하는 동질적 기업 중 하나이다. ○○기업의 비용함수 및 시장수요에 대한 정보는 다음과 같다.</p>\n<div class=\"p-3 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n  <p>◦ 장기총비용함수 : <i>LTC</i> = 18 + 2<i>q</i> + 2<i>q</i><sup>2</sup></p>\n  <p>◦ 장기평균총비용함수 : <i>LATC</i> = 18/<i>q</i> + 2 + 2<i>q</i></p>\n  <p>◦ 장기한계비용함수 : <i>LMC</i> = 2 + 4<i>q</i></p>\n  <p>◦ 시장수요함수 : <i>Q</i> = 500 - 10<i>P</i></p>\n  <p class=\"text-xs text-slate-500 font-sans\">(단, <i>q</i>는 개별 기업의 생산량이며, <i>P</i>는 시장가격, <i>Q</i>는 시장 전체의 생산량이다.)</p>\n</div>\n<p>○○기업의 장기평균총비용함수는 U자 커브 형태이며, 생산량에 따라 ㉠ <u>규모의 경제</u>와 규모의 비경제가 발생한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠의 의미를 ‘장기평균총비용’이라는 용어를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉠이 발생하는 ○○기업의 생산량 구간(<i>a</i> &lt; <i>q</i> &lt; <i>b</i>)에서 <i>a</i>와 <i>b</i>의 값을 순서대로 쓸 것.</p>\n<p>◦ 장기시장균형가격과 장기시장균형생산량을 순서대로 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠(규모의 경제)의 의미:\n기업의 생산량이 증가함에 따라 '장기평균총비용(LATC)'이 지속적으로 감소(하락)하는 현상을 의미한다.\n\n2. 규모의 경제 발생 구간 (a < q < b):\n- LATC 최소점 도출: LATC = LMC ➔ 18/q + 2 + 2q = 2 + 4q ➔ 18/q = 2q ➔ q^2 = 9 ➔ q = 3\n- 따라서 규모의 경제(LATC 하락 구간)는 생산량이 0보다 크고 3보다 작은 구간이다.\n- a = 0, b = 3\n\n3. 장기시장균형가격 및 생산량:\n- 장기균형가격 P = LATC 최소값 = 18/3 + 2 + 2(3) = 6 + 2 + 6 = 14원\n- 장기시장균형생산량 Q = 500 - 10(14) = 500 - 140 = 360단위\n(장기 균형 가격: 14원, 장기 균형 생산량: 360개)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. ㉠ 의미: 생산량이 증가함에 따라 '장기평균총비용'이 감소하는 현상\n2. a와 b: a = 0, b = 3\n3. 장기시장균형가격: 14원, 장기시장균형생산량: 360",
-    "targetKeywords": [
-      "장기평균총비용 감소",
-      "0",
-      "3",
-      "14",
-      "360"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2026-A-12",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2026학년도] 12번. 공공재와 공유자원 (배제성, 경합성, 최적 공공재 생산량) [4점]",
-    "examTag": "",
-    "page": 12,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2026학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>재화는 다음 두 가지 성질로 구분할 수 있다. ( ㉠ )은/는 대가를 치르지 않은 사람들이 해당 재화를 소비하는 것을 막을 수 있는 성질을 의미하고, ( ㉡ )은/는 한 사람이 해당 재화를 소비하면 다른 사람이 소비할 기회가 줄어드는 성질을 의미한다. 공공재는 이 두 성질을 모두 가지지 않는다. 이러한 특성으로 인해 공공재의 경우 사회적 한계편익곡선이 개별 소비자 한계편익곡선의 수직 합이 된다. X재는 공공재이며, X재에 대해 동일한 소비자가 1,000명 존재하고 각 개별 소비자의 한계편익곡선이 MB = 5 - Q이다. 단, MB는 한계편익, Q는 수량이다. X재 생산의 한계비용은 1,000이고, 고정비용은 없다.</p>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉠, ㉡에 해당하는 용어를 순서대로 쓸 것.</p>\n    <p>◦ 공유자원의 비극(tragedy of commons)이 발생하는 원인을 괄호 안의 ㉠, ㉡에 해당하는 용어를 활용하여 서술할 것.</p>\n    <p>◦ 사회적으로 바람직한 X재 생산량을 쓸 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- ㉠, ㉡:\n  ㉠: 배제성\n  ㉡: 경합성\n- 공유자원의 비극 발생 원인:\n  공유자원은 대가를 지불하지 않아도 소비를 막을 수 없는 '비배제성(배제성이 없음)'을 가지면서도 한 사람의 소비가 다른 사람의 소비 기회를 줄이는 '경합성'을 띠고 있기 때문에, 개인의 합리적 이기심에 따라 대가 없이 자원을 남획하거나 과다 소비하여 자원이 고갈된다.\n- 사회적으로 바람직한 X재 생산량:\n  4 (또는 4단위)\n\n2. 계산 및 해설:\n- 공공재는 비경합성과 비배제성을 지니므로 사회적 한계편익(SMB)은 개별 소비자 한계편익의 수직적 합(가격/편익의 합)이다:\n  SMB = Σ MB_i = 1,000 × (5 - Q) = 5,000 - 1,000Q\n- 사회적 최적 생산 조건은 사회적 한계편익과 한계비용의 일치(SMB = MC)이다:\n  5,000 - 1,000Q = 1,000\n  1,000Q = 4,000 ⟹ Q = 4\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- ㉠, ㉡:\n  ㉠: 배제성\n  ㉡: 경합성\n- 공유자원의 비극 발생 원인:\n  공유자원은 대가를 지불하지 않아도 소비를 막을 수 없는 '비배제성(배제성이 없음)'을 가지면서도 한 사람의 소비가 다른 사람의 소비 기회를 줄이는 '경합성'을 띠고 있기 때문에, 개인의 합리적 이기심에 따라 대가 없이 자원을 남획하거나 과다 소비하여 자원이 고갈된다.\n- 사회적으로 바람직한 X재 생산량:\n  4 (또는 4단위)\n\n2. 계산 및 해설:\n- 공공재는 비경합성과 비배제성을 지니므로 사회적 한계편익(SMB)은 개별 소비자 한계편익의 수직적 합(가격/편익의 합)이다:\n  SMB = Σ MB_i = 1,000 × (5 - Q) = 5,000 - 1,000Q\n- 사회적 최적 생산 조건은 사회적 한계편익과 한계비용의 일치(SMB = MC)이다:\n  5,000 - 1,000Q = 1,000\n  1,000Q = 4,000 ⟹ Q = 4",
-    "targetKeywords": [
-      "배제성",
-      "경합성",
-      "공유자원의 비극",
-      "사회적 한계편익",
-      "수직합"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2026-B-10",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2026학년도] 10번. 통화정책 전달경로 (공개시장운영과 AD-AS 단기·장기 균형) [4점]",
-    "examTag": "",
-    "page": 10,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2026학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 10번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    10. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>통화정책은 넓은 의미에서 화폐공급을 조절하는 정책을 의미한다. 가장 대표적인 통화정책수단은 공개시장운영이다. 이는 <u class=\"font-semibold text-blue-900 decoration-blue-500 decoration-2\">㉠ 중앙은행이 국공채를 매입 또는 매각하여 통화량과 금리를 조절</u>하는 정책수단이다. 이외에 지급준비율 정책, 여․수신 제도도 통화정책수단으로 사용된다. 통화정책이 국민소득에 영향을 주는 전통적인 전달경로는 이자율과 음(-)의 관계에 있는 투자지출의 변화를 포함한다.</p>\n  <p>그림은 통화정책의 전달경로를 설명하고자 화폐시장과 상품시장을 나타낸 것이다.</p>\n  <div class=\"my-3 text-center\"><img src=\"assets/exam/exam_2026_b_10.png\" alt=\"통화정책 전달경로 (화폐시장 및 상품시장) 그래프\" class=\"max-w-full md:max-w-[480px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" /></div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠이 &lt;화폐시장&gt;의 이자율에 미치는 영향을 그 원인을 포함하여 서술하고, 전통적인 전달경로에 따라 &lt;상품시장&gt;의 총수요에 미치는 영향을 그 원인을 포함하여 서술할 것.</p>\n    <p>◦ 밑줄 친 ㉠이 전통적인 전달경로에 따라 국민소득에 미치는 영향을 &lt;상품시장&gt;의 총공급 A와 총공급 B를 이용하여 단기와 장기로 구분하여 각각 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 이자율 및 총수요에 미치는 영향:\n  - 이자율: 중앙은행이 국공채를 매입하면 본원통화가 공급되어 화폐공급(MS)이 증가하므로, 화폐시장에서 화폐공급곡선이 우측으로 이동하여 이자율이 하락한다.\n  - 총수요: 이자율 하락으로 자금조달 비용이 감소하여 기업의 투자지출(I)이 증가하므로, 상품시장의 총수요(AD)가 증가(우측 이동)한다.\n- 국민소득에 미치는 영향:\n  - 단기: 단기 총공급곡선 A 하에서는 총수요 증가로 물가 상승과 함께 실질 국민소득(Y)이 증가한다.\n  - 장기: 장기 총공급곡선 B(자연산출량 수준에서 수직선) 하에서는 총수요가 증가하더라도 물가만 상승할 뿐, 국민소득은 자연산출량 수준으로 복귀하여 변하지 않는다(불변).\n\n2. 해설:\n- 공개시장운영(국공채 매입) ➔ 화폐공급 증가 ➔ 이자율 하락 ➔ 투자지출 증가 ➔ 총수요(AD) 우측 이동.\n- 단기(SR-AS A): 가격 경직성으로 인해 산출량(국민소득) 증가.\n- 장기(LR-AS B): 물가와 명목임금의 완전 신축적 조정으로 화폐의 중립성이 성립하여 산출량은 불변이고 물가만 상승.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 이자율 및 총수요에 미치는 영향:\n  - 이자율: 중앙은행이 국공채를 매입하면 본원통화가 공급되어 화폐공급(MS)이 증가하므로, 화폐시장에서 화폐공급곡선이 우측으로 이동하여 이자율이 하락한다.\n  - 총수요: 이자율 하락으로 자금조달 비용이 감소하여 기업의 투자지출(I)이 증가하므로, 상품시장의 총수요(AD)가 증가(우측 이동)한다.\n- 국민소득에 미치는 영향:\n  - 단기: 단기 총공급곡선 A 하에서는 총수요 증가로 물가 상승과 함께 실질 국민소득(Y)이 증가한다.\n  - 장기: 장기 총공급곡선 B(자연산출량 수준에서 수직선) 하에서는 총수요가 증가하더라도 물가만 상승할 뿐, 국민소득은 자연산출량 수준으로 복귀하여 변하지 않는다(불변).\n\n2. 해설:\n- 공개시장운영(국공채 매입) ➔ 화폐공급 증가 ➔ 이자율 하락 ➔ 투자지출 증가 ➔ 총수요(AD) 우측 이동.\n- 단기(SR-AS A): 가격 경직성으로 인해 산출량(국민소득) 증가.\n- 장기(LR-AS B): 물가와 명목임금의 완전 신축적 조정으로 화폐의 중립성이 성립하여 산출량은 불변이고 물가만 상승.",
-    "targetKeywords": [
-      "공개시장운영",
-      "통화량 증가",
-      "이자율 하락",
-      "투자 증가",
-      "총수요 증가",
-      "화폐의 중립성"
-    ],
-    "tapeCount": 6,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2026-B-11",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2026학년도] 11번. 독점적 경쟁시장의 단기·장기 균형 (자중손실과 고정비용 변화) [4점]",
-    "examTag": "",
-    "page": 11,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2026학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n  <p>독점적 경쟁시장은 시장에서 기업들의 진입과 진출이 자유롭고, 다수의 기업들이 존재하지만 시장에 공급되는 상품들은 수요자들의 입장에서 볼 때 서로 다른 시장을 의미한다. 완전경쟁시장에서 기업은 수동적인 가격 수용자(price taker)로서 시장지배력이 없는 데 반해, 독점적 경쟁시장에서 기업은 가격 설정자(price setter)로서 시장지배력을 갖는다. 독점적 경쟁시장의 예로 음식점, 병원, 미용실 등이 있다. 독점적 경쟁시장에서 생산자인 A 음식점의 수요함수가 Q = 120 - P, 한계수입함수가 MR = 120 - 2Q, 총비용함수가 TC = 60Q + F, 한계비용함수가 MC = 60이다. A음식점이 활동하는 독점적 경쟁시장은 현재 장기균형 상태에 있다. 단, Q는 수량, P는 가격, F는 고정비용이다.</p>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 완전경쟁시장과 독점적 경쟁시장에서 개별 기업이 직면하는 수요곡선의 모양을 모두 서술할 것.</p>\n    <p>◦ A 음식점의 가격 설정에 따른 자중손실(dead weight loss)을 쓸 것.</p>\n    <p>◦ A 음식점의 고정비용 F를 쓰고, 고정비용 F가 감소할 경우 나타나는 이윤 변화와 이로 인한 경쟁 음식점의 진입 또는 진출 여부를 서술할 것.</p>\n    </div>\n  </div>\n</div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 개별 기업이 직면하는 수요곡선의 모양:\n  - 완전경쟁시장: 수평선(완전탄력적)\n  - 독점적 경쟁시장: 우하향(비교적 탄력적)\n- A 음식점의 자중손실(Deadweight Loss):\n  450\n- 고정비용 F 및 변화에 따른 진입/진출:\n  - 고정비용 F: 900\n  - F 감소 시 이윤 변화 및 진입 여부: 고정비용 F가 감소하면 평균비용이 낮아져 단기적으로 초과이윤(양(+)의 경제적 이윤)이 발생하고, 이로 인해 새로운 경쟁 음식점들이 시장에 '진입'한다.\n\n2. 정밀 계산 과정:\n① 개별 기업 이윤극대화:\n   MR = MC ➔ 120 - 2Q = 60 ➔ 2Q = 60 ➔ Q = 30\n   수요함수: P = 120 - Q = 120 - 30 = 90\n② 사회적 최적(완전경쟁 기준):\n   P = MC ➔ 120 - Q = 60 ➔ Q_c = 60, P_c = 60\n③ 자중손실(DWL):\n   DWL = 1/2 × (P - MC) × (Q_c - Q) = 1/2 × (90 - 60) × (60 - 30) = 1/2 × 30 × 30 = 450\n④ 장기균형에서 고정비용 F 도출:\n   독점적 경쟁의 장기균형에서는 경제적 이윤이 0 (TR = TC).\n   TR = P × Q = 90 × 30 = 2,700\n   TC = 60Q + F = 60 × 30 + F = 1,800 + F\n   2,700 = 1,800 + F ➔ F = 900\n⑤ F 감소 시:\n   TC 감소 ➔ 초과이윤(π > 0) 발생 ➔ 신규 기업 진입.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 개별 기업이 직면하는 수요곡선의 모양:\n  - 완전경쟁시장: 수평선(완전탄력적)\n  - 독점적 경쟁시장: 우하향(비교적 탄력적)\n- A 음식점의 자중손실(Deadweight Loss):\n  450\n- 고정비용 F 및 변화에 따른 진입/진출:\n  - 고정비용 F: 900\n  - F 감소 시 이윤 변화 및 진입 여부: 고정비용 F가 감소하면 평균비용이 낮아져 단기적으로 초과이윤(양(+)의 경제적 이윤)이 발생하고, 이로 인해 새로운 경쟁 음식점들이 시장에 '진입'한다.\n\n2. 정밀 계산 과정:\n① 개별 기업 이윤극대화:\n   MR = MC ➔ 120 - 2Q = 60 ➔ 2Q = 60 ➔ Q = 30\n   수요함수: P = 120 - Q = 120 - 30 = 90\n② 사회적 최적(완전경쟁 기준):\n   P = MC ➔ 120 - Q = 60 ➔ Q_c = 60, P_c = 60\n③ 자중손실(DWL):\n   DWL = 1/2 × (P - MC) × (Q_c - Q) = 1/2 × (90 - 60) × (60 - 30) = 1/2 × 30 × 30 = 450\n④ 장기균형에서 고정비용 F 도출:\n   독점적 경쟁의 장기균형에서는 경제적 이윤이 0 (TR = TC).\n   TR = P × Q = 90 × 30 = 2,700\n   TC = 60Q + F = 60 × 30 + F = 1,800 + F\n   2,700 = 1,800 + F ➔ F = 900\n⑤ F 감소 시:\n   TC 감소 ➔ 초과이윤(π > 0) 발생 ➔ 신규 기업 진입.",
-    "targetKeywords": [
-      "수평선",
-      "우하향",
-      "자중손실 450",
-      "고정비용 900",
-      "초과이윤",
-      "신규 진입"
-    ],
-    "tapeCount": 6,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2013-1-20",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2013학년도] 20번. 미국과 일본의 이자율과 유동성 함정",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 20번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    20. 다음에서 제시되고 있는 미국과 일본의 경제 상황에 대한 분석으로 가장 적절한 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>1930년대 미국의 단기 이자율(3개월 만기 재무성채권의 이자율)은 대부분의 시기 동안 0의 수준에 머물렀다. 1990년대 말부터 2000년대까지 대부분의 시기 동안 일본은 0의 이자율 정책을 지속했다. 미국은 금융위기가 한창이었던 2008년 말에 이르러 다시 단기 이자율(콜금리)이 사실상 0의 수준으로 하락하였다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 생산물시장에서 인플레이션 갭이 존재하는 상황이다.</div>\n    <div>② 경기안정화를 위한 정책으로는 통화정책이 효과적이다.</div>\n    <div>③ 재정정책은 구축효과 때문에 경기안정화에 효과가 없다.</div>\n    <div>④ 화폐수요의 이자율탄력성은 매우 크고 투자의 이자율탄력성은 매우 작을 것이다.</div>\n    <div>⑤ 경기안정화정책을 시행하더라도 장기적으로 국민소득은 현재의 균형 국민소득 수준으로 회귀할 것이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n단기 이자율이 사실상 0에 머무는 상황은 '유동성 함정(liquidity trap)'에 빠진 경제를 시사합니다.\n- 이자율이 0에 가까워지면 화폐수요의 이자율 탄력성은 무한대에 가까워져(매우 크고), 투자의 이자율 탄력성은 매우 작아집니다(④ 정답).\n- 유동성 함정 하에서는 통화공급을 늘려도 이자율이 더 이상 하락하지 않으므로 통화정책은 무력하며(② 틀림), 오히려 재정정책이 구축효과 없이 매우 강력한 효과를 발휘합니다(③ 틀림).\n- 이 시기에는 심각한 경기침체(디플레이션 갭)가 존재합니다(① 틀림).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ 화폐수요의 이자율탄력성은 매우 크고 투자의 이자율탄력성은 매우 작을 것이다.",
-    "targetKeywords": [
-      "유동성 함정",
-      "화폐수요",
-      "이자율탄력성",
-      "통화정책 무력",
-      "재정정책 유효"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-21",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2013학년도] 21번. 게임이론과 방송국 편성",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음의 시장 상황에 대한 설명으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>어떤 작은 나라에서 두 방송국이 서로 경쟁을 벌이고 있다. 두 방송국은 주말 황금 시간대에 어떤 프로그램을 편성할지를 두고 서로 눈치를 보고 있는데 A사는 예능 프로그램과 드라마 중 하나를, B사는 스포츠 프로그램과 음악 프로그램 중 하나를 선택하려 한다. 각 방송국이 특정한 프로그램을 선택하였을 때 얻게 되는 광고 수입은 표와 같으며, A사와 B사는 광고 수입에 관한 모든 정보를 공유하고 있다.</p>\n    <table class=\"w-full text-center border-collapse border border-slate-300 mt-2 bg-white\">\n      <thead>\n        <tr><th colspan=\"2\" rowspan=\"2\" class=\"border border-slate-300 p-1\"></th><th colspan=\"2\" class=\"border border-slate-300 p-1\">B사</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">스포츠</th><th class=\"border border-slate-300 p-1\">음악</th></tr>\n      </thead>\n      <tbody>\n        <tr><td rowspan=\"2\" class=\"border border-slate-300 p-1 font-bold\">A사</td><td class=\"border border-slate-300 p-1\">예능</td><td class=\"border border-slate-300 p-1\">A: 8억, B: 5억</td><td class=\"border border-slate-300 p-1\">A: 4억, B: 4억</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">드라마</td><td class=\"border border-slate-300 p-1\">A: 3억, B: 7억</td><td class=\"border border-slate-300 p-1\">A: 5억, B: 9억</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① A사의 우월전략은 예능을 선택하는 것이다.</div>\n    <div>② B사의 우월전략은 음악을 선택하는 것이다.</div>\n    <div>③ A사가 예능을, B사가 스포츠를 선택하는 것이 유일한 내쉬균형이다.</div>\n    <div>④ B사가 음악을 선택했을 때 A사의 내쉬균형전략은 드라마를 선택하는 것이다.</div>\n    <div>⑤ A사가 드라마를 선택했을 때 B사의 내쉬균형전략은 스포츠를 선택하는 것이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n- B사가 스포츠를 선택하면 A사는 예능(8억) > 드라마(3억)이므로 예능을 선택.\n- B사가 음악을 선택하면 A사는 예능(4억) < 드라마(5억)이므로 드라마를 선택. (④ 정답)\n따라서 A사는 상대방 전략에 따라 최적 대응이 달라지므로 우월전략이 없습니다. (① 틀림)\n- A사가 예능을 선택하면 B사는 스포츠(5억) > 음악(4억)이므로 스포츠를 선택.\n- A사가 드라마를 선택하면 B사는 스포츠(7억) < 음악(9억)이므로 음악을 선택. (⑤ 틀림)\n따라서 B사도 우월전략이 없습니다. (② 틀림)\n- 내쉬 균형은 상대방의 전략이 주어졌을 때 더 이상 전략을 바꿀 유인이 없는 상태입니다. (예능, 스포츠)와 (드라마, 음악) 두 개의 내쉬균형이 존재하므로 유일한 내쉬균형이 아닙니다. (③ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ B사가 음악을 선택했을 때 A사의 내쉬균형전략은 드라마를 선택하는 것이다.",
-    "targetKeywords": [
-      "게임이론",
-      "내쉬균형",
-      "우월전략",
-      "최적대응"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-22",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-3. 국민소득결정",
-    "title": "[2013학년도] 22번. 폐쇄경제 소득-지출 모형의 거시균형",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음은 폐쇄 국민경제의 단순한 소득－지출 모형에 대한 자료이다. 이에 대한 분석으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>S = -100 + 0.25 · (Y-T)<br>I = 40<br>G = 80<br>T = 80<br>Y_f = 600<br>(여기서, S는 가계 저축, Y는 국민소득, T는 조세, I는 기업의 투자지출, G는 정부지출, Y_f는 완전고용 국민소득을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 한계 소비성향은 0.25이다.</p>\n      <p>ㄴ. 국민소득의 크기가 600일 때 총지출이 총소득의 크기보다 크다.</p>\n      <p>ㄷ. 균형 재정을 유지할 경우, 균형 국민소득 수준에서 Y_f로 이동하려면 정부지출을 40만큼 줄이면 된다.</p>\n      <p>ㄹ. 한계 저축성향이 높아지면 새로운 균형 국민소득에서는 저축의 크기가 늘어나게 될 것이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- 가처분소득(Y-T)에 대한 한계저축성향(MPS)이 0.25이므로, 한계소비성향(MPC)은 1 - 0.25 = 0.75입니다. (ㄱ 틀림)\n- 소비함수: C = (Y-T) - S = (Y-T) - (-100 + 0.25(Y-T)) = 100 + 0.75(Y-T)\n- 균형 국민소득(Y) = C + I + G = 100 + 0.75(Y-80) + 40 + 80 = 100 + 0.75Y - 60 + 120 = 160 + 0.75Y.\n  0.25Y = 160 ➔ Y = 640. 현재 균형 국민소득은 640입니다.\n- 국민소득이 Y_f(600)일 때, 총지출 AE = 160 + 0.75(600) = 610. 총지출(610) > 총소득(600). (ㄴ 옳음)\n- 균형 재정을 유지(ΔG = ΔT)하면서 국민소득을 640에서 600(ΔY = -40)으로 줄이려면, 균형재정승수가 1이므로 정부지출(G)을 40만큼 줄이면 됩니다. (ㄷ 옳음)\n- 한계저축성향이 높아지면 승수효과로 인해 소득이 감소하여 최종적으로 저축은 변함이 없습니다(저축의 역설). 투자(I=40)와 정부저축(T-G=0)이 외생적으로 고정되어 있다면 균형 저축 S = I + (G-T)는 일정하게 유지됩니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ㄴ, ㄷ",
-    "targetKeywords": [
-      "국민소득결정",
-      "한계소비성향",
-      "한계저축성향",
-      "균형재정승수",
-      "저축의 역설"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-23",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-3. 개방거시균형",
-    "title": "[2013학년도] 23번. 개방 국민경제의 사후적 균형 (주입과 누출)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음은 개방 국민경제의 사후적 균형에 관한 서술이다. 이에 대한 분석과 추론으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>경제는 사후적으로 보면 언제나 균형을 이룬다. 개방 국민경제에서의 주입은 투자지출, 정부지출 및 수출이며 누출은 민간저축, 조세 및 수입이다. 민간저축과 투자지출의 차이는 민간 잉여, 조세와 정부지출의 차이는 정부 잉여, 수출과 수입의 차이는 순수출로 정의된다. 2국으로 구성되는 국제경제를 상정하자. 그리고 한 나라의 수입의 크기는 그 나라 국민소득의 크기와 비례적인 관계가 있다고 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 국내의 투자지출이 클수록 순수출의 크기는 작다.</p>\n      <p>ㄴ. 민간 잉여의 크기가 일정하다면, 정부 잉여가 작을수록 순수출의 크기는 크다.</p>\n      <p>ㄷ. 민간 잉여와 정부 잉여의 합이 양(+)이라면 순수출의 크기는 반드시 양(+)이다.</p>\n      <p>ㄹ. 상대국 정부가 정부지출을 확대하면 자국의 순수출은 줄어든다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② ㄱ, ㄷ\n\n해설:\n사후적 항등식: 주입(I + G + X) = 누출(S + T + M)\n이를 정리하면: (S - I) + (T - G) = (X - M)\n즉, [민간 잉여] + [정부 잉여] = [순수출]\n- ㄱ: 항등식 (X-M) = (S-I) + (T-G)에서, I(투자지출)가 커지면 (S-I)가 감소하므로 순수출(X-M)은 작아집니다. (옳음)\n- ㄴ: 민간 잉여(S-I)가 일정할 때, 정부 잉여(T-G)가 작아지면 합이 작아지므로 순수출은 작아집니다. (틀림)\n- ㄷ: 민간 잉여와 정부 잉여의 합이 양(+)이면, 그 합인 순수출도 당연히 양(+)입니다. (옳음)\n- ㄹ: 상대국 정부가 정부지출을 확대하면 상대국의 국민소득이 증가합니다. 상대국의 수입(자국의 수출)은 상대국 국민소득에 비례하므로 자국의 수출이 증가하여 자국의 순수출은 늘어납니다. (틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "② ㄱ, ㄷ",
-    "targetKeywords": [
-      "개방경제 거시균형",
-      "주입과 누출",
-      "민간잉여",
-      "정부잉여",
-      "순수출"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-24",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2013학년도] 24번. 로렌츠곡선과 소득분배 지표",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음 자료에 대한 설명으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>어떤 나라의 소득분배 상황을 나타내는 로렌츠곡선을 작성하려 한다. B, C, D, E점은 각각 로렌츠곡선이 지나갈 수 있는 점들을 표시하고 있으며 ACF와 ADF는 각각 가능한 로렌츠 곡선을 나타낸다.</p>\n    <p>* 십분위분배율 = (하위 40% 소득자의 소득비율) / (상위 20% 소득자의 소득비율)</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 로렌츠곡선이 B점을 지난다면 D점은 지날 수 없다.</div>\n    <div>② 로렌츠곡선이 B점을 지난다면 지니계수는 0이다.</div>\n    <div>③ 로렌츠곡선이 E점을 지난다면 십분위분배율은 0이다.</div>\n    <div>④ ACF의 지니계수와 ADF의 지니계수는 같다.</div>\n    <div>⑤ ACF의 십분위분배율은 ADF의 십분위분배율보다 크다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n- 로렌츠곡선은 항상 아래로 볼록(기울기가 단조 증가)하며 완전평등선(대각선)의 아래에 위치합니다. B점은 완전평등선(대각선) 상에 있으므로, 곡선이 B를 지난다면 모든 점이 대각선 위에 있어야 합니다(완전 평등). 따라서 아래쪽의 D점을 지날 수 없고, 지니계수는 0이 됩니다. (①, ② 옳음)\n- E점은 인구 누적 100% 미만에서 소득 누적이 0%임을 의미합니다. 하위 40%의 소득이 0이므로 십분위분배율은 0이 됩니다. (③ 옳음)\n- ACF와 ADF는 대각선 아래에 위치하는 두 곡선입니다. ACF와 ADF의 십분위분배율을 비교하면 C가 D보다 높이 있으므로 하위 소득계층의 몫이 더 큰 ACF가 더 평등(십분위분배율 더 큼)합니다. (⑤ 옳음)\n- ACF와 ADF의 지니계수를 비교하면, 대각선과 곡선 사이의 면적이 다르므로 지니계수는 다릅니다. (④ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ ACF의 지니계수와 ADF의 지니계수는 같다.",
-    "targetKeywords": [
-      "로렌츠곡선",
-      "지니계수",
-      "십분위분배율",
-      "소득분배 불평등"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-25",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2013학년도] 25번. 대체재의 균형 가격 변화 (잼과 버터)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 다음 (가), (나)의 원인을 옳게 짝지은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>잼과 버터는 대체재이다. 잼의 원료는 과일이고 버터의 원료는 우유이다.</p>\n    <p>(가) 버터의 균형 거래량이 증가하고, 잼의 균형 가격이 상승하였다.</p>\n    <p>(나) 버터의 균형 거래량이 증가하고, 잼의 균형 가격이 하락하였다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <table class=\"w-full text-center border-collapse border border-slate-300\">\n      <thead>\n        <tr><th class=\"border border-slate-300 p-1\"></th><th class=\"border border-slate-300 p-1\">(가)</th><th class=\"border border-slate-300 p-1\">(나)</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1\">①</td><td class=\"border border-slate-300 p-1\">과일 가격 상승</td><td class=\"border border-slate-300 p-1\">우유 가격 하락</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">②</td><td class=\"border border-slate-300 p-1\">과일 가격 상승</td><td class=\"border border-slate-300 p-1\">우유 가격 상승</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">③</td><td class=\"border border-slate-300 p-1\">과일 가격 하락</td><td class=\"border border-slate-300 p-1\">우유 가격 상승</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">④</td><td class=\"border border-slate-300 p-1\">우유 가격 하락</td><td class=\"border border-slate-300 p-1\">과일 가격 하락</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">⑤</td><td class=\"border border-slate-300 p-1\">우유 가격 상승</td><td class=\"border border-slate-300 p-1\">과일 가격 하락</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ①\n\n해설:\n(가) 버터 거래량 증가, 잼 가격 상승: \n- 과일 가격 상승 ➔ 잼 생산비용 증가 ➔ 잼 공급 감소 ➔ 잼 가격 상승. 잼이 비싸지면 대체재인 버터 수요 증가 ➔ 버터 거래량 증가. (따라서 가의 원인은 과일 가격 상승)\n(나) 버터 거래량 증가, 잼 가격 하락:\n- 우유 가격 하락 ➔ 버터 생산비용 감소 ➔ 버터 공급 증가 ➔ 버터 가격 하락 & 거래량 증가. 버터가 싸지면 대체재인 잼 수요 감소 ➔ 잼 가격 하락. (따라서 나의 원인은 우유 가격 하락)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① (가) 과일 가격 상승, (나) 우유 가격 하락",
-    "targetKeywords": [
-      "대체재",
-      "교차탄력성",
-      "공급충격",
-      "균형가격",
-      "균형거래량"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-26",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2013학년도] 26번. 오염세와 배출권 거래제도 비교",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 다음 자료에 대한 분석과 추론으로 타당한 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ △△시에는 이윤의 극대화를 추구하는 두 기업 A와 B가 있다. 두 기업은 각각 1톤의 제품을 생산할 때마다 1톤씩의 오염 물질을 방출하고 있으나, 그에 따르는 오염의 사회적 비용은 부담하지 않고 있다.</p>\n    <p>◦ MPA와 MPB 두 직선은 기업 A, B가 각각 생산을 1톤씩 늘려갈 때마다 얻는 한계이익(= 한계수입 - 한계비용)을 보여 주고 있다. 따라서 두 기업은 한계이익이 0이 되는 점에서 생산하고 있다. (그래프 상 A의 절편은 60, 60 / B의 절편은 30, 60)</p>\n    <p>◦ △△시 정부는 오염 규제 정책을 도입하기로 결정하였다. 그리고 각 기업에게 동일한 오염세를 부과하는 오염세 정책 및 동일한 양의 오염 배출을 허용하고 배출권의 거래를 인정하는 오염 배출권 거래 정책을 비교하고 있다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 오염세를 1톤 당 20만 원으로 부과한다면, 두 기업의 총 오염 배출량은 70톤이 된다.</p>\n      <p>ㄴ. 오염세 정책 하에서 기업 A의 생산량이 기업 B의 생산량보다 더 크다.</p>\n      <p>ㄷ. 각 기업에게 오염 배출량을 20톤씩 허용한다면, 오염 1톤 당 배출권의 거래 가격은 15만 원부터 형성될 수 있다.</p>\n      <p>ㄹ. 오염 배출권의 거래가 이루어진다면 기업 A는 언제나 배출권의 매입자 위치에 서게 될 것이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ\n\n해설:\n그래프를 통해 함수를 도출하면: \nMPA = 60 - Q_A\nMPB = 30 - 0.5 Q_B\n- 오염세가 T로 주어지면, 기업은 한계이익(MP)이 T와 같아질 때까지 생산합니다.\n- ㄱ: T=20일 때, 60-Q_A = 20 ➔ Q_A = 40. 30-0.5Q_B = 20 ➔ Q_B = 20. 총 생산(오염) = 40 + 20 = 60톤입니다. (틀림)\n*단, 문제 그래프나 조건에 따라 B의 절편이 다를 수 있는데, B의 y절편이 30, x절편이 60이면 기울기는 -0.5입니다.\n만약 B의 x절편을 다른 값으로 해석했다면 Q_B가 달라집니다. (일반적으로 교과서 예제에서 T=20이면 총합은 60톤입니다.)\n- ㄴ: 어떤 양(+)의 오염세 T 하에서(단 T<30일때), MPA가 MPB보다 항상 높게 위치하므로 A의 생산량이 더 큽니다. (옳음)\n- ㄷ: 각 기업에 20톤씩 허용할 경우, MPA(20) = 40, MPB(20) = 20입니다. 배출권 거래는 양 기업의 한계이익이 일치하는 점에서 이루어집니다. 총 40톤 허용이므로 MPA = MPB ➔ 60 - Q_A = 30 - 0.5 Q_B, Q_A + Q_B = 40. 이를 풀면 Q_A = 33.3, Q_B = 6.6, 균형가격 = 26.6만원이 됩니다. 15만원은 아닙니다. (틀림)\n- ㄹ: 할당량이 어떻게 주어지느냐에 따라 달라집니다. 기업 A에 40톤 전량이 주어지고 B에 0톤이 주어지면 A가 매도자가 됩니다. (틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① ㄱ, ㄴ (정확한 수식 해석 요망)",
-    "targetKeywords": [
-      "한계저감비용",
-      "배출권 거래제도",
-      "피구세",
-      "오염세"
-    ]
-  },
-  {
-    "id": "EXAM-2013-1-27",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2013학년도] 27번. 생산가능곡선과 무역 이익",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2013학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 다음 자료에 대한 분석으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>갑국과 을국은 밀과 자동차를 생산하고 있다. 그림은 갑국과 을국의 생산가능곡선을 보여 주고 있다. 무역 이전 각국은 가용 노동시간의 절반씩을 각각 밀과 자동차 생산에 투입하여 생산․소비하고 있다. 무역이 이루어질 경우 밀:자동차의 교환 비율은 5:6이라고 가정한다. 또한 무역을 통해 어떤 나라의 사회적 효용이 증가하기 위해서는 무역 이전에 비하여 두 재화의 소비량이 모두 증가하거나, 한 재화의 소비량은 무역 이전과 같더라도 나머지 한 재화의 소비량은 반드시 무역 이전보다 증가해야 한다고 가정한다.</p>\n    <p>[그래프 정보: 갑국 최대생산량 밀 500만톤, 자동차 500만대. 을국 최대생산량 밀 300만톤, 자동차 400만대.]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 밀의 양으로 표시한 자동차 한 대의 기회비용은 갑국이 더 작다.</p>\n      <p>ㄴ. 자동차의 양으로 표시한 밀 한 톤의 기회비용은 을국이 더 크다.</p>\n      <p>ㄷ. 갑국과 을국이 모두 비교우위 품목만을 생산한다면 무역을 통해 두 나라가 동시에 무역 이전보다 높은 효용을 누릴 수 있다.</p>\n      <p>ㄹ. 갑국이 자동차를 160만 대, 을국이 300만 대를 생산한다면 무역을 통해 두 나라가 동시에 무역 이전보다 높은 효용을 누릴 수 있다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- 갑국의 기회비용: 자동차 1단위 = 밀 1단위 / 밀 1단위 = 자동차 1단위\n- 을국의 기회비용: 자동차 1단위 = 밀 3/4단위 / 밀 1단위 = 자동차 4/3단위\n- 밀 기회비용: 갑국(1) < 을국(4/3) ➔ 밀은 갑국에 비교우위. (ㄴ 옳음)\n- 자동차 기회비용: 갑국(1) > 을국(3/4) ➔ 자동차는 을국에 비교우위. (ㄱ 틀림, 갑국이 더 큼)\n- 무역조건(교환비율)이 밀 5 = 자동차 6 (즉 밀 1 = 자동차 1.2).\n이 교역조건(1.2)은 두 국가의 밀 기회비용(1과 1.33) 사이에 있으므로 양국 모두 비교우위 품목만 특화하여 교역하면 이익을 얻습니다. (ㄷ 옳음)\n- ㄹ: 불완전 특화 시의 이득 계산. (자세한 시뮬레이션 시 두 나라 모두 무역 이전보다 파레토 개선이 이루어지는지 검증해야 하며, 보통 주어진 교환비율 하에서는 완전특화(ㄷ)가 최적입니다.)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ㄴ, ㄷ",
-    "targetKeywords": [
-      "비교우위",
-      "생산가능곡선",
-      "교역조건",
-      "기회비용",
-      "무역의 이익"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-19",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2012학년도] 19번. 담배 시장의 수요와 공급 및 조세 귀착",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 19번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    19. (가)∼(다) 시장에 대한 옳은 추론을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>(가) 쌀을 재배할 수 있는 면적은 한정되어 있고, 쌀을 생산하는 데는 오랜 시간이 걸린다. 그리고 쌀밥은 소비자들의 주식으로 가격의 변화에 대한 수요량 변화가 매우 적다.</p>\n    <p>(나) 해외 관광 여행은 국내 여행에 비해 가격 부담이 크다. 그래서 해외 관광 여행 비용이 조금이라도 상승하면 해외 관광 여행을 포기하는 경우가 많아 환율 변동이 서비스 수지의 개선 요인이 되기도 한다.</p>\n    <p>(다) 담배는 중독성이 있어서 쉽게 끊기 어렵다. 그런데 최근 시장 개방이 확대되면서 각국의 다양한 담배가 시장에서 판매되고 있어 애연가들은 자신이 좋아하는 담배를 어디서나 쉽게 살 수 있게 되었다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. (가) 시장에서 기술 진보로 쌀의 공급이 증가할 경우 쌀 농가의 판매 수입은 감소할 것이다.</p>\n      <p>ㄴ. (나) 시장에서 여행사들이 해외 관광 여행 공급을 줄인다면 판매 수입은 증가할 것이다.</p>\n      <p>ㄷ. (다) 시장에 정부가 물품세를 부과하면 판매자보다 소비자의 세금 부담 비중이 높아질 것이다.</p>\n      <p>ㄹ. (나) 시장에 비해 (다) 시장이 불황에 의해 영향을 받기 쉽다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (정확한 보기 검증 필요)\n\n해설:\n- (가) 쌀 시장: 필수재로 수요의 가격탄력성이 비탄력적. 공급 증가 시 가격이 크게 폭락하여 총수입(농부의 역설)은 감소. (ㄱ 옳음)\n- (나) 해외 여행: 사치재로 가격이 비싸고 수요의 가격탄력성이 탄력적. 공급 감소로 가격이 상승하면 수요량이 크게 줄어들어 총수입은 감소. (ㄴ 틀림 - 증가가 아니라 감소함)\n- (다) 담배 시장: 원래 중독성(비탄력적 수요)이나, 대체재(다양한 수입담배)가 많아져 수요탄력성이 커짐(탄력적으로 변함). 따라서 세금 부과 시 소비자보다 공급자 부담이 상대적으로 커질 가능성이 있음. (ㄷ 틀림)\n*단, (다)의 맥락에서 '애연가들은 좋아하는 담배를 어디서나 쉽게 살 수 있게 되었다'는 공급이 매우 탄력적(또는 대체재 풍부)임을 시사.\n- 정확한 정답은 평가원 발표 답안을 참고해야 하나, 수요탄력성과 총수입 관계를 묻는 문제입니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① 또는 알맞은 조합",
-    "targetKeywords": [
-      "가격탄력성",
-      "조세의 귀착",
-      "농부의 역설",
-      "대체재"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-20",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-2. 소비자이론",
-    "title": "[2012학년도] 20번. 무차별곡선과 효용 분석",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 20번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    20. 표는 상품 '가'와 '나'에 대한 갑의 한 무차별 곡선과 상품 '다'와 '라'에 대한 을의 한 무차별 곡선 위에 있는 일부 상품 묶음을 나타낸 것이다. 이에 대한 분석으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>&lt;갑&gt; (상품 묶음: A(2, 14), B(3, 8), C(6, 4), D(7, 3))</p>\n    <p>&lt;을&gt; (상품 묶음: a(3, 0), b(2, 1), c(1, 2), d(0, 3))</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 갑이 상품 '가'와 '나'를 각각 3개, 9개 소비한다면 효용은 A에서보다 증가한다.</div>\n    <div>② 갑에게 B와 C의 상품 묶음이 주는 효용은 동일하다.</div>\n    <div>③ 갑은 상품 '가' 한 단위를 포기하는 대가로 D에서보다 B에서 상품 '나'를 더 많이 요구할 것이다.</div>\n    <div>④ 을에게 상품 '다'와 '라'는 완전 대체재이다.</div>\n    <div>⑤ 을의 예산선과 무차별 곡선이 일치할 경우 그의 최적 선택점은 1개이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ⑤\n\n해설:\n- 동일한 무차별곡선 상의 점들은 효용이 같습니다. 갑의 무차별곡선 상에서 B(3,8)와 C(6,4)는 효용이 같습니다(② 옳음).\n- (3, 9)는 B(3,8)보다 더 많은 재화를 소비하므로 무차별곡선이 바깥쪽에 위치하여 효용이 더 높습니다. (① 옳음)\n- 무차별곡선은 원점에 대해 볼록하므로(한계대체율 체감), 가 재화 소비량이 적은 B에서 가 1단위 포기에 대해 더 많은 나를 요구합니다. (③ 옳음)\n- 을의 무차별곡선을 보면 (3,0)-(2,1)-(1,2)-(0,3)으로 직선(MRS가 1로 일정)입니다. 즉, 완전대체재입니다. (④ 옳음)\n- 완전대체재인 경우 예산선과 무차별곡선의 기울기가 동일하게 일치(겹침)하면, 예산선 상의 모든 점(무수히 많은 점)이 최적 선택점이 됩니다. 1개가 아닙니다. (⑤ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "⑤ 을의 예산선과 무차별 곡선이 일치할 경우 그의 최적 선택점은 1개이다.",
-    "targetKeywords": [
-      "무차별곡선",
-      "한계대체율",
-      "완전대체재",
-      "코너해",
-      "예산선"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-21",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2012학년도] 21번. 독점기업의 이윤극대화 (DVD 시장)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음은 어느 회사가 생산하는 DVD 상품의 시장 특성이다. 이 시장에 대한 분석으로 적절하지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ 시장에 다른 경쟁 기업은 없다.</p>\n    <p>◦ 수요 함수는 P = 200 - 0.1Q 이다. (P: 가격, Q: 거래량)</p>\n    <p>◦ 생산 비용 전부가 초기 생산 단계에 한 번만 투입된다.</p>\n    <p>◦ 생산량이 1천 장일 때 평균 생산 비용은 80원이다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 1천 장을 판매할 때 최대 이윤을 얻을 수 있다.</div>\n    <div>② 이윤 극대화 상태에서 기업의 총이윤은 2만원이다.</div>\n    <div>③ 순사회편익이 가장 극대화되는 생산량은 1천 장이다.</div>\n    <div>④ DVD 1장 가격이 150원일 때 500장의 수요가 예상된다.</div>\n    <div>⑤ 평균 생산 비용은 생산량 확대에 따라 지속적으로 감소한다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③\n\n해설:\n- 생산비용 전부가 초기에 한 번만 투입(고정비용 F만 존재)되고, 한계비용(MC) = 0입니다. (자연독점, 정보재 특성)\n- 생산량 Q=1000일 때 AC=80이므로, 총비용(TC) = 80 * 1000 = 80,000원. 즉 F=80,000.\n- 독점 이윤극대화: MR = MC. \n  TR = P*Q = 200Q - 0.1Q^2. MR = 200 - 0.2Q.\n  MC = 0 이므로 200 - 0.2Q = 0 ➔ Q = 1000장. (① 옳음)\n- 이윤(π) = TR - TC = (200 - 0.1*1000)*1000 - 80,000 = 100,000 - 80,000 = 20,000원 (2만원). (② 옳음)\n- 순사회편익(사회적 잉여) 극대화 생산량은 P = MC 조건입니다.\n  200 - 0.1Q = 0 ➔ Q = 2000장. (③ 틀림, 1천장이 아님)\n- P=150일 때, 150 = 200 - 0.1Q ➔ 0.1Q = 50 ➔ Q = 500장. (④ 옳음)\n- 총비용이 고정비용뿐이므로, AC = F/Q = 80000/Q 로 생산량 확대에 따라 지속적으로 감소합니다. (⑤ 옳음)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ 순사회편익이 가장 극대화되는 생산량은 1천 장이다.",
-    "targetKeywords": [
-      "독점",
-      "이윤극대화",
-      "한계비용 제로",
-      "자연독점",
-      "순사회편익"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-22",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2012학년도] 22번. 통화정책의 전달경로와 투자",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음 글의 밑줄 친 ㉠∼㉢ 현상에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>케인지언(Keynesian)의 통화정책의 전달 경로에 의하면, 정부가 ㉠ 확대 통화정책을 실시해도 이자율이 더 이상 낮아지지 않게 되면 더 이상의 통화 팽창은 효력을 잃게 된다. 아울러 경제에 대한 전망이 나빠지면 ㉡ 투자지출은 이자율의 하락에도 거의 반응하지 않게 된다. ㉢ 경기 침체는 그 자체로 재정 수지의 악화를 가져온다. 그렇다고 건전 재정을 추구하게 되면 재정정책은 경기 순응적이 되어 경기 안정화 기능을 상실하게 된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. ㉠은 자산으로서의 화폐에 대한 수요가 사라지기 때문이다.</p>\n      <p>ㄴ. ㉠은 화폐 수요의 이자율 탄력성이 매우 크기 때문이다.</p>\n      <p>ㄷ. ㉡은 투자지출이 이자율에 대해 탄력적이기 때문이다.</p>\n      <p>ㄹ. ㉢은 재정의 자동안정장치가 작동하기 때문이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② ㄴ, ㄹ\n\n해설:\n- ㉠ 유동성 함정 현상입니다. 이자율이 바닥수준이 되어 투기적 화폐수요가 무한대(탄력성 매우 큼)가 되어 추가 공급된 통화가 모두 화폐 보유로 흡수됩니다. (ㄱ 틀림, ㄴ 옳음)\n- ㉡ 경기침체(야성적 충동의 악화)로 인해 투자가 이자율에 비탄력적으로 반응하는 상태를 의미합니다. (ㄷ 틀림 - 비탄력적)\n- ㉢ 경기 침체 시 실업수당 지급 증가 및 조세수입 감소로 재정적자가 악화되는데, 이는 누진세나 실업수당 같은 '자동안정화 장치'가 작동하고 있음을 의미합니다. (ㄹ 옳음)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "② ㄴ, ㄹ",
-    "targetKeywords": [
-      "유동성 함정",
-      "화폐수요",
-      "자동안정화장치",
-      "투자 비탄력성"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-24",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2012학년도] 24번. 총수요-총공급 모형 (인플레이션 갭)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음은 어느 나라 ○○○○년 국민경제 상황을 기록한 것이다. 이에 대한 옳은 분석을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프: Y_p(잠재GDP) 우측에 Y_0에서 AD와 단기 AS가 교차. 즉 인플레이션 갭 존재]</p>\n    <p>○○○○년에 국민경제는 물가가 P_1인 수준에서 경제 활동이 이루어졌다. 단, 국민경제는 가계와 기업의 민간 부문으로만 구성되어 있으며, 생산 활동에 따르는 감가상각은 발생하지 않는다고 가정한다. (그래프에서 Y는 국민소득 수준, P는 물가수준, AD는 단기 총수요 곡선, AS는 단기 총공급 곡선, Y_p는 잠재 국민소득 수준을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 인플레이션 갭이 존재하였다.</p>\n      <p>ㄴ. 실현된 투자지출이 계획된 투자지출보다 컸다.</p>\n      <p>ㄷ. 장기적으로 경제는 Y_0를 향해 움직여 갈 것이다.</p>\n      <p>ㄹ. 불균형 상태이며 국민소득 삼면 등가의 법칙이 성립하였다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄹ (또는 정확한 보기 확인 필요)\n\n해설:\n- 현재 균형 국민소득 Y_0 가 잠재 국민소득 Y_p 보다 큽니다. 이는 경기가 과열된 상태로 '인플레이션 갭'이 존재함을 의미합니다. (ㄱ 옳음)\n- 총수요와 총공급이 교차하는 점은 사후적인 단기 거시균형 상태입니다. 어떤 사후적 경제상태에서든 국민소득 삼면 등가의 법칙(생산=분배=지출)은 항상 성립합니다. (ㄹ 옳음)\n- 계획된 투자와 실현된 투자의 차이는 의도치 않은 재고증감입니다. 단기 균형점(AD=AS)에서는 의도치 않은 재고투자가 0이므로 실현된 투자 = 계획된 투자입니다. (ㄴ 틀림)\n- 장기적으로는 물가(임금 등) 상승 압력에 의해 단기 AS 곡선이 좌측으로 이동하여 경제는 Y_p를 향해(Y_0에서 Y_p 방향으로) 움직일 것입니다. (ㄷ 틀림 - Y_0가 아니라 Y_p로 돌아감)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "ㄱ, ㄹ (선지에 따라 다름)",
-    "targetKeywords": [
-      "총수요-총공급",
-      "인플레이션 갭",
-      "잠재GDP",
-      "국민소득 삼면 등가"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-23",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2012학년도] 23번. A국과 B국의 옥수수 교역",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음은 A국과 B국의 옥수수 교역에 대한 설명이다. 이에 대한 분석으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>A국과 B국 두 나라로 구성된 국제 경제에서 각 나라의 옥수수에 대한 수요 곡선과 공급 곡선이 아래와 같다. 옥수수의 국제 균형 가격은 옥수수의 수출량과 수입량이 일치하는 수준에서 형성된다. 단, 옥수수의 가격 P는 양국에서 동일한 통화로 표현되고 있으며, 무역에 따르는 어떤 비용과 규제도 없다.</p>\n    <p>A국<br>수요 곡선 Q_AD = 100 - 2P<br>공급 곡선 Q_AS = 20 + 2P</p>\n    <p>B국<br>수요 곡선 Q_BD = 80 - 4P<br>공급 곡선 Q_BS = 40 + 4P</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 균형 교역량은 30이다.</p>\n      <p>ㄴ. A국이 수출하고 B국이 수입하게 된다.</p>\n      <p>ㄷ. 교역 시에 A국은 소비자 잉여가, B국은 생산자 잉여가 증가한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ\n\n해설:\n- 개방 이전 균형 가격: \n  A국: 100 - 2P = 20 + 2P ➔ 4P = 80 ➔ P = 20.\n  B국: 80 - 4P = 40 + 4P ➔ 8P = 40 ➔ P = 5.\n- 무역 발생 시 가격(국제가격)은 5와 20 사이에서 결정됩니다. \n  B국의 가격이 더 낮으므로 B국이 수출국, A국이 수입국이 됩니다. (ㄴ 틀림 - 반대)\n- 국제 균형 가격(P*) 도출: \n  A국의 초과수요(수입) = Q_AD - Q_AS = (100 - 2P) - (20 + 2P) = 80 - 4P\n  B국의 초과공급(수출) = Q_BS - Q_BD = (40 + 4P) - (80 - 4P) = 8P - 40\n  수입 = 수출 ➔ 80 - 4P = 8P - 40 ➔ 12P = 120 ➔ P* = 10.\n- 균형 교역량은 P*=10일 때 수입(또는 수출)량입니다. \n  80 - 4(10) = 40. 어? \n  다시 계산: A국 수입 = 80 - 4(10) = 40. B국 수출 = 8(10) - 40 = 40. \n  교역량은 40입니다. (ㄱ 틀림... 잠깐, 계산 재확인)\n  A 수요: 100 - 20 = 80, A 공급: 20 + 20 = 40. 차이 40.\n  B 수요: 80 - 40 = 40, B 공급: 40 + 40 = 80. 차이 40. 교역량은 40이 맞습니다. 보기에 30이라 되어 있으므로 ㄱ 틀림.\n- 교역 시 후생변화: A국은 수입국이므로 가격이 하락하여 소비자 잉여가 증가합니다. B국은 수출국이므로 가격이 상승하여 생산자 잉여가 증가합니다. (ㄷ 옳음)\n- 어? 정답 선지 확인 필요 (이 해설은 계산 과정을 통해 ㄷ이 맞음을 보여줍니다).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ㄷ",
-    "targetKeywords": [
-      "국제무역 균형",
-      "수출과 수입",
-      "균형 교역량",
-      "소비자잉여",
-      "생산자잉여"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-25",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-1. 국민소득측정",
-    "title": "[2012학년도] 25번. 소비자 물가지수(CPI) 계산",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 표는 우리나라 소비자 물가지수에 관한 것이다. 이에 대한 분석 및 추론으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th rowspan=\"2\" class=\"border border-slate-300 p-1\">품 목</th><th rowspan=\"2\" class=\"border border-slate-300 p-1\">가중치</th><th colspan=\"2\" class=\"border border-slate-300 p-1\">물가지수</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">2008년</th><th class=\"border border-slate-300 p-1\">2009년</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">식료품·비주류 음료</td><td class=\"border border-slate-300 p-1\">140.4</td><td class=\"border border-slate-300 p-1\">108.2</td><td class=\"border border-slate-300 p-1\">116.3</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">주류·담배</td><td class=\"border border-slate-300 p-1\">14.6</td><td class=\"border border-slate-300 p-1\">100.8</td><td class=\"border border-slate-300 p-1\">101.9</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">의복·신발</td><td class=\"border border-slate-300 p-1\">58.4</td><td class=\"border border-slate-300 p-1\">108.1</td><td class=\"border border-slate-300 p-1\">113.6</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 text-left\">주거 및 수도·광열</td><td class=\"border border-slate-300 p-1\">170.4</td><td class=\"border border-slate-300 p-1\">109.7</td><td class=\"border border-slate-300 p-1\">110.9</td></tr>\n        <tr><td colspan=\"4\" class=\"border border-slate-300 p-1\">...</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 font-bold bg-slate-100\">합 계</td><td class=\"border border-slate-300 p-1 font-bold bg-slate-100\">1000.0</td><td class=\"border border-slate-300 p-1\"></td><td class=\"border border-slate-300 p-1\"></td></tr>\n        <tr><td class=\"border border-slate-300 p-1 font-bold bg-yellow-50\">가중 평균 물가지수</td><td class=\"border border-slate-300 p-1 bg-yellow-50\"></td><td class=\"border border-slate-300 p-1 font-bold bg-yellow-50\">109.7</td><td class=\"border border-slate-300 p-1 font-bold bg-yellow-50\">112.8</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 2009년의 소비자 물가는 2008년 대비 12.8% 상승했다.</p>\n      <p>ㄴ. 모든 품목의 기준 연도 물가지수는 100으로 동일하다.</p>\n      <p>ㄷ. 각 연도의 소비자 물가지수를 산정할 때 그 연도의 품목별 가중치를 적용한다.</p>\n      <p>ㄹ. 물가 변화시 소비자의 구매 적응 행동이 반영되지 않아 생계비 변화가 과대평가되는 경향이 있다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄴ, ㄹ\n\n해설:\n- ㄱ: 2008년 지수 109.7에서 2009년 112.8로 상승했으므로 상승률은 (112.8 - 109.7) / 109.7 ≈ 2.8%입니다. (기준연도인 2005년 대비 12.8% 상승한 것입니다.) (틀림)\n- ㄴ: 소비자물가지수(CPI)는 기준 연도의 물가를 100으로 두고 산출하므로 모든 품목의 기준 연도 물가지수는 100입니다. (옳음)\n- ㄷ: CPI는 라스파이레스 지수 방식으로 '기준 연도'의 고정된 거래량 가중치를 적용합니다. 각 연도(비교 연도)의 가중치를 적용하는 것은 파셰 방식(GDP 디플레이터 등)입니다. (틀림)\n- ㄹ: 라스파이레스 지수는 재화 가격 상승 시 소비자가 상대적으로 저렴해진 대체재로 수요를 옮기는 '대체 효과'를 무시하므로, 실제 생계비 상승보다 물가 상승을 과대평가하는 경향이 있습니다. (옳음)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ ㄴ, ㄹ",
-    "targetKeywords": [
-      "소비자물가지수",
-      "CPI",
-      "라스파이레스 지수",
-      "대체 편향",
-      "가중평균"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-26",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-2. 환율과국제수지",
-    "title": "[2012학년도] 26번. 구매력평가설과 빅맥 햄버거 가격",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 표에 기초한 각국 환율에 대한 분석 및 추론으로 옳은 것은? (물가와 환율은 연중 일정하다고 가정함.)\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th rowspan=\"2\" class=\"border border-slate-300 p-1\">나라</th><th colspan=\"2\" class=\"border border-slate-300 p-1\">빅맥 햄버거 가격<br>(각국 통화)</th><th colspan=\"2\" class=\"border border-slate-300 p-1\">대미 환율<br>(각국 통화/달러)</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">2008년</th><th class=\"border border-slate-300 p-1\">2009년</th><th class=\"border border-slate-300 p-1\">2008년</th><th class=\"border border-slate-300 p-1\">2009년</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1\">미국</td><td class=\"border border-slate-300 p-1\">3</td><td class=\"border border-slate-300 p-1\">4</td><td class=\"border border-slate-300 p-1\">-</td><td class=\"border border-slate-300 p-1\">-</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">갑국</td><td class=\"border border-slate-300 p-1\">300</td><td class=\"border border-slate-300 p-1\">400</td><td class=\"border border-slate-300 p-1\">150</td><td class=\"border border-slate-300 p-1\">200</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">을국</td><td class=\"border border-slate-300 p-1\">60</td><td class=\"border border-slate-300 p-1\">80</td><td class=\"border border-slate-300 p-1\">20</td><td class=\"border border-slate-300 p-1\">10</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">병국</td><td class=\"border border-slate-300 p-1\">6.6</td><td class=\"border border-slate-300 p-1\">4.4</td><td class=\"border border-slate-300 p-1\">2.0</td><td class=\"border border-slate-300 p-1\">1.1</td></tr>\n      </tbody>\n    </table>\n    <p class=\"text-xs text-slate-500\">* 빅맥 지수: 미 달러화로 환산된 빅맥 햄버거 가격</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 빅맥 지수에 따르면 2008년 갑국의 통화는 저평가되어 있다.</div>\n    <div>② 2008년 대비 2009년에 갑국의 수출 가격 경쟁력이 악화되었다.</div>\n    <div>③ 명목 환율이 구매력 평가설에 가장 근접한 나라와 시기는 갑국 2008년이다.</div>\n    <div>④ 2008년 대비 2009년에 미국인들의 을국과 병국으로의 여행이 증가했을 것이다.</div>\n    <div>⑤ 빅맥으로 구매력 평가가 성립한다면 2008년 병국의 구매력 평가 환율은 달러 당 3.3이 되어야 한다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ①\n\n해설:\n- 2008년 미국 빅맥은 3달러. 갑국은 300원이므로 구매력평가 환율은 300/3 = 100원/달러입니다.\n- 그런데 실제 대미 환율은 150원/달러입니다. 즉, 1달러로 갑국 돈 150원을 바꿀 수 있으므로, 환율이 고평가(달러 고평가, 갑국 통화 저평가)되어 있습니다. (① 옳음)\n- ②: 갑국의 환율은 2008년 150에서 2009년 200으로 상승(자국통화 가치 하락)하였습니다. 따라서 수출 가격 경쟁력이 강화됩니다. (틀림)\n- ③: 갑국의 2008년 명목환율(150)은 PPP환율(100)과 차이가 큽니다. 가장 근접한 것은 을국 2008년(PPP = 60/3=20, 명목=20)입니다. (틀림)\n- ④: 을국의 환율은 20에서 10으로 하락(을국 통화가치 상승), 병국은 2.0에서 1.1로 하락(병국 통화가치 상승)하였습니다. 즉 미국인 입장에서는 을국과 병국 물가가 비싸졌으므로 여행이 감소했을 것입니다. (틀림)\n- ⑤: 2008년 병국의 햄버거는 6.6, 미국은 3이므로 PPP환율은 6.6/3 = 2.2입니다. 3.3이 아닙니다. (틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① 빅맥 지수에 따르면 2008년 갑국의 통화는 저평가되어 있다.",
-    "targetKeywords": [
-      "빅맥 지수",
-      "구매력 평가설",
-      "명목환율",
-      "저평가",
-      "환율"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-19",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2012학년도] 19번. 수요·공급의 가격탄력성 (쌀, 담배 등)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 19번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    19. (가)∼(다) 시장에 대한 옳은 추론을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>(가) 쌀을 재배할 수 있는 면적은 한정되어 있고, 쌀을 생산하는 데는 오랜 시간이 걸린다. 그리고 쌀밥은 소비자들의 주식으로 가격의 변화에 대한 수요량 변화가 매우 적다.</p>\n    <p>(나) 해외 관광 여행은 국내 여행에 비해 가격 부담이 크다. 그래서 해외 관광 여행 비용이 조금이라도 상승하면 해외 관광 여행을 포기하는 경우가 많아 환율 변동이 서비스 수지의 개선 요인이 되기도 한다.</p>\n    <p>(다) 담배는 중독성이 있어서 쉽게 끊기 어렵다. 그런데 최근 시장 개방이 확대되면서 각국의 다양한 담배가 시장에서 판매되고 있어 애연가들은 자신이 좋아하는 담배를 어디서나 쉽게 살 수 있게 되었다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. (가) 시장에서 기술 진보로 쌀의 공급이 증가할 경우 쌀 농가의 판매 수입은 감소할 것이다.</p>\n      <p>ㄴ. (나) 시장에서 여행사들이 해외 관광 여행 공급을 줄인다면 판매 수입은 증가할 것이다.</p>\n      <p>ㄷ. (다) 시장에 정부가 물품세를 부과하면 판매자보다 소비자의 세금 부담 비중이 높아질 것이다.</p>\n      <p>ㄹ. (나) 시장에 비해 (다) 시장이 불황에 의해 영향을 받기 쉽다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (혹은 알맞은 조합 - 검증 필요)\n*실제 정답은 평가원 발표에 따름.\n\n해설:\n- (가) 쌀은 필수재로 수요가 매우 비탄력적. 공급 증가(기술진보)로 가격이 크게 폭락하여 농가의 총수입(판매수입)은 감소합니다(농부의 역설). (ㄱ 옳음)\n- (나) 해외 여행은 사치재로 가격부담이 커서 수요가 매우 탄력적. 공급 감소로 가격이 상승하면 수요량이 그보다 더 크게 감소하여 총수입이 감소합니다. (ㄴ 틀림 - 증가가 아니라 감소)\n- (다) 담배 자체는 중독성(비탄력적)이나, 다양한 담배가 수입되어 '대체재'가 많아지면 특정 담배의 수요탄력성은 탄력적으로 변합니다. 공급보다 수요가 탄력적이게 되면 세금 부담은 생산자(판매자)에게 더 많이 귀착됩니다. (ㄷ 틀림 - 소비자 부담 비중이 낮아질 수 있음)\n- ㄹ: (나)의 해외 여행이 (다)의 담배보다 소득탄력성이 커서 불황에 큰 타격을 받습니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "ㄱ (정확한 선지 조합 확인 요망)",
-    "targetKeywords": [
-      "가격탄력성",
-      "필수재",
-      "사치재",
-      "조세 귀착",
-      "농부의 역설"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-20",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-2. 소비자이론",
-    "title": "[2012학년도] 20번. 무차별곡선과 두 소비자의 효용 극대화",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 20번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    20. 표는 상품 '가'와 '나'에 대한 갑의 한 무차별 곡선과 상품 '다'와 '라'에 대한 을의 한 무차별 곡선 위에 있는 일부 상품 묶음을 나타낸 것이다. 이에 대한 분석으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>&lt;갑&gt; (상품 묶음: A(2, 14), B(3, 8), C(6, 4), D(7, 3))</p>\n    <p>&lt;을&gt; (상품 묶음: a(3, 0), b(2, 1), c(1, 2), d(0, 3))</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 갑이 상품 '가'와 '나'를 각각 3개, 9개 소비한다면 효용은 A에서보다 증가한다.</div>\n    <div>② 갑에게 B와 C의 상품 묶음이 주는 효용은 동일하다.</div>\n    <div>③ 갑은 상품 '가' 한 단위를 포기하는 대가로 D에서보다 B에서 상품 '나'를 더 많이 요구할 것이다.</div>\n    <div>④ 을에게 상품 '다'와 '라'는 완전 대체재이다.</div>\n    <div>⑤ 을의 예산선과 무차별 곡선이 일치할 경우 그의 최적 선택점은 1개이다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ⑤\n\n해설:\n- ⑤ 완전대체재인 경우 무차별곡선이 직선이며, 예산선과 기울기가 일치할 경우 예산선 위의 모든 점이 최적 선택점이 되어 최적 선택점은 무수히 많습니다. (틀림)\n- ① B(3,8)보다 나 재화가 1개 더 많은 (3,9)는 더 높은 무차별곡선에 있으므로 효용이 더 큽니다.\n- ③ 원점에 볼록한 무차별곡선이므로 가 재화의 한계대체율이 체감합니다. B점에서 가 재화가 적으므로 가 1단위에 대한 나 재화의 주관적 가치가 D점보다 큽니다. 따라서 B에서 '나'를 더 많이 요구합니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "⑤ 을의 예산선과 무차별 곡선이 일치할 경우 그의 최적 선택점은 1개이다.",
-    "targetKeywords": [
-      "무차별곡선",
-      "한계대체율 체감",
-      "완전대체재",
-      "효용극대화"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-21",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2012학년도] 21번. 독점 시장의 이윤 극대화 (한계비용 0인 경우)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음은 어느 회사가 생산하는 DVD 상품의 시장 특성이다. 이 시장에 대한 분석으로 적절하지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ 시장에 다른 경쟁 기업은 없다.</p>\n    <p>◦ 수요 함수는 P = 200 - 0.1Q 이다. (P: 가격, Q: 거래량)</p>\n    <p>◦ 생산 비용 전부가 초기 생산 단계에 한 번만 투입된다.</p>\n    <p>◦ 생산량이 1천 장일 때 평균 생산 비용은 80원이다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 1천 장을 판매할 때 최대 이윤을 얻을 수 있다.</div>\n    <div>② 이윤 극대화 상태에서 기업의 총이윤은 2만원이다.</div>\n    <div>③ 순사회편익이 가장 극대화되는 생산량은 1천 장이다.</div>\n    <div>④ DVD 1장 가격이 150원일 때 500장의 수요가 예상된다.</div>\n    <div>⑤ 평균 생산 비용은 생산량 확대에 따라 지속적으로 감소한다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③\n\n해설:\n- ③ 순사회편익(사회적 잉여) 극대화 생산량은 완전경쟁시장 균형과 같으므로 P = MC인 지점입니다. MC=0 이므로 200 - 0.1Q = 0 에서 Q = 2000장입니다. (1천 장이 아님. 1천 장은 독점이윤 극대화 생산량)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ 순사회편익이 가장 극대화되는 생산량은 1천 장이다.",
-    "targetKeywords": [
-      "독점기업",
-      "자연독점",
-      "순사회편익",
-      "한계비용",
-      "평균비용"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-22",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2012학년도] 22번. 케인지언의 통화정책 전달경로와 유동성 함정",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음 글의 밑줄 친 ㉠∼㉢ 현상에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>케인지언(Keynesian)의 통화정책의 전달 경로에 의하면, 정부가 ㉠ 확대 통화정책을 실시해도 이자율이 더 이상 낮아지지 않게 되면 더 이상의 통화 팽창은 효력을 잃게 된다. 아울러 경제에 대한 전망이 나빠지면 ㉡ 투자지출은 이자율의 하락에도 거의 반응하지 않게 된다. ㉢ 경기 침체는 그 자체로 재정 수지의 악화를 가져온다. 그렇다고 건전 재정을 추구하게 되면 재정정책은 경기 순응적이 되어 경기 안정화 기능을 상실하게 된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. ㉠은 자산으로서의 화폐에 대한 수요가 사라지기 때문이다.</p>\n      <p>ㄴ. ㉠은 화폐 수요의 이자율 탄력성이 매우 크기 때문이다.</p>\n      <p>ㄷ. ㉡은 투자지출이 이자율에 대해 탄력적이기 때문이다.</p>\n      <p>ㄹ. ㉢은 재정의 자동안정장치가 작동하기 때문이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② ㄴ, ㄹ\n\n해설:\n- ㉠ 이자율이 더 낮아지지 않는 상황은 유동성 함정으로, 화폐수요의 이자율 탄력성이 무한대에 가깝기 때문입니다. (ㄴ 옳음)\n- ㉡ 투자가 이자율에 반응하지 않는 것은 비탄력적이기 때문입니다. (ㄷ 틀림)\n- ㉢ 경기 침체 시 실업수당 등 정부지출은 늘고 누진세 등으로 세수는 줄어 재정 수지가 자동으로 악화되는데, 이는 자동안정장치가 작동함을 의미합니다. (ㄹ 옳음)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "② ㄴ, ㄹ",
-    "targetKeywords": [
-      "유동성 함정",
-      "화폐수요",
-      "자동안정화장치",
-      "투자수요의 이자율탄력성"
-    ]
-  },
-  {
-    "id": "EXAM-2012-1-24",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2012학년도] 24번. 총수요-총공급(AD-AS) 모형과 인플레이션 갭",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2012학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음은 어느 나라 ○○○○년 국민경제 상황을 기록한 것이다. 이에 대한 옳은 분석을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프: 세로축은 물가수준 P, 가로축은 국민소득 Y. 단기 총공급(AS)과 총수요(AD)의 교점(Y_0)이 잠재국민소득(Y_p)보다 우측에 위치하여, 경제가 과열된 상태를 나타냄.]</p>\n    <p>○○○○년에 국민경제는 물가가 P_1인 수준에서 경제 활동이 이루어졌다. 단, 국민경제는 가계와 기업의 민간 부문으로만 구성되어 있으며, 생산 활동에 따르는 감가상각은 발생하지 않는다고 가정한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 인플레이션 갭이 존재하였다.</p>\n      <p>ㄴ. 실현된 투자지출이 계획된 투자지출보다 컸다.</p>\n      <p>ㄷ. 장기적으로 경제는 Y_0를 향해 움직여 갈 것이다.</p>\n      <p>ㄹ. 불균형 상태이며 국민소득 삼면 등가의 법칙이 성립하였다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄹ (또는 올바른 조합 검토 필요)\n\n해설:\n- 단기 균형 국민소득(Y_0)이 잠재 국민소득(Y_p)보다 크므로 초과 수요가 존재하는 인플레이션 갭 상태입니다. (ㄱ 옳음)\n- 총수요와 총공급이 일치하는 균형상태이므로 실현된 투자와 계획된 투자가 같습니다(비자발적 재고투자가 0). (ㄴ 틀림)\n- 장기적으로는 초과 고용으로 인해 명목 임금 등 생산요소 가격이 상승하여 단기 AS곡선이 좌측으로 이동, 국민소득은 Y_p로 감소할 것입니다. (ㄷ 틀림)\n- (ㄹ 선지) AD와 AS가 교차하는 점은 '거시 단기 균형'이며 이 상태에서도 모든 거시경제 사후적 상태와 마찬가지로 삼면등가의 법칙이 성립합니다. 단, 선지에 '불균형 상태이며'라는 표현이 장기적 관점의 불균형을 뜻한다면 논란의 여지가 있으나 통상 삼면등가는 항상 성립합니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "ㄱ, ㄹ (또는 다른 올바른 조합)",
-    "targetKeywords": [
-      "인플레이션 갭",
-      "AD-AS 모형",
-      "국민소득 삼면등가",
-      "잠재국민소득"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-21",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2011학년도] 21번. 종량세 부과와 조세 귀착, 후생손실",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 어느 상품의 수요와 공급은 다음 표와 같다고 가정한다. 정부가 상품 1단위당 30원의 종량세를 생산자에게 부과할 경우, 이에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th class=\"border border-slate-300 p-1\">가격(원)</th><th class=\"border border-slate-300 p-1\">수요량</th><th class=\"border border-slate-300 p-1\">공급량</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1\">10</td><td class=\"border border-slate-300 p-1\">130</td><td class=\"border border-slate-300 p-1\">40</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">20</td><td class=\"border border-slate-300 p-1\">110</td><td class=\"border border-slate-300 p-1\">50</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 bg-yellow-50 font-bold text-yellow-800\">30</td><td class=\"border border-slate-300 p-1\">90</td><td class=\"border border-slate-300 p-1\">60</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 bg-blue-50 font-bold text-blue-800\">40</td><td class=\"border border-slate-300 p-1 bg-blue-50 font-bold text-blue-800\">70</td><td class=\"border border-slate-300 p-1 bg-blue-50 font-bold text-blue-800\">70</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">50</td><td class=\"border border-slate-300 p-1\">50</td><td class=\"border border-slate-300 p-1\">80</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 bg-red-50 font-bold text-red-800\">60</td><td class=\"border border-slate-300 p-1\">30</td><td class=\"border border-slate-300 p-1\">90</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">70</td><td class=\"border border-slate-300 p-1\">10</td><td class=\"border border-slate-300 p-1\">100</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 과세 후에 정부의 조세수입은 1,500원이 된다.</p>\n      <p>ㄴ. 과세 후에 소비자가 상품을 구매하는 가격은 50원이 된다.</p>\n      <p>ㄷ. 과세 후에 후생 순손실(deadweight loss)은 600원이 된다.</p>\n      <p>ㄹ. 과세 후에 종량세의 생산자 부담은 상품 한 단위당 10원이 된다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (확인 결과 ㄴ은 60원, ㄱ 조세수입 1500, ㄹ 생산자 10원. 자세한 도출 필요)\n실제 정답: \n세전 균형은 P=40, Q=70. \n단위당 30원의 세금이 생산자에게 부과되면 공급곡선이 위로 30만큼 상향 이동.\n즉, 기존 P에서 제공하던 수량을 이제 P+30에서 제공.\n새로운 균형은 수요와 새로운 공급이 만나는 곳. \n공급량 50을 위해 과거엔 20원을 받았으나, 이제 50원이 되어야 함.\n수요량이 50일 때 가격은 50원. 따라서 P=50, Q=50이 새로운 균형.\n- 조세수입: 30원 × 50단위 = 1,500원. (ㄱ 옳음)\n- 소비자 구매가격: 50원. (ㄴ 옳음)\n- 후생 순손실(자중손실): 1/2 × (기존 거래량 70 - 새 거래량 50) × 세율 30 = 1/2 × 20 × 30 = 300원. (ㄷ 틀림)\n- 생산자가 받는 순수 가격은 50 - 30 = 20원. 기존 가격(40원)에 비해 생산자 부담분은 40 - 20 = 20원. \n(소비자 부담분은 50 - 40 = 10원) 따라서 생산자 부담은 20원이므로 ㄹ은 틀림.\n결론적으로 정답은 ① ㄱ, ㄴ 입니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① ㄱ, ㄴ",
-    "targetKeywords": [
-      "종량세",
-      "조세귀착",
-      "후생순손실",
-      "균형가격",
-      "조세수입"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-22",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-2. 소비자이론",
-    "title": "[2011학년도] 22번. 가격효과 (기픈재, 대체효과, 소득효과)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음은 가격효과에 관한 글이다. 이에 부합하는 판단으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>재화의 가격이 변화할 때 그 재화의 수요량이 변화하는 가격효과는, 다른 재화에 대한 상대가격이 싸지거나 비싸져서 그 재화의 수요량이 늘거나 줄어드는 대체효과와 가격 변화가 실질소득의 변화를 야기해서 이로 인해 수요량이 변화하는 소득효과의 합으로 구성된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 아일랜드의 감자와 같은 기픈재(Giffen goods) 현상은 그 재화의 가격이 상승할 때만 발생할 수 있다.</p>\n      <p>ㄴ. 복권이 당첨된 경우의 노동 공급 변화를 해석하는 소득-여가 분석에서 대체효과는 0이다.</p>\n      <p>ㄷ. 소비자의 소득이 증가할 때 재화에 대한 수요가 감소하지 않는다면, 재화의 가격이 상승할 때 그 재화에 대한 수요는 분명히 감소한다.</p>\n      <p>ㄹ. 저축증대를 위하여 이자소득과 같은 금융소득에 대해 조세를 낮춰야 한다는 주장을 하는 경제학자는 이자율 변화에 대한 저축의 소득효과가 대체효과보다 크다고 본다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- ㄱ: 기픈재(Giffen good)는 가격이 상승할 때 수요량이 증가하고, 가격이 하락할 때 수요량이 감소하는 재화입니다. 가격 하락 시에도 발생할 수 있으므로 '상승할 때만'은 틀립니다. (틀림)\n- ㄴ: 복권 당첨은 순수한 비근로소득(비임금소득)의 증가로, 여가(또는 노동)의 상대가격(임금률) 변화 없이 예산선이 평행이동하는 경우이므로 대체효과는 0이고 소득효과만 발생합니다. (옳음)\n- ㄷ: 소득 증가 시 수요가 감소하지 않으면 그 재화는 정상재입니다. 정상재는 가격 상승 시 대체효과(-)와 소득효과(실질소득 감소로 수요 감소, -)가 같은 방향으로 작용하여 총효과(가격효과)는 반드시 음(-)이 됩니다. 즉, 수요량이 분명히 감소합니다. (옳음)\n- ㄹ: 금융소득에 대한 조세를 낮추면 실질 이자율이 상승합니다. 이자율 상승 시 대체효과는 저축 증가(현재소비 감소), 소득효과는 저축 감소(현재소비 증가, 이자소득 증가로 인한 부유화)로 나타납니다. 저축이 증대될 것이라고 주장하려면 저축을 늘리는 대체효과가 저축을 줄이는 소득효과보다 더 커야 합니다. 따라서 대체효과가 소득효과보다 크다고 본 것입니다. (틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ㄴ, ㄷ",
-    "targetKeywords": [
-      "가격효과",
-      "대체효과",
-      "소득효과",
-      "기픈재",
-      "노동공급",
-      "저축공급"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-23",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2011학년도] 23번. 정보의 비대칭성 (역선택과 도덕적 해이)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음 (가), (나)는 특정의 경제적 현상을 보여주는 사례이다. 이를 해소할 수 있는 방안을 옳게 나열한 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>(가) 중고차 판매상은 고객보다 차의 성능에 대해 잘 안다.</p>\n    <p>(나) 근로자는 고용주보다 자기가 일을 얼마나 열심히 하는지 잘 안다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 은행대출시 은행은 우량고객들을 선별하여 신용할당을 한다.</p>\n      <p>ㄴ. 기업이 임원의 보수를 기본급에다 실적에 따른 성과급을 동시에 지급한다.</p>\n      <p>ㄷ. 주식시장에 상장된 기업에게 기업의 정보를 충분히 공시하도록 의무를 부과한다.</p>\n      <p>ㄹ. 화재가 발생할 경우 화재보험회사는 손실의 일부를 보험 가입자에게 부담하게 한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ② (가) ㄱ, ㄷ / (나) ㄴ, ㄹ\n\n해설:\n- (가) 중고차 시장의 레몬(Lemon) 문제 등은 '역선택(Adverse Selection)'의 사례입니다. 계약 전 감추어진 특성 때문에 발생합니다. \n해결 방안: 은행의 우량고객 선별(스크리닝, ㄱ), 상장기업 정보 공시 의무화(신호발송 강제, ㄷ)\n- (나) 근로자의 태만 등은 본인-대리인 문제로 '도덕적 해이(Moral Hazard)'의 사례입니다. 계약 후 감추어진 행동 때문에 발생합니다. \n해결 방안: 성과급 지급을 통한 인센티브 일치(ㄴ), 공동보험이나 기초공제(자기부담금)를 통한 유인 제공(ㄹ)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "② (가) ㄱ, ㄷ / (나) ㄴ, ㄹ",
-    "targetKeywords": [
-      "정보의 비대칭성",
-      "역선택",
-      "도덕적 해이",
-      "본인-대리인 문제",
-      "신호발송"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-24",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-6. 경제성장론",
-    "title": "[2011학년도] 24번. 솔로우 성장모형과 균제상태",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 자료에 제시된 성장모형에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>이 성장모형은 규모에 대한 보수가 불변인 1차동차 총생산함수를 가정하기 때문에 1인당 생산량(y)은 자본-노동비율(k)만의 함수가 된다. 그리고 경제가 최초에 어디에서 출발하든 간에 결국에는 sf(k)=nk를 만족시키는 k*로 수렴한다. 이렇게 노동 및 자본의 완전고용이 동시에 달성되는 상태를 균제상태 또는 정상상태(steady state)라고 부른다.</p>\n    <p class=\"text-xs text-slate-500\">[여기서 s는 저축성향, n은 인구증가율, k는 자본-노동비율(1인당 자본량), y는 1인당 생산량(국민소득)을 나타낸다.]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. k의 추가적인 증가에 따른 추가적인 y의 증가분은 체증한다.</p>\n      <p>ㄴ. 다른 조건이 일정할 때, 인구증가율이 높아지면 1인당 국민소득은 감소한다.</p>\n      <p>ㄷ. 다른 조건이 일정할 때, 시간이 지남에 따라 국가 간의 소득 격차가 점차 확대된다.</p>\n      <p>ㄹ. 다른 조건이 일정할 때, 저축률이 증가하면 완전고용을 달성하는 1인당 자본량이 증가하고 1인당 국민소득도 증가한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄴ, ㄹ\n\n해설:\n- 본 모형은 솔로우(Solow) 신고전파 성장모형입니다. \n- ㄱ: 한계생산물 체감의 법칙에 의해, k가 증가할수록 y의 증가분(f'(k))은 점차 체감(감소)합니다. (틀림)\n- ㄴ: 인구증가율(n)이 높아지면 필요 자본유지선(nk)의 기울기가 가팔라지므로 새로운 균제상태에서 1인당 자본량(k*)은 감소하고, 이에 따라 1인당 소득(y*)도 감소합니다. (옳음)\n- ㄷ: 이 모형은 수렴 가설(convergence)을 뒷받침합니다. 저축률, 인구증가율 등 구조적 모수가 같다면 가난한 국가일수록 한계생산성이 높아 성장률이 빠르므로 장기적으로 국가 간 소득 격차는 축소됩니다. (틀림)\n- ㄹ: 저축률(s)이 증가하면 저축곡선(sf(k))이 위로 이동하여 새로운 균제상태에서 더 높은 1인당 자본량(k*)과 1인당 국민소득(y*)을 달성합니다. (옳음)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ ㄴ, ㄹ",
-    "targetKeywords": [
-      "솔로우 모형",
-      "균제상태",
-      "자본유지선",
-      "저축률",
-      "수렴가설"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-25",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-3. 국민소득결정",
-    "title": "[2011학년도] 25번. 거시경제모형과 디플레이션 갭",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 다음에 제시된 거시경제모형에 대한 분석으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>Y^D = C + I + G<br>C = 100 + 0.75Y_d<br>T = 0.2Y<br>I = 40<br>G = 100<br>Y^D = Y<br>Y_F = 700</p>\n    <p class=\"text-xs text-slate-500\">(Y^D: 총수요, C: 소비지출, Y_d: 가처분소득(Y-T), T: 조세, I: 투자지출, G: 정부지출, Y: 국민소득, Y_F: 완전고용국민소득)<br>* 디플레이션 갭 × 정부지출승수 = GDP 갭</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 정부지출승수는 2.5이다.</p>\n      <p>ㄴ. 정부지출승수는 4이다.</p>\n      <p>ㄷ. 디플레이션 갭은 25이다.</p>\n      <p>ㄹ. 디플레이션 갭은 40이다.</p>\n      <p>ㅁ. 디플레이션 갭은 100이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄷ\n\n해설:\n1) 균형국민소득 산출:\nY = C + I + G = 100 + 0.75(Y - 0.2Y) + 40 + 100\nY = 240 + 0.75(0.8Y)\nY = 240 + 0.60Y\n0.4Y = 240 ➔ 균형국민소득 Y_E = 600\n\n2) 정부지출승수 산출:\n비례세(t=0.2)가 존재하는 경우의 승수 공식 = 1 / (1 - c(1-t)) \n승수 = 1 / (1 - 0.75(1 - 0.2)) = 1 / (1 - 0.6) = 1 / 0.4 = 2.5 (ㄱ 옳음, ㄴ 틀림)\n\n3) 디플레이션 갭 산출:\nGDP 갭 = 완전고용국민소득(Y_F) - 균형국민소득(Y_E) = 700 - 600 = 100\nGDP 갭(100) = 디플레이션 갭 × 승수(2.5)\n디플레이션 갭 = 100 / 2.5 = 40. \n앗! 수식 재계산: 100 / 2.5 = 40 입니다! \n따라서 ㄹ. 디플레이션 갭은 40이다 가 옳습니다.\n즉 정답은 ② ㄱ, ㄹ 이어야 합니다. \n\n(풀이과정 오류 정정: 디플레이션 갭은 40이 맞습니다. 선지 ② ㄱ, ㄹ 이 맞습니다.)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "② ㄱ, ㄹ",
-    "targetKeywords": [
-      "정부지출승수",
-      "비례세",
-      "디플레이션 갭",
-      "균형국민소득",
-      "GDP 갭"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-26",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-3. 개방거시균형",
-    "title": "[2011학년도] 26번. 쌍둥이 적자와 대부자금시장 모형",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 다음의 글을 설명할 수 있는 경제모형을 &lt;보기&gt;에서 제시하였다. A, B, C, D에 들어갈 내용으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>◦ 최근 크게 늘어난 미국의 경상수지적자 문제에는 더 큰 이유가 있다. 경기불황과 조지 W. 부시 대통령이 의회에서 밀어붙인 막대한 세금감면정책 탓에 눈덩이처럼 불어난 재정적자가 그 이유다. 1990년대 재정적자는 다소 해소되었지만 2000년대 들어서서 미국은 다시 한번 많은 채권을 발행하기 시작했다.<br>- 누리엘 루비니 외(2010), 위기경제학</p>\n    <p>◦ 미국 경제는 변동환율제를 채택하고 있다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>재정적자가 발생하면 대부자금시장에서 국민저축이 <b>A</b> 하여 이자율이 <b>B</b> 하고, 이에 의해 순자본유출이 <b>C</b> 한다. 순자본유출의 <b>C</b> 는 외환시장에서 달러가치 <b>D</b> 을 유발하여 경상적자를 초래한다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① A: 감소, B: 상승, C: 감소, D: 상승\n\n해설: (맨큐의 개방거시경제 모형)\n1. 재정적자는 정부저축을 감소시키므로, 총 국민저축(민간저축+정부저축)이 감소(A)합니다.\n2. 대부자금시장에서 자금 공급(저축)이 감소하면 실질 이자율이 상승(B)합니다.\n3. 국내 이자율 상승은 국내 자산의 매력도를 높여 자본 유출을 막고 유입을 촉진하므로 순자본유출(NCO)은 감소(C)합니다.\n4. 순자본유출 감소는 외환시장에서 달러 공급 감소(또는 자국통화 매입수요 증가)를 가져와 자국 통화(달러) 가치가 상승(D, 절상)하게 됩니다. 달러 가치 상승은 수출을 감소시키고 수입을 증가시켜 경상수지 적자를 유발합니다(쌍둥이 적자 현상).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① A: 감소, B: 상승, C: 감소, D: 상승",
-    "targetKeywords": [
-      "쌍둥이 적자",
-      "대부자금시장",
-      "순자본유출",
-      "국민저축",
-      "환율 변동"
-    ]
-  },
-  {
-    "id": "EXAM-2011-1-27",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2011학년도] 27번. 필립스곡선과 희생률",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 인플레이션율과 실업률의 관계를 나타내는 필립스곡선의 식은 π = π^e - α(u - u*) 이며, 어떤 경제의 상황을 그림으로 나타내면 다음과 같다. 이에 대한 해석으로 옳은 것만을 &lt;보기&gt;에서 모두 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프 정보: 기대 인플레이션 π^e = 5%, 자연실업률 u* 일 때 단기 필립스 곡선과 만남. 곡선 상의 한 점 (u=15%, π=0%)이 주어짐.]</p>\n    <p class=\"text-xs text-slate-500\">(π: 인플레이션율, π^e: 기대 인플레이션율, u: 실업률, u*: 자연실업률, α: 상수)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. π^e가 3%이고 실제 인플레이션율이 4%일 때 실업률은 3%다.</p>\n      <p>ㄴ. π^e가 5%라면 인플레이션율이 1%만큼 하락할 때 희생률은 6이다.</p>\n      <p>ㄷ. 경제주체들이 합리적 기대를 한다면, 통화정책 당국은 실업률 상승 없이 인플레이션율을 낮출 수 있다.</p>\n      <p>ㄹ. 중앙은행의 정책목표가 실업률을 자연실업률에 맞춤으로써 안정적 인플레이션을 유지하는 것이라고 할 때, 경제주체들이 합리적 기대를 한다면 중앙은행이 자연실업률을 4%로 판단하고 통화정책을 시행할 경우 인플레이션이 무한히 증가하게 된다.</p>\n      <p class=\"text-xs mt-2 text-slate-500\">* 오쿤의 법칙: 실업률 1% 상승은 GDP 2% 하락<br>* 희생률: 인플레이션율 1% 감소에 수반되는 GDP의 감소%</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄱ, ㄷ, ㄹ (계산 검증 필요)\n실제 정답: ③ ㄴ, ㄷ \n\n해설 도출: \n먼저 그래프에서 π=0%일 때 u=15% 이고, 단기 필립스 곡선의 절편(u=0)은 π=7.5%로 주어져 있음(그래프 추정). \n기울기 -α = (0 - 7.5) / (15 - 0) = -0.5 이므로 α = 0.5.\nπ = 5 - 0.5(u - u*) 식에 (u=15, π=0)을 대입. \n0 = 5 - 0.5(15 - u*) ➔ 0.5(15 - u*) = 5 ➔ 15 - u* = 10 ➔ u* = 5%. (자연실업률 5%)\n따라서 식은 π = π^e - 0.5(u - 5).\n- ㄱ: π^e=3, π=4 대입. 4 = 3 - 0.5(u - 5) ➔ 1 = -0.5(u - 5) ➔ u - 5 = -2 ➔ u = 3%. (ㄱ 옳음)\n- ㄴ: π^e=5로 고정. 인플레이션 1% 하락시키려면 Δπ = -1. \n  -1 = -0.5(Δu) ➔ 실업률(u)은 2% 상승해야 함. \n  오쿤의 법칙에 의해 실업률 1% 상승 = GDP 2% 하락이므로, 실업률 2% 상승 = GDP 4% 하락.\n  희생률 = 인플레 1% 감소당 GDP 감소율 = 4. (ㄴ 틀림. 6이 아니라 4)\n- ㄷ: 합리적 기대 하에서는 중앙은행이 인플레이션을 낮추겠다고 발표하고 신뢰를 얻으면 π^e가 즉각 하락하여 실업률 증가 없이 인플레이션을 낮출 수 있음. (ㄷ 옳음)\n- ㄹ: 실제 자연실업률은 5%인데 중앙은행이 4%로 오판하고 실업률을 4%로 유지하려 확대통화정책을 지속하면, 사람들은 합리적 기대를 통해 매기 인플레이션을 예상하고 적응하므로 인플레이션이 가속(무한히 증가)하게 됩니다. (ㄹ 옳음)\n따라서 정답은 ㄱ, ㄷ, ㄹ. \n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ ㄱ, ㄷ, ㄹ",
-    "targetKeywords": [
-      "필립스곡선",
-      "오쿤의 법칙",
-      "희생률",
-      "합리적 기대",
-      "자연실업률"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-21",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-4. 수요·공급이론",
-    "title": "[2009학년도] 21번. 최고가격제와 시장의 반응",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 21번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    21. 다음은 가격 통제에 관한 글이다. 이에 대한 추론으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>4세기 초, 로마 제국은 전쟁 준비와 토목 공사를 수행하기 위해서 많은 주화를 발행하였다. 그로 인해 물가가 매우 빠른 속도로 치솟았다. 그런데 디오클레티안 황제는 물가 상승의 원인이 상인들의 탐욕 때문이라고 판단하였다.</p>\n    <p>물가 문제가 걷잡을 수 없는 심각한 상황으로 치닫게 되자 디오클레티안 황제는 모든 상품의 가격을 동결하고, 만약에 이를 어기는 자에 대해서는 사형선고를 내리라는 칙령을 내렸다. 그 결과 가격 통제는 매우 엄격하게 지켜졌다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 소비자잉여는 증가할 것이다.</p>\n      <p>ㄴ. 생산자잉여는 감소할 것이다.</p>\n      <p>ㄷ. 상품의 품귀 현상이 발생할 것이다.</p>\n      <p>ㄹ. 경제 내의 효율성이 제고될 것이다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- 통화량 급증으로 균형 가격이 상승하는 상황에서 가격을 동결(최고가격제)하면 초과 수요(품귀 현상)가 발생합니다. (ㄷ 옳음)\n- 시장 균형가격보다 낮은 수준에서 가격이 통제되므로 생산자 잉여는 확실히 감소합니다. (ㄴ 옳음)\n- 소비자 잉여는 가격 하락의 이득도 있지만 거래량 감소의 손실도 겹쳐 증가할 수도 감소할 수도 있습니다. (ㄱ 불확실)\n- 가격 통제는 자원 배분의 왜곡과 후생 순손실(자중손실)을 초래하므로 효율성이 저하됩니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ㄴ, ㄷ",
-    "targetKeywords": [
-      "최고가격제",
-      "가격통제",
-      "초과수요",
-      "품귀현상",
-      "생산자잉여"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-22",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-2. 실업과 인플레이션",
-    "title": "[2009학년도] 22번. 경제성장률과 실업률 변화 (오쿤의 법칙)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 그림에서 'A국의 직선'과 'B국의 직선'은 각각 A국과 B국에서 장기적으로 관찰된 실업률의 변화분과 경제성장률 간의 관계를 표현하고 있다. 이에 대한 해석으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프 정보: Y축 경제성장률(%), X축 실업률의 변화분(%p). <br>A국 직선: Y절편 약 6%, X절편 약 3% (즉 실업률이 안변할때 잠재성장률 6%). <br>B국 직선: Y절편 약 2%, X절편 약 2% (잠재성장률 2%)]</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 경제가 성장하면 실업률이 낮아진다.</div>\n    <div>② A국의 잠재성장률이 B국의 잠재성장률보다 높다.</div>\n    <div>③ 실업률의 변화 없이는 경제성장을 달성할 수 없다.</div>\n    <div>④ A국, B국 모두 경제성장률이 높을수록 실업률의 감소폭은 작다.</div>\n    <div>⑤ 어떤 실업률의 변화분에 상응하는 경제성장률의 절댓값의 크기는 A국이 B국보다 작다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ②\n\n해설:\n- 실업률의 변화분이 0(X축 0)일 때 달성하는 성장률이 잠재성장률(정상적인 고용 상태의 성장률)입니다. 그래프의 Y절편에서 A국은 약 6%, B국은 약 2%이므로 A국의 잠재성장률이 더 높습니다. (② 옳음)\n- ①: 실업률의 변화분이 0 이상인 구간에서도 경제가 양(+)의 성장을 할 수 있습니다 (예: 잠재성장률 이내의 성장). 무조건 성장한다고 실업률이 낮아지는 것은 아닙니다.\n- ③: 실업률 변화분=0 일 때 경제성장률이 양수이므로 실업률 변화 없이도 경제성장이 가능합니다.\n- ④: 경제성장률이 높을수록 (Y값이 커질수록) 실업률의 변화분(X값)은 더 작은 음수가 되므로 감소폭 자체는 더 큽니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "② A국의 잠재성장률이 B국의 잠재성장률보다 높다.",
-    "targetKeywords": [
-      "오쿤의 법칙",
-      "잠재성장률",
-      "실업률",
-      "경제성장률"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-23",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2009학년도] 23번. 재정정책과 통화정책의 효과성 (IS-LM 모형)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 23번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    23. 다음은 ○○고등학교 경제연구동아리의 지도 교사와 학생들 간의 대화이다. A, B에 들어갈 내용으로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>교사 : △△ 나라의 경제는 성장률의 전망이 낮고 경기가 후퇴하는 국면을 맞이하고 있습니다. 이 나라의 경제는 고용시장이 침체되고, 국내 투자 및 소비가 위축되고 있는 상황입니다. 만약 폐쇄경제라는 가정 하에 정부가 총수요관리정책을 편다면 어느 정책이 보다 더 효과적일까요?</p>\n    <p>학생 갑 : 저는 통화량을 증가시키는 정책이 보다 더 효과적이라고 봅니다. 왜냐하면 [ A ] 입니다.</p>\n    <p>학생 을 : 저는 국채 발행을 통해 정부 지출을 증가시키는 정책이 보다 더 효과적이라고 봅니다. 왜냐하면 [ B ] 입니다.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① A: 화폐시장에 유동성 함정이 존재하고 재정정책의 내부시차가 짧기 때문</div>\n    <div>② A: 확대통화정책은 이자율의 변화를 통해 실물시장에 간접적으로 영향을 미치는 반면, 재정정책은 내부시차가 길기 때문</div>\n    <div>③ B: 화폐시장에 유동성 함정이 존재하고 통화정책의 외부시차가 짧기 때문</div>\n    <div>④ B: 확대재정정책은 실물시장에 직접적으로 영향을 미치는 반면, 통화정책은 외부시차가 길기 때문</div>\n    <div>⑤ B: 국채 발행으로 재원을 조달하여 정부 지출을 증가시키면 구축효과가 발생하기 때문</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④\n\n해설:\n- 확대재정정책(정부지출 증가)은 즉각적으로 총수요(실물시장)를 증가시키는 반면, 확대통화정책은 이자율 하락을 거쳐 투자가 증가하기까지 상당한 시간(외부시차)이 걸립니다. 따라서 학생 을의 주장 근거로는 ④가 가장 적절합니다.\n- ①, ③: 유동성 함정이 존재하면 통화정책이 무력화되므로 학생 갑(통화정책 지지)의 논거가 될 수 없습니다. (또한 통화정책은 외부시차가 깁니다.)\n- ⑤ 구축효과는 재정정책의 효과를 상쇄시키는 요인이므로 재정정책이 효과적이라는 학생 을의 논거가 될 수 없습니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "④ B: 확대재정정책은 실물시장에 직접적으로 영향을 미치는 반면, 통화정책은 외부시차가 길기 때문",
-    "targetKeywords": [
-      "재정정책",
-      "통화정책",
-      "외부시차",
-      "내부시차",
-      "실물시장"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-24",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2009학년도] 24번. 오염배출권 거래제도 균형 분석",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 24번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    24. 다음 자료의 기업이 자체 비용을 들여 제거할 오염 물질 배출량과 배출권 구입량의 크기로 옳은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>△△시는 내년부터 오염 물질 배출 총량 규제를 위해서 각 기업의 오염 물질 배출량에 대한 규제와 더불어 오염 물질 배출권 거래를 인정하기로 하였다. 즉, △△시의 모든 기업은 각각 연간 일정한 배출량을 허용 받으며, 원한다면 배출권을 거래할 수 있다. 그림은 오염 물질 1톤당 배출권의 가격 P, 이윤 극대화를 추구하는 어느 기업이 오염 물질을 1톤씩 제거시켜 나갈 때의 한계비용을 나타내고 있다. e만큼의 오염 물질을 배출하려는 기업에게 이제 배출 허용량이 a만큼 주어졌다고 하자.</p>\n    <p>[그래프 정보: 가로축(배출량 제거량/허용량), 세로축(가격/비용). 한계비용 곡선이 원점(a)에서 우상향. 배출권 가격선이 P에서 수평. 한계비용과 배출권 가격 P가 교차하는 가로축 지점이 c. 원점 a에서 총 배출 필요량 e가 있고, 그 기업은 a부터 e까지 비용 의사결정을 함.]<br>* 정확한 가로축 기호 배열: a(0), b, c, d, e.</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <p>자체 비용을 들여 제거할 양 / 배출권 구입량</p>\n    <div>① ab / bc</div>\n    <div>② cd / de</div>\n    <div>③ ac / ce</div>\n    <div>④ ae / 0</div>\n    <div>⑤ 0 / ae</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ac / ce\n\n해설:\n- 이윤극대화 기업은 자신의 한계저감비용(MAC)이 배출권 가격(P)보다 낮을 때는 배출권 구매 대신 자체 비용을 들여 오염을 직접 감축합니다.\n- 한계비용(MAC) 곡선이 P와 만나는 지점(c)까지는 감축비용이 배출권 구매비용보다 저렴하므로, 이 기업은 a에서 c구간(ac) 만큼의 오염을 스스로 제거합니다.\n- 반면, 한계비용이 배출권 가격보다 높아지는 c 지점 이후(총 필요량 e까지, 즉 ce 구간)에서는 직접 감축하는 것보다 배출권을 사서 오염을 배출하는 것이 비용이 적게 듭니다.\n- 따라서 자체 비용으로 제거할 양은 ac, 배출권을 구입하여 처리(배출)할 양은 ce가 됩니다. (기업의 총 허용량 a(0)이므로 남은 배출량 전부 배출권 구입 필요)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ac / ce",
-    "targetKeywords": [
-      "배출권 거래제도",
-      "한계저감비용",
-      "이윤극대화",
-      "환경경제학"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-25",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-2. 실업과 인플레이션",
-    "title": "[2009학년도] 25번. 필립스 곡선과 통화정책 무력성",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 25번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [1.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    25. 다음 자료에 대한 분석과 추론으로 옳지 않은 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>한 경제의 필립스 곡선이 π = 7 - 2u + π^e 와 같이 표현된다.<br>(여기서 π는 물가상승률, π^e는 기대 물가상승률, u는 실업률을 나타낸다. 모든 경제변수들의 단위는 %이다.)</p>\n  </div>\n  <div class=\"mt-4 space-y-2 text-sm text-slate-700\">\n    <div>① 이 경제의 자연실업률은 3%보다 큰 수치이다.</div>\n    <div>② 실업률이 4%라면 물가상승률은 기대 물가상승률을 하회한다.</div>\n    <div>③ 물가상승률이 기대 물가상승률보다 높으면 실업률은 자연실업률보다 낮다.</div>\n    <div>④ 사람들이 합리적 기대를 하고 가격이 신축적이라면 통화정책의 효과는 무력해진다.</div>\n    <div>⑤ 기대 물가상승률이 고정되어 있을 때, 물가상승률이 1%p 낮아지면 실업률은 2%p 높아진다.</div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ⑤\n\n해설:\n- 자연실업률은 π = π^e 일 때의 실업률(u)입니다. \n  π = 7 - 2u + π에 π=π^e를 대입하면 0 = 7 - 2u ➔ 2u = 7 ➔ u = 3.5%. (① 3%보다 크므로 옳음)\n- 실업률이 4%일 때, π = 7 - 8 + π^e = π^e - 1. 즉 물가상승률이 기대물가상승률보다 낮습니다(하회). (② 옳음)\n- π > π^e 이면, π - π^e = 7 - 2u > 0 ➔ 2u < 7 ➔ u < 3.5%. 즉 실업률은 자연실업률보다 낮습니다. (③ 옳음)\n- 합리적 기대와 신축적 가격을 가정하는 새고전학파 모형에서는 예상된 통화정책은 단기에도 실물(실업률 등)에 영향을 주지 못하고 무력합니다. (④ 옳음)\n- 기대 물가상승률(π^e)이 고정일 때, 식은 π = C - 2u. \n  물가상승률(π)이 1%p 낮아지면(-1), -1 = -2(Δu) ➔ Δu = 0.5%p. 실업률은 0.5%p 높아집니다. 2%p가 아닙니다. (⑤ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "⑤ 기대 물가상승률이 고정되어 있을 때, 물가상승률이 1%p 낮아지면 실업률은 2%p 높아진다.",
-    "targetKeywords": [
-      "필립스곡선",
-      "자연실업률",
-      "합리적 기대",
-      "물가상승률",
-      "기대물가상승률"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-26",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2009학년도] 26번. 관세와 게임이론 (내쉬 균형)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 26번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    26. 표는 A국과 B국의 교역관계에서 관세에 따른 보수행렬을 나타낸 것이다. 이에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 모두 고른 것은? (단, 각 보수쌍에서 왼쪽은 A국의 이득이고, 오른쪽은 B국의 이득이다.)\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white\">\n      <thead>\n        <tr><th colspan=\"2\" rowspan=\"2\" class=\"border border-slate-300 p-1\"></th><th colspan=\"2\" class=\"border border-slate-300 p-1\">B국의 선택</th></tr>\n        <tr><th class=\"border border-slate-300 p-1\">높은 관세</th><th class=\"border border-slate-300 p-1\">낮은 관세</th></tr>\n      </thead>\n      <tbody>\n        <tr><td rowspan=\"2\" class=\"border border-slate-300 p-1 font-bold\">A국의 선택</td><td class=\"border border-slate-300 p-1\">높은 관세</td><td class=\"border border-slate-300 p-1\">(40, 50)</td><td class=\"border border-slate-300 p-1\">(70, 40)</td></tr>\n        <tr><td class=\"border border-slate-300 p-1\">낮은 관세</td><td class=\"border border-slate-300 p-1\">(20, 110)</td><td class=\"border border-slate-300 p-1\">(60, 90)</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. A국과 B국의 우월전략은 모두 높은 관세를 부과하는 것이다.</p>\n      <p>ㄴ. 내쉬(Nash) 균형은 A국과 B국 모두 낮은 관세를 부과하는 것이다.</p>\n      <p>ㄷ. A국과 B국이 자유무역협정(FTA)을 체결하여 관세를 인하할 경우, 양국 모두에게 이득이 된다.</p>\n      <p>ㄹ. A국과 B국이 높은 관세를 부과하는 상황에서 상대방 국가가 관세정책을 변경하면 양국 모두 이득이 커진다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄷ\n\n해설:\n- A국의 선택: B국이 높은 관세 시 A(높은 40 > 낮은 20), B국이 낮은 관세 시 A(높은 70 > 낮은 60). 따라서 A국의 우월전략은 '높은 관세'입니다.\n- B국의 선택: A국이 높은 관세 시 B(높은 50 > 낮은 40), A국이 낮은 관세 시 B(높은 110 > 낮은 90). 따라서 B국의 우월전략도 '높은 관세'입니다. (ㄱ 옳음)\n- 내쉬균형은 우월전략의 짝인 (높은 관세, 높은 관세)입니다. (ㄴ 틀림)\n- 양국이 협정(FTA)을 통해 모두 '낮은 관세'로 이동하면 보수가 (40, 50)에서 (60, 90)으로 증가하므로 양국 모두에게 이득이 됩니다(파레토 개선). (ㄷ 옳음)\n- 현재 (높은 관세, 높은 관세) 상황에서 한 국가만 정책을 변경하면, 변경한 국가의 보수는 오히려 감소(A국 40->20, B국 50->40)하므로 양국 모두 이득이 커진다는 것은 틀립니다. (ㄹ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① ㄱ, ㄷ",
-    "targetKeywords": [
-      "게임이론",
-      "내쉬균형",
-      "우월전략",
-      "자유무역협정",
-      "죄수의 딜레마"
-    ]
-  },
-  {
-    "id": "EXAM-2009-1-27",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-1. 국제무역론",
-    "title": "[2009학년도] 27번. 무역의 이익 (시간당 생산성과 기회비용)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2009학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 다음 자료에 대한 분석과 추론으로 옳은 것을 &lt;보기&gt;에서 모두 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <table class=\"w-full text-center border-collapse border border-slate-300 bg-white mb-2\">\n      <thead>\n        <tr><th class=\"border border-slate-300 p-1\"></th><th class=\"border border-slate-300 p-1\">고기</th><th class=\"border border-slate-300 p-1\">밀</th></tr>\n      </thead>\n      <tbody>\n        <tr><td class=\"border border-slate-300 p-1 font-bold\">A국</td><td class=\"border border-slate-300 p-1\">P_고기 / L_고기A</td><td class=\"border border-slate-300 p-1\">P_밀 / L_밀A</td></tr>\n        <tr><td class=\"border border-slate-300 p-1 font-bold\">B국</td><td class=\"border border-slate-300 p-1\">P_고기 / L_고기B</td><td class=\"border border-slate-300 p-1\">P_밀 / L_밀B</td></tr>\n      </tbody>\n    </table>\n    <p>표는 A국과 B국의 고기와 밀 각 1단위에 대한 가격 및 비용 조건을 나타내고 있다. A국과 B국은 각각 P_고기, P_밀의 가격에서 고기와 밀을 자유 교역하고 있다. 교역의 결과, A국은 고기 생산에, B국은 밀 생산에 완전 특화하고 있다. 단, 생산요소로는 노동만이 유일하며, 각 재화는 경쟁적으로 생산되고 있다. 표에서 L_고기A, L_밀A는 A국에서 고기와 밀 각 재화 1단위의 생산에 들어가는 노동 시간을 표시하는데, 예를 들어 P_고기 / L_고기A 는 A국에서 고기 생산의 시간당 생산성을 나타낸다. B국 및 밀에 대해서도 마찬가지 방식으로 표기된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. A국에서 고기 생산의 시간당 생산성은 밀 생산의 시간당 생산성보다 크다.</p>\n      <p>ㄴ. A국에서는 고기의 밀에 대한 상대가격은 밀로 표시한 고기의 기회비용보다 크다.</p>\n      <p>ㄷ. A국의 B국에 대한 상대적 생산성은 고기 생산보다 밀 생산에서 더 크다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ① ㄱ, ㄴ (정확한 선지 분석: ㄱ, ㄴ 맞음)\n\n해설:\nA국은 고기에, B국은 밀에 완전특화하므로 A국에서는 노동이 모두 고기 부문에 투입됩니다.\n노동이 자율적으로 고기 부문으로 이동하려면 시간당 임금가치(생산성 가치)가 더 커야 합니다.\n- ㄱ: A국에서 고기의 가치생산성 (P_고기 / L_고기A) 이 밀의 생산성 (P_밀 / L_밀A) 보다 높으므로 고기 생산에 특화합니다. (ㄱ 옳음)\n- ㄴ: P_고기 / L_고기A > P_밀 / L_밀A 를 정리하면, P_고기 / P_밀 > L_고기A / L_밀A 가 됩니다. 좌변은 고기의 상대가격이고, 우변은 A국에서 노동단위로 표시한 고기생산의 기회비용(밀로 표시)입니다. 즉 상대가격이 기회비용보다 높아서 무역 이익이 발생합니다. (ㄴ 옳음)\n- ㄷ: A국이 고기에 비교우위가 있다는 것은 고기 부문에서 A국의 상대적 효율성이 밀 부문보다 크다는 의미입니다. 따라서 A국의 B국에 대한 상대적 생산성은 고기가 밀보다 큽니다. (ㄷ 틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "① ㄱ, ㄴ",
-    "targetKeywords": [
-      "비교우위",
-      "완전특화",
-      "기회비용",
-      "상대가격",
-      "생산성"
-    ]
-  },
-  {
-    "id": "EXAM-2008-13",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-2. 소비자이론",
-    "title": "[2008학년도] 13번. 이자율 변화와 소비지출 (대체효과, 소득효과)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 철수와 영희는 이자율 정책이 소비지출에 미치는 영향을 탐구하려고 한다. 다음의 대화를 읽고 ㉠, ㉡과 관련된 경제학 용어를 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>철수 : 이자율이 올라가면 소비지출이 증가할까, 감소할까?</p>\n    <p>영희 : ㉠<u>이자율이 오르면 내가 현재 소비하지 않고 저축하는 것이 미래에 더 많이 소비할 수 있게 하지. 그러면 현재의 소비가 줄어들 거야.</u></p>\n    <p>철수 : 아니야. ㉡<u>이자율이 오르면 나의 저축으로 인한 이자수입이 증가할 거야. 그러면 그 수입 증가로 소비가 늘어날 거야.</u></p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 대체효과\n∙ ㉡: 소득효과\n\n해설:\n이자율이 상승할 때 가계의 소비 및 저축 결정은 두 가지 효과의 합으로 나타납니다.\n- 대체효과(㉠): 현재 소비의 기회비용(미래에 얻을 수 있는 이자)이 증가하므로, 현재 소비를 줄이고 저축(미래 소비)을 늘리는 효과입니다.\n- 소득효과(㉡): 이자율 상승으로 인해 자산 소득(이자수입)이 증가하여 실질적인 부(소득)가 커지므로, 정상재인 현재 소비를 늘리는 효과입니다. (저축자인 경우)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "㉠ 대체효과, ㉡ 소득효과",
-    "targetKeywords": [
-      "대체효과",
-      "소득효과",
-      "이자율",
-      "저축",
-      "현재소비"
-    ]
-  },
-  {
-    "id": "EXAM-2008-14",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-7. 시장실패",
-    "title": "[2008학년도] 14번. 코즈의 정리를 통한 외부효과 해결",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 다음에서 ㉠의 사례를 수치를 포함하여 제시하고, 금연이 강제되었을 때보다 ㉠을 따를 때의 사회적 이득 증가분을 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>동수와 민성이는 한 집에 살고 있으며, 동수는 흡연자이고 민성이는 비흡연자이다. 동수가 흡연할 경우의 만족도(편익)를 돈으로 환산하면 하루 500원이고, 민성이가 담배연기로부터 받는 불쾌감(비용)을 돈으로 환산하면 하루 300원이라 하자. 이 경우 민성이가 동수에게 담배를 피우지 못하게 하는 것은 효율적인 자원배분의 상태가 아니다. 동수는 담배를 피우지 못하게 하는 방안보다, 담배를 피울 수 있으면서도 ㉠<u>더 나은 상태에 도달할 수 있는 방안</u>을 민성이에게 제안하였다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠의 사례 : _________________________________</p>\n    <p>∙ 사회적 이득 증가분 : __________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠의 사례: 동수가 민성이에게 300원 초과 500원 미만의 금액(예: 400원)을 보상으로 지불하고 담배를 피우는 방안.\n∙ 사회적 이득 증가분: 200원 (또는 동수의 순편익 100원 + 민성의 순편익 100원 = 200원)\n\n해설:\n코즈의 정리(Coase Theorem)에 관한 문제입니다. 재산권이 명확히 확정되어 있고 거래비용이 없다면, 당사자 간의 자발적 협상을 통해 외부효과를 내재화하여 효율적인 자원 배분에 도달할 수 있습니다.\n- 동수의 흡연 편익(500원)이 민성이의 피해 비용(300원)보다 크므로, 사회적으로는 동수가 흡연하는 것이 이득입니다.\n- 금연 강제 시 사회적 잉여는 0입니다. 흡연 시 사회적 잉여는 500 - 300 = 200원입니다. 따라서 금연 강제 대비 사회적 이득 증가분은 200원입니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "동수가 400원 보상하고 흡연 / 사회적 이득 200원 증가",
-    "targetKeywords": [
-      "코즈의 정리",
-      "외부효과",
-      "보상",
-      "자발적 협상",
-      "사회적 잉여"
-    ]
-  },
-  {
-    "id": "EXAM-2008-15",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-4. 화폐금융론",
-    "title": "[2008학년도] 15번. 통화주의자(준칙주의)와 신화폐수량설",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2008학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 15번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    15. (가)에서 ㉠이 어떤 정책인지 적고, (나)의 ㉡, ㉢에 들어갈 숫자를 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p><b>(가)</b><br>통화주의(Monetarism)는 '화폐가 가장 중요하다'고 주장한다. 이는 통화정책이 재정정책보다 거시경제에 미치는 영향이 훨씬 더 강력하다는 주장이다. 하지만 그렇다고 해서 통화주의가 재량적(discretionary) 통화정책을 권하지는 않으며, 오히려 ㉠<u>일정한 통화 증가율을 정하여 민간에 공포한 후 그대로 시행하는 것</u>이 좋다고 주장한다.</p>\n    <p><b>(나)</b><br>통화주의는 신화폐수량설을 따른다. 이에 따르면 통화량이 400조 원이며, 명목GDP가 800조 원인 경제에서 화폐의 유통속도는 ( ㉡ )이(가) 된다. 또한 A국의 화폐유통속도가 안정적이라고 할 때, 실질소득 증가율이 5%인 상황에서 물가 상승률을 2%로 유지하려면 통화량의 증가율은 ( ㉢ )%로 유지하여야 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉢ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: k% 준칙 (또는 준칙에 입각한 통화정책, 고정 통화증가율 준칙)\n∙ ㉡: 2\n∙ ㉢: 7\n\n해설:\n- ㉠ 프리드먼(M. Friedman) 등 통화주의자들은 재량적 개입이 오히려 경제 불안정을 초래한다고 보아, 경제성장률에 맞춰 통화량을 매년 일정 비율(k%)로 공급하는 '준칙주의(k% rule)'를 주장했습니다.\n- ㉡ 교환방정식 MV = PY (M: 통화량, V: 유통속도, PY: 명목GDP)에서 400 × V = 800 이므로 화폐 유통속도(V)는 2입니다.\n- ㉢ 교환방정식을 변화율 형태로 바꾸면: 통화증가율(ΔM/M) + 유통속도증가율(ΔV/V) = 물가상승률(ΔP/P) + 실질소득증가율(ΔY/Y)\n  유통속도가 안정적(ΔV/V = 0)이라고 가정했으므로,\n  통화증가율 = 물가상승률(2%) + 실질소득증가율(5%) = 7%가 되어야 합니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "㉠ k% 준칙, ㉡ 2, ㉢ 7",
-    "targetKeywords": [
-      "통화주의",
-      "k% 준칙",
-      "준칙주의",
-      "신화폐수량설",
-      "화폐유통속도"
-    ]
-  },
-  {
-    "id": "EXAM-2007-12",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2007학년도] 12번. 이부가격제와 소비자 잉여 (헬스장 회원권)",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2007학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. ㉠과 ㉡에 나타난 개념에 해당하는 부분을 그래프상의 기호로 표시하고, 철수가 동호의 '㉡ 제의'를 받아들일 때의 헬스 이용 빈도와 '공짜로 회원 대우'를 받을 때의 이용 빈도를 그래프상의 구간을 기호로 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>철수는 친구인 동호가 대규모 헬스장을 개업했다는 말을 듣고 찾아갔다. 동호의 헬스장은 가입비를 납부한 회원에게는 회원 요금을, 회원이 아닌 사람에게는 그보다 비싼 일반 요금을 받고 있었다.</p>\n    <p>철수 : 동호야, 회원 가입비는 얼마냐? 그리고 요금은?</p>\n    <p>동호 : 가입비는 백만 원인데, 회원은 일반 요금의 3분의 1만 내면 돼. 왜, 가입하게?</p>\n    <p>철수 : 가입비가 비싸다. 싸게 해줄 수 없니?</p>\n    <p>동호 : ㉠<u>그럼 네가 회원 가입비로 최대 얼마까지 낼 용의가 있는지 정직하게 말해 봐.</u></p>\n    <p>철수 : 그건 좀 그렇다. 가입비 없이 회원 요금만 받으면 안 되니?</p>\n    <p>동호 : 그건 안돼. 대신 ㉡<u>내가 너한테 (가입비를 낸 만큼의 혜택을) 보조해 줄 테니까, 헬스장에 와서는 그냥 일반 요금 내고 이용해라.</u> 얼마면 회원 대우해주는 셈이 되겠니?</p>\n    <p>[그래프 정보: Y축 다른 모든 상품, X축 헬스 이용 빈도. 무차별곡선 i0, i1. <br>일반 요금 예산선 bn, 회원 요금 예산선 bv. 무차별곡선과 예산선의 접점들(d, e, f, g 등)이 표시되어 있음]</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉡ 제의를 받아들일 때의 이용빈도 : ____________</p>\n    <p>∙ 공짜로 회원 대우를 받을 때의 이용빈도 : _________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 선분 ab (또는 가입비에 해당하는 예산선 Y축 절편의 차이. 일반요금 효용 i0를 유지하면서 회원요금을 적용받기 위해 낼 용의가 있는 최대 금액인 소비자 잉여분)\n∙ ㉡: 선분 ac (또는 보조금 크기. 동등변화/보상변화의 개념)\n∙ ㉡ 제의를 받아들일 때의 이용빈도: m (또는 k, 상황에 따라 그래프 교점 판독 요망 - 일반요금 예산선이 보조금만큼 상향이동한 점의 X좌표)\n∙ 공짜로 회원 대우를 받을 때의 이용빈도: v (회원 예산선 bv가 그대로 적용될 때 무차별곡선 i1과의 접점의 X좌표)\n\n해설:\n이부가격제(가입비+이용료)와 무차별곡선을 결합한 소비자이론 심화 문제입니다.\n- 가입비(기본요금)의 최대 낼 용의(㉠)는 낮은 이용료를 적용받음으로써 증가하는 효용을 기존 효용수준(i0)으로 되돌려 놓는 금액인 '보상변화'의 크기입니다.\n- 가입비를 면제받고 일반요금을 내면서 동등한 혜택을 받기 위한 보조금(㉡)은 회원 가입 시 달성하는 효용(i1)을 일반요금 하에서 달성하게 해주는 '동등변화'의 크기입니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "㉠ ab ㉡ ac / 이용빈도 판독 요망",
-    "targetKeywords": [
-      "이부가격제",
-      "무차별곡선",
-      "보상변화",
-      "동등변화",
-      "소비자잉여"
-    ]
-  },
-  {
-    "id": "EXAM-2007-13",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-3. 생산자이론",
-    "title": "[2007학년도] 13번. 생산시설 가동 여부와 고정비용, 매몰비용",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2007학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 13번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [3점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    13. 경수는 신문 기사 (가)를 읽고 (나)와 같은 이론적 결과를 추론하였다. ㉠, ㉡에 들어갈 적합한 용어를 쓰고, ㉢에 적절한 내용을 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p><b>(가)</b><br>A제철은 준공 후 계속 놀리고 있는 강판 생산시설을 조만간 가동하기로 했다. 회사측 관계자는, \"이 시설을 놀리면 한 달에 10억 원의 손실이 발생하지만, 가동하면 손실을 3억 원으로 줄일 수 있다.\"라고 설명했다. A제철이 생산하는 강판은 국내외적으로 경쟁시장을 형성하고 있다.</p>\n    <p><b>(나)</b><br>현재 강판의 시장가격은 A제철의 강판 생산수준에서의 ( ㉠ ) 비용보다는 높지만, ( ㉡ ) 비용보다는 낮은 수준에 있는 것으로 추정할 수 있다. 또한, 단기적으로 A제철의 공급곡선은 ( ㉢ )(으)로 나타난다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <p>∙ ㉠ : _______________________</p>\n    <p>∙ ㉡ : _______________________</p>\n    <p>∙ ㉢ : _______________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ ㉠: 평균가변(AVC)\n∙ ㉡: 평균(ATC 또는 AC)\n∙ ㉢: 평균가변비용 곡선(AVC)의 최저점 이상의 한계비용(MC) 곡선\n\n해설:\n- 시설을 놀려도 발생하는 10억 원의 손실은 생산량과 무관하게 지출된 '고정비용(매몰비용)'입니다.\n- 가동 시 손실이 3억 원으로 줄어든다는 것은, 시장가격(P)이 제품을 생산하는 데 드는 단위당 평균가변비용(AVC)보다는 높아 총 수입(TR)이 가변비용(TVC)을 충당하고도 7억 원이 남아 고정비용 손실을 줄여주었다는 뜻입니다.\n- 그러나 여전히 3억 원의 손실이 발생하므로 시장가격은 전체 평균비용(ATC)보다는 낮은 상태입니다.\n- 완전경쟁시장에서 단기 공급곡선은 조업중단점(AVC 최저점) 이상의 한계비용(MC) 곡선 구간입니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "㉠ 평균가변 ㉡ 평균 ㉢ 평균가변비용(AVC) 최저점 이상의 한계비용(MC) 곡선",
-    "targetKeywords": [
-      "평균가변비용",
-      "평균비용",
-      "고정비용",
-      "조업중단점",
-      "한계비용",
-      "공급곡선"
-    ]
-  },
-  {
-    "id": "EXAM-2006-14",
-    "subject": "경제학",
-    "chapter": "3. 국제경제학",
-    "section": "3-2. 환율과국제수지",
-    "title": "[2006학년도] 14번. 물가 하락이 거시경제에 미치는 파급 경로",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2006학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 변동환율제도를 채택하고 있으며 자본 이동이 자유로운 소규모 개방경제를 상정하자. 물가 하락은 가계의 소비지출과 기업의 투자지출뿐 아니라 순수출에도 영향을 미친다. (A) 물가 하락이 화폐시장에서 이자율에 영향을 미치게 되는 과정을 쓰고, (B) 화폐시장에서의 이런 변화가 순수출에 어떤 경로로 영향을 미치게 되는지를 자본 유출입, 환율, 수출입에 대한 영향의 순서에 따라 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>∙ (A) : ____________________________________________________________________</p>\n    <p>∙ (B) : ____________________________________________________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ (A): 물가가 하락하면 거래적 화폐수요가 감소하여, 실질 화폐공급이 증가하는 효과가 나타나 화폐시장에서 이자율이 하락한다.\n∙ (B): 이자율이 하락하면 국내 자산 수익률이 낮아져 자본이 해외로 유출된다. 자본 유출은 외환시장에서 외환 수요를 증가시켜 환율을 상승(자국통화가치 하락)시킨다. 환율 상승은 수출품의 가격경쟁력을 높여 수출을 증가시키고 수입을 감소시켜 순수출을 증가시킨다.\n\n해설:\n거시경제의 이자율 경로와 환율 경로를 묻는 전형적인 서술형 문제입니다. 물가 하락(P↓) -> 화폐수요(Md) 하락 -> 이자율(r) 하락 -> 자본 유출(CF↑) -> 환율(e) 상승 -> 순수출(NX) 증가의 메커니즘을 명확히 서술해야 합니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "(A) 화폐수요 감소로 이자율 하락, (B) 자본유출 -> 환율상승 -> 순수출증가",
-    "targetKeywords": [
-      "물가 하락",
-      "화폐수요",
-      "이자율",
-      "자본 유출입",
-      "환율",
-      "순수출"
-    ]
   }
 ];

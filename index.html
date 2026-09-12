@@ -2523,6 +2523,47 @@
           }
         }
 
+        const renderedLinearIndices = [];
+
+        // Helper to sort topics within a section or subsection: concepts first, then exam questions by year (asc) and question number (asc)
+        function sortTopicIndicesList(list) {
+          return list.sort((idxA, idxB) => {
+            const topicA = TOPICS[idxA];
+            const topicB = TOPICS[idxB];
+            const isExamA = topicA.id.startsWith('EXAM-') || topicA.subject === '기출' || topicA.title.includes('학년도');
+            const isExamB = topicB.id.startsWith('EXAM-') || topicB.subject === '기출' || topicB.title.includes('학년도');
+
+            if (!isExamA && isExamB) return -1;
+            if (isExamA && !isExamB) return 1;
+            if (!isExamA && !isExamB) return idxA - idxB;
+
+            const extractYear = (t) => {
+              const m = t.title.match(/\[(\d{4})학년도\]/);
+              if (m) return parseInt(m[1], 10);
+              const m2 = t.id.match(/EXAM-(\d{4})/);
+              if (m2) return parseInt(m2[1], 10);
+              return 0;
+            };
+            const extractNum = (t) => {
+              const m = t.title.match(/(\d+)번/);
+              if (m) return parseInt(m[1], 10);
+              const m2 = t.id.match(/-(\d+)$/);
+              if (m2) return parseInt(m2[1], 10);
+              return 0;
+            };
+
+            const yearA = extractYear(topicA);
+            const yearB = extractYear(topicB);
+            if (yearA !== yearB) return yearA - yearB;
+
+            const numA = extractNum(topicA);
+            const numB = extractNum(topicB);
+            if (numA !== numB) return numA - numB;
+
+            return idxA - idxB;
+          });
+        }
+
         chapterMap.forEach((secMap, chName) => {
           let chapterTotal = 0;
           secMap.forEach(arr => { chapterTotal += arr.length; });
@@ -2534,7 +2575,7 @@
           const chapHeader = document.createElement('div');
           chapHeader.className = 'chapter-header pt-3 pb-1.5 px-2 text-[11px] font-extrabold text-slate-700 uppercase tracking-wider flex items-center justify-between border-b border-slate-200 mt-2 first:mt-0';
           chapHeader.innerHTML = `
-            <div class="flex items-center gap-1.5 min-w-0">
+            <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
               <span class="material-symbols-outlined text-[15px] text-blue-600 shrink-0">folder</span>
               <span class="truncate font-extrabold text-slate-800">${chName}</span>
             </div>
@@ -2547,9 +2588,13 @@
           chapContent.className = 'chapter-content space-y-0.5 pt-1';
 
           secMap.forEach((indices, secName) => {
+            // Sort topics in section: concepts first, then exam questions by year (ascending) and question number (ascending)
+            sortTopicIndicesList(indices);
+
             // If section has only 1 topic, render directly as a clean standalone item without redundant folder accordion
             if (indices.length === 1) {
               const globalIdx = indices[0];
+              renderedLinearIndices.push(globalIdx);
               const topic = TOPICS[globalIdx];
               const isCurrent = (globalIdx === currentTopicIndex);
 
@@ -2663,6 +2708,7 @@
             if (!hasSubsections) {
               // Add Topics directly under this Section
               indices.forEach((globalIdx) => {
+                renderedLinearIndices.push(globalIdx);
                 secChildren.appendChild(createTopicItem(globalIdx));
               });
             } else {
@@ -2675,8 +2721,11 @@
               });
 
               subMap.forEach((subIndices, subName) => {
+                sortTopicIndicesList(subIndices);
+
                 if (!subName) {
                   subIndices.forEach((globalIdx) => {
+                    renderedLinearIndices.push(globalIdx);
                     secChildren.appendChild(createTopicItem(globalIdx));
                   });
                   return;
@@ -2728,6 +2777,7 @@
                 });
 
                 subIndices.forEach((globalIdx) => {
+                  renderedLinearIndices.push(globalIdx);
                   subChildren.appendChild(createTopicItem(globalIdx));
                 });
 
@@ -2745,6 +2795,11 @@
           chapContainer.appendChild(chapContent);
           sidebarTree.appendChild(chapContainer);
         });
+
+        // Synchronize filteredIndices with the exact rendered tree order so Next/Prev navigation follows the sidebar 1:1
+        if (renderedLinearIndices.length > 0) {
+          filteredIndices = renderedLinearIndices;
+        }
 
         if (filteredIndices.length === 0) {
           sidebarTree.innerHTML = '<div class="p-6 text-xs text-slate-400 text-center">검색 조건에 맞는 주제가 없습니다.</div>';
@@ -2958,7 +3013,7 @@
 
           if (isCur) {
             item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all';
-            // Ensure parent section is expanded (for non-exam subjects)
+            // Ensure parent section and subsection are expanded (for non-exam subjects)
             if (activeSubject !== '기출') {
               const secChildren = item.closest('.section-children');
               if (secChildren && secChildren.classList.contains('hidden')) {
@@ -2966,6 +3021,15 @@
                 const secGroup = secChildren.closest('.section-group');
                 if (secGroup) {
                   const chevron = secGroup.querySelector('.sec-chevron');
+                  if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
+                }
+              }
+              const subChildren = item.closest('.subsection-children');
+              if (subChildren && subChildren.classList.contains('hidden')) {
+                subChildren.classList.remove('hidden');
+                const subGroup = subChildren.closest('.subsection-group');
+                if (subGroup) {
+                  const chevron = subGroup.querySelector('.sub-chevron');
                   if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
                 }
               }
