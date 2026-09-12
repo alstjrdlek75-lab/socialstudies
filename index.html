@@ -2369,7 +2369,6 @@
       // 4. Render Sidebar Tree (Clean Collapsible Hierarchical Tree)
       function renderSidebar() {
         sidebarTree.innerHTML = '';
-        const grades = getStoredGrades();
         const bookmarks = getStoredBookmarks();
         const q = searchQuery.trim().toLowerCase();
 
@@ -2469,16 +2468,6 @@
               const topic = TOPICS[globalIdx];
               const isCurrent = (globalIdx === currentTopicIndex);
 
-              const gradeInfo = grades[topic.id];
-              let gradeIcon = '';
-              if (gradeInfo && gradeInfo.grade === 'pass') {
-                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-emerald-600 shrink-0">check_circle</span>';
-              } else if (gradeInfo && gradeInfo.grade === 'ambiguous') {
-                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-amber-500 shrink-0">help</span>';
-              } else if (gradeInfo && gradeInfo.grade === 'fail') {
-                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-red-500 shrink-0">cancel</span>';
-              }
-
               const item = document.createElement('a');
               item.href = '#';
               item.dataset.globalIndex = globalIdx;
@@ -2491,7 +2480,7 @@
               const formattedTag = (topic.subject === '기출') ? '' : formatExamTag(topic.examTag);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                  ${gradeIcon || '<span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>'}
+                  <span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>
                   <span class="truncate font-semibold">${displayName}</span>
                 </div>
                 ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedTag}</span>` : ''}
@@ -2564,16 +2553,6 @@
               item.dataset.globalIndex = globalIdx;
               const isCurrent = (globalIdx === currentTopicIndex);
 
-              const gradeInfo = grades[topic.id];
-              let gradeIcon = '';
-              if (gradeInfo && gradeInfo.grade === 'pass') {
-                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-emerald-600 shrink-0">check_circle</span>';
-              } else if (gradeInfo && gradeInfo.grade === 'ambiguous') {
-                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-amber-500 shrink-0">help</span>';
-              } else if (gradeInfo && gradeInfo.grade === 'fail') {
-                gradeIcon = '<span class="material-symbols-outlined text-[14px] text-red-500 shrink-0">cancel</span>';
-              }
-
               item.className = isCurrent
                 ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
                 : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
@@ -2581,7 +2560,6 @@
               const formattedSecTag = (topic.subject === '기출') ? '' : formatExamTag(topic.examTag);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                  ${gradeIcon}
                   ${bookmarks.includes(topic.id) ? '<span class="material-symbols-outlined material-symbols-filled text-[13px] text-amber-500 shrink-0">star</span>' : ''}
                   <span class="truncate">${topic.title}</span>
                 </div>
@@ -4126,8 +4104,9 @@
 
       // Reset All Grades
       document.getElementById('btn-reset-grades').addEventListener('click', () => {
-        if (confirm('모든 학습 인출 기록(Pass/Fail)을 초기화하시겠습니까?')) {
+        if (confirm('모든 학습 복습 기록을 초기화하시겠습니까?')) {
           localStorage.removeItem('edurecall_subnote_grades');
+          localStorage.removeItem('edurecall_fsrs_grades');
           updateOverallStats();
           renderSidebar();
           updateTopicRetentionView(TOPICS[currentTopicIndex].id);
