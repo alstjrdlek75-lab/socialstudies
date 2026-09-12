@@ -1249,7 +1249,7 @@
   </script>
   <!-- Core Topic Data (Loaded first) -->
   <script src="topics-data.js?v=20260910_1850"></script>
-  <script src="explanations-data.js?v=20260910_1855"></script>
+  <script src="explanations-data.js?v=20260912_1234"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -4900,6 +4900,7 @@
 
       // Clean legacy corrupted localStorage entries where header title was split
       try {
+        localStorage.removeItem('edurecall_custom_SOC-145');
         // Migrate legacy LAW-045/LAW-046 entries to LAW-044
         ['edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
           const m46 = localStorage.getItem(`${prefix}_LAW-046`);
