@@ -1238,7 +1238,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260912_155900"></script>
+  <script src="topics-data.js?v=1789209231_155900"></script>
   <script src="explanations-data.js?v=20260912_165700"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -4892,20 +4892,21 @@
       });
 
       function updateSubjectCountBadges() {
-        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '가이드': 0, '오늘 복습': 0 };
+        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '가이드': 0 };
         const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
         const nowTime = new Date().getTime();
+        const dueSet = new Set();
 
         TOPICS.forEach(t => { 
           if (counts[t.subject] !== undefined) counts[t.subject]++; 
           const card = fsrsMap[t.id];
           if (card && card.state !== 0 && card.due && new Date(card.due).getTime() <= nowTime) {
-            counts['오늘 복습']++;
+            dueSet.add(t.id);
           }
         });
         const map = {
-          'count-due': counts['오늘 복습'],
-          'count-due-mobile': counts['오늘 복습'],
+          'count-due': dueSet.size,
+          'count-due-mobile': dueSet.size,
           'count-edu': counts['사회과교육론'],
           'count-law': counts['법학'],
           'count-soc': counts['사회학'],
