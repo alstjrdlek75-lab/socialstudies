@@ -1238,7 +1238,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=1789209231_155900"></script>
+  <script src="topics-data.js?v=1789209758_155900"></script>
   <script src="explanations-data.js?v=20260912_165700"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2439,9 +2439,14 @@
         }, 2200);
       }
 
-      // Helper: Format examTag for display
-      function formatExamTag(tag) {
+      // Helper: Format examTag for display (omits badge if topic is already an exam question)
+      function formatExamTag(tag, topic) {
         if (!tag || tag === '이론핵심') return '';
+        if (topic) {
+          if (topic.subject === '기출') return '';
+          if (topic.id && topic.id.startsWith('EXAM-')) return '';
+          if (topic.title && (topic.title.includes('학년도') || topic.title.includes('기출') || topic.title.startsWith('['))) return '';
+        }
         const formatted = tag.replace(/(^|[\s,])(\d{2})(?=\b)/g, "$1'$2");
         return `[기출 ${formatted}]`;
       }
@@ -2557,7 +2562,7 @@
 
               const displayName = (topic.section && topic.section !== chName) ? topic.section : topic.title;
 
-              const formattedTag = (topic.subject === '기출') ? '' : formatExamTag(topic.examTag);
+              const formattedTag = formatExamTag(topic.examTag, topic);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   <span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>
@@ -2637,7 +2642,7 @@
                 ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
                 : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
 
-              const formattedSecTag = (topic.subject === '기출') ? '' : formatExamTag(topic.examTag);
+              const formattedSecTag = formatExamTag(topic.examTag, topic);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                   ${bookmarks.includes(topic.id) ? '<span class="material-symbols-outlined material-symbols-filled text-[13px] text-amber-500 shrink-0">star</span>' : ''}
@@ -2809,7 +2814,7 @@
           bcSubsectionSep.classList.add('hidden');
         }
         bcTitle.textContent = topic.title;
-        const currentExamTag = formatExamTag(topic.examTag);
+        const currentExamTag = formatExamTag(topic.examTag, topic);
         if (currentExamTag) {
           bcExamTag.textContent = currentExamTag;
           bcExamTag.classList.remove('hidden');
