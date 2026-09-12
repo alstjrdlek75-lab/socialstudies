@@ -706,13 +706,6 @@
       background-color: #334155 !important;
       color: #ffffff !important;
     }
-    html.dark header .bg-blue-50 {
-      background-color: rgba(30, 58, 138, 0.3) !important;
-      border-color: rgba(59, 130, 246, 0.3) !important;
-    }
-    html.dark #global-stat-text {
-      color: #93c5fd !important;
-    }
 
     /* Sub-header (Fixed Top Bar) */
     html.dark #sub-header,
@@ -880,9 +873,6 @@
     }
     html.dark .sidebar-topic-item span.text-indigo-500 {
       color: #a5b4fc !important;
-    }
-    html.dark #sidebar-pass-count {
-      color: #94a3b8 !important;
     }
 
     /* Main Subnote Column: Banner Card & Controls Bar (Image 3 Fix) */
@@ -1324,11 +1314,6 @@
         <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
       </button>
 
-      <!-- Global Progress -->
-      <div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 xl:px-3 xl:py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-[11px] xl:text-xs text-blue-800 font-medium shrink-0">
-        <span class="material-symbols-outlined text-[14px] xl:text-[15px] text-blue-600">check_circle</span>
-        <span id="global-stat-text"><span class="hidden xl:inline">완료: </span>0 / 569 (0%)</span>
-      </div>
     </div>
   </header>
 
@@ -1438,9 +1423,10 @@
     </nav>
 
     <!-- Sidebar Bottom Status -->
-    <div class="p-3 border-t border-border bg-slate-50 text-[11px] flex items-center justify-between text-slate-500">
-      <span id="sidebar-pass-count">암기 완료: 0개</span>
-      <button id="btn-reset-grades" class="text-red-600 hover:underline text-[10px]">기록 초기화</button>
+    <div class="p-2.5 border-t border-border bg-slate-50 text-[11px] flex items-center justify-end text-slate-500">
+      <button id="btn-reset-grades" class="text-slate-500 hover:text-red-600 hover:underline text-[11px] flex items-center gap-1 cursor-pointer">
+        <span class="material-symbols-outlined text-[14px]">restart_alt</span>학습 기록 초기화
+      </button>
     </div>
   </aside>
 
@@ -1968,8 +1954,6 @@
       const btnFilterBookmark = document.getElementById('btn-filter-bookmark');
       const sidebarSubjectLabel = document.getElementById('sidebar-subject-label');
       const sidebarTopicCount = document.getElementById('sidebar-topic-count');
-      const sidebarPassCount = document.getElementById('sidebar-pass-count');
-      const globalStatText = document.getElementById('global-stat-text');
       const btnToggleBookmark = document.getElementById('btn-toggle-bookmark');
       const iconBookmark = document.getElementById('icon-bookmark');
 
@@ -2410,12 +2394,6 @@
 
       function updateOverallStats() {
         try {
-          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
-          const passedCount = Object.values(map).filter(c => c.state === window.FSRS.State.Review).length;
-          const total = TOPICS.length;
-          const pct = Math.round((passedCount / total) * 100);
-          if (globalStatText) globalStatText.innerHTML = `<span class="hidden xl:inline">안정화: </span>${passedCount} / ${total} (${pct}%)`;
-          if (sidebarPassCount) sidebarPassCount.textContent = `안정화: ${passedCount}개`;
           updateSubjectCountBadges();
         } catch(e) {}
       }
