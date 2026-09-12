@@ -5932,20 +5932,28 @@ window.ALL_TOPICS = [
     "title": "5. 연소자 근로의 특별보호",
     "examTag": "",
     "page": 47,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 15세 미만인자, 중학교에 재학중인 18세 미만인 자 근로자 사용X, 취직인허증을 가진 경우 가능</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "5. 아동 노동\n(1) 15세 미만인자, 중학교에 재학중인 18세 미만인 자 근로자 사용X, 취직인허증을 가진 경우 가능\n",
+    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 최저취업연령 (아동 노동 금지)</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">15세 미만인 자(중학교에 재학 중인 18세 미만 포함)는 원칙적으로 근로자로 사용 불가, 취직인허증을 발급받은 경우 예외적으로 취업 가능</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 연소근로자 정의</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">15세 이상 18세 미만인 자</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 근로계약 체결</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">법정대리인의 동의를 받아 본인이 직접 체결 → 법정대리인이 미성년자의 근로계약을 대리할 수 없음 (친권자나 후견인은 미성년자의 근로계약을 대리할 수 없음)</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"3\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(4) 법정근로시간</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">1일 7시간, 1주 35시간 한도 / 당사자 간 합의 시 1일 1시간, 1주 5시간까지 연장 가능 (주 최대 40시간)</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"4\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(5) 야간·휴일근로 제한</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">원칙적 금지, 단 본인의 동의와 고용노동부 장관의 인가를 받은 경우 예외적으로 가능 (18세 미만자 및 산후 1년 미만 여성)</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"5\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(6) 독자적 임금 청구</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">미성년자는 독자적으로 임금을 청구할 수 있음 (법정대리인이 임금을 대신 수령할 수 없음)</div></div></div>",
+    "defaultAnswer": "5. 연소근로자의 특별보호\n(1) 최저취업연령: 15세 미만인 자(중학교 재학 중인 18세 미만 포함)는 원칙적으로 고용 불가, 취직인허증 소지 시 예외적 허용\n(2) 연소근로자 정의: 15세 이상 18세 미만인 미성년자\n(3) 근로계약 체결: 법정대리인의 동의를 받아 본인이 직접 체결 (대리 체결 금지)\n(4) 법정근로시간: 1일 7시간, 1주 35시간 / 합의 시 1일 1시간, 1주 5시간 연장 한도\n(5) 야간·휴일근로: 원칙적 금지, 본인 동의 + 고용노동부 장관의 인가 시 예외적 허용\n(6) 독자적 임금 청구: 미성년자가 독자적으로 임금 청구 가능 (대리 수령 금지)\n",
     "targetKeywords": [
-      "취직인허증을",
-      "미만인자",
-      "중학교에",
       "재학중인",
-      "15세",
+      "대리",
+      "35시간",
+      "연소근로자",
+      "취직인허증을",
+      "근로자",
+      "중학교에",
+      "인가",
       "18세",
+      "임금",
+      "15세",
+      "미만인자",
+      "법정대리인",
+      "7시간",
       "미만인",
-      "근로자"
+      "취직인허증"
     ],
     "tapeCount": 0,
-    "groupCount": 1
+    "groupCount": 6
   },
   {
     "id": "LAW-164",
@@ -6014,34 +6022,11 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LAW-167",
-    "subject": "법학",
-    "chapter": "6. 노동법",
-    "section": "6-2. 개별적 근로관계법 (근로기준법)",
-    "title": "9. 연소근로자 보호 규정",
-    "examTag": "",
-    "page": 48,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 15세 이상 18세 미만 미성년자</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 근로계약</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">법정대리인의 동의를 받아 본인이 직접 체결 → 법정대리인이 미성년자의 근로계약을 대리 할 수 없음</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 법정근로시간</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">일7시간, 주35시간 / 합의 시 일 1시간, 주 5시간까지 연장 가능</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"3\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(4) 야간·휴일근로</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">원칙적 금지, But 본인의 동의와 고용노동부 장관의 인가 시 가능</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"4\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(5) 독자적으로 임금청구 가능</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "9. 근로기준법 상 연소근로자\n(1) 15세 이상 18세 미만 미성년자\n\n(2) 근로계약: 법정대리인의 동의를 받아 본인이 직접 체결 → 법정대리인이 미성년자의 근로계약을 대리 할 수 없음\n(3) 법정근로시간: 일7시간, 주35시간 / 합의 시 일 1시간, 주 5시간까지 연장 가능\n\n(4) 야간·휴일근로: 원칙적 금지, But 본인의 동의와 고용노동부 장관의 인가 시 가능\n\n(5) 독자적으로 임금청구 가능\n",
-    "targetKeywords": [
-      "가능",
-      "법정대리인의",
-      "법정대리인이",
-      "법정근로시간",
-      "미성년자의",
-      "근로계약을",
-      "주35시간",
-      "5시간까지"
-    ],
-    "tapeCount": 0,
-    "groupCount": 5
-  },
-  {
     "id": "LAW-168",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
-    "title": "10. 이행강제금 제도",
+    "title": "9. 이행강제금 제도",
     "examTag": "",
     "page": 48,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 노동위원회는 구제명령을 받은 후 이행기한까지 구제명령을 이행하지 아니하면 이행강제금 부과</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
