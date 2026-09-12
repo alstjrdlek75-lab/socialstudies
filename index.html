@@ -3012,7 +3012,7 @@
           const isCur = (gIdx === currentTopicIndex);
 
           if (isCur) {
-            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all';
+            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5';
             // Ensure parent section and subsection are expanded (for non-exam subjects)
             if (activeSubject !== '기출') {
               const secChildren = item.closest('.section-children');
@@ -3036,7 +3036,7 @@
             }
             item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           } else {
-            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all';
+            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
           }
         });
 
@@ -4904,13 +4904,16 @@
           }
         }
 
-        // 9. Topic Navigation: Left / Right Arrow keys / Cmd+, / Cmd+.
-        if ((e.key === 'ArrowLeft' && !e.altKey) || ((e.ctrlKey || e.metaKey) && (e.key === 'ArrowLeft' || e.key === ',' || e.key === '<'))) {
+        // 9. Topic Navigation: Left / Right / Up / Down Arrow keys / Cmd+, / Cmd+.
+        const isPrevKey = ((e.key === 'ArrowLeft' && !e.altKey) || ((e.ctrlKey || e.metaKey) && (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === ',' || e.key === '<')) || (e.altKey && e.key === 'ArrowUp'));
+        const isNextKey = ((e.key === 'ArrowRight' && !e.altKey) || ((e.ctrlKey || e.metaKey) && (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === '.' || e.key === '>')) || (e.altKey && e.key === 'ArrowDown'));
+
+        if (isPrevKey) {
           e.preventDefault();
           btnPrevTopic.click();
           return;
         }
-        if ((e.key === 'ArrowRight' && !e.altKey) || ((e.ctrlKey || e.metaKey) && (e.key === 'ArrowRight' || e.key === '.' || e.key === '>'))) {
+        if (isNextKey) {
           e.preventDefault();
           btnNextTopic.click();
           return;
