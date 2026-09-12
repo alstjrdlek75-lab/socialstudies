@@ -1248,7 +1248,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260912_151727"></script>
+  <script src="topics-data.js?v=20260912_151944"></script>
   <script src="explanations-data.js?v=20260912_125354"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -1361,10 +1361,10 @@
           <span class="material-symbols-outlined text-[15px]">chevron_right</span>
         </button>
         <span class="text-slate-300 hidden lg:inline">|</span>
-        <!-- Toggle Right Essay/FAP Tab in Fixed Sub-header -->
-        <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 및 자가채점(FAP) 서술창 접기/열기 [단축키: W]">
+        <!-- Toggle Right Essay Tab in Fixed Sub-header -->
+        <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 서술창 접기/열기 [단축키: W]">
           <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="subhead-essay-icon">dock_to_right</span>
-          <span class="font-bold text-[11px]" id="subhead-essay-text">인출·FAP</span>
+          <span class="font-bold text-[11px]" id="subhead-essay-text">인출창</span>
         </button>
       </div>
     </div>
@@ -1552,7 +1552,7 @@
             </button>
 
             <!-- Wide View / Essay Pad Toggle Button (available on desktop) -->
-            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 및 자가채점(FAP) 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
+            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
               <span class="material-symbols-outlined text-[16px] text-slate-600" id="toggle-essay-icon">fit_screen</span>
               <span id="toggle-essay-label">와이드 보기</span>
             </button>
@@ -1953,7 +1953,7 @@
             toggleEssayIcon.textContent = 'dock_to_right';
             toggleEssayLabel.textContent = '서술창 열기';
             if (btnToggleEssayPad) {
-              btnToggleEssayPad.title = '우측 백지 인출 및 자가채점(FAP) 서술창 열기 [단축키: W]';
+              btnToggleEssayPad.title = '우측 백지 인출 서술창 열기 [단축키: W]';
               btnToggleEssayPad.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-300');
               btnToggleEssayPad.classList.remove('bg-white', 'text-slate-700');
             }
@@ -1972,13 +1972,13 @@
         if (btnToggleEssaySubhead) {
           if (isCollapsed) {
             if (subheadEssayIcon) subheadEssayIcon.textContent = 'dock_to_right';
-            if (subheadEssayText) subheadEssayText.textContent = '인출·FAP 열기';
-            btnToggleEssaySubhead.title = '우측 백지 인출 및 자가채점(FAP) 서술창 열기 [단축키: W]';
+            if (subheadEssayText) subheadEssayText.textContent = '인출창 열기';
+            btnToggleEssaySubhead.title = '우측 백지 인출 서술창 열기 [단축키: W]';
             btnToggleEssaySubhead.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-300');
             btnToggleEssaySubhead.classList.remove('bg-white', 'text-slate-700');
           } else {
             if (subheadEssayIcon) subheadEssayIcon.textContent = 'fit_screen';
-            if (subheadEssayText) subheadEssayText.textContent = '인출·FAP 접기';
+            if (subheadEssayText) subheadEssayText.textContent = '인출창 접기';
             btnToggleEssaySubhead.title = '우측 서술창을 접고 본문을 넓게 봅니다 [단축키: W]';
             btnToggleEssaySubhead.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-300');
             btnToggleEssaySubhead.classList.add('bg-white', 'text-slate-700');
@@ -1994,7 +1994,7 @@
           localStorage.setItem('edurecall_essay_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateEssayToggleUI(willCollapse);
-        showToast(willCollapse ? '서술창을 접었습니다 (상단 인출·FAP 버튼 또는 W로 다시 열기)' : '백지 인출 및 FAP 서술창을 열었습니다 (단축키: W)', willCollapse ? 'fit_screen' : 'dock_to_right');
+        showToast(willCollapse ? '서술창을 접었습니다 (상단 인출창 버튼 또는 W로 다시 열기)' : '백지 인출 서술창을 열었습니다 (단축키: W)', willCollapse ? 'fit_screen' : 'dock_to_right');
 
         if (!willCollapse && window.innerWidth < 1280) {
           setTimeout(() => {
