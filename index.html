@@ -1312,6 +1312,12 @@
         <span class="material-symbols-outlined text-[18px] text-blue-600">menu</span>
       </button>
 
+      <!-- Library/Dashboard Button -->
+      <button id="btn-library-dashboard" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" aria-label="카드 보관함" title="학습 통계 및 카드 보관함">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-indigo-600">dashboard</span>
+        <span class="hidden xl:inline text-[11px] font-bold">보관함</span>
+      </button>
+
       <!-- Pomodoro -->
       <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" title="클릭: 25분 타이머 시작/일시정지 | 더블클릭: 리셋">
         <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
@@ -1843,6 +1849,96 @@
     </button>
   </nav>
 
+  <!-- LIBRARY DASHBOARD OVERLAY -->
+  <div id="library-dashboard" class="hidden fixed inset-0 z-[60] bg-slate-50/95 dark:bg-slate-900/95 backdrop-blur-md overflow-y-auto w-full h-full p-4 sm:p-6 lg:p-8 flex flex-col items-center opacity-0 transition-opacity duration-300">
+    <div class="w-full max-w-5xl flex flex-col gap-6 relative pb-10">
+      <!-- Dashboard Header -->
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-4 mt-2">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-3xl">library_books</span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">카드 보관함 및 학습 현황</h2>
+        </div>
+        <button id="btn-close-dashboard" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer" type="button" aria-label="닫기">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- Overview Stats Grid -->
+      <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between" id="stat-card-template" style="display: none;">
+        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1 subject-name">과목명</div>
+        <div class="flex items-baseline gap-2 mb-2">
+          <span class="text-2xl font-bold text-slate-900 dark:text-slate-100 retention-val">0%</span>
+          <span class="text-[10px] text-slate-400">유지율</span>
+        </div>
+        <div class="flex items-center gap-3 text-[11px] text-slate-600 dark:text-slate-300">
+          <div>응답 <span class="font-bold text-blue-600 dark:text-blue-400 reps-val">0</span></div>
+          <div>복습 <span class="font-bold text-red-500 dark:text-red-400 due-val">0</span></div>
+        </div>
+      </div>
+      <div id="dashboard-stats-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Learning Calendar (Heatmap) -->
+        <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
+          <h3 class="text-[15px] font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-blue-500">calendar_month</span> 30일 학습 달력</h3>
+          <div id="heatmap-container" class="flex flex-wrap gap-1.5"></div>
+          <div class="flex justify-end items-center gap-1.5 mt-3 text-[10px] text-slate-500 font-medium">
+            <span>적음</span>
+            <div class="w-3 h-3 rounded-sm bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600"></div>
+            <div class="w-3 h-3 rounded-sm bg-emerald-200 dark:bg-emerald-900/50 border border-emerald-300 dark:border-emerald-800"></div>
+            <div class="w-3 h-3 rounded-sm bg-emerald-400 dark:bg-emerald-700"></div>
+            <div class="w-3 h-3 rounded-sm bg-emerald-600 dark:bg-emerald-500"></div>
+            <span>많음</span>
+          </div>
+        </div>
+
+        <!-- 7-Day Forecast -->
+        <div class="lg:col-span-1 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col">
+          <h3 class="text-[15px] font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-amber-500">trending_up</span> 향후 7일 복습 예측</h3>
+          <div id="forecast-container" class="flex-1 flex items-end gap-1 sm:gap-2 justify-between mt-auto h-32 pb-5 border-b border-slate-100 dark:border-slate-700 relative">
+            <!-- Bars injected here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- All Cards Table -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex-1 min-h-[400px] flex flex-col">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-5">
+          <h3 class="text-[15px] font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-indigo-500">list_alt</span> 전체 카드 데이터</h3>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <input type="text" id="library-search-input" placeholder="카드 제목 검색..." class="w-full sm:w-48 px-3 py-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500" />
+            <select id="library-subject-filter" class="px-2 py-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500">
+              <option value="all">모든 과목</option>
+              <option value="사회과교육론">사회과교육론</option>
+              <option value="법학">법학</option>
+              <option value="사회학">사회학</option>
+              <option value="정치학">정치학</option>
+              <option value="경제학">경제학</option>
+              <option value="기출">기출</option>
+            </select>
+          </div>
+        </div>
+        <div class="overflow-x-auto flex-1">
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-700 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                <th class="py-2 px-3 w-16">상태</th>
+                <th class="py-2 px-3 w-24">과목</th>
+                <th class="py-2 px-3">카드 제목</th>
+                <th class="py-2 px-3 w-24 text-right">유지율</th>
+                <th class="py-2 px-3 w-28 text-right">다음 복습</th>
+              </tr>
+            </thead>
+            <tbody id="library-table-body" class="text-sm divide-y divide-slate-100 dark:divide-slate-700/50">
+              <!-- Rows injected here -->
+            </tbody>
+          </table>
+        </div>
+        <div id="library-pagination" class="flex justify-center items-center gap-1.5 mt-4 pt-4 border-t border-slate-100 dark:border-slate-700"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- APPLICATION LOGIC SCRIPT -->
   <script>
     (function () {
@@ -2263,6 +2359,12 @@
           const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
           map[topicId] = nextCard;
           localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
+          
+          // Record daily review stat
+          const dateStr = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().split('T')[0];
+          const dailyStats = JSON.parse(localStorage.getItem('edurecall_daily_stats')) || {};
+          dailyStats[dateStr] = (dailyStats[dateStr] || 0) + 1;
+          localStorage.setItem('edurecall_daily_stats', JSON.stringify(dailyStats));
           
           updateOverallStats();
           renderSidebar();
@@ -5134,6 +5236,274 @@
         showToast(`이전 학습 위치 복원: [${targetTopic.subject}] ${targetTopic.title}`, 'history');
       } else {
         showToast('일반사회 단권화 준비 완료', 'verified');
+      }
+
+      // ==========================================
+      // LIBRARY & DASHBOARD LOGIC
+      // ==========================================
+      const btnLibrary = document.getElementById('btn-library-dashboard');
+      const libraryDashboard = document.getElementById('library-dashboard');
+      const btnCloseDashboard = document.getElementById('btn-close-dashboard');
+      const statGrid = document.getElementById('dashboard-stats-grid');
+      const heatmapContainer = document.getElementById('heatmap-container');
+      const forecastContainer = document.getElementById('forecast-container');
+      const tableBody = document.getElementById('library-table-body');
+      const searchInput = document.getElementById('library-search-input');
+      const subjectFilter = document.getElementById('library-subject-filter');
+      const paginationContainer = document.getElementById('library-pagination');
+      let libraryPage = 1;
+      const CARDS_PER_PAGE = 15;
+      
+      if (btnLibrary) btnLibrary.addEventListener('click', openLibraryDashboard);
+      if (btnCloseDashboard) btnCloseDashboard.addEventListener('click', closeLibraryDashboard);
+      if (searchInput) searchInput.addEventListener('input', () => { libraryPage = 1; renderLibraryTable(); });
+      if (subjectFilter) subjectFilter.addEventListener('change', () => { libraryPage = 1; renderLibraryTable(); });
+
+      function openLibraryDashboard() {
+        libraryDashboard.classList.remove('hidden');
+        void libraryDashboard.offsetWidth; // trigger reflow
+        libraryDashboard.classList.remove('opacity-0');
+        renderLibraryStats();
+        renderHeatmap();
+        renderForecast();
+        renderLibraryTable();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLibraryDashboard() {
+        libraryDashboard.classList.add('opacity-0');
+        setTimeout(() => {
+          libraryDashboard.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 300);
+      }
+
+      function renderLibraryStats() {
+        const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+        const subjects = ['사회과교육론', '법학', '사회학', '정치학', '경제학', '기출'];
+        const now = new Date();
+        statGrid.innerHTML = '';
+        const template = document.getElementById('stat-card-template');
+        
+        subjects.forEach(subj => {
+          const subjTopics = TOPICS.filter(t => t.subject === subj);
+          let totalReps = 0;
+          let dueCount = 0;
+          let totalRetrievability = 0;
+          let cardsWithHistory = 0;
+          
+          subjTopics.forEach(t => {
+            const card = fsrsMap[t.id];
+            if (card) {
+              totalReps += (card.reps || 0);
+              if (new Date(card.due) < now && card.state !== 0) dueCount++;
+              
+              if (card.stability > 0 && card.last_review) {
+                const elapsed_days = (now.getTime() - new Date(card.last_review).getTime()) / 86400000;
+                const r = Math.exp(Math.log(0.9) * elapsed_days / card.stability);
+                totalRetrievability += Math.max(0, Math.min(1, r));
+                cardsWithHistory++;
+              }
+            }
+          });
+          
+          const avgR = cardsWithHistory > 0 ? (totalRetrievability / cardsWithHistory * 100).toFixed(1) : 0;
+          
+          const clone = template.cloneNode(true);
+          clone.style.display = 'flex';
+          clone.id = '';
+          clone.querySelector('.subject-name').textContent = subj;
+          clone.querySelector('.retention-val').textContent = avgR + '%';
+          clone.querySelector('.reps-val').textContent = totalReps;
+          clone.querySelector('.due-val').textContent = dueCount;
+          statGrid.appendChild(clone);
+        });
+      }
+
+      function renderHeatmap() {
+        heatmapContainer.innerHTML = '';
+        const dailyStats = JSON.parse(localStorage.getItem('edurecall_daily_stats')) || {};
+        const today = new Date();
+        const days = [];
+        
+        for (let i = 29; i >= 0; i--) {
+          const d = new Date(today);
+          d.setDate(today.getDate() - i);
+          const dateStr = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().split('T')[0];
+          const count = dailyStats[dateStr] || 0;
+          days.push({ dateStr, count, dayObj: d });
+        }
+        
+        let maxCount = Math.max(...Object.values(dailyStats), 10);
+        
+        days.forEach((day, idx) => {
+          const block = document.createElement('div');
+          block.className = 'w-[calc(100%/11)] sm:w-[15px] sm:h-[15px] rounded-sm sm:rounded-[3px] transition-colors border shadow-xs';
+          const monthStr = (day.dayObj.getMonth()+1) + '/' + day.dayObj.getDate();
+          block.title = `${monthStr}: ${day.count}회 복습`;
+          
+          if (day.count === 0) {
+            block.classList.add('bg-slate-100', 'dark:bg-slate-700/50', 'border-slate-200', 'dark:border-slate-600');
+          } else {
+            const intensity = day.count / maxCount;
+            if (intensity < 0.25) block.classList.add('bg-emerald-200', 'dark:bg-emerald-900/50', 'border-emerald-300', 'dark:border-emerald-800');
+            else if (intensity < 0.5) block.classList.add('bg-emerald-300', 'dark:bg-emerald-800', 'border-emerald-400', 'dark:border-emerald-700');
+            else if (intensity < 0.75) block.classList.add('bg-emerald-400', 'dark:bg-emerald-600', 'border-emerald-500', 'dark:border-emerald-600');
+            else block.classList.add('bg-emerald-500', 'dark:bg-emerald-500', 'border-emerald-600', 'dark:border-emerald-400');
+          }
+          heatmapContainer.appendChild(block);
+        });
+      }
+
+      function renderForecast() {
+        forecastContainer.innerHTML = '';
+        const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+        
+        const forecast = [0, 0, 0, 0, 0, 0, 0];
+        
+        Object.values(fsrsMap).forEach(card => {
+          if (card.state === 0) return;
+          const due = new Date(card.due);
+          due.setHours(0, 0, 0, 0);
+          
+          const diffDays = Math.floor((due.getTime() - now.getTime()) / 86400000);
+          if (diffDays >= 0 && diffDays < 7) {
+            forecast[diffDays]++;
+          } else if (diffDays < 0) {
+            forecast[0]++;
+          }
+        });
+        
+        const maxVal = Math.max(...forecast, 10);
+        
+        forecast.forEach((val, idx) => {
+          const col = document.createElement('div');
+          col.className = 'flex flex-col items-center flex-1 group h-full justify-end';
+          const heightPct = Math.max(2, (val / maxVal) * 100);
+          let dayLabel = idx === 0 ? '오늘' : `D+${idx}`;
+          
+          col.innerHTML = `
+            <div class="relative w-full flex justify-center items-end" style="height: 100%;">
+              <div class="absolute -top-6 text-[10px] font-bold text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity bg-white dark:bg-slate-800 px-1.5 py-0.5 rounded shadow-sm border border-slate-200 dark:border-slate-700 z-10">${val}</div>
+              <div class="w-full max-w-[2rem] bg-indigo-200 dark:bg-indigo-900/50 rounded-t-sm group-hover:bg-indigo-300 dark:group-hover:bg-indigo-800 transition-colors" style="height: ${heightPct}%"></div>
+            </div>
+            <div class="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 mt-2">${dayLabel}</div>
+          `;
+          forecastContainer.appendChild(col);
+        });
+      }
+
+      function renderLibraryTable() {
+        tableBody.innerHTML = '';
+        const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+        const q = searchInput.value.toLowerCase().trim();
+        const f = subjectFilter.value;
+        const now = new Date();
+        
+        let filtered = TOPICS.filter(t => {
+          if (f !== 'all' && t.subject !== f) return false;
+          if (q && !t.title.toLowerCase().includes(q) && !(t.chapter && t.chapter.toLowerCase().includes(q))) return false;
+          return true;
+        });
+        
+        filtered.sort((a, b) => {
+          const ca = fsrsMap[a.id];
+          const cb = fsrsMap[b.id];
+          if (!ca && !cb) return 0;
+          if (ca && !cb) return -1;
+          if (!ca && cb) return 1;
+          
+          const aDue = new Date(ca.due).getTime();
+          const bDue = new Date(cb.due).getTime();
+          
+          const aIsDue = aDue < now.getTime() && ca.state !== 0;
+          const bIsDue = bDue < now.getTime() && cb.state !== 0;
+          
+          if (aIsDue && !bIsDue) return -1;
+          if (!aIsDue && bIsDue) return 1;
+          
+          return aDue - bDue;
+        });
+        
+        const totalPages = Math.ceil(filtered.length / CARDS_PER_PAGE) || 1;
+        if (libraryPage > totalPages) libraryPage = totalPages;
+        
+        const start = (libraryPage - 1) * CARDS_PER_PAGE;
+        const pageItems = filtered.slice(start, start + CARDS_PER_PAGE);
+        
+        pageItems.forEach(t => {
+          const card = fsrsMap[t.id];
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group';
+          tr.onclick = () => {
+            closeLibraryDashboard();
+            const idx = TOPICS.findIndex(x => x.id === t.id);
+            if (idx !== -1) renderTopic(idx);
+          };
+          
+          let stateHtml = '<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-300">새로운</span>';
+          let rHtml = '-';
+          let dueHtml = '-';
+          
+          if (card && card.state !== 0) {
+            const isDue = new Date(card.due) < now;
+            if (isDue) {
+              stateHtml = '<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-600 dark:bg-red-900/40 dark:text-red-400">복습필요</span>';
+            } else {
+              stateHtml = '<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400">학습완료</span>';
+            }
+            
+            if (card.stability > 0 && card.last_review) {
+              const elapsed_days = (now.getTime() - new Date(card.last_review).getTime()) / 86400000;
+              const r = Math.exp(Math.log(0.9) * elapsed_days / card.stability);
+              rHtml = (Math.max(0, Math.min(1, r)) * 100).toFixed(1) + '%';
+            }
+            
+            const dueDiff = new Date(card.due).getTime() - now.getTime();
+            dueHtml = formatFSRSInterval(dueDiff);
+            if (dueDiff < 0) dueHtml = `<span class="text-red-500 font-bold">${dueHtml}</span>`;
+          }
+          
+          tr.innerHTML = `
+            <td class="py-2.5 px-3 whitespace-nowrap">${stateHtml}</td>
+            <td class="py-2.5 px-3 text-slate-600 dark:text-slate-400 whitespace-nowrap text-[12px] font-medium">${t.subject}</td>
+            <td class="py-2.5 px-3 text-slate-900 dark:text-slate-100 font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <div class="truncate max-w-[150px] sm:max-w-[200px] md:max-w-md lg:max-w-xl" title="${t.title}">${t.title}</div>
+            </td>
+            <td class="py-2.5 px-3 text-right font-mono text-[13px] text-slate-500 dark:text-slate-400 whitespace-nowrap">${rHtml}</td>
+            <td class="py-2.5 px-3 text-right font-mono text-[13px] text-slate-500 dark:text-slate-400 whitespace-nowrap">${dueHtml}</td>
+          `;
+          tableBody.appendChild(tr);
+        });
+        
+        if (pageItems.length === 0) {
+          tableBody.innerHTML = '<tr><td colspan="5" class="py-8 text-center text-slate-500 font-medium bg-slate-50/50 dark:bg-slate-800/50 rounded-lg">검색된 카드가 없습니다.</td></tr>';
+        }
+        
+        paginationContainer.innerHTML = '';
+        if (totalPages > 1) {
+          const btnPrev = document.createElement('button');
+          btnPrev.className = 'w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 disabled:opacity-50 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 shadow-sm';
+          btnPrev.innerHTML = '<span class="material-symbols-outlined text-[18px]">chevron_left</span>';
+          btnPrev.disabled = libraryPage === 1;
+          btnPrev.onclick = () => { libraryPage--; renderLibraryTable(); };
+          
+          const pageInfo = document.createElement('span');
+          pageInfo.className = 'text-xs font-bold text-slate-700 dark:text-slate-300 px-3';
+          pageInfo.textContent = `${libraryPage} / ${totalPages}`;
+          
+          const btnNext = document.createElement('button');
+          btnNext.className = 'w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 disabled:opacity-50 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 shadow-sm';
+          btnNext.innerHTML = '<span class="material-symbols-outlined text-[18px]">chevron_right</span>';
+          btnNext.disabled = libraryPage === totalPages;
+          btnNext.onclick = () => { libraryPage++; renderLibraryTable(); };
+          
+          paginationContainer.appendChild(btnPrev);
+          paginationContainer.appendChild(pageInfo);
+          paginationContainer.appendChild(btnNext);
+        }
       }
 
       window.addEventListener('resize', () => {
