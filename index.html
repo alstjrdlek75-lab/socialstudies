@@ -1248,7 +1248,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260912_135504"></script>
+  <script src="topics-data.js?v=20260912_135745"></script>
   <script src="explanations-data.js?v=20260912_125354"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -4902,6 +4902,21 @@
       try {
         localStorage.removeItem('edurecall_custom_SOC-151');
         localStorage.removeItem('edurecall_custom_SOC-147');
+        localStorage.removeItem('edurecall_custom_POL-003');
+        localStorage.removeItem('edurecall_custom_POL-004');
+        localStorage.removeItem('edurecall_custom_POL-005');
+        // Migrate POL-004, POL-005 -> POL-003
+        ['edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
+          localStorage.removeItem(`${prefix}_POL-004`);
+          localStorage.removeItem(`${prefix}_POL-005`);
+        });
+        if (localStorage.getItem('edurecall_last_topic_id') === 'POL-004' || localStorage.getItem('edurecall_last_topic_id') === 'POL-005') {
+          localStorage.setItem('edurecall_last_topic_id', 'POL-003');
+        }
+        if (localStorage.getItem('edurecall_last_topic_정치학') === 'POL-004' || localStorage.getItem('edurecall_last_topic_정치학') === 'POL-005') {
+          localStorage.setItem('edurecall_last_topic_정치학', 'POL-003');
+        }
+
         localStorage.removeItem('edurecall_custom_POL-054');
         localStorage.removeItem('edurecall_custom_POL-056');
         localStorage.removeItem('edurecall_custom_SOC-146');
