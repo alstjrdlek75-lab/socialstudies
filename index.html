@@ -1248,7 +1248,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260912_144644"></script>
+  <script src="topics-data.js?v=20260912_150027"></script>
   <script src="explanations-data.js?v=20260912_125354"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -1540,9 +1540,9 @@
 
             <!-- Font Scale Controller -->
             <div class="flex items-center bg-slate-100/90 dark:bg-slate-800/80 rounded-lg p-0.5 border border-slate-200/80 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 font-bold select-none shrink-0 whitespace-nowrap">
-              <button id="btn-font-down" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 작게 [단축키: []">A-</button>
+              <button id="btn-font-down" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 작게 [단축키: - 또는 []">A-</button>
               <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 dark:text-slate-200 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
-              <button id="btn-font-up" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: ]]">A+</button>
+              <button id="btn-font-up" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
             </div>
 
             <!-- Single Consolidated Reveal / Hide Button -->
@@ -4788,12 +4788,15 @@
           return;
         }
 
-        // 10. Font scaling: [ / ]
-        if ((e.key === ']' || e.key === '}') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 10. Font scaling: [ / ] or - / =
+        const isFontUpKey = (e.key === ']' || e.key === '}' || e.key === '=' || e.key === '+' || e.code === 'Equal' || e.code === 'NumpadAdd');
+        const isFontDownKey = (e.key === '[' || e.key === '{' || e.key === '-' || e.key === '_' || e.code === 'Minus' || e.code === 'NumpadSubtract');
+
+        if (isFontUpKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           applyFontScale(currentFontScale + 10, true);
           return;
-        } else if ((e.key === '[' || e.key === '{') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        } else if (isFontDownKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           applyFontScale(currentFontScale - 10, true);
           return;
