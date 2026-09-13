@@ -1,45 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 340" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
-  <defs>
-    <marker id="arr-axis" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
-    </marker>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 370" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <!-- Border box like the original exam paper -->
+  <rect x="25" y="15" width="490" height="340" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
 
-  <!-- Background Border/Header -->
-  <rect x="15" y="10" width="550" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="290" y="29" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f172a">총수요-총공급(AD-AS) 모형과 인플레이션 갭 분석</text>
+  <!-- Axes -->
+  <!-- Vertical axis (P): (90, 310) to (90, 45) -->
+  <line x1="90" y1="310" x2="90" y2="45" stroke="#0f172a" stroke-width="1.5" />
+  <text x="80" y="52" font-size="16" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">P</text>
+  <text x="76" y="318" font-size="14" font-family="'Times New Roman', serif" fill="#0f172a">0</text>
 
-  <!-- Axes: Origin at (70, 275) -->
-  <line x1="70" y1="275" x2="495" y2="275" stroke="#334155" stroke-width="1.8" marker-end="url(#arr-axis)" />
-  <line x1="70" y1="275" x2="70" y2="48" stroke="#334155" stroke-width="1.8" marker-end="url(#arr-axis)" />
-  <text x="502" y="279" font-size="12" font-weight="bold" fill="#334155">Y (국민소득)</text>
-  <text x="70" y="42" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">P (물가수준)</text>
-  <text x="56" y="288" font-size="11" fill="#64748b">0</text>
+  <!-- Horizontal axis (Y): (90, 310) to (475, 310) -->
+  <line x1="90" y1="310" x2="475" y2="310" stroke="#0f172a" stroke-width="1.5" />
+  <text x="482" y="315" font-size="16" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">Y</text>
 
-  <!-- Long-Run AS (LRAS): Vertical line at Y_p (x = 210) -->
-  <line x1="210" y1="275" x2="210" y2="60" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="4,3" />
-  <text x="210" y="55" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">LRAS</text>
-  <text x="210" y="295" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">Yₚ</text>
+  <!-- P1 Tick & Horizontal Line across the diagram -->
+  <line x1="86" y1="130" x2="90" y2="130" stroke="#0f172a" stroke-width="1.5" />
+  <text x="74" y="135" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">P<tspan font-size="11" dy="4">1</tspan></text>
+  <!-- Thin horizontal line at P1 spanning across the curves -->
+  <line x1="90" y1="130" x2="440" y2="130" stroke="#475569" stroke-width="1.2" />
 
-  <!-- Short-Run AS: Upward sloping line from (120, 245) to (430, 95) -->
-  <line x1="120" y1="245" x2="430" y2="95" stroke="#16a34a" stroke-width="2.5" />
-  <text x="438" y="99" font-size="12" font-weight="bold" fill="#16a34a">AS</text>
+  <!-- AS Curve (Upward sloping line) -->
+  <!-- Passes through (120, 290) and (250, 180) and (335, 130) and (410, 85) -->
+  <line x1="125" y1="285" x2="410" y2="85" stroke="#0f172a" stroke-width="1.8" />
+  <text x="415" y="80" font-size="15" font-family="'Times New Roman', serif" font-weight="bold" fill="#0f172a">AS</text>
 
-  <!-- Short-Run AD: Downward sloping line from (120, 85) to (430, 245) -->
-  <line x1="120" y1="85" x2="430" y2="245" stroke="#2563eb" stroke-width="2.5" />
-  <text x="438" y="249" font-size="12" font-weight="bold" fill="#2563eb">AD</text>
+  <!-- AD Curve (Downward sloping line) -->
+  <!-- Passes through (140, 95) and (250, 180) and (420, 305) -->
+  <line x1="135" y1="90" x2="425" y2="305" stroke="#0f172a" stroke-width="1.8" />
+  <text x="428" y="295" font-size="15" font-family="'Times New Roman', serif" font-weight="bold" fill="#0f172a">AD</text>
 
-  <!-- Intersection E0 at (x = 320, y = 148): P_1 and Y_0 -->
-  <line x1="70" y1="148" x2="320" y2="148" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
-  <line x1="320" y1="275" x2="320" y2="148" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+  <!-- Vertical dashed line from Y0 to AD-AS intersection (250, 180) -->
+  <line x1="250" y1="310" x2="250" y2="180" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+  <text x="250" y="328" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a" text-anchor="middle">Y<tspan font-size="11" dy="4">0</tspan></text>
 
-  <circle cx="320" cy="148" r="5" fill="#0f172a" />
-  <text x="330" y="142" font-size="12.5" font-weight="bold" fill="#0f172a">E (단기균형)</text>
-  <text x="44" y="152" font-size="13" font-weight="bold" fill="#0f172a">P₁</text>
-  <text x="320" y="295" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Y₀</text>
-
-  <!-- Inflationary Gap Bracket & Label -->
-  <path d="M 212 235 L 265 235 L 265 230 L 265 235 L 318 235" fill="none" stroke="#e11d48" stroke-width="1.5" />
-  <rect x="216" y="210" width="98" height="22" rx="4" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1" />
-  <text x="265" y="225" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#be123c">인플레이션 갭 (Y₀ &gt; Yₚ)</text>
+  <!-- Vertical dashed line from Yp to AS curve at (335, 130) -->
+  <line x1="335" y1="310" x2="335" y2="130" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+  <text x="335" y="328" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a" text-anchor="middle">Y<tspan font-size="11" dy="4">p</tspan></text>
 </svg>
