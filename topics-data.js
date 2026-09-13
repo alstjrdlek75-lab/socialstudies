@@ -117,6 +117,26 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
+    "id": "EXAM-2024-A-12",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-2. 소비자이론",
+    "title": "[2024학년도] 12번. 가격효과(대체효과, 소득효과)와 정상재·열등재·기펜재 [4점]",
+    "examTag": "",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>경제학에서 상품 가격 변화와 수요량 변화 사이에서 나타나는 역(－) 관계를 <u>㉠ 수요의 법칙</u>이라고 하는데, 이 법칙은 상품의 가격 변화가 소비자들에게 어떠한 영향을 주는지를 분석하는 과정을 통해 설명할 수 있다.</p>\n<p>예를 들어 X재와 Y재만을 소비하는 사람이 있다고 하자. 다른 조건이 일정한 상황에서 X재의 가격이 하락하면, 상대적으로 가격이 낮아진 X재의 소비를 늘리고 Y재의 소비를 줄여 기존의 효용을 유지하고자 할 것인데 이를 대체효과라고 한다. 한편 X재의 가격이 변화하면 이전과 동일한 소득으로 구입할 수 있는 X재와 Y재의 수량이 달라지는데, 이는 실질소득의 변동으로 인한 효과이다. 이러한 실질소득 변화가 상품 수요에 미치는 영향을 소득효과라고 한다.</p>\n<p>대체효과는 어느 한 재화의 가격과 수요량이 항상 반대로 움직이도록 작용하지만, 소득효과는 수요의 소득탄력성에 따라 방향과 크기가 달라진다. 필수재나 사치재와 같이 소득탄력성이 양(＋)의 값을 가지는 재화를 ( ㉡ )(이)라고 하는데, 이 경우 가격이 낮아질 때 수요량이 증가하고 가격이 높아질 때 수요량이 감소하는 수요의 법칙을 설명할 수 있다. 한편, 음(－)의 소득탄력성 값을 가지는 재화를 ( ㉢ )(이)라고 하는데, 이 중 <u>㉣ 가격이 하락하는데도 수요량이 줄어드는 특성을 가진 재화</u>를 기펜재라고 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉡, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n<p>◦ 밑줄 친 ㉠을 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉣이 나타난 이유를 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉡, ㉢:\n㉡ 정상재(normal goods)\n㉢ 열등재(inferior goods)\n\n2. ㉠(수요의 법칙)의 이유 서술:\n재화의 가격이 하락할 때 상대가격 하락에 따라 수요량을 늘리는 '대체효과'와 실질소득 증가로 수요량을 늘리는 '소득효과'가 모두 수요량을 증가시키는 같은 방향으로 작용하기 때문이다(정상재의 경우).\n\n3. ㉣(기펜재 특성)의 이유 서술:\n기펜재는 극단적인 열등재로서, 가격 하락 시 수요량을 늘리는 '대체효과'보다 실질소득 증가로 인해 수요량을 감소시키는 음(-)의 '소득효과'의 크기가 더 커서 대체효과를 압도하기 때문이다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. ㉡: 정상재\n   ㉢: 열등재\n2. ㉠ 서술: 가격 하락 시 수요를 늘리는 '대체효과'와 실질소득 상승으로 수요를 늘리는 '소득효과'가 합쳐져 가격과 수요량이 반대로 움직이기 때문이다.\n3. ㉣ 서술: 가격 하락에 따른 양(+)의 '대체효과'보다 열등재로서의 음(-)의 '소득효과'가 더 커서 대체효과를 압도하기 때문이다.",
+    "targetKeywords": [
+      "정상재",
+      "열등재",
+      "대체효과",
+      "소득효과",
+      "기펜재"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
+  },
+  {
     "id": "ECON-004",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
@@ -148,6 +168,44 @@ window.ALL_TOPICS = [
       "한계비용",
       "공급곡선"
     ]
+  },
+  {
+    "id": "EXAM-2018-A-03",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-3. 생산자이론",
+    "title": "[2018학년도] 3번. 완전경쟁기업의 조업중단점과 손실 계산 [2점]",
+    "examTag": "",
+    "page": 1,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 완전경쟁시장에서 생산 활동을 하고 있는 어떤 기업의 단기 평균비용곡선과 단기 평균가변비용곡선은 모두 U자 형태를 띠고 있고, 그 최저점의 값은 각각 30과 20이다. 아울러 이 기업의 고정비용은 15이다. 이 기업의 조업 중단 가격(혹은 생산 중단 가격, shutdown price)이 20일 때, 조업 중단 가격에서 손실이 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-800 space-y-1\">\n      <p>◦ 단기 평균비용(ATC) 최저점 = 30</p>\n      <p>◦ 단기 평균가변비용(AVC) 최저점 = 20</p>\n      <p>◦ 총고정비용(TFC) = 15</p>\n      <p>◦ 조업 중단 가격(P) = 20</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n15\n\n2. 상세 해설:\n- 조업 중단 가격(P = 20)은 평균가변비용(AVC)의 최저점과 일치한다.\n- 이 가격에서 기업은 가변비용(VC)만을 정확히 회수(TR = VC)하므로, 기업이 입는 경제적 손실은 고정비용(FC) 전액과 같다.\n- 손실 = TC - TR = (VC + FC) - TR = FC = 15.\n- (참고: 생산을 계속하든 생산을 중단하든 단기에 발생하는 손실은 고정비용 크기인 15로 동일하다).\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답: 15\n\n2. 해설: 조업중단점(P=AVC_min=20)에서 총수입은 가변비용과 같으므로 손실은 총고정비용(15)과 같다.",
+    "targetKeywords": [
+      "15",
+      "고정비용",
+      "조업중단점"
+    ],
+    "tapeCount": 2,
+    "groupCount": 1
+  },
+  {
+    "id": "EXAM-2025-B-11",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-3. 생산자이론",
+    "title": "[2025학년도] 11번. 장기 완전경쟁시장 균형(규모의 경제, 장기비용곡선) [4점]",
+    "examTag": "",
+    "page": 7,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>○○기업은 장기 완전경쟁시장에서 □□상품을 공급하는 동질적 기업 중 하나이다. ○○기업의 비용함수 및 시장수요에 대한 정보는 다음과 같다.</p>\n<div class=\"p-3 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n  <p>◦ 장기총비용함수 : <i>LTC</i> = 18 + 2<i>q</i> + 2<i>q</i><sup>2</sup></p>\n  <p>◦ 장기평균총비용함수 : <i>LATC</i> = 18/<i>q</i> + 2 + 2<i>q</i></p>\n  <p>◦ 장기한계비용함수 : <i>LMC</i> = 2 + 4<i>q</i></p>\n  <p>◦ 시장수요함수 : <i>Q</i> = 500 - 10<i>P</i></p>\n  <p class=\"text-xs text-slate-500 font-sans\">(단, <i>q</i>는 개별 기업의 생산량이며, <i>P</i>는 시장가격, <i>Q</i>는 시장 전체의 생산량이다.)</p>\n</div>\n<p>○○기업의 장기평균총비용함수는 U자 커브 형태이며, 생산량에 따라 ㉠ <u>규모의 경제</u>와 규모의 비경제가 발생한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠의 의미를 ‘장기평균총비용’이라는 용어를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉠이 발생하는 ○○기업의 생산량 구간(<i>a</i> &lt; <i>q</i> &lt; <i>b</i>)에서 <i>a</i>와 <i>b</i>의 값을 순서대로 쓸 것.</p>\n<p>◦ 장기시장균형가격과 장기시장균형생산량을 순서대로 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠(규모의 경제)의 의미:\n기업의 생산량이 증가함에 따라 '장기평균총비용(LATC)'이 지속적으로 감소(하락)하는 현상을 의미한다.\n\n2. 규모의 경제 발생 구간 (a < q < b):\n- LATC 최소점 도출: LATC = LMC ➔ 18/q + 2 + 2q = 2 + 4q ➔ 18/q = 2q ➔ q^2 = 9 ➔ q = 3\n- 따라서 규모의 경제(LATC 하락 구간)는 생산량이 0보다 크고 3보다 작은 구간이다.\n- a = 0, b = 3\n\n3. 장기시장균형가격 및 생산량:\n- 장기균형가격 P = LATC 최소값 = 18/3 + 2 + 2(3) = 6 + 2 + 6 = 14원\n- 장기시장균형생산량 Q = 500 - 10(14) = 500 - 140 = 360단위\n(장기 균형 가격: 14원, 장기 균형 생산량: 360개)\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. ㉠ 의미: 생산량이 증가함에 따라 '장기평균총비용'이 감소하는 현상\n2. a와 b: a = 0, b = 3\n3. 장기시장균형가격: 14원, 장기시장균형생산량: 360",
+    "targetKeywords": [
+      "장기평균총비용 감소",
+      "0",
+      "3",
+      "14",
+      "360"
+    ],
+    "tapeCount": 0,
+    "groupCount": 1
   },
   {
     "id": "ECON-005",
@@ -268,6 +326,26 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
+    "id": "EXAM-2018-B-07",
+    "subject": "경제학",
+    "chapter": "1. 미시경제학",
+    "section": "1-4. 수요·공급이론",
+    "title": "[2018학년도] 7번. 종량세 부과와 조세의 귀착 및 부담액 계산 [5점]",
+    "examTag": "",
+    "page": 4,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 그래프는 치약의 수요곡선과 공급곡선을 나타낸다. 정부는 세수 확보를 위하여 치약 1개당 300원의 세금을 부과하려고 한다. &lt;작성 방법&gt;에 따라 서술하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2018_b_07.png\" alt=\"치약의 수요곡선과 공급곡선\" class=\"max-w-full md:max-w-[340px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-700 text-xs md:text-sm space-y-1\">\n      <p>◦ 초기 시장균형: 균형가격 = 2,000원, 균형거래량 = 100만 개</p>\n      <p>◦ 공급곡선 통과점: (80만 개, 1,900원), (100만 개, 2,000원)</p>\n      <p>◦ 수요곡선 통과점: (90만 개, 2,100원), (100만 개, 2,000원), (80만 개, 2,200원)</p>\n      <p>◦ 정부가 치약 1개당 300원의 종량세를 부과함.</p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 세금을 판매자에게 부과할 때에 구매자가 내는 치약 가격과 구매자에게 부과할 때에 판매자가 받는 치약 가격을 각각 제시할 것.</p>\n    <p>◦ 세금을 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액과 구매자 부담 금액을 각각 제시할 것.</p>\n    <p>◦ 세금을 구매자에게 부과할 때와 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액에 차이가 있는지의 여부를 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 치약 가격:\n  - 세금을 판매자에게 부과할 때 구매자가 내는 치약 가격: 2,200원\n  - 세금을 구매자에게 부과할 때 판매자가 받는 치약 가격: 1,900원\n- 세금을 판매자에게 부과할 때 부담 금액:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 부과 대상에 따른 판매자 부담 금액 차이 여부:\n  차이가 없다. (세금을 법적으로 판매자에게 부과하든 구매자에게 부과하든, 실제 조세의 경제적 귀착과 부담 크기는 수요와 공급의 상대적 가격탄력성에 의해서만 결정되므로 완전히 동일하다.)\n\n2. 정밀 계산 과정:\n① 수요함수 및 공급함수 도출:\n- 수요곡선: 기울기 = (2,200 - 2,000) / (80 - 100) = -200 / 20 = -10원/만개\n  ➔ P_d = 3,000 - 10Q (Q는 만 개 단위)\n- 공급곡선: 기울기 = (2,000 - 1,900) / (100 - 80) = 100 / 20 = +5원/만개\n  ➔ P_s = 1,500 + 5Q\n② 단위당 300원 세금 부과 시의 새로운 균형:\n- 조세 쐐기 조건: P_d - P_s = 300\n- (3,000 - 10Q) - (1,500 + 5Q) = 300\n- 1,500 - 15Q = 300 ➔ 15Q = 1,200 ➔ Q = 80만 개\n- Q = 80만 개일 때:\n  구매자가 내는 가격 P_d = 3,000 - 10(80) = 2,200원\n  판매자가 받는 가격 P_s = 1,500 + 5(80) = 1,900원\n③ 조세 귀착 분석:\n- 원래 균형가격 = 2,000원\n- 구매자 부담 = P_d - P_0 = 2,200 - 2,000 = 200원\n- 판매자 부담 = P_0 - P_s = 2,000 - 1,900 = 100원\n- 합계 = 200 + 100 = 300원\n④ 조세 부과의 귀착의 동등성:\n- 법적 납세의무자가 판매자이든 구매자이든 시장균형 거래량(80만 개), 구매자 지불가격(2,200원), 판매자 수취가격(1,900원), 각 주체의 부담액(구매자 200원, 판매자 100원)은 완전히 일치하므로 차이가 없다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "1. 정답:\n- 세금을 판매자에게 부과할 때 구매자가 내는 가격: 2,200원\n- 세금을 구매자에게 부과할 때 판매자가 받는 가격: 1,900원\n- 판매자에게 부과 시:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 차이 여부: 차이가 없다. 조세의 실질적 귀착은 법적 납세의무자가 누구인가와 무관하게 수요와 공급의 상대적 탄력성에 의해 결정되기 때문이다.",
+    "targetKeywords": [
+      "2,200원",
+      "1,900원",
+      "판매자 부담 100원",
+      "구매자 부담 200원",
+      "차이가 없다"
+    ],
+    "tapeCount": 5,
+    "groupCount": 1
+  },
+  {
     "id": "EXAM-2019-A-03",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
@@ -287,21 +365,21 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2024-A-12",
+    "id": "EXAM-2022-A-09",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
-    "title": "[2024학년도] 12번. 가격효과(대체효과, 소득효과)와 정상재·열등재·기펜재 [4점]",
+    "title": "[2022학년도] 9번. 감자 시장 균형 및 가격지지 정책(정부 수매) [4점]",
     "examTag": "",
-    "page": 7,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2024학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 12번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    12. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>경제학에서 상품 가격 변화와 수요량 변화 사이에서 나타나는 역(－) 관계를 <u>㉠ 수요의 법칙</u>이라고 하는데, 이 법칙은 상품의 가격 변화가 소비자들에게 어떠한 영향을 주는지를 분석하는 과정을 통해 설명할 수 있다.</p>\n<p>예를 들어 X재와 Y재만을 소비하는 사람이 있다고 하자. 다른 조건이 일정한 상황에서 X재의 가격이 하락하면, 상대적으로 가격이 낮아진 X재의 소비를 늘리고 Y재의 소비를 줄여 기존의 효용을 유지하고자 할 것인데 이를 대체효과라고 한다. 한편 X재의 가격이 변화하면 이전과 동일한 소득으로 구입할 수 있는 X재와 Y재의 수량이 달라지는데, 이는 실질소득의 변동으로 인한 효과이다. 이러한 실질소득 변화가 상품 수요에 미치는 영향을 소득효과라고 한다.</p>\n<p>대체효과는 어느 한 재화의 가격과 수요량이 항상 반대로 움직이도록 작용하지만, 소득효과는 수요의 소득탄력성에 따라 방향과 크기가 달라진다. 필수재나 사치재와 같이 소득탄력성이 양(＋)의 값을 가지는 재화를 ( ㉡ )(이)라고 하는데, 이 경우 가격이 낮아질 때 수요량이 증가하고 가격이 높아질 때 수요량이 감소하는 수요의 법칙을 설명할 수 있다. 한편, 음(－)의 소득탄력성 값을 가지는 재화를 ( ㉢ )(이)라고 하는데, 이 중 <u>㉣ 가격이 하락하는데도 수요량이 줄어드는 특성을 가진 재화</u>를 기펜재라고 한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 괄호 안의 ㉡, ㉢에 해당하는 용어를 순서대로 쓸 것.</p>\n<p>◦ 밑줄 친 ㉠을 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉣이 나타난 이유를 ‘대체효과’와 ‘소득효과’를 포함하여 서술할 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉡, ㉢:\n㉡ 정상재(normal goods)\n㉢ 열등재(inferior goods)\n\n2. ㉠(수요의 법칙)의 이유 서술:\n재화의 가격이 하락할 때 상대가격 하락에 따라 수요량을 늘리는 '대체효과'와 실질소득 증가로 수요량을 늘리는 '소득효과'가 모두 수요량을 증가시키는 같은 방향으로 작용하기 때문이다(정상재의 경우).\n\n3. ㉣(기펜재 특성)의 이유 서술:\n기펜재는 극단적인 열등재로서, 가격 하락 시 수요량을 늘리는 '대체효과'보다 실질소득 증가로 인해 수요량을 감소시키는 음(-)의 '소득효과'의 크기가 더 커서 대체효과를 압도하기 때문이다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. ㉡: 정상재\n   ㉢: 열등재\n2. ㉠ 서술: 가격 하락 시 수요를 늘리는 '대체효과'와 실질소득 상승으로 수요를 늘리는 '소득효과'가 합쳐져 가격과 수요량이 반대로 움직이기 때문이다.\n3. ㉣ 서술: 가격 하락에 따른 양(+)의 '대체효과'보다 열등재로서의 음(-)의 '소득효과'가 더 커서 대체효과를 압도하기 때문이다.",
+    "page": 5,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국에서 감자에 대한 시장수요곡선과 시장공급곡선은 각각 <i>Q<sub>D</sub></i> = 10 - 0.5<i>P</i> 및 <i>Q<sub>S</sub></i> = -2 + <i>P</i> 이다. 갑국 정부는 감자 농가의 소득을 증대하기 위해 감자의 시장가격을 균형가격보다 높은 수준인 단위당 10달러에서 유지하는 정책을 시행하기로 결정하였다. 이를 위해 갑국 정부는 <u>감자 농가의 초과 생산량을 시장에서 구매해 주는 방식</u>을 고려하고 있다.</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량(백만), <i>P</i>는 단위당 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국 정부의 개입이 없는 경우, 감자 시장의 균형가격과 균형 거래량이 각각 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 정부가 감자를 구매하는 데 지출하는 비용이 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 생산자의 이익에 어떠한 변화가 있는지 시행 전과 후의 생산자 잉여의 크기를 각각 포함하여 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.\n    </div>\n  </details></div>",
+    "defaultAnswer": "1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.",
     "targetKeywords": [
-      "정상재",
-      "열등재",
-      "대체효과",
-      "소득효과",
-      "기펜재"
+      "8달러",
+      "6",
+      "30",
+      "18",
+      "32"
     ],
     "tapeCount": 0,
     "groupCount": 1
@@ -408,44 +486,6 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2018-A-03",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2018학년도] 3번. 완전경쟁기업의 조업중단점과 손실 계산 [2점]",
-    "examTag": "",
-    "page": 1,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 3번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    3. 완전경쟁시장에서 생산 활동을 하고 있는 어떤 기업의 단기 평균비용곡선과 단기 평균가변비용곡선은 모두 U자 형태를 띠고 있고, 그 최저점의 값은 각각 30과 20이다. 아울러 이 기업의 고정비용은 15이다. 이 기업의 조업 중단 가격(혹은 생산 중단 가격, shutdown price)이 20일 때, 조업 중단 가격에서 손실이 얼마인지 쓰시오. [2점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-800 space-y-1\">\n      <p>◦ 단기 평균비용(ATC) 최저점 = 30</p>\n      <p>◦ 단기 평균가변비용(AVC) 최저점 = 20</p>\n      <p>◦ 총고정비용(TFC) = 15</p>\n      <p>◦ 조업 중단 가격(P) = 20</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n15\n\n2. 상세 해설:\n- 조업 중단 가격(P = 20)은 평균가변비용(AVC)의 최저점과 일치한다.\n- 이 가격에서 기업은 가변비용(VC)만을 정확히 회수(TR = VC)하므로, 기업이 입는 경제적 손실은 고정비용(FC) 전액과 같다.\n- 손실 = TC - TR = (VC + FC) - TR = FC = 15.\n- (참고: 생산을 계속하든 생산을 중단하든 단기에 발생하는 손실은 고정비용 크기인 15로 동일하다).\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답: 15\n\n2. 해설: 조업중단점(P=AVC_min=20)에서 총수입은 가변비용과 같으므로 손실은 총고정비용(15)과 같다.",
-    "targetKeywords": [
-      "15",
-      "고정비용",
-      "조업중단점"
-    ],
-    "tapeCount": 2,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2018-B-07",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2018학년도] 7번. 종량세 부과와 조세의 귀착 및 부담액 계산 [5점]",
-    "examTag": "",
-    "page": 4,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2018학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 7번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    7. 다음 그래프는 치약의 수요곡선과 공급곡선을 나타낸다. 정부는 세수 확보를 위하여 치약 1개당 300원의 세금을 부과하려고 한다. &lt;작성 방법&gt;에 따라 서술하시오. [5점]\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <div class=\"my-3 text-center\">\n      <img src=\"assets/exam/exam_2018_b_07.png\" alt=\"치약의 수요곡선과 공급곡선\" class=\"max-w-full md:max-w-[340px] mx-auto rounded-lg border border-slate-200 bg-white p-2 shadow-2xs cursor-pointer hover:opacity-95 transition-all\" onclick=\"window.openDiagramModal ? window.openDiagramModal(this.src, this.alt) : window.open(this.src)\" title=\"클릭하여 원본 크기로 보기\" loading=\"lazy\" />\n    </div>\n    <div class=\"p-3 bg-white border border-slate-200 rounded-lg text-slate-700 text-xs md:text-sm space-y-1\">\n      <p>◦ 초기 시장균형: 균형가격 = 2,000원, 균형거래량 = 100만 개</p>\n      <p>◦ 공급곡선 통과점: (80만 개, 1,900원), (100만 개, 2,000원)</p>\n      <p>◦ 수요곡선 통과점: (90만 개, 2,100원), (100만 개, 2,000원), (80만 개, 2,200원)</p>\n      <p>◦ 정부가 치약 1개당 300원의 종량세를 부과함.</p>\n    </div>\n  </div>\n  \n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 세금을 판매자에게 부과할 때에 구매자가 내는 치약 가격과 구매자에게 부과할 때에 판매자가 받는 치약 가격을 각각 제시할 것.</p>\n    <p>◦ 세금을 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액과 구매자 부담 금액을 각각 제시할 것.</p>\n    <p>◦ 세금을 구매자에게 부과할 때와 판매자에게 부과할 때에, 치약 1개당 부과되는 세금 중 판매자 부담 금액에 차이가 있는지의 여부를 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 정답:\n- 치약 가격:\n  - 세금을 판매자에게 부과할 때 구매자가 내는 치약 가격: 2,200원\n  - 세금을 구매자에게 부과할 때 판매자가 받는 치약 가격: 1,900원\n- 세금을 판매자에게 부과할 때 부담 금액:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 부과 대상에 따른 판매자 부담 금액 차이 여부:\n  차이가 없다. (세금을 법적으로 판매자에게 부과하든 구매자에게 부과하든, 실제 조세의 경제적 귀착과 부담 크기는 수요와 공급의 상대적 가격탄력성에 의해서만 결정되므로 완전히 동일하다.)\n\n2. 정밀 계산 과정:\n① 수요함수 및 공급함수 도출:\n- 수요곡선: 기울기 = (2,200 - 2,000) / (80 - 100) = -200 / 20 = -10원/만개\n  ➔ P_d = 3,000 - 10Q (Q는 만 개 단위)\n- 공급곡선: 기울기 = (2,000 - 1,900) / (100 - 80) = 100 / 20 = +5원/만개\n  ➔ P_s = 1,500 + 5Q\n② 단위당 300원 세금 부과 시의 새로운 균형:\n- 조세 쐐기 조건: P_d - P_s = 300\n- (3,000 - 10Q) - (1,500 + 5Q) = 300\n- 1,500 - 15Q = 300 ➔ 15Q = 1,200 ➔ Q = 80만 개\n- Q = 80만 개일 때:\n  구매자가 내는 가격 P_d = 3,000 - 10(80) = 2,200원\n  판매자가 받는 가격 P_s = 1,500 + 5(80) = 1,900원\n③ 조세 귀착 분석:\n- 원래 균형가격 = 2,000원\n- 구매자 부담 = P_d - P_0 = 2,200 - 2,000 = 200원\n- 판매자 부담 = P_0 - P_s = 2,000 - 1,900 = 100원\n- 합계 = 200 + 100 = 300원\n④ 조세 부과의 귀착의 동등성:\n- 법적 납세의무자가 판매자이든 구매자이든 시장균형 거래량(80만 개), 구매자 지불가격(2,200원), 판매자 수취가격(1,900원), 각 주체의 부담액(구매자 200원, 판매자 100원)은 완전히 일치하므로 차이가 없다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. 정답:\n- 세금을 판매자에게 부과할 때 구매자가 내는 가격: 2,200원\n- 세금을 구매자에게 부과할 때 판매자가 받는 가격: 1,900원\n- 판매자에게 부과 시:\n  - 판매자 부담 금액: 100원\n  - 구매자 부담 금액: 200원\n- 차이 여부: 차이가 없다. 조세의 실질적 귀착은 법적 납세의무자가 누구인가와 무관하게 수요와 공급의 상대적 탄력성에 의해 결정되기 때문이다.",
-    "targetKeywords": [
-      "2,200원",
-      "1,900원",
-      "판매자 부담 100원",
-      "구매자 부담 200원",
-      "차이가 없다"
-    ],
-    "tapeCount": 5,
-    "groupCount": 1
-  },
-  {
     "id": "EXAM-2022-B-07",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
@@ -482,26 +522,6 @@ window.ALL_TOPICS = [
       "음의 이윤",
       "0",
       "200"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2025-B-11",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-5. 시장이론",
-    "title": "[2025학년도] 11번. 장기 완전경쟁시장 균형(규모의 경제, 장기비용곡선) [4점]",
-    "examTag": "",
-    "page": 7,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2025학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 B 11번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    11. 다음을 읽고, <작성 방법>에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>○○기업은 장기 완전경쟁시장에서 □□상품을 공급하는 동질적 기업 중 하나이다. ○○기업의 비용함수 및 시장수요에 대한 정보는 다음과 같다.</p>\n<div class=\"p-3 bg-white rounded border border-slate-300 font-mono text-xs md:text-sm space-y-1\">\n  <p>◦ 장기총비용함수 : <i>LTC</i> = 18 + 2<i>q</i> + 2<i>q</i><sup>2</sup></p>\n  <p>◦ 장기평균총비용함수 : <i>LATC</i> = 18/<i>q</i> + 2 + 2<i>q</i></p>\n  <p>◦ 장기한계비용함수 : <i>LMC</i> = 2 + 4<i>q</i></p>\n  <p>◦ 시장수요함수 : <i>Q</i> = 500 - 10<i>P</i></p>\n  <p class=\"text-xs text-slate-500 font-sans\">(단, <i>q</i>는 개별 기업의 생산량이며, <i>P</i>는 시장가격, <i>Q</i>는 시장 전체의 생산량이다.)</p>\n</div>\n<p>○○기업의 장기평균총비용함수는 U자 커브 형태이며, 생산량에 따라 ㉠ <u>규모의 경제</u>와 규모의 비경제가 발생한다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 밑줄 친 ㉠의 의미를 ‘장기평균총비용’이라는 용어를 포함하여 서술할 것.</p>\n<p>◦ 밑줄 친 ㉠이 발생하는 ○○기업의 생산량 구간(<i>a</i> &lt; <i>q</i> &lt; <i>b</i>)에서 <i>a</i>와 <i>b</i>의 값을 순서대로 쓸 것.</p>\n<p>◦ 장기시장균형가격과 장기시장균형생산량을 순서대로 쓸 것.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n      1. ㉠(규모의 경제)의 의미:\n기업의 생산량이 증가함에 따라 '장기평균총비용(LATC)'이 지속적으로 감소(하락)하는 현상을 의미한다.\n\n2. 규모의 경제 발생 구간 (a < q < b):\n- LATC 최소점 도출: LATC = LMC ➔ 18/q + 2 + 2q = 2 + 4q ➔ 18/q = 2q ➔ q^2 = 9 ➔ q = 3\n- 따라서 규모의 경제(LATC 하락 구간)는 생산량이 0보다 크고 3보다 작은 구간이다.\n- a = 0, b = 3\n\n3. 장기시장균형가격 및 생산량:\n- 장기균형가격 P = LATC 최소값 = 18/3 + 2 + 2(3) = 6 + 2 + 6 = 14원\n- 장기시장균형생산량 Q = 500 - 10(14) = 500 - 140 = 360단위\n(장기 균형 가격: 14원, 장기 균형 생산량: 360개)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "1. ㉠ 의미: 생산량이 증가함에 따라 '장기평균총비용'이 감소하는 현상\n2. a와 b: a = 0, b = 3\n3. 장기시장균형가격: 14원, 장기시장균형생산량: 360",
-    "targetKeywords": [
-      "장기평균총비용 감소",
-      "0",
-      "3",
-      "14",
-      "360"
     ],
     "tapeCount": 0,
     "groupCount": 1
@@ -631,26 +651,6 @@ window.ALL_TOPICS = [
       "14시간",
       "일정하다",
       "상쇄"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "EXAM-2022-A-09",
-    "subject": "경제학",
-    "chapter": "1. 미시경제학",
-    "section": "1-6. 분배이론",
-    "title": "[2022학년도] 9번. 감자 시장 균형 및 가격지지 정책(정부 수매) [4점]",
-    "examTag": "",
-    "page": 5,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2022학년도 중등학교교사 임용후보자 선정경쟁시험 [전공 A 9번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    9. 다음 글을 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]\n  </div>\n  <div class=\"space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans bg-slate-50/70 p-4 rounded-xl border border-slate-200\">\n    <p>갑국에서 감자에 대한 시장수요곡선과 시장공급곡선은 각각 <i>Q<sub>D</sub></i> = 10 - 0.5<i>P</i> 및 <i>Q<sub>S</sub></i> = -2 + <i>P</i> 이다. 갑국 정부는 감자 농가의 소득을 증대하기 위해 감자의 시장가격을 균형가격보다 높은 수준인 단위당 10달러에서 유지하는 정책을 시행하기로 결정하였다. 이를 위해 갑국 정부는 <u>감자 농가의 초과 생산량을 시장에서 구매해 주는 방식</u>을 고려하고 있다.</p>\n    <p class=\"text-xs text-slate-500\">(단, <i>Q</i>는 수량(백만), <i>P</i>는 단위당 가격을 나타낸다.)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"font-bold text-slate-900 mb-1.5 flex items-center gap-1.5\">\n      <span class=\"material-symbols-outlined text-[16px] text-blue-600\">edit_note</span>\n      <span>&lt;작성 방법&gt;</span>\n    </div>\n    <div class=\"space-y-1\">\n      <p>◦ 갑국 정부의 개입이 없는 경우, 감자 시장의 균형가격과 균형 거래량이 각각 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 정부가 감자를 구매하는 데 지출하는 비용이 얼마인지 쓸 것.</p>\n      <p>◦ 갑국 정부가 밑줄 친 방식을 택할 경우, 생산자의 이익에 어떠한 변화가 있는지 시행 전과 후의 생산자 잉여의 크기를 각각 포함하여 서술할 것.</p>\n    </div>\n  </div>\n\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [모범 정답 및 상세 해설 확인하기] (클릭 시 열림)</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.\n    </div>\n  </details></div>",
-    "defaultAnswer": "1. 균형가격 및 균형 거래량:\n- 균형: 10 - 0.5P = -2 + P ➔ 1.5P = 12 ➔ 균형가격 P = 8달러\n- 균형 거래량 Q = 10 - 0.5(8) = 6(백만 단위)\n\n2. 정부 지출 비용:\nP = 10일 때, QD = 10 - 0.5(10) = 5, QS = -2 + 10 = 8\n초과공급량 = 8 - 5 = 3(백만 단위)\n정부 지출 비용 = 초과공급량 × 지지가격 = 3 × 10 = 30(백만 달러)\n\n3. 생산자 잉여 변화:\n- 공급곡선 P 절편: QS = 0일 때 P = 2달러\n- 시행 전 생산자 잉여: 1/2 × (8 - 2) × 6 = 18(백만 달러)\n- 시행 후 생산자 잉여: 1/2 × (10 - 2) × 8 = 32(백만 달러)\n- 변화: 생산자 잉여가 18(백만 달러)에서 32(백만 달러)로 14(백만 달러) 증가한다.",
-    "targetKeywords": [
-      "8달러",
-      "6",
-      "30",
-      "18",
-      "32"
     ],
     "tapeCount": 0,
     "groupCount": 1
