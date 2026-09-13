@@ -2821,8 +2821,9 @@
         lastValidSelectionText = '';
         hideFloatingMaskBtn();
 
-        // Auto-switch active subject if current topic belongs to another subject and filter is not ALL
-        if (activeSubject !== 'ALL' && topic.subject !== activeSubject) {
+        // Auto-switch active subject if current topic belongs to another subject and filter is not a special tab
+        const specialSubjects = ['ALL', '오늘 복습', '기출', '가이드'];
+        if (!specialSubjects.includes(activeSubject) && topic.subject !== activeSubject) {
           activeSubject = topic.subject;
           try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
           updateSubjectTabStyles();
