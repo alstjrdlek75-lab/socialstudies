@@ -82,7 +82,7 @@ window.ALL_TOPICS = [
     "examTag": "",
     "page": 0,
     "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 22번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    22. 다음은 가격효과에 관한 글이다. 이에 부합하는 판단으로 옳은 것을 &lt;보기&gt;에서 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>재화의 가격이 변화할 때 그 재화의 수요량이 변화하는 가격효과는, 다른 재화에 대한 상대가격이 싸지거나 비싸져서 그 재화의 수요량이 늘거나 줄어드는 대체효과와 가격 변화가 실질소득의 변화를 야기해서 이로 인해 수요량이 변화하는 소득효과의 합으로 구성된다.</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. 아일랜드의 감자와 같은 기픈재(Giffen goods) 현상은 그 재화의 가격이 상승할 때만 발생할 수 있다.</p>\n      <p>ㄴ. 복권이 당첨된 경우의 노동 공급 변화를 해석하는 소득-여가 분석에서 대체효과는 0이다.</p>\n      <p>ㄷ. 소비자의 소득이 증가할 때 재화에 대한 수요가 감소하지 않는다면, 재화의 가격이 상승할 때 그 재화에 대한 수요는 분명히 감소한다.</p>\n      <p>ㄹ. 저축증대를 위하여 이자소득과 같은 금융소득에 대해 조세를 낮춰야 한다는 주장을 하는 경제학자는 이자율 변화에 대한 저축의 소득효과가 대체효과보다 크다고 본다.</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ③ ㄴ, ㄷ\n\n해설:\n- ㄱ: 기픈재(Giffen good)는 가격이 상승할 때 수요량이 증가하고, 가격이 하락할 때 수요량이 감소하는 재화입니다. 가격 하락 시에도 발생할 수 있으므로 '상승할 때만'은 틀립니다. (틀림)\n- ㄴ: 복권 당첨은 순수한 비근로소득(비임금소득)의 증가로, 여가(또는 노동)의 상대가격(임금률) 변화 없이 예산선이 평행이동하는 경우이므로 대체효과는 0이고 소득효과만 발생합니다. (옳음)\n- ㄷ: 소득 증가 시 수요가 감소하지 않으면 그 재화는 정상재입니다. 정상재는 가격 상승 시 대체효과(-)와 소득효과(실질소득 감소로 수요 감소, -)가 같은 방향으로 작용하여 총효과(가격효과)는 반드시 음(-)이 됩니다. 즉, 수요량이 분명히 감소합니다. (옳음)\n- ㄹ: 금융소득에 대한 조세를 낮추면 실질 이자율이 상승합니다. 이자율 상승 시 대체효과는 저축 증가(현재소비 감소), 소득효과는 저축 감소(현재소비 증가, 이자소득 증가로 인한 부유화)로 나타납니다. 저축이 증대될 것이라고 주장하려면 저축을 늘리는 대체효과가 저축을 줄이는 소득효과보다 더 커야 합니다. 따라서 대체효과가 소득효과보다 크다고 본 것입니다. (틀림)\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "③ ㄴ, ㄷ",
+    "defaultAnswer": "① ㄱ, ㄷ",
     "targetKeywords": [
       "가격효과",
       "대체효과",
@@ -1319,7 +1319,49 @@ window.ALL_TOPICS = [
     "title": "[2011학년도] 27번. 필립스곡선과 희생률",
     "examTag": "",
     "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 인플레이션율과 실업률의 관계를 나타내는 필립스곡선의 식은 π = π^e - α(u - u*) 이며, 어떤 경제의 상황을 그림으로 나타내면 다음과 같다. 이에 대한 해석으로 옳은 것만을 &lt;보기&gt;에서 모두 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>[그래프 정보: 기대 인플레이션 π^e = 5%, 자연실업률 u* 일 때 단기 필립스 곡선과 만남. (참고: 기존 복원 데이터의 u=15% 절편은 오류이며, 실제 기울기 α=1/3에 따라 u=20% 절편이 맞습니다.)]</p>\n    <p class=\"text-xs text-slate-500\">(π: 인플레이션율, π^e: 기대 인플레이션율, u: 실업률, u*: 자연실업률, α: 상수)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. π^e가 3%이고 실제 인플레이션율이 4%일 때 실업률은 3%다.</p>\n      <p>ㄴ. π^e가 5%라면 인플레이션율이 1%만큼 하락할 때 희생률은 6이다.</p>\n      <p>ㄷ. 경제주체들이 합리적 기대를 한다면, 통화정책 당국은 실업률 상승 없이 인플레이션율을 낮출 수 있다.</p>\n      <p>ㄹ. 중앙은행의 정책목표가 실업률을 자연실업률에 맞춤으로써 안정적 인플레이션을 유지하는 것이라고 할 때, 경제주체들이 합리적 기대를 한다면 중앙은행이 자연실업률을 4%로 판단하고 통화정책을 시행할 경우 인플레이션이 무한히 증가하게 된다.</p>\n      <p class=\"text-xs mt-2 text-slate-500\">* 오쿤의 법칙: 실업률 1% 상승은 GDP 2% 하락<br>* 희생률: 인플레이션율 1% 감소에 수반되는 GDP의 감소%</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄱ, ㄷ, ㄹ (계산 검증 필요)\n실제 정답: ③ ㄴ, ㄷ \n\n해설 도출: \n먼저 그래프에서 π=0%일 때 u=15% 이고, 단기 필립스 곡선의 절편(u=0)은 π=7.5%로 주어져 있음(그래프 추정). \n기울기 -α = (0 - 7.5) / (15 - 0) = -0.5 이므로 α = 0.5.\nπ = 5 - 0.5(u - u*) 식에 (u=15, π=0)을 대입. \n0 = 5 - 0.5(15 - u*) ➔ 0.5(15 - u*) = 5 ➔ 15 - u* = 10 ➔ u* = 5%. (자연실업률 5%)\n따라서 식은 π = π^e - 0.5(u - 5).\n- ㄱ: π^e=3, π=4 대입. 4 = 3 - 0.5(u - 5) ➔ 1 = -0.5(u - 5) ➔ u - 5 = -2 ➔ u = 3%. (ㄱ 옳음)\n- ㄴ: π^e=5로 고정. 인플레이션 1% 하락시키려면 Δπ = -1. \n  -1 = -0.5(Δu) ➔ 실업률(u)은 2% 상승해야 함. \n  오쿤의 법칙에 의해 실업률 1% 상승 = GDP 2% 하락이므로, 실업률 2% 상승 = GDP 4% 하락.\n  희생률 = 인플레 1% 감소당 GDP 감소율 = 4. (ㄴ 틀림. 6이 아니라 4)\n- ㄷ: 합리적 기대 하에서는 중앙은행이 인플레이션을 낮추겠다고 발표하고 신뢰를 얻으면 π^e가 즉각 하락하여 실업률 증가 없이 인플레이션을 낮출 수 있음. (ㄷ 옳음)\n- ㄹ: 실제 자연실업률은 5%인데 중앙은행이 4%로 오판하고 실업률을 4%로 유지하려 확대통화정책을 지속하면, 사람들은 합리적 기대를 통해 매기 인플레이션을 예상하고 적응하므로 인플레이션이 가속(무한히 증가)하게 됩니다. (ㄹ 옳음)\n따라서 정답은 ㄱ, ㄷ, ㄹ. \n    </div>\n  </details>\n</div>",
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2011학년도 중등학교교사 임용후보자 선정경쟁시험 [1차 전공 27번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [2.5점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    27. 인플레이션율과 실업률의 관계를 나타내는 필립스곡선의 식은 π = π^e - α(u - u*) 이며, 어떤 경제의 상황을 그림으로 나타내면 다음과 같다. 이에 대한 해석으로 옳은 것만을 &lt;보기&gt;에서 모두 고른 것은?\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    
+    <div class="my-4 p-4 bg-white border border-slate-200 rounded-xl max-w-lg mx-auto shadow-sm">
+      <svg viewBox="0 0 400 300" class="w-full h-auto text-slate-800" font-family="sans-serif">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+          </marker>
+        </defs>
+        <line x1="40" y1="260" x2="380" y2="260" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="40" y1="260" x2="40" y2="20" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)" />
+        
+        <text x="385" y="275" font-size="14" font-style="italic" fill="currentColor">u</text>
+        <text x="20" y="25" font-size="14" font-style="italic" fill="currentColor">π</text>
+        <text x="25" y="275" font-size="14" fill="currentColor">0</text>
+        
+        <!-- u=15 is at x=340 => 300px width. u=1 is 20px. -->
+        <!-- pi=7.5 is at y=80 => 180px height. pi=1 is 24px. -->
+        <!-- pi=5 is at y=260 - 5*24 = 140. -->
+        <!-- u*=5 is at x=40 + 5*20 = 140. -->
+        
+        <!-- LRPC -->
+        <line x1="140" y1="260" x2="140" y2="60" stroke="currentColor" stroke-width="1.5" />
+        <text x="135" y="275" font-size="14" font-style="italic" fill="currentColor">u*</text>
+        <text x="180" y="70" font-size="12" fill="currentColor">장기필립스곡선</text>
+        <path d="M 175 65 L 140 65" stroke="currentColor" stroke-width="1" />
+        <polygon points="140,65 146,62 146,68" fill="currentColor" />
+        
+        <!-- SRPC -->
+        <line x1="40" y1="80" x2="340" y2="260" stroke="currentColor" stroke-width="1.5" />
+        
+        <line x1="40" y1="140" x2="140" y2="140" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4" />
+        <text x="12" y="145" font-size="12" fill="currentColor">5%</text>
+        <text x="5" y="85" font-size="12" fill="currentColor">7.5%</text>
+        <text x="325" y="275" font-size="12" fill="currentColor">15%</text>
+
+        <text x="240" y="190" font-size="12" fill="currentColor">π^e=5%일 때의</text>
+        <text x="240" y="205" font-size="12" fill="currentColor">단기필립스곡선</text>
+        <path d="M 235 195 L 205 180" stroke="currentColor" stroke-width="1" />
+        <polygon points="205,180 212,179 210,185" fill="currentColor" />
+
+        <text x="125" y="50" font-size="14" fill="currentColor">π=π^e</text>
+      </svg>
+    </div>\n    <p class=\"text-xs text-slate-500\">(π: 인플레이션율, π^e: 기대 인플레이션율, u: 실업률, u*: 자연실업률, α: 상수)</p>\n  </div>\n  <div class=\"mt-4 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium leading-relaxed\">\n    <div class=\"space-y-1\">\n      <p>ㄱ. π^e가 3%이고 실제 인플레이션율이 4%일 때 실업률은 3%다.</p>\n      <p>ㄴ. π^e가 5%라면 인플레이션율이 1%만큼 하락할 때 희생률은 6이다.</p>\n      <p>ㄷ. 경제주체들이 합리적 기대를 한다면, 통화정책 당국은 실업률 상승 없이 인플레이션율을 낮출 수 있다.</p>\n      <p>ㄹ. 중앙은행의 정책목표가 실업률을 자연실업률에 맞춤으로써 안정적 인플레이션을 유지하는 것이라고 할 때, 경제주체들이 합리적 기대를 한다면 중앙은행이 자연실업률을 4%로 판단하고 통화정책을 시행할 경우 인플레이션이 무한히 증가하게 된다.</p>\n      <p class=\"text-xs mt-2 text-slate-500\">* 오쿤의 법칙: 실업률 1% 상승은 GDP 2% 하락<br>* 희생률: 인플레이션율 1% 감소에 수반되는 GDP의 감소%</p>\n    </div>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl\">\n    <summary class=\"font-bold text-emerald-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-emerald-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-emerald-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답: ④ ㄱ, ㄷ, ㄹ (계산 검증 필요)\n실제 정답: ③ ㄴ, ㄷ \n\n해설 도출: \n먼저 그래프에서 π=0%일 때 u=15% 이고, 단기 필립스 곡선의 절편(u=0)은 π=7.5%로 주어져 있음(그래프 추정). \n기울기 -α = (0 - 7.5) / (15 - 0) = -0.5 이므로 α = 0.5.\nπ = 5 - 0.5(u - u*) 식에 (u=15, π=0)을 대입. \n0 = 5 - 0.5(15 - u*) ➔ 0.5(15 - u*) = 5 ➔ 15 - u* = 10 ➔ u* = 5%. (자연실업률 5%)\n따라서 식은 π = π^e - 0.5(u - 5).\n- ㄱ: π^e=3, π=4 대입. 4 = 3 - 0.5(u - 5) ➔ 1 = -0.5(u - 5) ➔ u - 5 = -2 ➔ u = 3%. (ㄱ 옳음)\n- ㄴ: π^e=5로 고정. 인플레이션 1% 하락시키려면 Δπ = -1. \n  -1 = -0.5(Δu) ➔ 실업률(u)은 2% 상승해야 함. \n  오쿤의 법칙에 의해 실업률 1% 상승 = GDP 2% 하락이므로, 실업률 2% 상승 = GDP 4% 하락.\n  희생률 = 인플레 1% 감소당 GDP 감소율 = 4. (ㄴ 틀림. 6이 아니라 4)\n- ㄷ: 합리적 기대 하에서는 중앙은행이 인플레이션을 낮추겠다고 발표하고 신뢰를 얻으면 π^e가 즉각 하락하여 실업률 증가 없이 인플레이션을 낮출 수 있음. (ㄷ 옳음)\n- ㄹ: 실제 자연실업률은 5%인데 중앙은행이 4%로 오판하고 실업률을 4%로 유지하려 확대통화정책을 지속하면, 사람들은 합리적 기대를 통해 매기 인플레이션을 예상하고 적응하므로 인플레이션이 가속(무한히 증가)하게 됩니다. (ㄹ 옳음)\n따라서 정답은 ㄱ, ㄷ, ㄹ. \n    </div>\n  </details>\n</div>",
     "defaultAnswer": "③ ㄴ, ㄷ",
     "targetKeywords": [
       "필립스곡선",
