@@ -534,6 +534,33 @@
       max-width: 100% !important;
       width: 100% !important;
     }
+
+    /* Sticky Essay Aside - Follows smoothly as the user scrolls down */
+    @media (min-width: 1280px) {
+      #essay-aside {
+        position: sticky !important;
+        top: calc(4rem + 2.5rem + 1rem) !important; /* Top bar (4rem) + Sub-header (2.5rem) + gap (1rem) = 7.5rem */
+        max-height: calc(100vh - 8rem) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        overscroll-behavior: contain !important;
+        padding-bottom: 1.5rem !important;
+      }
+      /* Custom sleek scrollbar for essay aside */
+      #essay-aside::-webkit-scrollbar {
+        width: 5px;
+      }
+      #essay-aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #essay-aside::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.4);
+        border-radius: 9999px;
+      }
+      #essay-aside::-webkit-scrollbar-thumb:hover {
+        background: rgba(100, 116, 139, 0.7);
+      }
+    }
     /* Tablet Optimized Layout (1024px - 1280px) */
     @media (min-width: 1024px) and (max-width: 1280px) {
       #sidebar-drawer {
@@ -1238,8 +1265,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260913_190300"></script>
-  <script src="explanations-data.js?v=20260913_190300"></script>
+  <script src="topics-data.js?v=20260913_190800"></script>
+  <script src="explanations-data.js?v=20260913_190800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
