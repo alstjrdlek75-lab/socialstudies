@@ -3830,7 +3830,11 @@
       // 8. Self-Grading Event Handler
       function handleGrade(grade) {
         const topic = TOPICS[currentTopicIndex];
-        const res = saveGrade(topic.id, grade);
+        
+        // Capture old position before saving/re-rendering
+        const oldPos = filteredIndices.indexOf(currentTopicIndex);
+        
+        const res = saveGrade(topic.id, grade); // This calls renderSidebar() and updates filteredIndices
 
         // Visual bounce animation on corresponding grade button in sidebar/drawer
         const targetBtn = Array.from(gradeBtns).find(b => String(b.dataset.grade) === String(grade));
@@ -3854,6 +3858,27 @@
         } else if (grade == 1 || grade === 'fail') {
           showToast('[1] 다시! 곧 재복습 일정이 잡힙니다', 'cancel');
         }
+
+        // Auto-advance to the next topic
+        setTimeout(() => {
+          if (filteredIndices.length === 0) {
+            if (activeSubject === '오늘 복습') {
+              showToast('🎉 오늘의 복습을 모두 완료했습니다!', 'celebration');
+            }
+            return;
+          }
+          
+          let newPos = filteredIndices.indexOf(currentTopicIndex);
+          let targetIndex;
+          if (newPos === -1) {
+            // Current topic disappeared from the list (e.g. completed in '오늘 복습')
+            targetIndex = filteredIndices[Math.min(Math.max(0, oldPos), filteredIndices.length - 1)];
+          } else {
+            // Still in the list, advance by 1
+            targetIndex = filteredIndices[(newPos + 1) % filteredIndices.length];
+          }
+          renderTopic(targetIndex);
+        }, 400);
       }
 
       function updateSubjectTabStyles() {
