@@ -535,38 +535,44 @@
       width: 100% !important;
     }
 
-    /* Ultra-Clear High-Visibility Answer Number Badge */
+    /* Ultra-Clear High-Visibility Answer Number Badge (Giant Text) */
     .ans-pill,
+    #subnote-content-container span.inline-flex.bg-amber-300,
     span.inline-flex.bg-amber-300 {
-      font-size: 1.65rem !important;
-      line-height: 1 !important;
-      padding: 0.35rem 0.85rem !important;
-      min-width: 2.8rem !important;
+      font-size: 2.25rem !important; /* 36px giant answer text */
+      line-height: 1.1 !important;
+      padding: 0.25rem 0.85rem !important;
+      min-width: 3.5rem !important;
       height: auto !important;
       background-color: #fde047 !important; /* bright vibrant amber-yellow */
-      color: #020617 !important; /* ultra deep slate-950 black */
+      color: #000000 !important; /* pure deep contrast black */
       font-weight: 900 !important;
-      border: 2px solid #ca8a04 !important;
-      border-radius: 0.625rem !important;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
+      font-family: 'Pretendard', system-ui, -apple-system, sans-serif !important;
+      border: 2.5px solid #ca8a04 !important;
+      border-radius: 0.75rem !important;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.18) !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      letter-spacing: -0.02em !important;
+      letter-spacing: -0.03em !important;
+      transform: scale(1.05);
+      transform-origin: left center;
     }
     html.dark .ans-pill,
+    html.dark #subnote-content-container span.inline-flex.bg-amber-300,
     html.dark span.inline-flex.bg-amber-300 {
-      background-color: #fef08a !important;
+      background-color: #facc15 !important;
       color: #000000 !important;
       border-color: #eab308 !important;
     }
+    #subnote-content-container span.inline-flex.bg-emerald-800,
     span.inline-flex.bg-emerald-800 {
-      padding: 0.35rem 0.75rem !important;
-      border-radius: 0.75rem !important;
-      gap: 0.625rem !important;
+      padding: 0.4rem 0.85rem !important;
+      border-radius: 0.875rem !important;
+      gap: 0.75rem !important;
       background-color: #064e3b !important; /* emerald-900 */
       border: 1.5px solid #059669 !important;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1) !important;
     }
 
     /* Sticky Essay Aside - Follows smoothly as the user scrolls down */
@@ -1299,8 +1305,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260913_193500"></script>
-  <script src="explanations-data.js?v=20260913_193500"></script>
+  <script src="topics-data.js?v=20260913_194300"></script>
+  <script src="explanations-data.js?v=20260913_194300"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -5661,6 +5667,39 @@
           }
         }
       });
+
+      // Auto-Enhance Answer Number Display: Convert circled numbers (①~⑤) to huge, bold, legible digits e.g. "2번"
+      (function() {
+        const circleMap = { '①': '1번', '②': '2번', '③': '3번', '④': '4번', '⑤': '5번' };
+        function enhanceAnswerBadges() {
+          const badges = document.querySelectorAll('#subnote-content-container span.inline-flex.bg-amber-300, .ans-pill');
+          badges.forEach(b => {
+            if (b.dataset.enhanced) return;
+            const txt = b.textContent.trim();
+            if (circleMap[txt]) {
+              b.dataset.enhanced = 'true';
+              b.innerHTML = `<span style="font-size:2rem; font-weight:900; line-height:1; letter-spacing:-0.03em;">${circleMap[txt]}</span><span style="font-size:0.875rem; font-weight:700; margin-left:0.25rem; opacity:0.75;">(${txt})</span>`;
+            } else if (txt.length <= 4) {
+              b.dataset.enhanced = 'true';
+              b.style.fontSize = '1.85rem';
+              b.style.fontWeight = '900';
+            }
+          });
+        }
+        const obs = new MutationObserver(enhanceAnswerBadges);
+        const container = document.getElementById('subnote-content-container');
+        if (container) {
+          obs.observe(container, { childList: true, subtree: true });
+          enhanceAnswerBadges();
+        }
+        // Also re-run when details tags are toggled
+        document.addEventListener('click', (e) => {
+          if (e.target.closest('summary')) {
+            setTimeout(enhanceAnswerBadges, 10);
+            setTimeout(enhanceAnswerBadges, 80);
+          }
+        });
+      })();
     })();
   </script>
 </body>
