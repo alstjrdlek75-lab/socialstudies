@@ -19878,12 +19878,15 @@ window.ALL_TOPICS = [
     "subject": "정치학",
     "chapter": "10. 국제정치이론",
     "section": "10-5. 국제관계학 연구방법 및 지구화",
-    "title": "4. 경제적 지구화",
+    "title": "4. 경제적 지구화와 지역 통합",
     "examTag": "",
     "page": 35,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 시장 중심의 경제질서는 각국 정부가 국내적 필요에 의해 경제정책을 조정할 수 있는 능력을 위축</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "4. 경제적 지구화\n(1) 시장 중심의 경제질서는 각국 정부가 국내적 필요에 의해 경제정책을 조정할 수 있는 능력을 위축\n",
+    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 경제적 지구화</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">시장 중심의 경제질서는 각국 정부가 국내적 필요에 의해 경제정책을 조정할 수 있는 능력을 위축</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 지역 통합 (지구화와 지역화)</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①유럽 주요국 통화통합의 수준까지 지역 통합: 사람, 돈, 물건에는 국경이 없음</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②지역화</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③블록화</div></div></div>",
+    "defaultAnswer": "4. 경제적 지구화와 지역 통합\n(1) 경제적 지구화: 시장 중심의 경제질서는 각국 정부가 국내적 필요에 의해 경제정책을 조정할 수 있는 능력을 위축\n\n(2) 지역 통합 (지구화와 지역화)\n①유럽 주요국 통화통합의 수준까지 지역 통합: 사람, 돈, 물건에는 국경이 없음\n②지역화\n③블록화",
     "targetKeywords": [
+      "경제적",
+      "지구화",
+      "지역 통합",
       "경제질서는",
       "경제정책을",
       "중심의",
@@ -19891,32 +19894,14 @@ window.ALL_TOPICS = [
       "국내적",
       "필요에",
       "조정할",
-      "능력을"
-    ],
-    "tapeCount": 0,
-    "groupCount": 1
-  },
-  {
-    "id": "POL-122",
-    "subject": "정치학",
-    "chapter": "10. 국제정치이론",
-    "section": "10-5. 국제관계학 연구방법 및 지구화",
-    "title": "5. 지역 통합 - 지구화",
-    "examTag": "",
-    "page": 35,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 유럽 주요국 통화통합의 수준까지 지역 통합</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">사람, 돈, 물건에는 국경이 없음</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 지역화</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 블록화</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "5. 지역 통합 - 지구화\n(1) 유럽 주요국 통화통합의 수준까지 지역 통합: 사람, 돈, 물건에는 국경이 없음\n\n(2) 지역화\n\n(3) 블록화\n",
-    "targetKeywords": [
+      "능력을",
       "통화통합의",
-      "수준까지",
       "물건에는",
-      "주요국",
       "국경이",
       "지역화",
-      "블록화",
-      "유럽"
+      "블록화"
     ],
     "tapeCount": 0,
-    "groupCount": 3
+    "groupCount": 2
   }
 ];
