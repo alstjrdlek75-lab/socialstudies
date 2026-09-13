@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', sans-serif;">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
+    </marker>
+  </defs>
+
+  <!-- Title / Legend bar -->
+  <rect x="15" y="10" width="490" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="260" y="29" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f172a">총수요-총공급 모형: 인플레이션 갭 (Y₀ &gt; Yₚ 호황 상태)</text>
+
+  <!-- Axes: Origin (60, 270) -->
+  <line x1="60" y1="270" x2="480" y2="270" stroke="#334155" stroke-width="1.8" marker-end="url(#arr2)" />
+  <line x1="60" y1="270" x2="60" y2="45" stroke="#334155" stroke-width="1.8" marker-end="url(#arr2)" />
+  <text x="485" y="275" font-size="12" font-weight="bold" fill="#334155">국민소득 (Y)</text>
+  <text x="60" y="40" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">물가수준 (P)</text>
+  <text x="48" y="284" font-size="11" fill="#64748b">0</text>
+
+  <!-- Long-Run AS (LRAS): Vertical line at Yp (x = 210) -->
+  <line x1="210" y1="270" x2="210" y2="60" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="4,3" />
+  <text x="210" y="55" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">LRAS (잠재 산출량)</text>
+  <text x="210" y="288" font-size="12" font-weight="bold" fill="#dc2626" text-anchor="middle">Yₚ</text>
+
+  <!-- Short-Run AS: Upward sloping line -->
+  <line x1="120" y1="250" x2="450" y2="90" stroke="#16a34a" stroke-width="2.5" />
+  <text x="455" y="92" font-size="12" font-weight="bold" fill="#16a34a">AS (단기 총공급)</text>
+
+  <!-- Aggregate Demand AD: Downward sloping line -->
+  <line x1="120" y1="80" x2="450" y2="250" stroke="#2563eb" stroke-width="2.5" />
+  <text x="455" y="255" font-size="12" font-weight="bold" fill="#2563eb">AD (단기 총수요)</text>
+
+  <!-- Equilibrium Intersection E0 at (x = 320, y = 153) -->
+  <!-- Dotted lines to axes -->
+  <line x1="60" y1="153" x2="320" y2="153" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="320" y1="270" x2="320" y2="153" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+
+  <circle cx="320" cy="153" r="5" fill="#0f172a" />
+  <text x="330" y="145" font-size="12" font-weight="bold" fill="#0f172a">E₀ (단기균형)</text>
+  <text x="35" y="157" font-size="12" font-weight="bold" fill="#0f172a">P₀</text>
+  <text x="320" y="288" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">Y₀</text>
+
+  <!-- Inflationary Gap Bracket / Area -->
+  <path d="M 212 245 L 265 245 L 265 240 L 265 245 L 318 245" fill="none" stroke="#e11d48" stroke-width="1.5" />
+  <rect x="215" y="222" width="100" height="20" rx="4" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1" />
+  <text x="265" y="236" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#be123c">인플레이션 갭 (Y₀ &gt; Yₚ)</text>
+</svg>
