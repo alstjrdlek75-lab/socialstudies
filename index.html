@@ -2066,6 +2066,7 @@
       let isFilterBookmark = false;
       let filteredIndices = [];
       const expandedSections = new Set();
+      let autoAdvanceTimeout = null;
 
       // 2. DOM Cache
       const subjectTabs = document.querySelectorAll('.subject-tab-btn');
@@ -3009,7 +3010,11 @@
 
       // 5. Render Topic Content View
       function renderTopic(index, keepMobileDrawer = false) {
-        currentTopicIndex = (index + TOPICS.length) % TOPICS.length;
+        if (typeof index === 'number' && !isNaN(index)) {
+          currentTopicIndex = (index + TOPICS.length) % TOPICS.length;
+        } else if (typeof currentTopicIndex !== 'number' || isNaN(currentTopicIndex)) {
+          currentTopicIndex = 0;
+        }
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
 
@@ -4095,7 +4100,13 @@
         }
 
         // Auto-advance to the next topic
-        setTimeout(() => {
+        if (autoAdvanceTimeout) {
+          clearTimeout(autoAdvanceTimeout);
+          autoAdvanceTimeout = null;
+        }
+
+        autoAdvanceTimeout = setTimeout(() => {
+          autoAdvanceTimeout = null;
           if (filteredIndices.length === 0) {
             if (activeSubject === '오늘 복습') {
               showToast('🎉 오늘의 복습을 모두 완료했습니다!', 'celebration');
@@ -4111,9 +4122,8 @@
             // Still in the list, advance by 1
             targetIndex = filteredIndices[(newPos + 1) % filteredIndices.length];
           }
-          currentTopicIndex = targetIndex;
           isAnswerRevealed = false;
-          renderTopic();
+          renderTopic(targetIndex);
         }, 150);
       }
 
@@ -4498,20 +4508,47 @@
       });
 
       document.querySelectorAll('.grade-btn').forEach(btn => {
-        btn.addEventListener('click', () => handleGrade(btn.dataset.grade));
+        btn.addEventListener('click', () => {
+          btn.blur();
+          handleGrade(btn.dataset.grade);
+        });
       });
 
       // Prev / Next Topic
       btnPrevTopic.addEventListener('click', () => {
+        if (autoAdvanceTimeout) {
+          clearTimeout(autoAdvanceTimeout);
+          autoAdvanceTimeout = null;
+        }
         if (filteredIndices.length === 0) return;
-        const pos = filteredIndices.indexOf(currentTopicIndex);
+        let pos = filteredIndices.indexOf(currentTopicIndex);
+        if (pos === -1) {
+          const prevIdx = filteredIndices.slice().reverse().find(idx => idx < currentTopicIndex);
+          if (prevIdx !== undefined) {
+            renderTopic(prevIdx);
+            return;
+          }
+          pos = 0;
+        }
         if (pos > 0) renderTopic(filteredIndices[pos - 1]);
         else renderTopic(filteredIndices[filteredIndices.length - 1]);
       });
 
       btnNextTopic.addEventListener('click', () => {
+        if (autoAdvanceTimeout) {
+          clearTimeout(autoAdvanceTimeout);
+          autoAdvanceTimeout = null;
+        }
         if (filteredIndices.length === 0) return;
-        const pos = filteredIndices.indexOf(currentTopicIndex);
+        let pos = filteredIndices.indexOf(currentTopicIndex);
+        if (pos === -1) {
+          const nextIdx = filteredIndices.find(idx => idx > currentTopicIndex);
+          if (nextIdx !== undefined) {
+            renderTopic(nextIdx);
+            return;
+          }
+          pos = filteredIndices.length - 1;
+        }
         if (pos >= 0 && pos < filteredIndices.length - 1) renderTopic(filteredIndices[pos + 1]);
         else renderTopic(filteredIndices[0]);
       });
