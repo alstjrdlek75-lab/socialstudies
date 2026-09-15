@@ -84,8 +84,7 @@
 
     /* Authentic Masking Tape (마스킹 테이프) */
     .mask-tape {
-      display: inline-inline-flex;
-      display: inline-flex;
+      display: inline-flex !important;
       align-items: center;
       cursor: pointer;
       position: relative;
@@ -95,6 +94,9 @@
       padding: 2px 8px;
       margin: 0 2px;
       font-weight: 700;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
     }
 
     /* Taped (가려짐) state: fresh pastel lime-green (연두색) masking tape */
@@ -392,6 +394,10 @@
     #subnote-content-container .mask-tape {
       font-size: inherit !important;
       line-height: inherit !important;
+      display: inline-flex !important;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
     }
 
     /* 10. Supplementary Explanation Drawer Scaling */
@@ -645,9 +651,16 @@
     #subnote-content-container .recall-item,
     #subnote-content-container .recall-item div,
     #subnote-content-container .recall-item p,
-    #subnote-content-container .recall-item span {
+    #subnote-content-container .recall-item span:not(.mask-tape) {
       word-break: keep-all !important;
       overflow-wrap: break-word !important;
+    }
+    #subnote-content-container .mask-tape,
+    #subnote-content-container .mask-tape * {
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      display: inline-flex !important;
     }
 
     /* =========================================================
@@ -920,7 +933,7 @@
       border-color: #334155 !important;
     }
 
-    /* Sidebar Topic Items (High Contrast) */
+    /* Sidebar Topic Items (High Contrast & Vivid Active Selection) */
     html.dark .sidebar-topic-item {
       color: #e2e8f0 !important;
     }
@@ -928,17 +941,26 @@
       background-color: #1e293b !important;
       color: #ffffff !important;
     }
-    html.dark .sidebar-topic-item.bg-blue-50 {
-      background-color: rgba(37, 99, 235, 0.35) !important;
-      border-color: rgba(59, 130, 246, 0.5) !important;
-      color: #bfdbfe !important;
+    html.dark .sidebar-topic-item.active,
+    html.dark .sidebar-topic-item.bg-blue-600 {
+      background-color: #2563eb !important;
+      border-color: #1d4ed8 !important;
+      color: #ffffff !important;
     }
-    html.dark .sidebar-topic-item .text-slate-700,
-    html.dark .sidebar-topic-item .text-slate-800,
-    html.dark .sidebar-topic-item .text-slate-900 {
+    html.dark .sidebar-topic-item.active .text-white,
+    html.dark .sidebar-topic-item.bg-blue-600 .text-white {
+      color: #ffffff !important;
+    }
+    html.dark .sidebar-topic-item.active span.text-blue-100,
+    html.dark .sidebar-topic-item.bg-blue-600 span.text-blue-100 {
+      color: #dbeafe !important;
+    }
+    html.dark .sidebar-topic-item:not(.active):not(.bg-blue-600) .text-slate-700,
+    html.dark .sidebar-topic-item:not(.active):not(.bg-blue-600) .text-slate-800,
+    html.dark .sidebar-topic-item:not(.active):not(.bg-blue-600) .text-slate-900 {
       color: #e2e8f0 !important;
     }
-    html.dark .sidebar-topic-item span.text-indigo-500 {
+    html.dark .sidebar-topic-item:not(.active):not(.bg-blue-600) span.text-indigo-500 {
       color: #a5b4fc !important;
     }
 
@@ -1197,17 +1219,25 @@
     html.dark #essay-input::placeholder {
       color: #64748b !important;
     }
-    html.dark .grade-btn[data-grade="fail"] {
+    html.dark .grade-btn[data-grade="fail"],
+    html.dark .grade-btn[data-grade="1"] {
       background-color: rgba(239, 68, 68, 0.2) !important;
       border-color: rgba(239, 68, 68, 0.4) !important;
       color: #fca5a5 !important;
     }
-    html.dark .grade-btn[data-grade="ambiguous"] {
+    html.dark .grade-btn[data-grade="ambiguous"],
+    html.dark .grade-btn[data-grade="2"] {
       background-color: rgba(245, 158, 11, 0.2) !important;
       border-color: rgba(245, 158, 11, 0.4) !important;
       color: #fde68a !important;
     }
-    html.dark .grade-btn[data-grade="pass"] {
+    html.dark .grade-btn[data-grade="pass"],
+    html.dark .grade-btn[data-grade="3"] {
+      background-color: rgba(16, 185, 129, 0.2) !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      color: #a7f3d0 !important;
+    }
+    html.dark .grade-btn[data-grade="4"] {
       background-color: rgba(37, 99, 235, 0.2) !important;
       border-color: rgba(59, 130, 246, 0.4) !important;
       color: #93c5fd !important;
@@ -1279,6 +1309,11 @@
     html.dark #mobile-nav-explanation:hover {
       color: #a5b4fc !important;
     }
+
+    /* Fallback and utility enforcement for dynamic element visibility */
+    .hidden {
+      display: none !important;
+    }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/fsrs.umd.js"></script>
@@ -1305,8 +1340,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260913_194400"></script>
-  <script src="explanations-data.js?v=20260913_194400"></script>
+  <script src="topics-data.js?v=20260915_174300"></script>
+  <script src="explanations-data.js?v=20260915_174300"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1679,32 +1714,58 @@
           </div>
         </div>
 
-        <!-- Meta-Cognitive Self-Grading SM-2 -->
-        <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3">
+        <!-- Meta-Cognitive Self-Grading FSRS & FAP System -->
+        <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3" id="grading-section-card">
           <div class="flex items-center justify-between border-b border-slate-100 pb-2">
             <div class="flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-blue-600 text-[18px]">psychology</span>
-              <span class="font-bold text-sm text-slate-900">FSRS 간격 반복</span>
+              <span class="material-symbols-outlined text-blue-600 text-[18px]" id="grading-mode-icon">psychology</span>
+              <span class="font-bold text-sm text-slate-900" id="grading-mode-title">FSRS 간격 반복</span>
             </div>
-            <span class="text-[11px] text-slate-400">단축키: 1/2/3/4</span>
+            <span class="text-[11px] text-slate-400 font-medium" id="grading-shortcut-hint">단축키: 1/2/3/4</span>
           </div>
 
+          <!-- 1) FSRS 4-Rating Buttons Container (개념/이론 주제용) -->
           <div class="grid grid-cols-4 gap-1.5" id="fsrs-buttons-container">
-            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95" data-grade="1" type="button">
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer" data-grade="1" type="button">
               <span class="text-xs font-bold">다시</span>
               <span class="text-[10px] text-red-600 font-medium" id="fsrs-ivl-1">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95" data-grade="2" type="button">
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer" data-grade="2" type="button">
               <span class="text-xs font-bold">어려움</span>
               <span class="text-[10px] text-amber-600 font-medium" id="fsrs-ivl-2">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95" data-grade="3" type="button">
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer" data-grade="3" type="button">
               <span class="text-xs font-bold">알맞음</span>
               <span class="text-[10px] text-emerald-600 font-medium" id="fsrs-ivl-3">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95" data-grade="4" type="button">
+            <button class="grade-btn flex flex-col items-center justify-center p-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer" data-grade="4" type="button">
               <span class="text-xs font-bold">쉬움</span>
               <span class="text-[10px] text-blue-600 font-medium" id="fsrs-ivl-4">-</span>
+            </button>
+          </div>
+
+          <!-- 2) FAP 3-Level Buttons Container (기출/응용 문제용) -->
+          <div class="grid grid-cols-3 gap-2 hidden" id="fap-buttons-container">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer group" data-grade="fail" type="button" title="오답 / 다시 풀기 (단축키: F 또는 1)">
+              <div class="flex items-center gap-1">
+                <span class="text-sm font-extrabold text-red-700">F</span>
+                <span class="text-xs font-bold">Fail (오답)</span>
+              </div>
+              <span class="text-[10px] text-red-600 font-medium mt-0.5" id="fap-ivl-fail">-</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer group" data-grade="ambiguous" type="button" title="애매함 / 부분정답 (단축키: A 또는 2)">
+              <div class="flex items-center gap-1">
+                <span class="text-sm font-extrabold text-amber-700">A</span>
+                <span class="text-xs font-bold">Ambiguous (세모)</span>
+              </div>
+              <span class="text-[10px] text-amber-600 font-medium mt-0.5" id="fap-ivl-ambiguous">-</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer group" data-grade="pass" type="button" title="정답 / 패스 (단축키: P 또는 3, 4)">
+              <div class="flex items-center gap-1">
+                <span class="text-sm font-extrabold text-blue-700">P</span>
+                <span class="text-xs font-bold">Pass (정답)</span>
+              </div>
+              <span class="text-[10px] text-blue-600 font-medium mt-0.5" id="fap-ivl-pass">-</span>
             </button>
           </div>
 
@@ -2215,6 +2276,12 @@
       const keywordMatchRatio = document.getElementById('keyword-match-ratio');
       const keywordMatchChips = document.getElementById('keyword-match-chips');
 
+      const gradingModeIcon = document.getElementById('grading-mode-icon');
+      const gradingModeTitle = document.getElementById('grading-mode-title');
+      const gradingShortcutHint = document.getElementById('grading-shortcut-hint');
+      const fsrsButtonsContainer = document.getElementById('fsrs-buttons-container');
+      const fapButtonsContainer = document.getElementById('fap-buttons-container');
+
       const gradeBtns = document.querySelectorAll('.grade-btn');
       const topicMasteryLabel = document.getElementById('topic-mastery-label');
       const topicMasteryBar = document.getElementById('topic-mastery-bar');
@@ -2394,9 +2461,24 @@
         return window.FSRS.createEmptyCard();
       }
 
-      function saveGrade(topicId, gradeNum) { // gradeNum: 1, 2, 3, 4
+      // Helper to check if a topic is an exam/problem (기출 및 응용 문제)
+      function isTopicExamQuestion(topic) {
+        if (!topic) return false;
+        return topic.id.startsWith('EXAM-') || 
+               topic.id.startsWith('APP-') || 
+               topic.subject === '기출' || 
+               Boolean(topic.title && (topic.title.includes('학년도') || topic.title.includes('번.') || topic.title.includes('응용') || topic.title.includes('기출')));
+      }
+
+      function saveGrade(topicId, gradeNum) { // gradeNum: 1, 2, 3, 4, or 'fail', 'ambiguous', 'pass'
         if (!fsrsEngine) return null;
         try {
+          // Normalize FAP string grades to FSRS rating numbers
+          if (gradeNum === 'fail') gradeNum = 1;
+          else if (gradeNum === 'ambiguous') gradeNum = 3;
+          else if (gradeNum === 'pass') gradeNum = 4;
+          else gradeNum = parseInt(gradeNum, 10);
+
           const card = getFSRSCard(topicId);
           const now = new Date();
           const scheduling = fsrsEngine.repeat(card, now);
@@ -2425,8 +2507,9 @@
       }
 
       function updateTopicRetentionView(topicId) {
+        const topic = TOPICS.find(t => t.id === topicId) || TOPICS[currentTopicIndex];
+        const isExam = isTopicExamQuestion(topic);
         const card = getFSRSCard(topicId);
-        const info = getStoredGrades()[topicId] || { count: 0 }; // Keep legacy count if needed, or just use card.reps
         
         topicRetentionText.textContent = `누적 복습: ${card.reps}회`;
         
@@ -2435,24 +2518,69 @@
         // Calculate preview intervals for buttons
         if (fsrsEngine && window.FSRS) {
            const scheduling = fsrsEngine.repeat(card, now);
-           document.getElementById('fsrs-ivl-1').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Again].card.due.getTime() - now.getTime());
-           document.getElementById('fsrs-ivl-2').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Hard].card.due.getTime() - now.getTime());
-           document.getElementById('fsrs-ivl-3').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Good].card.due.getTime() - now.getTime());
-           document.getElementById('fsrs-ivl-4').textContent = formatFSRSInterval(scheduling[window.FSRS.Rating.Easy].card.due.getTime() - now.getTime());
+           const ivlAgain = formatFSRSInterval(scheduling[window.FSRS.Rating.Again].card.due.getTime() - now.getTime());
+           const ivlHard = formatFSRSInterval(scheduling[window.FSRS.Rating.Hard].card.due.getTime() - now.getTime());
+           const ivlGood = formatFSRSInterval(scheduling[window.FSRS.Rating.Good].card.due.getTime() - now.getTime());
+           const ivlEasy = formatFSRSInterval(scheduling[window.FSRS.Rating.Easy].card.due.getTime() - now.getTime());
+
+           // Update FSRS 4-button labels
+           const el1 = document.getElementById('fsrs-ivl-1');
+           const el2 = document.getElementById('fsrs-ivl-2');
+           const el3 = document.getElementById('fsrs-ivl-3');
+           const el4 = document.getElementById('fsrs-ivl-4');
+           if (el1) el1.textContent = ivlAgain;
+           if (el2) el2.textContent = ivlHard;
+           if (el3) el3.textContent = ivlGood;
+           if (el4) el4.textContent = ivlEasy;
+
+           // Update FAP 3-button labels
+           const elFail = document.getElementById('fap-ivl-fail');
+           const elAmb = document.getElementById('fap-ivl-ambiguous');
+           const elPass = document.getElementById('fap-ivl-pass');
+           if (elFail) elFail.textContent = ivlAgain;
+           if (elAmb) elAmb.textContent = ivlGood;
+           if (elPass) elPass.textContent = ivlEasy;
+        }
+
+        // Toggle FSRS vs FAP containers and header labels depending on whether current topic is an exam problem
+        if (isExam) {
+          if (gradingModeIcon) gradingModeIcon.textContent = 'assignment_turned_in';
+          if (gradingModeTitle) gradingModeTitle.textContent = 'FAP 3단계 채점 (기출/문제)';
+          if (gradingShortcutHint) gradingShortcutHint.textContent = '단축키: F / A / P (또는 1/2/3)';
+          if (fsrsButtonsContainer) {
+            fsrsButtonsContainer.classList.add('hidden');
+            fsrsButtonsContainer.style.display = 'none';
+          }
+          if (fapButtonsContainer) {
+            fapButtonsContainer.classList.remove('hidden');
+            fapButtonsContainer.style.display = 'grid';
+          }
+        } else {
+          if (gradingModeIcon) gradingModeIcon.textContent = 'psychology';
+          if (gradingModeTitle) gradingModeTitle.textContent = 'FSRS 간격 반복 (개념 학습)';
+          if (gradingShortcutHint) gradingShortcutHint.textContent = '단축키: 1/2/3/4';
+          if (fsrsButtonsContainer) {
+            fsrsButtonsContainer.classList.remove('hidden');
+            fsrsButtonsContainer.style.display = 'grid';
+          }
+          if (fapButtonsContainer) {
+            fapButtonsContainer.classList.add('hidden');
+            fapButtonsContainer.style.display = 'none';
+          }
         }
 
         if (card.state === window.FSRS.State.Review) {
-          topicMasteryLabel.textContent = '장기 기억 정착 (Review)';
+          topicMasteryLabel.textContent = isExam ? '문제 완전 정복 (Review)' : '장기 기억 정착 (Review)';
           topicMasteryBar.style.width = Math.min(100, Math.max(20, (card.stability / 30) * 100)) + '%';
           topicMasteryBar.className = 'bg-emerald-600 h-full transition-all duration-300';
           topicReviewSchedule.textContent = `다음 복습: ${formatFSRSInterval(card.due.getTime() - now.getTime())} 후`;
         } else if (card.state === window.FSRS.State.Learning || card.state === window.FSRS.State.Relearning) {
-          topicMasteryLabel.textContent = '학습 진행 중 (Learning)';
+          topicMasteryLabel.textContent = isExam ? '오답 집중 훈련 중 (Learning)' : '학습 진행 중 (Learning)';
           topicMasteryBar.style.width = '30%';
           topicMasteryBar.className = 'bg-amber-500 h-full transition-all duration-300';
           topicReviewSchedule.textContent = `다음 복습: ${formatFSRSInterval(card.due.getTime() - now.getTime())} 후`;
         } else {
-          topicMasteryLabel.textContent = '미학습 상태 (New)';
+          topicMasteryLabel.textContent = isExam ? '미풀이 문항 (New)' : '미학습 상태 (New)';
           topicMasteryBar.style.width = '10%';
           topicMasteryBar.className = 'bg-slate-300 h-full transition-all duration-300';
           topicReviewSchedule.textContent = '다음 복습: 지금 (0회차)';
@@ -2580,13 +2708,15 @@
           secMap.get(sec).push(globalIdx);
         });
 
-        // Ensure active topic's section and subsection are expanded (for non-exam subjects)
+        // Ensure active topic's section and subsection are expanded so the selected item is always visible
         const activeTopic = TOPICS[currentTopicIndex];
-        if (activeTopic && activeSubject !== '기출') {
+        if (activeTopic) {
           const activeSec = (activeTopic.section && activeTopic.section !== activeTopic.chapter) ? activeTopic.section : activeTopic.chapter;
           expandedSections.delete(`COLLAPSED__${activeTopic.chapter}__${activeSec}`);
+          expandedSections.add(`EXPANDED__${activeTopic.chapter}__${activeSec}`);
           if (activeTopic.subsection) {
             expandedSections.delete(`COLLAPSED__${activeTopic.chapter}__${activeSec}__${activeTopic.subsection}`);
+            expandedSections.add(`EXPANDED__${activeTopic.chapter}__${activeSec}__${activeTopic.subsection}`);
           }
         }
 
@@ -2669,7 +2799,7 @@
               item.href = '#';
               item.dataset.globalIndex = globalIdx;
               item.className = isCurrent
-                ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
+                ? 'sidebar-topic-item active flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5'
                 : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
 
               const displayName = (topic.section && topic.section !== chName) ? topic.section : topic.title;
@@ -2677,10 +2807,10 @@
               const formattedTag = formatExamTag(topic.examTag, topic);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                  <span class="material-symbols-outlined text-[15px] text-indigo-500 shrink-0">description</span>
-                  <span class="truncate font-semibold">${displayName}</span>
+                  <span class="material-symbols-outlined text-[15px] ${isCurrent ? 'text-white' : 'text-indigo-500'} shrink-0">description</span>
+                  <span class="truncate font-semibold ${isCurrent ? 'text-white' : ''}">${displayName}</span>
                 </div>
-                ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedTag}</span>` : ''}
+                ${formattedTag ? `<span class="text-[10px] font-bold ${isCurrent ? 'text-blue-100' : 'text-indigo-500'} shrink-0 tracking-tight">${formattedTag}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -2697,13 +2827,13 @@
             const isSecActive = indices.includes(currentTopicIndex);
             const isExamSubject = (activeSubject === '기출');
             let isExpanded;
-            if (Boolean(q)) {
+            if (Boolean(q) || isSecActive) {
               isExpanded = true;
             } else if (isExamSubject) {
               // In 기출 tab: Default is collapsed! Only open if user explicitly clicked to expand
               isExpanded = expandedSections.has(`EXPANDED__${secKey}`);
             } else {
-              isExpanded = isSecActive || !expandedSections.has(`COLLAPSED__${secKey}`);
+              isExpanded = !expandedSections.has(`COLLAPSED__${secKey}`);
             }
 
             const secGroup = document.createElement('div');
@@ -2751,16 +2881,16 @@
               const isCurrent = (globalIdx === currentTopicIndex);
 
               item.className = isCurrent
-                ? 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5'
+                ? 'sidebar-topic-item active flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5'
                 : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
 
               const formattedSecTag = formatExamTag(topic.examTag, topic);
               item.innerHTML = `
                 <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                  ${bookmarks.includes(topic.id) ? '<span class="material-symbols-outlined material-symbols-filled text-[13px] text-amber-500 shrink-0">star</span>' : ''}
-                  <span class="truncate">${topic.title}</span>
+                  ${bookmarks.includes(topic.id) ? `<span class="material-symbols-outlined material-symbols-filled text-[13px] ${isCurrent ? 'text-amber-300' : 'text-amber-500'} shrink-0">star</span>` : ''}
+                  <span class="truncate ${isCurrent ? 'text-white' : ''}">${topic.title}</span>
                 </div>
-                ${formattedSecTag ? `<span class="text-[10px] font-bold text-indigo-500 shrink-0 tracking-tight">${formattedSecTag}</span>` : ''}
+                ${formattedSecTag ? `<span class="text-[10px] font-bold ${isCurrent ? 'text-blue-100' : 'text-indigo-500'} shrink-0 tracking-tight">${formattedSecTag}</span>` : ''}
               `;
 
               item.addEventListener('click', (e) => {
@@ -2801,12 +2931,12 @@
                 const subSecKey = `${secKey}__${subName}`;
                 const isSubActive = subIndices.includes(currentTopicIndex);
                 let isSubExpanded;
-                if (Boolean(q)) {
+                if (Boolean(q) || isSubActive) {
                   isSubExpanded = true;
                 } else if (isExamSubject) {
                   isSubExpanded = expandedSections.has(`EXPANDED__${subSecKey}`);
                 } else {
-                  isSubExpanded = isSubActive || !expandedSections.has(`COLLAPSED__${subSecKey}`);
+                  isSubExpanded = !expandedSections.has(`COLLAPSED__${subSecKey}`);
                 }
 
                 const subGroup = document.createElement('div');
@@ -3000,9 +3130,9 @@
         if (customHtml && (
           ['EDU-001','EDU-002','EDU-003','EDU-041','EDU-047','EDU-051','EDU-057','EDU-058','EDU-068','EDU-071','EDU-078','EDU-082',
            'LAW-011','LAW-012','LAW-029','LAW-030','LAW-043','LAW-066','LAW-085','LAW-108','LAW-111','LAW-160','LAW-164',
-           'SOC-068','SOC-074','SOC-082','SOC-109','SOC-114',
+           'SOC-024','SOC-068','SOC-074','SOC-082','SOC-109','SOC-114',
            'POL-016','POL-017','POL-024','POL-031','POL-032','POL-106','POL-108',
-           'ECON-001','ECON-002','ECON-004','ECON-005','ECON-007','ECON-008','ECON-009','ECON-012','ECON-013','ECON-014','ECON-015','ECON-016','ECON-018','ECON-019'].includes(topic.id) ||
+           'ECON-001','ECON-002','ECON-004','ECON-005','ECON-007','ECON-008','ECON-009','ECON-012','ECON-013','ECON-014','ECON-015','ECON-016','ECON-018','ECON-019', 'EXAM-2009-1-22', 'EXAM-2012-1-23', 'EXAM-2013-1-27'].includes(topic.id) ||
           (topic.id === 'ECON-009' && (customHtml.includes('bg-amber-50') || customHtml.includes('로렌츠') || !customHtml.includes('recall-item'))) ||
           (topic.id === 'ECON-010' && !customHtml.includes('[Case 1]')) ||
           customHtml.includes('PXPY') || customHtml.includes('MUXPX') || customHtml.includes('-PXPYX') || customHtml.includes('MPY-') ||
@@ -3080,31 +3210,56 @@
           const isCur = (gIdx === currentTopicIndex);
 
           if (isCur) {
-            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 shadow-2xs transition-all my-0.5';
-            // Ensure parent section and subsection are expanded (for non-exam subjects)
-            if (activeSubject !== '기출') {
-              const secChildren = item.closest('.section-children');
-              if (secChildren && secChildren.classList.contains('hidden')) {
-                secChildren.classList.remove('hidden');
-                const secGroup = secChildren.closest('.section-group');
-                if (secGroup) {
-                  const chevron = secGroup.querySelector('.sec-chevron');
-                  if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
-                }
+            item.className = 'sidebar-topic-item active flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
+            
+            // Ensure inner title and badge text contrast
+            const titleSpan = item.querySelector('.truncate');
+            if (titleSpan) titleSpan.classList.add('text-white');
+            const descIcon = item.querySelector('.material-symbols-outlined:not(.text-amber-500):not(.text-amber-300)');
+            if (descIcon) {
+              descIcon.classList.remove('text-indigo-500');
+              descIcon.classList.add('text-white');
+            }
+            const tagSpan = item.querySelector('span.text-indigo-500');
+            if (tagSpan) {
+              tagSpan.classList.remove('text-indigo-500');
+              tagSpan.classList.add('text-blue-100');
+            }
+
+            // Ensure parent section and subsection are expanded
+            const secChildren = item.closest('.section-children');
+            if (secChildren && secChildren.classList.contains('hidden')) {
+              secChildren.classList.remove('hidden');
+              const secGroup = secChildren.closest('.section-group');
+              if (secGroup) {
+                const chevron = secGroup.querySelector('.sec-chevron');
+                if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
               }
-              const subChildren = item.closest('.subsection-children');
-              if (subChildren && subChildren.classList.contains('hidden')) {
-                subChildren.classList.remove('hidden');
-                const subGroup = subChildren.closest('.subsection-group');
-                if (subGroup) {
-                  const chevron = subGroup.querySelector('.sub-chevron');
-                  if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
-                }
+            }
+            const subChildren = item.closest('.subsection-children');
+            if (subChildren && subChildren.classList.contains('hidden')) {
+              subChildren.classList.remove('hidden');
+              const subGroup = subChildren.closest('.subsection-group');
+              if (subGroup) {
+                const chevron = subGroup.querySelector('.sub-chevron');
+                if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
               }
             }
             item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           } else {
             item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
+            const titleSpan = item.querySelector('.truncate');
+            if (titleSpan) titleSpan.classList.remove('text-white');
+            const descIcon = item.querySelector('.material-symbols-outlined:not(.text-amber-500):not(.text-amber-300)');
+            if (descIcon) {
+              descIcon.classList.remove('text-white');
+              descIcon.classList.add('text-indigo-500');
+            }
+            const tagSpan = item.querySelector('span.text-blue-100');
+            if (tagSpan) {
+              tagSpan.classList.remove('text-blue-100');
+              tagSpan.classList.add('text-indigo-500');
+            }
           }
         });
 
@@ -3898,6 +4053,7 @@
       // 8. Self-Grading Event Handler
       function handleGrade(grade) {
         const topic = TOPICS[currentTopicIndex];
+        const isExam = isTopicExamQuestion(topic);
         
         // Capture old position before saving/re-rendering
         const oldPos = filteredIndices.indexOf(currentTopicIndex);
@@ -3908,23 +4064,34 @@
         const targetBtn = Array.from(gradeBtns).find(b => String(b.dataset.grade) === String(grade));
         if (targetBtn) {
           let ringColor = 'ring-blue-400';
-          if (grade == 1) ringColor = 'ring-red-400';
-          else if (grade == 2) ringColor = 'ring-amber-400';
-          else if (grade == 3) ringColor = 'ring-emerald-400';
+          if (grade == 1 || grade === 'fail') ringColor = 'ring-red-400';
+          else if (grade == 2 || grade === 'ambiguous') ringColor = 'ring-amber-400';
+          else if (grade == 3 || grade === 'pass') ringColor = 'ring-blue-400';
+          else if (grade == 4) ringColor = 'ring-emerald-400';
           targetBtn.classList.add('ring-4', 'ring-offset-1', ringColor, 'scale-105');
           setTimeout(() => {
             targetBtn.classList.remove('ring-4', 'ring-offset-1', ringColor, 'scale-105');
           }, 300);
         }
 
-        if (grade == 4 || grade === 'pass') {
-          showToast('[4] 쉬움! 복습 주기가 연장되었습니다', 'verified');
-        } else if (grade == 3) {
-          showToast('[3] 알맞음! 안정적으로 기억에 정착 중입니다', 'verified');
-        } else if (grade == 2 || grade === 'ambiguous') {
-          showToast('[2] 어려움! 복습 주기가 짧게 유지됩니다', 'help');
-        } else if (grade == 1 || grade === 'fail') {
-          showToast('[1] 다시! 곧 재복습 일정이 잡힙니다', 'cancel');
+        if (isExam) {
+          if (grade === 'pass' || grade == 3 || grade == 4) {
+            showToast('[P] Pass! 문제 정답 반영 및 복습 주기 연장', 'verified');
+          } else if (grade === 'ambiguous' || grade == 2) {
+            showToast('[A] Ambiguous! 애매함/오답 취약 문제로 집중 관리', 'help');
+          } else if (grade === 'fail' || grade == 1) {
+            showToast('[F] Fail! 오답 기록 및 곧 재풀이 일정이 잡힙니다', 'cancel');
+          }
+        } else {
+          if (grade == 4) {
+            showToast('[4] 쉬움! 복습 주기가 대폭 연장되었습니다', 'verified');
+          } else if (grade == 3 || grade === 'pass') {
+            showToast('[3] 알맞음! 안정적으로 기억에 정착 중입니다', 'verified');
+          } else if (grade == 2 || grade === 'ambiguous') {
+            showToast('[2] 어려움! 복습 주기가 짧게 유지됩니다', 'help');
+          } else if (grade == 1 || grade === 'fail') {
+            showToast('[1] 다시! 곧 재복습 일정이 잡힙니다', 'cancel');
+          }
         }
 
         // Auto-advance to the next topic
@@ -3935,7 +4102,6 @@
             }
             return;
           }
-          
           let newPos = filteredIndices.indexOf(currentTopicIndex);
           let targetIndex;
           if (newPos === -1) {
@@ -3945,8 +4111,10 @@
             // Still in the list, advance by 1
             targetIndex = filteredIndices[(newPos + 1) % filteredIndices.length];
           }
-          renderTopic(targetIndex);
-        }, 400);
+          currentTopicIndex = targetIndex;
+          isAnswerRevealed = false;
+          renderTopic();
+        }, 150);
       }
 
       function updateSubjectTabStyles() {
@@ -4150,12 +4318,18 @@
           setEssayPadCollapsed(false);
         }
         setTimeout(() => {
-          const gradeContainer = document.querySelector('.grade-btn')?.parentElement;
-          if (gradeContainer) {
-            gradeContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const isExam = isTopicExamQuestion(TOPICS[currentTopicIndex]);
+          const targetContainer = isExam ? fapButtonsContainer : fsrsButtonsContainer;
+          if (targetContainer) {
+            targetContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }, 80);
-        showToast('FSRS 단축키: [1] 다시 | [2] 어려움 | [3] 알맞음 | [4] 쉬움', 'psychology');
+        const isExam = isTopicExamQuestion(TOPICS[currentTopicIndex]);
+        if (isExam) {
+          showToast('FAP 문제 채점 단축키: [F] Fail | [A] Ambiguous | [P] Pass', 'assignment_turned_in');
+        } else {
+          showToast('FSRS 단축키: [1] 다시 | [2] 어려움 | [3] 알맞음 | [4] 쉬움', 'psychology');
+        }
       });
 
       // OS-aware shortcut badge labels (Mac: ⌘, Win: Ctrl)
@@ -4323,7 +4497,7 @@
         showToast('서술창이 비워졌습니다', 'delete');
       });
 
-      gradeBtns.forEach(btn => {
+      document.querySelectorAll('.grade-btn').forEach(btn => {
         btn.addEventListener('click', () => handleGrade(btn.dataset.grade));
       });
 
@@ -4894,31 +5068,59 @@
           return;
         }
 
-        // 4. Self-Grading Shortcuts (1, 2, 3 only):
-        // [3] -> Good
-        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 4. Self-Grading Shortcuts (FSRS 1~4 and FAP F/A/P):
+        const currentTopic = TOPICS[currentTopicIndex];
+        const isExamTopic = isTopicExamQuestion(currentTopic);
+
+        // [F] or [ㄹ] -> Fail (문제 채점)
+        const isFKey = (e.key === 'f' || e.key === 'F' || e.key === 'ㄹ' || e.code === 'KeyF');
+        if (isFKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(3);
-          return;
-        }
-        // [4] -> Easy
-        if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(4);
+          handleGrade(isExamTopic ? 'fail' : 1);
           return;
         }
 
-        // [1] -> Fail
+        // [A] or [ㅁ] -> Ambiguous (문제 채점)
+        const isAKey = (e.key === 'a' || e.key === 'A' || e.key === 'ㅁ' || e.code === 'KeyA');
+        if (isAKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(isExamTopic ? 'ambiguous' : 2);
+          return;
+        }
+
+        // [P] or [ㅔ] -> Pass (문제 채점)
+        const isPKey = (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ' || e.code === 'KeyP');
+        if (isPKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(isExamTopic ? 'pass' : 3);
+          return;
+        }
+
+        // [1] -> Again / Fail
         if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(1);
+          handleGrade(isExamTopic ? 'fail' : 1);
           return;
         }
 
-        // [2] -> Ambiguous
+        // [2] -> Hard / Ambiguous
         if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(2);
+          handleGrade(isExamTopic ? 'ambiguous' : 2);
+          return;
+        }
+
+        // [3] -> Good / Pass
+        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(isExamTopic ? 'pass' : 3);
+          return;
+        }
+
+        // [4] -> Easy (개념 주제용 쉬움, 문제에서는 Pass)
+        if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(isExamTopic ? 'pass' : 4);
           return;
         }
 
