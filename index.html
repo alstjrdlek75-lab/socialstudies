@@ -1310,8 +1310,14 @@
       color: #a5b4fc !important;
     }
 
-    /* Fallback and utility enforcement for dynamic element visibility */
-    .hidden {
+    /* Modal visibility helper: only force hide when modal dialogs explicitly have .hidden */
+    #diff-modal.hidden,
+    #explanation-modal.hidden,
+    #diagram-modal.hidden,
+    #library-dashboard.hidden,
+    #exam-modal.hidden,
+    .modal-backdrop.hidden,
+    [role="dialog"].hidden {
       display: none !important;
     }
   </style>
@@ -1341,7 +1347,7 @@
   </script>
   <!-- Core Topic Data (Loaded first) -->
   <script src="topics-data.js?v=20260915_174300"></script>
-  <script src="explanations-data.js?v=20260915_212000"></script>
+  <script src="explanations-data.js?v=20260915_222500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1366,6 +1372,9 @@
     <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
       <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1" data-subject="오늘 복습" type="button">
         <span class="material-symbols-outlined text-[14px]">event_available</span> 오늘 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due">(0)</span>
+      </button>
+      <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1" data-subject="ALL" type="button">
+        전체 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-all">(0)</span>
       </button>
       <button class="subject-tab-btn px-2 xl:px-3 py-1 xl:py-1.5 rounded-lg text-[11px] xl:text-xs font-bold transition-all bg-white text-blue-700 shadow-xs whitespace-nowrap shrink-0" data-subject="사회과교육론" type="button">
         사회과교육론 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-edu">(99)</span>
@@ -1482,6 +1491,7 @@
     <!-- Mobile Subject Tabs inside Drawer -->
     <div class="lg:hidden p-2 bg-slate-50 border-b border-slate-200 overflow-x-auto flex items-center gap-1 text-xs no-scrollbar" id="mobile-subject-tabs">
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-white text-blue-700 shadow-xs border border-slate-200 flex items-center gap-1" data-subject="오늘 복습" type="button"><span class="material-symbols-outlined text-[13px]">event_available</span> 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due-mobile">(0)</span></button>
+      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="ALL" type="button">전체</button>
           <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-white text-blue-700 shadow-xs border border-slate-200 flex items-center gap-1" data-subject="사회과교육론" type="button">사교론</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="법학" type="button">법학</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회학</button>
