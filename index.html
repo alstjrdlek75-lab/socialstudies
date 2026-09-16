@@ -1305,6 +1305,7 @@
 
     /* Modal visibility helper: only force hide when modal dialogs explicitly have .hidden */
     #diff-modal.hidden,
+    #topic-edit-modal.hidden,
     #explanation-modal.hidden,
     #diagram-modal.hidden,
     #library-dashboard.hidden,
@@ -1560,9 +1561,13 @@
                 <span class="material-symbols-outlined text-[14px] text-lime-700">label</span>
                 <span id="topic-tape-count">테이프 0개</span>
               </span>
-              <button id="btn-reset-custom-tape" class="px-2 py-0.5 rounded-md text-[11px] font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 추가/삭제한 마스킹을 원본으로 복원합니다">
+              <button id="btn-edit-topic-content" class="px-2 py-0.5 rounded-md text-[11px] font-semibold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+                <span class="material-symbols-outlined text-[13px]">edit_note</span>
+                <span>본문 수정</span>
+              </button>
+              <button id="btn-reset-custom-tape" class="px-2 py-0.5 rounded-md text-[11px] font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                 <span class="material-symbols-outlined text-[13px]">restart_alt</span>
-                <span>마스킹 복원</span>
+                <span>원본 복원</span>
               </button>
             </div>
             <div class="flex items-center gap-2">
@@ -1835,6 +1840,82 @@
           완벽 인출(P) 반영하고 닫기
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- TOPIC CONTENT DIRECT EDIT & RESET MODAL -->
+  <div id="topic-edit-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 hidden">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in duration-150">
+      
+      <!-- Modal Header -->
+      <div class="px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/90 dark:bg-slate-850 shrink-0">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-300 flex items-center justify-center font-bold shrink-0">
+            <span class="material-symbols-outlined text-[20px]">edit_note</span>
+          </div>
+          <div class="min-w-0">
+            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100 flex items-center gap-2">
+              <span>서브노트 본문 직접 수정</span>
+              <span id="topic-edit-custom-indicator" class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 hidden">수정본 적용중</span>
+            </h3>
+            <p id="topic-edit-modal-subtitle" class="text-xs text-slate-500 dark:text-slate-400 truncate max-w-sm sm:max-w-md md:max-w-xl">
+              <!-- Topic Title -->
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button id="btn-edit-reset-original" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold text-rose-600 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 flex items-center gap-1 transition-colors cursor-pointer" type="button" title="이 주제의 수정사항을 모두 지우고 원본 서브노트로 초기화합니다">
+            <span class="material-symbols-outlined text-[15px]">restart_alt</span>
+            <span class="hidden sm:inline">원본 초기화</span>
+          </button>
+          <button id="btn-close-topic-edit-modal" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer" type="button" title="닫기 [Esc]">
+            <span class="material-symbols-outlined text-[22px]">close</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Helper Notice & Quick Tag Toolbar -->
+      <div class="px-4 py-2.5 bg-slate-100/80 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs shrink-0">
+        <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
+          <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-[16px]">info</span>
+          <span>내용을 자유롭게 수정할 수 있습니다. 마스킹 테이프는 <code class="px-1.5 py-0.5 bg-white dark:bg-slate-900 rounded font-mono text-lime-700 dark:text-lime-400 font-bold border border-slate-200 dark:border-slate-700">&lt;span class="mask-tape"&gt;가릴단어&lt;/span&gt;</code> 로 감싸주세요.</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <button id="btn-editor-wrap-tape" type="button" class="px-2 py-1 bg-lime-100 dark:bg-lime-950/60 hover:bg-lime-200 text-lime-800 dark:text-lime-300 font-semibold rounded border border-lime-300 dark:border-lime-700 flex items-center gap-1 transition-all cursor-pointer text-[11px]" title="선택한 텍스트를 마스킹 테이프로 감쌉니다">
+            <span class="material-symbols-outlined text-[13px]">label</span>
+            <span>테이프 감싸기</span>
+          </button>
+          <button id="btn-editor-insert-group" type="button" class="px-2 py-1 bg-white dark:bg-slate-900 hover:bg-slate-50 text-slate-700 dark:text-slate-200 font-semibold rounded border border-slate-300 dark:border-slate-700 flex items-center gap-1 transition-all cursor-pointer text-[11px]" title="새 카드 항목 블록을 삽입합니다">
+            <span class="material-symbols-outlined text-[13px]">add_box</span>
+            <span>항목 삽입</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Editor Content Area -->
+      <div class="flex-1 p-4 overflow-hidden flex flex-col bg-slate-50/50 dark:bg-slate-950">
+        <label for="topic-edit-textarea" class="sr-only">서브노트 HTML/본문 내용</label>
+        <textarea id="topic-edit-textarea" class="w-full h-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-mono text-xs sm:text-sm leading-relaxed resize-none focus:ring-2 focus:ring-blue-500 focus:outline-hidden selection:bg-blue-100 dark:selection:bg-blue-900 shadow-inner" placeholder="서브노트 본문 HTML을 입력하세요..."></textarea>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-4 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 flex items-center justify-between shrink-0 text-xs">
+        <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 font-mono text-[11px]">
+          <span id="topic-edit-char-count">0자</span>
+          <span>•</span>
+          <span>저장 시 해당 주제에 즉시 반영되며 로컬스토리지에 안전하게 보관됩니다.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-cancel-topic-edit" class="px-3.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold transition-all cursor-pointer" type="button">
+            취소
+          </button>
+          <button id="btn-save-topic-edit" class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer" type="button">
+            <span class="material-symbols-outlined text-[16px]">save</span>
+            <span>수정본 저장 및 적용</span>
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -2278,6 +2359,7 @@
       const topicBadgeExam = document.getElementById('topic-badge-exam');
       const topicBadgeTape = document.getElementById('topic-badge-tape');
       const topicTapeCount = document.getElementById('topic-tape-count');
+      const btnEditTopicContent = document.getElementById('btn-edit-topic-content');
       const btnResetCustomTape = document.getElementById('btn-reset-custom-tape');
       const floatingMaskBtn = document.getElementById('floating-mask-btn');
       const topicPageRef = document.getElementById('topic-page-ref');
@@ -2321,6 +2403,19 @@
       const diffUserLen = document.getElementById('diff-user-len');
       const diffModelLen = document.getElementById('diff-model-len');
       const diffPassBtn = document.getElementById('diff-pass-btn');
+
+      // Topic Content Direct Editor Elements
+      const topicEditModal = document.getElementById('topic-edit-modal');
+      const topicEditModalSubtitle = document.getElementById('topic-edit-modal-subtitle');
+      const topicEditCustomIndicator = document.getElementById('topic-edit-custom-indicator');
+      const topicEditTextarea = document.getElementById('topic-edit-textarea');
+      const topicEditCharCount = document.getElementById('topic-edit-char-count');
+      const btnCloseTopicEditModal = document.getElementById('btn-close-topic-edit-modal');
+      const btnCancelTopicEdit = document.getElementById('btn-cancel-topic-edit');
+      const btnSaveTopicEdit = document.getElementById('btn-save-topic-edit');
+      const btnEditResetOriginal = document.getElementById('btn-edit-reset-original');
+      const btnEditorWrapTape = document.getElementById('btn-editor-wrap-tape');
+      const btnEditorInsertGroup = document.getElementById('btn-editor-insert-group');
 
       const btnOpenExplanation = document.getElementById('btn-open-explanation');
       const explanationHasBadge = document.getElementById('explanation-has-badge');
@@ -3517,14 +3612,14 @@
       function resetTopicCustomContent() {
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
-        if (!confirm(`'${topic.title}' 주제에서 직접 추가/삭제한 마스킹 테이프를 초기화하고 원본으로 되돌리시겠습니까?`)) {
+        if (!confirm(`'${topic.title}' 주제에서 직접 수정한 본문 내용 및 마스킹 테이프를 모두 초기화하고 원본 서브노트로 되돌리시겠습니까?`)) {
           return;
         }
         localStorage.removeItem(`edurecall_custom_${topic.id}`);
         if (topic.id.startsWith('ECON-EXAM-')) {
           localStorage.removeItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
         }
-        subnoteContainer.innerHTML = topic.contentHtml;
+        subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
         if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         setupGroupInteractions();
         setupTapeInteractions();
@@ -3542,7 +3637,7 @@
 
         updateTapeCountBadge();
         applyMode(currentMode);
-        showToast('원본 서브노트 마스킹으로 복원되었습니다', 'refresh');
+        showToast('원본 서브노트 본문과 마스킹으로 복원되었습니다', 'refresh');
       }
 
       function removeTape(tape) {
@@ -4993,6 +5088,206 @@
         });
       }
 
+      // -------------------------------------------------------------
+      // Subnote Topic Content Direct Editor Logic
+      // -------------------------------------------------------------
+      function openTopicEditor() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic || !topicEditModal) return;
+
+        const customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`) || 
+          (topic.id.startsWith('ECON-EXAM-') ? localStorage.getItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`) : null);
+
+        const currentHtml = customHtml || topic.contentHtml || '';
+
+        if (topicEditModalSubtitle) {
+          topicEditModalSubtitle.textContent = `${topic.id} | ${topic.title} (${topic.subject || ''} ${topic.chapter || ''})`;
+        }
+
+        if (topicEditCustomIndicator) {
+          topicEditCustomIndicator.classList.toggle('hidden', !customHtml);
+        }
+
+        if (topicEditTextarea) {
+          topicEditTextarea.value = currentHtml;
+          updateTopicEditCharCount();
+        }
+
+        topicEditModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        if (topicEditTextarea) {
+          topicEditTextarea.focus();
+        }
+      }
+
+      function closeTopicEditor() {
+        if (!topicEditModal) return;
+        topicEditModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      function updateTopicEditCharCount() {
+        if (!topicEditCharCount || !topicEditTextarea) return;
+        const len = topicEditTextarea.value.length;
+        topicEditCharCount.textContent = `${len.toLocaleString()}자`;
+      }
+
+      function saveTopicEditor() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic || !topicEditTextarea) return;
+
+        let content = topicEditTextarea.value.trim();
+        if (!content) {
+          alert('본문 내용을 비워둘 수 없습니다. 원본으로 복원하려면 [원본 초기화]를 누르세요.');
+          return;
+        }
+
+        // Normalize exam badges and sanitize
+        content = normalizeExamBadges(content);
+
+        // Save to localStorage
+        try {
+          localStorage.setItem(`edurecall_custom_${topic.id}`, content);
+        } catch(e) {
+          console.error('Failed to save to localStorage:', e);
+          alert('로컬 저장소 용량이 부족하여 저장에 실패했습니다.');
+          return;
+        }
+
+        // Apply immediately to current view
+        subnoteContainer.innerHTML = content;
+        if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
+
+        setupGroupInteractions();
+        setupTapeInteractions();
+
+        if (window.renderMathInElement) {
+          try {
+            renderMathInElement(subnoteContainer, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+              ],
+              throwOnError: false
+            });
+          } catch(e) {}
+        }
+
+        updateTapeCountBadge();
+        applyMode(currentMode);
+        closeTopicEditor();
+        showToast(`'${topic.title}' 수정본이 저장되고 서브노트에 반영되었습니다`, 'save');
+      }
+
+      function resetFromTopicEditor() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+
+        if (!confirm(`'${topic.title}' 주제의 모든 사용자 수정사항(본문 수정 및 마스킹)을 초기화하고 원본 서브노트로 복원하시겠습니까?`)) {
+          return;
+        }
+
+        localStorage.removeItem(`edurecall_custom_${topic.id}`);
+        if (topic.id.startsWith('ECON-EXAM-')) {
+          localStorage.removeItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
+        }
+
+        const original = normalizeExamBadges(topic.contentHtml);
+        if (topicEditTextarea) {
+          topicEditTextarea.value = original;
+          updateTopicEditCharCount();
+        }
+        if (topicEditCustomIndicator) {
+          topicEditCustomIndicator.classList.add('hidden');
+        }
+
+        subnoteContainer.innerHTML = original;
+        if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
+
+        setupGroupInteractions();
+        setupTapeInteractions();
+
+        if (window.renderMathInElement) {
+          try {
+            renderMathInElement(subnoteContainer, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+              ],
+              throwOnError: false
+            });
+          } catch(e) {}
+        }
+
+        updateTapeCountBadge();
+        applyMode(currentMode);
+        closeTopicEditor();
+        showToast('원본 서브노트 본문과 마스킹으로 초기화되었습니다', 'refresh');
+      }
+
+      function wrapEditorSelectionWithTape() {
+        if (!topicEditTextarea) return;
+        const start = topicEditTextarea.selectionStart;
+        const end = topicEditTextarea.selectionEnd;
+        const val = topicEditTextarea.value;
+        const selected = val.substring(start, end);
+
+        if (!selected) {
+          alert('마스킹 테이프로 감쌀 글자나 단어를 먼저 드래그하여 선택하세요.');
+          return;
+        }
+
+        const replacement = `<span class="mask-tape">${selected}</span>`;
+        topicEditTextarea.value = val.substring(0, start) + replacement + val.substring(end);
+        topicEditTextarea.selectionStart = start;
+        topicEditTextarea.selectionEnd = start + replacement.length;
+        topicEditTextarea.focus();
+        updateTopicEditCharCount();
+      }
+
+      function insertGroupTemplateIntoEditor() {
+        if (!topicEditTextarea) return;
+        const start = topicEditTextarea.selectionStart;
+        const val = topicEditTextarea.value;
+        const template = `\n  <div class="topic-group bg-white rounded-xl border border-slate-200/90 shadow-2xs overflow-hidden transition-all">\n    <div class="group-header px-4 py-3 bg-slate-50/75 border-b border-slate-100 flex items-center justify-between cursor-pointer select-none">\n      <div class="font-bold text-slate-800 text-sm flex items-center gap-2">\n        <span class="w-2 h-2 rounded-full bg-blue-600"></span>\n        <span>새 항목 제목</span>\n      </div>\n    </div>\n    <div class="group-content p-4 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">\n      <p>핵심 내용 설명 및 <span class="mask-tape">암기 키워드</span></p>\n    </div>\n  </div>\n`;
+
+        topicEditTextarea.value = val.substring(0, start) + template + val.substring(start);
+        topicEditTextarea.selectionStart = start + template.length;
+        topicEditTextarea.selectionEnd = start + template.length;
+        topicEditTextarea.focus();
+        updateTopicEditCharCount();
+      }
+
+      if (btnEditTopicContent) {
+        btnEditTopicContent.addEventListener('click', openTopicEditor);
+      }
+      if (btnCloseTopicEditModal) {
+        btnCloseTopicEditModal.addEventListener('click', closeTopicEditor);
+      }
+      if (btnCancelTopicEdit) {
+        btnCancelTopicEdit.addEventListener('click', closeTopicEditor);
+      }
+      if (btnSaveTopicEdit) {
+        btnSaveTopicEdit.addEventListener('click', saveTopicEditor);
+      }
+      if (btnEditResetOriginal) {
+        btnEditResetOriginal.addEventListener('click', resetFromTopicEditor);
+      }
+      if (btnEditorWrapTape) {
+        btnEditorWrapTape.addEventListener('click', wrapEditorSelectionWithTape);
+      }
+      if (btnEditorInsertGroup) {
+        btnEditorInsertGroup.addEventListener('click', insertGroupTemplateIntoEditor);
+      }
+      if (topicEditTextarea) {
+        topicEditTextarea.addEventListener('input', updateTopicEditCharCount);
+      }
+      if (topicEditModal) {
+        topicEditModal.addEventListener('click', (e) => {
+          if (e.target === topicEditModal) closeTopicEditor();
+        });
+      }
+
       // Diagram Lightbox Modal Logic
       const diagramModal = document.getElementById('diagram-modal');
       const diagramModalImg = document.getElementById('diagram-modal-img');
@@ -5175,6 +5470,19 @@
 
         // If inside text editing area (essayInput or other text inputs):
         if (isTyping) {
+          if (activeEl === topicEditTextarea) {
+            if (e.code === 'Escape') {
+              e.preventDefault();
+              closeTopicEditor();
+              return;
+            }
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+              e.preventDefault();
+              saveTopicEditor();
+              return;
+            }
+            return;
+          }
           if (e.code === 'Escape') {
             activeEl.blur();
             showToast('입력 종료 (본문 이동)', 'close');
@@ -5391,6 +5699,10 @@
 
         // 12. [Escape] Modals / Drawer / Unreveal
         if (e.code === 'Escape') {
+          if (topicEditModal && !topicEditModal.classList.contains('hidden')) {
+            closeTopicEditor();
+            return;
+          }
           if (diagramModal && !diagramModal.classList.contains('hidden')) {
             closeDiagramModal();
             return;
