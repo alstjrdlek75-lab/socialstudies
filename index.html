@@ -1339,8 +1339,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_120000"></script>
-  <script src="explanations-data.js?v=20260916_120000"></script>
+  <script src="topics-data.js?v=20260916_121200"></script>
+  <script src="explanations-data.js?v=20260916_121200"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3135,12 +3135,25 @@
         }
 
         if (customHtml) {
+          if (customHtml.includes('단계 23:') || customHtml.includes('단계 23 :') || customHtml.includes('단계 23')) {
+            customHtml = customHtml.replace(/(단계\s*)23\s*:/g, '$1<span class="exam-badge">23 기출</span>:');
+            try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
+          }
           subnoteContainer.innerHTML = customHtml;
           if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
         } else {
           subnoteContainer.innerHTML = topic.contentHtml;
           if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         }
+
+        // Auto-normalize exam badges in content (converts bare '단계 23:' or '[XX 기출]' to stylized badges)
+        subnoteContainer.querySelectorAll('.recall-item').forEach(item => {
+          if (item.innerHTML.includes('기출') || item.innerHTML.includes('단계 23')) {
+            item.innerHTML = item.innerHTML
+              .replace(/(단계\s*)23\s*:/g, '$1<span class="exam-badge">23 기출</span>:')
+              .replace(/(?<!<span class="exam-badge">)\[(\d{2}\s*기출(?:연계)?)\]/g, '<span class="exam-badge">$1</span>');
+          }
+        });
 
         // --- Cleanup stray 'visibility' strings from previous bugs ---
         subnoteContainer.querySelectorAll('.font-bold').forEach(fontBold => {
@@ -5519,7 +5532,11 @@
               ['햊어각부', '행정각부'],
               ['횃어각부', '행정각부'],
               ['자기 보전', '자기보존'],
-              ['자기보전', '자기보존']
+              ['자기보전', '자기보존'],
+              ['단계 23:', '단계 <span class="exam-badge">23 기출</span>:'],
+              ['단계 23 :', '단계 <span class="exam-badge">23 기출</span>:'],
+              ['게임 단계 23:', '게임 단계 <span class="exam-badge">23 기출</span>:'],
+              ['임 단계 23:', '임 단계 <span class="exam-badge">23 기출</span>:']
             ];
             let updatedVal = val;
             let changed = false;
