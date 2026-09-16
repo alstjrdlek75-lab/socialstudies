@@ -1339,8 +1339,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_125800"></script>
-  <script src="explanations-data.js?v=20260916_125800"></script>
+  <script src="topics-data.js?v=20260916_152000"></script>
+  <script src="explanations-data.js?v=20260916_152000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1634,6 +1634,13 @@
               <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 dark:text-slate-200 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
               <button id="btn-font-up" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
             </div>
+
+            <!-- Inline Masking Tape Action Button (Always accessible on Mobile, Tablet & Desktop) -->
+            <button id="btn-apply-tape-inline" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-lime-600 hover:bg-lime-700 active:bg-lime-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
+              <span class="material-symbols-outlined text-[15px]">label</span>
+              <span class="hidden sm:inline">테이프 [M]</span>
+              <span class="sm:hidden">테이프</span>
+            </button>
 
             <!-- Single Consolidated Reveal / Hide Button -->
             <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
@@ -1945,9 +1952,13 @@
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]">menu_open</span>
       <span class="text-[10px] sm:text-[11px] font-medium">목차</span>
     </button>
-    <button id="mobile-nav-reveal" class="flex-1 flex flex-col items-center justify-center py-1 text-lime-700 hover:text-lime-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="정답 공개/가리기">
+    <button id="mobile-nav-tape" class="flex-1 flex flex-col items-center justify-center py-1 text-lime-700 hover:text-lime-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="선택 영역 마스킹 테이프">
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="mobile-tape-icon">label</span>
+      <span class="text-[10px] sm:text-[11px] font-bold" id="mobile-tape-label">테이프</span>
+    </button>
+    <button id="mobile-nav-reveal" class="flex-1 flex flex-col items-center justify-center py-1 text-slate-600 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="정답 공개/가리기">
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="mobile-reveal-icon">visibility</span>
-      <span class="text-[10px] sm:text-[11px] font-bold" id="mobile-reveal-label">정답</span>
+      <span class="text-[10px] sm:text-[11px] font-medium" id="mobile-reveal-label">정답</span>
     </button>
     <button id="mobile-nav-explanation" class="flex-1 flex flex-col items-center justify-center py-1 text-indigo-600 hover:text-indigo-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="보충 해설 열기">
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]">help</span>
@@ -2274,6 +2285,7 @@
       const topicKeywordsTags = document.getElementById('topic-keywords-tags');
 
       const modePills = document.querySelectorAll('.mode-pill');
+      const btnApplyTapeInline = document.getElementById('btn-apply-tape-inline');
       const btnRevealAll = document.getElementById('btn-reveal-all');
       const revealBtnLabel = document.getElementById('reveal-btn-label');
       const revealEyeIcon = document.getElementById('reveal-eye-icon');
@@ -3786,14 +3798,24 @@
 
         const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
         let btnTop;
+        let btnLeft;
         if (isTouch) {
-          btnTop = (rect.bottom + 14 < window.innerHeight - 60) ? (rect.bottom + 14) : Math.max(16, rect.top - 42);
+          // On tablets/touch, position sufficiently above or below the selection bounding rect to not collide with iOS callout menu
+          if (rect.top > 90) {
+            btnTop = rect.top - 20;
+          } else if (rect.bottom + 65 < window.innerHeight) {
+            btnTop = rect.bottom + 48;
+          } else {
+            btnTop = 64; // Safe fallback top
+          }
+          btnLeft = Math.min(window.innerWidth - 90, Math.max(90, rect.left + (rect.width / 2)));
         } else {
           btnTop = rect.top > 80 ? (rect.top - 8) : (rect.bottom + 12);
+          btnLeft = Math.min(window.innerWidth - 80, Math.max(80, rect.left + (rect.width / 2)));
         }
 
         floatingMaskBtn.style.top = `${btnTop}px`;
-        floatingMaskBtn.style.left = `${Math.min(window.innerWidth - 80, Math.max(80, rect.left + (rect.width / 2)))}px`;
+        floatingMaskBtn.style.left = `${btnLeft}px`;
         floatingMaskBtn.classList.remove('hidden');
       }
 
@@ -4482,6 +4504,7 @@
       document.addEventListener('pointerdown', (e) => {
         if (floatingMaskBtn && floatingMaskBtn.contains(e.target)) return;
         if (btnApplyTapeInline && btnApplyTapeInline.contains(e.target)) return;
+        if (e.target && (e.target.closest('#mobile-nav-tape') || e.target.closest('#btn-apply-tape-inline') || e.target.closest('#floating-mask-btn'))) return;
         const sel = window.getSelection();
         if (!sel || sel.isCollapsed) {
           hideFloatingMaskBtn();
@@ -4498,6 +4521,18 @@
         }
       }, { passive: true });
 
+      if (btnApplyTapeInline) {
+        btnApplyTapeInline.addEventListener('mousedown', (e) => e.preventDefault());
+        btnApplyTapeInline.addEventListener('touchstart', (e) => {
+          updateCachedSelection();
+        }, { passive: true });
+        btnApplyTapeInline.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          addTapeToCurrentSelection(true);
+        });
+      }
+
       if (btnRevealAll) {
         btnRevealAll.addEventListener('click', () => toggleMasterReveal());
       }
@@ -4505,12 +4540,24 @@
       // Mobile Bottom Bar Navigation Actions
       const mobileNavPrev = document.getElementById('mobile-nav-prev');
       const mobileNavToc = document.getElementById('mobile-nav-toc');
+      const mobileNavTape = document.getElementById('mobile-nav-tape');
       const mobileNavReveal = document.getElementById('mobile-nav-reveal');
       const mobileNavExplanation = document.getElementById('mobile-nav-explanation');
       const mobileNavNext = document.getElementById('mobile-nav-next');
 
       if (mobileNavPrev) mobileNavPrev.addEventListener('click', () => btnPrevTopic.click());
       if (mobileNavToc) mobileNavToc.addEventListener('click', toggleDesktopSidebar);
+      if (mobileNavTape) {
+        mobileNavTape.addEventListener('mousedown', (e) => e.preventDefault());
+        mobileNavTape.addEventListener('touchstart', (e) => {
+          updateCachedSelection();
+        }, { passive: true });
+        mobileNavTape.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          addTapeToCurrentSelection(true);
+        });
+      }
       if (mobileNavReveal) mobileNavReveal.addEventListener('click', () => toggleMasterReveal());
       if (mobileNavExplanation) mobileNavExplanation.addEventListener('click', toggleExplanation);
       if (mobileNavNext) mobileNavNext.addEventListener('click', () => btnNextTopic.click());
