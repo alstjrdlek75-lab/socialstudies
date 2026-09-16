@@ -1411,11 +1411,17 @@
         <span class="hidden xl:inline text-[11px] font-bold">보관함</span>
       </button>
 
-      <!-- Pomodoro -->
-      <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" title="클릭: 25분 타이머 시작/일시정지 | 더블클릭: 리셋">
-        <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
-        <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
-      </button>
+      <!-- Pomodoro Timer Controls -->
+      <div class="flex items-center gap-1">
+        <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" type="button" title="클릭: 타이머 시작/일시정지 | 우측 리셋 버튼으로 25분 초기화">
+          <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
+          <span class="px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700" id="pomodoro-mode-badge">집중</span>
+          <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
+        </button>
+        <button id="pomodoro-reset-btn" class="p-1 xl:p-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-rose-600 text-xs transition-all cursor-pointer" type="button" title="뽀모도로 25:00 집중 모드로 리셋">
+          <span class="material-symbols-outlined text-[15px] xl:text-[16px]">restart_alt</span>
+        </button>
+      </div>
 
     </div>
   </header>
@@ -2429,6 +2435,8 @@
       const pomodoroBtn = document.getElementById('pomodoro-btn');
       const pomodoroDisplay = document.getElementById('pomodoro-display');
       const pomodoroIcon = document.getElementById('pomodoro-icon');
+      const pomodoroModeBadge = document.getElementById('pomodoro-mode-badge');
+      const pomodoroResetBtn = document.getElementById('pomodoro-reset-btn');
 
       // Theme Control (Dark / Light Mode)
       const themeToggleBtn = document.getElementById('theme-toggle-btn');
@@ -5384,50 +5392,184 @@
         });
       }
 
-      // Pomodoro Timer
-      let pomoSecs = 25 * 60;
-      let pomoRunning = false;
-      let pomoTimer = null;
+      // -------------------------------------------------------------
+      // Pomodoro Timer (25m Focus / 5m Break with Auto Switch & Robust Resume)
+      // -------------------------------------------------------------
+      const POMO_WORK_SECS = 25 * 60;
+      const POMO_BREAK_SECS = 5 * 60;
 
-      function updatePomo() {
-        const m = Math.floor(pomoSecs / 60).toString().padStart(2, '0');
-        const s = (pomoSecs % 60).toString().padStart(2, '0');
-        pomodoroDisplay.textContent = `${m}:${s}`;
+      let pomoState = {
+        mode: 'work',     // 'work' | 'break'
+        secs: POMO_WORK_SECS,
+        isRunning: false,
+        endTimestamp: null
+      };
+
+      let pomoInterval = null;
+
+      // Web Audio Beep on session switch
+      function playPomoChime(type = 'work') {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContext) return;
+          const ctx = new AudioContext();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          
+          if (type === 'break') {
+            // High double beep for break
+            osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+            osc.frequency.setValueAtTime(880, ctx.currentTime + 0.15); // A5
+          } else {
+            // Warm upward chord for back to focus
+            osc.frequency.setValueAtTime(440, ctx.currentTime); // A4
+            osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.15); // E5
+          }
+          
+          gain.gain.setValueAtTime(0.12, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.4);
+        } catch(e) {}
       }
 
-      pomodoroBtn.addEventListener('click', () => {
-        pomoRunning = !pomoRunning;
-        if (pomoRunning) {
-          pomodoroBtn.classList.add('bg-blue-50', 'border-blue-300');
-          pomodoroIcon.classList.add('animate-pulse');
-          showToast('25분 뽀모도로 타이머 시작', 'timer');
-          pomoTimer = setInterval(() => {
-            if (pomoSecs > 0) {
-              pomoSecs--;
-              updatePomo();
-            } else {
-              clearInterval(pomoTimer);
-              pomoRunning = false;
-              alert('⏰ 25분 집중 세션 완료! 5분간 휴식하세요.');
-            }
-          }, 1000);
-        } else {
-          clearInterval(pomoTimer);
-          pomodoroBtn.classList.remove('bg-blue-50', 'border-blue-300');
-          pomodoroIcon.classList.remove('animate-pulse');
-          showToast('타이머 일시 정지', 'pause');
-        }
-      });
+      function updatePomoUI() {
+        const m = Math.floor(Math.max(0, pomoState.secs) / 60).toString().padStart(2, '0');
+        const s = (Math.max(0, pomoState.secs) % 60).toString().padStart(2, '0');
+        if (pomodoroDisplay) pomodoroDisplay.textContent = `${m}:${s}`;
 
-      pomodoroBtn.addEventListener('dblclick', () => {
-        clearInterval(pomoTimer);
-        pomoRunning = false;
-        pomoSecs = 25 * 60;
-        updatePomo();
-        pomodoroBtn.classList.remove('bg-blue-50', 'border-blue-300');
-        pomodoroIcon.classList.remove('animate-pulse');
-        showToast('타이머 25:00 리셋', 'refresh');
-      });
+        const isBreak = (pomoState.mode === 'break');
+        if (pomodoroModeBadge) {
+          pomodoroModeBadge.textContent = isBreak ? '휴식' : '집중';
+          if (isBreak) {
+            pomodoroModeBadge.className = 'px-1 py-0.2 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300';
+          } else {
+            pomodoroModeBadge.className = 'px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300';
+          }
+        }
+
+        if (pomodoroBtn) {
+          if (pomoState.isRunning) {
+            if (isBreak) {
+              pomodoroBtn.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-800');
+              pomodoroBtn.classList.remove('bg-blue-50', 'border-blue-300', 'text-blue-800');
+            } else {
+              pomodoroBtn.classList.add('bg-blue-50', 'border-blue-300', 'text-blue-800');
+              pomodoroBtn.classList.remove('bg-emerald-50', 'border-emerald-300', 'text-emerald-800');
+            }
+            if (pomodoroIcon) {
+              pomodoroIcon.classList.add('animate-pulse');
+              pomodoroIcon.textContent = isBreak ? 'coffee' : 'timer';
+              pomodoroIcon.className = `material-symbols-outlined text-[15px] xl:text-[16px] ${isBreak ? 'text-emerald-600' : 'text-blue-600'} animate-pulse`;
+            }
+          } else {
+            pomodoroBtn.classList.remove('bg-blue-50', 'border-blue-300', 'text-blue-800', 'bg-emerald-50', 'border-emerald-300', 'text-emerald-800');
+            if (pomodoroIcon) {
+              pomodoroIcon.classList.remove('animate-pulse');
+              pomodoroIcon.textContent = isBreak ? 'coffee' : 'timer';
+              pomodoroIcon.className = `material-symbols-outlined text-[15px] xl:text-[16px] ${isBreak ? 'text-emerald-600' : 'text-blue-600'}`;
+            }
+          }
+        }
+      }
+
+      function tickPomo() {
+        if (!pomoState.isRunning || !pomoState.endTimestamp) return;
+        const now = Date.now();
+        const diffSecs = Math.round((pomoState.endTimestamp - now) / 1000);
+
+        if (diffSecs > 0) {
+          pomoState.secs = diffSecs;
+          updatePomoUI();
+        } else {
+          // Timer finished
+          clearInterval(pomoInterval);
+          pomoInterval = null;
+          pomoState.isRunning = false;
+          pomoState.endTimestamp = null;
+
+          if (pomoState.mode === 'work') {
+            // Switch to Break Mode
+            pomoState.mode = 'break';
+            pomoState.secs = POMO_BREAK_SECS;
+            updatePomoUI();
+            playPomoChime('break');
+            showToast('⏰ 25분 집중 세션 완료! 5분간 편안히 휴식하세요.', 'coffee');
+          } else {
+            // Switch to Work Mode
+            pomoState.mode = 'work';
+            pomoState.secs = POMO_WORK_SECS;
+            updatePomoUI();
+            playPomoChime('work');
+            showToast('☕ 5분 휴식 종료! 다시 25분 집중 세션을 시작할 준비가 되었습니다.', 'timer');
+          }
+        }
+      }
+
+      function startPomo() {
+        if (pomoState.secs <= 0) {
+          pomoState.secs = (pomoState.mode === 'break') ? POMO_BREAK_SECS : POMO_WORK_SECS;
+        }
+        pomoState.isRunning = true;
+        pomoState.endTimestamp = Date.now() + (pomoState.secs * 1000);
+        updatePomoUI();
+
+        clearInterval(pomoInterval);
+        pomoInterval = setInterval(tickPomo, 1000);
+
+        const label = (pomoState.mode === 'break') ? '5분 휴식 타이머 시작' : '25분 집중 타이머 시작';
+        showToast(label, pomoState.mode === 'break' ? 'coffee' : 'timer');
+      }
+
+      function pausePomo() {
+        pomoState.isRunning = false;
+        clearInterval(pomoInterval);
+        pomoInterval = null;
+        if (pomoState.endTimestamp) {
+          const now = Date.now();
+          pomoState.secs = Math.max(0, Math.round((pomoState.endTimestamp - now) / 1000));
+          pomoState.endTimestamp = null;
+        }
+        updatePomoUI();
+        showToast('뽀모도로 타이머 일시 정지 (클릭 시 재개)', 'pause');
+      }
+
+      function togglePomo() {
+        if (pomoState.isRunning) {
+          pausePomo();
+        } else {
+          startPomo();
+        }
+      }
+
+      function resetPomo(silent = false) {
+        clearInterval(pomoInterval);
+        pomoInterval = null;
+        pomoState.mode = 'work';
+        pomoState.secs = POMO_WORK_SECS;
+        pomoState.isRunning = false;
+        pomoState.endTimestamp = null;
+        updatePomoUI();
+        if (!silent) {
+          showToast('뽀모도로 25:00 집중 모드로 리셋되었습니다', 'refresh');
+        }
+      }
+
+      if (pomodoroBtn) {
+        pomodoroBtn.addEventListener('click', togglePomo);
+        pomodoroBtn.addEventListener('dblclick', () => resetPomo());
+      }
+      if (pomodoroResetBtn) {
+        pomodoroResetBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          resetPomo();
+        });
+      }
+
+      // Initial UI Sync
+      updatePomoUI();
 
       // Keyboard Navigation
       window.addEventListener('keydown', (e) => {
