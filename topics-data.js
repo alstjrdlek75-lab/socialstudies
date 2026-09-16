@@ -56,7 +56,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "EXAM-2008-13",
+    "id": "ECON-EXAM-2008-13",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-2. 소비자이론",
@@ -74,7 +74,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2011-1-22",
+    "id": "ECON-EXAM-2011-1-22",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-2. 소비자이론",
@@ -93,7 +93,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2012-1-20",
+    "id": "ECON-EXAM-2012-1-20",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-2. 소비자이론",
@@ -111,7 +111,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2019-B-02",
+    "id": "ECON-EXAM-2019-B-02",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-2. 소비자이론",
@@ -131,7 +131,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2024-A-12",
+    "id": "ECON-EXAM-2024-A-12",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-2. 소비자이론",
@@ -179,7 +179,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "EXAM-2007-13",
+    "id": "ECON-EXAM-2007-13",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-3. 생산자이론",
@@ -198,7 +198,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2018-A-03",
+    "id": "ECON-EXAM-2018-A-03",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-3. 생산자이론",
@@ -216,7 +216,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2025-B-11",
+    "id": "ECON-EXAM-2025-B-11",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-3. 생산자이론",
@@ -292,7 +292,7 @@ window.ALL_TOPICS = [
     "groupCount": 16
   },
   {
-    "id": "EXAM-2009-1-21",
+    "id": "ECON-EXAM-2009-1-21",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -310,7 +310,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2011-1-21",
+    "id": "ECON-EXAM-2011-1-21",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -328,7 +328,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2012-1-19",
+    "id": "ECON-EXAM-2012-1-19",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -345,7 +345,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-25",
+    "id": "ECON-EXAM-2013-1-25",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -363,7 +363,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2014-A-06",
+    "id": "ECON-EXAM-2014-A-06",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -382,7 +382,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2018-B-07",
+    "id": "ECON-EXAM-2018-B-07",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -402,7 +402,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2019-A-03",
+    "id": "ECON-EXAM-2019-A-03",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -421,7 +421,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2022-A-09",
+    "id": "ECON-EXAM-2022-A-09",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-4. 수요·공급이론",
@@ -469,7 +469,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "EXAM-2007-12",
+    "id": "ECON-EXAM-2007-12",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -487,7 +487,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2012-1-21",
+    "id": "ECON-EXAM-2012-1-21",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -505,7 +505,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-21",
+    "id": "ECON-EXAM-2013-1-21",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -522,7 +522,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2017-A-07",
+    "id": "ECON-EXAM-2017-A-07",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -542,7 +542,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2022-B-07",
+    "id": "ECON-EXAM-2022-B-07",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -563,7 +563,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2024-B-11",
+    "id": "ECON-EXAM-2024-B-11",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -583,7 +583,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2026-B-11",
+    "id": "ECON-EXAM-2026-B-11",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-5. 시장이론",
@@ -632,7 +632,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "EXAM-2013-1-24",
+    "id": "ECON-EXAM-2013-1-24",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-6. 분배이론",
@@ -649,7 +649,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2014-A-19",
+    "id": "ECON-EXAM-2014-A-19",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-6. 분배이론",
@@ -670,7 +670,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2015-A-13",
+    "id": "ECON-EXAM-2015-A-13",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-6. 분배이론",
@@ -692,7 +692,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2021-B-08",
+    "id": "ECON-EXAM-2021-B-08",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-6. 분배이론",
@@ -712,7 +712,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2025-B-10",
+    "id": "ECON-EXAM-2025-B-10",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-6. 분배이론",
@@ -759,7 +759,7 @@ window.ALL_TOPICS = [
     "groupCount": 14
   },
   {
-    "id": "EXAM-2008-14",
+    "id": "ECON-EXAM-2008-14",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -777,7 +777,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2009-1-24",
+    "id": "ECON-EXAM-2009-1-24",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -794,7 +794,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2011-1-23",
+    "id": "ECON-EXAM-2011-1-23",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -812,7 +812,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-26",
+    "id": "ECON-EXAM-2013-1-26",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -829,7 +829,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2017-A-13",
+    "id": "ECON-EXAM-2017-A-13",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -848,7 +848,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2020-B-07",
+    "id": "ECON-EXAM-2020-B-07",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -867,7 +867,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2025-A-12",
+    "id": "ECON-EXAM-2025-A-12",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -886,7 +886,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2026-A-12",
+    "id": "ECON-EXAM-2026-A-12",
     "subject": "경제학",
     "chapter": "1. 미시경제학",
     "section": "1-7. 시장실패",
@@ -920,7 +920,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "EXAM-2012-1-25",
+    "id": "ECON-EXAM-2012-1-25",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-1. 국민소득측정",
@@ -966,7 +966,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "EXAM-2019-A-04",
+    "id": "ECON-EXAM-2019-A-04",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-2. 소비투자이론",
@@ -1013,7 +1013,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "EXAM-2011-1-25",
+    "id": "ECON-EXAM-2011-1-25",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-3. 국민소득결정",
@@ -1031,7 +1031,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-22",
+    "id": "ECON-EXAM-2013-1-22",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-3. 국민소득결정",
@@ -1049,7 +1049,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2014-A-07",
+    "id": "ECON-EXAM-2014-A-07",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-3. 국민소득결정",
@@ -1068,7 +1068,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2018-A-04",
+    "id": "ECON-EXAM-2018-A-04",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-3. 국민소득결정",
@@ -1086,7 +1086,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2023-B-08",
+    "id": "ECON-EXAM-2023-B-08",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-3. 국민소득결정",
@@ -1133,7 +1133,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "EXAM-2008-15",
+    "id": "ECON-EXAM-2008-15",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1151,7 +1151,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2009-1-23",
+    "id": "ECON-EXAM-2009-1-23",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1169,7 +1169,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2012-1-22",
+    "id": "ECON-EXAM-2012-1-22",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1186,7 +1186,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-20",
+    "id": "ECON-EXAM-2013-1-20",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1204,7 +1204,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2015-B-02",
+    "id": "ECON-EXAM-2015-B-02",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1225,7 +1225,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2019-A-10",
+    "id": "ECON-EXAM-2019-A-10",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1244,7 +1244,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2020-B-08",
+    "id": "ECON-EXAM-2020-B-08",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1263,7 +1263,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2026-B-10",
+    "id": "ECON-EXAM-2026-B-10",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-4. 화폐금융론",
@@ -1312,7 +1312,7 @@ window.ALL_TOPICS = [
     "groupCount": 8
   },
   {
-    "id": "EXAM-2011-1-27",
+    "id": "ECON-EXAM-2011-1-27",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-5. 거시균형이론",
@@ -1329,8 +1329,8 @@ window.ALL_TOPICS = [
       "자연실업률"
     ]
   },
-      {
-    "id": "EXAM-2012-1-24",
+  {
+    "id": "ECON-EXAM-2012-1-24",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-5. 거시균형이론",
@@ -1349,7 +1349,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2016-B-03",
+    "id": "ECON-EXAM-2016-B-03",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-5. 거시균형이론",
@@ -1372,7 +1372,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2017-B-06",
+    "id": "ECON-EXAM-2017-B-06",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-5. 거시균형이론",
@@ -1394,7 +1394,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2018-B-03",
+    "id": "ECON-EXAM-2018-B-03",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-5. 거시균형이론",
@@ -1455,7 +1455,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "EXAM-2009-1-22",
+    "id": "ECON-EXAM-2009-1-22",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-2. 환율과국제수지",
@@ -1474,7 +1474,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2009-1-25",
+    "id": "ECON-EXAM-2009-1-25",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-6. 물가와실업",
@@ -1520,7 +1520,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "EXAM-2011-1-24",
+    "id": "ECON-EXAM-2011-1-24",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
     "section": "2-7. 경제성장론",
@@ -1566,7 +1566,7 @@ window.ALL_TOPICS = [
     "groupCount": 17
   },
   {
-    "id": "EXAM-2009-1-26",
+    "id": "ECON-EXAM-2009-1-26",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1584,7 +1584,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2009-1-27",
+    "id": "ECON-EXAM-2009-1-27",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1602,7 +1602,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2012-1-23",
+    "id": "ECON-EXAM-2012-1-23",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1621,7 +1621,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-27",
+    "id": "ECON-EXAM-2013-1-27",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1640,7 +1640,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2014-A-05",
+    "id": "ECON-EXAM-2014-A-05",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1658,7 +1658,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2015-A-05",
+    "id": "ECON-EXAM-2015-A-05",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1676,7 +1676,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2016-B-07",
+    "id": "ECON-EXAM-2016-B-07",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1697,7 +1697,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2017-A-14",
+    "id": "ECON-EXAM-2017-A-14",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1716,7 +1716,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2019-B-01",
+    "id": "ECON-EXAM-2019-B-01",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1736,7 +1736,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2020-B-02",
+    "id": "ECON-EXAM-2020-B-02",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1755,7 +1755,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2021-B-07",
+    "id": "ECON-EXAM-2021-B-07",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1775,7 +1775,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "EXAM-2024-B-10",
+    "id": "ECON-EXAM-2024-B-10",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-1. 국제무역론",
@@ -1823,7 +1823,7 @@ window.ALL_TOPICS = [
     "groupCount": 9
   },
   {
-    "id": "EXAM-2006-14",
+    "id": "ECON-EXAM-2006-14",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-2. 환율과국제수지",
@@ -1842,7 +1842,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2012-1-26",
+    "id": "ECON-EXAM-2012-1-26",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-2. 환율과국제수지",
@@ -1860,7 +1860,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2014-B-05",
+    "id": "ECON-EXAM-2014-B-05",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-2. 환율과국제수지",
@@ -1912,7 +1912,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "EXAM-2011-1-26",
+    "id": "ECON-EXAM-2011-1-26",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-3. 개방거시균형",
@@ -1930,7 +1930,7 @@ window.ALL_TOPICS = [
     ]
   },
   {
-    "id": "EXAM-2013-1-23",
+    "id": "ECON-EXAM-2013-1-23",
     "subject": "경제학",
     "chapter": "3. 국제경제학",
     "section": "3-3. 개방거시균형",
@@ -9946,7 +9946,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "LA",
+    "id": "LAW-001",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-1. 법의 의의와 이념",
@@ -9969,7 +9969,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-002",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-1. 법의 의의와 이념",
@@ -9992,7 +9992,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-003",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-1. 법의 의의와 이념",
@@ -10015,7 +10015,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-004",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-1. 법의 의의와 이념",
@@ -10038,7 +10038,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-005",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-1. 법의 의의와 이념",
@@ -10061,7 +10061,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-006",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-2. 법의 해석과 적용",
@@ -10084,7 +10084,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-007",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-2. 법의 해석과 적용",
@@ -10107,7 +10107,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-008",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-2. 법의 해석과 적용",
@@ -10130,7 +10130,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-009",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-2. 법의 해석과 적용",
@@ -10153,7 +10153,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-010",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-3. 법률관계와 권리·의무",
@@ -10176,7 +10176,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-011",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-3. 법률관계와 권리·의무",
@@ -10199,7 +10199,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "LA",
+    "id": "LAW-012",
     "subject": "법학",
     "chapter": "1. 법 일반론",
     "section": "1-3. 법률관계와 권리·의무",
@@ -10222,7 +10222,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-013",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-1. 민법의 기본 원리",
@@ -10245,7 +10245,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-014",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-1. 민법의 기본 원리",
@@ -10268,7 +10268,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-015",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-1. 민법의 기본 원리",
@@ -10291,7 +10291,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-016",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-1. 민법의 기본 원리",
@@ -10314,7 +10314,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-017",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-1. 민법의 기본 원리",
@@ -10337,7 +10337,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-018",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-1. 민법의 기본 원리",
@@ -10360,7 +10360,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-019",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10384,7 +10384,7 @@ window.ALL_TOPICS = [
     "subsection": "(1) 권리의 주체와 객체"
   },
   {
-    "id": "LA",
+    "id": "LAW-020",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10408,7 +10408,7 @@ window.ALL_TOPICS = [
     "subsection": "(1) 권리의 주체와 객체"
   },
   {
-    "id": "LA",
+    "id": "LAW-021",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10432,7 +10432,7 @@ window.ALL_TOPICS = [
     "subsection": "(1) 권리의 주체와 객체"
   },
   {
-    "id": "LA",
+    "id": "LAW-022",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10456,7 +10456,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 법률행위와 의사표시"
   },
   {
-    "id": "LA",
+    "id": "LAW-023",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10480,7 +10480,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 법률행위와 의사표시"
   },
   {
-    "id": "LA",
+    "id": "LAW-024",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10504,7 +10504,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 법률행위와 의사표시"
   },
   {
-    "id": "LA",
+    "id": "LAW-025",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10528,7 +10528,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 대리와 법률행위의 부관"
   },
   {
-    "id": "LA",
+    "id": "LAW-026",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10552,7 +10552,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 대리와 법률행위의 부관"
   },
   {
-    "id": "LA",
+    "id": "LAW-027",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10576,7 +10576,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 대리와 법률행위의 부관"
   },
   {
-    "id": "LA",
+    "id": "LAW-028",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10600,7 +10600,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 대리와 법률행위의 부관"
   },
   {
-    "id": "LA",
+    "id": "LAW-029",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10632,7 +10632,7 @@ window.ALL_TOPICS = [
     "subsection": "(4) 소멸시효와 지식재산권"
   },
   {
-    "id": "LA",
+    "id": "LAW-030",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-2. 민법총칙",
@@ -10656,7 +10656,7 @@ window.ALL_TOPICS = [
     "subsection": "(4) 소멸시효와 지식재산권"
   },
   {
-    "id": "LA",
+    "id": "LAW-031",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-3. 물권법",
@@ -10679,7 +10679,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-032",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-3. 물권법",
@@ -10702,7 +10702,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-033",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-3. 물권법",
@@ -10725,7 +10725,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-034",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-3. 물권법",
@@ -10748,7 +10748,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-035",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10771,7 +10771,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-036",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10794,7 +10794,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-037",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10817,7 +10817,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-038",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10840,7 +10840,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-039",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10863,7 +10863,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-040",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10886,7 +10886,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-041",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10909,7 +10909,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-042",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-4. 채권법",
@@ -10932,7 +10932,7 @@ window.ALL_TOPICS = [
     "groupCount": 9
   },
   {
-    "id": "LA",
+    "id": "LAW-043",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -10962,7 +10962,7 @@ window.ALL_TOPICS = [
     "subsection": "(1) 친족의 의의와 범위"
   },
   {
-    "id": "LA",
+    "id": "LAW-044",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -10983,7 +10983,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-045",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11007,7 +11007,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-046",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11031,7 +11031,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-047",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11055,7 +11055,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-048",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11079,7 +11079,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-049",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11103,7 +11103,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-050",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11127,7 +11127,7 @@ window.ALL_TOPICS = [
     "subsection": "(2) 혼인과 이혼"
   },
   {
-    "id": "LA",
+    "id": "LAW-051",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11151,7 +11151,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 친자관계와 친권·후견"
   },
   {
-    "id": "LA",
+    "id": "LAW-052",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11175,7 +11175,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 친자관계와 친권·후견"
   },
   {
-    "id": "LA",
+    "id": "LAW-053",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11199,7 +11199,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 친자관계와 친권·후견"
   },
   {
-    "id": "LA",
+    "id": "LAW-054",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11223,7 +11223,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 친자관계와 친권·후견"
   },
   {
-    "id": "LA",
+    "id": "LAW-055",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-5. 친족법",
@@ -11247,7 +11247,7 @@ window.ALL_TOPICS = [
     "subsection": "(3) 친자관계와 친권·후견"
   },
   {
-    "id": "LA",
+    "id": "LAW-056",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11270,7 +11270,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-057",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11293,7 +11293,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-058",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11316,7 +11316,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-059",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11339,7 +11339,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-060",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11362,7 +11362,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-061",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11385,7 +11385,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-062",
     "subject": "법학",
     "chapter": "2. 민법",
     "section": "2-6. 상속법",
@@ -11408,7 +11408,7 @@ window.ALL_TOPICS = [
     "groupCount": 0
   },
   {
-    "id": "LA",
+    "id": "LAW-063",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-1. 헌법 총론 및 기본원리",
@@ -11429,7 +11429,7 @@ window.ALL_TOPICS = [
     "groupCount": 0
   },
   {
-    "id": "LA",
+    "id": "LAW-064",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-1. 헌법 총론 및 기본원리",
@@ -11451,7 +11451,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "LA",
+    "id": "LAW-065",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-1. 헌법 총론 및 기본원리",
@@ -11474,7 +11474,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-066",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-2. 기본권 총론",
@@ -11497,7 +11497,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-067",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-2. 기본권 총론",
@@ -11520,7 +11520,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-068",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-2. 기본권 총론",
@@ -11543,7 +11543,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-069",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-2. 기본권 총론",
@@ -11566,7 +11566,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-070",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-2. 기본권 총론",
@@ -11589,7 +11589,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-071",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-3. 포괄적 기본권",
@@ -11612,7 +11612,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-072",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-3. 포괄적 기본권",
@@ -11635,7 +11635,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-073",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-3. 포괄적 기본권",
@@ -11658,7 +11658,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-074",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11681,7 +11681,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-075",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11704,7 +11704,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-076",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11727,7 +11727,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-077",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11750,7 +11750,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-078",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11773,7 +11773,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-079",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11796,7 +11796,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-080",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-4. 자유권적 기본권",
@@ -11819,7 +11819,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-081",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-5. 참정권적 기본권",
@@ -11842,7 +11842,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-082",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-5. 참정권적 기본권",
@@ -11865,7 +11865,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-083",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-5. 참정권적 기본권",
@@ -11887,7 +11887,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-084",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-6. 청구권적 기본권",
@@ -11910,7 +11910,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-085",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-6. 청구권적 기본권",
@@ -11933,7 +11933,7 @@ window.ALL_TOPICS = [
     "groupCount": 7
   },
   {
-    "id": "LA",
+    "id": "LAW-086",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-6. 청구권적 기본권",
@@ -11956,7 +11956,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-087",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-6. 청구권적 기본권",
@@ -11979,7 +11979,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-088",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-6. 청구권적 기본권",
@@ -12001,7 +12001,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-089",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-7. 사회권적 기본권",
@@ -12024,7 +12024,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-090",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-7. 사회권적 기본권",
@@ -12047,7 +12047,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-091",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-7. 사회권적 기본권",
@@ -12070,7 +12070,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-092",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-7. 사회권적 기본권",
@@ -12093,7 +12093,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-093",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-7. 사회권적 기본권",
@@ -12116,7 +12116,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-094",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-8. 국민의 기본 의무",
@@ -12139,7 +12139,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-095",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-10. 정부",
@@ -12162,7 +12162,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-096",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-9. 국회",
@@ -12185,7 +12185,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-097",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-9. 국회",
@@ -12208,7 +12208,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-098",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-9. 국회",
@@ -12231,7 +12231,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-099",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-10. 정부",
@@ -12254,7 +12254,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-100",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-11. 사법부",
@@ -12277,7 +12277,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-101",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-11. 사법부",
@@ -12300,7 +12300,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-102",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-11. 사법부",
@@ -12323,7 +12323,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-103",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-11. 사법부",
@@ -12346,7 +12346,7 @@ window.ALL_TOPICS = [
     "groupCount": 0
   },
   {
-    "id": "LA",
+    "id": "LAW-104",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-12. 헌법재판소",
@@ -12369,7 +12369,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-105",
     "subject": "법학",
     "chapter": "3. 헌법",
     "section": "3-12. 헌법재판소",
@@ -12392,7 +12392,7 @@ window.ALL_TOPICS = [
     "groupCount": 8
   },
   {
-    "id": "LA",
+    "id": "LAW-106",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12415,7 +12415,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-107",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12438,7 +12438,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-108",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12461,7 +12461,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-109",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12484,7 +12484,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-110",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12507,7 +12507,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-111",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12530,7 +12530,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-112",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12553,7 +12553,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-113",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-1. 형법 총론 및 죄형법정주의",
@@ -12576,7 +12576,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-114",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12596,7 +12596,7 @@ window.ALL_TOPICS = [
     "groupCount": 0
   },
   {
-    "id": "LA",
+    "id": "LAW-115",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12619,7 +12619,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-116",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12642,7 +12642,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-117",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12665,7 +12665,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-118",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12688,7 +12688,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-119",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12711,7 +12711,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-120",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12734,7 +12734,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-121",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12757,7 +12757,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-122",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12780,7 +12780,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-123",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12803,7 +12803,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-124",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-2. 범죄성립요건",
@@ -12826,7 +12826,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-125",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12849,7 +12849,7 @@ window.ALL_TOPICS = [
     "groupCount": 0
   },
   {
-    "id": "LA",
+    "id": "LAW-126",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12872,7 +12872,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-127",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12895,7 +12895,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-128",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12918,7 +12918,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-129",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12941,7 +12941,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-130",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12964,7 +12964,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-131",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -12987,7 +12987,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-132",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -13010,7 +13010,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-133",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-3. 미수범과 공범론",
@@ -13033,7 +13033,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-134",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-4. 형벌론",
@@ -13056,7 +13056,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-135",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-4. 형벌론",
@@ -13079,7 +13079,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-136",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-4. 형벌론",
@@ -13102,7 +13102,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "LA",
+    "id": "LAW-137",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13125,7 +13125,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "LA",
+    "id": "LAW-138",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13148,7 +13148,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-139",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13171,7 +13171,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-140",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13194,7 +13194,7 @@ window.ALL_TOPICS = [
     "groupCount": 7
   },
   {
-    "id": "LA",
+    "id": "LAW-141",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13217,7 +13217,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-142",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13240,7 +13240,7 @@ window.ALL_TOPICS = [
     "groupCount": 5
   },
   {
-    "id": "LA",
+    "id": "LAW-143",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13263,7 +13263,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-144",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13286,7 +13286,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-145",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13309,7 +13309,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-146",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13332,7 +13332,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-147",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13355,7 +13355,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-148",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13378,7 +13378,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-149",
     "subject": "법학",
     "chapter": "4. 형법 및 형사소송법",
     "section": "4-5. 형사소송절차 및 인권보장",
@@ -13401,7 +13401,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-150",
     "subject": "법학",
     "chapter": "5. 경제법",
     "section": "5-1. 독점규제 및 소비자보호",
@@ -13421,7 +13421,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-151",
     "subject": "법학",
     "chapter": "5. 경제법",
     "section": "5-1. 독점규제 및 소비자보호",
@@ -13444,7 +13444,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-152",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-1. 노동법 총론",
@@ -13467,7 +13467,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-153",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-1. 노동법 총론",
@@ -13490,7 +13490,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-154",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-1. 노동법 총론",
@@ -13513,7 +13513,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-155",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-1. 노동법 총론",
@@ -13536,7 +13536,7 @@ window.ALL_TOPICS = [
     "groupCount": 10
   },
   {
-    "id": "LA",
+    "id": "LAW-156",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13559,7 +13559,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-157",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13582,7 +13582,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-158",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13605,7 +13605,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-159",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13628,7 +13628,7 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
-    "id": "LA",
+    "id": "LAW-160",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13659,7 +13659,7 @@ window.ALL_TOPICS = [
     "groupCount": 6
   },
   {
-    "id": "LA",
+    "id": "LAW-161",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13682,7 +13682,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-162",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13705,7 +13705,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-163",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13725,7 +13725,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-164",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-2. 개별적 근로관계법 (근로기준법)",
@@ -13748,7 +13748,7 @@ window.ALL_TOPICS = [
     "groupCount": 1
   },
   {
-    "id": "LA",
+    "id": "LAW-165",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-3. 집단적 노사관계법 (노조법)",
@@ -13771,7 +13771,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-166",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-3. 집단적 노사관계법 (노조법)",
@@ -13794,7 +13794,7 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "LA",
+    "id": "LAW-167",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-3. 집단적 노사관계법 (노조법)",
@@ -13817,7 +13817,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-168",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-3. 집단적 노사관계법 (노조법)",
@@ -13840,7 +13840,7 @@ window.ALL_TOPICS = [
     "groupCount": 3
   },
   {
-    "id": "LA",
+    "id": "LAW-169",
     "subject": "법학",
     "chapter": "6. 노동법",
     "section": "6-3. 집단적 노사관계법 (노조법)",
@@ -17475,17 +17475,15 @@ window.ALL_TOPICS = [
     "title": "4. 홉스·로크의 사회계약론 – 17c, 인간관, 자연상태, 자연권, 계약목적, 계약내용",
     "examTag": "",
     "page": 7,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 전체적 흐름</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①무정부상태→불편을 극복하기 위해 강력한 권력에 의한 질서유지 필요 ⇒홉스식 현실주의</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②현실주의→강력한 주권자의 자의적 권력 행사를 어떻게 막아야 하는가?⇒로크의 제한정부론(최소주의)</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③정치사상의 주체를 ‘덕’에서 ‘자유’로 전환 → 지도자나 시민의 자질보다, 개인의 자유를 어떻게 효율적으로 보장하냐에 집중</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 홉스</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①흐름</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"평등\">평등</span>의 자연상태, 사회성을 결여한 고립적 존재인 인간</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보존\">자기보존</span>을 추구할 권리가 자연권으로 보장되고, 끊임없이 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기 보전\">자기 보전</span> 추구</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 만인의 만인에 대한 투쟁 상태로의 필연적 귀결</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 공포와 불안→합리적 이성에 근거하여 “모든 인간이 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자연권\">자연권</span>을 포기, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"제3의 주권자\">제3의 주권자</span>에 양도함”을 합의</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 제3의 주권자는 강제적 권력을 통해 계약의 파기를 방지→평화의 도래</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 제3의 주권자는 효율성 극대화를 위해 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"절대군주\">절대군주</span>의 형태를 띔→권력의 정당성은 정치사회 구성원의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자발적 의지행위\">자발적 의지행위</span>로부터 도출</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②인간본성: 이기심을 가진 존재</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③자연상태: 만인의 만인에 대한 투쟁 상태→상호파괴적 상태</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">④자연법과 자연권</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연권: <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보전\">자기보전</span>을 위해 힘을 자유롭게 사용할 수 있는 권리(<span class=\"mask-tape\" data-tape=\"true\" data-text=\"절대적 자유\">절대적 자유</span>)</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연법: 자연상태에서는 불안정, 군주 주권자에 의해 실정법으로 제정되어야 실현 가능함</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑤계약내용</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 모든 자연권을 주권자에게 양도→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"최대악\">최대악</span>으로부터 탈피→강력한 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"주권자(리바이어던)\">주권자(리바이어던)</span>의 창출, 저항권x</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 시민이 정치로부터 해방되어 경제활동에 전념⇒소유적 시장사회 옹호</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 로크</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①흐름</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연상태는 신에 의해 제정된 자연법이 존재하는 상태→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자유롭고 평등\">자유롭고 평등</span>한 인간, 사회성 있음</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 노동의 결과물에 대한 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"소유\">소유</span>가 인정되는 자연상태에서 자연권의 핵심은 ‘<span class=\"mask-tape\" data-tape=\"true\" data-text=\"사적 소유권\">사적 소유권</span>’</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- but, 소유권이 안정적으로 확보x→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"생명\">생명</span>·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자유\">자유</span>·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"재산\">재산</span>에 대한 권리를 보장받기 위해 정치사회로의 이행</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"명시적\">명시적</span>·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"암묵적\">암묵적</span> 동의를 통한 사회계약→정치사회를 구성(단순다수결로 의사 결정)</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②정치사회와 정부</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 판단권과 처벌권을 포기하고 정치사회 성립, 이차적으로 정부 구성</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자연권\">자연권</span>: <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보전권\">자기보전권</span>(양도 불가능), <span class=\"mask-tape\" data-tape=\"true\" data-text=\"처벌권\">처벌권</span>(양도)</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 입법권이 최고권(신탁 권력)</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 정부는 계약이 아닌 신탁권력을 가짐→시민의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"저항권\">저항권</span>을 인정, 정치권력 제약 가능성 확보</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 정부 신임 철회는 “사회계약”의 본래 의도를 재확인하는 의미가 있음</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③정부의 조직</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"입법권\">입법권</span>과 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"집행권\">집행권</span>의 분리 주장→권력의 자의적 행사 방지</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 민의를 대표하는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"입법부\">입법부</span> 우위성 강변, 주권 대신 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"최고권\">최고권</span></div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">④인간관: 백지설, 이성적 존재</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑤자연상태: 잠재적 투쟁상태로 자연법 지배하의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자유·평등\">자유·평등</span>하나 집행력 결여로 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"불안정\">불안정</span></div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연법 범위 안에서 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기 및 타인의 보존\">자기 및 타인의 보존</span>을 위해 적당한 행위 권력</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연법을 위반한 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"범죄를 처벌\">범죄를 처벌</span>하는 권력</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑥자연권: 소유권(생명, 자유, 재산)</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑦계약목적: 소유권의 확실하고 안전한 보장</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑧계약내용: 권력의 일부 위임(신탁), 2권분립(입법권·집행권), 저항권 인정</div></div></div>",
-    "defaultAnswer": "4. 홉스·로크의 사회계약론 – 17c, 인간관, 자연상태, 자연권, 계약목적, 계약내용\n(1) 전체적 흐름\n①무정부상태→불편을 극복하기 위해 강력한 권력에 의한 질서유지 필요 ⇒홉스식 현실주의\n②현실주의→강력한 주권자의 자의적 권력 행사를 어떻게 막아야 하는가?⇒로크의 제한정부론(최소주의)\n③정치사상의 주체를 ‘덕’에서 ‘자유’로 전환 → 지도자나 시민의 자질보다, 개인의 자유를 어떻게 효율적으로 보장하냐에 집중\n(2) 홉스\n①흐름\n- 평등의 자연상태, 사회성을 결여한 고립적 존재인 인간\n→자기보존을 추구할 권리가 자연권으로 보장되고, 끊임없이 자기 보전 추구\n- 만인의 만인에 대한 투쟁 상태로의 필연적 귀결\n- 공포와 불안→합리적 이성에 근거하여 “모든 인간이 자연권을 포기, 제3의 주권자에 양도함”을 합의\n- 제3의 주권자는 강제적 권력을 통해 계약의 파기를 방지→평화의 도래\n- 제3의 주권자는 효율성 극대화를 위해 절대군주의 형태를 띔→권력의 정당성은 정치사회 구성원의 자발적 의지행위로부터 도출\n②인간본성: 이기심을 가진 존재\n③자연상태: 만인의 만인에 대한 투쟁 상태→상호파괴적 상태\n④자연법과 자연권\n- 자연권: 자기보전을 위해 힘을 자유롭게 사용할 수 있는 권리(절대적 자유)\n- 자연법: 자연상태에서는 불안정, 군주 주권자에 의해 실정법으로 제정되어야 실현 가능함\n⑤계약내용\n- 모든 자연권을 주권자에게 양도→최대악으로부터 탈피→강력한 주권자(리바이어던)의 창출, 저항권x\n- 시민이 정치로부터 해방되어 경제활동에 전념⇒소유적 시장사회 옹호\n(3) 로크\n①흐름\n- 자연상태는 신에 의해 제정된 자연법이 존재하는 상태→자유롭고 평등한 인간, 사회성 있음\n- 노동의 결과물에 대한 소유가 인정되는 자연상태에서 자연권의 핵심은 ‘사적 소유권’\n- but, 소유권이 안정적으로 확보x→생명·자유·재산에 대한 권리를 보장받기 위해 정치사회로의 이행\n- 명시적·암묵적 동의를 통한 사회계약→정치사회를 구성(단순다수결로 의사 결정)\n②정치사회와 정부\n- 판단권과 처벌권을 포기하고 정치사회 성립, 이차적으로 정부 구성\n- 자연권: 자기보전권(양도 불가능), 처벌권(양도)\n- 입법권이 최고권(신탁 권력)\n- 정부는 계약이 아닌 신탁권력을 가짐→시민의 저항권을 인정, 정치권력 제약 가능성 확보\n- 정부 신임 철회는 “사회계약”의 본래 의도를 재확인하는 의미가 있음\n③정부의 조직\n- 입법권과 집행권의 분리 주장→권력의 자의적 행사 방지\n- 민의를 대표하는 입법부 우위성 강변, 주권 대신 최고권\n④인간관: 백지설, 이성적 존재\n⑤자연상태: 잠재적 투쟁상태로 자연법 지배하의 자유·평등하나 집행력 결여로 불안정\n- 자연법 범위 안에서 자기 및 타인의 보존을 위해 적당한 행위 권력\n- 자연법을 위반한 범죄를 처벌하는 권력\n⑥자연권: 소유권(생명, 자유, 재산)\n⑦계약목적: 소유권의 확실하고 안전한 보장\n⑧계약내용: 권력의 일부 위임(신탁), 2권분립(입법권·집행권), 저항권 인정",
+    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 전체적 흐름</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①무정부상태→불편을 극복하기 위해 강력한 권력에 의한 질서유지 필요 ⇒홉스식 현실주의</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②현실주의→강력한 주권자의 자의적 권력 행사를 어떻게 막아야 하는가?⇒로크의 제한정부론(최소주의)</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③정치사상의 주체를 ‘덕’에서 ‘자유’로 전환 → 지도자나 시민의 자질보다, 개인의 자유를 어떻게 효율적으로 보장하냐에 집중</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 홉스</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①흐름</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"평등\">평등</span>의 자연상태, 사회성을 결여한 고립적 존재인 인간</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보존\">자기보존</span>을 추구할 권리가 자연권으로 보장되고, 끊임없이 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보존\">자기보존</span> 추구</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 만인의 만인에 대한 투쟁 상태로의 필연적 귀결</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 공포와 불안→합리적 이성에 근거하여 “모든 인간이 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자연권\">자연권</span>을 포기, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"제3의 주권자\">제3의 주권자</span>에 양도함”을 합의</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 제3의 주권자는 강제적 권력을 통해 계약의 파기를 방지→평화의 도래</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 제3의 주권자는 효율성 극대화를 위해 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"절대군주\">절대군주</span>의 형태를 띔→권력의 정당성은 정치사회 구성원의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자발적 의지행위\">자발적 의지행위</span>로부터 도출</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②인간본성: 이기심을 가진 존재</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③자연상태: 만인의 만인에 대한 투쟁 상태→상호파괴적 상태</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">④자연법과 자연권</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연권: <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보존\">자기보존</span>을 위해 힘을 자유롭게 사용할 수 있는 권리(<span class=\"mask-tape\" data-tape=\"true\" data-text=\"절대적 자유\">절대적 자유</span>)</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연법: 자연상태에서는 불안정, 군주 주권자에 의해 실정법으로 제정되어야 실현 가능함</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑤계약내용</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 모든 자연권을 주권자에게 양도→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"최대악\">최대악</span>으로부터 탈피→강력한 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"주권자(리바이어던)\">주권자(리바이어던)</span>의 창출, 저항권x</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 시민이 정치로부터 해방되어 경제활동에 전념⇒소유적 시장사회 옹호</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 로크</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①흐름</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연상태는 신에 의해 제정된 자연법이 존재하는 상태→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자유롭고 평등\">자유롭고 평등</span>한 인간, 사회성 있음</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 노동의 결과물에 대한 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"소유\">소유</span>가 인정되는 자연상태에서 자연권의 핵심은 ‘<span class=\"mask-tape\" data-tape=\"true\" data-text=\"사적 소유권\">사적 소유권</span>’</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- but, 소유권이 안정적으로 확보x→<span class=\"mask-tape\" data-tape=\"true\" data-text=\"생명\">생명</span>·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자유\">자유</span>·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"재산\">재산</span>에 대한 권리를 보장받기 위해 정치사회로의 이행</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"명시적\">명시적</span>·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"암묵적\">암묵적</span> 동의를 통한 사회계약→정치사회를 구성(단순다수결로 의사 결정)</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②정치사회와 정부</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 판단권과 처벌권을 포기하고 정치사회 성립, 이차적으로 정부 구성</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자연권\">자연권</span>: <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기보전권\">자기보전권</span>(양도 불가능), <span class=\"mask-tape\" data-tape=\"true\" data-text=\"처벌권\">처벌권</span>(양도)</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 입법권이 최고권(신탁 권력)</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 정부는 계약이 아닌 신탁권력을 가짐→시민의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"저항권\">저항권</span>을 인정, 정치권력 제약 가능성 확보</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 정부 신임 철회는 “사회계약”의 본래 의도를 재확인하는 의미가 있음</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">③정부의 조직</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"입법권\">입법권</span>과 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"집행권\">집행권</span>의 분리 주장→권력의 자의적 행사 방지</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 민의를 대표하는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"입법부\">입법부</span> 우위성 강변, 주권 대신 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"최고권\">최고권</span></div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">④인간관: 백지설, 이성적 존재</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑤자연상태: 잠재적 투쟁상태로 자연법 지배하의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자유·평등\">자유·평등</span>하나 집행력 결여로 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"불안정\">불안정</span></div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연법 범위 안에서 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"자기 및 타인의 보존\">자기 및 타인의 보존</span>을 위해 적당한 행위 권력</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 자연법을 위반한 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"범죄를 처벌\">범죄를 처벌</span>하는 권력</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑥자연권: 소유권(생명, 자유, 재산)</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑦계약목적: 소유권의 확실하고 안전한 보장</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">⑧계약내용: 권력의 일부 위임(신탁), 2권분립(입법권·집행권), 저항권 인정</div></div></div>",
+    "defaultAnswer": "4. 홉스·로크의 사회계약론 – 17c, 인간관, 자연상태, 자연권, 계약목적, 계약내용\n(1) 전체적 흐름\n①무정부상태→불편을 극복하기 위해 강력한 권력에 의한 질서유지 필요 ⇒홉스식 현실주의\n②현실주의→강력한 주권자의 자의적 권력 행사를 어떻게 막아야 하는가?⇒로크의 제한정부론(최소주의)\n③정치사상의 주체를 ‘덕’에서 ‘자유’로 전환 → 지도자나 시민의 자질보다, 개인의 자유를 어떻게 효율적으로 보장하냐에 집중\n(2) 홉스\n①흐름\n- 평등의 자연상태, 사회성을 결여한 고립적 존재인 인간\n→자기보존을 추구할 권리가 자연권으로 보장되고, 끊임없이 자기보존 추구\n- 만인의 만인에 대한 투쟁 상태로의 필연적 귀결\n- 공포와 불안→합리적 이성에 근거하여 “모든 인간이 자연권을 포기, 제3의 주권자에 양도함”을 합의\n- 제3의 주권자는 강제적 권력을 통해 계약의 파기를 방지→평화의 도래\n- 제3의 주권자는 효율성 극대화를 위해 절대군주의 형태를 띔→권력의 정당성은 정치사회 구성원의 자발적 의지행위로부터 도출\n②인간본성: 이기심을 가진 존재\n③자연상태: 만인의 만인에 대한 투쟁 상태→상호파괴적 상태\n④자연법과 자연권\n- 자연권: 자기보존을 위해 힘을 자유롭게 사용할 수 있는 권리(절대적 자유)\n- 자연법: 자연상태에서는 불안정, 군주 주권자에 의해 실정법으로 제정되어야 실현 가능함\n⑤계약내용\n- 모든 자연권을 주권자에게 양도→최대악으로부터 탈피→강력한 주권자(리바이어던)의 창출, 저항권x\n- 시민이 정치로부터 해방되어 경제활동에 전념⇒소유적 시장사회 옹호\n(3) 로크\n①흐름\n- 자연상태는 신에 의해 제정된 자연법이 존재하는 상태→자유롭고 평등한 인간, 사회성 있음\n- 노동의 결과물에 대한 소유가 인정되는 자연상태에서 자연권의 핵심은 ‘사적 소유권’\n- but, 소유권이 안정적으로 확보x→생명·자유·재산에 대한 권리를 보장받기 위해 정치사회로의 이행\n- 명시적·암묵적 동의를 통한 사회계약→정치사회를 구성(단순다수결로 의사 결정)\n②정치사회와 정부\n- 판단권과 처벌권을 포기하고 정치사회 성립, 이차적으로 정부 구성\n- 자연권: 자기보전권(양도 불가능), 처벌권(양도)\n- 입법권이 최고권(신탁 권력)\n- 정부는 계약이 아닌 신탁권력을 가짐→시민의 저항권을 인정, 정치권력 제약 가능성 확보\n- 정부 신임 철회는 “사회계약”의 본래 의도를 재확인하는 의미가 있음\n③정부의 조직\n- 입법권과 집행권의 분리 주장→권력의 자의적 행사 방지\n- 민의를 대표하는 입법부 우위성 강변, 주권 대신 최고권\n④인간관: 백지설, 이성적 존재\n⑤자연상태: 잠재적 투쟁상태로 자연법 지배하의 자유·평등하나 집행력 결여로 불안정\n- 자연법 범위 안에서 자기 및 타인의 보존을 위해 적당한 행위 권력\n- 자연법을 위반한 범죄를 처벌하는 권력\n⑥자연권: 소유권(생명, 자유, 재산)\n⑦계약목적: 소유권의 확실하고 안전한 보장\n⑧계약내용: 권력의 일부 위임(신탁), 2권분립(입법권·집행권), 저항권 인정",
     "targetKeywords": [
       "평등",
       "자기보존",
-      "자기 보전",
       "자연권",
       "제3의 주권자",
       "절대군주",
-      "자발적 의지행위",
-      "자기보전"
+      "자발적 의지행위"
     ],
     "tapeCount": 31,
     "groupCount": 3
