@@ -1339,8 +1339,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_152400"></script>
-  <script src="explanations-data.js?v=20260916_152400"></script>
+  <script src="topics-data.js?v=20260916_152600"></script>
+  <script src="explanations-data.js?v=20260916_152600"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -4667,7 +4667,7 @@
           .replace(/'/g, '&#039;');
       }
 
-      // Helper: Robust topic explanation lookup (direct ID match, ECON-EXAM alias, and fuzzy title fallback)
+      // Helper: Robust topic explanation lookup (direct ID match, ECON-EXAM alias, and precise title/subject fallback)
       function getTopicExplanation(topic) {
         if (!topic || !window.TOPIC_EXPLANATIONS) return null;
         if (window.TOPIC_EXPLANATIONS[topic.id]) {
@@ -4676,15 +4676,30 @@
         if (topic.id.startsWith('ECON-EXAM-') && window.TOPIC_EXPLANATIONS[topic.id.replace('ECON-', '')]) {
           return window.TOPIC_EXPLANATIONS[topic.id.replace('ECON-', '')];
         }
+
         const cleanTitle = (topic.title || '').replace(/^[\d\.\s]+/, '').replace(/\s*\(.*?\)\s*/g, '').replace(/\s+/g, '').toLowerCase();
+        
+        // 1. Exact match check
         for (const exp of Object.values(window.TOPIC_EXPLANATIONS)) {
           if (!exp || !exp.title) continue;
           if (exp.title === topic.title) return exp;
           const cleanExp = exp.title.replace(/^[\d\.\s]+/, '').replace(/\s*\(.*?\)\s*/g, '').replace(/\s+/g, '').toLowerCase();
-          if (cleanExp.length >= 2 && (cleanExp === cleanTitle || cleanTitle.includes(cleanExp) || cleanExp.includes(cleanTitle))) {
+          if (cleanExp === cleanTitle && cleanTitle.length >= 2) {
             return exp;
           }
         }
+
+        // 2. Controlled substring match: only if length >= 4 to avoid generic words like '원인' or '의미' matching unrelated topics
+        if (cleanTitle.length >= 4) {
+          for (const exp of Object.values(window.TOPIC_EXPLANATIONS)) {
+            if (!exp || !exp.title) continue;
+            const cleanExp = exp.title.replace(/^[\d\.\s]+/, '').replace(/\s*\(.*?\)\s*/g, '').replace(/\s+/g, '').toLowerCase();
+            if (cleanExp.includes(cleanTitle)) {
+              return exp;
+            }
+          }
+        }
+
         return null;
       }
 
