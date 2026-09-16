@@ -1339,8 +1339,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_124500"></script>
-  <script src="explanations-data.js?v=20260916_124500"></script>
+  <script src="topics-data.js?v=20260916_125800"></script>
+  <script src="explanations-data.js?v=20260916_125800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2063,6 +2063,19 @@
       let filteredIndices = [];
       const expandedSections = new Set();
       let autoAdvanceTimeout = null;
+
+      // Helper: Global Comprehensive Exam Badge Normalizer
+      function normalizeExamBadges(str) {
+        if (!str || typeof str !== 'string') return str;
+        return str
+          .replace(/([가-힣\)\>\]])\s+\b(1[5-9]|2[0-7])\b(?=\s*(?:<\/span>|<\/div>|<button|$))/gi, (m, p1, p2) => {
+            return p1 + ' <span class="exam-badge">' + p2 + ' 기출</span>';
+          })
+          .replace(/\b(1[5-9]|2[0-7])\s*(ex[\)\.]?|예[\)\.]?)/gi, '<span class="exam-badge">$1 기출</span> $2')
+          .replace(/(?<=[가-힣\w\)\>]\s*)\b(1[5-9]|2[0-7])\s*:/g, '<span class="exam-badge">$1 기출</span>:')
+          .replace(/(?<!<span class="exam-badge">)\[((?:\d{2}[,\s]*)+기출(?:연계)?)\]/g, '<span class="exam-badge">$1</span>')
+          .replace(/(?<!<span class="exam-badge">)\b((?:1[5-9]|2[0-7])\s*(?:,\s*(?:1[5-9]|2[0-7])\s*)*기출(?:연계)?)(?!<\/span>)/g, '<span class="exam-badge">$1</span>');
+      }
 
       // 2. DOM Cache
       const subjectTabs = document.querySelectorAll('.subject-tab-btn');
@@ -3125,16 +3138,6 @@
           topicKeywordsTags.appendChild(chip);
         });
 
-      // Helper: Global Comprehensive Exam Badge Normalizer
-      function normalizeExamBadges(str) {
-        if (!str || typeof str !== 'string') return str;
-        return str
-          .replace(/\b(1[5-9]|2[0-6])\s*(ex[\)\.]?|예[\)\.]?)/gi, '<span class="exam-badge">$1 기출</span> $2')
-          .replace(/(?<=[가-힣\w\)\>]\s*)\b(1[5-9]|2[0-6])\s*:/g, '<span class="exam-badge">$1 기출</span>:')
-          .replace(/(?<!<span class="exam-badge">)\[((?:\d{2}[,\s]*)+기출(?:연계)?)\]/g, '<span class="exam-badge">$1</span>')
-          .replace(/(?<!<span class="exam-badge">)\b((?:1[5-9]|2[0-6])\s*(?:,\s*(?:1[5-9]|2[0-6])\s*)*기출(?:연계)?)(?!<\/span>)/g, '<span class="exam-badge">$1</span>');
-      }
-
         // Insert Structured Content HTML (Check custom user masking first)
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
         if (!customHtml && topic.id.startsWith('ECON-EXAM-')) {
@@ -3151,12 +3154,12 @@
           if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         }
 
-        // Auto-normalize exam badges across all recall items in the DOM
-        subnoteContainer.querySelectorAll('.recall-item').forEach(item => {
-          const original = item.innerHTML;
+        // Auto-normalize exam badges across all recall items and group header spans in the DOM
+        subnoteContainer.querySelectorAll('.recall-item, .topic-group .font-bold span:last-child').forEach(el => {
+          const original = el.innerHTML;
           const normalized = normalizeExamBadges(original);
           if (original !== normalized) {
-            item.innerHTML = normalized;
+            el.innerHTML = normalized;
           }
         });
 
@@ -3312,12 +3315,24 @@
             const txt = node.textContent.trim();
             if (txt && txt !== 'visibility') {
               let titleSpan = fontBold.querySelector('span:last-child');
-              if (titleSpan) {
-                titleSpan.textContent = (titleSpan.textContent.trim() + ' ' + txt).trim();
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                if (titleSpan) {
+                  titleSpan.appendChild(node.cloneNode(true));
+                } else {
+                  fontBold.appendChild(node.cloneNode(true));
+                }
               } else {
-                const s = document.createElement('span');
-                s.textContent = txt;
-                fontBold.appendChild(s);
+                if (titleSpan) {
+                  titleSpan.innerHTML = (titleSpan.innerHTML.trim() + ' ' + txt).trim();
+                } else {
+                  const s = document.createElement('span');
+                  s.textContent = txt;
+                  fontBold.appendChild(s);
+                }
+              }
+              const lastSpan = fontBold.querySelector('span:last-child');
+              if (lastSpan) {
+                lastSpan.innerHTML = normalizeExamBadges(lastSpan.innerHTML);
               }
             }
             node.remove();
