@@ -1339,8 +1339,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_123600"></script>
-  <script src="explanations-data.js?v=20260916_123600"></script>
+  <script src="topics-data.js?v=20260916_124500"></script>
+  <script src="explanations-data.js?v=20260916_124500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3125,6 +3125,16 @@
           topicKeywordsTags.appendChild(chip);
         });
 
+      // Helper: Global Comprehensive Exam Badge Normalizer
+      function normalizeExamBadges(str) {
+        if (!str || typeof str !== 'string') return str;
+        return str
+          .replace(/\b(1[5-9]|2[0-6])\s*(ex[\)\.]?|예[\)\.]?)/gi, '<span class="exam-badge">$1 기출</span> $2')
+          .replace(/(?<=[가-힣\w\)\>]\s*)\b(1[5-9]|2[0-6])\s*:/g, '<span class="exam-badge">$1 기출</span>:')
+          .replace(/(?<!<span class="exam-badge">)\[((?:\d{2}[,\s]*)+기출(?:연계)?)\]/g, '<span class="exam-badge">$1</span>')
+          .replace(/(?<!<span class="exam-badge">)\b((?:1[5-9]|2[0-6])\s*(?:,\s*(?:1[5-9]|2[0-6])\s*)*기출(?:연계)?)(?!<\/span>)/g, '<span class="exam-badge">$1</span>');
+      }
+
         // Insert Structured Content HTML (Check custom user masking first)
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
         if (!customHtml && topic.id.startsWith('ECON-EXAM-')) {
@@ -3132,23 +3142,21 @@
         }
 
         if (customHtml) {
-          if (customHtml.includes('단계 23:') || customHtml.includes('단계 23 :') || customHtml.includes('단계 23')) {
-            customHtml = customHtml.replace(/(단계\s*)23\s*:/g, '$1<span class="exam-badge">23 기출</span>:');
-            try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
-          }
+          customHtml = normalizeExamBadges(customHtml);
+          try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
           subnoteContainer.innerHTML = customHtml;
           if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
         } else {
-          subnoteContainer.innerHTML = topic.contentHtml;
+          subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
           if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         }
 
-        // Auto-normalize exam badges in content (converts bare '단계 23:' or '[XX 기출]' to stylized badges)
+        // Auto-normalize exam badges across all recall items in the DOM
         subnoteContainer.querySelectorAll('.recall-item').forEach(item => {
-          if (item.innerHTML.includes('기출') || item.innerHTML.includes('단계 23')) {
-            item.innerHTML = item.innerHTML
-              .replace(/(단계\s*)23\s*:/g, '$1<span class="exam-badge">23 기출</span>:')
-              .replace(/(?<!<span class="exam-badge">)\[(\d{2}\s*기출(?:연계)?)\]/g, '<span class="exam-badge">$1</span>');
+          const original = item.innerHTML;
+          const normalized = normalizeExamBadges(original);
+          if (original !== normalized) {
+            item.innerHTML = normalized;
           }
         });
 
@@ -5541,6 +5549,11 @@
                 updatedVal = updatedVal.replaceAll(fromStr, toStr);
                 changed = true;
               }
+            }
+            const badgeNormalized = typeof normalizeExamBadges === 'function' ? normalizeExamBadges(updatedVal) : updatedVal;
+            if (badgeNormalized !== updatedVal) {
+              updatedVal = badgeNormalized;
+              changed = true;
             }
             if (changed) {
               localStorage.setItem(key, updatedVal);
