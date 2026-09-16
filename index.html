@@ -1009,14 +1009,7 @@
       background-color: #1e293b !important;
       color: #f1f5f9 !important;
     }
-    html.dark #btn-apply-tape-inline {
-      background-color: rgba(132, 204, 22, 0.18) !important;
-      color: #bef264 !important;
-      border-color: rgba(163, 230, 53, 0.45) !important;
-    }
-    html.dark #btn-apply-tape-inline:hover {
-      background-color: rgba(132, 204, 22, 0.28) !important;
-    }
+
     html.dark #subnote-section .bg-slate-100 {
       background-color: #1e293b !important;
       border-color: #334155 !important;
@@ -1346,8 +1339,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_115100"></script>
-  <script src="explanations-data.js?v=20260916_115100"></script>
+  <script src="topics-data.js?v=20260916_120000"></script>
+  <script src="explanations-data.js?v=20260916_120000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1636,11 +1629,7 @@
 
           <!-- Actions Toolbar (Font Scaler, Reveal Answer, Desktop Tape Add, Desktop Wide Mode) -->
           <div class="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full sm:w-auto">
-            <!-- Add Tape Button (Tablet & Desktop only - mobile uses floating action upon text drag) -->
-            <button id="btn-apply-tape-inline" type="button" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-lime-50 hover:bg-lime-100 text-lime-900 border border-lime-300 text-xs font-bold select-none shadow-2xs whitespace-nowrap shrink-0 cursor-pointer active:scale-95 transition-all" title="본문 글자 드래그/선택 후 누르면 마스킹 테이프가 생성됩니다 (단축키: M 또는 ㅡ)">
-              <span class="material-symbols-outlined text-[15px] text-lime-700">label</span>
-              <span>테이프 붙이기 <b class="font-mono text-[11px] text-lime-600">[M]</b></span>
-            </button>
+
 
             <!-- Font Scale Controller -->
             <div class="flex items-center bg-slate-100/90 dark:bg-slate-800/80 rounded-lg p-0.5 border border-slate-200/80 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 font-bold select-none shrink-0 whitespace-nowrap">
@@ -4273,7 +4262,6 @@
       const scBtnReveal = document.getElementById('sc-btn-reveal');
       const scBtnEssay = document.getElementById('sc-btn-essay');
       const scBtnGrade = document.getElementById('sc-btn-grade');
-      const btnApplyTapeInline = document.getElementById('btn-apply-tape-inline');
 
       if (scBtnSidebar) scBtnSidebar.addEventListener('click', toggleDesktopSidebar);
 
@@ -4299,12 +4287,6 @@
         scBtnAdd.addEventListener('mousedown', (e) => e.preventDefault());
         scBtnAdd.addEventListener('touchend', (e) => handleManualAddTape(e), { passive: false });
         scBtnAdd.addEventListener('click', (e) => handleManualAddTape(e));
-      }
-
-      if (btnApplyTapeInline) {
-        btnApplyTapeInline.addEventListener('mousedown', (e) => e.preventDefault());
-        btnApplyTapeInline.addEventListener('touchend', (e) => handleManualAddTape(e), { passive: false });
-        btnApplyTapeInline.addEventListener('click', (e) => handleManualAddTape(e));
       }
 
       if (scBtnDel) scBtnDel.addEventListener('click', () => {
