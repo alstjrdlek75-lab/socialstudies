@@ -6313,12 +6313,7 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
       if (!initialTopicId) {
         initialTopicId = localStorage.getItem('edurecall_last_topic_id') || '';
       }
-      if (initialTopicId === 'LAW-045' || initialTopicId === 'LAW-046') {
-        initialTopicId = 'LAW-044';
-      }
-      if (initialTopicId === 'LAW-030') {
-        initialTopicId = 'LAW-029';
-      }
+
 
       let initialIndex = 0;
       if (initialTopicId) {
@@ -6402,41 +6397,26 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           });
           if (changed) localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
 
-          // Migrate legacy LAW-045/LAW-046 entries to LAW-044
-          ['edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            const m46 = localStorage.getItem(`${prefix}_LAW-046`);
-            const m45 = localStorage.getItem(`${prefix}_LAW-045`);
-            const m44 = localStorage.getItem(`${prefix}_LAW-044`);
-            if (!m44 && (m46 || m45)) {
-              localStorage.setItem(`${prefix}_LAW-044`, m46 || m45);
-            }
-            localStorage.removeItem(`${prefix}_LAW-045`);
-            localStorage.removeItem(`${prefix}_LAW-046`);
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'LAW-045' || localStorage.getItem('edurecall_last_topic_id') === 'LAW-046') {
-            localStorage.setItem('edurecall_last_topic_id', 'LAW-044');
-          }
-          if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-045' || localStorage.getItem('edurecall_last_topic_법학') === 'LAW-046') {
-            localStorage.setItem('edurecall_last_topic_법학', 'LAW-044');
-          }
-
-          // Migrate legacy LAW-030 entries to LAW-029
-          ['edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            const m30 = localStorage.getItem(`${prefix}_LAW-030`);
-            const m29 = localStorage.getItem(`${prefix}_LAW-029`);
-            if (!m29 && m30) {
-              localStorage.setItem(`${prefix}_LAW-029`, m30);
-            }
-            localStorage.removeItem(`${prefix}_LAW-030`);
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'LAW-030') {
-            localStorage.setItem('edurecall_last_topic_id', 'LAW-029');
-          }
-          if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-030') {
-            localStorage.setItem('edurecall_last_topic_법학', 'LAW-029');
-          }
-
           localStorage.setItem('edurecall_migration_v2_done', 'true');
+        }
+
+        // Migration V3: Clean legacy custom overrides where topic contents were shifted or misassigned
+        if (!localStorage.getItem('edurecall_migration_v3_done')) {
+          const shiftedLawIds = ['LAW-037', 'LAW-038', 'LAW-039', 'LAW-040', 'LAW-041', 'LAW-042', 'LAW-043', 'LAW-044', 'LAW-045', 'LAW-046', 'LAW-047', 'LAW-048', 'LAW-049', 'LAW-050'];
+          shiftedLawIds.forEach(id => {
+            const val = localStorage.getItem(`edurecall_custom_${id}`);
+            if (val) {
+              // If LAW-040 has 사무관리, or LAW-038 has 계약 총론, or LAW-039 has 주요 계약 유형
+              if (id === 'LAW-040' && (val.includes('사무관리') || val.includes('사무를 관리하는'))) {
+                localStorage.removeItem(`edurecall_custom_${id}`);
+              } else if (id === 'LAW-038' && (val.includes('계약이 성립하여') || val.includes('쌍무계약'))) {
+                localStorage.removeItem(`edurecall_custom_${id}`);
+              } else if (id === 'LAW-039' && (val.includes('매매') || val.includes('임대차'))) {
+                localStorage.removeItem(`edurecall_custom_${id}`);
+              }
+            }
+          });
+          localStorage.setItem('edurecall_migration_v3_done', 'true');
         }
 
         // Safely extract all custom keys to avoid index-shift skipping during deletion
@@ -6499,7 +6479,10 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
               val.includes('토표형태') || val.includes('수반만을 수행→') || val.includes('집권→정부의 구성도') ||
               val.includes('행정국가화 현상 :') || val.includes('하부구조적 권력↓') || val.includes('사회공익 실현 특수이익 실현') ||
               val.includes('세계화시대의 국가 변형에서 논의') || val.includes('위윔') || val.includes('<span>(1)</span>') ||
-              val.includes('민주주의를 제도로 국한해서') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리'))
+              val.includes('민주주의를 제도로 국한해서') || (val.includes('국민주권의 원리') && !val.includes('(1) 국민주권의 원리')) ||
+              (key === 'edurecall_custom_LAW-040' && (val.includes('사무관리') || val.includes('사무를 관리하는'))) ||
+              (key === 'edurecall_custom_LAW-038' && (val.includes('계약이 성립하여') || val.includes('쌍무계약'))) ||
+              (key === 'edurecall_custom_LAW-039' && (val.includes('하자담보책임') || val.includes('임대차')))
             ) {
               localStorage.removeItem(key);
             }
