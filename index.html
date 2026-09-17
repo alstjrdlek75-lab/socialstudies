@@ -99,22 +99,23 @@
       overflow-wrap: normal !important;
     }
 
-    /* Taped (가려짐) state: signature blue masking tape matching the page */
+    /* Taped (가려짐) state: pastel mint (#d1fae5) masking tape matching user image */
     .mask-tape.is-taped {
-      background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+      background-color: #d1fae5;
+      background: linear-gradient(180deg, #e6fcf1 0%, #d1fae5 100%);
       color: transparent !important;
       user-select: none;
-      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-      border-top: 1px solid #60a5fa;
-      border-bottom: 2px solid #1d4ed8;
+      box-shadow: 0 1px 3px rgba(16, 185, 129, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border-top: 1px solid #ecfdf5;
+      border-bottom: 2px solid #6ee7b7;
       min-width: 2rem;
       text-align: center;
     }
 
     .mask-tape.is-taped:hover {
-      background: linear-gradient(180deg, #60a5fa 0%, #1d4ed8 100%);
+      background: linear-gradient(180deg, #ecfdf5 0%, #a7f3d0 100%);
       transform: translateY(-1.5px);
-      box-shadow: 0 3px 6px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 3px 6px rgba(16, 185, 129, 0.3);
     }
 
     .mask-tape.is-taped:active {
@@ -128,25 +129,25 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%) scale(0.68);
-      opacity: 0.8;
+      opacity: 0.65;
       pointer-events: none;
     }
 
-    /* Peeled (보임) state: emphasized bold with blue underline highlighter */
+    /* Peeled (보임) state: emphasized bold with mint/emerald underline highlighter */
     .mask-tape.is-peeled {
-      background-color: #eff6ff;
-      color: #1e3a8a !important;
+      background-color: #ecfdf5;
+      color: #064e3b !important;
       font-weight: 800 !important;
       text-decoration: underline;
       text-decoration-thickness: 2.5px;
-      text-decoration-color: #2563eb;
+      text-decoration-color: #10b981;
       text-underline-offset: 3.5px;
-      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.1);
-      border-bottom: 1.5px solid #bfdbfe;
+      box-shadow: 0 1px 2px rgba(16, 185, 129, 0.1);
+      border-bottom: 1.5px solid #a7f3d0;
     }
 
     .mask-tape.is-peeled:hover {
-      background-color: #dbeafe;
+      background-color: #d1fae5;
     }
 
     /* Interactive Tape Typing Mode (직접 타이핑 모드) */
@@ -173,24 +174,24 @@
       line-height: 1.4;
       padding: 2px 8px;
       border-radius: 6px;
-      border: 2px solid #2563eb; /* blue-600 */
-      background-color: #eff6ff; /* blue-50 */
-      color: #1e3a8a;
+      border: 2px solid #10b981; /* emerald-500 */
+      background-color: #ecfdf5; /* emerald-50 */
+      color: #064e3b; /* emerald-900 */
       text-align: center;
       transition: all 0.18s ease;
       vertical-align: baseline;
       outline: none;
-      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.15);
+      box-shadow: 0 1px 2px rgba(16, 185, 129, 0.15);
     }
 
     .tape-typing-input:focus {
       background-color: #ffffff;
-      border-color: #1d4ed8; /* blue-700 */
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22);
+      border-color: #059669; /* emerald-600 */
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
     }
 
     .tape-typing-input::placeholder {
-      color: #3b82f6;
+      color: #10b981;
       opacity: 0.75;
       font-weight: 600;
       font-size: 0.88em;
@@ -1165,38 +1166,38 @@
 
     /* Masking Tapes in Dark Mode */
     html.dark .mask-tape.is-taped {
-      background: linear-gradient(180deg, #1d4ed8 0%, #1e40af 100%) !important;
+      background: linear-gradient(180deg, #065f46 0%, #064e3b 100%) !important;
       color: transparent !important;
-      border-top: 1px solid #3b82f6 !important;
-      border-bottom: 2px solid #172554 !important;
+      border-top: 1px solid #34d399 !important;
+      border-bottom: 2px solid #022c22 !important;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
     }
     html.dark .mask-tape.is-taped:hover {
-      background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%) !important;
+      background: linear-gradient(180deg, #047857 0%, #065f46 100%) !important;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6) !important;
     }
     html.dark .mask-tape.is-peeled {
-      background-color: rgba(37, 99, 235, 0.2) !important;
-      color: #93c5fd !important;
-      border-bottom: 1.5px solid #3b82f6 !important;
-      text-decoration-color: #60a5fa !important;
+      background-color: rgba(16, 185, 129, 0.2) !important;
+      color: #a7f3d0 !important;
+      border-bottom: 1.5px solid #10b981 !important;
+      text-decoration-color: #34d399 !important;
     }
     html.dark .mask-tape.is-peeled:hover {
-      background-color: rgba(37, 99, 235, 0.3) !important;
+      background-color: rgba(16, 185, 129, 0.3) !important;
     }
     html.dark .tape-typing-input {
-      background-color: #0b0f19 !important;
-      border: 2px solid #2563eb !important;
-      color: #93c5fd !important;
+      background-color: #0b1712 !important;
+      border: 2px solid #059669 !important;
+      color: #a7f3d0 !important;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
     }
     html.dark .tape-typing-input:focus {
-      background-color: #131d31 !important;
-      border-color: #60a5fa !important;
-      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25) !important;
+      background-color: #0d231a !important;
+      border-color: #34d399 !important;
+      box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25) !important;
     }
     html.dark .tape-typing-input::placeholder {
-      color: #60a5fa !important;
+      color: #34d399 !important;
       opacity: 0.7 !important;
     }
     html.dark .tape-typing-input.is-correct {
@@ -1968,7 +1969,7 @@
           </div>
           <span class="text-slate-400 hidden sm:inline">|</span>
           <span class="text-[11px] text-slate-600 dark:text-slate-300 hidden md:inline">
-            💡 단어를 선택 후 <span class="font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 px-1.5 py-0.5 rounded border border-blue-200 dark:border-blue-800">[🏷️ 마스킹 테이프]</span> 버튼을 누르거나 <span class="font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-slate-100 dark:bg-slate-800 px-1 rounded">{단어}</span> 로 감싸면 복습 시 빈칸이 됩니다.
+            💡 단어를 선택 후 <span class="font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/50 px-1.5 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">[🏷️ 마스킹 테이프]</span> 버튼을 누르거나 <span class="font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-slate-100 dark:bg-slate-800 px-1 rounded">{단어}</span> 로 감싸면 복습 시 빈칸이 됩니다.
           </span>
         </div>
 
@@ -2009,10 +2010,10 @@
         <div id="topic-edit-raw-container" class="flex-1 p-4 overflow-hidden flex-col bg-slate-50/50 dark:bg-slate-950 hidden">
           <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-200 dark:border-slate-800 text-xs">
             <div class="flex items-center gap-1 text-slate-600 dark:text-slate-300">
-              <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-[16px]">info</span>
-              <span>직접 HTML 태그를 편집하는 고급 모드입니다. 마스킹 테이프는 <code class="px-1.5 py-0.5 bg-white dark:bg-slate-900 rounded font-mono text-blue-700 dark:text-blue-400 font-bold border border-slate-200 dark:border-slate-700">&lt;span class="mask-tape"&gt;단어&lt;/span&gt;</code> 형식입니다.</span>
+              <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-[16px]">info</span>
+              <span>직접 HTML 태그를 편집하는 고급 모드입니다. 마스킹 테이프는 <code class="px-1.5 py-0.5 bg-white dark:bg-slate-900 rounded font-mono text-emerald-800 dark:text-emerald-300 font-bold border border-slate-200 dark:border-slate-700">&lt;span class="mask-tape"&gt;단어&lt;/span&gt;</code> 형식입니다.</span>
             </div>
-            <button id="btn-editor-wrap-tape" type="button" class="px-2 py-1 bg-blue-100 dark:bg-blue-950/60 hover:bg-blue-200 text-blue-800 dark:text-blue-300 font-semibold rounded border border-blue-300 dark:border-blue-700 flex items-center gap-1 transition-all cursor-pointer text-[11px]" title="선택한 텍스트를 마스킹 테이프로 감쌉니다">
+            <button id="btn-editor-wrap-tape" type="button" class="px-2 py-1 bg-emerald-100 dark:bg-emerald-950/60 hover:bg-emerald-200 text-emerald-900 dark:text-emerald-300 font-semibold rounded border border-emerald-300 dark:border-emerald-700 flex items-center gap-1 transition-all cursor-pointer text-[11px]" title="선택한 텍스트를 마스킹 테이프로 감쌉니다">
               <span class="material-symbols-outlined text-[13px]">label</span>
               <span>선택 텍스트 테이프 감싸기</span>
             </button>
@@ -2137,7 +2138,7 @@
   </div>
 
   <!-- FLOATING MASKING TAPE ACTION BUTTON (Shows dynamically on text drag) -->
-  <button id="floating-mask-btn" class="fixed z-50 hidden bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-blue-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none pointer-events-auto" type="button" title="선택한 글자에 파란색 마스킹 테이프 붙이기 [단축키 M]">
+  <button id="floating-mask-btn" class="fixed z-50 hidden bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-emerald-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none pointer-events-auto" type="button" title="선택한 글자에 민트색 마스킹 테이프 붙이기 [단축키 M]">
     <span class="material-symbols-outlined text-[15px]">label</span>
     <span>테이프 붙이기 [M]</span>
   </button>
@@ -2158,7 +2159,7 @@
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]">menu_open</span>
       <span class="text-[10px] sm:text-[11px] font-medium">목차</span>
     </button>
-    <button id="mobile-nav-tape" class="flex-1 flex flex-col items-center justify-center py-1 text-blue-600 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="선택 영역 마스킹 테이프">
+    <button id="mobile-nav-tape" class="flex-1 flex flex-col items-center justify-center py-1 text-emerald-600 hover:text-emerald-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="선택 영역 마스킹 테이프">
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="mobile-tape-icon">label</span>
       <span class="text-[10px] sm:text-[11px] font-bold" id="mobile-tape-label">테이프</span>
     </button>
@@ -4127,9 +4128,9 @@
           } else {
             currentFloatingMode = 'add';
             targetTapesToDelete = [];
-            floatingMaskBtn.className = 'fixed z-50 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-blue-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
+            floatingMaskBtn.className = 'fixed z-50 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-emerald-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
             floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">label</span><span>테이프 붙이기 [M]</span>';
-            floatingMaskBtn.title = '선택한 글자에 파란색 마스킹 테이프 붙이기 [단축키 M]';
+            floatingMaskBtn.title = '선택한 글자에 민트색 마스킹 테이프 붙이기 [단축키 M]';
           }
         }
 
@@ -4399,7 +4400,7 @@
             ? '<span class="hidden sm:inline">정답 확인 [Space]</span><span class="sm:hidden">정답 확인</span>'
             : '<span class="hidden sm:inline">정답 전체 공개 [Space]</span><span class="sm:hidden">정답 공개</span>';
           revealEyeIcon.textContent = 'visibility';
-          btnRevealAll.className = 'flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
+          btnRevealAll.className = 'flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
         }
 
         const mobileRevealIcon = document.getElementById('mobile-reveal-icon');
@@ -5671,12 +5672,12 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
                 <textarea class="editor-item-textarea w-full p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs sm:text-sm leading-relaxed focus:ring-2 focus:ring-blue-500 focus:outline-hidden resize-y min-h-[58px]" placeholder="내용을 입력하세요. 마스킹할 단어를 드래그 후 [마스킹 테이프] 버튼을 누르거나 {단어} 로 감싸세요.">${escapeHtml(item.text || '')}</textarea>
                 <div class="flex items-center justify-between text-[11px] pt-0.5">
                   <div class="flex items-center gap-2 flex-wrap">
-                    <button type="button" class="btn-item-wrap-tape px-2 py-0.5 bg-blue-100 dark:bg-blue-950/60 hover:bg-blue-200 text-blue-900 dark:text-blue-200 font-bold rounded-md border border-blue-300 dark:border-blue-700 flex items-center gap-1 transition-all cursor-pointer shadow-2xs" title="단어를 드래그 선택 후 클릭하면 마스킹 가림 테이프 {단어} 로 감싸거나 해제합니다">
-                      <span class="material-symbols-outlined text-[14px] text-blue-700 dark:text-blue-400">label</span>
+                    <button type="button" class="btn-item-wrap-tape px-2 py-0.5 bg-emerald-100 dark:bg-emerald-950/60 hover:bg-emerald-200 text-emerald-900 dark:text-emerald-200 font-bold rounded-md border border-emerald-300 dark:border-emerald-700 flex items-center gap-1 transition-all cursor-pointer shadow-2xs" title="단어를 드래그 선택 후 클릭하면 마스킹 가림 테이프 {단어} 로 감싸거나 해제합니다">
+                      <span class="material-symbols-outlined text-[14px] text-emerald-700 dark:text-emerald-400">label</span>
                       <span>마스킹 테이프</span>
                     </button>
                     <span class="inline-flex items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400">
-                      <span class="font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 px-1.5 py-0.5 rounded border border-blue-200 dark:border-blue-800">{단어}</span>
+                      <span class="font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">{단어}</span>
                       <span>형태로 감싸면 복습 때 빈칸으로 가려집니다</span>
                     </span>
                   </div>
