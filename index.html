@@ -253,6 +253,25 @@
       flex-shrink: 0 !important;
     }
 
+    #subnote-content-container .group-actions-wrap {
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+      margin-left: auto !important;
+      flex-shrink: 0 !important;
+    }
+
+    #subnote-content-container .group-edit-btn {
+      font-size: 11px !important;
+      line-height: 1 !important;
+      padding: 2px 6px !important;
+      border-radius: 6px !important;
+    }
+
+    #subnote-content-container .group-edit-btn .material-symbols-outlined {
+      font-size: 13px !important;
+    }
+
     /* 2. Primary Recall Items (e.g. ①개방 국민경제 균형식과 저축) */
     #subnote-content-container .recall-item {
       font-size: calc(16px * var(--content-font-scale, 1.15)) !important;
@@ -1340,8 +1359,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260916_154400"></script>
-  <script src="explanations-data.js?v=20260916_155200"></script>
+  <script src="topics-data.js?v=20260916_215200"></script>
+  <script src="explanations-data.js?v=20260916_224800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1895,12 +1914,29 @@
             </button>
           </div>
           <span class="text-slate-400 hidden sm:inline">|</span>
-          <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden md:inline">
-            💡 항목을 개별 칸에서 수정하고, 단어를 선택 후 [테이프] 버튼을 누르면 마스킹 처리됩니다.
+          <span class="text-[11px] text-slate-600 dark:text-slate-300 hidden md:inline">
+            💡 단어를 선택 후 <span class="font-bold text-lime-700 dark:text-lime-400 bg-lime-50 dark:bg-lime-950/50 px-1.5 py-0.5 rounded border border-lime-200 dark:border-lime-800">[🏷️ 마스킹 테이프]</span> 버튼을 누르거나 <span class="font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-slate-100 dark:bg-slate-800 px-1 rounded">{단어}</span> 로 감싸면 복습 시 빈칸이 됩니다.
           </span>
         </div>
 
         <div class="flex items-center gap-1.5">
+          <!-- Single Card Mode Navigator -->
+          <div id="editor-single-card-nav" class="hidden flex items-center gap-1 bg-blue-50 dark:bg-blue-950/60 text-blue-900 dark:text-blue-200 px-2 py-0.5 rounded-lg border border-blue-200 dark:border-blue-800 text-xs">
+            <span class="font-bold text-blue-700 dark:text-blue-400 hidden sm:inline">개별 칸:</span>
+            <button id="btn-editor-prev-card" type="button" class="p-1 hover:bg-blue-200 dark:hover:bg-blue-900 rounded cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed transition-colors" title="이전 카드로">
+              <span class="material-symbols-outlined text-[15px]">chevron_left</span>
+            </button>
+            <span id="editor-single-card-label" class="font-bold text-xs max-w-[120px] sm:max-w-xs truncate">카드 1/4</span>
+            <button id="btn-editor-next-card" type="button" class="p-1 hover:bg-blue-200 dark:hover:bg-blue-900 rounded cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed transition-colors" title="다음 카드로">
+              <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+            </button>
+            <span class="text-blue-300 dark:text-blue-700 mx-0.5">|</span>
+            <button id="btn-editor-show-all-cards" type="button" class="font-semibold text-blue-700 dark:text-blue-300 hover:underline cursor-pointer flex items-center gap-0.5" title="모든 카드를 한꺼번에 보는 전체 편집으로 전환">
+              <span class="material-symbols-outlined text-[13px]">view_agenda</span>
+              <span>전체 보기</span>
+            </button>
+          </div>
+
           <button id="btn-editor-add-card" type="button" class="px-2.5 py-1 bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-100 text-blue-700 dark:text-blue-300 font-bold rounded-lg border border-blue-200 dark:border-blue-800 flex items-center gap-1 transition-all cursor-pointer text-xs" title="새로운 카드 단락을 추가합니다">
             <span class="material-symbols-outlined text-[15px]">add_box</span>
             <span>+ 새 카드 추가</span>
@@ -2451,6 +2487,11 @@
       const topicEditTextarea = document.getElementById('topic-edit-textarea');
       const topicEditCharCount = document.getElementById('topic-edit-char-count');
       const btnEditorAddCard = document.getElementById('btn-editor-add-card');
+      const editorSingleCardNav = document.getElementById('editor-single-card-nav');
+      const editorSingleCardLabel = document.getElementById('editor-single-card-label');
+      const btnEditorPrevCard = document.getElementById('btn-editor-prev-card');
+      const btnEditorNextCard = document.getElementById('btn-editor-next-card');
+      const btnEditorShowAllCards = document.getElementById('btn-editor-show-all-cards');
       const btnCloseTopicEditModal = document.getElementById('btn-close-topic-edit-modal');
       const btnCancelTopicEdit = document.getElementById('btn-cancel-topic-edit');
       const btnSaveTopicEdit = document.getElementById('btn-save-topic-edit');
@@ -3491,21 +3532,58 @@
 
       // Setup Group Interactions
       function setupGroupInteractions() {
-        document.querySelectorAll('.topic-group').forEach(grp => {
+        document.querySelectorAll('.topic-group').forEach((grp, gIdx) => {
           const btn = grp.querySelector('.group-toggle-btn');
           const content = grp.querySelector('.group-content');
           
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleGroup(grp);
-          });
+          // Wrap buttons together on the right margin (우로 밀착)
+          let actionsWrap = grp.querySelector('.group-actions-wrap');
+          let editBtn = grp.querySelector('.group-edit-btn');
 
-          // Clicking blurred group reveals it
-          grp.addEventListener('click', () => {
+          if (!actionsWrap && btn && btn.parentNode) {
+            actionsWrap = document.createElement('div');
+            actionsWrap.className = 'group-actions-wrap flex items-center gap-1 shrink-0 ml-auto';
+            btn.parentNode.insertBefore(actionsWrap, btn);
+            actionsWrap.appendChild(btn);
+          } else if (actionsWrap && btn && btn.parentNode !== actionsWrap) {
+            actionsWrap.appendChild(btn);
+          }
+
+          if (actionsWrap) {
+            if (!editBtn) {
+              editBtn = document.createElement('button');
+              editBtn.type = 'button';
+              actionsWrap.insertBefore(editBtn, btn);
+            } else if (editBtn.parentNode !== actionsWrap) {
+              actionsWrap.insertBefore(editBtn, btn);
+            }
+
+            editBtn.className = 'group-edit-btn text-[10.5px] text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/40 px-1.5 py-0.5 rounded flex items-center gap-0.5 cursor-pointer transition-colors';
+            editBtn.title = '이 칸(카드) 개별 수정';
+            editBtn.innerHTML = `
+              <span class="material-symbols-outlined text-[13px]">edit</span>
+              <span class="font-normal text-[10.5px]">수정</span>
+            `;
+            editBtn.onclick = (e) => {
+              e.stopPropagation();
+              openTopicEditor(gIdx);
+            };
+          }
+
+          if (btn) {
+            btn.onclick = (e) => {
+              e.stopPropagation();
+              toggleGroup(grp);
+            };
+          }
+
+          // Clicking blurred group reveals it (ignore if clicked edit or toggle button)
+          grp.onclick = (e) => {
+            if (e.target.closest('.group-edit-btn') || e.target.closest('.group-toggle-btn')) return;
             if (grp.classList.contains('is-blurred')) {
               revealGroup(grp);
             }
-          });
+          };
         });
       }
 
@@ -5136,10 +5214,44 @@
       let currentEditorMode = 'card'; // 'card' or 'raw'
       let activeEditorCards = []; // Array of { title: string, items: Array<{ text: string, isSub: boolean }> }
 
-      function cleanTapeHtml(html) {
+      function tapeHtmlToEditorText(html) {
         if (!html) return '';
-        // Convert any extra attributes to clean <span class="mask-tape">word</span>
-        return html.replace(/<span\s+class="mask-tape"[^>]*>(.*?)<\/span>/gi, '<span class="mask-tape">$1</span>');
+        // Match span with class containing mask-tape, convert into intuitive {word}
+        return html.replace(/<span\b[^>]*?\bclass=(["\x27])(.*?)\1[^>]*>([\s\S]*?)<\/span>/gi, (match, quote, cls, inner) => {
+          if (/\bmask-tape\b/.test(cls)) {
+            const leading = inner.match(/^\s*/)[0];
+            const trailing = inner.match(/\s*$/)[0];
+            const core = inner.trim();
+            return `${leading}{${core}}${trailing}`;
+          }
+          return match;
+        });
+      }
+
+      function editorTextToTapeHtml(text) {
+        if (!text) return '';
+        let res = text;
+        // 1. Convert [[word]] to mask-tape
+        res = res.replace(/\[\[([^[\]]+)\]\]/g, (m, inner) => {
+          const clean = inner.trim();
+          if (!clean) return '';
+          return `<span class="mask-tape" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
+        });
+        // 2. Convert {word} to mask-tape
+        res = res.replace(/\{([^{}]+)\}/g, (m, inner) => {
+          const clean = inner.trim();
+          if (!clean) return '';
+          return `<span class="mask-tape" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
+        });
+        // 3. Normalize any raw mask-tape spans if user entered them directly
+        res = res.replace(/<span\b[^>]*?\bclass=(["\x27])(.*?)\1[^>]*>([\s\S]*?)<\/span>/gi, (match, quote, cls, inner) => {
+          if (/\bmask-tape\b/.test(cls)) {
+            const clean = inner.trim();
+            return `<span class="mask-tape" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
+          }
+          return match;
+        });
+        return res;
       }
 
       function parseHtmlToEditorCards(html) {
@@ -5172,7 +5284,7 @@
                 recallItems.forEach(itemEl => {
                   const isSub = itemEl.classList.contains('pl-6') || itemEl.classList.contains('text-slate-600') || itemEl.textContent.trim().startsWith('-');
                   items.push({
-                    text: cleanTapeHtml(itemEl.innerHTML.trim()),
+                    text: tapeHtmlToEditorText(itemEl.innerHTML.trim()),
                     isSub: isSub
                   });
                 });
@@ -5182,7 +5294,7 @@
                 paragraphs.forEach(p => {
                   if (p.textContent.trim()) {
                     items.push({
-                      text: cleanTapeHtml(p.innerHTML.trim()),
+                      text: tapeHtmlToEditorText(p.innerHTML.trim()),
                       isSub: false
                     });
                   }
@@ -5202,10 +5314,10 @@
           const lines = (html || '').split(/<\/?(?:p|div|br)\s*\/?>/gi).map(s => s.trim()).filter(Boolean);
           if (lines.length > 0) {
             lines.forEach(l => {
-              items.push({ text: cleanTapeHtml(l), isSub: l.startsWith('-') });
+              items.push({ text: tapeHtmlToEditorText(l), isSub: l.startsWith('-') });
             });
           } else {
-            items.push({ text: cleanTapeHtml(html.trim()), isSub: false });
+            items.push({ text: tapeHtmlToEditorText(html.trim()), isSub: false });
           }
           cards.push({
             title: '본문 내용',
@@ -5222,8 +5334,9 @@
           const title = (card.title || `(${cIdx + 1}) 항목`).trim();
           const itemsHtml = (card.items || [])
             .map(item => {
-              const text = (item.text || '').trim();
+              let text = (item.text || '').trim();
               if (!text) return '';
+              text = editorTextToTapeHtml(text);
               if (item.isSub) {
                 return `    <div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
               }
@@ -5249,12 +5362,72 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         }).join('\n');
       }
 
+      let currentSingleCardIndex = null;
+
+      function updateSingleCardNavToolbar() {
+        if (!editorSingleCardNav) return;
+        if (currentSingleCardIndex !== null && activeEditorCards && activeEditorCards.length > 0) {
+          editorSingleCardNav.classList.remove('hidden');
+          const card = activeEditorCards[currentSingleCardIndex];
+          const cTitle = card ? (card.title || '').trim() : '';
+          if (editorSingleCardLabel) {
+            editorSingleCardLabel.textContent = `카드 ${currentSingleCardIndex + 1}/${activeEditorCards.length}${cTitle ? ': ' + cTitle : ''}`;
+          }
+          if (btnEditorPrevCard) {
+            btnEditorPrevCard.disabled = (currentSingleCardIndex <= 0);
+          }
+          if (btnEditorNextCard) {
+            btnEditorNextCard.disabled = (currentSingleCardIndex >= activeEditorCards.length - 1);
+          }
+          if (topicEditModalSubtitle) {
+            const topic = TOPICS[currentTopicIndex];
+            topicEditModalSubtitle.innerHTML = `<span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-bold text-[11px] mr-1.5">개별 칸 수정</span> <span class="font-semibold text-slate-700 dark:text-slate-300">${topic ? escapeHtml(topic.title) : ''}</span> &gt; <span class="font-bold underline text-blue-700 dark:text-blue-400">${escapeHtml(cTitle || `카드 #${currentSingleCardIndex + 1}`)}</span>`;
+          }
+        } else {
+          editorSingleCardNav.classList.add('hidden');
+          if (topicEditModalSubtitle) {
+            const topic = TOPICS[currentTopicIndex];
+            topicEditModalSubtitle.textContent = topic ? `${topic.id} | ${topic.title} (${topic.subject || ''} ${topic.chapter || ''}) - 전체 카드 편집` : '';
+          }
+        }
+      }
+
       function syncEditorCardsFromDOM() {
         if (!topicEditCardsContainer) return;
         const cardEls = topicEditCardsContainer.querySelectorAll('.editor-card-block');
-        const cards = [];
+        if (cardEls.length === 0) return;
 
-        cardEls.forEach(cardEl => {
+        if (currentSingleCardIndex !== null) {
+          // Sync ONLY the current single card
+          const cardEl = cardEls[0];
+          const titleInput = cardEl.querySelector('.editor-card-title-input');
+          const title = titleInput ? titleInput.value.trim() : '';
+
+          const itemEls = cardEl.querySelectorAll('.editor-item-row');
+          const items = [];
+          itemEls.forEach(itemEl => {
+            const textarea = itemEl.querySelector('.editor-item-textarea');
+            const isSub = itemEl.dataset.isSub === 'true';
+            if (textarea) {
+              items.push({
+                text: textarea.value.trim(),
+                isSub: isSub
+              });
+            }
+          });
+
+          if (currentSingleCardIndex >= 0 && currentSingleCardIndex < activeEditorCards.length) {
+            activeEditorCards[currentSingleCardIndex] = {
+              title: title || `(${currentSingleCardIndex + 1}) 항목`,
+              items: items.length > 0 ? items : [{ text: '', isSub: false }]
+            };
+          }
+          return;
+        }
+
+        // Full mode: sync all cards
+        const cards = [];
+        cardEls.forEach((cardEl, idx) => {
           const titleInput = cardEl.querySelector('.editor-card-title-input');
           const title = titleInput ? titleInput.value.trim() : '';
 
@@ -5272,7 +5445,7 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           });
 
           cards.push({
-            title: title || '항목 제목',
+            title: title || `(${idx + 1}) 항목`,
             items: items.length > 0 ? items : [{ text: '', isSub: false }]
           });
         });
@@ -5291,20 +5464,43 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           }];
         }
 
-        activeEditorCards.forEach((card, cIdx) => {
+        // Bound currentSingleCardIndex
+        if (currentSingleCardIndex !== null) {
+          if (currentSingleCardIndex < 0) currentSingleCardIndex = 0;
+          if (currentSingleCardIndex >= activeEditorCards.length) currentSingleCardIndex = activeEditorCards.length - 1;
+        }
+
+        updateSingleCardNavToolbar();
+
+        const cardsToRender = (currentSingleCardIndex !== null)
+          ? [{ card: activeEditorCards[currentSingleCardIndex], cIdx: currentSingleCardIndex }]
+          : activeEditorCards.map((card, cIdx) => ({ card, cIdx }));
+
+        cardsToRender.forEach(({ card, cIdx }) => {
           const cardEl = document.createElement('div');
           cardEl.className = 'editor-card-block bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-4 sm:p-5 transition-all space-y-3';
           cardEl.dataset.cardIndex = cIdx;
 
-          // Card Header with Title Input & Delete Button
+          const isSingle = (currentSingleCardIndex !== null);
           const headerHtml = `
             <div class="flex items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
               <div class="flex items-center gap-2 flex-1 min-w-0">
                 <span class="w-3 h-3 rounded-full bg-blue-600 shrink-0"></span>
-                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 shrink-0">카드 #${cIdx + 1} 제목</span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 shrink-0">${isSingle ? `선택한 카드 #${cIdx + 1} 제목` : `카드 #${cIdx + 1} 제목`}</span>
                 <input type="text" class="editor-card-title-input flex-1 min-w-0 px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold text-sm sm:text-base focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-hidden transition-all" value="${escapeHtml(card.title || '')}" placeholder="예: (1) 채권">
               </div>
-              <div class="flex items-center gap-1 shrink-0">
+              <div class="flex items-center gap-1.5 shrink-0">
+                ${!isSingle ? `
+                  <button type="button" class="btn-focus-this-card px-2.5 py-1 rounded-lg text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-100 border border-blue-200 dark:border-blue-800 flex items-center gap-1 transition-colors cursor-pointer" title="이 카드만 집중해서 개별 수정">
+                    <span class="material-symbols-outlined text-[14px]">edit</span>
+                    <span>이 칸만 편집</span>
+                  </button>
+                ` : `
+                  <button type="button" class="btn-exit-single-card px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1 transition-colors cursor-pointer" title="전체 카드 목록으로 돌아가기">
+                    <span class="material-symbols-outlined text-[14px]">view_agenda</span>
+                    <span>전체 보기</span>
+                  </button>
+                `}
                 <button type="button" class="btn-delete-card p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors cursor-pointer" title="이 카드 전체 삭제">
                   <span class="material-symbols-outlined text-[18px]">delete</span>
                 </button>
@@ -5312,11 +5508,10 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
             </div>
           `;
 
-          // Card Items Container
           const itemsContainer = document.createElement('div');
           itemsContainer.className = 'editor-items-container space-y-2.5 pl-1 sm:pl-2';
 
-          card.items.forEach((item, iIdx) => {
+          (card.items || []).forEach((item, iIdx) => {
             const itemRow = document.createElement('div');
             itemRow.className = `editor-item-row flex flex-col sm:flex-row items-stretch sm:items-start gap-2 p-2 rounded-lg border ${item.isSub ? 'border-dashed border-slate-300 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-850/60 ml-3 sm:ml-4' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'}`;
             itemRow.dataset.itemIndex = iIdx;
@@ -5330,16 +5525,19 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
                 </button>
               </div>
               <div class="flex-1 min-w-0 flex flex-col gap-1.5">
-                <textarea class="editor-item-textarea w-full p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs sm:text-sm leading-relaxed focus:ring-2 focus:ring-blue-500 focus:outline-hidden resize-y min-h-[58px]" placeholder="내용을 입력하세요. 마스킹할 단어를 드래그하고 [테이프] 버튼을 누르세요.">${escapeHtml(item.text || '')}</textarea>
-                <div class="flex items-center justify-between text-[11px]">
-                  <div class="flex items-center gap-1.5">
-                    <button type="button" class="btn-item-wrap-tape px-2 py-0.5 bg-lime-50 dark:bg-lime-950/40 hover:bg-lime-100 text-lime-800 dark:text-lime-300 font-semibold rounded border border-lime-200 dark:border-lime-800 flex items-center gap-1 cursor-pointer" title="마우스로 드래그 선택한 단어를 마스킹 테이프로 감쌉니다">
-                      <span class="material-symbols-outlined text-[13px]">label</span>
-                      <span>선택 단어 테이프</span>
+                <textarea class="editor-item-textarea w-full p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs sm:text-sm leading-relaxed focus:ring-2 focus:ring-blue-500 focus:outline-hidden resize-y min-h-[58px]" placeholder="내용을 입력하세요. 마스킹할 단어를 드래그 후 [마스킹 테이프] 버튼을 누르거나 {단어} 로 감싸세요.">${escapeHtml(item.text || '')}</textarea>
+                <div class="flex items-center justify-between text-[11px] pt-0.5">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <button type="button" class="btn-item-wrap-tape px-2 py-0.5 bg-lime-100 dark:bg-lime-950/60 hover:bg-lime-200 text-lime-900 dark:text-lime-200 font-bold rounded-md border border-lime-300 dark:border-lime-700 flex items-center gap-1 transition-all cursor-pointer shadow-2xs" title="단어를 드래그 선택 후 클릭하면 마스킹 가림 테이프 {단어} 로 감싸거나 해제합니다">
+                      <span class="material-symbols-outlined text-[14px] text-lime-700 dark:text-lime-400">label</span>
+                      <span>마스킹 테이프</span>
                     </button>
-                    <span class="text-slate-400 text-[10px] hidden sm:inline">&lt;span class="mask-tape"&gt;단어&lt;/span&gt;</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400">
+                      <span class="font-bold text-lime-700 dark:text-lime-400 bg-lime-50 dark:bg-lime-950/40 px-1.5 py-0.5 rounded border border-lime-200 dark:border-lime-800">{단어}</span>
+                      <span>형태로 감싸면 복습 때 빈칸으로 가려집니다</span>
+                    </span>
                   </div>
-                  <button type="button" class="btn-delete-item text-slate-400 hover:text-rose-600 px-1.5 py-0.5 rounded hover:bg-rose-50 dark:hover:bg-rose-950/30 flex items-center gap-0.5 cursor-pointer" title="이 줄 삭제">
+                  <button type="button" class="btn-delete-item text-slate-400 hover:text-rose-600 px-1.5 py-0.5 rounded hover:bg-rose-50 dark:hover:bg-rose-950/30 flex items-center gap-0.5 transition-colors cursor-pointer" title="이 줄 삭제">
                     <span class="material-symbols-outlined text-[14px]">close</span>
                     <span>삭제</span>
                   </button>
@@ -5357,14 +5555,44 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
                 const val = itemTextarea.value;
                 const sel = val.substring(s, e);
                 if (!sel) {
-                  alert('마스킹 테이프로 감쌀 단어나 문구를 먼저 드래그하여 선택하세요.');
+                  const placeholder = '{마스킹단어}';
+                  itemTextarea.value = val.substring(0, s) + placeholder + val.substring(e);
+                  itemTextarea.selectionStart = s + 1;
+                  itemTextarea.selectionEnd = s + 1 + '마스킹단어'.length;
                   itemTextarea.focus();
                   return;
                 }
-                const repl = `<span class="mask-tape">${sel}</span>`;
+
+                // If already wrapped in {...} or [[...]], unwrap it (toggle)
+                if ((sel.startsWith('{') && sel.endsWith('}') && sel.length >= 2) ||
+                    (sel.startsWith('[[') && sel.endsWith(']]') && sel.length >= 4)) {
+                  const unwrapped = sel.startsWith('[[')
+                    ? sel.substring(2, sel.length - 2)
+                    : sel.substring(1, sel.length - 1);
+                  itemTextarea.value = val.substring(0, s) + unwrapped + val.substring(e);
+                  itemTextarea.selectionStart = s;
+                  itemTextarea.selectionEnd = s + unwrapped.length;
+                  itemTextarea.focus();
+                  return;
+                }
+
+                // If selection has braces outside it, e.g. user selected "단어" inside "{단어}"
+                if (s > 0 && e < val.length && val[s - 1] === '{' && val[e] === '}') {
+                  itemTextarea.value = val.substring(0, s - 1) + sel + val.substring(e + 1);
+                  itemTextarea.selectionStart = s - 1;
+                  itemTextarea.selectionEnd = s - 1 + sel.length;
+                  itemTextarea.focus();
+                  return;
+                }
+
+                // Wrap selection in { ... }
+                const leading = sel.match(/^\s*/)[0];
+                const trailing = sel.match(/\s*$/)[0];
+                const core = sel.trim();
+                const repl = `${leading}{${core}}${trailing}`;
                 itemTextarea.value = val.substring(0, s) + repl + val.substring(e);
-                itemTextarea.selectionStart = s;
-                itemTextarea.selectionEnd = s + repl.length;
+                itemTextarea.selectionStart = s + leading.length;
+                itemTextarea.selectionEnd = s + leading.length + 1 + core.length + 1;
                 itemTextarea.focus();
               });
             }
@@ -5418,6 +5646,24 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           cardEl.appendChild(itemsContainer);
           cardEl.appendChild(cardFooter);
 
+          // Wire focus / exit single card
+          const focusBtn = cardEl.querySelector('.btn-focus-this-card');
+          if (focusBtn) {
+            focusBtn.addEventListener('click', () => {
+              syncEditorCardsFromDOM();
+              currentSingleCardIndex = cIdx;
+              renderTopicCardEditor();
+            });
+          }
+          const exitBtn = cardEl.querySelector('.btn-exit-single-card');
+          if (exitBtn) {
+            exitBtn.addEventListener('click', () => {
+              syncEditorCardsFromDOM();
+              currentSingleCardIndex = null;
+              renderTopicCardEditor();
+            });
+          }
+
           // Wire delete card button
           const deleteCardBtn = cardEl.querySelector('.btn-delete-card');
           if (deleteCardBtn) {
@@ -5425,10 +5671,16 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
               if (activeEditorCards.length <= 1) {
                 if (!confirm('마지막 카드를 삭제하시겠습니까? 내용이 빈 카드로 초기화됩니다.')) return;
                 activeEditorCards = [{ title: '(1) 새 항목', items: [{ text: '', isSub: false }] }];
+                currentSingleCardIndex = 0;
               } else {
                 if (!confirm(`'${card.title || '이 카드'}'를 삭제하시겠습니까?`)) return;
                 syncEditorCardsFromDOM();
                 activeEditorCards.splice(cIdx, 1);
+                if (currentSingleCardIndex !== null) {
+                  if (currentSingleCardIndex >= activeEditorCards.length) {
+                    currentSingleCardIndex = activeEditorCards.length - 1;
+                  }
+                }
               }
               renderTopicCardEditor();
             });
@@ -5443,8 +5695,13 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
       function updateTopicEditStatus() {
         if (!topicEditCharCount) return;
         if (currentEditorMode === 'card') {
-          const totalItems = activeEditorCards.reduce((acc, c) => acc + (c.items ? c.items.length : 0), 0);
-          topicEditCharCount.textContent = `${activeEditorCards.length}개 카드 (${totalItems}개 항목)`;
+          if (currentSingleCardIndex !== null && activeEditorCards[currentSingleCardIndex]) {
+            const card = activeEditorCards[currentSingleCardIndex];
+            topicEditCharCount.textContent = `카드 ${currentSingleCardIndex + 1}/${activeEditorCards.length} (${card.items ? card.items.length : 0}개 줄) 개별 편집 중`;
+          } else {
+            const totalItems = activeEditorCards.reduce((acc, c) => acc + (c.items ? c.items.length : 0), 0);
+            topicEditCharCount.textContent = `${activeEditorCards.length}개 카드 (${totalItems}개 항목)`;
+          }
         } else {
           const len = topicEditTextarea ? topicEditTextarea.value.length : 0;
           topicEditCharCount.textContent = `${len.toLocaleString()}자 (HTML 원문)`;
@@ -5491,7 +5748,7 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         updateTopicEditStatus();
       }
 
-      function openTopicEditor() {
+      function openTopicEditor(targetCardIndex = null) {
         const topic = TOPICS[currentTopicIndex];
         if (!topic || !topicEditModal) return;
 
@@ -5500,8 +5757,13 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
 
         const currentHtml = customHtml || topic.contentHtml || '';
 
-        if (topicEditModalSubtitle) {
-          topicEditModalSubtitle.textContent = `${topic.id} | ${topic.title} (${topic.subject || ''} ${topic.chapter || ''})`;
+        // Parse into individual cards
+        activeEditorCards = parseHtmlToEditorCards(currentHtml);
+
+        if (typeof targetCardIndex === 'number' && targetCardIndex >= 0 && targetCardIndex < activeEditorCards.length) {
+          currentSingleCardIndex = targetCardIndex;
+        } else {
+          currentSingleCardIndex = null;
         }
 
         if (topicEditCustomIndicator) {
@@ -5512,8 +5774,6 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           topicEditTextarea.value = currentHtml;
         }
 
-        // Parse into individual cards
-        activeEditorCards = parseHtmlToEditorCards(currentHtml);
         switchEditorMode('card');
 
         topicEditModal.classList.remove('hidden');
@@ -5651,7 +5911,32 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
       }
 
       if (btnEditTopicContent) {
-        btnEditTopicContent.addEventListener('click', openTopicEditor);
+        btnEditTopicContent.addEventListener('click', () => openTopicEditor(null));
+      }
+      if (btnEditorPrevCard) {
+        btnEditorPrevCard.addEventListener('click', () => {
+          if (currentSingleCardIndex !== null && currentSingleCardIndex > 0) {
+            syncEditorCardsFromDOM();
+            currentSingleCardIndex--;
+            renderTopicCardEditor();
+          }
+        });
+      }
+      if (btnEditorNextCard) {
+        btnEditorNextCard.addEventListener('click', () => {
+          if (currentSingleCardIndex !== null && currentSingleCardIndex < activeEditorCards.length - 1) {
+            syncEditorCardsFromDOM();
+            currentSingleCardIndex++;
+            renderTopicCardEditor();
+          }
+        });
+      }
+      if (btnEditorShowAllCards) {
+        btnEditorShowAllCards.addEventListener('click', () => {
+          syncEditorCardsFromDOM();
+          currentSingleCardIndex = null;
+          renderTopicCardEditor();
+        });
       }
       if (btnCloseTopicEditModal) {
         btnCloseTopicEditModal.addEventListener('click', closeTopicEditor);
@@ -5676,8 +5961,10 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
             title: `(${nextNum}) 새 항목`,
             items: [{ text: '', isSub: false }]
           });
+          if (currentSingleCardIndex !== null) {
+            currentSingleCardIndex = activeEditorCards.length - 1;
+          }
           renderTopicCardEditor();
-          // Scroll to the bottom of cards container
           setTimeout(() => {
             if (topicEditCardsContainer) {
               topicEditCardsContainer.scrollTop = topicEditCardsContainer.scrollHeight;
@@ -6313,6 +6600,9 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
       if (!initialTopicId) {
         initialTopicId = localStorage.getItem('edurecall_last_topic_id') || '';
       }
+      if (initialTopicId === 'LAW-060') {
+        initialTopicId = 'LAW-059';
+      }
 
 
       let initialIndex = 0;
@@ -6418,6 +6708,105 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           });
           localStorage.setItem('edurecall_migration_v3_done', 'true');
         }
+
+        // Migration V4: Comprehensive scan for shifted topics using text similarity
+        if (!localStorage.getItem('edurecall_migration_v4_done')) {
+          function getBigrams(str) {
+            const bigrams = new Set();
+            for (let i = 0; i < str.length - 1; i++) {
+              bigrams.add(str.substring(i, i+2));
+            }
+            return bigrams;
+          }
+          function jaccardSimilarity(str1, str2) {
+            if (str1.length < 2 || str2.length < 2) return 0;
+            const set1 = getBigrams(str1);
+            const set2 = getBigrams(str2);
+            let intersection = 0;
+            for (const b of set1) {
+              if (set2.has(b)) intersection++;
+            }
+            const union = set1.size + set2.size - intersection;
+            return intersection / union;
+          }
+          const stripHtml = (html) => (html || '').replace(/<[^>]*>?/gm, '').replace(/\s+/g, '').trim();
+
+          const allKeys = [];
+          for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            if (k && k.startsWith('edurecall_custom_')) allKeys.push(k);
+          }
+          
+          allKeys.forEach(key => {
+            const val = localStorage.getItem(key);
+            const topicId = key.replace('edurecall_custom_', '');
+            const canonicalTopic = window.ALL_TOPICS.find(t => t.id === topicId);
+            
+            if (canonicalTopic && val) {
+              const valText = stripHtml(val);
+              const canonicalText = stripHtml(canonicalTopic.contentHtml);
+              if (valText.length > 10 && canonicalText.length > 10) {
+                const sim = jaccardSimilarity(valText, canonicalText);
+                if (sim < 0.2) {
+                  localStorage.removeItem(key);
+                }
+              }
+            }
+          });
+          localStorage.setItem('edurecall_migration_v4_done', 'true');
+        }
+
+        // Migration V5: Aggressive forced cleanup for LAW- topics
+        // Due to widespread corruption/shift in LAW topics, similarity heuristic might not have caught heavily modified shifted topics.
+        if (!localStorage.getItem('edurecall_migration_v5_done')) {
+          const allKeys = [];
+          for (let i = 0; i < localStorage.length; i++) {
+            allKeys.push(localStorage.key(i));
+          }
+          
+          // Delete all custom HTML for LAW topics from LAW-035 to LAW-150 unconditionally
+          // as the shift rendered the entire sequence corrupted.
+          for (let idNum = 30; idNum <= 150; idNum++) {
+            const id = `LAW-${idNum.toString().padStart(3, '0')}`;
+            localStorage.removeItem(`edurecall_custom_${id}`);
+            // Also clean up associated broken metadata (masks, grades, memos)
+            localStorage.removeItem(`edurecall_custom_masks_${id}`);
+            localStorage.removeItem(`edurecall_memo_${id}`);
+            
+            // Remove FSRS grades from the map
+            try {
+              const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+              if (fsrsMap[id]) {
+                delete fsrsMap[id];
+                localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
+              }
+            } catch(e) {}
+          }
+          
+          // Force reload to apply changes instantly without requiring user to hard-refresh again
+          localStorage.setItem('edurecall_migration_v5_done', 'true');
+          window.location.reload();
+        }
+
+        // Migration V6: Clean up LAW-060 and redirect to LAW-059
+        if (!localStorage.getItem('edurecall_migration_v6_done')) {
+          ['edurecall_custom', 'edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
+            localStorage.removeItem(`${prefix}_LAW-060`);
+          });
+          localStorage.removeItem('edurecall_custom_LAW-059');
+          if (localStorage.getItem('edurecall_last_topic_id') === 'LAW-060') localStorage.setItem('edurecall_last_topic_id', 'LAW-059');
+          if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-060') localStorage.setItem('edurecall_last_topic_법학', 'LAW-059');
+
+          try {
+            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+            if (fsrsMap['LAW-060']) {
+              delete fsrsMap['LAW-060'];
+              localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
+            }
+          } catch(e) {}
+          localStorage.setItem('edurecall_migration_v6_done', 'true');
+        }
+
 
         // Safely extract all custom keys to avoid index-shift skipping during deletion
         const customKeys = [];
