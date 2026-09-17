@@ -1702,9 +1702,9 @@
             </button>
 
             <!-- Single Consolidated Reveal / Hide Button -->
-            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
+            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체보기 / 다시 가리기 [단축키: T]">
               <span class="material-symbols-outlined text-[16px] text-blue-800" id="reveal-eye-icon">visibility</span>
-              <span id="reveal-btn-label"><span class="hidden xl:inline">정답 전체 공개 [Space]</span><span class="hidden sm:inline xl:hidden">정답 전체 공개</span><span class="sm:hidden">정답 공개</span></span>
+              <span id="reveal-btn-label"><span class="hidden xl:inline">전체보기 [T]</span><span class="hidden sm:inline xl:hidden">전체보기</span><span class="sm:hidden">전체보기</span></span>
             </button>
 
             <!-- Wide View / Essay Pad Toggle Button (available on desktop & tablet) -->
@@ -1865,9 +1865,12 @@
         <span>단축키 가이드</span>
       </div>
       <div class="flex items-center gap-1.5">
-        <span class="text-slate-500">테이프 가리기</span>
+        <span class="text-slate-500">목차 열기/접기</span>
         <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">Space</kbd>
-        <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">M</kbd>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="text-slate-500">전체보기</span>
+        <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">T</kbd>
       </div>
       <div class="flex items-center gap-1.5">
         <span class="text-slate-500">인출 서술창 포커스</span>
@@ -2348,10 +2351,8 @@
         if (sidebarToggleIcon) {
           sidebarToggleIcon.textContent = isCollapsed ? 'menu' : 'dock_to_left';
         }
-        const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
-        const scKeyText = isMacPlatform ? '⌘B' : 'Ctrl+B';
         if (btnToggleSidebar) {
-          btnToggleSidebar.title = isCollapsed ? `목차 사이드바 펼치기 (${scKeyText})` : `목차 사이드바 접기 (${scKeyText})`;
+          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 [단축키: Space]' : '목차 사이드바 접기 [단축키: Space]';
         }
       }
 
@@ -2359,8 +2360,10 @@
         if (window.innerWidth < 1024) {
           if (sidebarDrawer.classList.contains('-translate-x-full')) {
             openMobileSidebar();
+            showToast('목차를 열었습니다 [Space]', 'menu_open');
           } else {
             closeMobileSidebar();
+            showToast('목차를 닫았습니다 [Space]', 'dock_to_left');
           }
           return;
         }
@@ -2372,9 +2375,7 @@
           localStorage.setItem('edurecall_sidebar_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateSidebarToggleUI(willCollapse);
-        const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
-        const scKeyText = isMacPlatform ? '⌘B' : 'Ctrl+B';
-        showToast(willCollapse ? `목차 탭을 접었습니다 (${scKeyText}로 다시 열기)` : '목차 탭을 펼쳤습니다', willCollapse ? 'dock_to_left' : 'menu_open');
+        showToast(willCollapse ? '목차 탭을 접었습니다 [Space]' : '목차 탭을 펼쳤습니다 [Space]', willCollapse ? 'dock_to_left' : 'menu_open');
       }
 
       function setSidebarCollapsed(collapsed) {
@@ -4377,16 +4378,16 @@
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
           if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
-          showToast('모든 정답(마스킹 테이프)이 공개되었습니다 [Space]', 'visibility');
+          showToast('모든 정답(마스킹 테이프)이 공개되었습니다 [T]', 'visibility');
         } else {
           if (currentMode === 'type') {
             enableTypingMode(true);
-            showToast('정답을 다시 가리고 작성 모드로 리셋했습니다 [Space]', 'edit_note');
+            showToast('정답을 다시 가리고 작성 모드로 리셋했습니다 [T]', 'edit_note');
           } else {
             restoreTapesFromTyping();
             document.querySelectorAll('.mask-tape').forEach(el => stickTape(el));
             applyMode(currentMode);
-            showToast('정답을 다시 마스킹 테이프로 가렸습니다 [Space]', 'label');
+            showToast('정답을 다시 마스킹 테이프로 가렸습니다 [T]', 'label');
           }
         }
         updateRevealButton(isAllRevealed);
@@ -4396,16 +4397,18 @@
         if (!revealBtnLabel || !revealEyeIcon || !btnRevealAll) return;
         if (revealed) {
           revealBtnLabel.innerHTML = (currentMode === 'type')
-            ? '<span class="hidden sm:inline">다시 가리고 작성하기 [Space]</span><span class="sm:hidden">작성 복귀</span>'
-            : '<span class="hidden sm:inline">정답 다시 가리기 [Space]</span><span class="sm:hidden">다시 가리기</span>';
+            ? '<span class="hidden sm:inline">다시 가리고 작성하기 [T]</span><span class="sm:hidden">작성 복귀</span>'
+            : '<span class="hidden sm:inline">다시 가리기 [T]</span><span class="sm:hidden">다시 가리기</span>';
           revealEyeIcon.textContent = 'visibility_off';
           btnRevealAll.className = 'flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 border border-slate-300 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
+          btnRevealAll.title = '정답 다시 가리기 [단축키: T]';
         } else {
           revealBtnLabel.innerHTML = (currentMode === 'type')
-            ? '<span class="hidden sm:inline">정답 확인 [Space]</span><span class="sm:hidden">정답 확인</span>'
-            : '<span class="hidden sm:inline">정답 전체 공개 [Space]</span><span class="sm:hidden">정답 공개</span>';
+            ? '<span class="hidden sm:inline">정답 확인 [T]</span><span class="sm:hidden">정답 확인</span>'
+            : '<span class="hidden xl:inline">전체보기 [T]</span><span class="hidden sm:inline xl:hidden">전체보기</span><span class="sm:hidden">전체보기</span>';
           revealEyeIcon.textContent = 'visibility';
           btnRevealAll.className = 'flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
+          btnRevealAll.title = '정답(마스킹 테이프) 전체보기 / 다시 가리기 [단축키: T]';
         }
 
         const mobileRevealIcon = document.getElementById('mobile-reveal-icon');
@@ -6605,9 +6608,16 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           return;
         }
 
-        // 8. [Space] or [T] or [ㅅ] Toggle master reveal
+        // 8. [Space] Toggle Table of Contents (단원 목차 사이드바 열기/접기)
+        if (e.code === 'Space' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          toggleDesktopSidebar();
+          return;
+        }
+
+        // 8-1. [T] or [ㅅ] Toggle master reveal (전체보기 / 다시 가리기)
         const isTKey = (e.key === 't' || e.key === 'T' || e.key === 'ㅅ' || e.code === 'KeyT' || e.keyCode === 84);
-        if (e.code === 'Space' || (isTKey && !e.ctrlKey && !e.metaKey && !e.altKey)) {
+        if (isTKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleMasterReveal();
           return;
