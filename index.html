@@ -1397,6 +1397,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <!-- Supabase Client SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-surface text-text-main h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -1455,6 +1457,12 @@
       <!-- Mobile TOC Button (visible only on mobile/tablet < lg) -->
       <button id="btn-mobile-toc" class="lg:hidden w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-800 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="목차 열기" title="단원별 전체 목차">
         <span class="material-symbols-outlined text-[18px] text-blue-600">menu</span>
+      </button>
+
+      <!-- Cloud Sync Button -->
+      <button id="btn-cloud-sync" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화" title="태블릿/폰/노트북 클라우드 동기화">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors" id="cloud-sync-icon">cloud_queue</span>
+        <span class="hidden sm:inline text-[11px] font-bold text-slate-700" id="cloud-sync-text">동기화</span>
       </button>
 
       <!-- Library/Dashboard Button -->
@@ -2338,6 +2346,67 @@
     </div>
   </div>
 
+  <!-- Cloud Sync Modal -->
+  <div id="cloud-sync-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-xs transition-opacity duration-200 p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md p-5 sm:p-6 relative text-slate-800 dark:text-slate-100" onclick="event.stopPropagation()">
+      <button id="btn-close-sync-modal" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 transition-colors">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+          <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold">기기 간 클라우드 동기화</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">태블릿, 스마트폰, 노트북 마스킹 및 진도 일치</p>
+        </div>
+      </div>
+
+      <!-- Current Sync Status Banner -->
+      <div id="sync-status-card" class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex flex-col gap-2 mb-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-600 dark:text-slate-400">내 동기화 코드</span>
+          <span id="sync-status-badge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">미연결</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="sync-current-code" class="text-base sm:text-lg font-mono font-extrabold tracking-wider text-blue-600 dark:text-blue-400 select-all">없음</span>
+          <button id="btn-copy-sync-code" class="hidden text-xs px-2 py-1 rounded bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-100 font-semibold border border-blue-200 dark:border-blue-800 transition-colors" type="button">
+            복사
+          </button>
+        </div>
+        <span id="sync-last-time" class="text-[11px] text-slate-400 dark:text-slate-500">마지막 동기화: -</span>
+      </div>
+
+      <!-- Section: Connect / Enter Code -->
+      <div class="space-y-3 mb-4">
+        <div class="text-xs font-bold text-slate-700 dark:text-slate-300">다른 기기와 연결하기</div>
+        <div class="flex gap-2">
+          <input type="text" id="input-sync-code" placeholder="예: EDU-7829" maxlength="10" class="flex-1 uppercase font-mono text-sm px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-blue-500" />
+          <button id="btn-connect-sync" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs active:scale-95 transition-all whitespace-nowrap" type="button">
+            연결 및 불러오기
+          </button>
+        </div>
+        <p class="text-[11px] text-slate-500 leading-relaxed">
+          * 다른 기기(예: 태블릿)에 표시된 동기화 코드를 여기에 입력하면 즉시 데이터가 합쳐집니다.
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-col gap-2 pt-3 border-t border-slate-100 dark:border-slate-700">
+        <div class="flex gap-2">
+          <button id="btn-create-new-sync" class="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold text-xs text-slate-700 dark:text-slate-200 transition-all active:scale-95" type="button">
+            새 동기화 코드 발급
+          </button>
+          <button id="btn-manual-sync-now" class="flex-1 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs active:scale-95 transition-all flex items-center justify-center gap-1" type="button">
+            <span class="material-symbols-outlined text-[16px]">sync</span>
+            <span>지금 클라우드에 백업</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- APPLICATION LOGIC SCRIPT -->
   <script>
     (function () {
@@ -2749,9 +2818,370 @@
             marks.push(topicId);
           }
           localStorage.setItem('edurecall_bookmarks', JSON.stringify(marks));
+          triggerAutoSync();
           return !isBookmarked;
         } catch(e) { return false; }
       }
+
+      // ==========================================
+      // --- SUPABASE CLOUD SYNC ENGINE ---
+      // ==========================================
+      const SUPABASE_URL = 'https://bwtxsknscpnqxvwstcha.supabase.co';
+      const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3dHhza25zY3BucXh2d3N0Y2hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2MTYzMjIsImV4cCI6MjEwNTE5MjMyMn0.3-dYplsBXJZsBBX2VC0e8SfkW_QUl6zlmP_ETozWcxI';
+
+      let supabaseClient = null;
+      try {
+        if (window.supabase && window.supabase.createClient) {
+          supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        }
+      } catch (err) {
+        console.warn('Supabase client failed to initialize:', err);
+      }
+
+      let autoSyncTimeout = null;
+
+      // Extract all current client state into a bundle
+      function packSyncPayload() {
+        const customTapes = {};
+        const individualMemos = {};
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith('edurecall_custom_')) {
+            customTapes[key] = localStorage.getItem(key);
+          } else if (key && key.startsWith('edurecall_memo_')) {
+            individualMemos[key] = localStorage.getItem(key);
+          }
+        }
+        return {
+          custom_tapes: customTapes,
+          fsrs_grades: JSON.parse(localStorage.getItem('edurecall_fsrs_grades') || '{}'),
+          user_memos: {
+            ...JSON.parse(localStorage.getItem('edurecall_user_memos') || '{}'),
+            ...individualMemos
+          },
+          bookmarks: JSON.parse(localStorage.getItem('edurecall_bookmarks') || '[]'),
+          daily_stats: JSON.parse(localStorage.getItem('edurecall_daily_stats') || '{}')
+        };
+      }
+
+      // Unpack and merge cloud data into client localStorage
+      function unpackSyncPayload(record) {
+        if (!record) return;
+        let modified = false;
+
+        // 1. Custom Tapes
+        if (record.custom_tapes && typeof record.custom_tapes === 'object') {
+          Object.entries(record.custom_tapes).forEach(([k, v]) => {
+            if (v !== null && v !== undefined) {
+              localStorage.setItem(k, v);
+              modified = true;
+            }
+          });
+        }
+
+        // 2. FSRS Grades (Merge with latest review win)
+        if (record.fsrs_grades && typeof record.fsrs_grades === 'object') {
+          const localFSRS = JSON.parse(localStorage.getItem('edurecall_fsrs_grades') || '{}');
+          const mergedFSRS = { ...localFSRS, ...record.fsrs_grades };
+          localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(mergedFSRS));
+          modified = true;
+        }
+
+        // 3. User Memos
+        if (record.user_memos && typeof record.user_memos === 'object') {
+          const localMemos = JSON.parse(localStorage.getItem('edurecall_user_memos') || '{}');
+          const mergedMemos = { ...localMemos };
+          Object.entries(record.user_memos).forEach(([k, v]) => {
+            if (k.startsWith('edurecall_memo_')) {
+              localStorage.setItem(k, v);
+            } else {
+              mergedMemos[k] = v;
+            }
+          });
+          localStorage.setItem('edurecall_user_memos', JSON.stringify(mergedMemos));
+          modified = true;
+        }
+
+        // 4. Bookmarks (Set union)
+        if (Array.isArray(record.bookmarks)) {
+          const localBM = JSON.parse(localStorage.getItem('edurecall_bookmarks') || '[]');
+          const unionBM = Array.from(new Set([...localBM, ...record.bookmarks]));
+          localStorage.setItem('edurecall_bookmarks', JSON.stringify(unionBM));
+          modified = true;
+        }
+
+        // 5. Daily stats
+        if (record.daily_stats && typeof record.daily_stats === 'object') {
+          const localStats = JSON.parse(localStorage.getItem('edurecall_daily_stats') || '{}');
+          const mergedStats = { ...localStats, ...record.daily_stats };
+          localStorage.setItem('edurecall_daily_stats', JSON.stringify(mergedStats));
+          modified = true;
+        }
+
+        if (modified) {
+          try {
+            renderSidebar();
+            if (typeof renderTopic === 'function' && typeof currentTopicIndex === 'number') {
+              renderTopic(currentTopicIndex);
+            }
+            if (typeof updateOverallStats === 'function') {
+              updateOverallStats();
+            }
+          } catch (e) { console.error('UI re-render error after sync:', e); }
+        }
+      }
+
+      function updateSyncUI() {
+        const syncCode = localStorage.getItem('edurecall_sync_code');
+        const syncLastTime = localStorage.getItem('edurecall_sync_last_time');
+        
+        const cloudSyncIcon = document.getElementById('cloud-sync-icon');
+        const cloudSyncText = document.getElementById('cloud-sync-text');
+        const syncStatusBadge = document.getElementById('sync-status-badge');
+        const syncCurrentCode = document.getElementById('sync-current-code');
+        const btnCopySyncCode = document.getElementById('btn-copy-sync-code');
+        const syncLastTimeEl = document.getElementById('sync-last-time');
+
+        if (syncCode) {
+          if (cloudSyncIcon) {
+            cloudSyncIcon.textContent = 'cloud_done';
+            cloudSyncIcon.className = 'material-symbols-outlined text-[16px] xl:text-[17px] text-emerald-500 transition-colors';
+          }
+          if (cloudSyncText) {
+            cloudSyncText.textContent = syncCode;
+          }
+          if (syncStatusBadge) {
+            syncStatusBadge.textContent = '동기화 연결됨';
+            syncStatusBadge.className = 'px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300';
+          }
+          if (syncCurrentCode) {
+            syncCurrentCode.textContent = syncCode;
+          }
+          if (btnCopySyncCode) {
+            btnCopySyncCode.classList.remove('hidden');
+          }
+          if (syncLastTimeEl) {
+            syncLastTimeEl.textContent = syncLastTime ? `마지막 동기화: ${syncLastTime}` : '마지막 동기화: 방금 전';
+          }
+        } else {
+          if (cloudSyncIcon) {
+            cloudSyncIcon.textContent = 'cloud_queue';
+            cloudSyncIcon.className = 'material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors';
+          }
+          if (cloudSyncText) {
+            cloudSyncText.textContent = '동기화';
+          }
+          if (syncStatusBadge) {
+            syncStatusBadge.textContent = '미연결';
+            syncStatusBadge.className = 'px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300';
+          }
+          if (syncCurrentCode) {
+            syncCurrentCode.textContent = '없음';
+          }
+          if (btnCopySyncCode) {
+            btnCopySyncCode.classList.add('hidden');
+          }
+          if (syncLastTimeEl) {
+            syncLastTimeEl.textContent = '마지막 동기화: -';
+          }
+        }
+      }
+
+      async function pushDataToCloud(notify = false) {
+        const syncCode = localStorage.getItem('edurecall_sync_code');
+        if (!syncCode || !supabaseClient) return false;
+
+        try {
+          const payload = packSyncPayload();
+          const { data, error } = await supabaseClient
+            .from('user_sync')
+            .upsert({
+              sync_code: syncCode,
+              custom_tapes: payload.custom_tapes,
+              fsrs_grades: payload.fsrs_grades,
+              user_memos: payload.user_memos,
+              bookmarks: payload.bookmarks,
+              daily_stats: payload.daily_stats,
+              updated_at: new Date().toISOString()
+            });
+
+          if (error) throw error;
+
+          const timeStr = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+          localStorage.setItem('edurecall_sync_last_time', timeStr);
+          updateSyncUI();
+          if (notify) {
+            showToast(`클라우드 백업 완료 (${timeStr})`, 'cloud_done');
+          }
+          return true;
+        } catch (err) {
+          console.error('Push to cloud error:', err);
+          if (notify) {
+            showToast('클라우드 백업 실패: 연결 또는 SQL 테이블을 확인하세요', 'error');
+          }
+          return false;
+        }
+      }
+
+      async function pullDataFromCloud(syncCode, notify = true) {
+        if (!syncCode || !supabaseClient) return false;
+
+        try {
+          const { data, error } = await supabaseClient
+            .from('user_sync')
+            .select('*')
+            .eq('sync_code', syncCode)
+            .single();
+
+          if (error) {
+            if (error.code === 'PGRST116') {
+              // Not found: initialize a new record
+              await pushDataToCloud(false);
+              return true;
+            }
+            throw error;
+          }
+
+          if (data) {
+            unpackSyncPayload(data);
+            const timeStr = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+            localStorage.setItem('edurecall_sync_last_time', timeStr);
+            updateSyncUI();
+            if (notify) {
+              showToast(`최신 학습 데이터를 성공적으로 동기화했습니다 (${syncCode})`, 'cloud_done');
+            }
+            return true;
+          }
+        } catch (err) {
+          console.error('Pull from cloud error:', err);
+          if (notify) {
+            showToast('동기화 데이터를 불러오지 못했습니다. 코드를 확인하세요.', 'error');
+          }
+          return false;
+        }
+        return false;
+      }
+
+      // Auto-sync debouncer (triggered after user modifies content, FSRS grade, or memos)
+      function triggerAutoSync() {
+        const syncCode = localStorage.getItem('edurecall_sync_code');
+        if (!syncCode) return;
+        if (autoSyncTimeout) clearTimeout(autoSyncTimeout);
+        autoSyncTimeout = setTimeout(() => {
+          pushDataToCloud(false);
+        }, 1500);
+      }
+
+      // Generate random 4-digit code e.g. EDU-8392
+      function generateNewSyncCode() {
+        const num = Math.floor(1000 + Math.random() * 9000);
+        return `EDU-${num}`;
+      }
+
+      // Initialize Cloud Sync UI Event Listeners
+      (function initCloudSyncHandlers() {
+        const btnCloudSync = document.getElementById('btn-cloud-sync');
+        const cloudSyncModal = document.getElementById('cloud-sync-modal');
+        const btnCloseSyncModal = document.getElementById('btn-close-sync-modal');
+        const btnCopySyncCode = document.getElementById('btn-copy-sync-code');
+        const btnCreateNewSync = document.getElementById('btn-create-new-sync');
+        const btnConnectSync = document.getElementById('btn-connect-sync');
+        const inputSyncCode = document.getElementById('input-sync-code');
+        const btnManualSyncNow = document.getElementById('btn-manual-sync-now');
+
+        if (btnCloudSync) {
+          btnCloudSync.addEventListener('click', () => {
+            updateSyncUI();
+            if (cloudSyncModal) cloudSyncModal.classList.remove('hidden');
+          });
+        }
+
+        if (btnCloseSyncModal) {
+          btnCloseSyncModal.addEventListener('click', () => {
+            if (cloudSyncModal) cloudSyncModal.classList.add('hidden');
+          });
+        }
+
+        if (cloudSyncModal) {
+          cloudSyncModal.addEventListener('click', (e) => {
+            if (e.target === cloudSyncModal) {
+              cloudSyncModal.classList.add('hidden');
+            }
+          });
+        }
+
+        if (btnCopySyncCode) {
+          btnCopySyncCode.addEventListener('click', async () => {
+            const code = localStorage.getItem('edurecall_sync_code');
+            if (code) {
+              try {
+                await navigator.clipboard.writeText(code);
+                showToast(`동기화 코드(${code})가 복사되었습니다!`, 'content_copy');
+              } catch (e) {
+                prompt('동기화 코드를 복사하세요:', code);
+              }
+            }
+          });
+        }
+
+        if (btnCreateNewSync) {
+          btnCreateNewSync.addEventListener('click', async () => {
+            const currentCode = localStorage.getItem('edurecall_sync_code');
+            if (currentCode) {
+              if (!confirm(`이미 연결된 동기화 코드(${currentCode})가 있습니다. 새 코드를 발급하시겠습니까?`)) {
+                return;
+              }
+            }
+            const newCode = generateNewSyncCode();
+            localStorage.setItem('edurecall_sync_code', newCode);
+            updateSyncUI();
+            showToast(`새 동기화 코드 발급: ${newCode}`, 'key');
+            await pushDataToCloud(true);
+          });
+        }
+
+        if (btnConnectSync) {
+          btnConnectSync.addEventListener('click', async () => {
+            const code = (inputSyncCode?.value || '').trim().toUpperCase();
+            if (!code || code.length < 4) {
+              alert('올바른 동기화 코드(예: EDU-7829)를 입력해 주세요.');
+              return;
+            }
+            btnConnectSync.disabled = true;
+            btnConnectSync.textContent = '연결 중...';
+            localStorage.setItem('edurecall_sync_code', code);
+            const ok = await pullDataFromCloud(code, true);
+            btnConnectSync.disabled = false;
+            btnConnectSync.textContent = '연결 및 불러오기';
+            if (ok) {
+              if (cloudSyncModal) cloudSyncModal.classList.add('hidden');
+            }
+          });
+        }
+
+        if (btnManualSyncNow) {
+          btnManualSyncNow.addEventListener('click', async () => {
+            let code = localStorage.getItem('edurecall_sync_code');
+            if (!code) {
+              code = generateNewSyncCode();
+              localStorage.setItem('edurecall_sync_code', code);
+              showToast(`새 코드(${code})를 생성하고 클라우드에 백업합니다`, 'key');
+            }
+            btnManualSyncNow.disabled = true;
+            await pushDataToCloud(true);
+            btnManualSyncNow.disabled = false;
+          });
+        }
+
+        // On App Launch: Auto pull if sync_code exists
+        const initialSyncCode = localStorage.getItem('edurecall_sync_code');
+        if (initialSyncCode) {
+          setTimeout(() => {
+            pullDataFromCloud(initialSyncCode, false);
+          }, 800);
+        }
+        updateSyncUI();
+      })();
 
       
       // --- FSRS Integration ---
@@ -2825,6 +3255,7 @@
           updateOverallStats();
           renderSidebar();
           updateTopicRetentionView(topicId);
+          triggerAutoSync();
           return nextCard;
         } catch(e) { console.error(e); return null; }
       }
@@ -3930,6 +4361,7 @@
         });
         localStorage.setItem(`edurecall_custom_${topic.id}`, tempDiv.innerHTML);
         if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
+        triggerAutoSync();
       }
 
       function resetTopicCustomContent() {
@@ -3942,6 +4374,7 @@
         if (topic.id.startsWith('ECON-EXAM-')) {
           localStorage.removeItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
         }
+        triggerAutoSync();
         subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
         if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
         setupGroupInteractions();
@@ -5057,6 +5490,7 @@
         const memos = JSON.parse(localStorage.getItem('edurecall_user_memos')) || {};
         memos[topicId] = memoTextarea.value.trim();
         localStorage.setItem('edurecall_user_memos', JSON.stringify(memos));
+        triggerAutoSync();
         
         showToast('작성한 내용이 하단 메모에 스크랩되었습니다.', 'edit_document');
       });
@@ -5425,6 +5859,7 @@
           memoTextarea.addEventListener('input', () => {
             try {
               localStorage.setItem(`edurecall_memo_${topic.id}`, memoTextarea.value);
+              triggerAutoSync();
               if (memoStatus) {
                 memoStatus.textContent = '저장됨 ✓';
                 memoStatus.classList.add('text-emerald-600');
