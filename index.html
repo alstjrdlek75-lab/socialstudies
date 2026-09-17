@@ -1659,9 +1659,9 @@
         </div>
 
         <!-- Mode Controls Bar -->
-        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-1.5 sm:p-2 shadow-2xs flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-1.5 sm:gap-3">
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-1.5 sm:p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-2 xl:gap-3">
           <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile, flex row on desktop) -->
-          <div class="grid grid-cols-4 sm:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full sm:w-auto">
+          <div class="grid grid-cols-4 sm:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full xl:w-auto shrink-0">
             <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden sm:inline">마스킹 테이프</span>
@@ -1685,8 +1685,7 @@
           </div>
 
           <!-- Actions Toolbar (Font Scaler, Reveal Answer, Desktop Tape Add, Desktop Wide Mode) -->
-          <div class="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full sm:w-auto">
-
+          <div class="flex flex-wrap sm:flex-nowrap items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full xl:w-auto overflow-x-auto no-scrollbar py-0.5">
 
             <!-- Font Scale Controller -->
             <div class="flex items-center bg-slate-100/90 dark:bg-slate-800/80 rounded-lg p-0.5 border border-slate-200/80 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 font-bold select-none shrink-0 whitespace-nowrap">
@@ -1695,21 +1694,21 @@
               <button id="btn-font-up" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
             </div>
 
-            <!-- Inline Masking Tape Action Button (Always accessible on Mobile, Tablet & Desktop) -->
+            <!-- Inline Masking Tape Action Button -->
             <button id="btn-apply-tape-inline" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
               <span class="material-symbols-outlined text-[15px]">label</span>
-              <span class="hidden sm:inline">테이프 [M]</span>
-              <span class="sm:hidden">테이프</span>
+              <span class="hidden xl:inline">테이프 [M]</span>
+              <span class="xl:hidden">테이프</span>
             </button>
 
             <!-- Single Consolidated Reveal / Hide Button -->
-            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
+            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
               <span class="material-symbols-outlined text-[16px] text-blue-800" id="reveal-eye-icon">visibility</span>
-              <span id="reveal-btn-label"><span class="hidden sm:inline">정답 전체 공개 [Space]</span><span class="sm:hidden">정답 공개</span></span>
+              <span id="reveal-btn-label"><span class="hidden xl:inline">정답 전체 공개 [Space]</span><span class="hidden sm:inline xl:hidden">정답 전체 공개</span><span class="sm:hidden">정답 공개</span></span>
             </button>
 
-            <!-- Wide View / Essay Pad Toggle Button (available on desktop) -->
-            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
+            <!-- Wide View / Essay Pad Toggle Button (available on desktop & tablet) -->
+            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex px-2.5 sm:px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
               <span class="material-symbols-outlined text-[16px] text-slate-600" id="toggle-essay-icon">fit_screen</span>
               <span id="toggle-essay-label">와이드 보기</span>
             </button>
