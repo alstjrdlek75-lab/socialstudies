@@ -522,12 +522,20 @@
       color: #0f172a !important;
     }
 
-    /* Desktop Sidebar Collapsed State */
+    /* Desktop Sidebar Collapsed State - removes sidebar from flex flow cleanly with transition */
     @media (min-width: 1024px) {
+      #sidebar-drawer {
+        transition: width 0.2s ease, opacity 0.2s ease;
+      }
       body.sidebar-collapsed #sidebar-drawer {
-        transform: translateX(-100%) !important;
-        box-shadow: none !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
+        border-right: none !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
         pointer-events: none !important;
+        visibility: hidden !important;
       }
       body.sidebar-collapsed #main-content-wrapper {
         padding-left: 0 !important;
@@ -555,9 +563,25 @@
       display: none !important;
     }
     body.essay-collapsed #subnote-section {
-      grid-column: span 12 / span 12 !important;
       max-width: 100% !important;
       width: 100% !important;
+    }
+
+    /* Dynamic Fluid Subnote Width (Expands in Wide View, Contracts when Panels Open) */
+    #subnote-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: max-width 0.25s ease-in-out;
+    }
+    /* Wide View: when essay aside is closed */
+    body.essay-collapsed #subnote-inner {
+      max-width: 1680px !important;
+    }
+    /* Super Wide View: when both sidebar and essay aside are closed */
+    body.sidebar-collapsed.essay-collapsed #subnote-inner {
+      max-width: 1800px !important;
     }
 
     /* Ultra-Clear High-Visibility Answer Number Badge (Giant Text) */
@@ -600,51 +624,24 @@
       box-shadow: 0 3px 8px rgba(0,0,0,0.1) !important;
     }
 
-    /* Sticky Essay Aside - Follows smoothly as the user scrolls down */
-    @media (min-width: 1280px) {
-      #essay-aside {
-        position: sticky !important;
-        top: calc(4rem + 2.5rem + 1rem) !important; /* Top bar (4rem) + Sub-header (2.5rem) + gap (1rem) = 7.5rem */
-        max-height: calc(100vh - 8rem) !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        overscroll-behavior: contain !important;
-        padding-bottom: 1.5rem !important;
-      }
-      /* Custom sleek scrollbar for essay aside */
-      #essay-aside::-webkit-scrollbar {
-        width: 5px;
-      }
-      #essay-aside::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      #essay-aside::-webkit-scrollbar-thumb {
-        background: rgba(148, 163, 184, 0.4);
-        border-radius: 9999px;
-      }
-      #essay-aside::-webkit-scrollbar-thumb:hover {
-        background: rgba(100, 116, 139, 0.7);
-      }
+    /* Custom sleek scrollbar for essay aside */
+    #essay-aside::-webkit-scrollbar {
+      width: 5px;
     }
-    /* Tablet Optimized Layout (1024px - 1280px) */
+    #essay-aside::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #essay-aside::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.4);
+      border-radius: 9999px;
+    }
+    #essay-aside::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 116, 139, 0.7);
+    }
+    /* Tablet & Responsive adjustments */
     @media (min-width: 1024px) and (max-width: 1280px) {
-      #sidebar-drawer {
-        width: 16.5rem !important;
-        bottom: 3.5rem !important;
-      }
       #main-content-wrapper {
-        padding-left: 16.5rem !important;
-        padding-bottom: 4.5rem !important;
-      }
-      body.sidebar-collapsed #main-content-wrapper {
         padding-left: 0 !important;
-      }
-      #main-content-grid {
-        padding: 1rem !important;
-        gap: 1rem !important;
-      }
-      #mobile-bottom-bar {
-        display: flex !important;
       }
     }
     /* Touch devices and tablets up to 1400px (iPad Pro, etc.) */
@@ -1570,7 +1567,7 @@
 
       <!-- CENTER: Sub-note Authentic Content -->
       <section id="subnote-section" class="flex-1 flex flex-col min-w-0 overflow-y-auto px-3 sm:px-4 py-4 lg:px-6 lg:py-6 gap-3 sm:gap-4 transition-all duration-200 relative">
-        <div class="w-full max-w-4xl mx-auto flex flex-col gap-3 sm:gap-4 pb-20 xl:pb-6">
+        <div id="subnote-inner" class="w-full mx-auto flex flex-col gap-3 sm:gap-4 pb-20 xl:pb-6 transition-all duration-300">
 
         <!-- Topic Banner Card -->
         <div class="bg-white rounded-2xl border border-border p-3.5 sm:p-5 shadow-xs flex flex-col gap-2.5 sm:gap-3">
@@ -1698,7 +1695,7 @@
           <!-- Injected by renderCurrentTopic() -->
         </div>
 
-        </div> <!-- End max-w-4xl inner wrapper -->
+        </div> <!-- End subnote-inner wrapper -->
       </section>
 
       <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading -->
