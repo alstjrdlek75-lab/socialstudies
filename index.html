@@ -1475,7 +1475,7 @@
       <div class="flex items-center gap-1">
         <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" type="button" title="클릭: 타이머 시작/일시정지 | 우측 리셋 버튼으로 25분 초기화">
           <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
-          <span class="px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700" id="pomodoro-mode-badge">집중</span>
+          <span class="hidden xl:inline-block px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700" id="pomodoro-mode-badge">집중</span>
           <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
         </button>
         <button id="pomodoro-reset-btn" class="p-1 xl:p-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-rose-600 text-xs transition-all cursor-pointer" type="button" title="뽀모도로 25:00 집중 모드로 리셋">
@@ -6838,9 +6838,9 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         if (pomodoroModeBadge) {
           pomodoroModeBadge.textContent = isBreak ? '휴식' : '집중';
           if (isBreak) {
-            pomodoroModeBadge.className = 'px-1 py-0.2 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300';
+            pomodoroModeBadge.className = 'hidden xl:inline-block px-1 py-0.2 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300';
           } else {
-            pomodoroModeBadge.className = 'px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300';
+            pomodoroModeBadge.className = 'hidden xl:inline-block px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300';
           }
         }
 
