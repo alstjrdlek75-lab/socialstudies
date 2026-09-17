@@ -18,11 +18,11 @@
     })();
   </script>
   <link rel="icon" type="image/png" href="assets/edu_cover_1x1.png"/>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
   <style>
     @layer base {
-      html, body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+      html, body { margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Pretendard', sans-serif; }
       body { overscroll-behavior: none; }
     }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -1342,17 +1342,20 @@
       theme: {
         extend: {
           colors: {
-            "primary": "#1d4ed8",
-            "primary-light": "#dbeafe",
-            "primary-dark": "#1e40af",
-            "surface": "#f8fafc",
+            "primary": "#2563eb",
+            "primary-light": "#60a5fa",
+            "primary-dark": "#1d4ed8",
+            "surface": "#f8f9ff",
             "card": "#ffffff",
             "border": "#e2e8f0",
             "text-main": "#0f172a",
-            "text-muted": "#64748b"
+            "text-muted": "#64748b",
+            "masking": "#10b981",
+            "masking-bg": "#d1fae5"
           },
           spacing: {
-            "sidebar-width": "20rem"
+            "sidebar-width": "320px",
+            "essay-width": "400px"
           }
         }
       }
@@ -1365,10 +1368,10 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
-<body class="bg-surface text-text-main min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+<body class="bg-surface text-text-main h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
   <!-- TOP APP HEADER -->
-  <header class="fixed top-0 left-0 right-0 h-14 sm:h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6">
+  <header class="flex-none h-14 sm:h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6">
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <div class="flex items-center gap-2 shrink-0">
         <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 shrink-0" />
@@ -1446,7 +1449,7 @@
   </header>
 
   <!-- SUB-HEADER (Breadcrumb, Prev/Next, Shortcuts Hint) -->
-  <div id="sub-header" class="fixed top-14 sm:top-16 left-0 right-0 h-9 sm:h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs">
+  <div id="sub-header" class="flex-none h-9 sm:h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs">
     <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
       <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
@@ -1489,11 +1492,14 @@
     </div>
   </div>
 
-  <!-- BACKDROP FOR MOBILE SIDEBAR -->
-  <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"></div>
+  <!-- 3-COLUMN WORKSPACE WRAPPER -->
+  <div class="flex-1 flex overflow-hidden relative w-full">
 
-  <!-- LEFT SIDEBAR: Table of Contents Tree (Fixed on desktop, Slide-out Drawer on mobile) -->
-  <aside id="sidebar-drawer" class="fixed left-0 top-0 bottom-0 lg:top-[6.5rem] w-[85vw] max-w-[320px] lg:w-sidebar-width bg-white border-r border-border z-50 lg:z-30 flex flex-col shadow-2xl lg:shadow-xs transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
+    <!-- BACKDROP FOR MOBILE SIDEBAR -->
+    <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"></div>
+
+    <!-- LEFT SIDEBAR: Table of Contents Tree (Flex column on desktop, Drawer on mobile) -->
+    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-[85vw] max-w-[320px] lg:w-[320px] bg-white border-r border-border z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
     <!-- Mobile Drawer Header with Close Button -->
     <div class="lg:hidden p-3 border-b border-slate-200 bg-white flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -1559,11 +1565,12 @@
   </aside>
 
   <!-- MAIN AREA CONTAINER -->
-  <div id="main-content-wrapper" class="lg:pl-sidebar-width flex-1 flex flex-col transition-all duration-300 ease-in-out pb-20 xl:pb-0 pt-[5.75rem] sm:pt-[6.5rem]">
-    <main id="main-content-grid" class="w-full max-w-[1600px] 2xl:max-w-[1760px] mx-auto p-3 sm:p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6 items-start">
+  <div id="main-content-wrapper" class="flex-1 flex min-w-0 transition-all duration-300 ease-in-out bg-slate-50/50">
+    <main id="main-content-grid" class="flex-1 flex w-full min-w-0">
 
-      <!-- LEFT/CENTER: Sub-note Authentic Content & Recall Deck (70% or 100% in wide mode) -->
-      <section id="subnote-section" class="xl:col-span-8 2xl:col-span-9 flex flex-col gap-3 sm:gap-4 min-w-0 transition-all duration-200">
+      <!-- CENTER: Sub-note Authentic Content -->
+      <section id="subnote-section" class="flex-1 flex flex-col min-w-0 overflow-y-auto px-3 sm:px-4 py-4 lg:px-6 lg:py-6 gap-3 sm:gap-4 transition-all duration-200 relative">
+        <div class="w-full max-w-4xl mx-auto flex flex-col gap-3 sm:gap-4 pb-20 xl:pb-6">
 
         <!-- Topic Banner Card -->
         <div class="bg-white rounded-2xl border border-border p-3.5 sm:p-5 shadow-xs flex flex-col gap-2.5 sm:gap-3">
@@ -1632,7 +1639,7 @@
         <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-1.5 sm:p-2 shadow-2xs flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-1.5 sm:gap-3">
           <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile, flex row on desktop) -->
           <div class="grid grid-cols-4 sm:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full sm:w-auto">
-            <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-lime-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
+            <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden sm:inline">마스킹 테이프</span>
               <span class="sm:hidden">테이프</span>
@@ -1666,15 +1673,15 @@
             </div>
 
             <!-- Inline Masking Tape Action Button (Always accessible on Mobile, Tablet & Desktop) -->
-            <button id="btn-apply-tape-inline" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-lime-600 hover:bg-lime-700 active:bg-lime-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
+            <button id="btn-apply-tape-inline" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden sm:inline">테이프 [M]</span>
               <span class="sm:hidden">테이프</span>
             </button>
 
             <!-- Single Consolidated Reveal / Hide Button -->
-            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-lime-100 hover:bg-lime-200 text-lime-950 border border-lime-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
-              <span class="material-symbols-outlined text-[16px] text-lime-800" id="reveal-eye-icon">visibility</span>
+            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap" type="button" title="정답(마스킹 테이프) 전체 공개 / 다시 가리기 [단축키: Space 또는 T]">
+              <span class="material-symbols-outlined text-[16px] text-blue-800" id="reveal-eye-icon">visibility</span>
               <span id="reveal-btn-label"><span class="hidden sm:inline">정답 전체 공개 [Space]</span><span class="sm:hidden">정답 공개</span></span>
             </button>
 
@@ -1691,10 +1698,11 @@
           <!-- Injected by renderCurrentTopic() -->
         </div>
 
+        </div> <!-- End max-w-4xl inner wrapper -->
       </section>
 
-      <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading (30% or 0% in wide mode) -->
-      <aside id="essay-aside" class="xl:col-span-4 2xl:col-span-3 flex flex-col gap-4 min-w-0 transition-all duration-200">
+      <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading -->
+      <aside id="essay-aside" class="hidden xl:flex xl:flex-none xl:w-[400px] 2xl:w-[450px] flex-col overflow-y-auto bg-white border-l border-border p-4 lg:p-6 gap-4 min-w-0 transition-all duration-200 z-10 shadow-[-4px_0_15px_-3px_rgba(0,0,0,0.02)] pb-24 xl:pb-6">
 
         <!-- Essay Recall Textarea Card -->
         <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3">
@@ -1821,6 +1829,7 @@
       </aside>
     </main>
   </div>
+  </div> <!-- END 3-COLUMN WORKSPACE WRAPPER -->
 
   <!-- DIFF MODAL WINDOW -->
   <div id="diff-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
