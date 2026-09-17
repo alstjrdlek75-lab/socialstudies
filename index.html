@@ -1505,7 +1505,7 @@
     <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"></div>
 
     <!-- LEFT SIDEBAR: Table of Contents Tree (Flex column on desktop, Drawer on mobile) -->
-    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-[85vw] max-w-[320px] lg:w-[320px] bg-white border-r border-border z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
+    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-[85vw] max-w-[320px] lg:w-[280px] xl:w-[300px] 2xl:w-[320px] bg-white border-r border-border z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
     <!-- Mobile Drawer Header with Close Button -->
     <div class="lg:hidden p-3 border-b border-slate-200 bg-white flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -1706,7 +1706,7 @@
       </section>
 
       <!-- RIGHT: Active Recall Blank Essay Pad & Self-Grading -->
-      <aside id="essay-aside" class="hidden xl:flex xl:flex-none xl:w-[400px] 2xl:w-[450px] flex-col overflow-y-auto bg-white border-l border-border p-4 lg:p-6 gap-4 min-w-0 transition-all duration-200 z-10 shadow-[-4px_0_15px_-3px_rgba(0,0,0,0.02)] pb-24 xl:pb-6">
+      <aside id="essay-aside" class="hidden lg:flex lg:flex-none lg:w-[350px] xl:w-[380px] 2xl:w-[420px] flex-col overflow-y-auto bg-white border-l border-border p-3.5 lg:p-4 xl:p-5 gap-3.5 min-w-0 transition-all duration-200 z-10 shadow-[-4px_0_15px_-3px_rgba(0,0,0,0.02)] pb-24 xl:pb-6">
 
         <!-- Essay Recall Textarea Card -->
         <div class="bg-white rounded-2xl border border-border p-4 shadow-xs flex flex-col gap-3">
@@ -1836,10 +1836,11 @@
 
       </aside>
     </main>
+  </div> <!-- END main-content-wrapper -->
   </div> <!-- END 3-COLUMN WORKSPACE WRAPPER -->
 
   <!-- DESKTOP STATUS BAR (Shortcuts Guide & FSRS Scheduler Status) -->
-  <footer id="desktop-status-bar" class="hidden lg:flex flex-none h-7 bg-white border-t border-slate-200 px-4 items-center justify-between text-[11px] text-slate-500 font-medium select-none z-30">
+  <footer id="desktop-status-bar" class="hidden lg:flex flex-none h-7 w-full bg-white border-t border-slate-200 px-4 items-center justify-between text-[11px] text-slate-500 font-medium select-none z-30">
     <div class="flex items-center gap-4">
       <div class="flex items-center gap-1.5 text-slate-700 font-bold">
         <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
@@ -4702,12 +4703,16 @@
 
       // Search
       const sidebarSearchKbd = document.getElementById('sidebar-search-kbd');
+      let searchDebounceTimer = null;
       sidebarSearch.addEventListener('input', (e) => {
         searchQuery = e.target.value;
         const hasText = Boolean(searchQuery.trim());
         btnClearSearch.classList.toggle('hidden', !hasText);
         if (sidebarSearchKbd) sidebarSearchKbd.classList.toggle('hidden', hasText);
-        renderSidebar();
+        clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+          renderSidebar();
+        }, 100);
       });
 
       sidebarSearch.addEventListener('focus', () => {
@@ -4719,6 +4724,7 @@
       });
 
       btnClearSearch.addEventListener('click', () => {
+        clearTimeout(searchDebounceTimer);
         sidebarSearch.value = '';
         searchQuery = '';
         btnClearSearch.classList.add('hidden');
