@@ -1801,47 +1801,47 @@
             <span class="text-[11px] text-slate-400 font-medium" id="grading-shortcut-hint">단축키: 1/2/3/4</span>
           </div>
 
-          <!-- 1) FSRS 4-Rating Buttons Container (1: Easy -> 2: Good -> 3: Hard -> 4: Again) -->
+          <!-- 1) FSRS 4-Rating Buttons Container (1: Again -> 2: Hard -> 3: Good -> 4: Easy) -->
           <div class="grid grid-cols-4 gap-1.5" id="fsrs-buttons-container">
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="4" type="button" title="쉬움 (단축키: 1)">
-              <span class="text-xs font-bold">Easy</span>
-              <span class="text-[10px] text-emerald-700 font-medium mt-0.5" id="fsrs-ivl-4">7일 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-emerald-200/60 text-emerald-900 text-[9px] font-mono font-bold">1</span>
-            </button>
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="3" type="button" title="알맞음 (단축키: 2)">
-              <span class="text-xs font-bold">Good</span>
-              <span class="text-[10px] text-blue-700 font-medium mt-0.5" id="fsrs-ivl-3">3일 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-blue-200/60 text-blue-900 text-[9px] font-mono font-bold">2</span>
-            </button>
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-slate-200 bg-slate-50/90 hover:bg-slate-100 text-slate-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="2" type="button" title="어려움 (단축키: 3)">
-              <span class="text-xs font-bold">Hard</span>
-              <span class="text-[10px] text-slate-600 font-medium mt-0.5" id="fsrs-ivl-2">1일 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-slate-200/70 text-slate-800 text-[9px] font-mono font-bold">3</span>
-            </button>
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 bg-red-50/80 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="1" type="button" title="다시 (단축키: 4)">
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 bg-red-50/80 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="1" type="button" title="다시 (단축키: 1)">
               <span class="text-xs font-bold">Again</span>
               <span class="text-[10px] text-red-700 font-medium mt-0.5" id="fsrs-ivl-1">10분 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-red-200/60 text-red-900 text-[9px] font-mono font-bold">4</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-red-200/60 text-red-900 text-[9px] font-mono font-bold">1</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-slate-200 bg-slate-50/90 hover:bg-slate-100 text-slate-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="2" type="button" title="어려움 (단축키: 2)">
+              <span class="text-xs font-bold">Hard</span>
+              <span class="text-[10px] text-slate-600 font-medium mt-0.5" id="fsrs-ivl-2">1일 후</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-slate-200/70 text-slate-800 text-[9px] font-mono font-bold">2</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="3" type="button" title="알맞음 (단축키: 3)">
+              <span class="text-xs font-bold">Good</span>
+              <span class="text-[10px] text-blue-700 font-medium mt-0.5" id="fsrs-ivl-3">3일 후</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-blue-200/60 text-blue-900 text-[9px] font-mono font-bold">3</span>
+            </button>
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="4" type="button" title="쉬움 (단축키: 4)">
+              <span class="text-xs font-bold">Easy</span>
+              <span class="text-[10px] text-emerald-700 font-medium mt-0.5" id="fsrs-ivl-4">7일 후</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-emerald-200/60 text-emerald-900 text-[9px] font-mono font-bold">4</span>
             </button>
           </div>
 
           <!-- 2) FAP 3-Level Buttons Container (기출/응용 문제용) -->
           <div class="grid grid-cols-3 gap-2 hidden" id="fap-buttons-container">
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer group" data-grade="fail" type="button" title="오답 / 다시 풀기 (단축키: F 또는 4)">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer group" data-grade="fail" type="button" title="오답 / 다시 풀기 (단축키: F 또는 1)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-red-700">F</span>
                 <span class="text-xs font-bold">Fail (오답)</span>
               </div>
               <span class="text-[10px] text-red-600 font-medium mt-0.5" id="fap-ivl-fail">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer group" data-grade="ambiguous" type="button" title="애매함 / 부분정답 (단축키: A 또는 3)">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer group" data-grade="ambiguous" type="button" title="애매함 / 부분정답 (단축키: A 또는 2)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-amber-700">A</span>
                 <span class="text-xs font-bold">Ambiguous (세모)</span>
               </div>
               <span class="text-[10px] text-amber-600 font-medium mt-0.5" id="fap-ivl-ambiguous">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer group" data-grade="pass" type="button" title="정답 / 패스 (단축키: P 또는 1, 2)">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer group" data-grade="pass" type="button" title="정답 / 패스 (단축키: P 또는 3, 4)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-blue-700">P</span>
                 <span class="text-xs font-bold">Pass (정답)</span>
@@ -2334,12 +2334,12 @@
           <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Ctrl + →</kbd>
         </div>
         <div class="flex justify-between items-center py-2">
-          <span>FSRS 복습 평가 (쉬움/알맞음/어려움/다시)</span>
+          <span>FSRS 복습 평가 (다시/어려움/알맞음/쉬움)</span>
           <div class="flex gap-1 font-mono font-bold">
-            <kbd class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">1</kbd>
-            <kbd class="px-1.5 py-0.5 bg-blue-100 text-blue-800 rounded border border-blue-300">2</kbd>
-            <kbd class="px-1.5 py-0.5 bg-slate-100 text-slate-800 rounded border border-slate-300">3</kbd>
-            <kbd class="px-1.5 py-0.5 bg-red-100 text-red-800 rounded border border-red-300">4</kbd>
+            <kbd class="px-1.5 py-0.5 bg-red-100 text-red-800 rounded border border-red-300">1</kbd>
+            <kbd class="px-1.5 py-0.5 bg-slate-100 text-slate-800 rounded border border-slate-300">2</kbd>
+            <kbd class="px-1.5 py-0.5 bg-blue-100 text-blue-800 rounded border border-blue-300">3</kbd>
+            <kbd class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">4</kbd>
           </div>
         </div>
       </div>
@@ -5047,13 +5047,13 @@
           }
         } else {
           if (grade == 4) {
-            showToast('[1] 쉬움 (Easy)! 복습 주기가 대폭 연장되었습니다', 'verified');
+            showToast('[4] 쉬움 (Easy)! 복습 주기가 대폭 연장되었습니다', 'verified');
           } else if (grade == 3 || grade === 'pass') {
-            showToast('[2] 알맞음 (Good)! 안정적으로 기억에 정착 중입니다', 'verified');
+            showToast('[3] 알맞음 (Good)! 안정적으로 기억에 정착 중입니다', 'verified');
           } else if (grade == 2 || grade === 'ambiguous') {
-            showToast('[3] 어려움 (Hard)! 복습 주기가 짧게 유지됩니다', 'help');
+            showToast('[2] 어려움 (Hard)! 복습 주기가 짧게 유지됩니다', 'help');
           } else if (grade == 1 || grade === 'fail') {
-            showToast('[4] 다시 (Again)! 곧 재복습 일정이 잡힙니다', 'cancel');
+            showToast('[1] 다시 (Again)! 곧 재복습 일정이 잡힙니다', 'cancel');
           }
         }
 
@@ -7114,31 +7114,31 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         }
 
         // 4. FSRS Self-Grading Shortcuts: Strictly [1], [2], [3], [4] only
-        // [1] -> Easy (Grade 4)
+        // [1] -> Again (Grade 1)
         if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(4);
+          handleGrade(1);
           return;
         }
 
-        // [2] -> Good (Grade 3)
+        // [2] -> Hard (Grade 2)
         if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(3);
-          return;
-        }
-
-        // [3] -> Hard (Grade 2)
-        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           handleGrade(2);
           return;
         }
 
-        // [4] -> Again (Grade 1)
+        // [3] -> Good (Grade 3)
+        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(3);
+          return;
+        }
+
+        // [4] -> Easy (Grade 4)
         if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(1);
+          handleGrade(4);
           return;
         }
 
