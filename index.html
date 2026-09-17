@@ -1530,30 +1530,36 @@
     </div>
 
     <!-- Sidebar Header & Search -->
-    <div class="p-3 border-b border-border bg-slate-50/50 flex flex-col gap-2">
+    <div class="p-3 border-b border-border bg-white flex flex-col gap-2.5">
       <div class="flex items-center justify-between">
-        <span class="font-bold text-xs text-slate-800" id="sidebar-subject-label">사회과교육론 목차</span>
-        <div class="flex items-center gap-1.5">
-          <span class="text-[11px] text-blue-600 font-bold" id="sidebar-topic-count">99개 주제</span>
-          <button id="btn-collapse-sidebar" class="hidden lg:flex items-center justify-center w-6 h-6 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-200/80 transition-colors cursor-pointer" type="button" title="목차 접기 (Ctrl+B)">
-            <span class="material-symbols-outlined text-[17px]">dock_to_left</span>
-          </button>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-blue-600 text-[22px]">folder_open</span>
+          <span class="font-extrabold text-slate-900 text-base tracking-tight" id="sidebar-subject-label">단원 목차</span>
+          <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-blue-100 text-blue-700 font-mono" id="sidebar-topic-count">168</span>
         </div>
-      </div>
-      <!-- Filter: Bookmark / Scrap -->
-      <div class="flex items-center">
-        <button id="btn-filter-bookmark" class="w-full flex justify-center items-center gap-1.5 text-[11px] font-bold py-1.5 rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-amber-50 hover:border-amber-300 hover:text-amber-700 transition-colors cursor-pointer shadow-2xs" type="button">
-          <span class="material-symbols-outlined text-[15px] text-amber-400">star</span>
-          <span>중요 주제만 모아보기</span>
+        <button id="btn-collapse-sidebar" class="hidden lg:flex items-center justify-center p-1 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer" type="button" title="목차 접기 (⌘B)">
+          <span class="material-symbols-outlined text-[20px]">dock_to_left</span>
         </button>
       </div>
+
       <!-- Search Input -->
       <div class="relative flex items-center">
-        <span class="material-symbols-outlined absolute left-2 text-slate-400 text-[16px]">search</span>
-        <input id="sidebar-search" type="text" placeholder="단원·주제·키워드 검색..." class="w-full pl-7 pr-8 py-1.5 text-xs bg-white rounded-lg border border-slate-200 focus:border-blue-500 focus:outline-none transition-colors">
-        <kbd id="sidebar-search-kbd" class="pointer-events-none absolute right-2 px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-400 font-mono text-[10px] font-semibold">⌘K</kbd>
-        <button id="btn-clear-search" class="hidden absolute right-2 text-slate-400 hover:text-slate-600" type="button">
+        <span class="material-symbols-outlined absolute left-2.5 text-slate-400 text-[16px]">search</span>
+        <input id="sidebar-search" type="text" placeholder="단원·주제 검색..." class="w-full pl-8 pr-8 py-2 text-xs bg-slate-100/80 rounded-xl border border-slate-200/70 focus:bg-white focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400">
+        <kbd id="sidebar-search-kbd" class="pointer-events-none absolute right-2.5 px-1.5 py-0.5 rounded bg-white border border-slate-200 text-slate-400 font-mono text-[10px] font-semibold shadow-2xs">⌘K</kbd>
+        <button id="btn-clear-search" class="hidden absolute right-2.5 text-slate-400 hover:text-slate-600" type="button">
           <span class="material-symbols-outlined text-[14px]">close</span>
+        </button>
+      </div>
+
+      <!-- Filter: Bookmark / Scrap -->
+      <div class="flex items-center">
+        <button id="btn-filter-bookmark" class="w-full flex items-center justify-between text-xs font-bold py-2 px-3 rounded-xl border border-blue-100/80 bg-blue-50/60 hover:bg-blue-100/60 text-blue-700 transition-colors cursor-pointer shadow-2xs" type="button">
+          <div class="flex items-center gap-1.5">
+            <span class="text-amber-400 text-sm">★</span>
+            <span>중요 주제만 모아보기</span>
+          </div>
+          <span class="bg-white text-blue-700 font-bold px-2 py-0.5 rounded-md shadow-2xs text-xs border border-blue-100/60 font-mono" id="bookmark-filter-count">19</span>
         </button>
       </div>
     </div>
@@ -1769,47 +1775,47 @@
             <span class="text-[11px] text-slate-400 font-medium" id="grading-shortcut-hint">단축키: 1/2/3/4</span>
           </div>
 
-          <!-- 1) FSRS 4-Rating Buttons Container (순서 반대: Easy -> Good -> Hard -> Again) -->
+          <!-- 1) FSRS 4-Rating Buttons Container (1: Easy -> 2: Good -> 3: Hard -> 4: Again) -->
           <div class="grid grid-cols-4 gap-1.5" id="fsrs-buttons-container">
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="4" type="button" title="쉬움 (단축키: 4)">
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="4" type="button" title="쉬움 (단축키: 1)">
               <span class="text-xs font-bold">Easy</span>
               <span class="text-[10px] text-emerald-700 font-medium mt-0.5" id="fsrs-ivl-4">7일 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-emerald-200/60 text-emerald-900 text-[9px] font-mono font-bold">4</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-emerald-200/60 text-emerald-900 text-[9px] font-mono font-bold">1</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="3" type="button" title="알맞음 (단축키: 3)">
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="3" type="button" title="알맞음 (단축키: 2)">
               <span class="text-xs font-bold">Good</span>
               <span class="text-[10px] text-blue-700 font-medium mt-0.5" id="fsrs-ivl-3">3일 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-blue-200/60 text-blue-900 text-[9px] font-mono font-bold">3</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-blue-200/60 text-blue-900 text-[9px] font-mono font-bold">2</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-slate-200 bg-slate-50/90 hover:bg-slate-100 text-slate-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="2" type="button" title="어려움 (단축키: 2)">
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-slate-200 bg-slate-50/90 hover:bg-slate-100 text-slate-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="2" type="button" title="어려움 (단축키: 3)">
               <span class="text-xs font-bold">Hard</span>
               <span class="text-[10px] text-slate-600 font-medium mt-0.5" id="fsrs-ivl-2">1일 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-slate-200/70 text-slate-800 text-[9px] font-mono font-bold">2</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-slate-200/70 text-slate-800 text-[9px] font-mono font-bold">3</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 bg-red-50/80 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="1" type="button" title="다시 (단축키: 1)">
+            <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 bg-red-50/80 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="1" type="button" title="다시 (단축키: 4)">
               <span class="text-xs font-bold">Again</span>
               <span class="text-[10px] text-red-700 font-medium mt-0.5" id="fsrs-ivl-1">10분 후</span>
-              <span class="mt-1 px-1.5 py-0.2 rounded bg-red-200/60 text-red-900 text-[9px] font-mono font-bold">1</span>
+              <span class="mt-1 px-1.5 py-0.2 rounded bg-red-200/60 text-red-900 text-[9px] font-mono font-bold">4</span>
             </button>
           </div>
 
           <!-- 2) FAP 3-Level Buttons Container (기출/응용 문제용) -->
           <div class="grid grid-cols-3 gap-2 hidden" id="fap-buttons-container">
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer group" data-grade="fail" type="button" title="오답 / 다시 풀기 (단축키: F 또는 1)">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer group" data-grade="fail" type="button" title="오답 / 다시 풀기 (단축키: F 또는 4)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-red-700">F</span>
                 <span class="text-xs font-bold">Fail (오답)</span>
               </div>
               <span class="text-[10px] text-red-600 font-medium mt-0.5" id="fap-ivl-fail">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer group" data-grade="ambiguous" type="button" title="애매함 / 부분정답 (단축키: A 또는 2)">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer group" data-grade="ambiguous" type="button" title="애매함 / 부분정답 (단축키: A 또는 3)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-amber-700">A</span>
                 <span class="text-xs font-bold">Ambiguous (세모)</span>
               </div>
               <span class="text-[10px] text-amber-600 font-medium mt-0.5" id="fap-ivl-ambiguous">-</span>
             </button>
-            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer group" data-grade="pass" type="button" title="정답 / 패스 (단축키: P 또는 3, 4)">
+            <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer group" data-grade="pass" type="button" title="정답 / 패스 (단축키: P 또는 1, 2)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-blue-700">P</span>
                 <span class="text-xs font-bold">Pass (정답)</span>
@@ -1857,10 +1863,10 @@
       </div>
       <div class="flex items-center gap-1.5">
         <span class="text-slate-500">FSRS 간격 평가</span>
-        <span class="text-emerald-700 font-bold">Easy</span> <kbd class="px-1.5 py-0.2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[10px] font-bold">4</kbd>
-        <span class="text-blue-700 font-bold ml-1">Good</span> <kbd class="px-1.5 py-0.2 rounded bg-blue-50 border border-blue-200 text-blue-800 font-mono text-[10px] font-bold">3</kbd>
-        <span class="text-slate-700 font-bold ml-1">Hard</span> <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-800 font-mono text-[10px] font-bold">2</kbd>
-        <span class="text-red-700 font-bold ml-1">Again</span> <kbd class="px-1.5 py-0.2 rounded bg-red-50 border border-red-200 text-red-800 font-mono text-[10px] font-bold">1</kbd>
+        <span class="text-emerald-700 font-bold">Easy</span> <kbd class="px-1.5 py-0.2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[10px] font-bold">1</kbd>
+        <span class="text-blue-700 font-bold ml-1">Good</span> <kbd class="px-1.5 py-0.2 rounded bg-blue-50 border border-blue-200 text-blue-800 font-mono text-[10px] font-bold">2</kbd>
+        <span class="text-slate-700 font-bold ml-1">Hard</span> <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-800 font-mono text-[10px] font-bold">3</kbd>
+        <span class="text-red-700 font-bold ml-1">Again</span> <kbd class="px-1.5 py-0.2 rounded bg-red-50 border border-red-200 text-red-800 font-mono text-[10px] font-bold">4</kbd>
       </div>
     </div>
     <div class="flex items-center gap-1.5 text-slate-500 font-mono text-[10px]">
@@ -3008,69 +3014,53 @@
           });
         }
 
+        // Helper: Extract compact exam tag for a section (e.g. "'23, '25 기출")
+        function getSectionExamTag(indices) {
+          const tags = [];
+          indices.forEach(idx => {
+            const t = TOPICS[idx];
+            if (t.examTag && t.examTag !== '이론핵심' && !t.examTag.includes('TEST') && !t.examTag.includes('핵심')) {
+              const parts = t.examTag.split(',').map(s => s.trim());
+              parts.forEach(p => {
+                if (/^\d{2}$/.test(p)) {
+                  if (!tags.includes(`'${p}`)) tags.push(`'${p}`);
+                } else if (p) {
+                  if (!tags.includes(p)) tags.push(p);
+                }
+              });
+            }
+          });
+          if (tags.length === 0) return '';
+          return `${tags.join(', ')} 기출`;
+        }
+
         chapterMap.forEach((secMap, chName) => {
           let chapterTotal = 0;
           secMap.forEach(arr => { chapterTotal += arr.length; });
 
-          // 1. Chapter Container & Header
           const chapContainer = document.createElement('div');
-          chapContainer.className = 'chapter-group mb-2.5';
+          chapContainer.className = 'chapter-group mb-1.5';
 
-          const chapHeader = document.createElement('div');
-          chapHeader.className = 'chapter-header pt-3 pb-1.5 px-2 text-[11px] font-extrabold text-slate-700 uppercase tracking-wider flex items-center justify-between border-b border-slate-200 mt-2 first:mt-0';
-          chapHeader.innerHTML = `
-            <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-              <span class="material-symbols-outlined text-[15px] text-blue-600 shrink-0">folder</span>
-              <span class="truncate font-extrabold text-slate-800">${chName}</span>
-            </div>
-            <span class="text-[10px] text-slate-400 font-medium shrink-0">${chapterTotal}개</span>
-          `;
-          chapContainer.appendChild(chapHeader);
+          // Only show chapter header in ALL or 기출 tabs, otherwise keep sidebar flat and clean like mockup
+          if (activeSubject === 'ALL' || activeSubject === '기출') {
+            const chapHeader = document.createElement('div');
+            chapHeader.className = 'chapter-header pt-3 pb-1.5 px-2 text-[11px] font-extrabold text-slate-700 uppercase tracking-wider flex items-center justify-between border-b border-slate-200 mt-2 first:mt-0';
+            chapHeader.innerHTML = `
+              <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
+                <span class="material-symbols-outlined text-[15px] text-blue-600 shrink-0">folder</span>
+                <span class="truncate font-extrabold text-slate-800">${chName}</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium shrink-0">${chapterTotal}개</span>
+            `;
+            chapContainer.appendChild(chapHeader);
+          }
 
-          // 2. Sections inside Chapter
           const chapContent = document.createElement('div');
-          chapContent.className = 'chapter-content space-y-0.5 pt-1';
+          chapContent.className = 'chapter-content space-y-1';
 
           secMap.forEach((indices, secName) => {
-            // Sort topics in section: concepts first, then exam questions by year (ascending) and question number (ascending)
             sortTopicIndicesList(indices);
 
-            // If section has only 1 topic, render directly as a clean standalone item without redundant folder accordion
-            if (indices.length === 1) {
-              const globalIdx = indices[0];
-              renderedLinearIndices.push(globalIdx);
-              const topic = TOPICS[globalIdx];
-              const isCurrent = (globalIdx === currentTopicIndex);
-
-              const item = document.createElement('a');
-              item.href = '#';
-              item.dataset.globalIndex = globalIdx;
-              item.className = isCurrent
-                ? 'sidebar-topic-item active flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5'
-                : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
-
-              const displayName = (topic.section && topic.section !== chName) ? topic.section : topic.title;
-
-              const formattedTag = formatExamTag(topic.examTag, topic);
-              const isBm = bookmarks.includes(topic.id);
-              item.innerHTML = `
-                <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                  ${isBm ? `<span class="material-symbols-outlined material-symbols-filled text-[14px] ${isCurrent ? 'text-amber-300' : 'text-amber-500'} shrink-0">star</span>` : `<span class="material-symbols-outlined text-[14px] ${isCurrent ? 'text-white' : 'text-slate-400'} shrink-0">description</span>`}
-                  <span class="truncate font-semibold ${isCurrent ? 'text-white' : ''}">${displayName}</span>
-                </div>
-                ${formattedTag ? `<span class="text-[10px] font-bold ${isCurrent ? 'text-blue-100' : 'text-indigo-500'} shrink-0 tracking-tight">${formattedTag}</span>` : ''}
-              `;
-
-              item.addEventListener('click', (e) => {
-                e.preventDefault();
-                renderTopic(globalIdx);
-              });
-
-              chapContent.appendChild(item);
-              return;
-            }
-
-            // Multiple Topics: Render Clickable Accordion Folder
             const secKey = `${chName}__${secName}`;
             const isSecActive = indices.includes(currentTopicIndex);
             const isExamSubject = (activeSubject === '기출');
@@ -3078,43 +3068,93 @@
             if (Boolean(q) || isSecActive) {
               isExpanded = true;
             } else if (isExamSubject) {
-              // In 기출 tab: Default is collapsed! Only open if user explicitly clicked to expand
               isExpanded = expandedSections.has(`EXPANDED__${secKey}`);
             } else {
               isExpanded = !expandedSections.has(`COLLAPSED__${secKey}`);
             }
 
+            const secExamTag = getSectionExamTag(indices);
+
             const secGroup = document.createElement('div');
-            secGroup.className = 'section-group';
+            secGroup.className = isExpanded 
+              ? 'section-group bg-blue-50/50 rounded-2xl p-2 border border-blue-100/60 my-1.5 space-y-1'
+              : 'section-group my-0.5';
 
             // Section Header (Clickable Accordion)
             const secHeader = document.createElement('button');
             secHeader.type = 'button';
-            secHeader.className = 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-700 transition-colors cursor-pointer group text-left';
-            secHeader.innerHTML = `
-              <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-indigo-600 transition-transform duration-150 sec-chevron shrink-0 ${isExpanded ? 'rotate-90 text-indigo-600' : ''}">chevron_right</span>
-                <span class="material-symbols-outlined text-[15px] text-indigo-600 shrink-0">folder_open</span>
-                <span class="truncate font-bold text-slate-800 group-hover:text-indigo-700">${secName}</span>
-              </div>
-              <span class="text-[10px] text-slate-400 font-normal px-1.5 py-0.2 bg-slate-100 group-hover:bg-indigo-50 group-hover:text-indigo-600 rounded-full shrink-0">${indices.length}</span>
-            `;
+            secHeader.className = isExpanded
+              ? 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group'
+              : 'section-toggle-btn w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left';
 
-            // Section Children Container (with single continuous straight vertical guide line)
+            secHeader.innerHTML = isExpanded
+              ? `
+                <div class="flex items-center gap-2 min-w-0 flex-1 pr-2">
+                  <span class="material-symbols-outlined text-[20px] text-blue-600 transition-transform duration-150 sec-chevron shrink-0">expand_more</span>
+                  <span class="truncate font-bold text-blue-600 text-xs md:text-sm sec-title">${secName}</span>
+                </div>
+                <div class="sec-badge-container shrink-0">
+                  <span class="bg-white text-blue-600 font-bold px-2 py-0.5 rounded-md text-xs font-mono shadow-2xs border border-blue-100/60">${indices.length}</span>
+                </div>
+              `
+              : `
+                <div class="flex items-center gap-2 min-w-0 flex-1 pr-2">
+                  <span class="material-symbols-outlined text-[18px] text-slate-400 group-hover:text-slate-600 transition-transform duration-150 sec-chevron shrink-0">chevron_right</span>
+                  <span class="truncate font-semibold text-slate-800 text-xs md:text-sm group-hover:text-slate-900 sec-title">${secName}</span>
+                </div>
+                <div class="sec-badge-container shrink-0">
+                  ${secExamTag 
+                    ? `<span class="bg-blue-600 text-white font-bold px-2.5 py-0.5 rounded-md text-[11px] tracking-tight shadow-2xs font-mono">${secExamTag}</span>`
+                    : `<span class="bg-slate-100 text-slate-500 font-bold px-2 py-0.5 rounded-md text-xs font-mono">${indices.length}</span>`
+                  }
+                </div>
+              `;
+
+            // Section Children Container
             const secChildren = document.createElement('div');
-            secChildren.className = `section-children ml-3.5 pl-2.5 border-l-2 border-slate-200/80 space-y-0.5 mt-0.5 mb-1 ${isExpanded ? '' : 'hidden'}`;
+            secChildren.className = `section-children space-y-0.5 pt-0.5 ${isExpanded ? '' : 'hidden'}`;
             secChildren.dataset.secKey = secKey;
 
             secHeader.addEventListener('click', () => {
               const currentlyHidden = secChildren.classList.contains('hidden');
               if (currentlyHidden) {
                 secChildren.classList.remove('hidden');
-                secHeader.querySelector('.sec-chevron').classList.add('rotate-90', 'text-indigo-600');
+                secGroup.className = 'section-group bg-blue-50/50 rounded-2xl p-2 border border-blue-100/60 my-1.5 space-y-1';
+                secHeader.className = 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group';
+                const chevron = secHeader.querySelector('.sec-chevron');
+                if (chevron) {
+                  chevron.textContent = 'expand_more';
+                  chevron.className = 'material-symbols-outlined text-[20px] text-blue-600 transition-transform duration-150 sec-chevron shrink-0';
+                }
+                const title = secHeader.querySelector('.sec-title');
+                if (title) {
+                  title.className = 'truncate font-bold text-blue-600 text-xs md:text-sm sec-title';
+                }
+                const badgeContainer = secHeader.querySelector('.sec-badge-container');
+                if (badgeContainer) {
+                  badgeContainer.innerHTML = `<span class="bg-white text-blue-600 font-bold px-2 py-0.5 rounded-md text-xs font-mono shadow-2xs border border-blue-100/60">${indices.length}</span>`;
+                }
                 expandedSections.delete(`COLLAPSED__${secKey}`);
                 expandedSections.add(`EXPANDED__${secKey}`);
               } else {
                 secChildren.classList.add('hidden');
-                secHeader.querySelector('.sec-chevron').classList.remove('rotate-90', 'text-indigo-600');
+                secGroup.className = 'section-group my-0.5';
+                secHeader.className = 'section-toggle-btn w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left';
+                const chevron = secHeader.querySelector('.sec-chevron');
+                if (chevron) {
+                  chevron.textContent = 'chevron_right';
+                  chevron.className = 'material-symbols-outlined text-[18px] text-slate-400 group-hover:text-slate-600 transition-transform duration-150 sec-chevron shrink-0';
+                }
+                const title = secHeader.querySelector('.sec-title');
+                if (title) {
+                  title.className = 'truncate font-semibold text-slate-800 text-xs md:text-sm group-hover:text-slate-900 sec-title';
+                }
+                const badgeContainer = secHeader.querySelector('.sec-badge-container');
+                if (badgeContainer) {
+                  badgeContainer.innerHTML = secExamTag 
+                    ? `<span class="bg-blue-600 text-white font-bold px-2.5 py-0.5 rounded-md text-[11px] tracking-tight shadow-2xs font-mono">${secExamTag}</span>`
+                    : `<span class="bg-slate-100 text-slate-500 font-bold px-2 py-0.5 rounded-md text-xs font-mono">${indices.length}</span>`;
+                }
                 expandedSections.add(`COLLAPSED__${secKey}`);
                 expandedSections.delete(`EXPANDED__${secKey}`);
               }
@@ -3127,20 +3167,28 @@
               item.href = '#';
               item.dataset.globalIndex = globalIdx;
               const isCurrent = (globalIdx === currentTopicIndex);
+              const isBm = bookmarks.includes(topic.id);
+              const formattedTag = formatExamTag(topic.examTag, topic);
 
-              item.className = isCurrent
-                ? 'sidebar-topic-item active flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5'
-                : 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
-
-              const formattedSecTag = formatExamTag(topic.examTag, topic);
-              const isBmSec = bookmarks.includes(topic.id);
-              item.innerHTML = `
-                <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                  ${isBmSec ? `<span class="material-symbols-outlined material-symbols-filled text-[14px] ${isCurrent ? 'text-amber-300' : 'text-amber-500'} shrink-0">star</span>` : `<span class="material-symbols-outlined text-[14px] ${isCurrent ? 'text-white' : 'text-slate-400'} shrink-0">description</span>`}
-                  <span class="truncate ${isCurrent ? 'text-white' : ''}">${topic.title}</span>
-                </div>
-                ${formattedSecTag ? `<span class="text-[10px] font-bold ${isCurrent ? 'text-blue-100' : 'text-indigo-500'} shrink-0 tracking-tight">${formattedSecTag}</span>` : ''}
-              `;
+              if (isCurrent) {
+                item.className = 'sidebar-topic-item active flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
+                item.innerHTML = `
+                  <span class="truncate font-bold text-white min-w-0 flex-1 pr-2">${topic.title}</span>
+                  <div class="flex items-center gap-1.5 shrink-0">
+                    ${formattedTag ? `<span class="text-[10px] font-bold text-blue-100 tracking-tight">${formattedTag}</span>` : ''}
+                    ${isBm ? `<span class="text-amber-300 text-base leading-none">★</span>` : ''}
+                  </div>
+                `;
+              } else {
+                item.className = 'sidebar-topic-item flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
+                item.innerHTML = `
+                  <span class="truncate font-medium text-slate-800 min-w-0 flex-1 pr-2">${topic.title}</span>
+                  <div class="flex items-center gap-1.5 shrink-0">
+                    ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 tracking-tight">${formattedTag}</span>` : ''}
+                    ${isBm ? `<span class="text-amber-400 text-sm leading-none">★</span>` : ''}
+                  </div>
+                `;
+              }
 
               item.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -3152,13 +3200,11 @@
 
             const hasSubsections = indices.some(idx => Boolean(TOPICS[idx].subsection));
             if (!hasSubsections) {
-              // Add Topics directly under this Section
               indices.forEach((globalIdx) => {
                 renderedLinearIndices.push(globalIdx);
                 secChildren.appendChild(createTopicItem(globalIdx));
               });
             } else {
-              // Group by subsection and render sub-accordions (세부단원)
               const subMap = new Map();
               indices.forEach((globalIdx) => {
                 const sub = TOPICS[globalIdx].subsection || '';
@@ -3193,30 +3239,29 @@
 
                 const subHeader = document.createElement('button');
                 subHeader.type = 'button';
-                subHeader.className = 'subsection-toggle-btn w-full flex items-center justify-between px-2 py-1.2 rounded-md text-[11px] font-bold text-slate-700 hover:bg-slate-100 hover:text-indigo-700 transition-colors cursor-pointer group text-left bg-slate-50/80 border border-slate-200/70 shadow-3xs';
+                subHeader.className = 'subsection-toggle-btn w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left bg-slate-50 border border-slate-200/80 shadow-3xs';
                 subHeader.innerHTML = `
                   <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
-                    <span class="material-symbols-outlined text-[13px] text-slate-400 group-hover:text-indigo-600 transition-transform duration-150 sub-chevron shrink-0 ${isSubExpanded ? 'rotate-90 text-indigo-600' : ''}">chevron_right</span>
-                    <span class="material-symbols-outlined text-[14px] text-indigo-500 shrink-0">folder</span>
-                    <span class="truncate font-bold text-slate-800 group-hover:text-indigo-700">${subName}</span>
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-blue-600 transition-transform duration-150 sub-chevron shrink-0 ${isSubExpanded ? 'rotate-90 text-blue-600' : ''}">chevron_right</span>
+                    <span class="truncate font-bold text-slate-800 group-hover:text-blue-700">${subName}</span>
                   </div>
                   <span class="text-[9px] text-slate-400 font-medium px-1.5 py-0.2 bg-white rounded-full border border-slate-200/80 shrink-0">${subIndices.length}</span>
                 `;
 
                 const subChildren = document.createElement('div');
-                subChildren.className = `subsection-children ml-3 pl-2 border-l-2 border-indigo-200/70 space-y-0.5 mt-0.5 mb-1 ${isSubExpanded ? '' : 'hidden'}`;
+                subChildren.className = `subsection-children pl-2 space-y-0.5 mt-0.5 mb-1 ${isSubExpanded ? '' : 'hidden'}`;
                 subChildren.dataset.subSecKey = subSecKey;
 
                 subHeader.addEventListener('click', () => {
                   const currentlyHidden = subChildren.classList.contains('hidden');
                   if (currentlyHidden) {
                     subChildren.classList.remove('hidden');
-                    subHeader.querySelector('.sub-chevron').classList.add('rotate-90', 'text-indigo-600');
+                    subHeader.querySelector('.sub-chevron').classList.add('rotate-90', 'text-blue-600');
                     expandedSections.delete(`COLLAPSED__${subSecKey}`);
                     expandedSections.add(`EXPANDED__${subSecKey}`);
                   } else {
                     subChildren.classList.add('hidden');
-                    subHeader.querySelector('.sub-chevron').classList.remove('rotate-90', 'text-indigo-600');
+                    subHeader.querySelector('.sub-chevron').classList.remove('rotate-90', 'text-blue-600');
                     expandedSections.add(`COLLAPSED__${subSecKey}`);
                     expandedSections.delete(`EXPANDED__${subSecKey}`);
                   }
@@ -3252,8 +3297,13 @@
         }
 
         // Update Labels
-        sidebarSubjectLabel.textContent = `${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 목차`;
-        sidebarTopicCount.textContent = `${filteredIndices.length}개 주제`;
+        sidebarSubjectLabel.textContent = '단원 목차';
+        sidebarTopicCount.textContent = filteredIndices.length;
+        const bookmarkFilterCount = document.getElementById('bookmark-filter-count');
+        if (bookmarkFilterCount) {
+          const currentSubjBookmarks = TOPICS.filter(t => (activeSubject === 'ALL' || t.subject === activeSubject) && bookmarks.includes(t.id)).length;
+          bookmarkFilterCount.textContent = currentSubjBookmarks;
+        }
       }
 
       // 5. Render Topic Content View
@@ -3468,61 +3518,72 @@
         checkKeywords();
 
         // Highlight Active in Sidebar
+        const bookmarks = getStoredBookmarks();
         document.querySelectorAll('.sidebar-topic-item').forEach(item => {
           const gIdx = parseInt(item.dataset.globalIndex, 10);
           const isCur = (gIdx === currentTopicIndex);
+          const topicItem = TOPICS[gIdx];
+          if (!topicItem) return;
+          const isBm = bookmarks.includes(topicItem.id);
+          const formattedTag = formatExamTag(topicItem.examTag, topicItem);
 
           if (isCur) {
-            item.className = 'sidebar-topic-item active flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
-            
-            // Ensure inner title and badge text contrast
-            const titleSpan = item.querySelector('.truncate');
-            if (titleSpan) titleSpan.classList.add('text-white');
-            const descIcon = item.querySelector('.material-symbols-outlined:not(.text-amber-500):not(.text-amber-300)');
-            if (descIcon) {
-              descIcon.classList.remove('text-indigo-500', 'text-slate-400');
-              descIcon.classList.add('text-white');
-            }
-            const tagSpan = item.querySelector('span.text-indigo-500');
-            if (tagSpan) {
-              tagSpan.classList.remove('text-indigo-500');
-              tagSpan.classList.add('text-blue-100');
-            }
+            item.className = 'sidebar-topic-item active flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
+            item.innerHTML = `
+              <span class="truncate font-bold text-white min-w-0 flex-1 pr-2">${topicItem.title}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                ${formattedTag ? `<span class="text-[10px] font-bold text-blue-100 tracking-tight">${formattedTag}</span>` : ''}
+                ${isBm ? `<span class="text-amber-300 text-base leading-none">★</span>` : ''}
+              </div>
+            `;
 
-            // Ensure parent section and subsection are expanded
+            // Ensure parent section is expanded and styled as the active light-blue card container
             const secChildren = item.closest('.section-children');
-            if (secChildren && secChildren.classList.contains('hidden')) {
+            if (secChildren) {
               secChildren.classList.remove('hidden');
               const secGroup = secChildren.closest('.section-group');
               if (secGroup) {
-                const chevron = secGroup.querySelector('.sec-chevron');
-                if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
+                secGroup.className = 'section-group bg-blue-50/50 rounded-2xl p-2 border border-blue-100/60 my-1.5 space-y-1';
+                const secHeader = secGroup.querySelector('.section-toggle-btn');
+                if (secHeader) {
+                  secHeader.className = 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group';
+                  const chevron = secHeader.querySelector('.sec-chevron');
+                  if (chevron) {
+                    chevron.textContent = 'expand_more';
+                    chevron.className = 'material-symbols-outlined text-[20px] text-blue-600 transition-transform duration-150 sec-chevron shrink-0';
+                  }
+                  const title = secHeader.querySelector('.sec-title');
+                  if (title) {
+                    title.className = 'truncate font-bold text-blue-600 text-xs md:text-sm sec-title';
+                  }
+                  const badge = secHeader.querySelector('.sec-badge-container');
+                  const count = secChildren.querySelectorAll('.sidebar-topic-item').length;
+                  if (badge) {
+                    badge.innerHTML = `<span class="bg-white text-blue-600 font-bold px-2 py-0.5 rounded-md text-xs font-mono shadow-2xs border border-blue-100/60">${count}</span>`;
+                  }
+                }
               }
             }
+
             const subChildren = item.closest('.subsection-children');
             if (subChildren && subChildren.classList.contains('hidden')) {
               subChildren.classList.remove('hidden');
               const subGroup = subChildren.closest('.subsection-group');
               if (subGroup) {
                 const chevron = subGroup.querySelector('.sub-chevron');
-                if (chevron) chevron.classList.add('rotate-90', 'text-indigo-600');
+                if (chevron) chevron.classList.add('rotate-90', 'text-blue-600');
               }
             }
             item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           } else {
-            item.className = 'sidebar-topic-item flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all my-0.5';
-            const titleSpan = item.querySelector('.truncate');
-            if (titleSpan) titleSpan.classList.remove('text-white');
-            const descIcon = item.querySelector('.material-symbols-outlined:not(.text-amber-500):not(.text-amber-300)');
-            if (descIcon) {
-              descIcon.classList.remove('text-white');
-              descIcon.classList.add('text-slate-400');
-            }
-            const tagSpan = item.querySelector('span.text-blue-100');
-            if (tagSpan) {
-              tagSpan.classList.remove('text-blue-100');
-              tagSpan.classList.add('text-indigo-500');
-            }
+            item.className = 'sidebar-topic-item flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
+            item.innerHTML = `
+              <span class="truncate font-medium text-slate-800 min-w-0 flex-1 pr-2">${topicItem.title}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 tracking-tight">${formattedTag}</span>` : ''}
+                ${isBm ? `<span class="text-amber-400 text-sm leading-none">★</span>` : ''}
+              </div>
+            `;
           }
         });
 
@@ -4418,13 +4479,13 @@
           }
         } else {
           if (grade == 4) {
-            showToast('[4] 쉬움! 복습 주기가 대폭 연장되었습니다', 'verified');
+            showToast('[1] 쉬움 (Easy)! 복습 주기가 대폭 연장되었습니다', 'verified');
           } else if (grade == 3 || grade === 'pass') {
-            showToast('[3] 알맞음! 안정적으로 기억에 정착 중입니다', 'verified');
+            showToast('[2] 알맞음 (Good)! 안정적으로 기억에 정착 중입니다', 'verified');
           } else if (grade == 2 || grade === 'ambiguous') {
-            showToast('[2] 어려움! 복습 주기가 짧게 유지됩니다', 'help');
+            showToast('[3] 어려움 (Hard)! 복습 주기가 짧게 유지됩니다', 'help');
           } else if (grade == 1 || grade === 'fail') {
-            showToast('[1] 다시! 곧 재복습 일정이 잡힙니다', 'cancel');
+            showToast('[4] 다시 (Again)! 곧 재복습 일정이 잡힙니다', 'cancel');
           }
         }
 
@@ -6486,31 +6547,31 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           return;
         }
 
-        // [1] -> Again / Fail
+        // [1] -> Easy (Grade 4) / Pass
         if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(isExamTopic ? 'fail' : 1);
+          handleGrade(isExamTopic ? 'pass' : 4);
           return;
         }
 
-        // [2] -> Hard / Ambiguous
+        // [2] -> Good (Grade 3) / Pass
         if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(isExamTopic ? 'ambiguous' : 2);
-          return;
-        }
-
-        // [3] -> Good / Pass
-        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           handleGrade(isExamTopic ? 'pass' : 3);
           return;
         }
 
-        // [4] -> Easy (개념 주제용 쉬움, 문제에서는 Pass)
+        // [3] -> Hard (Grade 2) / Ambiguous
+        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          handleGrade(isExamTopic ? 'ambiguous' : 2);
+          return;
+        }
+
+        // [4] -> Again (Grade 1) / Fail
         if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(isExamTopic ? 'pass' : 4);
+          handleGrade(isExamTopic ? 'fail' : 1);
           return;
         }
 
