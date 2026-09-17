@@ -2318,6 +2318,10 @@
           <kbd class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded border border-emerald-300 font-mono font-bold">A</kbd>
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>마스킹 테이프 순차 다시 가리기 (역순)</span>
+          <kbd class="px-2 py-1 bg-amber-100 text-amber-800 rounded border border-amber-300 font-mono font-bold">S</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>좌측 목차 패널 열기/닫기</span>
           <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Space</kbd>
         </div>
@@ -4895,6 +4899,22 @@
         showToast('다음 마스킹 테이프 정답 공개 [A]', 'visibility');
       }
 
+      // Cover (re-tape) next revealed masking tape from bottom or last revealed [S]
+      function coverNextTape() {
+        const peeledTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape.is-peeled'));
+        if (peeledTapes.length === 0) {
+          showToast('이미 모든 마스킹 테이프가 가려져 있습니다', 'info');
+          return;
+        }
+        // Pick the last peeled tape (undo the reveal step by step)
+        const tapeToCover = peeledTapes[peeledTapes.length - 1];
+        stickTape(tapeToCover);
+        tapeToCover.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        tapeToCover.classList.add('ring-2', 'ring-amber-400');
+        setTimeout(() => tapeToCover.classList.remove('ring-2', 'ring-amber-400'), 500);
+        showToast('마스킹 테이프 다시 가리기 [S]', 'label');
+      }
+
       // Master Reveal / Hide (Consolidated Single Action)
       function toggleMasterReveal(forceState) {
         isAllRevealed = (forceState !== undefined) ? forceState : !isAllRevealed;
@@ -7153,6 +7173,14 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         if (isAKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           revealNextTape();
+          return;
+        }
+
+        // 8-3. [S] or [ㄴ] Cover next masking tape sequentially (마스킹 테이프 순차 다시 가리기)
+        const isSKey = (e.key === 's' || e.key === 'S' || e.key === 'ㄴ' || e.code === 'KeyS');
+        if (isSKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          coverNextTape();
           return;
         }
 
