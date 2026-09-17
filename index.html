@@ -1754,7 +1754,13 @@
           <div class="relative">
             <textarea id="essay-input" rows="9" placeholder="예: (1) 목표: 사회유지 존속...&#10;(2) 주요 학습 내용...&#10;(3) 교수학습 방법: 직접적/간접적..." class="w-full p-3.5 text-sm md:text-[15px] leading-relaxed rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-y font-mono"></textarea>
             <div class="flex justify-between items-center mt-1.5 text-[11px] text-slate-400">
-              <span id="char-counter">0자 작성됨</span>
+              <div class="flex items-center gap-2">
+                <span id="char-counter">0자 작성됨</span>
+                <button id="btn-essay-to-memo" class="text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-0.5 bg-indigo-50 hover:bg-indigo-100 px-1.5 py-0.5 rounded border border-indigo-200 transition-colors" type="button" title="작성한 내용을 하단의 '나만의 메모'에 이어붙입니다.">
+                  <span class="material-symbols-outlined text-[12px]">edit_document</span>
+                  <span>메모로 스크랩</span>
+                </button>
+              </div>
               <button id="btn-open-diff" class="text-blue-600 hover:underline font-bold flex items-center gap-0.5" type="button">
                 <span class="material-symbols-outlined text-[13px]">compare</span>
                 <span>원문 1:1 대조창 (Diff)</span>
@@ -2277,6 +2283,57 @@
           </table>
         </div>
         <div id="library-pagination" class="flex justify-center items-center gap-1.5 mt-4 pt-4 border-t border-slate-100 dark:border-slate-700"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shortcut Help Modal -->
+  <div id="shortcut-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm transition-opacity duration-200" onclick="document.getElementById('shortcut-modal').classList.add('hidden')">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-11/12 max-w-lg p-6 relative" onclick="event.stopPropagation()">
+      <button onclick="document.getElementById('shortcut-modal').classList.add('hidden')" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+      <h2 class="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
+        <span class="material-symbols-outlined text-blue-500">keyboard</span> 단축키 도움말
+      </h2>
+      <div class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>단축키 도움말 보기</span>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">?</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>전체 마스킹 테이프 보기/숨기기</span>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">T</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>다음 마스킹 테이프 순차 공개 (위에서부터)</span>
+          <kbd class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded border border-emerald-300 font-mono font-bold">A</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>좌측 목차 패널 열기/닫기</span>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Space</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>서술 입력란 포커스</span>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Tab</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>이전 주제로 이동</span>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Ctrl + ←</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>다음 주제로 이동</span>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Ctrl + →</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2">
+          <span>FSRS 복습 평가 (쉬움/알맞음/어려움/다시)</span>
+          <div class="flex gap-1 font-mono font-bold">
+            <kbd class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">1</kbd>
+            <kbd class="px-1.5 py-0.5 bg-blue-100 text-blue-800 rounded border border-blue-300">2</kbd>
+            <kbd class="px-1.5 py-0.5 bg-slate-100 text-slate-800 rounded border border-slate-300">3</kbd>
+            <kbd class="px-1.5 py-0.5 bg-red-100 text-red-800 rounded border border-red-300">4</kbd>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -3182,11 +3239,25 @@
               const isCurrent = (globalIdx === currentTopicIndex);
               const isBm = bookmarks.includes(topic.id);
               const formattedTag = formatExamTag(topic.examTag, topic);
+              
+              const card = fsrsMap[topic.id];
+              let dotColor = 'bg-slate-300';
+              if (card && card.state !== 0) {
+                if (card.due && new Date(card.due).getTime() <= nowTime) {
+                  dotColor = 'bg-rose-500 shadow-[0_0_4px_rgba(244,63,94,0.5)]'; // Due (Red)
+                } else {
+                  dotColor = 'bg-emerald-500'; // Mastered / Not due (Green)
+                }
+              }
+              const dotHtml = `<div class="w-1.5 h-1.5 rounded-full shrink-0 ${dotColor} mr-2"></div>`;
 
               if (isCurrent) {
                 item.className = 'sidebar-topic-item active flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
                 item.innerHTML = `
-                  <span class="truncate font-bold text-white min-w-0 flex-1 pr-2">${topic.title}</span>
+                  <div class="flex items-center min-w-0 flex-1 pr-2">
+                    ${dotHtml.replace(dotColor, dotColor + ' ring-1 ring-white/50')}
+                    <span class="truncate font-bold text-white">${topic.title}</span>
+                  </div>
                   <div class="flex items-center gap-1.5 shrink-0">
                     ${formattedTag ? `<span class="text-[10px] font-bold text-blue-100 tracking-tight">${formattedTag}</span>` : ''}
                     ${isBm ? `<span class="text-amber-300 text-base leading-none">★</span>` : ''}
@@ -3195,7 +3266,10 @@
               } else {
                 item.className = 'sidebar-topic-item flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
                 item.innerHTML = `
-                  <span class="truncate font-medium text-slate-800 min-w-0 flex-1 pr-2">${topic.title}</span>
+                  <div class="flex items-center min-w-0 flex-1 pr-2">
+                    ${dotHtml}
+                    <span class="truncate font-medium text-slate-800">${topic.title}</span>
+                  </div>
                   <div class="flex items-center gap-1.5 shrink-0">
                     ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 tracking-tight">${formattedTag}</span>` : ''}
                     ${isBm ? `<span class="text-amber-400 text-sm leading-none">★</span>` : ''}
@@ -4369,6 +4443,25 @@
         });
       }
 
+      // Reveal next top-most covered masking tape [A]
+      function revealNextTape() {
+        const coveredTape = subnoteContainer.querySelector('.mask-tape.is-taped, .mask-tape.is-typing-mode');
+        if (!coveredTape) {
+          showToast('모든 마스킹 테이프가 이미 열려 있습니다', 'info');
+          return;
+        }
+        if (coveredTape.classList.contains('is-typing-mode')) {
+          const target = coveredTape.getAttribute('data-text') || (coveredTape.querySelector('.tape-typing-input') ? coveredTape.querySelector('.tape-typing-input').getAttribute('data-answer') : '') || coveredTape.textContent.trim();
+          revealSingleTape(coveredTape, target);
+        } else {
+          peelTape(coveredTape);
+        }
+        coveredTape.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        coveredTape.classList.add('ring-2', 'ring-emerald-400');
+        setTimeout(() => coveredTape.classList.remove('ring-2', 'ring-emerald-400'), 500);
+        showToast('다음 마스킹 테이프 정답 공개 [A]', 'visibility');
+      }
+
       // Master Reveal / Hide (Consolidated Single Action)
       function toggleMasterReveal(forceState) {
         isAllRevealed = (forceState !== undefined) ? forceState : !isAllRevealed;
@@ -4943,6 +5036,29 @@
         checkKeywords();
         essayInput.focus();
         showToast('서술창이 비워졌습니다', 'delete');
+      });
+
+      const btnEssayToMemo = document.getElementById('btn-essay-to-memo');
+      btnEssayToMemo.addEventListener('click', () => {
+        const text = essayInput.value.trim();
+        if (!text) {
+          showToast('스크랩할 인출 내용이 없습니다.', 'warning');
+          return;
+        }
+        const memoTextarea = document.getElementById('topic-user-memo');
+        const now = new Date();
+        const dateStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0') + ' ' + String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+        const appendText = `\n\n--- [${dateStr}] 인출 복습 ---\n${text}`;
+        
+        memoTextarea.value = memoTextarea.value.trim() + appendText;
+        
+        // Save memo
+        const topicId = TOPICS[currentTopicIndex].id;
+        const memos = JSON.parse(localStorage.getItem('edurecall_user_memos')) || {};
+        memos[topicId] = memoTextarea.value.trim();
+        localStorage.setItem('edurecall_user_memos', JSON.stringify(memos));
+        
+        showToast('작성한 내용이 하단 메모에 스크랩되었습니다.', 'edit_document');
       });
 
       document.querySelectorAll('.grade-btn').forEach(btn => {
@@ -6486,29 +6602,30 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
             showToast('입력 종료 (본문 이동)', 'close');
             return;
           }
-          // Self-grading while typing:
-          // [Cmd+Enter] or [Cmd+P] or [Ctrl+P] -> Pass (Never opens Print dialog!)
-          if ((e.ctrlKey || e.metaKey) && (e.key === 'Enter' || e.key === 'p' || e.key === 'P')) {
-            e.preventDefault();
-            handleGrade(3);
-            return;
-          }
-          // [Cmd+F] or [Ctrl+F] -> Fail (Never opens browser search!)
-          if ((e.ctrlKey || e.metaKey) && (e.key === 'f' || e.key === 'F')) {
-            e.preventDefault();
-            handleGrade(1);
-            return;
-          }
-          // [Cmd+Shift+A] or [Alt+A] or [Option+A] -> Ambiguous
-          if (((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'a' || e.key === 'A')) || (e.altKey && (e.key === 'a' || e.key === 'A'))) {
-            e.preventDefault();
-            handleGrade(2);
-            return;
-          }
           return;
         }
 
         // --- NON-TYPING MODE (Browsing / Recalling) ---
+        
+        // Escape: Close Modals
+        if (e.key === 'Escape') {
+          const modal = document.getElementById('shortcut-modal');
+          if (modal && !modal.classList.contains('hidden')) {
+            e.preventDefault();
+            modal.classList.add('hidden');
+            return;
+          }
+        }
+
+        // Shortcut Modal [?]
+        if (e.key === '?' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          const modal = document.getElementById('shortcut-modal');
+          if (modal) {
+            modal.classList.toggle('hidden');
+          }
+          return;
+        }
 
         // 3. Search Shortcut: [Cmd+K] / [Ctrl+K] or [/]
         if (((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) || e.key === '/') {
@@ -6528,59 +6645,32 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           return;
         }
 
-        // 4. Self-Grading Shortcuts (FSRS 1~4 and FAP F/A/P):
-        const currentTopic = TOPICS[currentTopicIndex];
-        const isExamTopic = isTopicExamQuestion(currentTopic);
-
-        // [F] or [ㄹ] -> Fail (문제 채점)
-        const isFKey = (e.key === 'f' || e.key === 'F' || e.key === 'ㄹ' || e.code === 'KeyF');
-        if (isFKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(isExamTopic ? 'fail' : 1);
-          return;
-        }
-
-        // [A] or [ㅁ] -> Ambiguous (문제 채점)
-        const isAKey = (e.key === 'a' || e.key === 'A' || e.key === 'ㅁ' || e.code === 'KeyA');
-        if (isAKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(isExamTopic ? 'ambiguous' : 2);
-          return;
-        }
-
-        // [P] or [ㅔ] -> Pass (문제 채점)
-        const isPKey = (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ' || e.code === 'KeyP');
-        if (isPKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(isExamTopic ? 'pass' : 3);
-          return;
-        }
-
-        // [1] -> Easy (Grade 4) / Pass
+        // 4. FSRS Self-Grading Shortcuts: Strictly [1], [2], [3], [4] only
+        // [1] -> Easy (Grade 4)
         if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(isExamTopic ? 'pass' : 4);
+          handleGrade(4);
           return;
         }
 
-        // [2] -> Good (Grade 3) / Pass
+        // [2] -> Good (Grade 3)
         if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(isExamTopic ? 'pass' : 3);
+          handleGrade(3);
           return;
         }
 
-        // [3] -> Hard (Grade 2) / Ambiguous
+        // [3] -> Hard (Grade 2)
         if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(isExamTopic ? 'ambiguous' : 2);
+          handleGrade(2);
           return;
         }
 
-        // [4] -> Again (Grade 1) / Fail
+        // [4] -> Again (Grade 1)
         if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
-          handleGrade(isExamTopic ? 'fail' : 1);
+          handleGrade(1);
           return;
         }
 
@@ -6592,8 +6682,8 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
           return;
         }
 
-        // 6. [H] or [ㅗ] or [?] Toggle Supplementary Explanation Drawer
-        const isHKey = (e.key === 'h' || e.key === 'H' || e.key === 'ㅗ' || e.key === '?' || e.code === 'KeyH' || e.keyCode === 72 || e.which === 72);
+        // 6. [H] or [ㅗ] Toggle Supplementary Explanation Drawer
+        const isHKey = (e.key === 'h' || e.key === 'H' || e.key === 'ㅗ' || e.code === 'KeyH' || e.keyCode === 72 || e.which === 72);
         if (isHKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleExplanation();
@@ -6620,6 +6710,14 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         if (isTKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleMasterReveal();
+          return;
+        }
+
+        // 8-2. [A] or [ㅁ] Reveal next masking tape sequentially from top (마스킹 테이프 순차 공개)
+        const isAKey = (e.key === 'a' || e.key === 'A' || e.key === 'ㅁ' || e.code === 'KeyA');
+        if (isAKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          revealNextTape();
           return;
         }
 
