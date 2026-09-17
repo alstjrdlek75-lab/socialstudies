@@ -4880,6 +4880,23 @@
         });
       }
 
+      // Smoothly and accurately scroll target tape into center of viewport
+      function scrollTapeIntoViewCentered(tape) {
+        if (!tape) return;
+        const scrollContainer = document.getElementById('subnote-section') || window;
+        const rect = tape.getBoundingClientRect();
+        const containerRect = scrollContainer.getBoundingClientRect ? scrollContainer.getBoundingClientRect() : { top: 0, height: window.innerHeight };
+        
+        // Calculate offset to place tape at 40% height of scroll container (comfortable reading line)
+        const currentScrollTop = scrollContainer.scrollTop !== undefined ? scrollContainer.scrollTop : window.scrollY;
+        const targetOffset = (rect.top - containerRect.top) + currentScrollTop - (containerRect.height * 0.38);
+        
+        scrollContainer.scrollTo({
+          top: Math.max(0, targetOffset),
+          behavior: 'smooth'
+        });
+      }
+
       // Reveal next top-most covered masking tape [A]
       function revealNextTape() {
         const coveredTape = subnoteContainer.querySelector('.mask-tape.is-taped, .mask-tape.is-typing-mode');
@@ -4893,7 +4910,7 @@
         } else {
           peelTape(coveredTape);
         }
-        coveredTape.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        scrollTapeIntoViewCentered(coveredTape);
         coveredTape.classList.add('ring-2', 'ring-emerald-400');
         setTimeout(() => coveredTape.classList.remove('ring-2', 'ring-emerald-400'), 500);
         showToast('다음 마스킹 테이프 정답 공개 [A]', 'visibility');
@@ -4909,7 +4926,7 @@
         // Pick the last peeled tape (undo the reveal step by step)
         const tapeToCover = peeledTapes[peeledTapes.length - 1];
         stickTape(tapeToCover);
-        tapeToCover.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        scrollTapeIntoViewCentered(tapeToCover);
         tapeToCover.classList.add('ring-2', 'ring-amber-400');
         setTimeout(() => tapeToCover.classList.remove('ring-2', 'ring-amber-400'), 500);
         showToast('마스킹 테이프 다시 가리기 [S]', 'label');
