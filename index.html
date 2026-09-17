@@ -673,6 +673,8 @@
       flex-shrink: 0 !important;
     }
     /* Natural Korean Typography: prevent mid-syllable word breaking */
+    #subnote-inner,
+    #topic-title,
     #subnote-content-container,
     #subnote-content-container .topic-group,
     #subnote-content-container .recall-item,
@@ -1598,11 +1600,11 @@
 
         <!-- Topic Banner Card -->
         <div class="bg-white rounded-2xl border border-border p-4 sm:p-5 shadow-xs flex flex-col gap-3">
-          <!-- Top Row: Chapter Meta Breadcrumb on Left, Prev/Next buttons on Right (NO '임용 빈출') -->
+          <!-- Top Row: Chapter Meta Breadcrumb on Left, Prev/Next buttons on Right -->
           <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
             <div class="flex items-center gap-2 min-w-0 flex-1">
-              <span class="text-xs font-bold text-blue-600 font-mono tracking-wider uppercase truncate" id="topic-header-path">CHAPTER · SECTION</span>
-              <!-- Hidden compatibility elements to prevent JS errors -->
+              <span class="text-xs font-semibold text-blue-600 tracking-normal truncate" id="topic-header-path">CHAPTER · SECTION</span>
+              <!-- Compatibility elements remain strictly hidden to avoid cluttering -->
               <span class="hidden" id="topic-badge-subject"></span>
               <span class="hidden" id="topic-badge-chapter"></span>
               <span class="hidden" id="topic-badge-section"><span id="topic-section-text"></span></span>
@@ -1622,27 +1624,27 @@
             </div>
           </div>
 
-          <!-- Main Title & Bookmark Star -->
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-2 flex-wrap min-w-0 flex-1">
-              <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight inline" id="topic-title">
+          <!-- Main Title & Action Buttons -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+            <div class="flex items-start sm:items-center gap-2 min-w-0 flex-1">
+              <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight break-keep-all" id="topic-title">
                 2. 국회의 구성·조직 및 운영
               </h1>
-              <button id="btn-toggle-bookmark" class="inline-flex items-center p-1 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer" type="button" title="중요 주제로 등록 (별표)">
+              <button id="btn-toggle-bookmark" class="inline-flex items-center p-1 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
                 <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
                 <span class="hidden" id="bookmark-status-text">중요</span>
               </button>
             </div>
-            <div class="flex items-center gap-1.5 shrink-0">
-              <button id="btn-edit-topic-content" class="px-3 py-2 sm:px-2.5 sm:py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+            <div class="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+              <button id="btn-edit-topic-content" class="px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
                 <span class="material-symbols-outlined text-[14px]">edit_note</span>
                 <span>본문 수정</span>
               </button>
-              <button id="btn-reset-custom-tape" class="px-3 py-2 sm:px-2 sm:py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
+              <button id="btn-reset-custom-tape" class="px-3 py-1.5 sm:px-2 sm:py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                 <span class="material-symbols-outlined text-[13px]">restart_alt</span>
                 <span>원본 복원</span>
               </button>
-              <button id="btn-open-explanation" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-indigo-700 bg-slate-100 hover:bg-indigo-50 border border-slate-200/90 hover:border-indigo-200 shadow-2xs transition-all cursor-pointer group" type="button" title="이해를 돕기 위한 보충·배경 해설 보기 [단축키: H]">
+              <button id="btn-open-explanation" class="inline-flex items-center gap-1 px-2.5 py-1.5 sm:py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-indigo-700 bg-slate-100 hover:bg-indigo-50 border border-slate-200/90 hover:border-indigo-200 shadow-2xs transition-all cursor-pointer group" type="button" title="이해를 돕기 위한 보충·배경 해설 보기 [단축키: H]">
                 <span class="material-symbols-outlined text-[15px] text-indigo-500 group-hover:scale-110 transition-transform">help</span>
                 <span>보충 해설</span>
                 <span id="explanation-has-badge" class="w-1.5 h-1.5 rounded-full bg-indigo-600 hidden"></span>
@@ -3403,27 +3405,15 @@
 
         if (topicBadgeSubject) topicBadgeSubject.textContent = topic.subject;
         if (topicBadgeChapter) topicBadgeChapter.textContent = topic.chapter;
-        if (topic.section && topic.section !== topic.chapter && topicBadgeSection) {
-          if (topicSectionText) topicSectionText.textContent = topic.subsection ? `${topic.section} › ${topic.subsection}` : topic.section;
-          topicBadgeSection.classList.remove('hidden');
-        } else if (topicBadgeSection) {
-          topicBadgeSection.classList.add('hidden');
-        }
+        if (topicSectionText) topicSectionText.textContent = topic.subsection ? `${topic.section} › ${topic.subsection}` : (topic.section || '');
+        if (topicBadgeSection) topicBadgeSection.classList.add('hidden');
         if (topicBadgeExam) {
-          if (currentExamTag) {
-            topicBadgeExam.textContent = currentExamTag;
-            topicBadgeExam.classList.remove('hidden');
-          } else {
-            topicBadgeExam.classList.add('hidden');
-          }
+          if (currentExamTag) topicBadgeExam.textContent = currentExamTag;
+          topicBadgeExam.classList.add('hidden');
         }
         if (topicBadgeTape) {
-          if (topic.tapeCount && topic.tapeCount > 0) {
-            if (topicTapeCount) topicTapeCount.textContent = `테이프 ${topic.tapeCount}개`;
-            topicBadgeTape.classList.remove('hidden');
-          } else {
-            topicBadgeTape.classList.add('hidden');
-          }
+          if (topicTapeCount) topicTapeCount.textContent = topic.tapeCount ? `테이프 ${topic.tapeCount}개` : '';
+          topicBadgeTape.classList.add('hidden');
         }
         const totalPages = getSubjectTotalPages(topic.subject);
         if (topicPageRef) topicPageRef.textContent = totalPages ? `PDF p.${topic.page || 1} / ${totalPages}` : `PDF p.${topic.page || 1}`;
@@ -3433,16 +3423,22 @@
         if (btnToggleBookmark && iconBookmark) {
           const isBookmarked = getStoredBookmarks().includes(topic.id);
           if (isBookmarked) {
-            btnToggleBookmark.className = 'inline-flex items-center p-1 rounded-lg text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer';
+            btnToggleBookmark.className = 'inline-flex items-center p-1 rounded-lg text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0';
             iconBookmark.className = 'material-symbols-outlined material-symbols-filled text-[22px] text-amber-400';
           } else {
-            btnToggleBookmark.className = 'inline-flex items-center p-1 rounded-lg text-slate-300 hover:text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer';
+            btnToggleBookmark.className = 'inline-flex items-center p-1 rounded-lg text-slate-300 hover:text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0';
             iconBookmark.className = 'material-symbols-outlined text-[22px] text-slate-300';
           }
         }
 
-        // Keywords Chips
+        // Keywords & Exam Tag Chips
         topicKeywordsTags.innerHTML = '';
+        if (currentExamTag) {
+          const examChip = document.createElement('span');
+          examChip.className = 'px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-50 text-amber-900 border border-amber-300/80 flex items-center gap-1 shadow-2xs shrink-0';
+          examChip.innerHTML = `<span class="material-symbols-outlined text-[13px] text-amber-600">school</span><span>기출 ${currentExamTag}</span>`;
+          topicKeywordsTags.appendChild(examChip);
+        }
         (topic.targetKeywords || []).forEach(kw => {
           const chip = document.createElement('span');
           chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200/80';
@@ -3832,7 +3828,7 @@
         const tapes = subnoteContainer.querySelectorAll('.mask-tape');
         if (topicTapeCount) topicTapeCount.textContent = tapes.length;
         if (topicBadgeTape) {
-          topicBadgeTape.classList.toggle('hidden', tapes.length === 0);
+          topicBadgeTape.classList.add('hidden');
         }
         const topic = TOPICS[currentTopicIndex];
         if (topic && btnResetCustomTape) {
@@ -7060,11 +7056,14 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
       }
 
       try {
-        // One-time 3-column default restoration: ensure both sidebar and essay pad start open by default
-        if (!localStorage.getItem('edurecall_3col_default_v2')) {
-          try { localStorage.removeItem('edurecall_sidebar_collapsed'); } catch (e) {}
-          try { localStorage.removeItem('edurecall_essay_collapsed'); } catch (e) {}
-          try { localStorage.setItem('edurecall_3col_default_v2', 'true'); } catch (e) {}
+        // One-time tablet & mobile optimization v3: prevent 3-column squishing on tablets/mobile (< 1280px)
+        if (!localStorage.getItem('edurecall_responsive_v3')) {
+          try {
+            if (window.innerWidth < 1280) {
+              localStorage.setItem('edurecall_essay_collapsed', 'true');
+            }
+            localStorage.setItem('edurecall_responsive_v3', 'true');
+          } catch (e) {}
         }
 
         const savedCollapsed = localStorage.getItem('edurecall_sidebar_collapsed');
@@ -7077,7 +7076,7 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         }
 
         const savedEssayCollapsed = localStorage.getItem('edurecall_essay_collapsed');
-        if (savedEssayCollapsed === 'true') {
+        if (savedEssayCollapsed === 'true' || (savedEssayCollapsed === null && window.innerWidth < 1280)) {
           setEssayPadCollapsed(true);
         } else {
           setEssayPadCollapsed(false);
