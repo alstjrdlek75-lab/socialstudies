@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 480" width="100%" height="100%" style="background:#ffffff; font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 z" fill="#1e293b" />
+    </marker>
+  </defs>
+
+  <!-- Title / Legend box -->
+  <rect x="25" y="16" width="600" height="34" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="325" y="38" font-size="14" font-weight="700" text-anchor="middle" fill="#0f172a">케인스의 국민소득 결정 모형 (Keynesian Cross)</text>
+
+  <!-- Axes: Origin (110, 400) -->
+  <!-- X Axis -->
+  <line x1="110" y1="400" x2="590" y2="400" stroke="#1e293b" stroke-width="2" marker-end="url(#arr)" />
+  <!-- Y Axis -->
+  <line x1="110" y1="400" x2="110" y2="75" stroke="#1e293b" stroke-width="2" marker-end="url(#arr)" />
+
+  <text x="595" y="405" font-size="13" font-weight="700" fill="#1e293b">국민소득 (Y)</text>
+  <text x="110" y="65" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">총지출 및 총수요 (AD)</text>
+  <text x="96" y="415" font-size="13" font-weight="600" fill="#64748b">0</text>
+
+  <!-- 45-degree ray: Y = AD (slope 1) -->
+  <!-- Origin (110, 400). Scale: 1 unit = 1 px. 
+       Y=100 -> (210, 300)
+       Y=200 -> (310, 200)
+       Y=300 -> (410, 100)
+       Extended to (460, 50)
+  -->
+  <line x1="110" y1="400" x2="465" y2="45" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+  <text x="475" y="50" font-size="13" font-weight="700" fill="#0f172a">45°선 (Y = AD)</text>
+
+  <!-- AD curve: AD = 100 + 0.5 Y -->
+  <!-- Y=0   -> AD=100: (110, 300)
+       Y=200 -> AD=200: (310, 200)
+       Y=300 -> AD=250: (410, 150)
+       Extended to Y=400: (510, 100)
+  -->
+  <line x1="110" y1="300" x2="505" y2="102.5" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round" />
+  <text x="515" y="107" font-size="13" font-weight="700" fill="#0f172a">총수요곡선 (AD)</text>
+
+  <!-- Coordinates & Dotted Projection Lines -->
+  <!-- Y-axis intercept 100 -->
+  <text x="98" y="305" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">100</text>
+
+  <!-- Equilibrium at Y=200, AD=200 (Point E) -->
+  <line x1="110" y1="200" x2="310" y2="200" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="310" y1="200" x2="310" y2="400" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+  <circle cx="310" cy="200" r="4.5" fill="#0f172a" />
+  <text x="318" y="218" font-size="13" font-weight="700" fill="#0f172a">E</text>
+  <text x="98" y="205" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">200</text>
+  <text x="310" y="418" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">200</text>
+  <text x="310" y="436" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">Y₁</text>
+
+  <!-- At Y=300 (Y3 = Full Employment) -->
+  <!-- Dotted line from (410, 400) up to (410, 100) on 45-line -->
+  <line x1="410" y1="400" x2="410" y2="100" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+  <text x="410" y="418" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">300</text>
+  <text x="410" y="436" font-size="13" font-weight="700" fill="#dc2626" text-anchor="middle">Y₃</text>
+
+  <!-- Dotted line from 45-line at Y=300 (410, 100) to Y-axis (110, 100) -->
+  <line x1="110" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+  <circle cx="410" cy="100" r="3.5" fill="#64748b" />
+  <text x="98" y="105" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">300</text>
+
+  <!-- Dotted line from AD at Y=300 (410, 150) to Y-axis (110, 150) -->
+  <line x1="110" y1="150" x2="410" y2="150" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+  <circle cx="410" cy="150" r="4" fill="#0f172a" />
+  <text x="98" y="155" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">250</text>
+
+  <!-- Curly bracket for (가) between y=100 and y=150 at x=418 -->
+  <!-- Bracket path at x=418 from y=100 to y=150 -->
+  <path d="M 418 100 C 424 100 424 125 428 125 C 424 125 424 150 418 150" fill="none" stroke="#dc2626" stroke-width="1.8" />
+  <text x="436" y="130" font-size="14" font-weight="800" fill="#dc2626">(가)</text>
+</svg>
