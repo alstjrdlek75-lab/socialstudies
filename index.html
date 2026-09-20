@@ -1392,7 +1392,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260920_124100"></script>
+  <script src="topics-data.js?v=20260920_163500"></script>
   <script src="explanations-data.js?v=20260920_124100"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2879,7 +2879,15 @@
         if (record.custom_tapes && typeof record.custom_tapes === 'object') {
           Object.entries(record.custom_tapes).forEach(([k, v]) => {
             if (v !== null && v !== undefined) {
-              localStorage.setItem(k, v);
+              let cleanVal = String(v);
+              // Fix typos and clean phantom '내용 없음' placeholders
+              if (cleanVal.includes('보당노동행위')) {
+                cleanVal = cleanVal.replace(/보당노동행위/g, '부당노동행위');
+              }
+              if (cleanVal.includes('내용 없음')) {
+                cleanVal = cleanVal.replace(/<div class="recall-item[^>]*>내용 없음<\/div>/g, '');
+              }
+              localStorage.setItem(k, cleanVal);
               modified = true;
             }
           });
@@ -6025,9 +6033,11 @@
               const recallItems = contentEl.querySelectorAll('.recall-item');
               if (recallItems && recallItems.length > 0) {
                 recallItems.forEach(itemEl => {
+                  const rawText = itemEl.innerHTML.trim();
+                  if (rawText === '내용 없음') return; // Skip dummy placeholder
                   const isSub = itemEl.classList.contains('pl-6') || itemEl.classList.contains('text-slate-600') || itemEl.textContent.trim().startsWith('-');
                   items.push({
-                    text: tapeHtmlToEditorText(itemEl.innerHTML.trim()),
+                    text: tapeHtmlToEditorText(rawText),
                     isSub: isSub
                   });
                 });
@@ -6098,9 +6108,7 @@
       <span class="material-symbols-outlined text-[16px]">visibility</span>
     </button>
   </div>
-  <div class="group-content space-y-2 pl-1">
-${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all">내용 없음</div>'}
-  </div>
+  <div class="group-content space-y-2 pl-1">${itemsHtml ? '\n' + itemsHtml : ''}</div>
 </div>`;
         }).join('\n');
       }
@@ -6581,6 +6589,7 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         applyMode(currentMode);
         closeTopicEditor();
         showToast(`'${topic.title}' 수정본이 저장되고 서브노트에 반영되었습니다`, 'save');
+        triggerAutoSync();
       }
 
       function resetFromTopicEditor() {
@@ -6631,6 +6640,7 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         applyMode(currentMode);
         closeTopicEditor();
         showToast('원본 서브노트 본문과 마스킹으로 초기화되었습니다', 'refresh');
+        triggerAutoSync();
       }
 
       function wrapEditorSelectionWithTape() {
@@ -7387,6 +7397,21 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         const law115Custom = localStorage.getItem('edurecall_custom_LAW-115');
         if (law115Custom && !law115Custom.includes('구성요건해당성의 의의')) {
           localStorage.removeItem('edurecall_custom_LAW-115');
+        }
+        // Purge LAW-165 custom if it still contains 보당노동행위
+        const law165Custom = localStorage.getItem('edurecall_custom_LAW-165');
+        if (law165Custom && law165Custom.includes('보당노동행위')) {
+          localStorage.removeItem('edurecall_custom_LAW-165');
+        }
+        // Clean any phantom '내용 없음' in localStorage custom items
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && k.startsWith('edurecall_custom_')) {
+            const v = localStorage.getItem(k);
+            if (v && v.includes('내용 없음')) {
+              localStorage.setItem(k, v.replace(/<div class="recall-item[^>]*>내용 없음<\/div>/g, ''));
+            }
+          }
         }
       } catch (e) {}
 
