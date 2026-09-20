@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260920_123700"></script>
-  <script src="explanations-data.js?v=20260920_120600"></script>
+  <script src="topics-data.js?v=20260920_124100"></script>
+  <script src="explanations-data.js?v=20260920_124100"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3966,6 +3966,12 @@
         // Integrity safeguard: If LAW-105 custom HTML has stray Supreme Court text or is missing the 3 prerequisite conditions, purge it
         if (topic.id === 'LAW-105' && customHtml && (!customHtml.includes('구체적인 사건이 법원에 계속 중일 것') || customHtml.includes('상고기각'))) {
           localStorage.removeItem('edurecall_custom_LAW-105');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If LAW-115 custom HTML is from before merging LAW-114 (lacks 구성요건해당성의 의의), purge it
+        if (topic.id === 'LAW-115' && customHtml && !customHtml.includes('구성요건해당성의 의의')) {
+          localStorage.removeItem('edurecall_custom_LAW-115');
           customHtml = null;
         }
 
@@ -7376,6 +7382,11 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
         const law105Custom = localStorage.getItem('edurecall_custom_LAW-105');
         if (law105Custom && (!law105Custom.includes('구체적인 사건이 법원에 계속 중일 것') || law105Custom.includes('상고기각'))) {
           localStorage.removeItem('edurecall_custom_LAW-105');
+        }
+        localStorage.removeItem('edurecall_custom_LAW-114');
+        const law115Custom = localStorage.getItem('edurecall_custom_LAW-115');
+        if (law115Custom && !law115Custom.includes('구성요건해당성의 의의')) {
+          localStorage.removeItem('edurecall_custom_LAW-115');
         }
       } catch (e) {}
 
