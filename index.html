@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260920_105400"></script>
-  <script src="explanations-data.js?v=20260920_102100"></script>
+  <script src="topics-data.js?v=20260920_120600"></script>
+  <script src="explanations-data.js?v=20260920_120600"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3961,6 +3961,12 @@
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
         if (!customHtml && topic.id.startsWith('ECON-EXAM-')) {
           customHtml = localStorage.getItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
+        }
+
+        // Integrity safeguard: If LAW-105 custom HTML is missing the 3 prerequisite conditions, purge it to show full canonical content
+        if (topic.id === 'LAW-105' && customHtml && !customHtml.includes('구체적인 사건이 법원에 계속 중일 것')) {
+          localStorage.removeItem('edurecall_custom_LAW-105');
+          customHtml = null;
         }
 
         if (customHtml) {
@@ -7364,6 +7370,14 @@ ${itemsHtml || '    <div class="recall-item text-sm md:text-[15px] text-slate-80
       } else if (savedSubject && ['오늘 복습', '사회과교육론', '법학', '사회학', '정치학', '경제학', '기출', '가이드'].includes(savedSubject)) {
         activeSubject = savedSubject;
       }
+
+      // Immediate integrity cleanup: if LAW-105 cached custom layout lacks the 3 prerequisite conditions, purge it
+      try {
+        const law105Custom = localStorage.getItem('edurecall_custom_LAW-105');
+        if (law105Custom && !law105Custom.includes('구체적인 사건이 법원에 계속 중일 것')) {
+          localStorage.removeItem('edurecall_custom_LAW-105');
+        }
+      } catch (e) {}
 
       // Clean legacy corrupted localStorage entries where header title was split (Execute ONCE)
       try {
