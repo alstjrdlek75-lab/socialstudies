@@ -1392,7 +1392,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260921_184700"></script>
+  <script src="topics-data.js?v=20260922_204000"></script>
   <script src="explanations-data.js?v=20260920_124100"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2884,6 +2884,9 @@
               // Fix typos and clean phantom '내용 없음' placeholders
               if (cleanVal.includes('보당노동행위')) {
                 cleanVal = cleanVal.replace(/보당노동행위/g, '부당노동행위');
+              }
+              if (k === 'edurecall_custom_SOC-022' && cleanVal.includes('방법론적 이원론')) {
+                cleanVal = cleanVal.replace(/방법론적 이원론/g, '방법론적 일원론');
               }
               if (cleanVal.includes('내용 없음')) {
                 cleanVal = cleanVal.replace(/<div class="recall-item[^>]*>내용 없음<\/div>/g, '');
@@ -7406,6 +7409,11 @@
         const law165Custom = localStorage.getItem('edurecall_custom_LAW-165');
         if (law165Custom && law165Custom.includes('보당노동행위')) {
           localStorage.removeItem('edurecall_custom_LAW-165');
+        }
+        // Fix SOC-022 custom if it contains 방법론적 이원론
+        const soc022Custom = localStorage.getItem('edurecall_custom_SOC-022');
+        if (soc022Custom && soc022Custom.includes('방법론적 이원론')) {
+          localStorage.setItem('edurecall_custom_SOC-022', soc022Custom.replace(/방법론적 이원론/g, '방법론적 일원론'));
         }
         // Clean any phantom '내용 없음' and raw ** in localStorage custom items
         for (let i = 0; i < localStorage.length; i++) {
