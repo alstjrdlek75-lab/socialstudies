@@ -1392,7 +1392,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260922_210000"></script>
+  <script src="topics-data.js?v=1790118806287_210000"></script>
   <script src="explanations-data.js?v=20260920_124100"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -1641,6 +1641,14 @@
               <button id="btn-toggle-bookmark" class="inline-flex items-center p-1 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
                 <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
                 <span class="hidden" id="bookmark-status-text">중요</span>
+              </button>
+              <div class="h-5 w-px bg-slate-200 mx-1 hidden sm:block"></div>
+              <button id="btn-set-pin" class="inline-flex items-center p-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
+                <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
+              </button>
+              <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
+                <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
+                <span class="hidden sm:inline">핀 복귀</span>
               </button>
             </div>
             <div class="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
@@ -2665,6 +2673,8 @@
 
       const btnPrevTopic = document.getElementById('btn-prev-topic');
       const btnNextTopic = document.getElementById('btn-next-topic');
+      const btnSetPin = document.getElementById('btn-set-pin');
+      const btnReturnPin = document.getElementById('btn-return-pin');
 
       const diffModal = document.getElementById('diff-modal');
       const btnOpenDiff = document.getElementById('btn-open-diff');
@@ -4135,6 +4145,7 @@
         isAllRevealed = false;
         updateRevealButton(false);
         updateExplanationBadge();
+        if (typeof updateStudyPinUI === 'function') updateStudyPinUI();
         if (explanationModal && !explanationModal.classList.contains('hidden')) {
           openExplanation();
         }
@@ -5392,6 +5403,20 @@
         btnClearSearch.classList.add('hidden');
         if (sidebarSearchKbd) sidebarSearchKbd.classList.remove('hidden');
         renderSidebar();
+        
+        // Re-highlight the active item in the freshly drawn sidebar without resetting content scroll
+        const items = sidebarTree.querySelectorAll('.sidebar-topic-item');
+        items.forEach(item => {
+          if (parseInt(item.dataset.index, 10) === currentTopicIndex) {
+            item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            // Let's just call renderTopic to re-apply the active classes cleanly, 
+            // but we need to preserve page scroll. 
+            // Actually, we can just save and restore the page scroll.
+            const scrollY = window.scrollY;
+            renderTopic(currentTopicIndex, true);
+            window.scrollTo({ top: scrollY, behavior: 'instant' });
+          }
+        });
       });
 
       // Mode pills
@@ -5567,6 +5592,61 @@
           handleGrade(btn.dataset.grade);
         });
       });
+
+      // Study Pin Logic
+      function updateStudyPinUI() {
+        if (!btnSetPin || !btnReturnPin) return;
+        const pinId = localStorage.getItem('edurecall_study_pin');
+        if (!pinId) {
+          btnReturnPin.classList.add('hidden');
+          btnSetPin.classList.remove('text-rose-600', 'bg-rose-50');
+          btnSetPin.classList.add('text-slate-400');
+          return;
+        }
+        btnReturnPin.classList.remove('hidden');
+        const currentTopic = TOPICS[currentTopicIndex];
+        if (currentTopic && currentTopic.id === pinId) {
+          btnSetPin.classList.add('text-rose-600', 'bg-rose-50');
+          btnSetPin.classList.remove('text-slate-400');
+        } else {
+          btnSetPin.classList.remove('text-rose-600', 'bg-rose-50');
+          btnSetPin.classList.add('text-slate-400');
+        }
+      }
+
+      if (btnSetPin) {
+        btnSetPin.addEventListener('click', () => {
+          const currentTopic = TOPICS[currentTopicIndex];
+          if (!currentTopic) return;
+          const currentPin = localStorage.getItem('edurecall_study_pin');
+          if (currentPin === currentTopic.id) {
+            localStorage.removeItem('edurecall_study_pin');
+            showToast('학습 핀이 해제되었습니다.', 'push_pin');
+          } else {
+            localStorage.setItem('edurecall_study_pin', currentTopic.id);
+            showToast('현재 위치가 학습 핀으로 설정되었습니다.', 'push_pin');
+          }
+          updateStudyPinUI();
+        });
+      }
+
+      if (btnReturnPin) {
+        btnReturnPin.addEventListener('click', () => {
+          const pinId = localStorage.getItem('edurecall_study_pin');
+          if (pinId) {
+            const idx = TOPICS.findIndex(t => t.id === pinId);
+            if (idx !== -1) {
+              if (sidebarSearch.value.trim() !== '') {
+                 btnClearSearch.click(); // Clears search, re-renders sidebar
+              }
+              renderTopic(idx);
+              showToast('학습 핀 위치로 복귀했습니다.', 'keyboard_return');
+            } else {
+              showToast('저장된 핀 위치를 찾을 수 없습니다.', 'error');
+            }
+          }
+        });
+      }
 
       // Prev / Next Topic
       btnPrevTopic.addEventListener('click', () => {
