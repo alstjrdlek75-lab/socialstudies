@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=1790118806287_210000"></script>
-  <script src="explanations-data.js?v=20260920_124100"></script>
+  <script src="topics-data.js?v=20260923_081700"></script>
+  <script src="explanations-data.js?v=20260923_081700"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2897,6 +2897,9 @@
               }
               if (k === 'edurecall_custom_SOC-022' && cleanVal.includes('방법론적 이원론')) {
                 cleanVal = cleanVal.replace(/방법론적 이원론/g, '방법론적 일원론');
+              }
+              if (k === 'edurecall_custom_POL-049' || k === 'edurecall_custom_POL-050' || k === 'edurecall_custom_POL-051') {
+                cleanVal = cleanVal.replace(/<div class="mt-3 bg-blue-50\/70[^>]*><div class="font-bold text-blue-900[^>]*><span class="material-symbols-outlined[^>]*>psychology<\/span><span>\[보충 해설\][\s\S]*?<\/div><\/div><\/div>/g, '');
               }
               if (cleanVal.includes('내용 없음')) {
                 cleanVal = cleanVal.replace(/<div class="recall-item[^>]*>내용 없음<\/div>/g, '');
