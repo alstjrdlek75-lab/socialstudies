@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260923_090000"></script>
-  <script src="explanations-data.js?v=20260923_090500"></script>
+  <script src="topics-data.js?v=20260923_093700"></script>
+  <script src="explanations-data.js?v=20260923_093700"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -4177,10 +4177,10 @@
             header.appendChild(toggleBtn);
           }
 
-          // Gather any stray text nodes or elements directly between fontBold and toggleBtn
           const childNodes = Array.from(header.childNodes);
           childNodes.forEach(node => {
-            if (node === fontBold || node === toggleBtn || fontBold.contains(node) || toggleBtn.contains(node)) {
+            if (node === fontBold || node === toggleBtn || fontBold.contains(node) || toggleBtn.contains(node) ||
+                (node.nodeType === Node.ELEMENT_NODE && (node.classList?.contains('group-actions-wrap') || node.classList?.contains('group-edit-btn') || node.querySelector?.('.group-toggle-btn')))) {
               return;
             }
             const txt = node.textContent.trim();
@@ -6107,9 +6107,14 @@
             let title = '';
             const titleEl = group.querySelector('.font-bold');
             if (titleEl) {
-              const spans = titleEl.querySelectorAll('span');
-              if (spans.length > 1) {
-                title = spans[spans.length - 1].textContent.trim();
+              const textSpans = Array.from(titleEl.querySelectorAll('span')).filter(s => 
+                !s.classList.contains('rounded-full') && 
+                !s.classList.contains('exam-badge') &&
+                !s.classList.contains('w-2.5') &&
+                !s.classList.contains('w-3')
+              );
+              if (textSpans.length > 0) {
+                title = textSpans.map(s => s.textContent.trim()).filter(Boolean).join(' ').trim();
               } else {
                 title = titleEl.textContent.trim();
               }
@@ -6174,7 +6179,7 @@
       function serializeEditorCardsToHtml(cards) {
         if (!cards || cards.length === 0) return '';
         return cards.map((card, cIdx) => {
-          const title = (card.title || `(${cIdx + 1}) 항목`).trim();
+          const title = (card.title || '').trim() || `(${cIdx + 1}) 항목`;
           const itemsHtml = (card.items || [])
             .map(item => {
               let text = (item.text || '').trim();
@@ -7702,6 +7707,13 @@
             }
           } catch(e) {}
           localStorage.setItem('edurecall_migration_v6_done', 'true');
+        }
+
+        // Migration V7: Purge corrupted custom POL-044 where card titles were missing
+        if (!localStorage.getItem('edurecall_migration_v7_done')) {
+          localStorage.removeItem('edurecall_custom_POL-044');
+          localStorage.removeItem('edurecall_custom_masks_POL-044');
+          localStorage.setItem('edurecall_migration_v7_done', 'true');
         }
 
 
