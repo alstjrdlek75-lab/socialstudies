@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260923_093700"></script>
-  <script src="explanations-data.js?v=20260923_100500"></script>
+  <script src="topics-data.js?v=20260924_191500"></script>
+  <script src="explanations-data.js?v=20260924_191500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2439,15 +2439,48 @@
       // Helper: Global Comprehensive Exam Badge Normalizer
       function normalizeExamBadges(str) {
         if (!str || typeof str !== 'string') return str;
-        return str
-          .replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>')
-          .replace(/([가-힣\)\>\]])\s+\b(1[5-9]|2[0-7])\b(?=\s*(?:<\/span>|<\/div>|<button|$))/gi, (m, p1, p2) => {
-            return p1 + ' <span class="exam-badge">' + p2 + ' 기출</span>';
-          })
-          .replace(/\b(1[5-9]|2[0-7])\s*(ex[\)\.]?|예[\)\.]?)/gi, '<span class="exam-badge">$1 기출</span> $2')
-          .replace(/(?<=[가-힣\w\)\>]\s*)\b(1[5-9]|2[0-7])\s*:/g, '<span class="exam-badge">$1 기출</span>:')
-          .replace(/(?<!<span class="exam-badge">)\[((?:\d{2}[,\s]*)+기출(?:연계)?)\]/g, '<span class="exam-badge">$1</span>')
-          .replace(/(?<!<span class="exam-badge">)\b((?:1[5-9]|2[0-7])\s*(?:,\s*(?:1[5-9]|2[0-7])\s*)*기출(?:연계)?)(?!<\/span>)/g, '<span class="exam-badge">$1</span>');
+        let res = str.replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
+
+        // 1. 단답형 기출 배지 (e.g. 23 단답, [23 단답], 22, 23 단답 등)
+        res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|(\[?\b(?:1[5-9]|2[0-7])(?:\s*,\s*(?:1[5-9]|2[0-7]))*\s*단답\]?)/g, (match, existingSpan, quote, badgeText) => {
+          if (existingSpan) return existingSpan;
+          const cleanText = badgeText.replace(/[\[\]]/g, '').trim();
+          return `<span class="exam-badge short">${cleanText}</span>`;
+        });
+
+        // 2. 서술형 기출 배지 (e.g. 23 서술, [23 서술], 핵심서술 등)
+        res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|(\[?\b(?:1[5-9]|2[0-7])(?:\s*,\s*(?:1[5-9]|2[0-7]))*\s*서술\]?)/g, (match, existingSpan, quote, badgeText) => {
+          if (existingSpan) return existingSpan;
+          const cleanText = badgeText.replace(/[\[\]]/g, '').trim();
+          return `<span class="exam-badge">${cleanText}</span>`;
+        });
+
+        // 3. 일반 기출 배지 (e.g. 23 기출, [23 기출], 24연계 등)
+        res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|(\[?\b(?:1[5-9]|2[0-7])(?:\s*,\s*(?:1[5-9]|2[0-7]))*\s*(?:기출|연계)(?:연계)?\]?)/g, (match, existingSpan, quote, badgeText) => {
+          if (existingSpan) return existingSpan;
+          const cleanText = badgeText.replace(/[\[\]]/g, '').trim();
+          return `<span class="exam-badge">${cleanText}</span>`;
+        });
+
+        // 4. 문장/표제어 끝의 연도 단독 표기 (e.g. "의미 23")
+        res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|(([가-힣\)\>\]])\s+\b(1[5-9]|2[0-7])\b(?=\s*(?:<\/span>|<\/div>|<button|$)))/gi, (match, existingSpan, quote, fullGroup, p1, p2) => {
+          if (existingSpan) return existingSpan;
+          return p1 + ' <span class="exam-badge">' + p2 + ' 기출</span>';
+        });
+
+        // 5. 예시/접미사 연도 (e.g. 19 ex, 19 예)
+        res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|(\b(1[5-9]|2[0-7])\s*(ex[\)\.]?|예[\)\.]?))/gi, (match, existingSpan, quote, fullGroup, p1, p2) => {
+          if (existingSpan) return existingSpan;
+          return `<span class="exam-badge">${p1} 기출</span> ${p2}`;
+        });
+
+        // 6. 콜론 앞 연도 (e.g. 23:)
+        res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|((?<=[가-힣\w\)\>]\s*)\b(1[5-9]|2[0-7])\s*:)/g, (match, existingSpan, quote, fullGroup, p1) => {
+          if (existingSpan) return existingSpan;
+          return `<span class="exam-badge">${p1} 기출</span>:`;
+        });
+
+        return res;
       }
 
       // 2. DOM Cache
@@ -6057,16 +6090,20 @@
 
       function tapeHtmlToEditorText(html) {
         if (!html) return '';
-        // Match span with class containing mask-tape, convert into intuitive {word}
-        return html.replace(/<span\b[^>]*?\bclass=(["\x27])(.*?)\1[^>]*>([\s\S]*?)<\/span>/gi, (match, quote, cls, inner) => {
+        // Match span with class containing mask-tape or exam-badge
+        let res = html.replace(/<span\b[^>]*?\bclass=(["\x27])(.*?)\1[^>]*>([\s\S]*?)<\/span>/gi, (match, quote, cls, inner) => {
           if (/\bmask-tape\b/.test(cls)) {
             const leading = inner.match(/^\s*/)[0];
             const trailing = inner.match(/\s*$/)[0];
             const core = inner.trim();
             return `${leading}{${core}}${trailing}`;
           }
+          if (/\bexam-badge\b/.test(cls)) {
+            return ` ${inner.trim()} `;
+          }
           return match;
         });
+        return res.replace(/[ \t]{2,}/g, ' ');
       }
 
       function editorTextToTapeHtml(text) {
