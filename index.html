@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260924_191500"></script>
-  <script src="explanations-data.js?v=20260924_191500"></script>
+  <script src="topics-data.js?v=20260924_202000"></script>
+  <script src="explanations-data.js?v=20260924_202000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2328,6 +2328,10 @@
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>좌측 목차 패널 열기/닫기</span>
           <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Space</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>현재 과목 학습 핀 설정/해제</span>
+          <kbd class="px-2 py-1 bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300 rounded border border-rose-200 dark:border-rose-800 font-mono font-bold">P</kbd>
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>서술 입력란 포커스</span>
@@ -3441,6 +3445,52 @@
         }
       }
 
+      // Per-Subject Study Pin Helpers
+      function getSubjectStudyPin(subject) {
+        if (!subject) return null;
+        try {
+          const pin = localStorage.getItem(`edurecall_study_pin_${subject}`);
+          if (pin) return pin;
+          // Legacy migration fallback: if single global pin exists and belongs to this subject
+          const legacyPin = localStorage.getItem('edurecall_study_pin');
+          if (legacyPin && typeof TOPICS !== 'undefined') {
+            const t = TOPICS.find(item => item.id === legacyPin);
+            if (t && t.subject === subject) {
+              localStorage.setItem(`edurecall_study_pin_${subject}`, legacyPin);
+              return legacyPin;
+            }
+          }
+          return null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function setSubjectStudyPin(subject, topicId) {
+        if (!subject) return;
+        try {
+          if (topicId) {
+            localStorage.setItem(`edurecall_study_pin_${subject}`, topicId);
+            localStorage.setItem('edurecall_study_pin', topicId); // Keep legacy updated for compatibility
+          } else {
+            localStorage.removeItem(`edurecall_study_pin_${subject}`);
+            const legacyPin = localStorage.getItem('edurecall_study_pin');
+            const currentTopic = (typeof TOPICS !== 'undefined' && typeof currentTopicIndex === 'number') ? TOPICS[currentTopicIndex] : null;
+            if (legacyPin && currentTopic && legacyPin === currentTopic.id) {
+              localStorage.removeItem('edurecall_study_pin');
+            }
+          }
+        } catch (e) {}
+      }
+
+      function getActiveOrCurrentSubject() {
+        if (typeof activeSubject !== 'undefined' && activeSubject && activeSubject !== 'ALL' && activeSubject !== '오늘 복습') {
+          return activeSubject;
+        }
+        const currentTopic = (typeof TOPICS !== 'undefined' && typeof currentTopicIndex === 'number') ? TOPICS[currentTopicIndex] : null;
+        return currentTopic ? currentTopic.subject : '사회과교육론';
+      }
+
       // Toast notification helper
       let toastTimer = null;
       function showToast(msg, icon = 'info') {
@@ -3736,6 +3786,7 @@
               item.dataset.globalIndex = globalIdx;
               const isCurrent = (globalIdx === currentTopicIndex);
               const isBm = bookmarks.includes(topic.id);
+              const isPinned = (typeof getSubjectStudyPin === 'function' && getSubjectStudyPin(topic.subject) === topic.id);
               const formattedTag = formatExamTag(topic.examTag, topic);
               
               const card = fsrsMap[topic.id];
@@ -3757,6 +3808,7 @@
                     <span class="truncate font-bold text-white">${topic.title}</span>
                   </div>
                   <div class="flex items-center gap-1.5 shrink-0">
+                    ${isPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-200 shrink-0" title="[' + topic.subject + '] 학습 핀">push_pin</span>' : ''}
                     ${formattedTag ? `<span class="text-[10px] font-bold text-blue-100 tracking-tight">${formattedTag}</span>` : ''}
                     ${isBm ? `<span class="text-amber-300 text-base leading-none">★</span>` : ''}
                   </div>
@@ -3769,6 +3821,7 @@
                     <span class="truncate font-medium text-slate-800">${topic.title}</span>
                   </div>
                   <div class="flex items-center gap-1.5 shrink-0">
+                    ${isPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-500 shrink-0" title="[' + topic.subject + '] 학습 핀">push_pin</span>' : ''}
                     ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 tracking-tight">${formattedTag}</span>` : ''}
                     ${isBm ? `<span class="text-amber-400 text-sm leading-none">★</span>` : ''}
                   </div>
@@ -4116,6 +4169,7 @@
           const topicItem = TOPICS[gIdx];
           if (!topicItem) return;
           const isBm = bookmarks.includes(topicItem.id);
+          const isItemPinned = (typeof getSubjectStudyPin === 'function' && topicItem && getSubjectStudyPin(topicItem.subject) === topicItem.id);
           const formattedTag = formatExamTag(topicItem.examTag, topicItem);
 
           if (isCur) {
@@ -4123,6 +4177,7 @@
             item.innerHTML = `
               <span class="truncate font-bold text-white min-w-0 flex-1 pr-2">${topicItem.title}</span>
               <div class="flex items-center gap-1.5 shrink-0">
+                ${isItemPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-200 shrink-0" title="[' + topicItem.subject + '] 학습 핀">push_pin</span>' : ''}
                 ${formattedTag ? `<span class="text-[10px] font-bold text-blue-100 tracking-tight">${formattedTag}</span>` : ''}
                 ${isBm ? `<span class="text-amber-300 text-base leading-none">★</span>` : ''}
               </div>
@@ -4171,6 +4226,7 @@
             item.innerHTML = `
               <span class="truncate font-medium text-slate-800 min-w-0 flex-1 pr-2">${topicItem.title}</span>
               <div class="flex items-center gap-1.5 shrink-0">
+                ${isItemPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-500 shrink-0" title="[' + topicItem.subject + '] 학습 핀">push_pin</span>' : ''}
                 ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 tracking-tight">${formattedTag}</span>` : ''}
                 ${isBm ? `<span class="text-amber-400 text-sm leading-none">★</span>` : ''}
               </div>
@@ -5264,6 +5320,7 @@
         } else if (sidebarTree) {
           sidebarTree.scrollTop = 0;
         }
+        if (typeof updateStudyPinUI === 'function') updateStudyPinUI();
       }
 
       // 9. Event Listeners Wire-up
@@ -5629,24 +5686,38 @@
         });
       });
 
-      // Study Pin Logic
+      // Study Pin Logic (Per-Subject)
       function updateStudyPinUI() {
         if (!btnSetPin || !btnReturnPin) return;
-        const pinId = localStorage.getItem('edurecall_study_pin');
+        const currentTopic = (typeof TOPICS !== 'undefined' && typeof currentTopicIndex === 'number') ? TOPICS[currentTopicIndex] : null;
+        const subj = getActiveOrCurrentSubject();
+        const pinId = getSubjectStudyPin(subj);
+
+        // Check if current topic is the pin for its own subject
+        const isCurrentTopicPinned = currentTopic && (getSubjectStudyPin(currentTopic.subject) === currentTopic.id);
+
+        if (isCurrentTopicPinned) {
+          btnSetPin.classList.add('text-rose-600', 'bg-rose-50', 'ring-1', 'ring-rose-200');
+          btnSetPin.classList.remove('text-slate-400');
+          btnSetPin.title = `[${currentTopic.subject}] 현재 주제가 학습 핀으로 지정됨 (클릭 시 해제) [단축키: P]`;
+        } else {
+          btnSetPin.classList.remove('text-rose-600', 'bg-rose-50', 'ring-1', 'ring-rose-200');
+          btnSetPin.classList.add('text-slate-400');
+          const targetSubj = currentTopic ? currentTopic.subject : subj;
+          btnSetPin.title = `[${targetSubj}] 현재 위치를 학습 핀으로 설정 [단축키: P]`;
+        }
+
         if (!pinId) {
           btnReturnPin.classList.add('hidden');
-          btnSetPin.classList.remove('text-rose-600', 'bg-rose-50');
-          btnSetPin.classList.add('text-slate-400');
-          return;
-        }
-        btnReturnPin.classList.remove('hidden');
-        const currentTopic = TOPICS[currentTopicIndex];
-        if (currentTopic && currentTopic.id === pinId) {
-          btnSetPin.classList.add('text-rose-600', 'bg-rose-50');
-          btnSetPin.classList.remove('text-slate-400');
         } else {
-          btnSetPin.classList.remove('text-rose-600', 'bg-rose-50');
-          btnSetPin.classList.add('text-slate-400');
+          btnReturnPin.classList.remove('hidden');
+          const pinTopic = (typeof TOPICS !== 'undefined') ? TOPICS.find(t => t.id === pinId) : null;
+          const pinTitle = pinTopic ? pinTopic.title : pinId;
+          btnReturnPin.title = `[${subj}] 저장된 핀 위치로 복귀: ${pinTitle}`;
+          const returnLabel = btnReturnPin.querySelector('span:not(.material-symbols-outlined)');
+          if (returnLabel) {
+            returnLabel.textContent = `${subj} 핀 복귀`;
+          }
         }
       }
 
@@ -5654,31 +5725,38 @@
         btnSetPin.addEventListener('click', () => {
           const currentTopic = TOPICS[currentTopicIndex];
           if (!currentTopic) return;
-          const currentPin = localStorage.getItem('edurecall_study_pin');
+          const subj = currentTopic.subject || getActiveOrCurrentSubject();
+          const currentPin = getSubjectStudyPin(subj);
           if (currentPin === currentTopic.id) {
-            localStorage.removeItem('edurecall_study_pin');
-            showToast('학습 핀이 해제되었습니다.', 'push_pin');
+            setSubjectStudyPin(subj, null);
+            showToast(`[${subj}] 학습 핀이 해제되었습니다.`, 'push_pin');
           } else {
-            localStorage.setItem('edurecall_study_pin', currentTopic.id);
-            showToast('현재 위치가 학습 핀으로 설정되었습니다.', 'push_pin');
+            setSubjectStudyPin(subj, currentTopic.id);
+            showToast(`[${subj}] 현재 위치가 학습 핀으로 설정되었습니다.`, 'push_pin');
           }
           updateStudyPinUI();
+          if (typeof renderSidebar === 'function') renderSidebar();
         });
       }
 
       if (btnReturnPin) {
         btnReturnPin.addEventListener('click', () => {
-          const pinId = localStorage.getItem('edurecall_study_pin');
+          const subj = getActiveOrCurrentSubject();
+          const pinId = getSubjectStudyPin(subj);
           if (pinId) {
             const idx = TOPICS.findIndex(t => t.id === pinId);
             if (idx !== -1) {
-              if (sidebarSearch.value.trim() !== '') {
-                 btnClearSearch.click(); // Clears search, re-renders sidebar
+              if (sidebarSearch && sidebarSearch.value.trim() !== '') {
+                btnClearSearch.click(); // Clears search, re-renders sidebar
+              }
+              const targetTopic = TOPICS[idx];
+              if (activeSubject !== 'ALL' && activeSubject !== '오늘 복습' && activeSubject !== targetTopic.subject) {
+                setSubjectTab(targetTopic.subject, false);
               }
               renderTopic(idx);
-              showToast('학습 핀 위치로 복귀했습니다.', 'keyboard_return');
+              showToast(`[${targetTopic.subject}] 핀 위치로 복귀했습니다.`, 'keyboard_return');
             } else {
-              showToast('저장된 핀 위치를 찾을 수 없습니다.', 'error');
+              showToast(`[${subj}] 저장된 핀 위치를 찾을 수 없습니다.`, 'error');
             }
           }
         });
@@ -7351,6 +7429,14 @@
         if (isDKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleTheme();
+          return;
+        }
+
+        // 8-2. [P] or [p] or [ㅔ] Toggle Study Pin on current topic (학습 핀 설정/해제)
+        const isPKey = (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ' || e.code === 'KeyP');
+        if (isPKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          if (btnSetPin) btnSetPin.click();
           return;
         }
 
