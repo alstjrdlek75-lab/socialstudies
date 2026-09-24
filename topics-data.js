@@ -9908,7 +9908,7 @@ window.ALL_TOPICS = [
   },
   {
     "id": "GUIDE-001",
-    "subject": "가이드",
+    "subject": "안내",
     "chapter": "단권화 사용가이드",
     "section": "학습법 안내",
     "title": "임용수험생을 위한 기능 활용법",
@@ -14531,11 +14531,11 @@ window.ALL_TOPICS = [
     "subject": "사회학",
     "chapter": "4. 미시적 관점",
     "section": "4-1. 상징적 상호작용론",
-    "title": "1. 개요",
+    "title": "1. 특징",
     "examTag": "",
     "page": 14,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 실증주의·기능주의 비판→미시적인 것에 관심→해석적 연구와의 친화성, 이해 중시</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 행위의 동기와 의미 해석에 중점</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "1. 개요\n(1) 실증주의·기능주의 비판→미시적인 것에 관심→해석적 연구와의 친화성, 이해 중시\n\n(2) 행위의 동기와 의미 해석에 중점\n",
+    "defaultAnswer": "1. 특징\n(1) 실증주의·기능주의 비판→미시적인 것에 관심→해석적 연구와의 친화성, 이해 중시\n\n(2) 행위의 동기와 의미 해석에 중점\n",
     "targetKeywords": [
       "실증주의",
       "기능주의",
@@ -14550,38 +14550,15 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
-    "id": "SOC-038",
-    "subject": "사회학",
-    "chapter": "4. 미시적 관점",
-    "section": "4-1. 상징적 상호작용론",
-    "title": "2. 이론",
-    "examTag": "",
-    "page": 14,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 의미</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①의미는 고정된 것이 아니라 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상호작용\">상호작용</span> 과정에서 끊임없이 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"변화\">변화</span>하는 것</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자아\">자아</span>도 고정되지 않고 끊임없이 구성됨</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 주체</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①행위자는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상황 정의\">상황 정의</span>를 바탕으로 행위를 선택, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상징\">상징</span>을 활용하여 타인과 상호작용함</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②상황정의: 행위 주체가 자신이 처한 상황에 대해 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"해석\">해석</span>하고 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"의미\">의미</span>를 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"부여\">부여</span>하는 것</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 구조</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①구조는 행위자 간 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상호작용\">상호작용</span>의 산물</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②인간행위를 결정하지 않으며, 기껏해야 행위의 선택범위만을 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"제한\">제한</span>함 → 기능론과의 대비점</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 개인은 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"능동\">능동</span>적·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자율\">자율</span>적 주체</div></div></div>",
-    "defaultAnswer": "2. 이론\n(1) 의미\n①의미는 고정된 것이 아니라 상호작용 과정에서 끊임없이 변화하는 것\n②자아도 고정되지 않고 끊임없이 구성됨\n(2) 주체\n①행위자는 상황 정의를 바탕으로 행위를 선택, 상징을 활용하여 타인과 상호작용함\n②상황정의: 행위 주체가 자신이 처한 상황에 대해 해석하고 의미를 부여하는 것\n(3) 구조\n①구조는 행위자 간 상호작용의 산물\n②인간행위를 결정하지 않으며, 기껏해야 행위의 선택범위만을 제한함 → 기능론과의 대비점\n- 개인은 능동적·자율적 주체",
-    "targetKeywords": [
-      "상호작용",
-      "변화",
-      "자아",
-      "상황 정의",
-      "상징",
-      "해석",
-      "의미",
-      "부여"
-    ],
-    "tapeCount": 12,
-    "groupCount": 3
-  },
-  {
     "id": "SOC-039",
     "subject": "사회학",
     "chapter": "4. 미시적 관점",
     "section": "4-1. 상징적 상호작용론",
-    "title": "3. 한계",
+    "title": "2. 한계",
     "examTag": "",
     "page": 14,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 개인에 미치는 사회 구조의 힘 경시</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 거시적 수준의 일반법칙 발견에 한계</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "3. 한계\n(1) 개인에 미치는 사회 구조의 힘 경시\n\n(2) 거시적 수준의 일반법칙 발견에 한계\n",
+    "defaultAnswer": "2. 한계\n(1) 개인에 미치는 사회 구조의 힘 경시\n\n(2) 거시적 수준의 일반법칙 발견에 한계\n",
     "targetKeywords": [
       "일반법칙",
       "개인에",
@@ -14600,11 +14577,11 @@ window.ALL_TOPICS = [
     "subject": "사회학",
     "chapter": "4. 미시적 관점",
     "section": "4-1. 상징적 상호작용론",
-    "title": "4. 사회문제론",
+    "title": "3. 사회문제론",
     "examTag": "",
     "page": 14,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) ‘사회문제’라는 상황정의, 일탈자로서의 역할 취득, 자아 형성 과정에 초점</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 해결책</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①<span class=\"mask-tape\" data-tape=\"true\" data-text=\"낙인\">낙인</span> 찍지 않기</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②의식 개혁: 행위자의 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"의미부여\">의미부여</span> 수정 (지배적 규범을 교육하는 기능론의 재사회화와 다름)</div></div></div>",
-    "defaultAnswer": "4. 사회문제론\n(1) ‘사회문제’라는 상황정의, 일탈자로서의 역할 취득, 자아 형성 과정에 초점\n\n(2) 해결책\n①낙인 찍지 않기\n②의식 개혁: 행위자의 의미부여 수정 (지배적 규범을 교육하는 기능론의 재사회화와 다름)",
+    "defaultAnswer": "3. 사회문제론\n(1) ‘사회문제’라는 상황정의, 일탈자로서의 역할 취득, 자아 형성 과정에 초점\n\n(2) 해결책\n①낙인 찍지 않기\n②의식 개혁: 행위자의 의미부여 수정 (지배적 규범을 교육하는 기능론의 재사회화와 다름)",
     "targetKeywords": [
       "낙인",
       "의미부여",
@@ -14617,6 +14594,29 @@ window.ALL_TOPICS = [
     ],
     "tapeCount": 2,
     "groupCount": 2
+  },
+  {
+    "id": "SOC-038",
+    "subject": "사회학",
+    "chapter": "4. 미시적 관점",
+    "section": "4-1. 상징적 상호작용론",
+    "title": "4. 이론",
+    "examTag": "",
+    "page": 14,
+    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 의미</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①의미는 고정된 것이 아니라 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상호작용\">상호작용</span> 과정에서 끊임없이 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"변화\">변화</span>하는 것</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자아\">자아</span>도 고정되지 않고 끊임없이 구성됨</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 주체</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①행위자는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상황 정의\">상황 정의</span>를 바탕으로 행위를 선택, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상징\">상징</span>을 활용하여 타인과 상호작용함</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②상황정의: 행위 주체가 자신이 처한 상황에 대해 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"해석\">해석</span>하고 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"의미\">의미</span>를 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"부여\">부여</span>하는 것</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 구조</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①구조는 행위자 간 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"상호작용\">상호작용</span>의 산물</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②인간행위를 결정하지 않으며, 기껏해야 행위의 선택범위만을 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"제한\">제한</span>함 → 기능론과의 대비점</div><div class=\"recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all\">- 개인은 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"능동\">능동</span>적·<span class=\"mask-tape\" data-tape=\"true\" data-text=\"자율\">자율</span>적 주체</div></div></div>",
+    "defaultAnswer": "4. 이론\n(1) 의미\n①의미는 고정된 것이 아니라 상호작용 과정에서 끊임없이 변화하는 것\n②자아도 고정되지 않고 끊임없이 구성됨\n(2) 주체\n①행위자는 상황 정의를 바탕으로 행위를 선택, 상징을 활용하여 타인과 상호작용함\n②상황정의: 행위 주체가 자신이 처한 상황에 대해 해석하고 의미를 부여하는 것\n(3) 구조\n①구조는 행위자 간 상호작용의 산물\n②인간행위를 결정하지 않으며, 기껏해야 행위의 선택범위만을 제한함 → 기능론과의 대비점\n- 개인은 능동적·자율적 주체",
+    "targetKeywords": [
+      "상호작용",
+      "변화",
+      "자아",
+      "상황 정의",
+      "상징",
+      "해석",
+      "의미",
+      "부여"
+    ],
+    "tapeCount": 12,
+    "groupCount": 3
   },
   {
     "id": "SOC-041",

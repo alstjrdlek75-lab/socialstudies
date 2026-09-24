@@ -1392,8 +1392,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260925_083700"></script>
-  <script src="explanations-data.js?v=20260925_083700"></script>
+  <script src="topics-data.js?v=20260925_085500"></script>
+  <script src="explanations-data.js?v=20260925_085500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -1440,8 +1440,8 @@
       <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="기출" type="button">
         기출 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-exam">213</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="가이드" type="button">
-        가이드 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-guide">1</span>
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="안내" type="button">
+        안내
       </button>
     </nav>
 
@@ -1547,7 +1547,7 @@
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제</button>
       <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="기출" type="button">기출</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="가이드" type="button">가이드</button>
+      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="안내" type="button">안내</button>
     </div>
 
     <!-- Sidebar Header & Search -->
@@ -3960,7 +3960,7 @@
         hideFloatingMaskBtn();
 
         // Auto-switch active subject if current topic belongs to another subject and filter is not a special tab
-        const specialSubjects = ['오늘 복습', '기출', '가이드'];
+        const specialSubjects = ['오늘 복습', '기출', '안내'];
         if (!specialSubjects.includes(activeSubject) && topic.subject !== activeSubject) {
           activeSubject = topic.subject;
           try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
@@ -7539,7 +7539,7 @@
       });
 
       function updateSubjectCountBadges() {
-        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '가이드': 0 };
+        const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '안내': 0 };
         const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
         const nowTime = new Date().getTime();
         const dueSet = new Set();
@@ -7559,8 +7559,7 @@
           'count-soc': counts['사회학'],
           'count-pol': counts['정치학'],
           'count-econ': counts['경제학'],
-          'count-exam': counts['기출'],
-          'count-guide': counts['가이드']
+          'count-exam': counts['기출']
         };
         Object.keys(map).forEach(id => {
           const el = document.getElementById(id);
@@ -7601,7 +7600,7 @@
         try { localStorage.setItem('edurecall_active_subject', activeSubject); } catch (e) {}
       } else if (targetTopic) {
         activeSubject = targetTopic.subject;
-      } else if (savedSubject && ['오늘 복습', '사회과교육론', '법학', '사회학', '정치학', '경제학', '기출', '가이드'].includes(savedSubject)) {
+      } else if (savedSubject && ['오늘 복습', '사회과교육론', '법학', '사회학', '정치학', '경제학', '기출', '안내'].includes(savedSubject)) {
         activeSubject = savedSubject;
       }
 
