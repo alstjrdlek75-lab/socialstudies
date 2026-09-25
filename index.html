@@ -1547,7 +1547,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260925_204600"></script>
+  <script src="topics-data.js?v=20260925_220200"></script>
   <script src="explanations-data.js?v=20260925_174800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -4436,19 +4436,23 @@
               return;
             }
 
-            // 2. Level 4: Arrow / Consequence items (starts with →, ➔ or ->)
-            if (/^(?:[→➔]|->)/.test(text)) {
+            // 2. Level 4: Arrow / Asterisk / Note items (starts with →, ➔, ->, *, ※)
+            if (/^(?:[→➔]|->|[*※])/.test(text)) {
               item.classList.remove('pl-6', 'py-0.5');
               item.classList.add('subnote-indent-l4');
 
               let inner = item.innerHTML.trim();
-              const arrowMatch = inner.match(/^(?:[→➔]|->)\s*([\s\S]*)$/);
-              if (arrowMatch) {
-                inner = arrowMatch[1];
+              const noteMatch = inner.match(/^(?:([→➔]|->)|([*※]))\s*([\s\S]*)$/);
+              let icon = '→';
+              if (noteMatch) {
+                if (noteMatch[2]) {
+                  icon = noteMatch[2];
+                }
+                inner = noteMatch[3] || '';
               }
 
               item.innerHTML = `
-                <span class="subnote-indent-l4-arrow select-none font-bold text-slate-400 dark:text-slate-500">→</span>
+                <span class="subnote-indent-l4-arrow select-none font-bold text-slate-400 dark:text-slate-500">${icon}</span>
                 <div class="flex-1 min-w-0">${inner}</div>
               `;
               return;
