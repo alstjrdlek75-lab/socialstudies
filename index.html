@@ -1366,17 +1366,17 @@
 
     /* Tap-to-mask editor tokens & badges (Reference Style) */
     .editor-word-token {
-      display: inline-block;
-      padding: 1px 4px;
-      margin: 1px 0.5px;
-      border-radius: 5px;
-      transition: all 0.12s ease;
+      display: inline;
+      padding: 0 1px;
+      margin: 0;
+      border-radius: 4px;
+      transition: background-color 0.12s ease, color 0.12s ease;
       cursor: pointer;
     }
     .editor-word-token:hover {
       background-color: #ffe4e6;
       color: #e11d48;
-      box-shadow: 0 1px 2px rgba(225, 29, 72, 0.15);
+      border-radius: 4px;
     }
     html.dark .editor-word-token:hover {
       background-color: rgba(159, 18, 57, 0.6);
@@ -1385,11 +1385,14 @@
     .editor-badge-masked {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
-      padding: 1.5px 7px;
-      margin: 1px 1.5px;
+      gap: 2px;
+      padding: 0px 5px;
+      margin: 0 1px;
+      vertical-align: middle;
       border-radius: 6px;
       font-weight: 700;
+      font-size: 0.9em;
+      line-height: 1.45;
       background-color: #ffe4e6;
       color: #e11d48;
       border: 1px solid #fecdd3;
@@ -1443,7 +1446,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260925_192200"></script>
+  <script src="topics-data.js?v=20260925_193300"></script>
   <script src="explanations-data.js?v=20260925_174800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2014,8 +2017,8 @@
     <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200/80 dark:border-slate-800 w-full max-w-2xl sm:max-w-3xl max-h-[92dvh] sm:max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
       
       <!-- Top Handle & Header -->
-      <div class="px-5 pt-3.5 pb-3 border-b border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900 shrink-0">
-        <div class="w-10 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-2.5"></div>
+      <div class="px-5 sm:px-6 pt-4 sm:pt-5 pb-3 sm:pb-3.5 border-b border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900 shrink-0">
+        <div class="w-12 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-3"></div>
         <div class="flex items-center justify-between gap-2">
           <div class="min-w-0 flex items-center gap-2">
             <h3 id="topic-edit-modal-title" class="font-bold text-base sm:text-lg text-slate-900 dark:text-slate-100 truncate">
@@ -6330,20 +6333,20 @@
               if (!text) return '';
               text = editorTextToTapeHtml(text);
               if (item.isSub) {
-                return `    <div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
+                return `    <div class="recall-item text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
               }
-              return `    <div class="recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all">${text}</div>`;
+              return `    <div class="recall-item text-sm md:text-[15px] text-slate-800 dark:text-slate-100 leading-relaxed pl-3.5 border-l-2 border-blue-200 dark:border-blue-900/60 py-1 transition-all">${text}</div>`;
             })
             .filter(Boolean)
             .join('\n');
 
-          return `<div class="topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all" data-group-index="${cIdx}">
-  <div class="flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5">
-    <div class="font-bold text-sm md:text-base text-blue-700 flex items-center gap-2">
-      <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
+          return `<div class="topic-group mb-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-2xs transition-all" data-group-index="${cIdx}">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-2.5 mb-2.5">
+    <div class="font-bold text-sm md:text-base text-blue-700 dark:text-blue-400 flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
       <span>${title}</span>
     </div>
-    <button class="group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1 cursor-pointer" type="button" title="이 항목 블러 토글">
+    <button class="group-toggle-btn text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-1 cursor-pointer" type="button" title="이 항목 블러 토글">
       <span class="material-symbols-outlined text-[16px]">visibility</span>
     </button>
   </div>
@@ -6517,20 +6520,20 @@
 
         activeEditorCards.forEach((card, cIdx) => {
           const cardRow = document.createElement('div');
-          cardRow.className = 'flex items-start gap-2.5 sm:gap-3.5 group';
+          cardRow.className = 'flex items-start gap-2 sm:gap-3 group';
           cardRow.dataset.cardIndex = cIdx;
 
           // Number Column on Left
           const numCol = document.createElement('div');
-          numCol.className = 'w-6 sm:w-7 text-center font-bold text-slate-800 dark:text-slate-200 pt-3 text-base sm:text-lg select-none shrink-0';
+          numCol.className = 'w-5 sm:w-6 text-center font-bold text-slate-700 dark:text-slate-300 pt-2.5 text-sm sm:text-base select-none shrink-0';
           numCol.textContent = `${cIdx + 1}`;
 
           // Card Box on Right
           const cardBox = document.createElement('div');
-          cardBox.className = 'flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-3.5 sm:p-4 shadow-2xs hover:border-slate-300 dark:hover:border-slate-700 transition-all';
+          cardBox.className = 'card-box flex-1 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-3.5 sm:p-4 shadow-2xs hover:border-slate-300 dark:hover:border-slate-700 transition-all';
 
           if (card.isEditing) {
-            // DIRECT TEXT EDITING MODE FOR THIS CARD
+            // DIRECT TEXT EDITING MODE FOR THIS CARD (SEAMLESS CARD FRAME)
             const initialText = (card.items || []).map(it => {
               let t = it.text || '';
               if (it.isSub && !t.startsWith('-') && !t.startsWith('⦁') && !t.startsWith('•')) {
@@ -6540,40 +6543,34 @@
             }).join('\n');
 
             cardBox.innerHTML = `
-              <div class="space-y-3">
-                <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
-                  <span class="text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">
-                    <span class="material-symbols-outlined text-[15px]">edit_note</span>
-                    <span>카드 #${cIdx + 1} 내용 타이핑 수정</span>
-                  </span>
-                  <button type="button" class="btn-card-delete text-slate-400 hover:text-rose-600 p-1 rounded cursor-pointer" title="카드 삭제">
+              <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800/80">
+                <div class="font-bold text-sm sm:text-base text-blue-700 dark:text-blue-400 flex items-center gap-1.5 flex-1 min-w-0 mr-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
+                  <input type="text" class="card-edit-title-input w-full font-bold text-sm sm:text-base text-blue-700 dark:text-blue-400 bg-transparent border-b border-blue-300 dark:border-blue-600 focus:border-blue-600 dark:focus:border-blue-400 focus:outline-hidden px-1 py-0.5" value="${escapeHtml(card.title || '')}" placeholder="카드 제목 (예: (1) 주제 제목)">
+                </div>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">수정 중</span>
+                  <button type="button" class="btn-card-delete text-slate-300 hover:text-rose-600 p-1 rounded cursor-pointer transition-colors" title="이 카드 삭제">
                     <span class="material-symbols-outlined text-[16px]">delete</span>
                   </button>
                 </div>
-                <div>
-                  <label class="text-[11px] font-bold text-slate-500 dark:text-slate-400 block mb-1">카드 제목</label>
-                  <input type="text" class="card-edit-title-input w-full px-3 py-1.5 text-sm font-bold rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-hidden" value="${escapeHtml(card.title || '')}" placeholder="예: (1) 주제 제목">
-                </div>
-                <div>
-                  <label class="text-[11px] font-bold text-slate-500 dark:text-slate-400 block mb-1">
-                    카드 본문 (자유롭게 줄바꿈하며 작성, 빈칸은 {단어} 로 입력)
-                  </label>
-                  <textarea class="card-edit-textarea w-full p-3 text-xs sm:text-sm font-sans leading-relaxed rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-850 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:outline-hidden min-h-[120px] resize-y" placeholder="내용을 자유롭게 입력하세요...">${escapeHtml(initialText)}</textarea>
-                </div>
-                <div class="flex items-center justify-between pt-1">
-                  <button type="button" class="btn-card-wrap-tape px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300 border border-rose-200 dark:border-rose-900/60 text-xs font-bold flex items-center gap-1 cursor-pointer hover:bg-rose-100">
-                    <span class="material-symbols-outlined text-[14px]">label</span>
-                    <span>드래그 단어 {마스킹}</span>
+              </div>
+              <div class="my-2">
+                <textarea class="card-edit-textarea w-full p-2.5 sm:p-3 text-xs sm:text-sm font-sans leading-relaxed rounded-xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/20 dark:bg-blue-950/20 text-slate-900 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-hidden min-h-[110px] resize-y" placeholder="내용을 자유롭게 줄바꿈하며 작성하세요. 빈칸은 {단어} 로 입력합니다.">${escapeHtml(initialText)}</textarea>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800/60">
+                <button type="button" class="btn-card-wrap-tape px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:hover:bg-rose-900/60 dark:text-rose-300 border border-rose-200 dark:border-rose-900/60 text-xs font-semibold flex items-center gap-1 cursor-pointer transition-colors" title="선택한 텍스트를 {마스킹}으로 감쌉니다">
+                  <span class="material-symbols-outlined text-[14px]">label</span>
+                  <span>드래그 단어 {마스킹}</span>
+                </button>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" class="btn-card-edit-cancel px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors">
+                    취소
                   </button>
-                  <div class="flex items-center gap-2">
-                    <button type="button" class="btn-card-edit-cancel px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">
-                      취소
-                    </button>
-                    <button type="button" class="btn-card-edit-done px-4 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1 cursor-pointer shadow-2xs">
-                      <span class="material-symbols-outlined text-[14px]">check</span>
-                      <span>완료</span>
-                    </button>
-                  </div>
+                  <button type="button" class="btn-card-edit-done px-3.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1 cursor-pointer shadow-xs transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">check</span>
+                    <span>완료</span>
+                  </button>
                 </div>
               </div>
             `;
@@ -6687,16 +6684,19 @@
             });
 
             const footerHtml = `
-              <div class="flex items-center justify-end gap-1.5 pt-2.5 mt-2 border-t border-slate-100 dark:border-slate-800/60">
-                <button type="button" class="btn-card-edit-mode p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-950/50 hover:border-blue-300 text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-all cursor-pointer shadow-2xs" title="이 카드 문장 타이핑 수정">
-                  <span class="material-symbols-outlined text-[17px]">edit</span>
-                </button>
-                <button type="button" class="btn-card-move-up p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-all cursor-pointer shadow-2xs ${cIdx === 0 ? 'opacity-30 cursor-not-allowed' : ''}" title="위로 이동" ${cIdx === 0 ? 'disabled' : ''}>
-                  <span class="material-symbols-outlined text-[17px]">keyboard_arrow_up</span>
-                </button>
-                <button type="button" class="btn-card-move-down p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-all cursor-pointer shadow-2xs ${cIdx === activeEditorCards.length - 1 ? 'opacity-30 cursor-not-allowed' : ''}" title="아래로 이동" ${cIdx === activeEditorCards.length - 1 ? 'disabled' : ''}>
-                  <span class="material-symbols-outlined text-[17px]">keyboard_arrow_down</span>
-                </button>
+              <div class="flex items-center justify-end pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/60">
+                <div class="inline-flex items-center bg-slate-50 dark:bg-slate-800/70 p-0.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs gap-0.5">
+                  <button type="button" class="btn-card-edit-mode p-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:bg-white dark:hover:bg-slate-700 transition-all cursor-pointer" title="이 카드 문장 타이핑 수정">
+                    <span class="material-symbols-outlined text-[16px]">edit</span>
+                  </button>
+                  <div class="w-px h-3.5 bg-slate-200 dark:bg-slate-700"></div>
+                  <button type="button" class="btn-card-move-up p-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:bg-white dark:hover:bg-slate-700 transition-all cursor-pointer ${cIdx === 0 ? 'opacity-30 cursor-not-allowed pointer-events-none' : ''}" title="위로 이동">
+                    <span class="material-symbols-outlined text-[16px]">keyboard_arrow_up</span>
+                  </button>
+                  <button type="button" class="btn-card-move-down p-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:bg-white dark:hover:bg-slate-700 transition-all cursor-pointer ${cIdx === activeEditorCards.length - 1 ? 'opacity-30 cursor-not-allowed pointer-events-none' : ''}" title="아래로 이동">
+                    <span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span>
+                  </button>
+                </div>
               </div>
             `;
 
@@ -6783,10 +6783,8 @@
         activeEditorCards = parseHtmlToEditorCards(currentHtml);
         isRawMode = false;
 
-        // If target card clicked, enter edit mode for that card
-        if (typeof targetCardIndex === 'number' && targetCardIndex >= 0 && targetCardIndex < activeEditorCards.length) {
-          activeEditorCards[targetCardIndex].isEditing = true;
-        }
+        // Ensure all cards open uniformly in View Mode (Reference Style)
+        activeEditorCards.forEach(c => { c.isEditing = false; });
 
         renderTopicCardEditor();
 
@@ -6804,8 +6802,13 @@
             const targetEl = topicEditCardsContainer.querySelector(`[data-card-index="${targetCardIndex}"]`);
             if (targetEl) {
               targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              const cardBox = targetEl.querySelector('.card-box') || targetEl;
+              cardBox.classList.add('ring-2', 'ring-blue-500', 'ring-offset-2', 'dark:ring-offset-slate-900');
+              setTimeout(() => {
+                cardBox.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-2', 'dark:ring-offset-slate-900');
+              }, 1600);
             }
-          }, 100);
+          }, 120);
         }
       }
 
