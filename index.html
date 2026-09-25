@@ -337,6 +337,115 @@
       line-height: 1.75 !important;
     }
 
+    /* Enhanced Visual Hierarchy: Section Headers, Subheads, Bullets, Arrows */
+    #subnote-content-container .subnote-section-header {
+      margin-top: 1.35rem !important;
+      margin-bottom: 0.65rem !important;
+      padding: 0.48rem 0.85rem !important;
+      border: 1px solid #dbeafe !important;
+      border-left: 4.5px solid #2563eb !important;
+      background: linear-gradient(to right, #eff6ff, #f8faff) !important;
+      border-radius: 6px !important;
+      font-weight: 800 !important;
+      font-size: calc(15.5px * var(--content-font-scale, 1.15)) !important;
+      color: #1e3a8a !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.04) !important;
+    }
+    #subnote-content-container .subnote-section-header:first-child {
+      margin-top: 0.2rem !important;
+    }
+    html.dark #subnote-content-container .subnote-section-header {
+      border-color: #1e3a8a !important;
+      border-left-color: #60a5fa !important;
+      background: linear-gradient(to right, rgba(30, 58, 138, 0.3), rgba(15, 23, 42, 0.4)) !important;
+      color: #bfdbfe !important;
+    }
+
+    #subnote-content-container .subnote-subhead {
+      margin-top: 1rem !important;
+      margin-bottom: 0.4rem !important;
+      padding-left: 0.25rem !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    #subnote-content-container .subnote-subhead:first-child {
+      margin-top: 0.25rem !important;
+    }
+    #subnote-content-container .subnote-subhead-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.45rem !important;
+      padding: 0.22rem 0.75rem !important;
+      border-radius: 9999px !important;
+      font-weight: 700 !important;
+      font-size: calc(14px * var(--content-font-scale, 1.15)) !important;
+      color: #0f172a !important;
+      background-color: #f1f5f9 !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+    }
+    html.dark #subnote-content-container .subnote-subhead-pill {
+      color: #f1f5f9 !important;
+      background-color: #1e293b !important;
+      border-color: #475569 !important;
+    }
+    #subnote-content-container .subnote-subhead-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 9999px;
+      background-color: #2563eb;
+      flex-shrink: 0;
+    }
+    html.dark #subnote-content-container .subnote-subhead-dot {
+      background-color: #60a5fa;
+    }
+
+    #subnote-content-container .subnote-bullet {
+      padding-left: 1.65rem !important;
+      margin-bottom: 0.35rem !important;
+      display: flex !important;
+      align-items: baseline !important;
+      gap: 0.55rem !important;
+      font-size: calc(14px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.8 !important;
+      color: #334155 !important;
+    }
+    html.dark #subnote-content-container .subnote-bullet {
+      color: #cbd5e1 !important;
+    }
+    #subnote-content-container .subnote-bullet-dot {
+      color: #94a3b8;
+      font-size: 1.1em;
+      line-height: 1;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    html.dark #subnote-content-container .subnote-bullet-dot {
+      color: #64748b;
+    }
+
+    #subnote-content-container .subnote-arrow {
+      padding-left: 2.25rem !important;
+      margin-bottom: 0.35rem !important;
+      display: flex !important;
+      align-items: baseline !important;
+      gap: 0.45rem !important;
+      font-size: calc(13.8px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+      color: #be123c !important;
+    }
+    html.dark #subnote-content-container .subnote-arrow {
+      color: #fda4af !important;
+    }
+    #subnote-content-container .subnote-arrow-icon {
+      font-weight: 800;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
     /* 5. Problem prompt & calculation boxes (📝 [실전 기출 문제 & 심층 계산 풀이]) */
     #subnote-content-container .group-content > div:not(.recall-item),
     #subnote-content-container .group-content > div:not(.recall-item) p,
@@ -1446,7 +1555,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260925_193300"></script>
+  <script src="topics-data.js?v=20260925_204100"></script>
   <script src="explanations-data.js?v=20260925_174800"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -4134,6 +4243,7 @@
 
         // Normalize group headers to guarantee uniform layout and typography
         sanitizeAndNormalizeGroupHeaders(subnoteContainer);
+        enhanceSubnoteReadability(subnoteContainer);
 
         // Bind interactive handlers to groups and items
         setupGroupInteractions();
@@ -4298,6 +4408,123 @@
               }
             }
             node.remove();
+          });
+        });
+      }
+
+      // Enhanced visual hierarchy and readability for subnotes
+      function enhanceSubnoteReadability(container) {
+        if (!container) return;
+
+        container.querySelectorAll('.topic-group').forEach(grp => {
+          const content = grp.querySelector('.group-content');
+          if (!content) return;
+
+          const items = Array.from(content.querySelectorAll('.recall-item'));
+          if (items.length === 0) return;
+
+          let currentSectionHasSubheads = false;
+
+          items.forEach((item, idx) => {
+            if (item.classList.contains('subnote-section-header') || 
+                item.classList.contains('subnote-subhead') || 
+                item.classList.contains('subnote-bullet') || 
+                item.classList.contains('subnote-arrow')) {
+              return;
+            }
+
+            // Do not alter items with tables, images or custom canvas
+            if (item.querySelector('table, img, canvas, details')) return;
+
+            const text = item.textContent.trim();
+
+            // 1. SECTION HEADER (e.g. ①경쟁적 정당체계, ②비경쟁적 정당체계)
+            const isCircleNumber = /^[①②③④⑤⑥⑦⑧⑨⑩]/.test(text);
+            if (isCircleNumber && !text.startsWith('-') && !/^[⦁•●▪]/.test(text)) {
+              item.classList.remove('pl-3.5', 'border-l-2', 'border-blue-200', 'dark:border-blue-900/60', 'py-1');
+              item.classList.add('subnote-section-header');
+              currentSectionHasSubheads = false; // Reset subhead context for new section
+              return;
+            }
+
+            // 2. SUB-CATEGORY HEAD (e.g. - 일당우위제, - 양당제, - 온건다당제, - 분극다당제, - 원자화 정당제)
+            const startsWithDash = text.startsWith('-');
+            const nextItem = items[idx + 1];
+            const nextText = nextItem ? nextItem.textContent.trim() : '';
+            const nextIsBulletOrArrow = /^[⦁•●▪→➔]/.test(nextText) || nextText.startsWith('->');
+
+            // A short title following existing subheads (e.g., "- 원자화 정당제" which has no bullet children before ②비경쟁적 정당체계)
+            const isTrailingSiblingSubhead = currentSectionHasSubheads && startsWithDash && 
+              text.length <= 16 && !text.includes(',') && !text.includes('.') && !text.includes(':') && !text.includes('→') &&
+              (!nextItem || /^[①②③④⑤⑥⑦⑧⑨⑩]/.test(nextText) || nextText.startsWith('-'));
+
+            if (startsWithDash && (nextIsBulletOrArrow || isTrailingSiblingSubhead)) {
+              currentSectionHasSubheads = true;
+              item.classList.remove('pl-6', 'py-0.5');
+              item.classList.add('subnote-subhead');
+              
+              let inner = item.innerHTML.trim();
+              inner = inner.replace(/^-\s*/, '');
+
+              item.innerHTML = `
+                <div class="subnote-subhead-pill">
+                  <span class="subnote-subhead-dot"></span>
+                  <span>${inner}</span>
+                </div>
+              `;
+              return;
+            }
+
+            // 3. BULLET ITEMS (starts with ⦁, •, ●, ▪)
+            if (/^[⦁•●▪]/.test(text)) {
+              item.classList.remove('pl-6', 'py-0.5');
+              item.classList.add('subnote-bullet');
+
+              let inner = item.innerHTML.trim();
+              const bulletMatch = inner.match(/^([⦁•●▪])\s*([\s\S]*)$/);
+              if (bulletMatch) {
+                inner = bulletMatch[2];
+              }
+
+              item.innerHTML = `
+                <span class="subnote-bullet-dot">•</span>
+                <div class="flex-1 min-w-0">${inner}</div>
+              `;
+              return;
+            }
+
+            // 4. ARROW ITEMS (starts with →, ➔ or ->)
+            if (/^(?:[→➔]|->)/.test(text)) {
+              item.classList.remove('pl-6', 'py-0.5');
+              item.classList.add('subnote-arrow');
+
+              let inner = item.innerHTML.trim();
+              const arrowMatch = inner.match(/^(?:[→➔]|->)\s*([\s\S]*)$/);
+              if (arrowMatch) {
+                inner = arrowMatch[1];
+              }
+
+              item.innerHTML = `
+                <span class="subnote-arrow-icon">➔</span>
+                <div class="flex-1 min-w-0">${inner}</div>
+              `;
+              return;
+            }
+
+            // 5. REGULAR DASH SUB-ITEMS (starts with - but not a subhead)
+            if (startsWithDash) {
+              item.classList.remove('pl-6', 'py-0.5');
+              item.classList.add('subnote-bullet');
+
+              let inner = item.innerHTML.trim();
+              inner = inner.replace(/^-\s*/, '');
+
+              item.innerHTML = `
+                <span class="subnote-bullet-dot">–</span>
+                <div class="flex-1 min-w-0">${inner}</div>
+              `;
+              return;
+            }
           });
         });
       }
@@ -4515,6 +4742,8 @@
         triggerAutoSync();
         subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
         if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
+        sanitizeAndNormalizeGroupHeaders(subnoteContainer);
+        enhanceSubnoteReadability(subnoteContainer);
         setupGroupInteractions();
         setupTapeInteractions();
         if (window.renderMathInElement) {
@@ -6847,6 +7076,8 @@
         subnoteContainer.innerHTML = content;
         if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
 
+        sanitizeAndNormalizeGroupHeaders(subnoteContainer);
+        enhanceSubnoteReadability(subnoteContainer);
         setupGroupInteractions();
         setupTapeInteractions();
 
@@ -6896,6 +7127,8 @@
         subnoteContainer.innerHTML = original;
         if (btnResetCustomTape) btnResetCustomTape.classList.add('hidden');
 
+        sanitizeAndNormalizeGroupHeaders(subnoteContainer);
+        enhanceSubnoteReadability(subnoteContainer);
         setupGroupInteractions();
         setupTapeInteractions();
 
