@@ -1547,7 +1547,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260925_220200"></script>
+  <script src="topics-data.js?v=20260927_084500"></script>
   <script src="explanations-data.js?v=20260926_222300"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -4192,6 +4192,13 @@
           customHtml = null;
         }
 
+        // Integrity safeguard: If LAW-041 custom HTML lacks table markup, purge it
+        if (topic.id === 'LAW-041' && customHtml && !customHtml.includes('<table')) {
+          localStorage.removeItem('edurecall_custom_LAW-041');
+          localStorage.removeItem('edurecall_custom_masks_LAW-041');
+          customHtml = null;
+        }
+
         if (customHtml) {
           customHtml = normalizeExamBadges(customHtml);
           try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
@@ -6435,10 +6442,16 @@
             }
             if (!title) title = `(${gIdx + 1}) 항목`;
 
-            // Extract items
+            // Extract items and preserve any table
             const items = [];
+            let rawTableHtml = '';
             const contentEl = group.querySelector('.group-content');
             if (contentEl) {
+              const tableEl = contentEl.querySelector('table');
+              if (tableEl) {
+                const containerEl = contentEl.querySelector('.overflow-x-auto') || tableEl;
+                rawTableHtml = containerEl.outerHTML;
+              }
               const recallItems = contentEl.querySelectorAll('.recall-item');
               if (recallItems && recallItems.length > 0) {
                 recallItems.forEach(itemEl => {
@@ -6474,8 +6487,8 @@
                     });
                   }
                 });
-              } else {
-                // Fallback: look for p or direct children
+              } else if (!rawTableHtml) {
+                // Fallback: look for p or direct children only if no table
                 const paragraphs = contentEl.querySelectorAll('p, div');
                 paragraphs.forEach(p => {
                   const cleanText = tapeHtmlToEditorText(p.innerHTML.trim());
@@ -6489,11 +6502,11 @@
               }
             }
 
-            if (items.length === 0) {
+            if (items.length === 0 && !rawTableHtml) {
               items.push({ text: '', isSub: false });
             }
 
-            cards.push({ title, items });
+            cards.push({ title, items, rawTableHtml: rawTableHtml || null });
           });
         } else {
           // If no .topic-group exists, parse paragraphs or lines into a single default card
@@ -6521,18 +6534,23 @@
         if (!cards || cards.length === 0) return '';
         return cards.map((card, cIdx) => {
           const title = (card.title || '').trim() || `(${cIdx + 1}) 항목`;
-          const itemsHtml = (card.items || [])
-            .map(item => {
-              let text = (item.text || '').trim();
-              if (!text) return '';
-              text = editorTextToTapeHtml(text);
-              if (item.isSub) {
-                return `    <div class="recall-item text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
-              }
-              return `    <div class="recall-item text-sm md:text-[15px] text-slate-800 dark:text-slate-100 leading-relaxed pl-3.5 border-l-2 border-blue-200 dark:border-blue-900/60 py-1 transition-all">${text}</div>`;
-            })
-            .filter(Boolean)
-            .join('\n');
+          let itemsHtml = '';
+          if (card.rawTableHtml) {
+            itemsHtml = card.rawTableHtml;
+          } else {
+            itemsHtml = (card.items || [])
+              .map(item => {
+                let text = (item.text || '').trim();
+                if (!text) return '';
+                text = editorTextToTapeHtml(text);
+                if (item.isSub) {
+                  return `    <div class="recall-item text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
+                }
+                return `    <div class="recall-item text-sm md:text-[15px] text-slate-800 dark:text-slate-100 leading-relaxed pl-3.5 border-l-2 border-blue-200 dark:border-blue-900/60 py-1 transition-all">${text}</div>`;
+              })
+              .filter(Boolean)
+              .join('\n');
+          }
 
           return `<div class="topic-group mb-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-2xs transition-all" data-group-index="${cIdx}">
   <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-2.5 mb-2.5">
@@ -6728,13 +6746,18 @@
 
           if (card.isEditing) {
             // DIRECT TEXT EDITING MODE FOR THIS CARD (SEAMLESS CARD FRAME)
-            const initialText = (card.items || []).map(it => {
-              let t = it.text || '';
-              if (it.isSub && !t.startsWith('-') && !t.startsWith('⦁') && !t.startsWith('•')) {
-                return `- ${t}`;
-              }
-              return t;
-            }).join('\n');
+            let initialText = '';
+            if (card.rawTableHtml) {
+              initialText = card.rawTableHtml;
+            } else {
+              initialText = (card.items || []).map(it => {
+                let t = it.text || '';
+                if (it.isSub && !t.startsWith('-') && !t.startsWith('⦁') && !t.startsWith('•')) {
+                  return `- ${t}`;
+                }
+                return t;
+              }).join('\n');
+            }
 
             cardBox.innerHTML = `
               <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800/80">
@@ -6807,17 +6830,24 @@
             function finishEditing() {
               const newTitle = titleInput ? titleInput.value.trim() : '';
               card.title = newTitle || `(${cIdx + 1}) 항목`;
-              const lines = (textarea ? textarea.value : '').split('\n').map(l => l.trimEnd()).filter(l => l.trim().length > 0);
-              card.items = lines.map(line => {
-                const trimmed = line.trim();
-                const isSub = line.startsWith('  ') || line.startsWith('\t') || trimmed.startsWith('-') || trimmed.startsWith('⦁') || trimmed.startsWith('•');
-                return {
-                  text: trimmed,
-                  isSub: isSub
-                };
-              });
-              if (card.items.length === 0) {
-                card.items = [{ text: '', isSub: false }];
+              const val = (textarea ? textarea.value : '').trim();
+              if (val.includes('<table')) {
+                card.rawTableHtml = val;
+                card.items = [];
+              } else {
+                card.rawTableHtml = null;
+                const lines = val.split('\n').map(l => l.trimEnd()).filter(l => l.trim().length > 0);
+                card.items = lines.map(line => {
+                  const trimmed = line.trim();
+                  const isSub = line.startsWith('  ') || line.startsWith('\t') || trimmed.startsWith('-') || trimmed.startsWith('⦁') || trimmed.startsWith('•');
+                  return {
+                    text: trimmed,
+                    isSub: isSub
+                  };
+                });
+                if (card.items.length === 0) {
+                  card.items = [{ text: '', isSub: false }];
+                }
               }
               card.isEditing = false;
               renderTopicCardEditor();
@@ -6867,15 +6897,22 @@
             const itemsContainer = document.createElement('div');
             itemsContainer.className = 'space-y-1.5 text-xs sm:text-sm leading-relaxed';
 
-            (card.items || []).forEach((item, iIdx) => {
-              const itemDiv = document.createElement('div');
-              itemDiv.className = item.isSub
-                ? 'pl-3.5 sm:pl-4 py-0.5 text-slate-600 dark:text-slate-400 border-l-2 border-slate-200 dark:border-slate-800'
-                : 'py-0.5 text-slate-800 dark:text-slate-100';
+            if (card.rawTableHtml) {
+              const tableWrapper = document.createElement('div');
+              tableWrapper.className = 'my-1';
+              tableWrapper.innerHTML = card.rawTableHtml;
+              itemsContainer.appendChild(tableWrapper);
+            } else {
+              (card.items || []).forEach((item, iIdx) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = item.isSub
+                  ? 'pl-3.5 sm:pl-4 py-0.5 text-slate-600 dark:text-slate-400 border-l-2 border-slate-200 dark:border-slate-800'
+                  : 'py-0.5 text-slate-800 dark:text-slate-100';
 
-              renderInteractiveLine(itemDiv, cIdx, iIdx, item.text || '');
-              itemsContainer.appendChild(itemDiv);
-            });
+                renderInteractiveLine(itemDiv, cIdx, iIdx, item.text || '');
+                itemsContainer.appendChild(itemDiv);
+              });
+            }
 
             const footerHtml = `
               <div class="flex items-center justify-end pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/60">
@@ -8066,6 +8103,13 @@
           localStorage.setItem('edurecall_migration_v7_done', 'true');
         }
 
+        // Migration V8: Purge corrupted custom LAW-041 where table was flattened
+        if (!localStorage.getItem('edurecall_migration_v8_done')) {
+          localStorage.removeItem('edurecall_custom_LAW-041');
+          localStorage.removeItem('edurecall_custom_masks_LAW-041');
+          localStorage.setItem('edurecall_migration_v8_done', 'true');
+        }
+
 
         // Safely extract all custom keys to avoid index-shift skipping during deletion
         const customKeys = [];
@@ -8132,7 +8176,8 @@
               (key === 'edurecall_custom_LAW-038' && (val.includes('계약이 성립하여') || val.includes('쌍무계약'))) ||
               (key === 'edurecall_custom_LAW-039' && (val.includes('하자담보책임') || val.includes('임대차'))) ||
               (key === 'edurecall_custom_LAW-105' && !val.includes('구체적인 사건이 법원에 계속 중일 것')) ||
-              (key === 'edurecall_custom_POL-108' && !val.includes('<table'))
+              (key === 'edurecall_custom_POL-108' && !val.includes('<table')) ||
+              (key === 'edurecall_custom_LAW-041' && !val.includes('<table'))
             ) {
               localStorage.removeItem(key);
             }
