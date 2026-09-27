@@ -2207,11 +2207,11 @@ window.ALL_TOPICS = [
     "subject": "사회과교육론",
     "chapter": "2. 미국 사회과의 역사적 변천",
     "section": "2-3. 신사회과 운동",
-    "title": "2. 주요 학습 내용 개요",
+    "title": "2. 학습 내용",
     "examTag": "",
     "page": 4,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 고차사고력(비판적 사고력, 문제해결력, 의사결정력)</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 인류의 생존과 직접 관련있는 문제들 ex) 평화, 환경오염</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "2. 주요 학습 내용 개요\n(1) 고차사고력(비판적 사고력, 문제해결력, 의사결정력)\n\n(2) 인류의 생존과 직접 관련있는 문제들 ex) 평화, 환경오염\n",
+    "defaultAnswer": "2. 학습 내용\n(1) 고차사고력(비판적 사고력, 문제해결력, 의사결정력)\n\n(2) 인류의 생존과 직접 관련있는 문제들 ex) 평화, 환경오염\n",
     "targetKeywords": [
       "고차사고력",
       "문제해결력",
