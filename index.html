@@ -3102,6 +3102,23 @@
               if (k === 'edurecall_custom_POL-049' || k === 'edurecall_custom_POL-050' || k === 'edurecall_custom_POL-051') {
                 cleanVal = cleanVal.replace(/<div class="mt-3 bg-blue-50\/70[^>]*><div class="font-bold text-blue-900[^>]*><span class="material-symbols-outlined[^>]*>psychology<\/span><span>\[보충 해설\][\s\S]*?<\/div><\/div><\/div>/g, '');
               }
+              if (k === 'edurecall_custom_ECON-011' && cleanVal.includes('양변 결합 및 정리: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거')) {
+                const badPattern = /<div class="recall-item[^>]*>[\s\S]*?<strong class="text-slate-800 font-bold"><\/strong><\/div><\/div>양변 결합 및 정리:[\s\S]*?<div class="recall-item[^>]*><div class="flex-1 min-w-0"><\/div>\s*<\/div>\s*(?=<div class="my-2\.5)/;
+                const cleanReplacement = `<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-slate-800 font-bold">양변 결합 및 정리</strong>: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거: S + T = I + G + X - M ➔ 수입(-M) 이항: <strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded">S + T + M = I + G + X</strong></div>
+</div>
+<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-rose-700 font-bold">누출 (Leakages)</strong>: <strong>소득 순환에서 빠져나가는 요소</strong> ➔ <strong class="text-rose-800 font-bold bg-rose-50 px-1 py-0.5 rounded">S + T + M</strong> (저축 + 조세 + 수입)</div>
+</div>
+<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-amber-700 font-bold">주입 (Injections)</strong>: <strong>소득 순환에 새롭게 들어오는 요소</strong> ➔ <strong class="text-amber-800 font-bold bg-amber-50 px-1 py-0.5 rounded">I + G + X</strong> (투자 + 정부지출 + 수출)</div>
+</div>
+`;
+                cleanVal = cleanVal.replace(badPattern, cleanReplacement);
+              }
               if (cleanVal.includes('내용 없음')) {
                 cleanVal = cleanVal.replace(/<div class="recall-item[^>]*>내용 없음<\/div>/g, '');
               }
@@ -4362,6 +4379,26 @@
           localStorage.removeItem('edurecall_custom_LAW-041');
           localStorage.removeItem('edurecall_custom_masks_LAW-041');
           customHtml = null;
+        }
+
+        // Integrity safeguard: If ECON-011 custom HTML has squashed/corrupted leakage/injection formula, auto-fix it
+        if (topic.id === 'ECON-011' && customHtml && customHtml.includes('양변 결합 및 정리: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거')) {
+          const badPattern = /<div class="recall-item[^>]*>[\s\S]*?<strong class="text-slate-800 font-bold"><\/strong><\/div><\/div>양변 결합 및 정리:[\s\S]*?<div class="recall-item[^>]*><div class="flex-1 min-w-0"><\/div>\s*<\/div>\s*(?=<div class="my-2\.5)/;
+          const cleanReplacement = `<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-slate-800 font-bold">양변 결합 및 정리</strong>: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거: S + T = I + G + X - M ➔ 수입(-M) 이항: <strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded">S + T + M = I + G + X</strong></div>
+</div>
+<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-rose-700 font-bold">누출 (Leakages)</strong>: <strong>소득 순환에서 빠져나가는 요소</strong> ➔ <strong class="text-rose-800 font-bold bg-rose-50 px-1 py-0.5 rounded">S + T + M</strong> (저축 + 조세 + 수입)</div>
+</div>
+<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-amber-700 font-bold">주입 (Injections)</strong>: <strong>소득 순환에 새롭게 들어오는 요소</strong> ➔ <strong class="text-amber-800 font-bold bg-amber-50 px-1 py-0.5 rounded">I + G + X</strong> (투자 + 정부지출 + 수출)</div>
+</div>
+`;
+          customHtml = customHtml.replace(badPattern, cleanReplacement);
+          try { localStorage.setItem('edurecall_custom_ECON-011', customHtml); } catch(e) {}
         }
 
         if (customHtml) {
@@ -8079,6 +8116,25 @@
         const soc022Custom = localStorage.getItem('edurecall_custom_SOC-022');
         if (soc022Custom && soc022Custom.includes('방법론적 이원론')) {
           localStorage.setItem('edurecall_custom_SOC-022', soc022Custom.replace(/방법론적 이원론/g, '방법론적 일원론'));
+        }
+        // Fix ECON-011 custom if corrupted
+        const econ011Custom = localStorage.getItem('edurecall_custom_ECON-011');
+        if (econ011Custom && econ011Custom.includes('양변 결합 및 정리: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거')) {
+          const badPattern = /<div class="recall-item[^>]*>[\s\S]*?<strong class="text-slate-800 font-bold"><\/strong><\/div><\/div>양변 결합 및 정리:[\s\S]*?<div class="recall-item[^>]*><div class="flex-1 min-w-0"><\/div>\s*<\/div>\s*(?=<div class="my-2\.5)/;
+          const cleanReplacement = `<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-slate-800 font-bold">양변 결합 및 정리</strong>: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거: S + T = I + G + X - M ➔ 수입(-M) 이항: <strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded">S + T + M = I + G + X</strong></div>
+</div>
+<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-rose-700 font-bold">누출 (Leakages)</strong>: <strong>소득 순환에서 빠져나가는 요소</strong> ➔ <strong class="text-rose-800 font-bold bg-rose-50 px-1 py-0.5 rounded">S + T + M</strong> (저축 + 조세 + 수입)</div>
+</div>
+<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
+  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
+  <div class="flex-1 min-w-0"><strong class="text-amber-700 font-bold">주입 (Injections)</strong>: <strong>소득 순환에 새롭게 들어오는 요소</strong> ➔ <strong class="text-amber-800 font-bold bg-amber-50 px-1 py-0.5 rounded">I + G + X</strong> (투자 + 정부지출 + 수출)</div>
+</div>
+`;
+          localStorage.setItem('edurecall_custom_ECON-011', econ011Custom.replace(badPattern, cleanReplacement));
         }
         // Clean any phantom '내용 없음' and raw ** in localStorage custom items
         for (let i = 0; i < localStorage.length; i++) {
