@@ -6768,7 +6768,7 @@
             itemsHtml = (card.items || [])
               .map(item => {
                 let text = (item.text || '').trim();
-                if (!text) return '';
+                if (!text || /^[\s-–—⦁•*→]*$/.test(text)) return '';
                 text = editorTextToTapeHtml(text);
                 if (item.isSub) {
                   return `    <div class="recall-item text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
