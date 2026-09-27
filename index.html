@@ -1817,22 +1817,25 @@
 
           <!-- Main Title & Action Buttons -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-            <div class="flex items-start sm:items-center gap-2 min-w-0 flex-1">
-              <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight break-keep-all" id="topic-title">
-                2. 국회의 구성·조직 및 운영
-              </h1>
-              <button id="btn-toggle-bookmark" class="inline-flex items-center p-1 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
-                <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
-                <span class="hidden" id="bookmark-status-text">중요</span>
-              </button>
-              <div class="h-5 w-px bg-slate-200 mx-1 hidden sm:block"></div>
-              <button id="btn-set-pin" class="inline-flex items-center p-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
-                <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
-              </button>
-              <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
-                <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
-                <span class="hidden sm:inline">핀 복귀</span>
-              </button>
+            <div class="flex flex-col min-w-0 flex-1">
+              <div class="flex items-start sm:items-center gap-2 min-w-0">
+                <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title">
+                  2. 국회의 구성·조직 및 운영
+                </h1>
+                <button id="btn-toggle-bookmark" class="inline-flex items-center p-1 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
+                  <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
+                  <span class="hidden" id="bookmark-status-text">중요</span>
+                </button>
+                <div class="h-5 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+                <button id="btn-set-pin" class="inline-flex items-center p-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
+                  <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
+                </button>
+                <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
+                  <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
+                  <span class="hidden sm:inline">핀 복귀</span>
+                </button>
+              </div>
+              <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1 hidden"></div>
             </div>
             <div class="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
               <button id="btn-edit-topic-content" class="px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
@@ -2850,6 +2853,7 @@
       const floatingMaskBtn = document.getElementById('floating-mask-btn');
       const topicPageRef = document.getElementById('topic-page-ref');
       const topicTitle = document.getElementById('topic-title');
+      const topicSubtitle = document.getElementById('topic-subtitle');
       const topicKeywordsTags = document.getElementById('topic-keywords-tags');
 
       const modePills = document.querySelectorAll('.mode-pill');
@@ -4328,6 +4332,15 @@
         const totalPages = getSubjectTotalPages(topic.subject);
         if (topicPageRef) topicPageRef.textContent = totalPages ? `PDF p.${topic.page || 1} / ${totalPages}` : `PDF p.${topic.page || 1}`;
         topicTitle.textContent = topic.title;
+        if (topicSubtitle) {
+          if (topic.subtitle) {
+            topicSubtitle.textContent = topic.subtitle;
+            topicSubtitle.classList.remove('hidden');
+          } else {
+            topicSubtitle.textContent = '';
+            topicSubtitle.classList.add('hidden');
+          }
+        }
         
         // Update Bookmark Button & Icon State
         if (btnToggleBookmark && iconBookmark) {
@@ -4399,6 +4412,12 @@
 `;
           customHtml = customHtml.replace(badPattern, cleanReplacement);
           try { localStorage.setItem('edurecall_custom_ECON-011', customHtml); } catch(e) {}
+        }
+
+        // Integrity safeguard: If POL-019 or POL-020 custom HTML has prepended banner, strip it
+        if ((topic.id === 'POL-019' || topic.id === 'POL-020') && customHtml && customHtml.includes('bookmark')) {
+          customHtml = customHtml.replace(/<div class="mb-3\.5 px-3\.5 py-2\.5 bg-blue-50[\s\S]*?<\/span><\/div>\s*/, '');
+          try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
         }
 
         if (customHtml) {
