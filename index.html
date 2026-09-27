@@ -4603,6 +4603,12 @@
 
             const text = item.textContent.trim();
 
+            // Remove empty or solitary bullet items (e.g. solitary '-' or '–' on its own line)
+            if (/^[\s-–—⦁•*→]*$/.test(text)) {
+              item.remove();
+              return;
+            }
+
             // 1. Level 1: Section Header (starts with ①, ②, ③, etc.)
             const isCircleNumber = /^[①②③④⑤⑥⑦⑧⑨⑩]/.test(text);
             if (isCircleNumber && !text.startsWith('-') && !/^[⦁•●▪]/.test(text)) {
@@ -4651,13 +4657,13 @@
               return;
             }
 
-            // 4. Level 2: Dash items (starts with -)
-            if (text.startsWith('-')) {
+            // 4. Level 2: Dash items (starts with -, –, or —)
+            if (/^[-–—]/.test(text)) {
               item.classList.remove('pl-6', 'py-0.5');
               item.classList.add('subnote-indent-l2');
 
               let inner = item.innerHTML.trim();
-              inner = inner.replace(/^-\s*/, '');
+              inner = inner.replace(/^[-–—]\s*/, '');
 
               item.innerHTML = `
                 <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
@@ -6623,12 +6629,28 @@
               const recallItems = contentEl.querySelectorAll('.recall-item');
               if (recallItems && recallItems.length > 0) {
                 recallItems.forEach(itemEl => {
+                  // 1. Check if this item is an outline-enhanced item with bullet span + flex-1
+                  const flexDiv = itemEl.querySelector(':scope > .flex-1');
+                  if (flexDiv) {
+                    let prefix = '- ';
+                    if (itemEl.classList.contains('subnote-indent-l3') || itemEl.querySelector('.subnote-indent-l3-bullet')) prefix = '• ';
+                    else if (itemEl.classList.contains('subnote-indent-l4') || itemEl.querySelector('.subnote-indent-l4-arrow')) prefix = '→ ';
+                    const contentText = tapeHtmlToEditorText(flexDiv.innerHTML);
+                    if (contentText && contentText !== '내용 없음' && !/^[\s-–—⦁•*→]*$/.test(contentText)) {
+                      items.push({
+                        text: prefix + contentText,
+                        isSub: true
+                      });
+                    }
+                    return;
+                  }
+
                   const innerDivs = Array.from(itemEl.querySelectorAll('div, p')).filter(d => d.textContent.trim());
                   if (innerDivs.length > 0) {
                     const clone = itemEl.cloneNode(true);
                     clone.querySelectorAll('div, p').forEach(d => d.remove());
                     const topText = tapeHtmlToEditorText(clone.innerHTML);
-                    if (topText && topText !== '내용 없음') {
+                    if (topText && topText !== '내용 없음' && !/^[\s-–—⦁•*→]*$/.test(topText)) {
                       items.push({
                         text: topText,
                         isSub: itemEl.classList.contains('pl-6') || topText.startsWith('-')
@@ -6636,7 +6658,7 @@
                     }
                     innerDivs.forEach(subDiv => {
                       const subText = tapeHtmlToEditorText(subDiv.innerHTML);
-                      if (subText && subText !== '내용 없음') {
+                      if (subText && subText !== '내용 없음' && !/^[\s-–—⦁•*→]*$/.test(subText)) {
                         items.push({
                           text: subText,
                           isSub: true
@@ -6647,7 +6669,7 @@
                     const rawText = itemEl.innerHTML.trim();
                     if (rawText === '내용 없음') return;
                     const cleanText = tapeHtmlToEditorText(rawText);
-                    if (!cleanText) return;
+                    if (!cleanText || /^[\s-–—⦁•*→]*$/.test(cleanText)) return;
                     const isSub = itemEl.classList.contains('pl-6') || itemEl.classList.contains('text-slate-600') || cleanText.startsWith('-');
                     items.push({
                       text: cleanText,
