@@ -599,10 +599,38 @@
       box-shadow: 0 1px 2px rgba(220, 38, 38, 0.06) !important;
     }
     .exam-badge.short, .exam-badge-short {
-      background-color: #eff6ff;
-      color: #1d4ed8;
-      border-color: #bfdbfe;
-      box-shadow: 0 1px 2px rgba(29, 78, 216, 0.06);
+      background-color: #eff6ff !important;
+      color: #1d4ed8 !important;
+      border-color: #bfdbfe !important;
+      box-shadow: 0 1px 2px rgba(29, 78, 216, 0.06) !important;
+    }
+
+    /* CSS Defensive safeguard: Never render nested borders, background, padding or margin */
+    .exam-badge .exam-badge,
+    .exam-badge .exam-badge.short,
+    .exam-badge .exam-badge-short {
+      border: none !important;
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      height: auto !important;
+      display: inline !important;
+    }
+
+    html.dark .exam-badge,
+    .dark .exam-badge {
+      background-color: rgba(239, 68, 68, 0.2) !important;
+      color: #fca5a5 !important;
+      border-color: rgba(239, 68, 68, 0.4) !important;
+    }
+    html.dark .exam-badge.short,
+    html.dark .exam-badge-short,
+    .dark .exam-badge.short,
+    .dark .exam-badge-short {
+      background-color: rgba(59, 130, 246, 0.2) !important;
+      color: #93c5fd !important;
+      border-color: rgba(59, 130, 246, 0.4) !important;
     }
 
     /* High contrast text overrides for crystal-clear readability */
@@ -2576,10 +2604,26 @@
       const expandedSections = new Set();
       let autoAdvanceTimeout = null;
 
+      // Helper: Unwrap and flatten any nested exam-badges (e.g. <span class="exam-badge"><span class="exam-badge">22 기출</span></span>)
+      function cleanNestedBadges(html) {
+        if (!html || typeof html !== 'string') return html;
+        let prev = '';
+        let cur = html;
+        while (prev !== cur) {
+          prev = cur;
+          cur = cur.replace(/<span\b([^>]*\bexam-badge\b[^>]*)>\s*<span\b([^>]*\bexam-badge\b[^>]*)>([\s\S]*?)<\/span>\s*<\/span>/gi, (match, outerAttr, innerAttr, content) => {
+            const isShort = outerAttr.includes('short') || innerAttr.includes('short');
+            return `<span class="exam-badge${isShort ? ' short' : ''}">${content.trim()}</span>`;
+          });
+        }
+        return cur;
+      }
+
       // Helper: Global Comprehensive Exam Badge Normalizer
       function normalizeExamBadges(str) {
         if (!str || typeof str !== 'string') return str;
-        let res = str.replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
+        let res = cleanNestedBadges(str);
+        res = res.replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
 
         // 1. 단답형 기출 배지 (e.g. 23 단답, [23 단답], 22, 23 단답 등)
         res = res.replace(/(<span\b[^>]*?\bclass=(["\x27])[^"\x27]*\bexam-badge\b[\s\S]*?<\/span>)|(\[?\b(?:1[5-9]|2[0-7])(?:\s*,\s*(?:1[5-9]|2[0-7]))*\s*단답\]?)/g, (match, existingSpan, quote, badgeText) => {
@@ -2620,7 +2664,7 @@
           return `<span class="exam-badge">${p1} 기출</span>:`;
         });
 
-        return res;
+        return cleanNestedBadges(res);
       }
 
       // 2. DOM Cache
@@ -3030,7 +3074,8 @@
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
-            customTapes[key] = localStorage.getItem(key);
+            const rawVal = localStorage.getItem(key);
+            customTapes[key] = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(rawVal) : rawVal;
           } else if (key && key.startsWith('edurecall_memo_')) {
             individualMemos[key] = localStorage.getItem(key);
           }
@@ -3056,7 +3101,7 @@
         if (record.custom_tapes && typeof record.custom_tapes === 'object') {
           Object.entries(record.custom_tapes).forEach(([k, v]) => {
             if (v !== null && v !== undefined) {
-              let cleanVal = String(v);
+              let cleanVal = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(String(v)) : String(v);
               // Fix typos and clean phantom '내용 없음' placeholders
               if (cleanVal.includes('보당노동행위')) {
                 cleanVal = cleanVal.replace(/보당노동행위/g, '부당노동행위');
@@ -3247,6 +3292,12 @@
             }
           } catch (mergeErr) {
             console.warn('Pre-push merge fetch skipped:', mergeErr);
+          }
+
+          if (finalCustomTapes && typeof finalCustomTapes === 'object') {
+            Object.keys(finalCustomTapes).forEach(k => {
+              finalCustomTapes[k] = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(String(finalCustomTapes[k])) : String(finalCustomTapes[k]);
+            });
           }
 
           const { data, error } = await supabaseClient
@@ -4561,7 +4612,7 @@
             }
             const txt = node.textContent.trim();
             if (txt && txt !== 'visibility') {
-              let titleSpan = fontBold.querySelector('span:last-child');
+              let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
               if (node.nodeType === Node.ELEMENT_NODE) {
                 if (titleSpan) {
                   titleSpan.appendChild(node.cloneNode(true));
@@ -4577,13 +4628,16 @@
                   fontBold.appendChild(s);
                 }
               }
-              const lastSpan = fontBold.querySelector('span:last-child');
-              if (lastSpan) {
-                lastSpan.innerHTML = normalizeExamBadges(lastSpan.innerHTML);
+              if (titleSpan) {
+                titleSpan.innerHTML = normalizeExamBadges(titleSpan.innerHTML);
               }
             }
             node.remove();
           });
+
+          if (fontBold) {
+            fontBold.innerHTML = cleanNestedBadges(fontBold.innerHTML);
+          }
         });
       }
 
