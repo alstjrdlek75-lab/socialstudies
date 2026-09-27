@@ -2563,27 +2563,17 @@
         </p>
       </div>
 
-      <!-- Actions & Backup File -->
+      <!-- Actions -->
       <div class="flex flex-col gap-2 pt-3 border-t border-slate-100 dark:border-slate-700">
         <div class="flex gap-2">
-          <button id="btn-create-new-sync" class="flex-1 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold text-xs text-slate-700 dark:text-slate-200 transition-all active:scale-95 cursor-pointer" type="button">
-            새 난수코드 발급
+          <button id="btn-create-new-sync" class="flex-1 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold text-xs text-slate-700 dark:text-slate-200 transition-all active:scale-95 cursor-pointer flex items-center justify-center gap-1" type="button">
+            <span class="material-symbols-outlined text-[15px]">key</span>
+            <span>새 동기화 코드 발급</span>
           </button>
           <button id="btn-manual-sync-now" class="flex-1 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs active:scale-95 transition-all flex items-center justify-center gap-1 cursor-pointer" type="button">
             <span class="material-symbols-outlined text-[15px]">sync</span>
             <span>지금 클라우드 백업</span>
           </button>
-        </div>
-        <div class="flex gap-2 pt-1 border-t border-dashed border-slate-200 dark:border-slate-700">
-          <button id="btn-export-backup-json" class="flex-1 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 text-[11px] font-semibold text-slate-600 dark:text-slate-300 flex items-center justify-center gap-1 cursor-pointer transition-colors" type="button" title="내 마스킹 테이프 및 학습 데이터를 JSON 파일로 다운로드">
-            <span class="material-symbols-outlined text-[14px]">download</span>
-            <span>JSON 파일 백업</span>
-          </button>
-          <button id="btn-import-backup-json" class="flex-1 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 text-[11px] font-semibold text-slate-600 dark:text-slate-300 flex items-center justify-center gap-1 cursor-pointer transition-colors" type="button" title="백업 파일에서 데이터 복원">
-            <span class="material-symbols-outlined text-[14px]">upload</span>
-            <span>JSON 파일 복원</span>
-          </button>
-          <input type="file" id="input-import-backup-file" accept=".json" class="hidden" />
         </div>
       </div>
     </div>
@@ -3404,9 +3394,6 @@
         const inputSyncCode = document.getElementById('input-sync-code');
         const btnManualSyncNow = document.getElementById('btn-manual-sync-now');
         const btnQuickConnect7194 = document.getElementById('btn-quick-connect-7194');
-        const btnExportJson = document.getElementById('btn-export-backup-json');
-        const btnImportJson = document.getElementById('btn-import-backup-json');
-        const inputImportFile = document.getElementById('input-import-backup-file');
 
         if (btnCloudSync) {
           btnCloudSync.addEventListener('click', () => {
@@ -3456,55 +3443,6 @@
               updateSyncUI();
               if (cloudSyncModal) cloudSyncModal.classList.add('hidden');
             }
-          });
-        }
-
-        // JSON Export Handler
-        if (btnExportJson) {
-          btnExportJson.addEventListener('click', () => {
-            const payload = packSyncPayload();
-            const dateStr = new Date().toISOString().slice(0, 10);
-            const syncCode = localStorage.getItem('edurecall_sync_code') || 'local';
-            const blob = new Blob([JSON.stringify({ ...payload, sync_code: syncCode, export_date: new Date().toISOString() }, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `edurecall_backup_${syncCode}_${dateStr}.json`;
-            a.click();
-            URL.revokeObjectURL(url);
-            showToast('전체 데이터 백업 파일(JSON)이 다운로드되었습니다!', 'download');
-          });
-        }
-
-        // JSON Import Handler
-        if (btnImportJson && inputImportFile) {
-          btnImportJson.addEventListener('click', () => {
-            inputImportFile.click();
-          });
-          inputImportFile.addEventListener('change', (e) => {
-            const file = e.target.files?.[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = async (evt) => {
-              try {
-                const data = JSON.parse(evt.target.result);
-                if (data && (data.custom_tapes || data.fsrs_grades || data.user_memos)) {
-                  unpackSyncPayload(data);
-                  if (data.sync_code && data.sync_code !== 'local') {
-                    localStorage.setItem('edurecall_sync_code', data.sync_code);
-                  }
-                  updateSyncUI();
-                  showToast('백업 파일 데이터를 성공적으로 복원했습니다!', 'cloud_done');
-                  await pushDataToCloud(false);
-                } else {
-                  alert('올바른 edurecall 백업 JSON 파일이 아닙니다.');
-                }
-              } catch (parseErr) {
-                alert('파일 읽기 오류: 올바른 JSON 형식이 아닙니다.');
-              }
-              inputImportFile.value = '';
-            };
-            reader.readAsText(file);
           });
         }
 
