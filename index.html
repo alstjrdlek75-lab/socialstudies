@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260927_084500"></script>
+  <script src="topics-data.js?v=20260927_135500"></script>
   <script src="explanations-data.js?v=20260926_222300"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -8345,7 +8345,8 @@
               (key === 'edurecall_custom_LAW-039' && (val.includes('하자담보책임') || val.includes('임대차'))) ||
               (key === 'edurecall_custom_LAW-105' && !val.includes('구체적인 사건이 법원에 계속 중일 것')) ||
               (key === 'edurecall_custom_POL-108' && !val.includes('<table')) ||
-              (key === 'edurecall_custom_LAW-041' && !val.includes('<table'))
+              (key === 'edurecall_custom_LAW-041' && !val.includes('<table')) ||
+              (key === 'edurecall_custom_SOC-067' && val.includes('<table'))
             ) {
               localStorage.removeItem(key);
             }
