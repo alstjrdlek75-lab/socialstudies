@@ -6635,10 +6635,25 @@
         return res;
       }
 
+      let editorPrefixHtml = '';
+
       function parseHtmlToEditorCards(html) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(`<div>${html || ''}</div>`, 'text/html');
+        const container = doc.body.firstElementChild;
         const groups = doc.querySelectorAll('.topic-group');
+        const firstGroup = container ? container.querySelector('.topic-group') : null;
+        if (firstGroup && firstGroup !== container.firstElementChild) {
+          let pre = '';
+          let curr = container.firstElementChild;
+          while (curr && curr !== firstGroup) {
+            pre += curr.outerHTML + '\n';
+            curr = curr.nextElementSibling;
+          }
+          editorPrefixHtml = pre.trim();
+        } else {
+          editorPrefixHtml = '';
+        }
         const cards = [];
 
         if (groups && groups.length > 0) {
@@ -6759,7 +6774,7 @@
 
       function serializeEditorCardsToHtml(cards) {
         if (!cards || cards.length === 0) return '';
-        return cards.map((card, cIdx) => {
+        const bodyContent = cards.map((card, cIdx) => {
           const title = (card.title || '').trim() || `(${cIdx + 1}) 항목`;
           let itemsHtml = '';
           if (card.rawTableHtml) {
@@ -6792,6 +6807,7 @@
   <div class="group-content space-y-2 pl-1">${itemsHtml ? '\n' + itemsHtml : ''}</div>
 </div>`;
         }).join('\n');
+        return editorPrefixHtml ? (editorPrefixHtml + '\n' + bodyContent) : bodyContent;
       }
 
       let isRawMode = false;
