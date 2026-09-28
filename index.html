@@ -2639,11 +2639,10 @@
           .replace(/국외순수[\uFFFD\?]+ 요소소득/g, '국외순수취 요소소득')
           .replace(/가치척도의 기[\uFFFD\?]+/g, '가치척도의 기능')
           .replace(/\uFFFD/g, '')
-          // Clean contaminated trailing '수정' in group header spans: e.g. <span>(1) 헌법적 지위\n   수정</span>
-          .replace(/(<div[^>]*class="[^"]*font-bold[^"]*"[^>]*>[\s\S]*?<span>[\s\S]*?)(?:&nbsp;|\s|\n|\r)+수정\s*(<\/span>)/g, '$1$2')
-          // Strip accidentally saved group-actions-wrap or group-edit-btn
-          .replace(/<div class="group-actions-wrap[^"]*"[^>]*>[\s\S]*?<\/div>\s*(?=(?:<\/div>|<div class="group-content"))/g, '')
-          .replace(/<button[^>]*class="[^"]*group-edit-btn[^"]*"[^>]*>[\s\S]*?<\/button>/g, '');
+          // Repair broken/unclosed headers before group-content
+          .replace(/(<span>(?:(?!<\/div>)[\s\S])*?)<\/div>\s*<div class="group-content/g, '$1</span></div><button class="group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1" type="button" title="이 항목 블러 토글"><span class="material-symbols-outlined text-[16px]">visibility</span></button></div>\n  <div class="group-content')
+          // Clean contaminated trailing '수정' in group header spans safely (strictly inside span without crossing tags)
+          .replace(/(<div[^>]*class="[^"]*font-bold[^"]*"[^>]*>[\s\S]*?<span>[^<]*?)(?:&nbsp;|\s)+수정\s*(<\/span>)/g, '$1$2');
       }
 
       // Auto-heal any existing corrupted localStorage keys on boot
@@ -2652,7 +2651,7 @@
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
             const val = localStorage.getItem(key);
-            if (val && (val.includes('\uFFFD') || val.includes('??') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || val.includes('group-actions-wrap') || val.includes('group-edit-btn'))) {
+            if (val && (val.includes('\uFFFD') || val.includes('??') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val))) {
               const healed = healCorruptedHtml(val);
               if (healed !== val) {
                 localStorage.setItem(key, healed);
@@ -8499,6 +8498,11 @@
 
         // Migration V9: Clean up stray '수정' from group header titles and remove serialized group-actions-wrap across all custom topics
         if (!localStorage.getItem('edurecall_migration_v9_done')) {
+          localStorage.setItem('edurecall_migration_v9_done', 'true');
+        }
+
+        // Migration V10: Heal group header structure and clean stray '수정' from titles safely
+        if (!localStorage.getItem('edurecall_migration_v10_done')) {
           for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             if (key && key.startsWith('edurecall_custom_')) {
@@ -8511,7 +8515,7 @@
               }
             }
           }
-          localStorage.setItem('edurecall_migration_v9_done', 'true');
+          localStorage.setItem('edurecall_migration_v10_done', 'true');
         }
 
 
