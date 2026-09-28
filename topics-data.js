@@ -1336,25 +1336,6 @@ window.ALL_TOPICS = [
     "groupCount": 8
   },
   {
-    "id": "ECON-EXAM-2006-14",
-    "subject": "경제학",
-    "chapter": "2. 거시경제학",
-    "section": "2-5. 거시균형이론",
-    "title": "[2006학년도] 14번. 물가 하락이 거시경제에 미치는 파급 경로",
-    "examTag": "",
-    "page": 0,
-    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2006학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 변동환율제도를 채택하고 있으며 자본 이동이 자유로운 소규모 개방경제를 상정하자. 물가 하락은 가계의 소비지출과 기업의 투자지출뿐 아니라 순수출에도 영향을 미친다. (A) 물가 하락이 화폐시장에서 이자율에 영향을 미치게 되는 과정을 쓰고, (B) 화폐시장에서의 이런 변화가 순수출에 어떤 경로로 영향을 미치게 되는지를 자본 유출입, 환율, 수출입에 대한 영향의 순서에 따라 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>∙ (A) : ____________________________________________________________________</p>\n    <p>∙ (B) : ____________________________________________________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-amber-50/90 border border-amber-200 rounded-xl\">\n    <summary class=\"font-bold text-amber-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-amber-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-amber-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ (A): 물가가 하락하면 거래적 화폐수요가 감소하여, 실질 화폐공급이 증가하는 효과가 나타나 화폐시장에서 이자율이 하락한다.\n∙ (B): 이자율이 하락하면 국내 자산 수익률이 낮아져 자본이 해외로 유출된다. 자본 유출은 외환시장에서 외환 수요를 증가시켜 환율을 상승(자국통화가치 하락)시킨다. 환율 상승은 수출품의 가격경쟁력을 높여 수출을 증가시키고 수입을 감소시켜 순수출을 증가시킨다.\n\n해설:\n거시경제의 이자율 경로와 환율 경로를 묻는 전형적인 서술형 문제입니다. 물가 하락(P↓) -> 화폐수요(Md) 하락 -> 이자율(r) 하락 -> 자본 유출(CF↑) -> 환율(e) 상승 -> 순수출(NX) 증가의 메커니즘을 명확히 서술해야 합니다.\n    </div>\n  </details>\n</div>",
-    "defaultAnswer": "(A) 화폐수요 감소로 이자율 하락, (B) 자본유출 -> 환율상승 -> 순수출증가",
-    "targetKeywords": [
-      "물가 하락",
-      "화폐수요",
-      "이자율",
-      "자본 유출입",
-      "환율",
-      "순수출"
-    ]
-  },
-  {
     "id": "ECON-EXAM-2012-1-24",
     "subject": "경제학",
     "chapter": "2. 거시경제학",
@@ -1895,6 +1876,25 @@ window.ALL_TOPICS = [
     "targetKeywords": [],
     "tapeCount": 0,
     "groupCount": 5
+  },
+  {
+    "id": "ECON-EXAM-2006-14",
+    "subject": "경제학",
+    "chapter": "3. 국제경제학",
+    "section": "3-3. 개방거시균형",
+    "title": "[2006학년도] 14번. 물가 하락이 거시경제에 미치는 파급 경로",
+    "examTag": "",
+    "page": 0,
+    "contentHtml": "<div class=\"mb-4 bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center justify-between\">\n  <div class=\"font-bold text-sm text-slate-800\">2006학년도 중등교사 신규임용 후보자 선정 경쟁시험 [전공 14번]</div>\n  <span class=\"px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-xs\">배점 [4점]</span>\n</div>\n<div class=\"topic-group mb-4 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs\">\n  <div class=\"font-bold text-base text-slate-900 mb-3 pb-2 border-b border-slate-100 leading-snug\">\n    14. 변동환율제도를 채택하고 있으며 자본 이동이 자유로운 소규모 개방경제를 상정하자. 물가 하락은 가계의 소비지출과 기업의 투자지출뿐 아니라 순수출에도 영향을 미친다. (A) 물가 하락이 화폐시장에서 이자율에 영향을 미치게 되는 과정을 쓰고, (B) 화폐시장에서의 이런 변화가 순수출에 어떤 경로로 영향을 미치게 되는지를 자본 유출입, 환율, 수출입에 대한 영향의 순서에 따라 쓰시오.\n  </div>\n  <div class=\"p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-sm md:text-[15px] text-slate-800 leading-relaxed font-sans\">\n    <p>∙ (A) : ____________________________________________________________________</p>\n    <p>∙ (B) : ____________________________________________________________________</p>\n  </div>\n  <details class=\"mt-4 p-3.5 bg-amber-50/90 border border-amber-200 rounded-xl\">\n    <summary class=\"font-bold text-amber-900 cursor-pointer flex items-center gap-1.5 text-xs md:text-sm select-none\">\n      <span class=\"material-symbols-outlined text-[18px] text-amber-600\">check_circle</span>\n      <span>💡 [정답 및 해설]</span>\n    </summary>\n    <div class=\"mt-3 pt-3 border-t border-amber-200 text-xs md:text-sm text-slate-800 leading-relaxed font-sans whitespace-pre-line\">\n정답:\n∙ (A): 물가가 하락하면 거래적 화폐수요가 감소하여, 실질 화폐공급이 증가하는 효과가 나타나 화폐시장에서 이자율이 하락한다.\n∙ (B): 이자율이 하락하면 국내 자산 수익률이 낮아져 자본이 해외로 유출된다. 자본 유출은 외환시장에서 외환 수요를 증가시켜 환율을 상승(자국통화가치 하락)시킨다. 환율 상승은 수출품의 가격경쟁력을 높여 수출을 증가시키고 수입을 감소시켜 순수출을 증가시킨다.\n\n해설:\n거시경제의 이자율 경로와 환율 경로를 묻는 전형적인 서술형 문제입니다. 물가 하락(P↓) -> 화폐수요(Md) 하락 -> 이자율(r) 하락 -> 자본 유출(CF↑) -> 환율(e) 상승 -> 순수출(NX) 증가의 메커니즘을 명확히 서술해야 합니다.\n    </div>\n  </details>\n</div>",
+    "defaultAnswer": "(A) 화폐수요 감소로 이자율 하락, (B) 자본유출 -> 환율상승 -> 순수출증가",
+    "targetKeywords": [
+      "물가 하락",
+      "화폐수요",
+      "이자율",
+      "자본 유출입",
+      "환율",
+      "순수출"
+    ]
   },
   {
     "id": "ECON-EXAM-2016-B-07",
