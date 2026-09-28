@@ -3814,7 +3814,9 @@
       function getSubjectLastTopicId(subj) {
         if (!subj || subj === 'ALL') return null;
         try {
-          return localStorage.getItem(`edurecall_last_topic_${subj}`);
+          let id = localStorage.getItem(`edurecall_last_topic_${subj}`);
+          if (id === 'SOC-076') id = 'SOC-075';
+          return id;
         } catch (e) {
           return null;
         }
@@ -3824,10 +3826,12 @@
       function getSubjectStudyPin(subject) {
         if (!subject) return null;
         try {
-          const pin = localStorage.getItem(`edurecall_study_pin_${subject}`);
+          let pin = localStorage.getItem(`edurecall_study_pin_${subject}`);
+          if (pin === 'SOC-076') pin = 'SOC-075';
           if (pin) return pin;
           // Legacy migration fallback: if single global pin exists and belongs to this subject
-          const legacyPin = localStorage.getItem('edurecall_study_pin');
+          let legacyPin = localStorage.getItem('edurecall_study_pin');
+          if (legacyPin === 'SOC-076') legacyPin = 'SOC-075';
           if (legacyPin && typeof TOPICS !== 'undefined') {
             const t = TOPICS.find(item => item.id === legacyPin);
             if (t && t.subject === subject) {
@@ -8352,6 +8356,9 @@
       if (initialTopicId === 'LAW-060') {
         initialTopicId = 'LAW-059';
       }
+      if (initialTopicId === 'SOC-076') {
+        initialTopicId = 'SOC-075';
+      }
 
 
       let initialIndex = 0;
@@ -8728,6 +8735,41 @@
               localStorage.removeItem(key);
             }
           }
+      } catch (e) {}
+
+      // Migration V11: Merge SOC-076 into SOC-075 and redirect
+      try {
+        if (!localStorage.getItem('edurecall_migration_v11_done')) {
+          ['edurecall_custom', 'edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
+            localStorage.removeItem(`${prefix}_SOC-076`);
+          });
+          localStorage.removeItem('edurecall_custom_SOC-075');
+          localStorage.removeItem('edurecall_custom_masks_SOC-075');
+          if (localStorage.getItem('edurecall_last_topic_id') === 'SOC-076') localStorage.setItem('edurecall_last_topic_id', 'SOC-075');
+          if (localStorage.getItem('edurecall_last_topic_사회학') === 'SOC-076') localStorage.setItem('edurecall_last_topic_사회학', 'SOC-075');
+          if (localStorage.getItem('edurecall_study_pin_사회학') === 'SOC-076') localStorage.setItem('edurecall_study_pin_사회학', 'SOC-075');
+          if (localStorage.getItem('edurecall_study_pin') === 'SOC-076') localStorage.setItem('edurecall_study_pin', 'SOC-075');
+
+          try {
+            const bms = JSON.parse(localStorage.getItem('edurecall_bookmarks')) || [];
+            if (Array.isArray(bms) && bms.includes('SOC-076')) {
+              const updatedBms = bms.filter(id => id !== 'SOC-076');
+              if (!updatedBms.includes('SOC-075')) updatedBms.push('SOC-075');
+              localStorage.setItem('edurecall_bookmarks', JSON.stringify(updatedBms));
+            }
+          } catch(e) {}
+
+          try {
+            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+            if (fsrsMap['SOC-076']) {
+              if (!fsrsMap['SOC-075']) {
+                fsrsMap['SOC-075'] = fsrsMap['SOC-076'];
+              }
+              delete fsrsMap['SOC-076'];
+              localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
+            }
+          } catch(e) {}
+          localStorage.setItem('edurecall_migration_v11_done', 'true');
         }
       } catch (e) {}
 
