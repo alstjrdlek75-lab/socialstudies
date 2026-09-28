@@ -1,46 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 330" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 340" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
   <defs>
     <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
     </marker>
+    <marker id="arr-red-left" viewBox="0 0 10 10" refX="4" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#e11d48" />
+    </marker>
+    <marker id="arr-red-right" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#e11d48" />
+    </marker>
   </defs>
 
   <!-- Title / Legend bar -->
-  <rect x="20" y="10" width="580" height="30" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="310" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f172a">총수요-총공급(AD-AS) 모형: 인플레이션 갭 (Y₀ &gt; Yₚ 과열 균형)</text>
+  <rect x="20" y="10" width="580" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="310" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f172a">총수요-총공급(AD-AS) 모형: 인플레이션 갭 (Y₀ &gt; Yₚ 경기 과열)</text>
 
   <!-- Axes: Origin (70, 275) -->
-  <line x1="70" y1="275" x2="520" y2="275" stroke="#334155" stroke-width="1.8" marker-end="url(#arr2)" />
+  <line x1="70" y1="275" x2="535" y2="275" stroke="#334155" stroke-width="1.8" marker-end="url(#arr2)" />
   <line x1="70" y1="275" x2="70" y2="48" stroke="#334155" stroke-width="1.8" marker-end="url(#arr2)" />
-  <text x="525" y="279" font-size="12" font-weight="bold" fill="#334155">국민소득 (Y)</text>
-  <text x="70" y="44" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">물가수준 (P)</text>
-  <text x="56" y="288" font-size="11" fill="#64748b">0</text>
+  <text x="540" y="279" font-size="12.5" font-weight="bold" fill="#334155">국민소득 (Y)</text>
+  <text x="70" y="42" font-size="12.5" font-weight="bold" fill="#334155" text-anchor="middle">물가수준 (P)</text>
+  <text x="56" y="289" font-size="11" fill="#64748b">0</text>
 
-  <!-- Long-Run AS (LRAS): Vertical line at Yp (x = 220) -->
-  <line x1="220" y1="275" x2="220" y2="65" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="4,3" />
-  <text x="220" y="58" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">LRAS (잠재 GDP)</text>
-  <text x="220" y="295" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">Yₚ</text>
+  <!-- Inflationary Gap Shaded Zone (between Yp=230 and Y0=350) -->
+  <rect x="230" y="150" width="120" height="125" fill="#ffe4e6" fill-opacity="0.45" />
 
-  <!-- Short-Run AS: Upward sloping line -->
-  <line x1="120" y1="250" x2="430" y2="90" stroke="#16a34a" stroke-width="2.5" />
-  <text x="440" y="94" font-size="12" font-weight="bold" fill="#16a34a">AS (단기 총공급)</text>
+  <!-- Long-Run AS (LRAS): Vertical line at Yp (x = 230) -->
+  <line x1="230" y1="275" x2="230" y2="65" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="5,4" />
+  <text x="230" y="58" font-size="12" font-weight="bold" fill="#dc2626" text-anchor="middle">LRAS (잠재 GDP)</text>
+  <text x="230" y="296" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">Yₚ</text>
 
-  <!-- Aggregate Demand AD: Downward sloping line -->
-  <line x1="120" y1="80" x2="430" y2="250" stroke="#2563eb" stroke-width="2.5" />
-  <text x="440" y="254" font-size="12" font-weight="bold" fill="#2563eb">AD (단기 총수요)</text>
+  <!-- Short-Run AS: Upward sloping line passing through E0 (350, 150) -->
+  <!-- At x=120, y=265; at x=350, y=150; at x=470, y=90 -->
+  <line x1="120" y1="265" x2="470" y2="90" stroke="#16a34a" stroke-width="2.5" />
+  <text x="478" y="94" font-size="12" font-weight="bold" fill="#16a34a">AS (단기 총공급)</text>
 
-  <!-- Equilibrium Intersection E0 at (x = 325, y = 147) -->
-  <!-- Dotted lines to axes -->
-  <line x1="70" y1="147" x2="325" y2="147" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
-  <line x1="325" y1="275" x2="325" y2="147" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+  <!-- Aggregate Demand AD: Downward sloping line passing through E0 (350, 150) -->
+  <!-- At x=170, y=60; at x=350, y=150; at x=490, y=220 -->
+  <line x1="170" y1="60" x2="490" y2="220" stroke="#2563eb" stroke-width="2.5" />
+  <text x="498" y="224" font-size="12" font-weight="bold" fill="#2563eb">AD (단기 총수요)</text>
 
-  <circle cx="325" cy="147" r="5.5" fill="#0f172a" />
-  <text x="335" y="140" font-size="12.5" font-weight="bold" fill="#0f172a">E₀ (단기균형)</text>
-  <text x="44" y="151" font-size="13" font-weight="bold" fill="#0f172a">P₀</text>
-  <text x="325" y="295" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Y₀</text>
+  <!-- Equilibrium Intersection E0 at (x = 350, y = 150) -->
+  <!-- Projection lines to axes -->
+  <line x1="70" y1="150" x2="350" y2="150" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="350" y1="275" x2="350" y2="150" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
 
-  <!-- Inflationary Gap Bracket / Area between x=220 and x=325 -->
-  <path d="M 222 235 L 272 235 L 272 230 L 272 235 L 323 235" fill="none" stroke="#e11d48" stroke-width="1.5" />
-  <rect x="220" y="210" width="105" height="22" rx="4" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1" />
-  <text x="272" y="225" font-size="11" font-weight="bold" text-anchor="middle" fill="#be123c">인플레이션 갭 (Y₀ &gt; Yₚ)</text>
+  <!-- Intersection Dot E0 -->
+  <circle cx="350" cy="150" r="5.5" fill="#0f172a" stroke="#ffffff" stroke-width="1.5" />
+  <text x="360" y="143" font-size="13" font-weight="bold" fill="#0f172a">E₀ (단기균형)</text>
+  <text x="46" y="154" font-size="13" font-weight="bold" fill="#0f172a">P₀</text>
+  <text x="350" y="296" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Y₀</text>
+
+  <!-- Inflationary Gap Dimension Indicator -->
+  <line x1="233" y1="245" x2="347" y2="245" stroke="#e11d48" stroke-width="1.2" marker-start="url(#arr-red-left)" marker-end="url(#arr-red-right)" />
+  <rect x="235" y="218" width="110" height="22" rx="4" fill="#ffffff" stroke="#f43f5e" stroke-width="1" />
+  <text x="290" y="233" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#be123c">인플레이션 갭 (Y₀ &gt; Yₚ)</text>
 </svg>
