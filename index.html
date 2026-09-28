@@ -2655,6 +2655,10 @@
             }
           }
         }
+        const edu040 = localStorage.getItem('edurecall_custom_EDU-040');
+        if (edu040 && !edu040.includes('기존 역할의 한계 극복')) {
+          localStorage.setItem('edurecall_custom_EDU-040', '<div class="mb-3 space-y-1.5 bg-slate-50 p-3 rounded-lg border border-slate-200"><p class="text-sm md:text-base text-slate-800 leading-relaxed">- 기존 역할의 한계 극복 ➔ 가장 능동적이고 바람직한 교사 역할</p></div>' + edu040);
+        }
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -3165,6 +3169,9 @@
               }
               if (k === 'edurecall_custom_SOC-022' && cleanVal.includes('방법론적 이원론')) {
                 cleanVal = cleanVal.replace(/방법론적 이원론/g, '방법론적 일원론');
+              }
+              if (k === 'edurecall_custom_EDU-040' && !cleanVal.includes('기존 역할의 한계 극복')) {
+                cleanVal = '<div class="mb-3 space-y-1.5 bg-slate-50 p-3 rounded-lg border border-slate-200"><p class="text-sm md:text-base text-slate-800 leading-relaxed">- 기존 역할의 한계 극복 ➔ 가장 능동적이고 바람직한 교사 역할</p></div>' + cleanVal;
               }
               if (k === 'edurecall_custom_POL-049' || k === 'edurecall_custom_POL-050' || k === 'edurecall_custom_POL-051') {
                 cleanVal = cleanVal.replace(/<div class="mt-3 bg-blue-50\/70[^>]*><div class="font-bold text-blue-900[^>]*><span class="material-symbols-outlined[^>]*>psychology<\/span><span>\[보충 해설\][\s\S]*?<\/div><\/div><\/div>/g, '');
@@ -4482,6 +4489,12 @@
         if ((topic.id === 'POL-019' || topic.id === 'POL-020') && customHtml && customHtml.includes('bookmark')) {
           customHtml = customHtml.replace(/<div class="mb-3\.5 px-3\.5 py-2\.5 bg-blue-50[\s\S]*?<\/span><\/div>\s*/, '');
           try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
+        }
+
+        // Integrity safeguard: If EDU-040 custom HTML is missing the top intro box, prepend it
+        if (topic.id === 'EDU-040' && customHtml && !customHtml.includes('기존 역할의 한계 극복')) {
+          customHtml = '<div class="mb-3 space-y-1.5 bg-slate-50 p-3 rounded-lg border border-slate-200"><p class="text-sm md:text-base text-slate-800 leading-relaxed">- 기존 역할의 한계 극복 ➔ 가장 능동적이고 바람직한 교사 역할</p></div>' + customHtml;
+          try { localStorage.setItem('edurecall_custom_EDU-040', customHtml); } catch(e) {}
         }
 
         if (customHtml) {
