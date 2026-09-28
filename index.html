@@ -4020,7 +4020,16 @@
           return `${tags.join(', ')} 기출`;
         }
 
-        chapterMap.forEach((secMap, chName) => {
+        let chapterEntries = Array.from(chapterMap.entries());
+        if (activeSubject === '기출') {
+          chapterEntries.sort((a, b) => {
+            const yearA = parseInt((a[0].match(/(\d{4})학년도/) || [])[1] || 0, 10);
+            const yearB = parseInt((b[0].match(/(\d{4})학년도/) || [])[1] || 0, 10);
+            return yearB - yearA; // 최신순 (2026학년도부터 내림차순 정렬)
+          });
+        }
+
+        chapterEntries.forEach(([chName, secMap]) => {
           let chapterTotal = 0;
           secMap.forEach(arr => { chapterTotal += arr.length; });
 
@@ -4044,7 +4053,12 @@
           const chapContent = document.createElement('div');
           chapContent.className = 'chapter-content space-y-1';
 
-          secMap.forEach((indices, secName) => {
+          let secEntries = Array.from(secMap.entries());
+          if (activeSubject === '기출' || chName.includes('기출')) {
+            secEntries.sort((a, b) => a[0].localeCompare(b[0])); // 전공 A before 전공 B
+          }
+
+          secEntries.forEach(([secName, indices]) => {
             sortTopicIndicesList(indices);
 
             const secKey = `${chName}__${secName}`;
@@ -5846,7 +5860,12 @@
             }
 
             if (targetIndex === -1) {
-              targetIndex = matchIndices[0];
+              if (subj === '기출') {
+                const latestExam = matchIndices.find(idx => TOPICS[idx] && TOPICS[idx].chapter && TOPICS[idx].chapter.includes('2026'));
+                targetIndex = (latestExam !== undefined) ? latestExam : matchIndices[matchIndices.length - 1];
+              } else {
+                targetIndex = matchIndices[0];
+              }
             }
 
             // Set currentTopicIndex before renderSidebar so the active section is automatically expanded
