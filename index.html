@@ -2597,6 +2597,68 @@
       const expandedSections = new Set();
       let autoAdvanceTimeout = null;
 
+      // Helper: Global Healer for corrupted Unicode replacement characters (\uFFFD or ??)
+      function healCorruptedHtml(html) {
+        if (!html || typeof html !== 'string') return html;
+        return html
+          // UI strings / tooltips / button labels
+          .replace(/[클\uFFFD\?]{1,3}: 떼기\/가리기/g, '클릭: 떼기/가리기')
+          .replace(/[\uFFFD\?]+릭: 떼기\/가리기/g, '클릭: 떼기/가리기')
+          .replace(/클릭: [\uFFFD\?]+기\/가리기/g, '클릭: 떼기/가리기')
+          .replace(/클릭: 떼기\/[\uFFFD\?]+리기/g, '클릭: 떼기/가리기')
+          .replace(/클릭: 떼기\/가리[\uFFFD\?]+/g, '클릭: 떼기/가리기')
+          .replace(/마우스 우[\uFFFD\?]+릭/g, '마우스 우클릭')
+          .replace(/마우[\uFFFD\?]+ 우클릭/g, '마우스 우클릭')
+          .replace(/마[\uFFFD\?]+스 우클릭/g, '마우스 우클릭')
+          .replace(/마우스 [\uFFFD\?]+클릭/g, '마우스 우클릭')
+          .replace(/우[\uFFFD\?]+릭/g, '우클릭')
+          .replace(/또[\uFFFD\?]+ Option/g, '또는 Option')
+          .replace(/누[\uFFFD\?]+기/g, '누르기')
+          .replace(/테[\uFFFD\?]+프 삭제/g, '테이프 삭제')
+          .replace(/이 항목 [\uFFFD\?]+러 토글/g, '이 항목 블러 토글')
+          .replace(/이 항목 블[\uFFFD\?]+ 토글/g, '이 항목 블러 토글')
+          .replace(/이 칸\(카드\) 개[\uFFFD\?]+ 수정/g, '이 칸(카드) 개별 수정')
+          .replace(/>[\uFFFD\?]+정<\/span>/g, '>수정</span>')
+          .replace(/\([\uFFFD\?]+릭 시 열림\)/g, '(클릭 시 열림)')
+          // Content strings
+          .replace(/[\uFFFD\?]+문이 아니라/g, '때문이 아니라')
+          .replace(/사회[\uFFFD\?]+ 효율성/g, '사회적 효율성')
+          .replace(/대[\uFFFD\?]+하여/g, '대체하여')
+          .replace(/[\uFFFD\?]+치·태도/g, '가치·태도')
+          .replace(/[\uFFFD\?]+용과 방법/g, '내용과 방법')
+          .replace(/의[\uFFFD\?]+ 신뢰보호/g, '의한 신뢰보호')
+          .replace(/방어적 공[\uFFFD\?]+/g, '방어적 공권')
+          .replace(/고의[\uFFFD\?]+ 의해/g, '고의에 의해')
+          .replace(/지방 노[\uFFFD\?]+ 위원회/g, '지방 노동 위원회')
+          .replace(/자본가 계급으[\uFFFD\?]+부터/g, '자본가 계급으로부터')
+          .replace(/육[\uFFFD\?]+<\/span>/g, '육성</span>')
+          .replace(/문화의 [\uFFFD\?]+체성·자긍심/g, '문화의 주체성·자긍심')
+          .replace(/[\uFFFD\?]+문직, 자유직/g, '전문직, 자유직')
+          .replace(/[\uFFFD\?]+기적 지식인/g, '유기적 지식인')
+          .replace(/새롭게 들[\uFFFD\?]+온다/g, '새롭게 들어온다')
+          .replace(/국외순수[\uFFFD\?]+ 요소소득/g, '국외순수취 요소소득')
+          .replace(/가치척도의 기[\uFFFD\?]+/g, '가치척도의 기능')
+          .replace(/\uFFFD/g, '');
+      }
+
+      // Auto-heal any existing corrupted localStorage keys on boot
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith('edurecall_custom_')) {
+            const val = localStorage.getItem(key);
+            if (val && (val.includes('\uFFFD') || val.includes('??'))) {
+              const healed = healCorruptedHtml(val);
+              if (healed !== val) {
+                localStorage.setItem(key, healed);
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.error('Auto-heal localStorage failed', e);
+      }
+
       // Helper: Unwrap and flatten any nested exam-badges (e.g. <span class="exam-badge"><span class="exam-badge">22 기출</span></span>)
       function cleanNestedBadges(html) {
         if (!html || typeof html !== 'string') return html;
@@ -3096,6 +3158,7 @@
           Object.entries(record.custom_tapes).forEach(([k, v]) => {
             if (v !== null && v !== undefined) {
               let cleanVal = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(String(v)) : String(v);
+              cleanVal = typeof healCorruptedHtml === 'function' ? healCorruptedHtml(cleanVal) : cleanVal;
               // Fix typos and clean phantom '내용 없음' placeholders
               if (cleanVal.includes('보당노동행위')) {
                 cleanVal = cleanVal.replace(/보당노동행위/g, '부당노동행위');
@@ -4422,6 +4485,9 @@
         }
 
         if (customHtml) {
+          if (typeof healCorruptedHtml === 'function') {
+            customHtml = healCorruptedHtml(customHtml);
+          }
           customHtml = normalizeExamBadges(customHtml);
           try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
           subnoteContainer.innerHTML = customHtml;
