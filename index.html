@@ -3998,16 +3998,20 @@
 
         // Helper: Extract compact exam tag for a section (e.g. "'23, '25 기출")
         function getSectionExamTag(indices) {
+          if (activeSubject === '기출') return '';
           const tags = [];
           indices.forEach(idx => {
             const t = TOPICS[idx];
+            if (t.subject === '기출' || (t.chapter && t.chapter.includes('기출'))) return;
             if (t.examTag && t.examTag !== '이론핵심' && !t.examTag.includes('TEST') && !t.examTag.includes('핵심')) {
               const parts = t.examTag.split(',').map(s => s.trim());
               parts.forEach(p => {
-                if (/^\d{2}$/.test(p)) {
-                  if (!tags.includes(`'${p}`)) tags.push(`'${p}`);
-                } else if (p) {
-                  if (!tags.includes(p)) tags.push(p);
+                const yearMatch = p.match(/\b(1[4-9]|2[0-7])\b/);
+                if (yearMatch) {
+                  const tag = `'${yearMatch[1]}`;
+                  if (!tags.includes(tag)) tags.push(tag);
+                } else if (p && !tags.includes(p)) {
+                  tags.push(p);
                 }
               });
             }
@@ -4055,7 +4059,7 @@
               isExpanded = !expandedSections.has(`COLLAPSED__${secKey}`);
             }
 
-            const secExamTag = getSectionExamTag(indices);
+            const secExamTag = (isExamSubject || chName.includes('기출')) ? '' : getSectionExamTag(indices);
 
             const secGroup = document.createElement('div');
             secGroup.className = isExpanded 
