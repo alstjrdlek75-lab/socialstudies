@@ -1,38 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 370" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
-  <!-- Border box like the original exam paper -->
-  <rect x="25" y="15" width="490" height="340" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 330" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0f172a" />
+    </marker>
+  </defs>
+
+  <!-- Exam paper style outer frame -->
+  <rect x="15" y="15" width="450" height="300" fill="#ffffff" stroke="#334155" stroke-width="1.2" />
 
   <!-- Axes -->
-  <!-- Vertical axis (P): (90, 310) to (90, 45) -->
-  <line x1="90" y1="310" x2="90" y2="45" stroke="#0f172a" stroke-width="1.5" />
-  <text x="80" y="52" font-size="16" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">P</text>
-  <text x="76" y="318" font-size="14" font-family="'Times New Roman', serif" fill="#0f172a">0</text>
+  <!-- Vertical axis (P): (80, 270) to (80, 42) -->
+  <line x1="80" y1="270" x2="80" y2="40" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="68" y="46" font-size="16" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">P</text>
+  <text x="68" y="278" font-size="14" font-family="'Times New Roman', serif" fill="#0f172a">0</text>
 
-  <!-- Horizontal axis (Y): (90, 310) to (475, 310) -->
-  <line x1="90" y1="310" x2="475" y2="310" stroke="#0f172a" stroke-width="1.5" />
-  <text x="482" y="315" font-size="16" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">Y</text>
+  <!-- Horizontal axis (Y): (80, 270) to (435, 270) -->
+  <line x1="80" y1="270" x2="435" y2="270" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="443" y="274" font-size="16" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">Y</text>
 
-  <!-- P1 Tick & Horizontal Line across the diagram -->
-  <line x1="86" y1="130" x2="90" y2="130" stroke="#0f172a" stroke-width="1.5" />
-  <text x="74" y="135" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">P<tspan font-size="11" dy="4">1</tspan></text>
-  <!-- Thin horizontal line at P1 spanning across the curves -->
-  <line x1="90" y1="130" x2="440" y2="130" stroke="#475569" stroke-width="1.2" />
+  <!-- Coordinate guide lines (Dashed lines) -->
+  <!-- Horizontal dashed line at P1: from P-axis (80, 115) across AD (130, 115) to AS (310, 115) -->
+  <line x1="80" y1="115" x2="310" y2="115" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="76" y1="115" x2="80" y2="115" stroke="#0f172a" stroke-width="1.2" />
+  <text x="62" y="120" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a">P<tspan font-size="11" dy="3">1</tspan></text>
 
-  <!-- AS Curve (Upward sloping line) -->
-  <!-- Passes through (120, 290) and (250, 180) and (335, 130) and (410, 85) -->
-  <line x1="125" y1="285" x2="410" y2="85" stroke="#0f172a" stroke-width="1.8" />
-  <text x="415" y="80" font-size="15" font-family="'Times New Roman', serif" font-weight="bold" fill="#0f172a">AS</text>
+  <!-- Vertical dashed line from AD-AS equilibrium intersection (220, 175) down to Y0 (220, 270) -->
+  <line x1="220" y1="175" x2="220" y2="270" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="220" y1="270" x2="220" y2="274" stroke="#0f172a" stroke-width="1.2" />
+  <text x="220" y="290" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a" text-anchor="middle">Y<tspan font-size="11" dy="3">0</tspan></text>
 
-  <!-- AD Curve (Downward sloping line) -->
-  <!-- Passes through (140, 95) and (250, 180) and (420, 305) -->
-  <line x1="135" y1="90" x2="425" y2="305" stroke="#0f172a" stroke-width="1.8" />
-  <text x="428" y="295" font-size="15" font-family="'Times New Roman', serif" font-weight="bold" fill="#0f172a">AD</text>
+  <!-- Vertical dashed line from AS curve at P1 (310, 115) down to Yp (310, 270) -->
+  <line x1="310" y1="115" x2="310" y2="270" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="310" y1="270" x2="310" y2="274" stroke="#0f172a" stroke-width="1.2" />
+  <text x="310" y="290" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a" text-anchor="middle">Y<tspan font-size="11" dy="3">p</tspan></text>
 
-  <!-- Vertical dashed line from Y0 to AD-AS intersection (250, 180) -->
-  <line x1="250" y1="310" x2="250" y2="180" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
-  <text x="250" y="328" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a" text-anchor="middle">Y<tspan font-size="11" dy="4">0</tspan></text>
+  <!-- AS Curve (Upward sloping line, slope = -2/3 in SVG) -->
+  <!-- Passes through (110, 248), (220, 175), (310, 115), and ends at (370, 75) -->
+  <line x1="110" y1="248" x2="370" y2="75" stroke="#0f172a" stroke-width="2" />
+  <text x="376" y="72" font-size="15" font-family="'Times New Roman', serif" font-weight="bold" fill="#0f172a">AS</text>
 
-  <!-- Vertical dashed line from Yp to AS curve at (335, 130) -->
-  <line x1="335" y1="310" x2="335" y2="130" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
-  <text x="335" y="328" font-size="15" font-family="'Times New Roman', serif" font-style="italic" font-weight="bold" fill="#0f172a" text-anchor="middle">Y<tspan font-size="11" dy="4">p</tspan></text>
+  <!-- AD Curve (Downward sloping line, slope = +2/3 in SVG) -->
+  <!-- Passes through (110, 102), (130, 115), (220, 175), and ends at (360, 268) -->
+  <line x1="110" y1="102" x2="360" y2="268" stroke="#0f172a" stroke-width="2" />
+  <text x="366" y="272" font-size="15" font-family="'Times New Roman', serif" font-weight="bold" fill="#0f172a">AD</text>
 </svg>
