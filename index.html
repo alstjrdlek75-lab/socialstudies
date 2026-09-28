@@ -2638,7 +2638,12 @@
           .replace(/새롭게 들[\uFFFD\?]+온다/g, '새롭게 들어온다')
           .replace(/국외순수[\uFFFD\?]+ 요소소득/g, '국외순수취 요소소득')
           .replace(/가치척도의 기[\uFFFD\?]+/g, '가치척도의 기능')
-          .replace(/\uFFFD/g, '');
+          .replace(/\uFFFD/g, '')
+          // Clean contaminated trailing '수정' in group header spans: e.g. <span>(1) 헌법적 지위\n   수정</span>
+          .replace(/(<div[^>]*class="[^"]*font-bold[^"]*"[^>]*>[\s\S]*?<span>[\s\S]*?)(?:&nbsp;|\s|\n|\r)+수정\s*(<\/span>)/g, '$1$2')
+          // Strip accidentally saved group-actions-wrap or group-edit-btn
+          .replace(/<div class="group-actions-wrap[^"]*"[^>]*>[\s\S]*?<\/div>\s*(?=(?:<\/div>|<div class="group-content"))/g, '')
+          .replace(/<button[^>]*class="[^"]*group-edit-btn[^"]*"[^>]*>[\s\S]*?<\/button>/g, '');
       }
 
       // Auto-heal any existing corrupted localStorage keys on boot
@@ -2647,7 +2652,7 @@
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
             const val = localStorage.getItem(key);
-            if (val && (val.includes('\uFFFD') || val.includes('??'))) {
+            if (val && (val.includes('\uFFFD') || val.includes('??') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || val.includes('group-actions-wrap') || val.includes('group-edit-btn'))) {
               const healed = healCorruptedHtml(val);
               if (healed !== val) {
                 localStorage.setItem(key, healed);
@@ -4681,11 +4686,18 @@
           const childNodes = Array.from(header.childNodes);
           childNodes.forEach(node => {
             if (node === fontBold || node === toggleBtn || fontBold.contains(node) || toggleBtn.contains(node) ||
-                (node.nodeType === Node.ELEMENT_NODE && (node.classList?.contains('group-actions-wrap') || node.classList?.contains('group-edit-btn') || node.querySelector?.('.group-toggle-btn')))) {
+                (node.nodeType === Node.ELEMENT_NODE && (
+                  node.classList?.contains('group-actions-wrap') || 
+                  node.classList?.contains('group-edit-btn') || 
+                  node.classList?.contains('group-toggle-btn') ||
+                  node.querySelector?.('.group-actions-wrap') ||
+                  node.querySelector?.('.group-edit-btn') ||
+                  node.querySelector?.('.group-toggle-btn')
+                ))) {
               return;
             }
             const txt = node.textContent.trim();
-            if (txt && txt !== 'visibility') {
+            if (txt && txt !== 'visibility' && txt !== 'edit' && txt !== '수정' && !txt.endsWith('수정')) {
               let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
               if (node.nodeType === Node.ELEMENT_NODE) {
                 if (titleSpan) {
@@ -4710,6 +4722,11 @@
           });
 
           if (fontBold) {
+            fontBold.querySelectorAll('.group-actions-wrap, .group-edit-btn').forEach(el => el.remove());
+            const titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
+            if (titleSpan && titleSpan.innerHTML) {
+              titleSpan.innerHTML = titleSpan.innerHTML.replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
+            }
             fontBold.innerHTML = cleanNestedBadges(fontBold.innerHTML);
           }
         });
@@ -4997,6 +5014,13 @@
         tempDiv.querySelectorAll('details').forEach(d => {
           d.open = false;
           d.removeAttribute('open');
+        });
+        // Remove interactive action buttons and edit buttons before persisting
+        tempDiv.querySelectorAll('.group-actions-wrap, .group-edit-btn').forEach(el => el.remove());
+        tempDiv.querySelectorAll('.topic-group .font-bold span').forEach(s => {
+          if (s.innerHTML && /(?:&nbsp;|\s)+수정\s*$/.test(s.innerHTML)) {
+            s.innerHTML = s.innerHTML.replace(/(?:&nbsp;|\s)+수정\s*$/, '').trim();
+          }
         });
         // Normalize any typing inputs back to clean tape spans in storage
         tempDiv.querySelectorAll('.mask-tape').forEach(tape => {
@@ -6763,8 +6787,8 @@
             const titleEl = group.querySelector('.font-bold');
             if (titleEl) {
               const clone = titleEl.cloneNode(true);
-              clone.querySelectorAll('.material-symbols-outlined, .exam-badge, .rounded-full, .w-2, .w-2\\.5, .w-3').forEach(el => el.remove());
-              title = clone.textContent.trim();
+              clone.querySelectorAll('.material-symbols-outlined, .exam-badge, .rounded-full, .w-2, .w-2\\.5, .w-3, .group-edit-btn, .group-actions-wrap').forEach(el => el.remove());
+              title = clone.textContent.trim().replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
             }
             if (!title) title = `(${gIdx + 1}) 항목`;
 
@@ -6875,7 +6899,8 @@
       function serializeEditorCardsToHtml(cards) {
         if (!cards || cards.length === 0) return '';
         const bodyContent = cards.map((card, cIdx) => {
-          const title = (card.title || '').trim() || `(${cIdx + 1}) 항목`;
+          let title = (card.title || '').trim().replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
+          if (!title) title = `(${cIdx + 1}) 항목`;
           let itemsHtml = '';
           if (card.rawTableHtml) {
             itemsHtml = card.rawTableHtml;
@@ -8470,6 +8495,23 @@
           localStorage.removeItem('edurecall_custom_LAW-041');
           localStorage.removeItem('edurecall_custom_masks_LAW-041');
           localStorage.setItem('edurecall_migration_v8_done', 'true');
+        }
+
+        // Migration V9: Clean up stray '수정' from group header titles and remove serialized group-actions-wrap across all custom topics
+        if (!localStorage.getItem('edurecall_migration_v9_done')) {
+          for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('edurecall_custom_')) {
+              let val = localStorage.getItem(key);
+              if (val) {
+                const cleaned = typeof healCorruptedHtml === 'function' ? healCorruptedHtml(val) : val;
+                if (cleaned !== val) {
+                  localStorage.setItem(key, cleaned);
+                }
+              }
+            }
+          }
+          localStorage.setItem('edurecall_migration_v9_done', 'true');
         }
 
 
