@@ -3827,6 +3827,7 @@
           }
           const matchSearch = !q || (
             topic.title.toLowerCase().includes(q) ||
+            (topic.subtitle && topic.subtitle.toLowerCase().includes(q)) ||
             topic.chapter.toLowerCase().includes(q) ||
             (topic.section && topic.section.toLowerCase().includes(q)) ||
             (topic.subsection && topic.subsection.toLowerCase().includes(q)) ||
@@ -5710,6 +5711,7 @@
             }
             const matchQuery = !q || (
               topic.title.toLowerCase().includes(q) ||
+              (topic.subtitle && topic.subtitle.toLowerCase().includes(q)) ||
               (topic.chapter && topic.chapter.toLowerCase().includes(q)) ||
               (topic.section && topic.section.toLowerCase().includes(q)) ||
               (topic.targetKeywords && topic.targetKeywords.some(kw => kw.toLowerCase().includes(q)))
