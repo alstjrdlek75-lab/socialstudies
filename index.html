@@ -2642,7 +2642,9 @@
           // Repair broken/unclosed headers before group-content
           .replace(/(<span>(?:(?!<\/div>)[\s\S])*?)<\/div>\s*<div class="group-content/g, '$1</span></div><button class="group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1" type="button" title="이 항목 블러 토글"><span class="material-symbols-outlined text-[16px]">visibility</span></button></div>\n  <div class="group-content')
           // Clean contaminated trailing '수정' in group header spans safely (strictly inside span without crossing tags)
-          .replace(/(<div[^>]*class="[^"]*font-bold[^"]*"[^>]*>[\s\S]*?<span>[^<]*?)(?:&nbsp;|\s)+수정\s*(<\/span>)/g, '$1$2');
+          .replace(/(<div[^>]*class="[^"]*font-bold[^"]*"[^>]*>[\s\S]*?<span>[^<]*?)(?:&nbsp;|\s)+수정\s*(<\/span>)/g, '$1$2')
+          // Clean unnecessary <차경수 모형> badge in EDU-059
+          .replace(/<span[^>]*class="[^"]*bg-slate-100[^"]*"[^>]*>&lt;차경수\s*모형&gt;<\/span>/g, '');
       }
 
       // Auto-heal any existing corrupted localStorage keys on boot
@@ -2651,7 +2653,7 @@
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
             const val = localStorage.getItem(key);
-            if (val && (val.includes('\uFFFD') || val.includes('??') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val))) {
+            if (val && (val.includes('\uFFFD') || val.includes('??') || val.includes('&lt;차경수 모형&gt;') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val))) {
               const healed = healCorruptedHtml(val);
               if (healed !== val) {
                 localStorage.setItem(key, healed);
@@ -3176,6 +3178,9 @@
               }
               if (k === 'edurecall_custom_EDU-040' && !cleanVal.includes('기존 역할의 한계 극복')) {
                 cleanVal = '<div class="mb-3 space-y-1.5 bg-slate-50 p-3 rounded-lg border border-slate-200"><p class="text-sm md:text-base text-slate-800 leading-relaxed">- 기존 역할의 한계 극복 ➔ 가장 능동적이고 바람직한 교사 역할</p></div>' + cleanVal;
+              }
+              if (k === 'edurecall_custom_EDU-059' || cleanVal.includes('&lt;차경수 모형&gt;')) {
+                cleanVal = cleanVal.replace(/<span[^>]*class="[^"]*bg-slate-100[^"]*"[^>]*>&lt;차경수\s*모형&gt;<\/span>/g, '');
               }
               if (k === 'edurecall_custom_POL-049' || k === 'edurecall_custom_POL-050' || k === 'edurecall_custom_POL-051') {
                 cleanVal = cleanVal.replace(/<div class="mt-3 bg-blue-50\/70[^>]*><div class="font-bold text-blue-900[^>]*><span class="material-symbols-outlined[^>]*>psychology<\/span><span>\[보충 해설\][\s\S]*?<\/div><\/div><\/div>/g, '');
