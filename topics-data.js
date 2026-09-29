@@ -18546,15 +18546,35 @@ window.ALL_TOPICS = [
     "groupCount": 4
   },
   {
+    "id": "POL-069",
+    "subject": "정치학",
+    "chapter": "6. 정부제도론",
+    "section": "6-2. 의원내각제",
+    "title": "3. 내각제에서의 국가 원수",
+    "examTag": "",
+    "page": 19,
+    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 총리는 행정부 수반만을 수행</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\">  <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">    → 정책으로 인해 발생한 갈등은 국가 전체의 위기가 아닌 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"내각\">내각</span>의 위기임  </div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 국가 원수의 권한</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\">  <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">    국가 원수는 총리 임명권 등을 갖지만 이는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"형식적\">형식적</span>임  </div></div></div>",
+    "defaultAnswer": "3. 내각제에서의 국가 원수\n(1) 총리는 행정부 수반만을 수행\n→ 정책으로 인해 발생한 갈등은 국가 전체의 위기가 아닌 내각의 위기임\n\n(2) 국가 원수의 권한\n- 국가 원수는 총리 임명권 등을 갖지만 이는 형식적임\n",
+    "targetKeywords": [
+      "행정부 수반",
+      "내각",
+      "국가 원수",
+      "총리 임명권",
+      "형식적"
+    ],
+    "tapeCount": 2,
+    "groupCount": 2
+  },
+  {
     "id": "POL-066",
     "subject": "정치학",
     "chapter": "6. 정부제도론",
     "section": "6-2. 의원내각제",
-    "title": "3. 내각제의 유형",
+    "title": "4. 내각제의 유형",
     "examTag": "",
     "page": 19,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 내각-의회의 관계</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">내각 우위형, 의회 우위형, 정당 우위형</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 연립정부형 내각제</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">내각의 안정성 낮을 수 있음</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 대연정</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">심각한 정치적 위기에 모든 정당이 연립에 참여</div></div></div>",
-    "defaultAnswer": "3. 내각제의 유형\n(1) 내각-의회의 관계: 내각 우위형, 의회 우위형, 정당 우위형\n\n(2) 연립정부형 내각제: 내각의 안정성 낮을 수 있음\n\n(3) 대연정: 심각한 정치적 위기에 모든 정당이 연립에 참여\n",
+    "defaultAnswer": "4. 내각제의 유형\n(1) 내각-의회의 관계: 내각 우위형, 의회 우위형, 정당 우위형\n\n(2) 연립정부형 내각제: 내각의 안정성 낮을 수 있음\n\n(3) 대연정: 심각한 정치적 위기에 모든 정당이 연립에 참여\n",
     "targetKeywords": [
       "우위형",
       "내각",
@@ -18573,11 +18593,11 @@ window.ALL_TOPICS = [
     "subject": "정치학",
     "chapter": "6. 정부제도론",
     "section": "6-2. 의원내각제",
-    "title": "4. 장점",
+    "title": "5. 장점",
     "examTag": "",
     "page": 19,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 제도적 유연성</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">의회와 행정부 간의 교착상태가 빠르게 해소될 수 있음</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 책임정치 구현에 적합</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">내각의 존속이 의회의 신임여부에 달려있음</div></div></div>",
-    "defaultAnswer": "4. 장점\n(1) 제도적 유연성: 의회와 행정부 간의 교착상태가 빠르게 해소될 수 있음\n\n(2) 책임정치 구현에 적합: 내각의 존속이 의회의 신임여부에 달려있음\n",
+    "defaultAnswer": "5. 장점\n(1) 제도적 유연성: 의회와 행정부 간의 교착상태가 빠르게 해소될 수 있음\n\n(2) 책임정치 구현에 적합: 내각의 존속이 의회의 신임여부에 달려있음\n",
     "targetKeywords": [
       "교착상태가",
       "신임여부에",
@@ -18596,11 +18616,11 @@ window.ALL_TOPICS = [
     "subject": "정치학",
     "chapter": "6. 정부제도론",
     "section": "6-2. 의원내각제",
-    "title": "5. 단점",
+    "title": "6. 단점",
     "examTag": "",
     "page": 19,
     "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 제도적으로 약하고 불안정</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">①<span class=\"mask-tape\" data-tape=\"true\" data-text=\"군소정당이 난립\">군소정당이 난립</span> 시 안정적 연립의 형성을 방해함</div><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">②집권정당의 분열 → 정당의 기율 및 정체성 유지 필요</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 다수당의 횡포 우려</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">다수당이 의회와 행정부를 모두 담당하여, 이를 견제하기 어려움</div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 정당을 통해 합법적 장기집권 가능</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"></div></div>",
-    "defaultAnswer": "5. 단점\n(1) 제도적으로 약하고 불안정\n①군소정당이 난립 시 안정적 연립의 형성을 방해함\n②집권정당의 분열 → 정당의 기율 및 정체성 유지 필요\n(2) 다수당의 횡포 우려: 다수당이 의회와 행정부를 모두 담당하여, 이를 견제하기 어려움\n\n(3) 정당을 통해 합법적 장기집권 가능\n",
+    "defaultAnswer": "6. 단점\n(1) 제도적으로 약하고 불안정\n①군소정당이 난립 시 안정적 연립의 형성을 방해함\n②집권정당의 분열 → 정당의 기율 및 정체성 유지 필요\n(2) 다수당의 횡포 우려: 다수당이 의회와 행정부를 모두 담당하여, 이를 견제하기 어려움\n\n(3) 정당을 통해 합법적 장기집권 가능\n",
     "targetKeywords": [
       "군소정당이 난립",
       "제도적으로",
@@ -18613,26 +18633,6 @@ window.ALL_TOPICS = [
     ],
     "tapeCount": 1,
     "groupCount": 3
-  },
-  {
-    "id": "POL-069",
-    "subject": "정치학",
-    "chapter": "6. 정부제도론",
-    "section": "6-2. 의원내각제",
-    "title": "6. 내각제에서의 국가 원수",
-    "examTag": "",
-    "page": 19,
-    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 총리는 행정부 수반만을 수행</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\">  <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">    → 정책으로 인해 발생한 갈등은 국가 전체의 위기가 아닌 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"내각\">내각</span>의 위기임  </div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 국가 원수의 권한</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\">  <div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">    국가 원수는 총리 임명권 등을 갖지만 이는 <span class=\"mask-tape\" data-tape=\"true\" data-text=\"형식적\">형식적</span>임  </div></div></div>",
-    "defaultAnswer": "6. 내각제에서의 국가 원수\n(1) 총리는 행정부 수반만을 수행\n→ 정책으로 인해 발생한 갈등은 국가 전체의 위기가 아닌 내각의 위기임\n\n(2) 국가 원수의 권한\n- 국가 원수는 총리 임명권 등을 갖지만 이는 형식적임\n",
-    "targetKeywords": [
-      "행정부 수반",
-      "내각",
-      "국가 원수",
-      "총리 임명권",
-      "형식적"
-    ],
-    "tapeCount": 2,
-    "groupCount": 2
   },
   {
     "id": "POL-070",
