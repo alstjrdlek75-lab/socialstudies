@@ -2516,13 +2516,80 @@
             <kbd class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">4</kbd>
           </div>
         </div>
-        <div class="flex justify-between items-center py-2">
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>직전 평가 취소 (회독·복습 복원)</span>
           <div class="flex items-center gap-1 font-mono font-bold">
             <kbd class="px-2 py-1 bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 rounded border border-amber-200 dark:border-amber-700">Z</kbd>
             <span class="text-xs text-slate-400 font-sans font-normal">(또는 Cmd+Z)</span>
           </div>
         </div>
+        <div class="flex justify-between items-center py-2">
+          <span>현재 주제 1회독 올리기 (+1회독)</span>
+          <div class="flex items-center gap-1 font-mono font-bold">
+            <kbd class="px-2 py-1 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 rounded border border-emerald-200 dark:border-emerald-700 font-mono">+</kbd>
+            <span class="text-xs text-slate-400 font-sans font-normal">(또는 =)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic Reps Modal -->
+  <div id="topic-reps-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-xs transition-opacity duration-200 p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md p-5 sm:p-6 relative text-slate-800 dark:text-slate-100" onclick="event.stopPropagation()">
+      <button id="btn-close-reps-modal" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[24px]">auto_stories</span>
+        </div>
+        <div class="min-w-0 pr-6">
+          <h2 class="text-lg font-bold">회독 관리 및 진도 설정</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 truncate" id="reps-modal-topic-title">주제 회독 수 변경</p>
+        </div>
+      </div>
+
+      <!-- Current Status Card -->
+      <div class="bg-slate-50 dark:bg-slate-900/60 rounded-xl p-4 mb-4 border border-slate-200/70 dark:border-slate-700/60 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <div class="text-xs text-slate-500 dark:text-slate-400 mb-0.5 font-medium">현재 학습 진도</div>
+          <div class="text-xs font-semibold text-slate-600 dark:text-slate-300 truncate" id="reps-modal-stats">누적 복습: 0회</div>
+        </div>
+        <div id="reps-modal-badge" class="px-3 py-1.5 rounded-xl text-sm font-black shadow-2xs shrink-0 select-none">
+          1회독
+        </div>
+      </div>
+
+      <!-- Quick Action: Increment +1 -->
+      <div class="space-y-2.5 mb-4">
+        <button id="btn-reps-increment" class="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xs transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer">
+          <span class="material-symbols-outlined text-[18px]">add_circle</span>
+          <span id="btn-reps-increment-text">+1회독 올리기</span>
+        </button>
+
+        <!-- Direct Input Form -->
+        <div class="flex items-center gap-2">
+          <div class="relative flex-1">
+            <input type="number" id="input-custom-reps" min="1" max="99" class="w-full px-3 py-2 text-sm rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-bold focus:ring-2 focus:ring-blue-500 focus:outline-hidden" placeholder="예: 5" />
+            <span class="absolute right-3 top-2.5 text-xs font-bold text-slate-400 select-none">회독</span>
+          </div>
+          <button id="btn-reps-apply-custom" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white text-sm font-bold transition-colors cursor-pointer shrink-0">
+            직접 적용
+          </button>
+        </div>
+      </div>
+
+      <!-- Reset & Close -->
+      <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-700">
+        <button id="btn-reps-reset" class="text-xs text-rose-600 hover:text-rose-700 dark:text-rose-400 font-bold flex items-center gap-1 px-2 py-1.5 rounded hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-[15px]">restart_alt</span>
+          <span>1회독으로 초기화</span>
+        </button>
+        <button id="btn-reps-cancel" class="text-xs text-slate-500 hover:text-slate-700 px-3 py-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer font-semibold">
+          닫기
+        </button>
       </div>
     </div>
   </div>
@@ -3705,18 +3772,145 @@
         let badgeClasses = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-extrabold shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105 active:scale-95 border ';
         if (reps === 0) {
           badgeClasses += 'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700';
-          topicRepsBadge.title = `현재 1회독 진행 중 (누적 복습: 0회) · 클릭 시 회독 정보 확인 및 초기화`;
+          topicRepsBadge.title = `현재 1회독 진행 중 (누적 복습: 0회) · 클릭 시 회독 수 올리기/변경/초기화`;
         } else if (reps === 1) {
           badgeClasses += 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800';
-          topicRepsBadge.title = `현재 2회독 진행 중 (누적 복습: 1회) · 클릭 시 회독 정보 확인 및 초기화`;
+          topicRepsBadge.title = `현재 2회독 진행 중 (누적 복습: 1회) · 클릭 시 회독 수 올리기/변경/초기화`;
         } else if (reps === 2) {
           badgeClasses += 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-800';
-          topicRepsBadge.title = `현재 3회독 진행 중 (누적 복습: 2회) · 클릭 시 회독 정보 확인 및 초기화`;
-        } else {
+          topicRepsBadge.title = `현재 3회독 진행 중 (누적 복습: 2회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else if (reps === 3) {
           badgeClasses += 'bg-emerald-50 text-emerald-700 border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800';
-          topicRepsBadge.title = `현재 ${currentHoidok}회독 진행 중 (누적 복습: ${reps}회) · 클릭 시 회독 정보 확인 및 초기화`;
+          topicRepsBadge.title = `현재 4회독 진행 중 (누적 복습: 3회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else if (reps === 4) {
+          badgeClasses += 'bg-teal-50 text-teal-700 border-teal-300 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800';
+          topicRepsBadge.title = `현재 5회독 진행 중 (누적 복습: 4회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else if (reps === 5) {
+          badgeClasses += 'bg-cyan-50 text-cyan-700 border-cyan-300 dark:bg-cyan-950/60 dark:text-cyan-300 dark:border-cyan-800';
+          topicRepsBadge.title = `현재 6회독 진행 중 (누적 복습: 5회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else if (reps === 6) {
+          badgeClasses += 'bg-violet-50 text-violet-700 border-violet-300 dark:bg-violet-950/60 dark:text-violet-300 dark:border-violet-800';
+          topicRepsBadge.title = `현재 7회독 진행 중 (누적 복습: 6회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else if (reps === 7) {
+          badgeClasses += 'bg-amber-50 text-amber-700 border-amber-300 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800';
+          topicRepsBadge.title = `현재 8회독 진행 중 (누적 복습: 7회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else if (reps === 8) {
+          badgeClasses += 'bg-rose-50 text-rose-700 border-rose-300 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800';
+          topicRepsBadge.title = `현재 9회독 진행 중 (누적 복습: 8회) · 클릭 시 회독 수 올리기/변경/초기화`;
+        } else {
+          badgeClasses += 'bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 text-slate-900 border-amber-400 shadow-sm font-black dark:text-slate-950';
+          topicRepsBadge.title = `👑 현재 ${currentHoidok}회독 마스터 달성! (누적 복습: ${reps}회) · 클릭 시 회독 수 올리기/변경/초기화`;
         }
         topicRepsBadge.className = badgeClasses;
+      }
+
+      function setTopicHoidok(topicId, targetHoidok) {
+        try {
+          const num = parseInt(targetHoidok, 10);
+          if (isNaN(num) || num < 1) {
+            showToast('올바른 회독 숫자를 입력해주세요 (1 이상)', 'warning');
+            return false;
+          }
+          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          const prevCard = map[topicId] ? JSON.parse(JSON.stringify(map[topicId])) : null;
+          
+          let card = getFSRSCard(topicId);
+          const newReps = num - 1;
+          card.reps = newReps;
+          
+          if (newReps === 0 && !card.last_review) {
+            delete map[topicId];
+          } else {
+            if (!card.last_review) {
+              card.last_review = new Date();
+              card.state = (window.FSRS && window.FSRS.State) ? window.FSRS.State.Review : 2;
+            }
+            map[topicId] = card;
+          }
+          
+          gradingUndoStack.push({
+            topicId,
+            topicIndex: currentTopicIndex,
+            previousCard: prevCard,
+            dateStr: new Date().toISOString().split('T')[0],
+            grade: `set_${num}`,
+            timestamp: Date.now()
+          });
+          if (gradingUndoStack.length > 30) gradingUndoStack.shift();
+          
+          localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
+          updateOverallStats();
+          renderSidebar();
+          updateTopicRetentionView(topicId);
+          updateTopicRepsBadge(topicId);
+          updateUndoButtonVisibility();
+          triggerAutoSync();
+          showToast(`📖 ${num}회독으로 설정되었습니다! (Z로 취소 가능)`, 'auto_stories', true);
+          return true;
+        } catch(e) {
+          console.error(e);
+          return false;
+        }
+      }
+
+      function incrementTopicHoidok(topicId) {
+        const card = getFSRSCard(topicId);
+        const curReps = card.reps || 0;
+        return setTopicHoidok(topicId, curReps + 2);
+      }
+
+      function openTopicRepsModal() {
+        const modal = document.getElementById('topic-reps-modal');
+        if (!modal) return;
+        const currentTopic = TOPICS[currentTopicIndex];
+        if (!currentTopic) return;
+
+        const card = getFSRSCard(currentTopic.id);
+        const reps = card.reps || 0;
+        const currentHoidok = reps + 1;
+        const nextHoidok = currentHoidok + 1;
+
+        const titleEl = document.getElementById('reps-modal-topic-title');
+        if (titleEl) titleEl.textContent = currentTopic.title;
+
+        const statsEl = document.getElementById('reps-modal-stats');
+        if (statsEl) {
+          statsEl.textContent = `누적 복습: ${reps}회 · 기억 상태: ${card.state === 2 ? '장기 기억 정착 (Review)' : (card.state === 1 || card.state === 3 ? '학습/재학습 중' : '미학습 신규')}`;
+        }
+
+        const badgeEl = document.getElementById('reps-modal-badge');
+        if (badgeEl) {
+          badgeEl.textContent = `${currentHoidok}회독 진행 중`;
+          let badgeClasses = 'px-3.5 py-1.5 rounded-xl text-sm font-black shadow-2xs border ';
+          if (reps === 0) badgeClasses += 'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700';
+          else if (reps === 1) badgeClasses += 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800';
+          else if (reps === 2) badgeClasses += 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-800';
+          else if (reps === 3) badgeClasses += 'bg-emerald-50 text-emerald-700 border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800';
+          else if (reps === 4) badgeClasses += 'bg-teal-50 text-teal-700 border-teal-300 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800';
+          else if (reps === 5) badgeClasses += 'bg-cyan-50 text-cyan-700 border-cyan-300 dark:bg-cyan-950/60 dark:text-cyan-300 dark:border-cyan-800';
+          else if (reps === 6) badgeClasses += 'bg-violet-50 text-violet-700 border-violet-300 dark:bg-violet-950/60 dark:text-violet-300 dark:border-violet-800';
+          else if (reps === 7) badgeClasses += 'bg-amber-50 text-amber-700 border-amber-300 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800';
+          else if (reps === 8) badgeClasses += 'bg-rose-50 text-rose-700 border-rose-300 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800';
+          else badgeClasses += 'bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 text-slate-900 border-amber-400 font-black';
+          badgeEl.className = badgeClasses;
+        }
+
+        const incBtnText = document.getElementById('btn-reps-increment-text');
+        if (incBtnText) {
+          incBtnText.textContent = `+1회독 올리기 (${nextHoidok}회독으로 상승)`;
+        }
+
+        const inputEl = document.getElementById('input-custom-reps');
+        if (inputEl) {
+          inputEl.value = nextHoidok;
+        }
+
+        modal.classList.remove('hidden');
+      }
+
+      function closeTopicRepsModal() {
+        const modal = document.getElementById('topic-reps-modal');
+        if (modal) modal.classList.add('hidden');
       }
 
       function resetSingleTopicGrade(topicId) {
@@ -3770,7 +3964,7 @@
           }
           localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
 
-          if (lastAction.dateStr && lastAction.grade !== 'reset') {
+          if (lastAction.dateStr && lastAction.grade !== 'reset' && !String(lastAction.grade).startsWith('set_')) {
             const dailyStats = JSON.parse(localStorage.getItem('edurecall_daily_stats')) || {};
             if (dailyStats[lastAction.dateStr]) {
               dailyStats[lastAction.dateStr] = Math.max(0, dailyStats[lastAction.dateStr] - 1);
@@ -5943,23 +6137,28 @@
           }, 300);
         }
 
+        const nextCard = res || getFSRSCard(topic.id);
+        const nextReps = nextCard ? (nextCard.reps || 0) : 0;
+        const nextHoidok = nextReps + 1;
+        const nextIvl = (nextCard && nextCard.due) ? formatFSRSInterval(new Date(nextCard.due).getTime() - Date.now()) : '';
+
         if (isExam) {
           if (grade === 'pass' || grade == 3 || grade == 4) {
-            showToast('[P] Pass! 문제 정답 반영 및 복습 주기 연장', 'verified', true);
+            showToast(`[P] Pass! 🎉 ${nextHoidok}회독 달성 (다음 복습: ${nextIvl || '완료'} 후)`, 'verified', true);
           } else if (grade === 'ambiguous' || grade == 2) {
-            showToast('[A] Ambiguous! 애매함/오답 취약 문제로 집중 관리', 'help', true);
+            showToast(`[A] Ambiguous! 💡 ${nextHoidok}회독 기록 (다음 복습: ${nextIvl || '완료'} 후)`, 'help', true);
           } else if (grade === 'fail' || grade == 1) {
-            showToast('[F] Fail! 오답 기록 및 곧 재풀이 일정이 잡힙니다', 'cancel', true);
+            showToast(`[F] Fail! 🔄 ${nextHoidok}회독 기록 (곧 재풀이)`, 'cancel', true);
           }
         } else {
           if (grade == 4) {
-            showToast('[4] 쉬움 (Easy)! 복습 주기가 대폭 연장되었습니다', 'verified', true);
+            showToast(`[4] 쉬움 (Easy)! 🎉 ${nextHoidok}회독 달성 (다음 복습: ${nextIvl || '완료'} 후)`, 'verified', true);
           } else if (grade == 3 || grade === 'pass') {
-            showToast('[3] 알맞음 (Good)! 안정적으로 기억에 정착 중입니다', 'verified', true);
+            showToast(`[3] 알맞음 (Good)! 👍 ${nextHoidok}회독 달성 (다음 복습: ${nextIvl || '완료'} 후)`, 'verified', true);
           } else if (grade == 2 || grade === 'ambiguous') {
-            showToast('[2] 어려움 (Hard)! 복습 주기가 짧게 유지됩니다', 'help', true);
+            showToast(`[2] 어려움 (Hard)! 💡 ${nextHoidok}회독 달성 (다음 복습: ${nextIvl || '완료'} 후)`, 'help', true);
           } else if (grade == 1 || grade === 'fail') {
-            showToast('[1] 다시 (Again)! 곧 재복습 일정이 잡힙니다', 'cancel', true);
+            showToast(`[1] 다시 (Again)! 🔄 ${nextHoidok}회독 기록 (곧 재복습)`, 'cancel', true);
           }
         }
 
@@ -6474,25 +6673,63 @@
         });
       }
 
+      // Topic Reps Modal Event Handlers
       if (topicRepsBadge) {
         topicRepsBadge.addEventListener('click', () => {
+          openTopicRepsModal();
+        });
+      }
+
+      const btnCloseRepsModal = document.getElementById('btn-close-reps-modal');
+      const btnRepsCancel = document.getElementById('btn-reps-cancel');
+      const btnRepsIncrement = document.getElementById('btn-reps-increment');
+      const btnRepsApplyCustom = document.getElementById('btn-reps-apply-custom');
+      const btnRepsReset = document.getElementById('btn-reps-reset');
+      const inputCustomReps = document.getElementById('input-custom-reps');
+      const topicRepsModal = document.getElementById('topic-reps-modal');
+
+      if (btnCloseRepsModal) btnCloseRepsModal.addEventListener('click', closeTopicRepsModal);
+      if (btnRepsCancel) btnRepsCancel.addEventListener('click', closeTopicRepsModal);
+      if (topicRepsModal) {
+        topicRepsModal.addEventListener('click', (e) => {
+          if (e.target === topicRepsModal) closeTopicRepsModal();
+        });
+      }
+
+      if (btnRepsIncrement) {
+        btnRepsIncrement.addEventListener('click', () => {
           const currentTopic = TOPICS[currentTopicIndex];
-          if (!currentTopic) return;
-          const card = getFSRSCard(currentTopic.id);
-          const reps = card.reps || 0;
-          const currentHoidok = reps + 1;
-          
-          const confirmReset = window.confirm(
-            `📖 [${currentTopic.title}]\n\n` +
-            `• 현재 학습 단계: ${currentHoidok}회독 진행 중\n` +
-            `• 누적 복습 횟수: ${reps}회\n` +
-            `• FSRS 기억 상태: ${card.state === 2 ? '장기 기억 정착 (Review)' : (card.state === 1 || card.state === 3 ? '학습/재학습 중' : '미학습 신규')}\n\n` +
-            `실수로 평가를 눌렀거나 처음부터 다시 시작하려면 [확인]을 눌러 이 주제를 '1회독(초기 상태)'으로 리셋할 수 있습니다.\n\n` +
-            `지금 이 주제의 회독 및 복습 기록을 초기화하시겠습니까?`
-          );
-          
-          if (confirmReset) {
+          if (currentTopic) {
+            incrementTopicHoidok(currentTopic.id);
+            closeTopicRepsModal();
+          }
+        });
+      }
+
+      if (btnRepsApplyCustom && inputCustomReps) {
+        btnRepsApplyCustom.addEventListener('click', () => {
+          const val = inputCustomReps.value.trim();
+          const currentTopic = TOPICS[currentTopicIndex];
+          if (currentTopic && val) {
+            if (setTopicHoidok(currentTopic.id, val)) {
+              closeTopicRepsModal();
+            }
+          }
+        });
+        inputCustomReps.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            btnRepsApplyCustom.click();
+          }
+        });
+      }
+
+      if (btnRepsReset) {
+        btnRepsReset.addEventListener('click', () => {
+          const currentTopic = TOPICS[currentTopicIndex];
+          if (currentTopic) {
             resetSingleTopicGrade(currentTopic.id);
+            closeTopicRepsModal();
           }
         });
       }
@@ -8316,10 +8553,16 @@
         
         // Escape: Close Modals
         if (e.key === 'Escape') {
-          const modal = document.getElementById('shortcut-modal');
-          if (modal && !modal.classList.contains('hidden')) {
+          const shortcutModal = document.getElementById('shortcut-modal');
+          if (shortcutModal && !shortcutModal.classList.contains('hidden')) {
             e.preventDefault();
-            modal.classList.add('hidden');
+            shortcutModal.classList.add('hidden');
+            return;
+          }
+          const repsModal = document.getElementById('topic-reps-modal');
+          if (repsModal && !repsModal.classList.contains('hidden')) {
+            e.preventDefault();
+            repsModal.classList.add('hidden');
             return;
           }
         }
@@ -8387,6 +8630,16 @@
         if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           handleGrade(4);
+          return;
+        }
+
+        // [+] or [=] Increment 회독 (+1회독)
+        if ((e.key === '+' || e.key === '=') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          const currentTopic = TOPICS[currentTopicIndex];
+          if (currentTopic) {
+            incrementTopicHoidok(currentTopic.id);
+          }
           return;
         }
 
