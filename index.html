@@ -1818,7 +1818,11 @@
           <!-- Main Title & Action Buttons -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div class="flex flex-col min-w-0 flex-1">
-              <div class="flex items-start sm:items-center gap-2 min-w-0">
+              <div class="flex items-start sm:items-center gap-2 min-w-0 flex-wrap">
+                <span id="topic-reps-badge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80 shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105" title="클릭하여 회독 정보 확인 및 초기화">
+                  <span class="material-symbols-outlined text-[13px]">auto_stories</span>
+                  <span id="topic-reps-badge-text">1회독</span>
+                </span>
                 <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title">
                   2. 국회의 구성·조직 및 운영
                 </h1>
@@ -1992,7 +1996,13 @@
               <span class="material-symbols-outlined text-blue-600 text-[18px]" id="grading-mode-icon">psychology</span>
               <span class="font-bold text-sm text-slate-900" id="grading-mode-title">FSRS 간격 반복</span>
             </div>
-            <span class="text-[11px] text-slate-400 font-medium" id="grading-shortcut-hint">단축키: 1/2/3/4</span>
+            <div class="flex items-center gap-2">
+              <button id="btn-undo-grade" class="text-[11px] font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/50 px-1.5 py-0.5 rounded flex items-center gap-0.5 cursor-pointer transition-colors hidden" type="button" title="직전 평가 취소 (단축키: Z 또는 Cmd+Z)">
+                <span class="material-symbols-outlined text-[14px]">undo</span>
+                <span>평가 취소 (Z)</span>
+              </button>
+              <span class="text-[11px] text-slate-400 font-medium" id="grading-shortcut-hint">단축키: 1/2/3/4</span>
+            </div>
           </div>
 
           <!-- 1) FSRS 4-Rating Buttons Container (1: Again -> 2: Hard -> 3: Good -> 4: Easy) -->
@@ -2085,11 +2095,11 @@
         <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">Tab</kbd>
       </div>
       <div class="flex items-center gap-1.5">
-        <span class="text-slate-500">FSRS 간격 평가</span>
         <span class="text-red-700 font-bold">Again</span> <kbd class="px-1.5 py-0.2 rounded bg-red-50 border border-red-200 text-red-800 font-mono text-[10px] font-bold">1</kbd>
         <span class="text-slate-700 font-bold ml-1">Hard</span> <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-800 font-mono text-[10px] font-bold">2</kbd>
         <span class="text-blue-700 font-bold ml-1">Good</span> <kbd class="px-1.5 py-0.2 rounded bg-blue-50 border border-blue-200 text-blue-800 font-mono text-[10px] font-bold">3</kbd>
         <span class="text-emerald-700 font-bold ml-1">Easy</span> <kbd class="px-1.5 py-0.2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[10px] font-bold">4</kbd>
+        <span class="text-amber-700 font-bold ml-2">평가 취소</span> <kbd class="px-1.5 py-0.2 rounded bg-amber-50 border border-amber-200 text-amber-800 font-mono text-[10px] font-bold">Z</kbd>
       </div>
     </div>
     <div class="flex items-center gap-1.5 text-slate-500 font-mono text-[10px]">
@@ -2324,6 +2334,11 @@
   <div id="toast" class="fixed bottom-16 xl:bottom-6 right-4 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
     <span class="material-symbols-outlined text-[18px] text-blue-400" id="toast-icon">info</span>
     <span id="toast-msg">알림</span>
+    <button id="toast-undo-btn" class="ml-2 px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold text-[11px] flex items-center gap-1 cursor-pointer transition-all hidden" type="button">
+      <span class="material-symbols-outlined text-[13px]">undo</span>
+      <span>실행 취소</span>
+      <kbd class="px-1 py-0.2 rounded bg-blue-700/80 font-mono text-[9px]">Z</kbd>
+    </button>
   </div>
 
   <!-- MOBILE / TABLET BOTTOM NAVIGATION BAR (Thumb Friendly, visible on mobile & tablets < xl) -->
@@ -2492,13 +2507,20 @@
             <span class="text-xs text-slate-400 font-sans font-normal">(또는 Ctrl+→)</span>
           </div>
         </div>
-        <div class="flex justify-between items-center py-2">
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>FSRS 복습 평가 (다시/어려움/알맞음/쉬움)</span>
           <div class="flex gap-1 font-mono font-bold">
             <kbd class="px-1.5 py-0.5 bg-red-100 text-red-800 rounded border border-red-300">1</kbd>
             <kbd class="px-1.5 py-0.5 bg-slate-100 text-slate-800 rounded border border-slate-300">2</kbd>
             <kbd class="px-1.5 py-0.5 bg-blue-100 text-blue-800 rounded border border-blue-300">3</kbd>
             <kbd class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">4</kbd>
+          </div>
+        </div>
+        <div class="flex justify-between items-center py-2">
+          <span>직전 평가 취소 (회독·복습 복원)</span>
+          <div class="flex items-center gap-1 font-mono font-bold">
+            <kbd class="px-2 py-1 bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 rounded border border-amber-200 dark:border-amber-700">Z</kbd>
+            <span class="text-xs text-slate-400 font-sans font-normal">(또는 Cmd+Z)</span>
           </div>
         </div>
       </div>
@@ -2659,6 +2681,17 @@
                 localStorage.setItem(key, healed);
               }
             }
+            // If a custom topic has lost its title or group content (corrupted), purge it to restore official content
+            if (val && (
+              /<div class="font-bold[^"]*"[^>]*>\s*<span[^>]*class="[^"]*rounded-full[^"]*"[^>]*><\/span>\s*<span>\s*<\/span>\s*<\/div>/.test(val) ||
+              /<div class="group-content[^>]*>\s*<\/div>/.test(val) ||
+              val.includes('<span></span>') ||
+              val.includes('<span>(1)</span>')
+            )) {
+              localStorage.removeItem(key);
+              const maskKey = key.replace('edurecall_custom_', 'edurecall_custom_masks_');
+              localStorage.removeItem(maskKey);
+            }
           }
         }
         const edu040 = localStorage.getItem('edurecall_custom_EDU-040');
@@ -2669,6 +2702,15 @@
         if (soc069 && !soc069.includes('지배와 피지배의 갈등이 일탈의 원인이다')) {
           localStorage.setItem('edurecall_custom_SOC-069', soc069.replace(/<div class="group-content space-y-2 pl-1"><\/div>/, '<div class="group-content space-y-2 pl-1"><div class="recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all">- 지배와 피지배의 갈등이 일탈의 원인이다.</div></div>'));
         }
+        // Auto-restore POL-049 if exam badges were stripped, and reset POL-050, POL-038, POL-044
+        const pol049 = localStorage.getItem('edurecall_custom_POL-049');
+        if (pol049 && (!pol049.includes('26 기출') || !pol049.includes('22 기출'))) {
+          localStorage.removeItem('edurecall_custom_POL-049');
+        }
+        localStorage.removeItem('edurecall_custom_POL-050');
+        localStorage.removeItem('edurecall_custom_POL-038');
+        localStorage.removeItem('edurecall_custom_POL-044');
+        localStorage.removeItem('edurecall_custom_masks_POL-044');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -2928,6 +2970,8 @@
       const btnResetCustomTape = document.getElementById('btn-reset-custom-tape');
       const floatingMaskBtn = document.getElementById('floating-mask-btn');
       const topicPageRef = document.getElementById('topic-page-ref');
+      const topicRepsBadge = document.getElementById('topic-reps-badge');
+      const topicRepsBadgeText = document.getElementById('topic-reps-badge-text');
       const topicTitle = document.getElementById('topic-title');
       const topicSubtitle = document.getElementById('topic-subtitle');
       const topicKeywordsTags = document.getElementById('topic-keywords-tags');
@@ -2949,6 +2993,7 @@
       const gradingModeIcon = document.getElementById('grading-mode-icon');
       const gradingModeTitle = document.getElementById('grading-mode-title');
       const gradingShortcutHint = document.getElementById('grading-shortcut-hint');
+      const btnUndoGrade = document.getElementById('btn-undo-grade');
       const fsrsButtonsContainer = document.getElementById('fsrs-buttons-container');
       const fapButtonsContainer = document.getElementById('fap-buttons-container');
 
@@ -3091,6 +3136,7 @@
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toast-msg');
       const toastIcon = document.getElementById('toast-icon');
+      const toastUndoBtn = document.getElementById('toast-undo-btn');
 
       // 3. LocalStorage Storage Management
       function getStoredGrades() {
@@ -3632,6 +3678,131 @@
       
       // --- FSRS Integration ---
       const fsrsEngine = window.FSRS ? new window.FSRS.FSRS() : null;
+
+      // Undo Stack for FSRS Self-Grading
+      const gradingUndoStack = [];
+
+      function updateUndoButtonVisibility() {
+        if (!btnUndoGrade) return;
+        if (gradingUndoStack.length > 0) {
+          btnUndoGrade.classList.remove('hidden');
+          btnUndoGrade.title = `직전 평가 취소 (${gradingUndoStack.length}개 작업 복원 가능) [단축키: Z]`;
+        } else {
+          btnUndoGrade.classList.add('hidden');
+        }
+      }
+
+      function updateTopicRepsBadge(topicId) {
+        if (!topicRepsBadge || !topicRepsBadgeText) return;
+        const card = getFSRSCard(topicId);
+        const reps = card.reps || 0;
+        const currentHoidok = reps + 1;
+
+        topicRepsBadgeText.textContent = `${currentHoidok}회독`;
+
+        let badgeClasses = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-extrabold shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105 active:scale-95 border ';
+        if (reps === 0) {
+          badgeClasses += 'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700';
+          topicRepsBadge.title = `현재 1회독 진행 중 (누적 복습: 0회) · 클릭 시 회독 정보 확인 및 초기화`;
+        } else if (reps === 1) {
+          badgeClasses += 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800';
+          topicRepsBadge.title = `현재 2회독 진행 중 (누적 복습: 1회) · 클릭 시 회독 정보 확인 및 초기화`;
+        } else if (reps === 2) {
+          badgeClasses += 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-800';
+          topicRepsBadge.title = `현재 3회독 진행 중 (누적 복습: 2회) · 클릭 시 회독 정보 확인 및 초기화`;
+        } else {
+          badgeClasses += 'bg-emerald-50 text-emerald-700 border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800';
+          topicRepsBadge.title = `현재 ${currentHoidok}회독 진행 중 (누적 복습: ${reps}회) · 클릭 시 회독 정보 확인 및 초기화`;
+        }
+        topicRepsBadge.className = badgeClasses;
+      }
+
+      function resetSingleTopicGrade(topicId) {
+        try {
+          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          const prevCard = map[topicId];
+          if (prevCard) {
+            gradingUndoStack.push({
+              topicId,
+              topicIndex: currentTopicIndex,
+              previousCard: JSON.parse(JSON.stringify(prevCard)),
+              dateStr: new Date().toISOString().split('T')[0],
+              grade: 'reset',
+              timestamp: Date.now()
+            });
+            delete map[topicId];
+            localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
+            updateOverallStats();
+            renderSidebar();
+            updateTopicRetentionView(topicId);
+            updateTopicRepsBadge(topicId);
+            updateUndoButtonVisibility();
+            triggerAutoSync();
+            showToast('주제 복습 기록이 1회독(초기 상태)으로 초기화되었습니다.', 'restart_alt', true);
+          } else {
+            showToast('이미 1회독(초기 상태)입니다.', 'info');
+          }
+        } catch(e) {
+          console.error(e);
+        }
+      }
+
+      function undoLastGrade() {
+        if (gradingUndoStack.length === 0) {
+          showToast('취소할 직전 평가 기록이 없습니다.', 'info');
+          return false;
+        }
+
+        if (autoAdvanceTimeout) {
+          clearTimeout(autoAdvanceTimeout);
+          autoAdvanceTimeout = null;
+        }
+
+        const lastAction = gradingUndoStack.pop();
+        try {
+          const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          if (lastAction.previousCard) {
+            map[lastAction.topicId] = lastAction.previousCard;
+          } else {
+            delete map[lastAction.topicId];
+          }
+          localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
+
+          if (lastAction.dateStr && lastAction.grade !== 'reset') {
+            const dailyStats = JSON.parse(localStorage.getItem('edurecall_daily_stats')) || {};
+            if (dailyStats[lastAction.dateStr]) {
+              dailyStats[lastAction.dateStr] = Math.max(0, dailyStats[lastAction.dateStr] - 1);
+              if (dailyStats[lastAction.dateStr] === 0) {
+                delete dailyStats[lastAction.dateStr];
+              }
+              localStorage.setItem('edurecall_daily_stats', JSON.stringify(dailyStats));
+            }
+          }
+
+          if (toastUndoBtn) toastUndoBtn.classList.add('hidden');
+          updateUndoButtonVisibility();
+
+          if (typeof lastAction.topicIndex === 'number' && lastAction.topicIndex !== currentTopicIndex) {
+            renderTopic(lastAction.topicIndex);
+          } else {
+            updateOverallStats();
+            renderSidebar();
+            updateTopicRetentionView(lastAction.topicId);
+            updateTopicRepsBadge(lastAction.topicId);
+          }
+
+          triggerAutoSync();
+
+          const restoredCard = getFSRSCard(lastAction.topicId);
+          const restoredReps = restoredCard.reps || 0;
+          showToast(`↩️ 직전 평가가 취소되었습니다 (${restoredReps + 1}회독 상태 복원)`, 'undo');
+          return true;
+        } catch(err) {
+          console.error('Error undoing grade:', err);
+          showToast('평가 취소 중 오류가 발생했습니다.', 'error');
+          return false;
+        }
+      }
       
       function formatFSRSInterval(diffMs) {
         if (!diffMs || diffMs <= 0) return '지금';
@@ -3689,11 +3860,25 @@
           else if (gradeNum == 4) nextCard = scheduling[window.FSRS.Rating.Easy].card;
 
           const map = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          const prevCard = map[topicId] ? JSON.parse(JSON.stringify(map[topicId])) : null;
+          const dateStr = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().split('T')[0];
+
+          // Push snapshot to undo stack
+          gradingUndoStack.push({
+            topicId,
+            topicIndex: currentTopicIndex,
+            previousCard: prevCard,
+            dateStr,
+            grade: gradeNum,
+            timestamp: Date.now()
+          });
+          if (gradingUndoStack.length > 30) gradingUndoStack.shift();
+          updateUndoButtonVisibility();
+
           map[topicId] = nextCard;
           localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
           
           // Record daily review stat
-          const dateStr = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().split('T')[0];
           const dailyStats = JSON.parse(localStorage.getItem('edurecall_daily_stats')) || {};
           dailyStats[dateStr] = (dailyStats[dateStr] || 0) + 1;
           localStorage.setItem('edurecall_daily_stats', JSON.stringify(dailyStats));
@@ -3701,6 +3886,7 @@
           updateOverallStats();
           renderSidebar();
           updateTopicRetentionView(topicId);
+          updateTopicRepsBadge(topicId);
           triggerAutoSync();
           return nextCard;
         } catch(e) { console.error(e); return null; }
@@ -3710,8 +3896,11 @@
         const topic = TOPICS.find(t => t.id === topicId) || TOPICS[currentTopicIndex];
         const isExam = isTopicExamQuestion(topic);
         const card = getFSRSCard(topicId);
+        const reps = card.reps || 0;
+        const currentHoidok = reps + 1;
         
-        topicRetentionText.textContent = `누적 복습: ${card.reps}회`;
+        topicRetentionText.innerHTML = `<span class="font-extrabold text-blue-600 dark:text-blue-400">${currentHoidok}회독 진행 중</span> <span class="text-slate-500 dark:text-slate-400 text-xs">(누적 복습: ${reps}회)</span>`;
+        updateTopicRepsBadge(topicId);
         
         const now = new Date();
         
@@ -3872,16 +4061,25 @@
 
       // Toast notification helper
       let toastTimer = null;
-      function showToast(msg, icon = 'info') {
+      function showToast(msg, icon = 'info', canUndo = false) {
         clearTimeout(toastTimer);
         toastMsg.textContent = msg;
         toastIcon.textContent = icon;
+        if (toastUndoBtn) {
+          if (canUndo) {
+            toastUndoBtn.classList.remove('hidden');
+          } else {
+            toastUndoBtn.classList.add('hidden');
+          }
+        }
         toast.classList.remove('translate-y-20', 'opacity-0');
         toast.classList.add('translate-y-0', 'opacity-100');
+        const duration = canUndo ? 5000 : 2200;
         toastTimer = setTimeout(() => {
           toast.classList.remove('translate-y-0', 'opacity-100');
           toast.classList.add('translate-y-20', 'opacity-0');
-        }, 2200);
+          if (toastUndoBtn) toastUndoBtn.classList.add('hidden');
+        }, duration);
       }
 
       // Helper: Format examTag for display (omits badge if topic is already an exam question)
@@ -5745,21 +5943,21 @@
 
         if (isExam) {
           if (grade === 'pass' || grade == 3 || grade == 4) {
-            showToast('[P] Pass! 문제 정답 반영 및 복습 주기 연장', 'verified');
+            showToast('[P] Pass! 문제 정답 반영 및 복습 주기 연장', 'verified', true);
           } else if (grade === 'ambiguous' || grade == 2) {
-            showToast('[A] Ambiguous! 애매함/오답 취약 문제로 집중 관리', 'help');
+            showToast('[A] Ambiguous! 애매함/오답 취약 문제로 집중 관리', 'help', true);
           } else if (grade === 'fail' || grade == 1) {
-            showToast('[F] Fail! 오답 기록 및 곧 재풀이 일정이 잡힙니다', 'cancel');
+            showToast('[F] Fail! 오답 기록 및 곧 재풀이 일정이 잡힙니다', 'cancel', true);
           }
         } else {
           if (grade == 4) {
-            showToast('[4] 쉬움 (Easy)! 복습 주기가 대폭 연장되었습니다', 'verified');
+            showToast('[4] 쉬움 (Easy)! 복습 주기가 대폭 연장되었습니다', 'verified', true);
           } else if (grade == 3 || grade === 'pass') {
-            showToast('[3] 알맞음 (Good)! 안정적으로 기억에 정착 중입니다', 'verified');
+            showToast('[3] 알맞음 (Good)! 안정적으로 기억에 정착 중입니다', 'verified', true);
           } else if (grade == 2 || grade === 'ambiguous') {
-            showToast('[2] 어려움 (Hard)! 복습 주기가 짧게 유지됩니다', 'help');
+            showToast('[2] 어려움 (Hard)! 복습 주기가 짧게 유지됩니다', 'help', true);
           } else if (grade == 1 || grade === 'fail') {
-            showToast('[1] 다시 (Again)! 곧 재복습 일정이 잡힙니다', 'cancel');
+            showToast('[1] 다시 (Again)! 곧 재복습 일정이 잡힙니다', 'cancel', true);
           }
         }
 
@@ -6261,6 +6459,41 @@
           handleGrade(btn.dataset.grade);
         });
       });
+
+      if (btnUndoGrade) {
+        btnUndoGrade.addEventListener('click', () => {
+          undoLastGrade();
+        });
+      }
+
+      if (toastUndoBtn) {
+        toastUndoBtn.addEventListener('click', () => {
+          undoLastGrade();
+        });
+      }
+
+      if (topicRepsBadge) {
+        topicRepsBadge.addEventListener('click', () => {
+          const currentTopic = TOPICS[currentTopicIndex];
+          if (!currentTopic) return;
+          const card = getFSRSCard(currentTopic.id);
+          const reps = card.reps || 0;
+          const currentHoidok = reps + 1;
+          
+          const confirmReset = window.confirm(
+            `📖 [${currentTopic.title}]\n\n` +
+            `• 현재 학습 단계: ${currentHoidok}회독 진행 중\n` +
+            `• 누적 복습 횟수: ${reps}회\n` +
+            `• FSRS 기억 상태: ${card.state === 2 ? '장기 기억 정착 (Review)' : (card.state === 1 || card.state === 3 ? '학습/재학습 중' : '미학습 신규')}\n\n` +
+            `실수로 평가를 눌렀거나 처음부터 다시 시작하려면 [확인]을 눌러 이 주제를 '1회독(초기 상태)'으로 리셋할 수 있습니다.\n\n` +
+            `지금 이 주제의 회독 및 복습 기록을 초기화하시겠습니까?`
+          );
+          
+          if (confirmReset) {
+            resetSingleTopicGrade(currentTopic.id);
+          }
+        });
+      }
 
       // Study Pin Logic (Per-Subject)
       function updateStudyPinUI() {
@@ -6825,8 +7058,12 @@
             const titleEl = group.querySelector('.font-bold');
             if (titleEl) {
               const clone = titleEl.cloneNode(true);
-              clone.querySelectorAll('.material-symbols-outlined, .exam-badge, .rounded-full, .w-2, .w-2\\.5, .w-3, .group-edit-btn, .group-actions-wrap').forEach(el => el.remove());
-              title = clone.textContent.trim().replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
+              clone.querySelectorAll('.exam-badge').forEach(b => {
+                const t = b.textContent.trim();
+                b.replaceWith(document.createTextNode(' ' + t + ' '));
+              });
+              clone.querySelectorAll('.material-symbols-outlined, .rounded-full, .w-2, .w-2\\.5, .w-3, .group-edit-btn, .group-actions-wrap').forEach(el => el.remove());
+              title = clone.textContent.trim().replace(/(?:&nbsp;|\s)+수정\s*$/g, '').replace(/\s{2,}/g, ' ').trim();
             }
             if (!title) title = `(${gIdx + 1}) 항목`;
 
@@ -8110,6 +8347,15 @@
           }
           const isMacPlatform = (navigator.platform ? navigator.platform.toUpperCase().includes('MAC') : false) || /Mac|iPhone|iPod|iPad/.test(navigator.userAgent);
           showToast(`단원 검색 포커스 [${isMacPlatform ? '⌘K' : 'Ctrl+K'}]`, 'search');
+          return;
+        }
+
+        // 3-1. Undo Grade Shortcut: [Z] or [ㅋ] or [Cmd+Z] or [Ctrl+Z]
+        const isUndoKey = ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z' || e.code === 'KeyZ')) ||
+                          ((e.key === 'z' || e.key === 'Z' || e.key === 'ㅋ' || e.code === 'KeyZ') && !e.ctrlKey && !e.metaKey && !e.altKey);
+        if (isUndoKey) {
+          e.preventDefault();
+          undoLastGrade();
           return;
         }
 
