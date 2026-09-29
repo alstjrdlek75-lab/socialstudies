@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260929_095500"></script>
-  <script src="explanations-data.js?v=20260929_095500"></script>
+  <script src="topics-data.js?v=20260929_212500"></script>
+  <script src="explanations-data.js?v=20260929_212500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -4884,6 +4884,13 @@
         let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
         if (!customHtml && topic.id.startsWith('ECON-EXAM-')) {
           customHtml = localStorage.getItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
+        }
+
+        // Integrity safeguard: If POL-092 custom HTML lacks 풀뿌리 민주주의 or doesn't have 5 groups, purge it
+        if (topic.id === 'POL-092' && customHtml && (!customHtml.includes('풀뿌리 민주주의') || !customHtml.includes('(5) 풀뿌리 민주주의'))) {
+          localStorage.removeItem('edurecall_custom_POL-092');
+          localStorage.removeItem('edurecall_custom_masks_POL-092');
+          customHtml = null;
         }
 
         // Integrity safeguard: If LAW-105 custom HTML has stray Supreme Court text or is missing the 3 prerequisite conditions, purge it
