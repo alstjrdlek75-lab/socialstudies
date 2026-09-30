@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_095500"></script>
-  <script src="explanations-data.js?v=20260930_095500"></script>
+  <script src="topics-data.js?v=20260930_103000"></script>
+  <script src="explanations-data.js?v=20260930_103000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2790,6 +2790,10 @@
         localStorage.removeItem('edurecall_custom_masks_POL-095');
         localStorage.removeItem('edurecall_custom_EDU-095');
         localStorage.removeItem('edurecall_custom_masks_EDU-095');
+        localStorage.removeItem('edurecall_custom_LAW-162');
+        localStorage.removeItem('edurecall_custom_masks_LAW-162');
+        localStorage.removeItem('edurecall_custom_LAW-164');
+        localStorage.removeItem('edurecall_custom_masks_LAW-164');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4899,6 +4903,13 @@
         if (topic.id === 'EDU-095' && customHtml && !customHtml.includes('고안된 경험')) {
           localStorage.removeItem('edurecall_custom_EDU-095');
           localStorage.removeItem('edurecall_custom_masks_EDU-095');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If LAW-162 custom HTML lacks 이행강제금, purge it
+        if (topic.id === 'LAW-162' && customHtml && !customHtml.includes('이행강제금')) {
+          localStorage.removeItem('edurecall_custom_LAW-162');
+          localStorage.removeItem('edurecall_custom_masks_LAW-162');
           customHtml = null;
         }
 
