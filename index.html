@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_185800"></script>
+  <script src="topics-data.js?v=20260930_201200"></script>
   <script src="explanations-data.js?v=20260930_153000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2814,6 +2814,8 @@
         localStorage.removeItem('edurecall_custom_masks_LAW-005');
         localStorage.removeItem('edurecall_custom_LAW-018');
         localStorage.removeItem('edurecall_custom_masks_LAW-018');
+        localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
+        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4979,6 +4981,13 @@
         if (topic.id === 'LAW-018' && customHtml && (!customHtml.includes('신의칙의 파생 원칙') || !customHtml.includes('⑤ 기존상태 존중'))) {
           localStorage.removeItem('edurecall_custom_LAW-018');
           localStorage.removeItem('edurecall_custom_masks_LAW-018');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If ECON-EXAM-2013-1-27 custom HTML contains old wrong answer ③ or lacks ④ ㄴ, ㄹ, purge it
+        if (topic.id === 'ECON-EXAM-2013-1-27' && customHtml && (!customHtml.includes('④ ㄴ, ㄹ') || customHtml.includes('③ ㄴ, ㄷ'))) {
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
           customHtml = null;
         }
 
