@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_144800"></script>
-  <script src="explanations-data.js?v=20260930_144800"></script>
+  <script src="topics-data.js?v=20260930_145200"></script>
+  <script src="explanations-data.js?v=20260930_145200"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2798,6 +2798,8 @@
         localStorage.removeItem('edurecall_custom_masks_SOC-145');
         localStorage.removeItem('edurecall_custom_POL-086');
         localStorage.removeItem('edurecall_custom_masks_POL-086');
+        localStorage.removeItem('edurecall_custom_POL-127');
+        localStorage.removeItem('edurecall_custom_masks_POL-127');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4928,6 +4930,13 @@
         if (topic.id === 'POL-086' && customHtml && (!customHtml.includes('당선자 결정 방식') || !customHtml.includes('data-group-index="5"'))) {
           localStorage.removeItem('edurecall_custom_POL-086');
           localStorage.removeItem('edurecall_custom_masks_POL-086');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If POL-127 custom HTML lacks 공유하고 있는 신념, purge it
+        if (topic.id === 'POL-127' && customHtml && !customHtml.includes('공유하고 있는 신념')) {
+          localStorage.removeItem('edurecall_custom_POL-127');
+          localStorage.removeItem('edurecall_custom_masks_POL-127');
           customHtml = null;
         }
 
