@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_203600"></script>
+  <script src="topics-data.js?v=20260930_204700"></script>
   <script src="explanations-data.js?v=20260930_153000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2816,8 +2816,30 @@
         localStorage.removeItem('edurecall_custom_masks_LAW-018');
         localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
         localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
+        localStorage.removeItem('edurecall_custom_ECON-EXAM-2014-A-05');
+        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2014-A-05');
+        localStorage.removeItem('edurecall_custom_EXAM-2014-A-05');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-05');
+        localStorage.removeItem('edurecall_custom_EXAM-2014-A-19');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-19');
+        localStorage.removeItem('edurecall_custom_ECON-EXAM-2015-A-05');
+        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2015-A-05');
+        localStorage.removeItem('edurecall_custom_EXAM-2015-A-05');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2015-A-05');
+        localStorage.removeItem('edurecall_custom_ECON-EXAM-2018-B-07');
+        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2018-B-07');
+        localStorage.removeItem('edurecall_custom_EXAM-2018-B-07');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2018-B-07');
+        localStorage.removeItem('edurecall_custom_ECON-EXAM-2019-B-01');
+        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2019-B-01');
         localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
         localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
+        localStorage.removeItem('edurecall_custom_EXAM-2019-B-02');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-02');
+        localStorage.removeItem('edurecall_custom_ECON-EXAM-2021-B-07');
+        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2021-B-07');
+        localStorage.removeItem('edurecall_custom_EXAM-2021-B-07');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-07');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4993,10 +5015,59 @@
           customHtml = null;
         }
 
-        // Integrity safeguard: If EXAM-2019-B-01 custom HTML contains spoiler formula list, purge it
-        if (topic.id === 'EXAM-2019-B-01' && customHtml && customHtml.includes('공급함수: P = 2,000 + 2Q')) {
-          localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
+        // Integrity safeguard: If ECON-EXAM-2019-B-01 or EXAM-2019-B-01 custom HTML contains spoiler formula list, purge it
+        if ((topic.id === 'ECON-EXAM-2019-B-01' || topic.id === 'EXAM-2019-B-01') && customHtml && customHtml.includes('공급함수: P = 2,000 + 2Q')) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2013-1-27 custom HTML contains spoiler pre-computed table, purge it
+        if ((topic.id === 'ECON-EXAM-2013-1-27' || topic.id === 'EXAM-2013-1-27') && customHtml && customHtml.includes('폐쇄경제 소비점: X국 (50, 50)')) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2014-A-05 custom HTML contains spoiler intersection/equilibrium info, purge it
+        if ((topic.id === 'ECON-EXAM-2014-A-05' || topic.id === 'EXAM-2014-A-05') && customHtml && customHtml.includes('절편 및 교차점 정보')) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2014-A-19 custom HTML contains backward-bending spoiler explanation, purge it
+        if ((topic.id === 'ECON-EXAM-2014-A-19' || topic.id === 'EXAM-2014-A-19') && customHtml && customHtml.includes('후방굴절 노동공급곡선')) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2015-A-05 custom HTML contains duplicate table spoiler, purge it
+        if ((topic.id === 'ECON-EXAM-2015-A-05' || topic.id === 'EXAM-2015-A-05') && customHtml && customHtml.includes('표 데이터 정리 (국내 수요와 공급)')) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2018-B-07 custom HTML contains spoiler equilibrium points, purge it
+        if ((topic.id === 'ECON-EXAM-2018-B-07' || topic.id === 'EXAM-2018-B-07') && customHtml && (customHtml.includes('초기 시장균형: (Q=6, P=500)') || customHtml.includes('종량세 300원 부과 후'))) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2019-B-02 custom HTML contains spoiler hints on substitution/income effects, purge it
+        if ((topic.id === 'ECON-EXAM-2019-B-02' || topic.id === 'EXAM-2019-B-02') && customHtml && (customHtml.includes('대체효과(A→B)') || customHtml.includes('소득효과(B→C)'))) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If 2021-B-07 custom HTML contains spoiler intercepts summary, purge it
+        if ((topic.id === 'ECON-EXAM-2021-B-07' || topic.id === 'EXAM-2021-B-07') && customHtml && (customHtml.includes('Y절편: (0, 24)') || customHtml.includes('X절편: (8, 0)'))) {
+          localStorage.removeItem('edurecall_custom_' + topic.id);
+          localStorage.removeItem('edurecall_custom_masks_' + topic.id);
           customHtml = null;
         }
 
