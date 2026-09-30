@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_103000"></script>
-  <script src="explanations-data.js?v=20260930_103000"></script>
+  <script src="topics-data.js?v=20260930_111000"></script>
+  <script src="explanations-data.js?v=20260930_111000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2794,6 +2794,8 @@
         localStorage.removeItem('edurecall_custom_masks_LAW-162');
         localStorage.removeItem('edurecall_custom_LAW-164');
         localStorage.removeItem('edurecall_custom_masks_LAW-164');
+        localStorage.removeItem('edurecall_custom_SOC-145');
+        localStorage.removeItem('edurecall_custom_masks_SOC-145');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4910,6 +4912,13 @@
         if (topic.id === 'LAW-162' && customHtml && !customHtml.includes('이행강제금')) {
           localStorage.removeItem('edurecall_custom_LAW-162');
           localStorage.removeItem('edurecall_custom_masks_LAW-162');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If SOC-145 custom HTML lacks 신흥 공업국, purge it
+        if (topic.id === 'SOC-145' && customHtml && !customHtml.includes('신흥 공업국')) {
+          localStorage.removeItem('edurecall_custom_SOC-145');
+          localStorage.removeItem('edurecall_custom_masks_SOC-145');
           customHtml = null;
         }
 
