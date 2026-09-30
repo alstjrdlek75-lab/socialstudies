@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260929_222830"></script>
-  <script src="explanations-data.js?v=20260929_222830"></script>
+  <script src="topics-data.js?v=20260930_095500"></script>
+  <script src="explanations-data.js?v=20260930_095500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2788,6 +2788,8 @@
         localStorage.removeItem('edurecall_custom_masks_POL-094');
         localStorage.removeItem('edurecall_custom_POL-095');
         localStorage.removeItem('edurecall_custom_masks_POL-095');
+        localStorage.removeItem('edurecall_custom_EDU-095');
+        localStorage.removeItem('edurecall_custom_masks_EDU-095');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4890,6 +4892,13 @@
         if (topic.id === 'POL-092' && customHtml && (!customHtml.includes('풀뿌리 민주주의') || !customHtml.includes('(5) 풀뿌리 민주주의'))) {
           localStorage.removeItem('edurecall_custom_POL-092');
           localStorage.removeItem('edurecall_custom_masks_POL-092');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If EDU-095 custom HTML lacks 고안된 경험, purge it
+        if (topic.id === 'EDU-095' && customHtml && !customHtml.includes('고안된 경험')) {
+          localStorage.removeItem('edurecall_custom_EDU-095');
+          localStorage.removeItem('edurecall_custom_masks_EDU-095');
           customHtml = null;
         }
 
