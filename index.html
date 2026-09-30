@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_124500"></script>
-  <script src="explanations-data.js?v=20260930_124500"></script>
+  <script src="topics-data.js?v=20260930_125500"></script>
+  <script src="explanations-data.js?v=20260930_125500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2796,6 +2796,8 @@
         localStorage.removeItem('edurecall_custom_masks_LAW-164');
         localStorage.removeItem('edurecall_custom_SOC-145');
         localStorage.removeItem('edurecall_custom_masks_SOC-145');
+        localStorage.removeItem('edurecall_custom_POL-086');
+        localStorage.removeItem('edurecall_custom_masks_POL-086');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4919,6 +4921,13 @@
         if (topic.id === 'SOC-145' && customHtml && !customHtml.includes('신흥 공업국')) {
           localStorage.removeItem('edurecall_custom_SOC-145');
           localStorage.removeItem('edurecall_custom_masks_SOC-145');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If POL-086 custom HTML is from older structure (lacks 당선자 결정 방식 or has only 4 groups), purge it
+        if (topic.id === 'POL-086' && customHtml && (!customHtml.includes('당선자 결정 방식') || !customHtml.includes('data-group-index="5"'))) {
+          localStorage.removeItem('edurecall_custom_POL-086');
+          localStorage.removeItem('edurecall_custom_masks_POL-086');
           customHtml = null;
         }
 
