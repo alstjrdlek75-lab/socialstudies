@@ -2524,10 +2524,11 @@
           </div>
         </div>
         <div class="flex justify-between items-center py-2">
-          <span>현재 주제 1회독 올리기 (+1회독)</span>
+          <span>글자 크기 확대 / 축소</span>
           <div class="flex items-center gap-1 font-mono font-bold">
-            <kbd class="px-2 py-1 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 rounded border border-emerald-200 dark:border-emerald-700 font-mono">+</kbd>
-            <span class="text-xs text-slate-400 font-sans font-normal">(또는 =)</span>
+            <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono">=</kbd>
+            <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono">-</kbd>
+            <span class="text-xs text-slate-400 font-sans font-normal">(또는 [ / ])</span>
           </div>
         </div>
       </div>
@@ -8826,15 +8827,6 @@
           return;
         }
 
-        // [+] or [=] Increment 회독 (+1회독)
-        if ((e.key === '+' || e.key === '=') && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          const currentTopic = TOPICS[currentTopicIndex];
-          if (currentTopic) {
-            incrementTopicHoidok(currentTopic.id);
-          }
-          return;
-        }
 
         // 5. [I] or [ㅑ] Toggle direct typing mode
         const isIKey = (e.key === 'i' || e.key === 'I' || e.key === 'ㅑ' || e.code === 'KeyI' || e.keyCode === 73);
