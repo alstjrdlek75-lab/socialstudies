@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_201200"></script>
+  <script src="topics-data.js?v=20260930_203600"></script>
   <script src="explanations-data.js?v=20260930_153000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2816,6 +2816,8 @@
         localStorage.removeItem('edurecall_custom_masks_LAW-018');
         localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
         localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
+        localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4988,6 +4990,13 @@
         if (topic.id === 'ECON-EXAM-2013-1-27' && customHtml && (!customHtml.includes('④ ㄴ, ㄹ') || customHtml.includes('③ ㄴ, ㄷ'))) {
           localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
           localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If EXAM-2019-B-01 custom HTML contains spoiler formula list, purge it
+        if (topic.id === 'EXAM-2019-B-01' && customHtml && customHtml.includes('공급함수: P = 2,000 + 2Q')) {
+          localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
           customHtml = null;
         }
 
