@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_165000"></script>
+  <script src="topics-data.js?v=20260930_185800"></script>
   <script src="explanations-data.js?v=20260930_153000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2812,6 +2812,8 @@
         localStorage.removeItem('edurecall_custom_masks_POL-113');
         localStorage.removeItem('edurecall_custom_LAW-005');
         localStorage.removeItem('edurecall_custom_masks_LAW-005');
+        localStorage.removeItem('edurecall_custom_LAW-018');
+        localStorage.removeItem('edurecall_custom_masks_LAW-018');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4970,6 +4972,13 @@
         if (topic.id === 'LAW-005' && customHtml && (!customHtml.includes('법 효력의 본질') || !customHtml.includes('타당성'))) {
           localStorage.removeItem('edurecall_custom_LAW-005');
           localStorage.removeItem('edurecall_custom_masks_LAW-005');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If LAW-018 custom HTML lacks 신의칙의 파생 원칙 or lacks ⑤ 기존상태 존중, purge it
+        if (topic.id === 'LAW-018' && customHtml && (!customHtml.includes('신의칙의 파생 원칙') || !customHtml.includes('⑤ 기존상태 존중'))) {
+          localStorage.removeItem('edurecall_custom_LAW-018');
+          localStorage.removeItem('edurecall_custom_masks_LAW-018');
           customHtml = null;
         }
 
