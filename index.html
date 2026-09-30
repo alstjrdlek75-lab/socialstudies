@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_153500"></script>
+  <script src="topics-data.js?v=20260930_165000"></script>
   <script src="explanations-data.js?v=20260930_153000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2810,6 +2810,8 @@
         localStorage.removeItem('edurecall_custom_masks_POL-111');
         localStorage.removeItem('edurecall_custom_POL-113');
         localStorage.removeItem('edurecall_custom_masks_POL-113');
+        localStorage.removeItem('edurecall_custom_LAW-005');
+        localStorage.removeItem('edurecall_custom_masks_LAW-005');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4961,6 +4963,13 @@
         if (topic.id === 'POL-113' && customHtml && (!customHtml.includes('종속변수') || !customHtml.includes('(3)'))) {
           localStorage.removeItem('edurecall_custom_POL-113');
           localStorage.removeItem('edurecall_custom_masks_POL-113');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If LAW-005 custom HTML lacks 법 효력의 본질 or lacks 타당성, purge it
+        if (topic.id === 'LAW-005' && customHtml && (!customHtml.includes('법 효력의 본질') || !customHtml.includes('타당성'))) {
+          localStorage.removeItem('edurecall_custom_LAW-005');
+          localStorage.removeItem('edurecall_custom_masks_LAW-005');
           customHtml = null;
         }
 
