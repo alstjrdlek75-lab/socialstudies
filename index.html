@@ -1643,7 +1643,7 @@
       </button>
 
       <!-- Cloud Sync Button -->
-      <button id="btn-cloud-sync" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화" title="태블릿/폰/노트북 클라우드 동기화">
+      <button id="btn-cloud-sync" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화" title="태블릿/폰/노트북 클라우드 동기화 [단축키: Cmd+B]">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors" id="cloud-sync-icon">cloud_queue</span>
         <span class="text-[11px] font-bold text-slate-700" id="cloud-sync-text">동기화</span>
       </button>
@@ -2523,12 +2523,19 @@
             <span class="text-xs text-slate-400 font-sans font-normal">(또는 Cmd+Z)</span>
           </div>
         </div>
-        <div class="flex justify-between items-center py-2">
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>글자 크기 확대 / 축소</span>
           <div class="flex items-center gap-1 font-mono font-bold">
             <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono">=</kbd>
             <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono">-</kbd>
             <span class="text-xs text-slate-400 font-sans font-normal">(또는 [ / ])</span>
+          </div>
+        </div>
+        <div class="flex justify-between items-center py-2">
+          <span>클라우드에 지금 백업</span>
+          <div class="flex items-center gap-1 font-mono font-bold">
+            <kbd class="px-2 py-1 bg-blue-50 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 rounded border border-blue-200 dark:border-blue-700 font-mono font-bold">Cmd+B</kbd>
+            <span class="text-xs text-slate-400 font-sans font-normal">(또는 Ctrl+B)</span>
           </div>
         </div>
       </div>
@@ -3465,7 +3472,7 @@
         if (syncCode) {
           if (cloudSyncBtn) {
             cloudSyncBtn.className = 'flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-emerald-300 dark:border-emerald-800 bg-emerald-50/80 hover:bg-emerald-100/90 dark:bg-emerald-950/40 text-xs font-semibold text-emerald-800 dark:text-emerald-300 transition-all shadow-2xs cursor-pointer group';
-            cloudSyncBtn.title = `클라우드 동기화 연결됨 (${syncCode})`;
+            cloudSyncBtn.title = `클라우드 동기화 연결됨 (${syncCode}) [단축키: Cmd+B]`;
           }
           if (cloudSyncIcon) {
             cloudSyncIcon.textContent = 'cloud_done';
@@ -3495,7 +3502,7 @@
           // PROMINENT UNCONNECTED WARNING BADGE (Option 4)
           if (cloudSyncBtn) {
             cloudSyncBtn.className = 'flex items-center gap-1 sm:gap-1.5 px-2.5 xl:px-3 py-1 xl:py-1.5 rounded-lg border-2 border-amber-400 dark:border-amber-600 bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/70 text-xs font-extrabold text-amber-900 dark:text-amber-200 transition-all shadow-xs cursor-pointer group animate-pulse';
-            cloudSyncBtn.title = '클라우드 동기화 미연결! (클릭하여 내 데이터 연결)';
+            cloudSyncBtn.title = '클라우드 동기화 미연결! (클릭하여 내 데이터 연결) [단축키: Cmd+B]';
           }
           if (cloudSyncIcon) {
             cloudSyncIcon.textContent = 'cloud_off';
@@ -3600,6 +3607,27 @@
             showToast('클라우드 백업 실패: 연결 또는 네트워크를 확인하세요', 'error');
           }
           return false;
+        }
+      }
+
+      let isCloudBackingUp = false;
+      async function triggerCloudBackupShortcut() {
+        if (isCloudBackingUp) return;
+        isCloudBackingUp = true;
+        let syncCode = localStorage.getItem('edurecall_sync_code');
+        if (!syncCode) {
+          syncCode = 'EDU-7194';
+          localStorage.setItem('edurecall_sync_code', syncCode);
+          showToast(`내 클라우드 보관함(${syncCode})에 연결하고 백업합니다`, 'cloud_sync');
+        } else {
+          showToast('클라우드에 백업 중...', 'cloud_upload');
+        }
+        try {
+          await pushDataToCloud(true);
+        } catch (err) {
+          console.error('Cloud backup shortcut error:', err);
+        } finally {
+          isCloudBackingUp = false;
         }
       }
 
@@ -8698,10 +8726,11 @@
           return;
         }
 
-        // 2. [Cmd+B] / [Ctrl+B] Toggle Table of Contents Sidebar
-        if ((e.ctrlKey || e.metaKey) && (e.key === 'b' || e.key === 'B')) {
+        // 2. [Cmd+B] / [Ctrl+B] Backup data to Cloud (클라우드 동기화 백업)
+        const isBKey = (e.key === 'b' || e.key === 'B' || e.key === 'ㅠ' || e.code === 'KeyB');
+        if ((e.ctrlKey || e.metaKey) && isBKey && !e.altKey) {
           e.preventDefault();
-          toggleDesktopSidebar();
+          triggerCloudBackupShortcut();
           return;
         }
 
