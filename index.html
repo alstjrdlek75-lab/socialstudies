@@ -1575,7 +1575,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20260930_204700"></script>
+  <script src="topics-data.js?v=20261001_162000"></script>
   <script src="explanations-data.js?v=20260930_153000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2848,6 +2848,12 @@
         localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2021-B-07');
         localStorage.removeItem('edurecall_custom_EXAM-2021-B-07');
         localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-07');
+        localStorage.removeItem('edurecall_custom_LAW-042');
+        localStorage.removeItem('edurecall_custom_masks_LAW-042');
+        localStorage.removeItem('edurecall_custom_EXAM-2026-B-08');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-08');
+        localStorage.removeItem('edurecall_custom_EXAM-2021-B-11');
+        localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-11');
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -5116,6 +5122,27 @@
         if (topic.id === 'LAW-041' && customHtml && !customHtml.includes('<table')) {
           localStorage.removeItem('edurecall_custom_LAW-041');
           localStorage.removeItem('edurecall_custom_masks_LAW-041');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If LAW-042 custom HTML lacks 구상권, purge it
+        if (topic.id === 'LAW-042' && customHtml && !customHtml.includes('구상권')) {
+          localStorage.removeItem('edurecall_custom_LAW-042');
+          localStorage.removeItem('edurecall_custom_masks_LAW-042');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If EXAM-2026-B-08 custom HTML lacks 구상권, purge it
+        if (topic.id === 'EXAM-2026-B-08' && customHtml && !customHtml.includes('구상권')) {
+          localStorage.removeItem('edurecall_custom_EXAM-2026-B-08');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-08');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If EXAM-2021-B-11 custom HTML lacks 구상권, purge it
+        if (topic.id === 'EXAM-2021-B-11' && customHtml && !customHtml.includes('구상권')) {
+          localStorage.removeItem('edurecall_custom_EXAM-2021-B-11');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-11');
           customHtml = null;
         }
 
