@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261002_093300"></script>
-  <script src="explanations-data.js?v=20261002_093300"></script>
+  <script src="topics-data.js?v=20261002_100200"></script>
+  <script src="explanations-data.js?v=20261002_100200"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2744,28 +2744,56 @@
           .replace(/<span[^>]*class="[^"]*bg-slate-100[^"]*"[^>]*>&lt;차경수\s*모형&gt;<\/span>/g, '');
       }
 
-      // Auto-heal any existing corrupted localStorage keys on boot
-      try {
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-          if (key && key.startsWith('edurecall_custom_')) {
-            const val = localStorage.getItem(key);
-            if (val && (val.includes('\uFFFD') || val.includes('??') || val.includes('&lt;차경수 모형&gt;') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val))) {
-              const healed = healCorruptedHtml(val);
-              if (healed !== val) {
-                localStorage.setItem(key, healed);
+      // Check whether a custom topic HTML is corrupted (e.g. empty group titles, empty group content, missing Held keywords in POL-044)
+      function isCustomHtmlCorrupted(topicId, val) {
+        if (!val || typeof val !== 'string') return true;
+        if (topicId === 'POL-044') {
+          if (!val.includes('무행동') || !val.includes('다원권력론과 신통치엘리트 비판') || !val.includes('관찰 가능한 행위·결정')) {
+            return true;
+          }
+        }
+        if (val.includes('\uFFFD') || val.includes('??')) return true;
+        if (/<div class="font-bold[^"]*"[^>]*>\s*<span[^>]*class="[^"]*rounded-full[^"]*"[^>]*><\/span>\s*<span>\s*<\/span>\s*<\/div>/.test(val)) return true;
+        if (/<div class="group-content[^"]*">\s*<\/div>/.test(val)) return true;
+        if (val.includes('<span></span>') || val.includes('<span>(1)</span>') || val.includes('<span>(2)</span>')) return true;
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(val, 'text/html');
+          const groups = doc.querySelectorAll('.topic-group');
+          if (groups.length > 0) {
+            for (const grp of groups) {
+              const fontBold = grp.querySelector('.font-bold');
+              if (fontBold) {
+                const titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
+                const titleText = titleSpan ? titleSpan.textContent.replace(/visibility|수정/g, '').trim() : '';
+                if (!titleText || /^\(\d+\)$/.test(titleText)) return true;
+              }
+              const content = grp.querySelector('.group-content');
+              if (content && content.textContent.trim().length === 0 && !content.querySelector('img, table, svg')) {
+                return true;
               }
             }
-            // If a custom topic has lost its title or group content (corrupted), purge it to restore official content
-            if (val && (
-              /<div class="font-bold[^"]*"[^>]*>\s*<span[^>]*class="[^"]*rounded-full[^"]*"[^>]*><\/span>\s*<span>\s*<\/span>\s*<\/div>/.test(val) ||
-              /<div class="group-content[^>]*>\s*<\/div>/.test(val) ||
-              val.includes('<span></span>') ||
-              val.includes('<span>(1)</span>')
-            )) {
-              localStorage.removeItem(key);
-              const maskKey = key.replace('edurecall_custom_', 'edurecall_custom_masks_');
-              localStorage.removeItem(maskKey);
+          }
+        } catch (e) {}
+        return false;
+      }
+
+      // Auto-heal any existing corrupted localStorage keys on boot
+      try {
+        const customKeys = Object.keys(localStorage).filter(k => k.startsWith('edurecall_custom_'));
+        for (const key of customKeys) {
+          const val = localStorage.getItem(key);
+          if (!val) continue;
+          const topicId = key.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+          if (key === 'edurecall_custom_POL-044' || key === 'edurecall_custom_masks_POL-044' || isCustomHtmlCorrupted(topicId, val)) {
+            localStorage.removeItem(key);
+            localStorage.removeItem(`edurecall_custom_masks_${topicId}`);
+            continue;
+          }
+          if (val.includes('\uFFFD') || val.includes('??') || val.includes('&lt;차경수 모형&gt;') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val)) {
+            const healed = healCorruptedHtml(val);
+            if (healed !== val) {
+              localStorage.setItem(key, healed);
             }
           }
         }
@@ -3333,7 +3361,14 @@
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
           if (key && key.startsWith('edurecall_custom_')) {
+            if (key === 'edurecall_custom_POL-044' || key === 'edurecall_custom_masks_POL-044') {
+              continue;
+            }
             const rawVal = localStorage.getItem(key);
+            const topicId = key.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+            if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topicId, rawVal)) {
+              continue;
+            }
             customTapes[key] = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(rawVal) : rawVal;
           } else if (key && key.startsWith('edurecall_memo_')) {
             individualMemos[key] = localStorage.getItem(key);
@@ -3360,6 +3395,16 @@
         if (record.custom_tapes && typeof record.custom_tapes === 'object') {
           Object.entries(record.custom_tapes).forEach(([k, v]) => {
             if (v !== null && v !== undefined) {
+              const topicId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+              if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044') {
+                localStorage.removeItem(k);
+                return;
+              }
+              if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topicId, String(v))) {
+                localStorage.removeItem(k);
+                localStorage.removeItem(`edurecall_custom_masks_${topicId}`);
+                return;
+              }
               let cleanVal = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(String(v)) : String(v);
               cleanVal = typeof healCorruptedHtml === 'function' ? healCorruptedHtml(cleanVal) : cleanVal;
               // Fix typos and clean phantom '내용 없음' placeholders
@@ -3561,6 +3606,15 @@
                 finalCustomTapes = { ...remoteData.custom_tapes, ...payload.custom_tapes };
                 // Also unpack any remote tapes that local didn't have yet into local storage!
                 Object.entries(remoteData.custom_tapes).forEach(([k, v]) => {
+                  if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044') {
+                    localStorage.removeItem(k);
+                    return;
+                  }
+                  const tId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+                  if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(tId, String(v))) {
+                    localStorage.removeItem(k);
+                    return;
+                  }
                   if (!localStorage.getItem(k) && v) {
                     localStorage.setItem(k, String(v));
                   }
@@ -3581,8 +3635,16 @@
           }
 
           if (finalCustomTapes && typeof finalCustomTapes === 'object') {
+            delete finalCustomTapes['edurecall_custom_POL-044'];
+            delete finalCustomTapes['edurecall_custom_masks_POL-044'];
             Object.keys(finalCustomTapes).forEach(k => {
-              finalCustomTapes[k] = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(String(finalCustomTapes[k])) : String(finalCustomTapes[k]);
+              const topicId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+              if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topicId, String(finalCustomTapes[k]))) {
+                delete finalCustomTapes[k];
+                delete finalCustomTapes[`edurecall_custom_masks_${topicId}`];
+              } else {
+                finalCustomTapes[k] = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(String(finalCustomTapes[k])) : String(finalCustomTapes[k]);
+              }
             });
           }
 
@@ -5178,6 +5240,13 @@
           try { localStorage.setItem('edurecall_custom_EDU-040', customHtml); } catch(e) {}
         }
 
+        // Integrity safeguard: If custom HTML is corrupted or is POL-044, discard and restore official contentHtml
+        if (customHtml && (topic.id === 'POL-044' || (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topic.id, customHtml)))) {
+          localStorage.removeItem(`edurecall_custom_${topic.id}`);
+          localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
+          customHtml = null;
+        }
+
         if (customHtml) {
           if (typeof healCorruptedHtml === 'function') {
             customHtml = healCorruptedHtml(customHtml);
@@ -5341,7 +5410,18 @@
       // Sanitize and normalize group headers to prevent split titles or stray elements
       function sanitizeAndNormalizeGroupHeaders(container) {
         if (!container) return;
-        container.querySelectorAll('.topic-group').forEach(grp => {
+        const currentTopic = (typeof currentTopicIndex === 'number' && typeof TOPICS !== 'undefined') ? TOPICS[currentTopicIndex] : null;
+        let officialGroups = null;
+        if (currentTopic && currentTopic.contentHtml) {
+          try {
+            const p = document.createElement('div');
+            p.innerHTML = currentTopic.contentHtml;
+            officialGroups = Array.from(p.querySelectorAll('.topic-group'));
+          } catch (e) {}
+        }
+
+        const groups = Array.from(container.querySelectorAll('.topic-group'));
+        groups.forEach((grp, grpIdx) => {
           const header = grp.querySelector('.flex.items-center.justify-between');
           if (!header) return;
 
@@ -5399,11 +5479,35 @@
 
           if (fontBold) {
             fontBold.querySelectorAll('.group-actions-wrap, .group-edit-btn').forEach(el => el.remove());
-            const titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
+            let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
             if (titleSpan && titleSpan.innerHTML) {
               titleSpan.innerHTML = titleSpan.innerHTML.replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
             }
+
+            // Auto-heal missing or blank group titles from official topic data
+            const cleanedTitle = titleSpan ? titleSpan.textContent.replace(/visibility|수정/g, '').trim() : '';
+            if ((!titleSpan || !cleanedTitle || /^\(\d+\)$/.test(cleanedTitle)) && officialGroups && officialGroups[grpIdx]) {
+              const offFontBold = officialGroups[grpIdx].querySelector('.font-bold');
+              const offTitleSpan = offFontBold ? (offFontBold.querySelector(':scope > span:not(.rounded-full)') || offFontBold.querySelector('span:not(.rounded-full)')) : null;
+              if (offTitleSpan && offTitleSpan.textContent.trim()) {
+                if (!titleSpan) {
+                  titleSpan = document.createElement('span');
+                  fontBold.appendChild(titleSpan);
+                }
+                titleSpan.innerHTML = offTitleSpan.innerHTML;
+              }
+            }
+
             fontBold.innerHTML = cleanNestedBadges(fontBold.innerHTML);
+          }
+
+          // Auto-heal missing or blank group content from official topic data
+          const groupContent = grp.querySelector('.group-content');
+          if (groupContent && groupContent.textContent.trim().length === 0 && officialGroups && officialGroups[grpIdx]) {
+            const offContent = officialGroups[grpIdx].querySelector('.group-content');
+            if (offContent && offContent.textContent.trim().length > 0) {
+              groupContent.innerHTML = offContent.innerHTML;
+            }
           }
         });
       }
