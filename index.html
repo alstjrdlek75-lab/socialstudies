@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261003_093500"></script>
-  <script src="explanations-data.js?v=20261003_093500"></script>
+  <script src="topics-data.js?v=20261003_113000"></script>
+  <script src="explanations-data.js?v=20261003_113000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2752,10 +2752,10 @@
             return true;
           }
         }
-        if (val.includes('\uFFFD') || val.includes('??')) return true;
+        if (val.includes('\uFFFD')) return true;
         if (/<div class="font-bold[^"]*"[^>]*>\s*<span[^>]*class="[^"]*rounded-full[^"]*"[^>]*><\/span>\s*<span>\s*<\/span>\s*<\/div>/.test(val)) return true;
         if (/<div class="group-content[^"]*">\s*<\/div>/.test(val)) return true;
-        if (val.includes('<span></span>') || val.includes('<span>(1)</span>') || val.includes('<span>(2)</span>')) return true;
+        if (val.includes('<span></span>')) return true;
         try {
           const parser = new DOMParser();
           const doc = parser.parseFromString(val, 'text/html');
@@ -2810,78 +2810,81 @@
         if (pol049 && (!pol049.includes('26 기출') || !pol049.includes('22 기출'))) {
           localStorage.removeItem('edurecall_custom_POL-049');
         }
-        localStorage.removeItem('edurecall_custom_POL-050');
-        localStorage.removeItem('edurecall_custom_POL-038');
-        localStorage.removeItem('edurecall_custom_POL-044');
-        localStorage.removeItem('edurecall_custom_masks_POL-044');
-        localStorage.removeItem('edurecall_custom_POL-014');
-        localStorage.removeItem('edurecall_custom_masks_POL-014');
-        localStorage.removeItem('edurecall_custom_POL-092');
-        localStorage.removeItem('edurecall_custom_masks_POL-092');
-        localStorage.removeItem('edurecall_custom_POL-093');
-        localStorage.removeItem('edurecall_custom_masks_POL-093');
-        localStorage.removeItem('edurecall_custom_POL-094');
-        localStorage.removeItem('edurecall_custom_masks_POL-094');
-        localStorage.removeItem('edurecall_custom_POL-095');
-        localStorage.removeItem('edurecall_custom_masks_POL-095');
-        localStorage.removeItem('edurecall_custom_EDU-095');
-        localStorage.removeItem('edurecall_custom_masks_EDU-095');
-        localStorage.removeItem('edurecall_custom_LAW-162');
-        localStorage.removeItem('edurecall_custom_masks_LAW-162');
-        localStorage.removeItem('edurecall_custom_LAW-164');
-        localStorage.removeItem('edurecall_custom_masks_LAW-164');
-        localStorage.removeItem('edurecall_custom_SOC-145');
-        localStorage.removeItem('edurecall_custom_masks_SOC-145');
-        localStorage.removeItem('edurecall_custom_POL-086');
-        localStorage.removeItem('edurecall_custom_masks_POL-086');
-        localStorage.removeItem('edurecall_custom_POL-127');
-        localStorage.removeItem('edurecall_custom_masks_POL-127');
-        localStorage.removeItem('edurecall_custom_POL-097');
-        localStorage.removeItem('edurecall_custom_masks_POL-097');
-        localStorage.removeItem('edurecall_custom_POL-109');
-        localStorage.removeItem('edurecall_custom_masks_POL-109');
-        localStorage.removeItem('edurecall_custom_POL-110');
-        localStorage.removeItem('edurecall_custom_masks_POL-110');
-        localStorage.removeItem('edurecall_custom_POL-111');
-        localStorage.removeItem('edurecall_custom_masks_POL-111');
-        localStorage.removeItem('edurecall_custom_POL-113');
-        localStorage.removeItem('edurecall_custom_masks_POL-113');
-        localStorage.removeItem('edurecall_custom_LAW-005');
-        localStorage.removeItem('edurecall_custom_masks_LAW-005');
-        localStorage.removeItem('edurecall_custom_LAW-018');
-        localStorage.removeItem('edurecall_custom_masks_LAW-018');
-        localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
-        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
-        localStorage.removeItem('edurecall_custom_ECON-EXAM-2014-A-05');
-        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2014-A-05');
-        localStorage.removeItem('edurecall_custom_EXAM-2014-A-05');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-05');
-        localStorage.removeItem('edurecall_custom_EXAM-2014-A-19');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-19');
-        localStorage.removeItem('edurecall_custom_ECON-EXAM-2015-A-05');
-        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2015-A-05');
-        localStorage.removeItem('edurecall_custom_EXAM-2015-A-05');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2015-A-05');
-        localStorage.removeItem('edurecall_custom_ECON-EXAM-2018-B-07');
-        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2018-B-07');
-        localStorage.removeItem('edurecall_custom_EXAM-2018-B-07');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2018-B-07');
-        localStorage.removeItem('edurecall_custom_ECON-EXAM-2019-B-01');
-        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2019-B-01');
-        localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
-        localStorage.removeItem('edurecall_custom_EXAM-2019-B-02');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-02');
-        localStorage.removeItem('edurecall_custom_ECON-EXAM-2021-B-07');
-        localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2021-B-07');
-        localStorage.removeItem('edurecall_custom_EXAM-2021-B-07');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-07');
-        localStorage.removeItem('edurecall_custom_LAW-042');
-        localStorage.removeItem('edurecall_custom_masks_LAW-042');
-        localStorage.removeItem('edurecall_custom_EXAM-2026-B-08');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-08');
-        localStorage.removeItem('edurecall_custom_EXAM-2021-B-11');
-        localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-11');
+        if (!localStorage.getItem('edurecall_legacy_corrupt_purge_done_v1')) {
+          localStorage.removeItem('edurecall_custom_POL-050');
+          localStorage.removeItem('edurecall_custom_POL-038');
+          localStorage.removeItem('edurecall_custom_POL-044');
+          localStorage.removeItem('edurecall_custom_masks_POL-044');
+          localStorage.removeItem('edurecall_custom_POL-014');
+          localStorage.removeItem('edurecall_custom_masks_POL-014');
+          localStorage.removeItem('edurecall_custom_POL-092');
+          localStorage.removeItem('edurecall_custom_masks_POL-092');
+          localStorage.removeItem('edurecall_custom_POL-093');
+          localStorage.removeItem('edurecall_custom_masks_POL-093');
+          localStorage.removeItem('edurecall_custom_POL-094');
+          localStorage.removeItem('edurecall_custom_masks_POL-094');
+          localStorage.removeItem('edurecall_custom_POL-095');
+          localStorage.removeItem('edurecall_custom_masks_POL-095');
+          localStorage.removeItem('edurecall_custom_EDU-095');
+          localStorage.removeItem('edurecall_custom_masks_EDU-095');
+          localStorage.removeItem('edurecall_custom_LAW-162');
+          localStorage.removeItem('edurecall_custom_masks_LAW-162');
+          localStorage.removeItem('edurecall_custom_LAW-164');
+          localStorage.removeItem('edurecall_custom_masks_LAW-164');
+          localStorage.removeItem('edurecall_custom_SOC-145');
+          localStorage.removeItem('edurecall_custom_masks_SOC-145');
+          localStorage.removeItem('edurecall_custom_POL-086');
+          localStorage.removeItem('edurecall_custom_masks_POL-086');
+          localStorage.removeItem('edurecall_custom_POL-127');
+          localStorage.removeItem('edurecall_custom_masks_POL-127');
+          localStorage.removeItem('edurecall_custom_POL-097');
+          localStorage.removeItem('edurecall_custom_masks_POL-097');
+          localStorage.removeItem('edurecall_custom_POL-109');
+          localStorage.removeItem('edurecall_custom_masks_POL-109');
+          localStorage.removeItem('edurecall_custom_POL-110');
+          localStorage.removeItem('edurecall_custom_masks_POL-110');
+          localStorage.removeItem('edurecall_custom_POL-111');
+          localStorage.removeItem('edurecall_custom_masks_POL-111');
+          localStorage.removeItem('edurecall_custom_POL-113');
+          localStorage.removeItem('edurecall_custom_masks_POL-113');
+          localStorage.removeItem('edurecall_custom_LAW-005');
+          localStorage.removeItem('edurecall_custom_masks_LAW-005');
+          localStorage.removeItem('edurecall_custom_LAW-018');
+          localStorage.removeItem('edurecall_custom_masks_LAW-018');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2014-A-05');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2014-A-05');
+          localStorage.removeItem('edurecall_custom_EXAM-2014-A-05');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-05');
+          localStorage.removeItem('edurecall_custom_EXAM-2014-A-19');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-19');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2015-A-05');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2015-A-05');
+          localStorage.removeItem('edurecall_custom_EXAM-2015-A-05');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2015-A-05');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2018-B-07');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2018-B-07');
+          localStorage.removeItem('edurecall_custom_EXAM-2018-B-07');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2018-B-07');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2019-B-01');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2019-B-01');
+          localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
+          localStorage.removeItem('edurecall_custom_EXAM-2019-B-02');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-02');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2021-B-07');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2021-B-07');
+          localStorage.removeItem('edurecall_custom_EXAM-2021-B-07');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-07');
+          localStorage.removeItem('edurecall_custom_LAW-042');
+          localStorage.removeItem('edurecall_custom_masks_LAW-042');
+          localStorage.removeItem('edurecall_custom_EXAM-2026-B-08');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-08');
+          localStorage.removeItem('edurecall_custom_EXAM-2021-B-11');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-11');
+          localStorage.setItem('edurecall_legacy_corrupt_purge_done_v1', 'true');
+        }
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -3454,7 +3457,19 @@
         const customTapes = {};
         const individualMemos = {};
         const studyPins = {};
-        const deletedCustomTapes = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+        const activeLocalCustomTopicIds = new Set();
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith('edurecall_custom_')) {
+            const tId = key.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+            activeLocalCustomTopicIds.add(tId);
+            if (tId.startsWith('ECON-EXAM-')) activeLocalCustomTopicIds.add(tId.replace('ECON-', ''));
+          }
+        }
+        let deletedCustomTapes = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+        // Ensure any topic that actively exists in local storage is never marked deleted
+        deletedCustomTapes = deletedCustomTapes.filter(tId => !activeLocalCustomTopicIds.has(tId));
+        localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(deletedCustomTapes));
         const resetGrades = JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}');
 
         for (let i = 0; i < localStorage.length; i++) {
@@ -3505,13 +3520,23 @@
         if (!record) return;
         let modified = false;
 
-        // Process Cloud Tombstones
+        // Process Cloud Tombstones: Never delete topics that currently have active custom edits locally!
         const cloudDeletedTapes = record.user_memos?.__deleted_custom_tapes__;
         if (Array.isArray(cloudDeletedTapes)) {
           const localDeleted = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
-          const unionDeleted = Array.from(new Set([...localDeleted, ...cloudDeletedTapes]));
+          const activeLocalCustomTopicIds = new Set();
+          for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('edurecall_custom_')) {
+              const tId = key.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+              activeLocalCustomTopicIds.add(tId);
+              if (tId.startsWith('ECON-EXAM-')) activeLocalCustomTopicIds.add(tId.replace('ECON-', ''));
+            }
+          }
+          const unionDeleted = Array.from(new Set([...localDeleted, ...cloudDeletedTapes]))
+            .filter(tId => !activeLocalCustomTopicIds.has(tId));
           localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(unionDeleted));
-          cloudDeletedTapes.forEach(tId => {
+          unionDeleted.forEach(tId => {
             localStorage.removeItem(`edurecall_custom_${tId}`);
             localStorage.removeItem(`edurecall_custom_masks_${tId}`);
           });
@@ -3776,9 +3801,13 @@
               .maybeSingle();
 
             if (remoteData) {
-              // 1. Merge Deleted Tapes
+              // 1. Merge Deleted Tapes: Active custom content on client always overrides and cancels deletion tombstones!
               const remoteDeleted = remoteData.user_memos?.__deleted_custom_tapes__ || [];
-              const allDeletedTapes = Array.from(new Set([...deletedTapes, ...remoteDeleted]));
+              const activeCustomTopicIds = new Set(Object.keys(payload.custom_tapes || {}).map(k => 
+                k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '')
+              ));
+              const allDeletedTapes = Array.from(new Set([...deletedTapes, ...remoteDeleted]))
+                .filter(tId => !activeCustomTopicIds.has(tId));
               localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(allDeletedTapes));
 
               // 2. Merge Reset Grades
@@ -3908,6 +3937,14 @@
       async function triggerCloudBackupShortcut() {
         if (isCloudBackingUp) return;
         isCloudBackingUp = true;
+        if (autoSyncTimeout) {
+          clearTimeout(autoSyncTimeout);
+          autoSyncTimeout = null;
+        }
+        // Immediately persist current on-screen masking tape to localStorage if viewing a topic
+        if (typeof saveCurrentTopicCustomContent === 'function') {
+          saveCurrentTopicCustomContent();
+        }
         let syncCode = localStorage.getItem('edurecall_sync_code');
         if (!syncCode) {
           syncCode = 'EDU-7194';
@@ -9470,7 +9507,10 @@
         if (law105Custom && (!law105Custom.includes('구체적인 사건이 법원에 계속 중일 것') || law105Custom.includes('상고기각'))) {
           localStorage.removeItem('edurecall_custom_LAW-105');
         }
-        localStorage.removeItem('edurecall_custom_LAW-114');
+        if (!localStorage.getItem('edurecall_purge_law114_done')) {
+          localStorage.removeItem('edurecall_custom_LAW-114');
+          localStorage.setItem('edurecall_purge_law114_done', 'true');
+        }
         const law115Custom = localStorage.getItem('edurecall_custom_LAW-115');
         if (law115Custom && !law115Custom.includes('구성요건해당성의 의의')) {
           localStorage.removeItem('edurecall_custom_LAW-115');
