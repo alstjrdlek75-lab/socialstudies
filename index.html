@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261003_211500"></script>
-  <script src="explanations-data.js?v=20261003_211500"></script>
+  <script src="topics-data.js?v=20261003_213500"></script>
+  <script src="explanations-data.js?v=20261003_213500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3425,6 +3425,7 @@
             list.push(topicId);
             localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(list));
           }
+          recordTopicCustomTimestamp(topicId);
         } catch(e) {}
       }
 
@@ -3436,6 +3437,22 @@
             localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(list));
           }
         } catch(e) {}
+      }
+
+      // Track custom topic edit timestamps (enables precise two-way merge for additions, deletions, and edits)
+      function recordTopicCustomTimestamp(topicId, ts = Date.now()) {
+        if (!topicId) return;
+        try {
+          const map = JSON.parse(localStorage.getItem('edurecall_custom_timestamps') || '{}');
+          map[topicId] = ts;
+          localStorage.setItem('edurecall_custom_timestamps', JSON.stringify(map));
+        } catch(e) {}
+      }
+
+      function getCustomTimestamps() {
+        try {
+          return JSON.parse(localStorage.getItem('edurecall_custom_timestamps') || '{}');
+        } catch(e) { return {}; }
       }
 
       // Extract all current client state into a bundle
@@ -3489,7 +3506,8 @@
           ...studyPins,
           __study_pins__: studyPins,
           __deleted_custom_tapes__: deletedCustomTapes,
-          __reset_grades__: resetGrades
+          __reset_grades__: resetGrades,
+          __custom_timestamps__: getCustomTimestamps()
         };
 
         return {
@@ -3593,17 +3611,30 @@
                 cleanVal = cleanVal.replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
               }
 
-              // Lossless protection: If local already has custom content with more tapes, NEVER downgrade!
+              // Timestamp-first lossless protection:
+              const remoteTimestamps = record.user_memos?.__custom_timestamps__ || {};
+              const localTimestamps = getCustomTimestamps();
+              const localTime = localTimestamps[topicId] || 0;
+              const remoteTime = remoteTimestamps[topicId] || 0;
+
               const localVal = localStorage.getItem(k);
               if (localVal) {
-                const localCount = typeof countTapesInHtml === 'function' ? countTapesInHtml(localVal) : 0;
-                const remoteCount = typeof countTapesInHtml === 'function' ? countTapesInHtml(cleanVal) : 0;
-                if (localCount > remoteCount) {
-                  return; // Keep local because it has more mask tapes!
+                if (localTime > remoteTime) {
+                  return; // Local was edited more recently (addition, deletion, or edit)
+                }
+                if (localTime === remoteTime) {
+                  const localCount = typeof countTapesInHtml === 'function' ? countTapesInHtml(localVal) : 0;
+                  const remoteCount = typeof countTapesInHtml === 'function' ? countTapesInHtml(cleanVal) : 0;
+                  if (localCount > remoteCount) {
+                    return; // Tie-break: keep more tapes if identical timestamps
+                  }
                 }
               }
 
               localStorage.setItem(k, cleanVal);
+              if (remoteTime > localTime) {
+                recordTopicCustomTimestamp(topicId, remoteTime);
+              }
               modified = true;
             }
           });
@@ -3812,9 +3843,11 @@
               const allResetGrades = { ...resetGrades, ...remoteResetGrades };
               localStorage.setItem('edurecall_reset_grades', JSON.stringify(allResetGrades));
 
-              // 3. Custom Tapes (Intelligent Lossless Max-Tape Merge)
+              // 3. Custom Tapes (Timestamp-based Intelligent Lossless Merge)
               if (remoteData.custom_tapes && typeof remoteData.custom_tapes === 'object') {
                 finalCustomTapes = { ...remoteData.custom_tapes };
+                const remoteTimestamps = remoteData.user_memos?.__custom_timestamps__ || {};
+                const localTimestamps = getCustomTimestamps();
                 const allCustomKeys = new Set([...Object.keys(remoteData.custom_tapes), ...Object.keys(payload.custom_tapes || {})]);
                 allCustomKeys.forEach(k => {
                   const localVal = payload.custom_tapes ? payload.custom_tapes[k] : null;
@@ -3825,7 +3858,16 @@
                     return;
                   }
                   if (localVal && remoteVal) {
-                    finalCustomTapes[k] = (countTapesInHtml(localVal) >= countTapesInHtml(remoteVal)) ? localVal : remoteVal;
+                    const localTime = localTimestamps[tId] || 0;
+                    const remoteTime = remoteTimestamps[tId] || 0;
+                    if (localTime > remoteTime) {
+                      finalCustomTapes[k] = localVal; // Local newer: intentional addition, deletion or edit!
+                    } else if (remoteTime > localTime) {
+                      finalCustomTapes[k] = remoteVal; // Remote newer
+                    } else {
+                      // Tie-break (legacy/identical timestamps): keep whichever has more tapes
+                      finalCustomTapes[k] = (countTapesInHtml(localVal) >= countTapesInHtml(remoteVal)) ? localVal : remoteVal;
+                    }
                   } else if (localVal) {
                     finalCustomTapes[k] = localVal;
                   } else if (remoteVal) {
@@ -3833,17 +3875,21 @@
                   }
                 });
 
-                // Also unpack any remote tapes that local didn't have or where remote has more tapes
+                // Also unpack any remote tapes that local didn't have or where remote has a newer timestamp
                 let remoteTapesMergedIntoLocal = false;
                 Object.entries(finalCustomTapes).forEach(([k, v]) => {
                   const tId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
                   if (allDeletedTapes.includes(tId)) return;
                   const localVal = localStorage.getItem(k);
+                  const localTime = localTimestamps[tId] || 0;
+                  const remoteTime = remoteTimestamps[tId] || 0;
                   if (!localVal && v) {
                     localStorage.setItem(k, String(v));
+                    if (remoteTime > 0) recordTopicCustomTimestamp(tId, remoteTime);
                     remoteTapesMergedIntoLocal = true;
-                  } else if (localVal && v && countTapesInHtml(String(v)) > countTapesInHtml(localVal)) {
+                  } else if (localVal && v && remoteTime > localTime) {
                     localStorage.setItem(k, String(v));
+                    recordTopicCustomTimestamp(tId, remoteTime);
                     remoteTapesMergedIntoLocal = true;
                   }
                 });
@@ -3917,7 +3963,8 @@
             ...currentPins,
             __study_pins__: currentPins,
             __deleted_custom_tapes__: JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]'),
-            __reset_grades__: JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}')
+            __reset_grades__: JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}'),
+            __custom_timestamps__: getCustomTimestamps()
           };
 
           const { data, error } = await supabaseClient
@@ -6099,6 +6146,7 @@
           tape.textContent = answer;
         });
         localStorage.setItem(`edurecall_custom_${topic.id}`, tempDiv.innerHTML);
+        recordTopicCustomTimestamp(topic.id);
         if (typeof clearCustomTapeDeleted === 'function') clearCustomTapeDeleted(topic.id);
         if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
         triggerAutoSync();
@@ -6112,10 +6160,12 @@
         }
         localStorage.removeItem(`edurecall_custom_${topic.id}`);
         if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(topic.id);
+        recordTopicCustomTimestamp(topic.id);
         if (topic.id.startsWith('ECON-EXAM-')) {
           const altId = topic.id.replace('ECON-', '');
           localStorage.removeItem(`edurecall_custom_${altId}`);
           if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(altId);
+          recordTopicCustomTimestamp(altId);
         }
         triggerAutoSync();
         subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
@@ -8688,6 +8738,7 @@
 
         try {
           localStorage.setItem(`edurecall_custom_${topic.id}`, content);
+          recordTopicCustomTimestamp(topic.id);
           if (typeof clearCustomTapeDeleted === 'function') clearCustomTapeDeleted(topic.id);
         } catch(e) {
           console.error('Failed to save to localStorage:', e);
@@ -8732,10 +8783,12 @@
 
         localStorage.removeItem(`edurecall_custom_${topic.id}`);
         if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(topic.id);
+        recordTopicCustomTimestamp(topic.id);
         if (topic.id.startsWith('ECON-EXAM-')) {
           const altId = topic.id.replace('ECON-', '');
           localStorage.removeItem(`edurecall_custom_${altId}`);
           if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(altId);
+          recordTopicCustomTimestamp(altId);
         }
         if (typeof triggerAutoSync === 'function') triggerAutoSync();
 
