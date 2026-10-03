@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261002_100200"></script>
-  <script src="explanations-data.js?v=20261002_100200"></script>
+  <script src="topics-data.js?v=20261003_093500"></script>
+  <script src="explanations-data.js?v=20261003_093500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3354,33 +3354,147 @@
 
       let autoSyncTimeout = null;
 
+      // --- FSRS Card Intelligent Merger ---
+      function mergeSingleFSRSCard(cardA, cardB) {
+        if (!cardA) return cardB;
+        if (!cardB) return cardA;
+        const timeA = new Date(cardA.last_review || cardA.due || 0).getTime();
+        const timeB = new Date(cardB.last_review || cardB.due || 0).getTime();
+        const repsA = typeof cardA.reps === 'number' ? cardA.reps : 0;
+        const repsB = typeof cardB.reps === 'number' ? cardB.reps : 0;
+
+        // If one card has strictly higher reps and equal or newer timestamp, study progress is further ahead
+        if (repsA > repsB && timeA >= timeB) return cardA;
+        if (repsB > repsA && timeB >= timeA) return cardB;
+
+        // If review times differ by more than 5 seconds, latest review wins
+        if (Math.abs(timeA - timeB) > 5000) {
+          return timeA > timeB ? cardA : cardB;
+        }
+
+        // If review times are very close, higher review count (reps) wins
+        if (repsA !== repsB) {
+          return repsA > repsB ? cardA : cardB;
+        }
+
+        return (cardA.stability || 0) >= (cardB.stability || 0) ? cardA : cardB;
+      }
+
+      function mergeFSRSGradeMaps(mapA, mapB, resetMap = {}) {
+        const merged = {};
+        const allKeys = new Set([...Object.keys(mapA || {}), ...Object.keys(mapB || {})]);
+        allKeys.forEach(topicId => {
+          const cardA = mapA ? mapA[topicId] : null;
+          const cardB = mapB ? mapB[topicId] : null;
+          const resetTime = resetMap[topicId] || 0;
+
+          if (resetTime > 0) {
+            const timeA = cardA ? new Date(cardA.last_review || cardA.due || 0).getTime() : 0;
+            const timeB = cardB ? new Date(cardB.last_review || cardB.due || 0).getTime() : 0;
+            if (timeA <= resetTime && timeB <= resetTime) {
+              return;
+            }
+          }
+
+          if (cardA && cardB) {
+            merged[topicId] = mergeSingleFSRSCard(cardA, cardB);
+          } else if (cardA) {
+            const timeA = new Date(cardA.last_review || cardA.due || 0).getTime();
+            if (timeA > resetTime) merged[topicId] = cardA;
+          } else if (cardB) {
+            const timeB = new Date(cardB.last_review || cardB.due || 0).getTime();
+            if (timeB > resetTime) merged[topicId] = cardB;
+          }
+        });
+        return merged;
+      }
+
+      // Track reset cards (tombstones for 1회독 초기화)
+      function recordGradeReset(topicId) {
+        try {
+          const resets = JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}');
+          resets[topicId] = Date.now();
+          localStorage.setItem('edurecall_reset_grades', JSON.stringify(resets));
+        } catch(e) {}
+      }
+
+      function clearGradeReset(topicId) {
+        try {
+          const resets = JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}');
+          if (resets[topicId]) {
+            delete resets[topicId];
+            localStorage.setItem('edurecall_reset_grades', JSON.stringify(resets));
+          }
+        } catch(e) {}
+      }
+
+      // Track deleted custom tapes (tombstones for 원본 복원)
+      function markCustomTapeDeleted(topicId) {
+        try {
+          const list = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+          if (!list.includes(topicId)) {
+            list.push(topicId);
+            localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(list));
+          }
+        } catch(e) {}
+      }
+
+      function clearCustomTapeDeleted(topicId) {
+        try {
+          let list = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+          if (list.includes(topicId)) {
+            list = list.filter(id => id !== topicId);
+            localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(list));
+          }
+        } catch(e) {}
+      }
+
       // Extract all current client state into a bundle
       function packSyncPayload() {
         const customTapes = {};
         const individualMemos = {};
+        const studyPins = {};
+        const deletedCustomTapes = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+        const resetGrades = JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}');
+
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
-          if (key && key.startsWith('edurecall_custom_')) {
+          if (!key) continue;
+          if (key.startsWith('edurecall_custom_')) {
             if (key === 'edurecall_custom_POL-044' || key === 'edurecall_custom_masks_POL-044') {
               continue;
             }
-            const rawVal = localStorage.getItem(key);
             const topicId = key.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+            if (deletedCustomTapes.includes(topicId)) {
+              continue;
+            }
+            const rawVal = localStorage.getItem(key);
             if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topicId, rawVal)) {
               continue;
             }
             customTapes[key] = typeof cleanNestedBadges === 'function' ? cleanNestedBadges(rawVal) : rawVal;
-          } else if (key && key.startsWith('edurecall_memo_')) {
+          } else if (key.startsWith('edurecall_memo_')) {
             individualMemos[key] = localStorage.getItem(key);
+          } else if (key.startsWith('edurecall_study_pin')) {
+            const pinVal = localStorage.getItem(key);
+            if (pinVal) studyPins[key] = pinVal;
           }
         }
+
+        const localMemos = JSON.parse(localStorage.getItem('edurecall_user_memos') || '{}');
+        const userMemosPayload = {
+          ...localMemos,
+          ...individualMemos,
+          ...studyPins,
+          __study_pins__: studyPins,
+          __deleted_custom_tapes__: deletedCustomTapes,
+          __reset_grades__: resetGrades
+        };
+
         return {
           custom_tapes: customTapes,
           fsrs_grades: JSON.parse(localStorage.getItem('edurecall_fsrs_grades') || '{}'),
-          user_memos: {
-            ...JSON.parse(localStorage.getItem('edurecall_user_memos') || '{}'),
-            ...individualMemos
-          },
+          user_memos: userMemosPayload,
           bookmarks: JSON.parse(localStorage.getItem('edurecall_bookmarks') || '[]'),
           daily_stats: JSON.parse(localStorage.getItem('edurecall_daily_stats') || '{}')
         };
@@ -3391,12 +3505,30 @@
         if (!record) return;
         let modified = false;
 
+        // Process Cloud Tombstones
+        const cloudDeletedTapes = record.user_memos?.__deleted_custom_tapes__;
+        if (Array.isArray(cloudDeletedTapes)) {
+          const localDeleted = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+          const unionDeleted = Array.from(new Set([...localDeleted, ...cloudDeletedTapes]));
+          localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(unionDeleted));
+          cloudDeletedTapes.forEach(tId => {
+            localStorage.removeItem(`edurecall_custom_${tId}`);
+            localStorage.removeItem(`edurecall_custom_masks_${tId}`);
+          });
+        }
+        const activeDeletedTapes = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+
+        const cloudResetGrades = record.user_memos?.__reset_grades__ || {};
+        const localResetGrades = JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}');
+        const mergedResetGrades = { ...localResetGrades, ...cloudResetGrades };
+        localStorage.setItem('edurecall_reset_grades', JSON.stringify(mergedResetGrades));
+
         // 1. Custom Tapes
         if (record.custom_tapes && typeof record.custom_tapes === 'object') {
           Object.entries(record.custom_tapes).forEach(([k, v]) => {
             if (v !== null && v !== undefined) {
               const topicId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
-              if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044') {
+              if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044' || activeDeletedTapes.includes(topicId)) {
                 localStorage.removeItem(k);
                 return;
               }
@@ -3455,26 +3587,59 @@
           });
         }
 
-        // 2. FSRS Grades (Merge with latest review win)
+        // 2. FSRS Grades & Repetitions (Intelligent Lossless Merge)
         if (record.fsrs_grades && typeof record.fsrs_grades === 'object') {
           const localFSRS = JSON.parse(localStorage.getItem('edurecall_fsrs_grades') || '{}');
-          const mergedFSRS = { ...localFSRS, ...record.fsrs_grades };
+          const mergedFSRS = mergeFSRSGradeMaps(localFSRS, record.fsrs_grades, mergedResetGrades);
           localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(mergedFSRS));
           modified = true;
         }
 
-        // 3. User Memos
+        // 3. User Memos & Study Pins
         if (record.user_memos && typeof record.user_memos === 'object') {
           const localMemos = JSON.parse(localStorage.getItem('edurecall_user_memos') || '{}');
           const mergedMemos = { ...localMemos };
+          let pinsChanged = false;
+
+          // Unpack dedicated __study_pins__
+          if (record.user_memos.__study_pins__ && typeof record.user_memos.__study_pins__ === 'object') {
+            Object.entries(record.user_memos.__study_pins__).forEach(([pk, pv]) => {
+              if (pv && typeof pv === 'string') {
+                if (localStorage.getItem(pk) !== pv) {
+                  localStorage.setItem(pk, pv);
+                  pinsChanged = true;
+                }
+              } else if (pv === null || pv === '') {
+                localStorage.removeItem(pk);
+                pinsChanged = true;
+              }
+            });
+          }
+
           Object.entries(record.user_memos).forEach(([k, v]) => {
+            if (k === '__study_pins__' || k === '__deleted_custom_tapes__' || k === '__reset_grades__') {
+              return;
+            }
             if (k.startsWith('edurecall_memo_')) {
               localStorage.setItem(k, v);
+            } else if (k.startsWith('edurecall_study_pin')) {
+              if (v && typeof v === 'string') {
+                if (localStorage.getItem(k) !== v) {
+                  localStorage.setItem(k, v);
+                  pinsChanged = true;
+                }
+              } else if (v === null || v === '') {
+                localStorage.removeItem(k);
+                pinsChanged = true;
+              }
             } else {
               mergedMemos[k] = v;
             }
           });
           localStorage.setItem('edurecall_user_memos', JSON.stringify(mergedMemos));
+          if (pinsChanged) {
+            if (typeof updateStudyPinUI === 'function') updateStudyPinUI();
+          }
           modified = true;
         }
 
@@ -3502,6 +3667,13 @@
             }
             if (typeof updateOverallStats === 'function') {
               updateOverallStats();
+            }
+            if (typeof updateStudyPinUI === 'function') {
+              updateStudyPinUI();
+            }
+            const curTopic = (typeof TOPICS !== 'undefined' && typeof currentTopicIndex === 'number') ? TOPICS[currentTopicIndex] : null;
+            if (curTopic && typeof updateTopicRepsBadge === 'function') {
+              updateTopicRepsBadge(curTopic.id);
             }
           } catch (e) { console.error('UI re-render error after sync:', e); }
         }
@@ -3592,6 +3764,8 @@
           let finalMemos = payload.user_memos;
           let finalFSRS = payload.fsrs_grades;
           let finalBookmarks = payload.bookmarks;
+          const deletedTapes = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
+          const resetGrades = JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}');
 
           // Safe Lossless Pre-Push Merge: merge with existing cloud record so nothing is ever overwritten!
           try {
@@ -3602,17 +3776,30 @@
               .maybeSingle();
 
             if (remoteData) {
+              // 1. Merge Deleted Tapes
+              const remoteDeleted = remoteData.user_memos?.__deleted_custom_tapes__ || [];
+              const allDeletedTapes = Array.from(new Set([...deletedTapes, ...remoteDeleted]));
+              localStorage.setItem('edurecall_deleted_custom_tapes', JSON.stringify(allDeletedTapes));
+
+              // 2. Merge Reset Grades
+              const remoteResetGrades = remoteData.user_memos?.__reset_grades__ || {};
+              const allResetGrades = { ...resetGrades, ...remoteResetGrades };
+              localStorage.setItem('edurecall_reset_grades', JSON.stringify(allResetGrades));
+
+              // 3. Custom Tapes
               if (remoteData.custom_tapes && typeof remoteData.custom_tapes === 'object') {
                 finalCustomTapes = { ...remoteData.custom_tapes, ...payload.custom_tapes };
                 // Also unpack any remote tapes that local didn't have yet into local storage!
                 Object.entries(remoteData.custom_tapes).forEach(([k, v]) => {
-                  if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044') {
+                  const tId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+                  if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044' || allDeletedTapes.includes(tId)) {
                     localStorage.removeItem(k);
+                    delete finalCustomTapes[k];
                     return;
                   }
-                  const tId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
                   if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(tId, String(v))) {
                     localStorage.removeItem(k);
+                    delete finalCustomTapes[k];
                     return;
                   }
                   if (!localStorage.getItem(k) && v) {
@@ -3620,26 +3807,48 @@
                   }
                 });
               }
+
+              // 4. Study Pins & User Memos
               if (remoteData.user_memos && typeof remoteData.user_memos === 'object') {
                 finalMemos = { ...remoteData.user_memos, ...payload.user_memos };
+                const remotePins = remoteData.user_memos.__study_pins__ || {};
+                Object.entries(remotePins).forEach(([pk, pv]) => {
+                  if (pv && !localStorage.getItem(pk)) {
+                    localStorage.setItem(pk, pv);
+                    finalMemos[pk] = pv;
+                  }
+                });
+                Object.entries(remoteData.user_memos).forEach(([rk, rv]) => {
+                  if (rk.startsWith('edurecall_study_pin') && rv && !localStorage.getItem(rk)) {
+                    localStorage.setItem(rk, rv);
+                    finalMemos[rk] = rv;
+                  }
+                });
               }
+
+              // 5. Intelligent FSRS Card Merge
               if (remoteData.fsrs_grades && typeof remoteData.fsrs_grades === 'object') {
-                finalFSRS = { ...remoteData.fsrs_grades, ...payload.fsrs_grades };
+                finalFSRS = mergeFSRSGradeMaps(payload.fsrs_grades, remoteData.fsrs_grades, allResetGrades);
+                localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(finalFSRS));
               }
+
+              // 6. Bookmarks
               if (Array.isArray(remoteData.bookmarks)) {
                 finalBookmarks = Array.from(new Set([...remoteData.bookmarks, ...(payload.bookmarks || [])]));
+                localStorage.setItem('edurecall_bookmarks', JSON.stringify(finalBookmarks));
               }
             }
           } catch (mergeErr) {
             console.warn('Pre-push merge fetch skipped:', mergeErr);
           }
 
+          const activeDeleted = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
           if (finalCustomTapes && typeof finalCustomTapes === 'object') {
             delete finalCustomTapes['edurecall_custom_POL-044'];
             delete finalCustomTapes['edurecall_custom_masks_POL-044'];
             Object.keys(finalCustomTapes).forEach(k => {
               const topicId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
-              if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topicId, String(finalCustomTapes[k]))) {
+              if (activeDeleted.includes(topicId) || (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topicId, String(finalCustomTapes[k])))) {
                 delete finalCustomTapes[k];
                 delete finalCustomTapes[`edurecall_custom_masks_${topicId}`];
               } else {
@@ -3647,6 +3856,23 @@
               }
             });
           }
+
+          // Ensure finalMemos contains the freshest metadata
+          const currentPins = {};
+          for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            if (k && k.startsWith('edurecall_study_pin')) {
+              const pv = localStorage.getItem(k);
+              if (pv) currentPins[k] = pv;
+            }
+          }
+          finalMemos = {
+            ...finalMemos,
+            ...currentPins,
+            __study_pins__: currentPins,
+            __deleted_custom_tapes__: JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]'),
+            __reset_grades__: JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}')
+          };
 
           const { data, error } = await supabaseClient
             .from('user_sync')
@@ -3977,12 +4203,12 @@
           
           if (newReps === 0 && !card.last_review) {
             delete map[topicId];
+            if (typeof recordGradeReset === 'function') recordGradeReset(topicId);
           } else {
-            if (!card.last_review) {
-              card.last_review = new Date();
-              card.state = (window.FSRS && window.FSRS.State) ? window.FSRS.State.Review : 2;
-            }
+            card.last_review = new Date();
+            card.state = (window.FSRS && window.FSRS.State) ? window.FSRS.State.Review : 2;
             map[topicId] = card;
+            if (typeof clearGradeReset === 'function') clearGradeReset(topicId);
           }
           
           gradingUndoStack.push({
@@ -4084,6 +4310,7 @@
               timestamp: Date.now()
             });
             delete map[topicId];
+            if (typeof recordGradeReset === 'function') recordGradeReset(topicId);
             localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
             updateOverallStats();
             renderSidebar();
@@ -4229,6 +4456,7 @@
           updateUndoButtonVisibility();
 
           map[topicId] = nextCard;
+          if (typeof clearGradeReset === 'function') clearGradeReset(topicId);
           localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(map));
           
           // Record daily review stat
@@ -4401,6 +4629,7 @@
               localStorage.removeItem('edurecall_study_pin');
             }
           }
+          if (typeof triggerAutoSync === 'function') triggerAutoSync();
         } catch (e) {}
       }
 
@@ -5811,6 +6040,7 @@
           tape.textContent = answer;
         });
         localStorage.setItem(`edurecall_custom_${topic.id}`, tempDiv.innerHTML);
+        if (typeof clearCustomTapeDeleted === 'function') clearCustomTapeDeleted(topic.id);
         if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
         triggerAutoSync();
       }
@@ -5822,8 +6052,11 @@
           return;
         }
         localStorage.removeItem(`edurecall_custom_${topic.id}`);
+        if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(topic.id);
         if (topic.id.startsWith('ECON-EXAM-')) {
-          localStorage.removeItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
+          const altId = topic.id.replace('ECON-', '');
+          localStorage.removeItem(`edurecall_custom_${altId}`);
+          if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(altId);
         }
         triggerAutoSync();
         subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
@@ -8396,6 +8629,7 @@
 
         try {
           localStorage.setItem(`edurecall_custom_${topic.id}`, content);
+          if (typeof clearCustomTapeDeleted === 'function') clearCustomTapeDeleted(topic.id);
         } catch(e) {
           console.error('Failed to save to localStorage:', e);
           alert('로컬 저장소 용량이 부족하여 저장에 실패했습니다.');
@@ -8438,9 +8672,13 @@
         }
 
         localStorage.removeItem(`edurecall_custom_${topic.id}`);
+        if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(topic.id);
         if (topic.id.startsWith('ECON-EXAM-')) {
-          localStorage.removeItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
+          const altId = topic.id.replace('ECON-', '');
+          localStorage.removeItem(`edurecall_custom_${altId}`);
+          if (typeof markCustomTapeDeleted === 'function') markCustomTapeDeleted(altId);
         }
+        if (typeof triggerAutoSync === 'function') triggerAutoSync();
 
         const original = normalizeExamBadges(topic.contentHtml);
         if (topicEditTextarea) {
