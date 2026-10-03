@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261003_123800"></script>
-  <script src="explanations-data.js?v=20261003_123800"></script>
+  <script src="topics-data.js?v=20261003_211500"></script>
+  <script src="explanations-data.js?v=20261003_211500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2744,9 +2744,16 @@
           .replace(/<span[^>]*class="[^"]*bg-slate-100[^"]*"[^>]*>&lt;차경수\s*모형&gt;<\/span>/g, '');
       }
 
-      // Check whether a custom topic HTML is corrupted (e.g. empty group titles, empty group content, missing Held keywords in POL-044)
+      // Helper: Count mask-tape elements inside an HTML string
+      function countTapesInHtml(html) {
+        if (!html || typeof html !== 'string') return 0;
+        const matches = html.match(/\bclass=["'][^"']*\bmask-tape\b[^"']*["']/g);
+        return matches ? matches.length : 0;
+      }
+
+      // Check whether a custom topic HTML is corrupted (e.g. empty or severely broken)
       function isCustomHtmlCorrupted(topicId, val) {
-        if (!val || typeof val !== 'string') return true;
+        if (!val || typeof val !== 'string' || val.trim().length < 30) return true;
         if (topicId === 'POL-044') {
           if (!val.includes('무행동') || !val.includes('다원권력론과 신통치엘리트 비판') || !val.includes('관찰 가능한 행위·결정')) {
             return true;
@@ -2754,27 +2761,6 @@
         }
         if (val.includes('\uFFFD')) return true;
         if (/<div class="font-bold[^"]*"[^>]*>\s*<span[^>]*class="[^"]*rounded-full[^"]*"[^>]*><\/span>\s*<span>\s*<\/span>\s*<\/div>/.test(val)) return true;
-        if (/<div class="group-content[^"]*">\s*<\/div>/.test(val)) return true;
-        if (val.includes('<span></span>')) return true;
-        try {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(val, 'text/html');
-          const groups = doc.querySelectorAll('.topic-group');
-          if (groups.length > 0) {
-            for (const grp of groups) {
-              const fontBold = grp.querySelector('.font-bold');
-              if (fontBold) {
-                const titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
-                const titleText = titleSpan ? titleSpan.textContent.replace(/visibility|수정/g, '').trim() : '';
-                if (!titleText || /^\(\d+\)$/.test(titleText)) return true;
-              }
-              const content = grp.querySelector('.group-content');
-              if (content && content.textContent.trim().length === 0 && !content.querySelector('img, table, svg')) {
-                return true;
-              }
-            }
-          }
-        } catch (e) {}
         return false;
       }
 
@@ -3606,6 +3592,17 @@
               if (cleanVal.includes('**')) {
                 cleanVal = cleanVal.replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
               }
+
+              // Lossless protection: If local already has custom content with more tapes, NEVER downgrade!
+              const localVal = localStorage.getItem(k);
+              if (localVal) {
+                const localCount = typeof countTapesInHtml === 'function' ? countTapesInHtml(localVal) : 0;
+                const remoteCount = typeof countTapesInHtml === 'function' ? countTapesInHtml(cleanVal) : 0;
+                if (localCount > remoteCount) {
+                  return; // Keep local because it has more mask tapes!
+                }
+              }
+
               localStorage.setItem(k, cleanVal);
               modified = true;
             }
@@ -3815,26 +3812,46 @@
               const allResetGrades = { ...resetGrades, ...remoteResetGrades };
               localStorage.setItem('edurecall_reset_grades', JSON.stringify(allResetGrades));
 
-              // 3. Custom Tapes
+              // 3. Custom Tapes (Intelligent Lossless Max-Tape Merge)
               if (remoteData.custom_tapes && typeof remoteData.custom_tapes === 'object') {
-                finalCustomTapes = { ...remoteData.custom_tapes, ...payload.custom_tapes };
-                // Also unpack any remote tapes that local didn't have yet into local storage!
-                Object.entries(remoteData.custom_tapes).forEach(([k, v]) => {
+                finalCustomTapes = { ...remoteData.custom_tapes };
+                const allCustomKeys = new Set([...Object.keys(remoteData.custom_tapes), ...Object.keys(payload.custom_tapes || {})]);
+                allCustomKeys.forEach(k => {
+                  const localVal = payload.custom_tapes ? payload.custom_tapes[k] : null;
+                  const remoteVal = remoteData.custom_tapes[k];
                   const tId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
                   if (k === 'edurecall_custom_POL-044' || k === 'edurecall_custom_masks_POL-044' || allDeletedTapes.includes(tId)) {
-                    localStorage.removeItem(k);
                     delete finalCustomTapes[k];
                     return;
                   }
-                  if (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(tId, String(v))) {
-                    localStorage.removeItem(k);
-                    delete finalCustomTapes[k];
-                    return;
-                  }
-                  if (!localStorage.getItem(k) && v) {
-                    localStorage.setItem(k, String(v));
+                  if (localVal && remoteVal) {
+                    finalCustomTapes[k] = (countTapesInHtml(localVal) >= countTapesInHtml(remoteVal)) ? localVal : remoteVal;
+                  } else if (localVal) {
+                    finalCustomTapes[k] = localVal;
+                  } else if (remoteVal) {
+                    finalCustomTapes[k] = remoteVal;
                   }
                 });
+
+                // Also unpack any remote tapes that local didn't have or where remote has more tapes
+                let remoteTapesMergedIntoLocal = false;
+                Object.entries(finalCustomTapes).forEach(([k, v]) => {
+                  const tId = k.replace('edurecall_custom_masks_', '').replace('edurecall_custom_', '');
+                  if (allDeletedTapes.includes(tId)) return;
+                  const localVal = localStorage.getItem(k);
+                  if (!localVal && v) {
+                    localStorage.setItem(k, String(v));
+                    remoteTapesMergedIntoLocal = true;
+                  } else if (localVal && v && countTapesInHtml(String(v)) > countTapesInHtml(localVal)) {
+                    localStorage.setItem(k, String(v));
+                    remoteTapesMergedIntoLocal = true;
+                  }
+                });
+                if (remoteTapesMergedIntoLocal) {
+                  if (typeof renderTopic === 'function' && typeof currentTopicIndex === 'number' && typeof TOPICS !== 'undefined' && TOPICS[currentTopicIndex]) {
+                    renderTopic(currentTopicIndex, true);
+                  }
+                }
               }
 
               // 4. Study Pins & User Memos
@@ -3986,6 +4003,11 @@
             const timeStr = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
             localStorage.setItem('edurecall_sync_last_time', timeStr);
             updateSyncUI();
+            if (typeof renderTopic === 'function' && typeof currentTopicIndex === 'number' && typeof TOPICS !== 'undefined' && TOPICS[currentTopicIndex]) {
+              renderTopic(currentTopicIndex, true);
+            }
+            if (typeof renderSidebar === 'function') renderSidebar();
+            if (typeof updateStudyPinUI === 'function') updateStudyPinUI();
             if (notify) {
               showToast(`최신 학습 데이터를 성공적으로 동기화했습니다 (${syncCode})`, 'cloud_done');
             }
