@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261005_102000"></script>
-  <script src="explanations-data.js?v=20261005_102000"></script>
+  <script src="topics-data.js?v=20261005_153500"></script>
+  <script src="explanations-data.js?v=20261005_153500"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -5547,6 +5547,13 @@
         if (topic.id === 'POL-087' && customHtml && !customHtml.includes('정당일체감')) {
           localStorage.removeItem('edurecall_custom_POL-087');
           localStorage.removeItem('edurecall_custom_masks_POL-087');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If ECON-016 custom HTML lacks 인플레이션 조세, purge it
+        if (topic.id === 'ECON-016' && customHtml && !customHtml.includes('인플레이션 조세')) {
+          localStorage.removeItem('edurecall_custom_ECON-016');
+          localStorage.removeItem('edurecall_custom_masks_ECON-016');
           customHtml = null;
         }
 
@@ -9938,9 +9945,13 @@
               (key === 'edurecall_custom_LAW-041' && !val.includes('<table')) ||
               (key === 'edurecall_custom_SOC-067' && val.includes('<table')) ||
               (key === 'edurecall_custom_ECON-APP-13' && val.includes('소득세 감면(T↓)은')) ||
-              (key === 'edurecall_custom_POL-087' && !val.includes('정당일체감'))
+              (key === 'edurecall_custom_POL-087' && !val.includes('정당일체감')) ||
+              (key === 'edurecall_custom_ECON-016' && !val.includes('인플레이션 조세'))
             ) {
               localStorage.removeItem(key);
+              if (key === 'edurecall_custom_ECON-016') {
+                localStorage.removeItem('edurecall_custom_masks_ECON-016');
+              }
             }
           }
         }
