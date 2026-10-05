@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261005_100500"></script>
-  <script src="explanations-data.js?v=20261005_100500"></script>
+  <script src="topics-data.js?v=20261005_101200"></script>
+  <script src="explanations-data.js?v=20261005_101200"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -5540,6 +5540,13 @@
         if (topic.id === 'EXAM-2021-B-11' && customHtml && !customHtml.includes('구상권')) {
           localStorage.removeItem('edurecall_custom_EXAM-2021-B-11');
           localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-11');
+          customHtml = null;
+        }
+
+        // Integrity safeguard: If POL-087 custom HTML lacks 정당일체감, purge it
+        if (topic.id === 'POL-087' && customHtml && !customHtml.includes('정당일체감')) {
+          localStorage.removeItem('edurecall_custom_POL-087');
+          localStorage.removeItem('edurecall_custom_masks_POL-087');
           customHtml = null;
         }
 
