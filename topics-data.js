@@ -17098,6 +17098,29 @@ window.ALL_TOPICS = [
     "groupCount": 2
   },
   {
+    "id": "POL-130",
+    "subject": "정치학",
+    "chapter": "1. 정치학의 이해",
+    "section": "1-2. 정치체제",
+    "title": "1. 정치체제",
+    "examTag": "",
+    "page": 2,
+    "contentHtml": "<div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"0\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(1) 일반적 의미의 정치체제</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"민주주의\">민주주의</span>, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"권위주의\">권위주의</span>, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"전체주의\">전체주의</span></div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"1\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(2) 수평적 권력분립의 정치체제</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"대통령제\">대통령제</span>, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"의원내각제\">의원내각제</span></div></div></div><div class=\"topic-group mb-3.5 bg-white border border-slate-200 rounded-xl p-4 shadow-2xs transition-all\" data-group-index=\"2\"><div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5 mb-2.5\">  <div class=\"font-bold text-sm md:text-base text-blue-700 flex items-center gap-2\">    <span class=\"w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0\"></span>    <span>(3) 수직적 권력분립의 정치체제</span>  </div>  <button class=\"group-toggle-btn text-xs text-slate-400 hover:text-slate-700 px-2 py-0.5 rounded hover:bg-slate-100 flex items-center gap-1\" type=\"button\" title=\"이 항목 블러 토글\">    <span class=\"material-symbols-outlined text-[16px]\">visibility</span>  </button></div><div class=\"group-content space-y-2 pl-1\"><div class=\"recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all\">- <span class=\"mask-tape\" data-tape=\"true\" data-text=\"단일제\">단일제</span>, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"연방제\">연방제</span>, <span class=\"mask-tape\" data-tape=\"true\" data-text=\"국가연합\">국가연합</span></div></div></div>",
+    "defaultAnswer": "1. 정치체제\n(1) 일반적 의미의 정치체제\n- 민주주의, 권위주의, 전체주의\n\n(2) 수평적 권력분립의 정치체제\n- 대통령제, 의원내각제\n\n(3) 수직적 권력분립의 정치체제\n- 단일제, 연방제, 국가연합",
+    "targetKeywords": [
+      "민주주의",
+      "권위주의",
+      "전체주의",
+      "대통령제",
+      "의원내각제",
+      "단일제",
+      "연방제",
+      "국가연합"
+    ],
+    "tapeCount": 8,
+    "groupCount": 3
+  },
+  {
     "id": "POL-018",
     "subject": "정치학",
     "chapter": "2. 정치사상과 이데올로기",
