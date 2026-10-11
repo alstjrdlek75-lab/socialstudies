@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261006_135000"></script>
-  <script src="explanations-data.js?v=20261006_135000"></script>
+  <script src="topics-data.js?v=20261011_132000"></script>
+  <script src="explanations-data.js?v=20261011_132000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -9569,6 +9569,9 @@
       if (initialTopicId === 'SOC-076') {
         initialTopicId = 'SOC-075';
       }
+      if (initialTopicId === 'ECON-017' || initialTopicId === 'ECON-EXAM-2011-1-24') {
+        initialTopicId = 'ECON-016';
+      }
 
 
       let initialIndex = 0;
@@ -9990,6 +9993,47 @@
             }
           } catch(e) {}
           localStorage.setItem('edurecall_migration_v11_done', 'true');
+        }
+      } catch (e) {}
+
+      // Migration V12: Clean up deleted 2-7. 경제성장론 (ECON-017, ECON-EXAM-2011-1-24)
+      try {
+        if (!localStorage.getItem('edurecall_migration_v12_done')) {
+          ['ECON-017', 'ECON-EXAM-2011-1-24'].forEach(delId => {
+            ['edurecall_custom', 'edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
+              localStorage.removeItem(`${prefix}_${delId}`);
+            });
+          });
+          if (localStorage.getItem('edurecall_last_topic_id') === 'ECON-017' || localStorage.getItem('edurecall_last_topic_id') === 'ECON-EXAM-2011-1-24') {
+            localStorage.setItem('edurecall_last_topic_id', 'ECON-016');
+          }
+          if (localStorage.getItem('edurecall_last_topic_경제학') === 'ECON-017' || localStorage.getItem('edurecall_last_topic_경제학') === 'ECON-EXAM-2011-1-24') {
+            localStorage.setItem('edurecall_last_topic_경제학', 'ECON-016');
+          }
+          if (localStorage.getItem('edurecall_study_pin_경제학') === 'ECON-017' || localStorage.getItem('edurecall_study_pin_경제학') === 'ECON-EXAM-2011-1-24') {
+            localStorage.removeItem('edurecall_study_pin_경제학');
+          }
+          if (localStorage.getItem('edurecall_study_pin') === 'ECON-017' || localStorage.getItem('edurecall_study_pin') === 'ECON-EXAM-2011-1-24') {
+            localStorage.removeItem('edurecall_study_pin');
+          }
+
+          try {
+            const bms = JSON.parse(localStorage.getItem('edurecall_bookmarks')) || [];
+            if (Array.isArray(bms) && (bms.includes('ECON-017') || bms.includes('ECON-EXAM-2011-1-24'))) {
+              const updatedBms = bms.filter(id => id !== 'ECON-017' && id !== 'ECON-EXAM-2011-1-24');
+              localStorage.setItem('edurecall_bookmarks', JSON.stringify(updatedBms));
+            }
+          } catch(e) {}
+
+          try {
+            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+            if (fsrsMap['ECON-017'] || fsrsMap['ECON-EXAM-2011-1-24']) {
+              delete fsrsMap['ECON-017'];
+              delete fsrsMap['ECON-EXAM-2011-1-24'];
+              localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
+            }
+          } catch(e) {}
+          localStorage.setItem('edurecall_migration_v12_done', 'true');
         }
       } catch (e) {}
 
