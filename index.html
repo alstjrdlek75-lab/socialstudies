@@ -1575,8 +1575,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261012_100500"></script>
-  <script src="explanations-data.js?v=20261012_100500"></script>
+  <script src="topics-data.js?v=20261012_103000"></script>
+  <script src="explanations-data.js?v=20261012_103000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2875,6 +2875,13 @@
           localStorage.removeItem('edurecall_custom_ECON-APP-07');
           localStorage.removeItem('edurecall_custom_masks_ECON-APP-07');
           localStorage.setItem('edurecall_econ_app_07_refresh_v2', 'true');
+        }
+        if (!localStorage.getItem('edurecall_2026_b_10_refresh_v1')) {
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2026-B-10');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2026-B-10');
+          localStorage.removeItem('edurecall_custom_EXAM-2026-B-10');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-10');
+          localStorage.setItem('edurecall_2026_b_10_refresh_v1', 'true');
         }
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
@@ -9955,7 +9962,8 @@
               (key === 'edurecall_custom_ECON-APP-13' && val.includes('소득세 감면(T↓)은')) ||
               (key === 'edurecall_custom_POL-087' && !val.includes('정당일체감')) ||
               (key === 'edurecall_custom_ECON-016' && !val.includes('인플레이션 조세')) ||
-              (key === 'edurecall_custom_ECON-APP-07' && (val.includes('피구세 단위당 크기가 100') || !val.includes('사적 시장 균형 가격 (Q_S = Q_D)')))
+              (key === 'edurecall_custom_ECON-APP-07' && (val.includes('피구세 단위당 크기가 100') || !val.includes('사적 시장 균형 가격 (Q_S = Q_D)'))) ||
+              ((key === 'edurecall_custom_ECON-EXAM-2026-B-10' || key === 'edurecall_custom_EXAM-2026-B-10') && !val.includes('국공채 매각 시'))
             ) {
               localStorage.removeItem(key);
               if (key === 'edurecall_custom_ECON-016') {
@@ -9963,6 +9971,12 @@
               }
               if (key === 'edurecall_custom_ECON-APP-07') {
                 localStorage.removeItem('edurecall_custom_masks_ECON-APP-07');
+              }
+              if (key === 'edurecall_custom_ECON-EXAM-2026-B-10') {
+                localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2026-B-10');
+              }
+              if (key === 'edurecall_custom_EXAM-2026-B-10') {
+                localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-10');
               }
             }
           }
@@ -10052,6 +10066,17 @@
           localStorage.removeItem('edurecall_custom_ECON-APP-07');
           localStorage.removeItem('edurecall_custom_masks_ECON-APP-07');
           localStorage.setItem('edurecall_migration_v13_done', 'true');
+        }
+      } catch (e) {}
+
+      // Migration V14: Refresh 2026-B-10 explanation (both purchase and sale)
+      try {
+        if (!localStorage.getItem('edurecall_migration_v14_done')) {
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2026-B-10');
+          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2026-B-10');
+          localStorage.removeItem('edurecall_custom_EXAM-2026-B-10');
+          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-10');
+          localStorage.setItem('edurecall_migration_v14_done', 'true');
         }
       } catch (e) {}
 
