@@ -1582,6 +1582,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <!-- Supabase Client SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- JSZip for exporting ZIP archives -->
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body class="bg-surface text-text-main h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
@@ -1652,6 +1654,12 @@
       <button id="btn-library-dashboard" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" aria-label="카드 보관함" title="학습 통계 및 카드 보관함">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-indigo-600">dashboard</span>
         <span class="hidden xl:inline text-[11px] font-bold">보관함</span>
+      </button>
+
+      <!-- Export All Button (단권화 전체 내보내기) -->
+      <button id="btn-export-all" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="단권화 전체 내보내기" title="단권화 본문 전체 내보내기 (JSON 및 과목별 마크다운 ZIP 다운로드)">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-emerald-600 group-hover:scale-110 transition-transform" id="export-icon">download</span>
+        <span class="text-[11px] font-bold text-slate-700" id="export-btn-text">내보내기</span>
       </button>
 
       <!-- Pomodoro Timer Controls -->
@@ -2676,6 +2684,62 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Export Result Modal (전체 내보내기 결과 모달) -->
+  <div id="export-result-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-xs transition-opacity duration-200 p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-lg p-5 sm:p-6 relative text-slate-800 dark:text-slate-100" onclick="event.stopPropagation()">
+      <button id="btn-close-export-modal" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer" type="button" aria-label="닫기">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[24px]">folder_zip</span>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold">단권화 전체 내보내기 완료</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">JSON 및 과목별 마크다운 ZIP 다운로드가 완료되었습니다</p>
+        </div>
+      </div>
+
+      <!-- Total & Subject Card Counts -->
+      <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 mb-3">
+        <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-200/80 dark:border-slate-700">
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px] text-emerald-600">verified</span>
+            <span>내보낸 총 단권화 카드 수</span>
+          </span>
+          <span id="export-total-count" class="text-sm font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">0개</span>
+        </div>
+        <div id="export-subject-counts" class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+          <!-- Populated dynamically: 과목별 카드 수 -->
+        </div>
+      </div>
+
+      <!-- File Details -->
+      <div class="p-3 rounded-xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/60 dark:bg-blue-950/40 mb-3 text-xs text-slate-700 dark:text-slate-300 space-y-1.5">
+        <div class="font-bold text-blue-900 dark:text-blue-300 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px] text-blue-600">inventory_2</span>
+          <span>압축 파일(ZIP) 내 포함된 파일 목록</span>
+        </div>
+        <ul class="list-disc pl-5 space-y-0.5 text-[11px] text-slate-600 dark:text-slate-400 font-mono">
+          <li><strong>edurecall_export.json</strong> <span class="text-slate-400 font-sans">(전체 단권화 카드 구조화 데이터)</span></li>
+          <li><strong>사회과교육론.md</strong>, <strong>법학.md</strong>, <strong>사회학.md</strong></li>
+          <li><strong>정치학.md</strong>, <strong>경제학.md</strong>, <strong>기출.md</strong></li>
+        </ul>
+      </div>
+
+      <!-- Info Notices -->
+      <div class="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-[11px] text-emerald-900 dark:text-emerald-200 space-y-1 mb-4">
+        <div>✓ <strong>UTF-8 인코딩</strong>으로 저장되어 ChatGPT, Claude, Gemini 및 모든 마크다운 뷰어에서 한글 깨짐 없이 즉시 읽을 수 있습니다.</div>
+        <div>✓ 사용자의 개인 FSRS 복습 데이터 및 메모는 제외되고, '본문 수정'으로 편집된 본문은 최신본으로 온전히 반영되었습니다.</div>
+      </div>
+
+      <button id="btn-export-modal-ok" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold text-sm shadow-xs transition-colors cursor-pointer" type="button">
+        확인
+      </button>
     </div>
   </div>
 
@@ -9295,6 +9359,12 @@
             repsModal.classList.add('hidden');
             return;
           }
+          const exportModal = document.getElementById('export-result-modal');
+          if (exportModal && !exportModal.classList.contains('hidden')) {
+            e.preventDefault();
+            exportModal.classList.add('hidden');
+            return;
+          }
         }
 
         // Shortcut Modal [?]
@@ -9508,6 +9578,10 @@
 
         // 12. [Escape] Modals / Drawer / Unreveal
         if (e.code === 'Escape') {
+          if (exportResultModal && !exportResultModal.classList.contains('hidden')) {
+            exportResultModal.classList.add('hidden');
+            return;
+          }
           if (topicEditModal && !topicEditModal.classList.contains('hidden')) {
             closeTopicEditor();
             return;
@@ -10396,6 +10470,375 @@
           paginationContainer.appendChild(pageInfo);
           paginationContainer.appendChild(btnNext);
         }
+      }
+
+      // -------------------------------------------------------------------------
+      // COMPLETE SINGLE-VOLUME CONTENT EXPORT (JSON & SUBJECT MARKDOWN ZIP)
+      // -------------------------------------------------------------------------
+      const btnExportAll = document.getElementById('btn-export-all');
+      const exportIcon = document.getElementById('export-icon');
+      const exportBtnText = document.getElementById('export-btn-text');
+      const exportResultModal = document.getElementById('export-result-modal');
+      const btnCloseExportModal = document.getElementById('btn-close-export-modal');
+      const btnExportModalOk = document.getElementById('btn-export-modal-ok');
+      const exportTotalCount = document.getElementById('export-total-count');
+      const exportSubjectCounts = document.getElementById('export-subject-counts');
+
+      function cleanExpText(raw) {
+        if (!raw) return '';
+        return String(raw)
+          .replace(/<br\s*\/?>/gi, '\n')
+          .replace(/<\/?(?:b|strong)>/gi, '**')
+          .replace(/<\/?(?:i|em)>/gi, '*')
+          .replace(/<[^>]+>/g, '')
+          .replace(/&nbsp;/g, ' ')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&')
+          .replace(/&quot;/g, '"')
+          .replace(/&#039;/g, "'")
+          .trim();
+      }
+
+      function convertHtmlToStructuredText(html, isMarkdown = false) {
+        if (!html) return '';
+        let s = html;
+
+        // Remove interactive UI buttons & icons
+        s = s.replace(/<button\b[^>]*>[\s\S]*?<\/button>/gi, '');
+        s = s.replace(/<span\b[^>]*\bmaterial-symbols-outlined\b[^>]*>[\s\S]*?<\/span>/gi, '');
+        s = s.replace(/<span\b[^>]*\brounded-full\b[^>]*><\/span>/gi, '');
+
+        if (isMarkdown) {
+          // Bolding masked keywords for markdown
+          s = s.replace(/<span\b[^>]*?\bclass=(['"][^'"]*\bmask-tape\b[^'"]*['"])[^>]*>([\s\S]*?)<\/span>/gi, (match, cls, inner) => {
+            const dtMatch = match.match(/\bdata-text=(['"])(.*?)\1/i);
+            let kw = dtMatch ? dtMatch[2] : inner.replace(/<[^>]+>/g, '');
+            return '**' + kw.trim() + '**';
+          });
+          s = s.replace(/\{([^{}]+)\}/g, '**$1**');
+        } else {
+          // Plain text for body_text
+          s = s.replace(/<span\b[^>]*?\bclass=(['"][^'"]*\bmask-tape\b[^'"]*['"])[^>]*>([\s\S]*?)<\/span>/gi, (match, cls, inner) => {
+            const dtMatch = match.match(/\bdata-text=(['"])(.*?)\1/i);
+            let kw = dtMatch ? dtMatch[2] : inner.replace(/<[^>]+>/g, '');
+            return kw.trim();
+          });
+          s = s.replace(/\{([^{}]+)\}/g, '$1');
+        }
+
+        // Diagrams / images
+        s = s.replace(/<img\b[^>]*?\balt=(['"])(.*?)\1[^>]*>/gi, (m, q, alt) => {
+          return '[도해: ' + alt.trim() + ']\n';
+        });
+
+        // Math fractions: KaTeX or CSS fraction
+        s = s.replace(/<span\b[^>]*\bmath-frac\b[^>]*>[\s\S]*?<span\b[^>]*\bnum\b[^>]*>([\s\S]*?)<\/span>[\s\S]*?<span\b[^>]*\bden\b[^>]*>([\s\S]*?)<\/span>[\s\S]*?<\/span>/gi, (m, num, den) => {
+          return '(' + num.replace(/<[^>]+>/g, '').trim() + ' / ' + den.replace(/<[^>]+>/g, '').trim() + ')';
+        });
+
+        // HTML tables to Markdown tables
+        s = s.replace(/<table\b[^>]*>([\s\S]*?)<\/table>/gi, (tableMatch, tableContent) => {
+          const rows = [];
+          const trMatches = tableContent.match(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi) || [];
+          trMatches.forEach(tr => {
+            const cells = [];
+            const cellMatches = tr.match(/<(?:td|th)\b[^>]*>([\s\S]*?)<\/(?:td|th)>/gi) || [];
+            cellMatches.forEach(cell => {
+              let cellText = cell.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
+              cells.push(cellText || '-');
+            });
+            if (cells.length > 0) rows.push(cells);
+          });
+          if (rows.length === 0) return '';
+          const maxCols = Math.max(...rows.map(r => r.length));
+          const padRow = r => {
+            const copy = [...r];
+            while (copy.length < maxCols) copy.push('-');
+            return copy;
+          };
+          let mdTable = '\n\n| ' + padRow(rows[0]).join(' | ') + ' |\n';
+          mdTable += '| ' + Array(maxCols).fill('---').join(' | ') + ' |\n';
+          for (let i = 1; i < rows.length; i++) {
+            mdTable += '| ' + padRow(rows[i]).join(' | ') + ' |\n';
+          }
+          return mdTable + '\n';
+        });
+
+        // Line breaks & block structure
+        s = s.replace(/<br\s*\/?>/gi, '\n');
+        s = s.replace(/<\/p>/gi, '\n\n');
+        s = s.replace(/<\/div>/gi, '\n');
+        s = s.replace(/<\/li>/gi, '\n');
+        s = s.replace(/<li\b[^>]*>/gi, '- ');
+        s = s.replace(/<[^>]+>/g, '');
+
+        // HTML entities decoding
+        s = s.replace(/&nbsp;/g, ' ')
+             .replace(/&lt;/g, '<')
+             .replace(/&gt;/g, '>')
+             .replace(/&amp;/g, '&')
+             .replace(/&quot;/g, '"')
+             .replace(/&#039;/g, "'");
+
+        const lines = s.split('\n').map(l => l.replace(/[ \t]+$/, ''));
+        const cleaned = [];
+        let prevEmpty = false;
+        for (const line of lines) {
+          const t = line.trim();
+          if (!t) {
+            if (!prevEmpty && cleaned.length > 0) {
+              cleaned.push('');
+              prevEmpty = true;
+            }
+            continue;
+          }
+          if (/^클릭(?:\s*시)?\s*(?:원본)?\s*(?:크기)?\s*(?:확대|보기)/.test(t) || t === '클릭: 떼기/가리기' || t === '수정' || t === '이 항목 블러 토글') continue;
+          cleaned.push(line);
+          prevEmpty = false;
+        }
+        return cleaned.join('\n').trim();
+      }
+
+      function processTopicForExport(topic, bookmarksSet) {
+        // Resolve user custom edited content if available
+        let html = localStorage.getItem('edurecall_custom_' + topic.id);
+        if (!html && topic.id.startsWith('ECON-EXAM-')) {
+          html = localStorage.getItem('edurecall_custom_' + topic.id.replace('ECON-', ''));
+        }
+        if (!html) {
+          html = topic.contentHtml || '';
+        }
+
+        // 1. Separate commentary (<details> answer & explanation)
+        let detailsCommentary = [];
+        const detailsRegex = /<details\b[^>]*>([\s\S]*?)<\/details>/gi;
+        let dMatch;
+        while ((dMatch = detailsRegex.exec(html)) !== null) {
+          const dContent = dMatch[1];
+          const sMatch = dContent.match(/<summary\b[^>]*>([\s\S]*?)<\/summary>/i);
+          let title = sMatch ? sMatch[1].replace(/<[^>]+>/g, '').replace(/\(클릭 시 열림\)/g, '').trim() : '';
+          title = title.replace(/^[💡📝\s]+/, '').trim();
+          const bodyOnly = dContent.replace(/<summary\b[^>]*>[\s\S]*?<\/summary>/i, '');
+          const cleanText = convertHtmlToStructuredText(bodyOnly, false);
+          if (cleanText) {
+            detailsCommentary.push(title ? '[' + title + ']\n' + cleanText : cleanText);
+          }
+        }
+        const bodyHtml = html.replace(/<details\b[^>]*>[\s\S]*?<\/details>/gi, '');
+
+        // 2. Extract masked keywords
+        const maskedKeywords = [];
+        const tapeRegex = /<span\b[^>]*?\bclass=(['"][^'"]*\bmask-tape\b[^'"]*['"])[^>]*>([\s\S]*?)<\/span>/gi;
+        let tMatch;
+        while ((tMatch = tapeRegex.exec(html)) !== null) {
+          const full = tMatch[0];
+          const dt = full.match(/\bdata-text=(['"])(.*?)\1/i);
+          let kw = dt ? dt[2] : tMatch[2].replace(/<[^>]+>/g, '');
+          kw = kw.trim();
+          if (kw && !maskedKeywords.includes(kw)) maskedKeywords.push(kw);
+        }
+        const curlyRegex = /\{([^{}]+)\}/g;
+        let cMatch;
+        while ((cMatch = curlyRegex.exec(html)) !== null) {
+          const kw = cMatch[1].trim();
+          if (kw && !maskedKeywords.includes(kw)) maskedKeywords.push(kw);
+        }
+
+        // 3. Extract supplementary explanation
+        let expParts = [];
+        const exp = typeof getTopicExplanation === 'function' ? getTopicExplanation(topic) : null;
+        if (exp) {
+          if (exp.question) expParts.push('[핵심 의문점] ' + exp.question.trim());
+          if (exp.background) {
+            const bgTitle = exp.backgroundTitle || (topic.subject === '법학' ? '1. 입법 취지 및 이론적 배경' : '1. 이론적 배경 및 문제의식');
+            expParts.push(bgTitle + ':\n' + cleanExpText(exp.background));
+          }
+          if (exp.analogy) {
+            const anTitle = exp.analogyTitle || '2. 핵심 쟁점 및 심층 비교·사례';
+            expParts.push(anTitle + ':\n' + cleanExpText(exp.analogy));
+          }
+          if (exp.subnoteBridge) {
+            const brTitle = exp.bridgeTitle || '3. 서브노트 본문과의 연결고리';
+            expParts.push(brTitle + ':\n' + cleanExpText(exp.subnoteBridge));
+          }
+          if (exp.keyPoints) {
+            expParts.push('핵심 포인트:\n' + cleanExpText(exp.keyPoints));
+          }
+        }
+
+        const allCommentary = [...expParts, ...detailsCommentary].join('\n\n').trim();
+        const bodyText = convertHtmlToStructuredText(bodyHtml, false);
+        const mdBody = convertHtmlToStructuredText(bodyHtml, true);
+
+        // 4. Past exam references
+        const pastExamRefs = [];
+        if (topic.examTag && topic.examTag !== '이론핵심' && topic.examTag !== '응용 TEST') {
+          pastExamRefs.push(topic.examTag.trim());
+        }
+        const badgeMatches = html.match(/<span[^>]*class=["'][^"']*\bexam-badge\b[^"']*["'][^>]*>([\s\S]*?)<\/span>/gi);
+        if (badgeMatches) {
+          badgeMatches.forEach(bHtml => {
+            const clean = bHtml.replace(/<[^>]+>/g, '').trim();
+            if (clean && !pastExamRefs.includes(clean) && !pastExamRefs.some(r => r.includes(clean))) {
+              pastExamRefs.push(clean);
+            }
+          });
+        }
+
+        const isImportant = bookmarksSet.has(topic.id);
+        const section = topic.subsection ? `${topic.section} › ${topic.subsection}` : (topic.section || topic.chapter || '');
+
+        return {
+          cardObj: {
+            id: topic.id,
+            subject: topic.subject,
+            chapter: topic.chapter || '',
+            section: section,
+            title: topic.title,
+            important: isImportant,
+            body_text: bodyText,
+            masked_keywords: maskedKeywords,
+            commentary: allCommentary,
+            past_exam_refs: pastExamRefs
+          },
+          mdBody: mdBody,
+          commentary: allCommentary,
+          pastExamRefs: pastExamRefs
+        };
+      }
+
+      async function exportAllContent() {
+        if (!btnExportAll) return;
+        if (typeof JSZip === 'undefined') {
+          alert('압축 라이브러리(JSZip)를 불러오는 중입니다. 잠시 후 다시 시도해 주세요.');
+          return;
+        }
+
+        btnExportAll.disabled = true;
+        if (exportIcon) exportIcon.textContent = 'hourglass_top';
+        if (exportBtnText) exportBtnText.textContent = '내보내는 중...';
+
+        try {
+          await new Promise(resolve => setTimeout(resolve, 50));
+
+          const bookmarks = typeof getStoredBookmarks === 'function' ? getStoredBookmarks() : [];
+          const bookmarksSet = new Set(bookmarks);
+
+          const validSubjects = ['사회과교육론', '법학', '사회학', '정치학', '경제학', '기출'];
+          const exportTopics = TOPICS.filter(t => validSubjects.includes(t.subject));
+
+          const allJsonCards = [];
+          const subjectMdMap = {};
+          const subjectCounts = {};
+
+          validSubjects.forEach(s => {
+            subjectMdMap[s] = `# 일반사회 단권화 - ${s}\n\n> 이 파일은 다른 AI 모델 및 학습 도구가 읽을 수 있도록 내보낸 단권화 마크다운 문서입니다.\n> - 마스킹 테이프 키워드는 **굵게** 표시되어 있습니다.\n> - 보충·심층 해설은 '> 보충해설:' 인용 블록으로 본문과 분리되어 있습니다.\n\n`;
+            subjectCounts[s] = 0;
+          });
+
+          for (const topic of exportTopics) {
+            const processed = processTopicForExport(topic, bookmarksSet);
+            allJsonCards.push(processed.cardObj);
+            subjectCounts[topic.subject] = (subjectCounts[topic.subject] || 0) + 1;
+
+            let mdCard = `--- \n\n## [${topic.id}] ${topic.title}\n\n`;
+            if (processed.pastExamRefs.length > 0) {
+              mdCard += `- 기출 표기: ${processed.pastExamRefs.join(', ')}\n`;
+            }
+            if (topic.chapter) {
+              const secPath = topic.section ? `${topic.chapter} > ${topic.section}` : topic.chapter;
+              mdCard += `- 단원: ${secPath}\n`;
+            }
+            mdCard += '\n' + processed.mdBody + '\n\n';
+
+            if (processed.commentary) {
+              const quotedCommentary = processed.commentary
+                .split('\n')
+                .map(line => line.trim() ? `> ${line}` : '>')
+                .join('\n');
+              mdCard += `> 보충해설:\n${quotedCommentary}\n\n`;
+            }
+
+            if (subjectMdMap[topic.subject] !== undefined) {
+              subjectMdMap[topic.subject] += mdCard;
+            }
+          }
+
+          const zip = new JSZip();
+          zip.file("edurecall_export.json", JSON.stringify(allJsonCards, null, 2));
+
+          validSubjects.forEach(subj => {
+            zip.file(`${subj}.md`, subjectMdMap[subj]);
+          });
+
+          const zipBlob = await zip.generateAsync({
+            type: "blob",
+            mimeType: "application/zip",
+            compression: "DEFLATE",
+            compressionOptions: { level: 6 }
+          });
+
+          const now = new Date();
+          const y = now.getFullYear();
+          const m = String(now.getMonth() + 1).padStart(2, '0');
+          const d = String(now.getDate()).padStart(2, '0');
+          const filename = `edurecall_export_${y}${m}${d}.zip`;
+
+          const url = URL.createObjectURL(zipBlob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+          if (exportTotalCount) {
+            exportTotalCount.textContent = `${allJsonCards.length}개 카드`;
+          }
+          if (exportSubjectCounts) {
+            exportSubjectCounts.innerHTML = validSubjects.map(s => {
+              const cnt = subjectCounts[s] || 0;
+              return `<div class="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <span class="font-bold text-slate-700 dark:text-slate-300">${s}</span>
+                <span class="font-mono font-extrabold text-blue-600 dark:text-blue-400">${cnt}개</span>
+              </div>`;
+            }).join('');
+          }
+          if (exportResultModal) {
+            exportResultModal.classList.remove('hidden');
+          }
+
+          showToast(`🎉 전체 내보내기 완료! (${allJsonCards.length}개 카드 다운로드)`, 'download_done');
+
+        } catch (err) {
+          console.error('Export all content error:', err);
+          alert('내보내기 중 오류가 발생했습니다: ' + err.message);
+        } finally {
+          btnExportAll.disabled = false;
+          if (exportIcon) exportIcon.textContent = 'download';
+          if (exportBtnText) exportBtnText.textContent = '내보내기';
+        }
+      }
+
+      if (btnExportAll) {
+        btnExportAll.addEventListener('click', exportAllContent);
+      }
+      if (btnCloseExportModal) {
+        btnCloseExportModal.addEventListener('click', () => {
+          if (exportResultModal) exportResultModal.classList.add('hidden');
+        });
+      }
+      if (btnExportModalOk) {
+        btnExportModalOk.addEventListener('click', () => {
+          if (exportResultModal) exportResultModal.classList.add('hidden');
+        });
+      }
+      if (exportResultModal) {
+        exportResultModal.addEventListener('click', (e) => {
+          if (e.target === exportResultModal) exportResultModal.classList.add('hidden');
+        });
       }
 
       window.addEventListener('resize', () => {
