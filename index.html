@@ -2845,7 +2845,7 @@
               localStorage.setItem(key, val);
             }
           }
-          if (key === 'edurecall_custom_POL-044' || isCustomHtmlCorrupted(topicId, val)) {
+          if (isCustomHtmlCorrupted(topicId, val)) {
             localStorage.removeItem(key);
             localStorage.removeItem(`edurecall_custom_masks_${topicId}`);
             continue;
@@ -3554,9 +3554,6 @@
           const key = localStorage.key(i);
           if (!key) continue;
           if (isTopicCustomKey(key)) {
-            if (key === 'edurecall_custom_POL-044') {
-              continue;
-            }
             const topicId = key.replace('edurecall_custom_', '');
             if (deletedCustomTapes.includes(topicId)) {
               continue;
@@ -3651,7 +3648,7 @@
             }
             if (v !== null && v !== undefined) {
               const topicId = k.replace('edurecall_custom_', '');
-              if (k === 'edurecall_custom_POL-044' || activeDeletedTapes.includes(topicId)) {
+              if (activeDeletedTapes.includes(topicId)) {
                 localStorage.removeItem(k);
                 return;
               }
@@ -4009,7 +4006,7 @@
                 const localVal = payload.custom_tapes ? payload.custom_tapes[k] : null;
                 const remoteVal = remoteData.custom_tapes[k];
                 const tId = k.replace('edurecall_custom_', '');
-                if (k === 'edurecall_custom_POL-044' || allDeletedTapes.includes(tId)) {
+                if (allDeletedTapes.includes(tId)) {
                   return;
                 }
                 if (localVal && remoteVal) {
@@ -4092,7 +4089,6 @@
 
           const activeDeleted = JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]');
           if (finalCustomTapes && typeof finalCustomTapes === 'object') {
-            delete finalCustomTapes['edurecall_custom_POL-044'];
             delete finalCustomTapes['edurecall_custom_masks_POL-044'];
             delete finalCustomTapes['edurecall_custom_timestamps'];
             Object.keys(finalCustomTapes).forEach(k => {
@@ -5599,8 +5595,8 @@
           try { localStorage.setItem('edurecall_custom_EDU-040', customHtml); } catch(e) {}
         }
 
-        // Integrity safeguard: If custom HTML is severely corrupted (empty) or is POL-044, discard and restore official contentHtml
-        if (customHtml && (topic.id === 'POL-044' || (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topic.id, customHtml)))) {
+        // Integrity safeguard: If custom HTML is severely corrupted (empty), discard and restore official contentHtml
+        if (customHtml && (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topic.id, customHtml))) {
           localStorage.removeItem(`edurecall_custom_${topic.id}`);
           localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
           customHtml = null;
@@ -6161,6 +6157,16 @@
             s.innerHTML = s.innerHTML.replace(/(?:&nbsp;|\s)+수정\s*$/, '').trim();
           }
         });
+        // Unwrap rendered KaTeX elements back to raw $...$ / $$...$$ TeX strings so nested KaTeX spans don't bloat or corrupt editor parsing
+        tempDiv.querySelectorAll('.katex-display, .katex').forEach(kEl => {
+          if (!kEl.parentNode) return;
+          const ann = kEl.querySelector('annotation[encoding="application/x-tex"]');
+          if (ann && ann.textContent) {
+            const isDisplay = kEl.classList.contains('katex-display') || (kEl.parentElement && kEl.parentElement.classList.contains('katex-display'));
+            const delim = isDisplay ? '$$' : '$';
+            kEl.replaceWith(document.createTextNode(`${delim}${ann.textContent.trim()}${delim}`));
+          }
+        });
         // Normalize any typing inputs back to clean tape spans in storage
         tempDiv.querySelectorAll('.mask-tape').forEach(tape => {
           const answer = tape.getAttribute('data-text') || (tape.querySelector('.tape-typing-input')?.getAttribute('data-answer')) || tape.textContent.trim();
@@ -6323,6 +6329,28 @@
           } catch (e) {}
         }
 
+        // If selection is within a single .recall-item that has a .flex-1 content wrapper,
+        // clamp range boundaries into .flex-1 so bullet spans (–, •, →) or the .flex-1 div itself are never wrapped inside .mask-tape
+        try {
+          const startEl = range.startContainer.nodeType === Node.ELEMENT_NODE ? range.startContainer : range.startContainer.parentElement;
+          const endEl = range.endContainer.nodeType === Node.ELEMENT_NODE ? range.endContainer : range.endContainer.parentElement;
+          const startItem = startEl?.closest('.recall-item');
+          const endItem = endEl?.closest('.recall-item');
+          if (startItem && startItem === endItem) {
+            const flexBox = startItem.querySelector(':scope > .flex-1');
+            if (flexBox) {
+              if (!flexBox.contains(range.startContainer)) {
+                range.setStart(flexBox, 0);
+              }
+              if (!flexBox.contains(range.endContainer)) {
+                range.setEnd(flexBox, flexBox.childNodes.length);
+              }
+              const clampedText = range.toString().trim();
+              if (clampedText) selectedText = clampedText;
+            }
+          }
+        } catch (e) {}
+
         // Create the new mask tape span
         const span = document.createElement('span');
         span.className = 'mask-tape is-taped';
@@ -6358,6 +6386,22 @@
               console.warn('Masking fallback:', err2);
               return;
             }
+          }
+        }
+
+        // Safety cleanup: if span accidentally captured a .flex-1 wrapper or bullet span, unwrap .flex-1 and remove stray bullet spans
+        span.querySelectorAll('.subnote-indent-l2-dash, .subnote-indent-l3-bullet, .subnote-indent-l4-arrow').forEach(b => b.remove());
+        span.querySelectorAll('.flex-1').forEach(fDiv => {
+          const p = fDiv.parentNode;
+          if (p) {
+            while (fDiv.firstChild) p.insertBefore(fDiv.firstChild, fDiv);
+            p.removeChild(fDiv);
+          }
+        });
+        if (span.parentElement && span.parentElement.classList.contains('recall-item')) {
+          const siblingFlex = span.parentElement.querySelector(':scope > .flex-1');
+          if (siblingFlex && siblingFlex !== span) {
+            siblingFlex.insertBefore(span, siblingFlex.firstChild);
           }
         }
 
@@ -7951,56 +7995,96 @@
 
       function tapeHtmlToEditorText(html) {
         if (!html) return '';
-        // 1. Convert mask-tape spans
-        let res = html.replace(/<span\b[^>]*?\bclass=(["\x27])(.*?)\1[^>]*>([\s\S]*?)<\/span>/gi, (match, quote, cls, inner) => {
-          if (/\bmask-tape\b/.test(cls)) {
-            const leading = inner.match(/^\s*/)[0];
-            const trailing = inner.match(/\s*$/)[0];
-            const core = inner.trim();
-            return `${leading}{${core}}${trailing}`;
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+
+        // 1. Unwrap any rendered KaTeX back to $...$ / $$...$$ TeX strings so math isn't duplicated or mangled
+        temp.querySelectorAll('.katex-display, .katex').forEach(kEl => {
+          if (!kEl.parentNode) return;
+          const ann = kEl.querySelector('annotation[encoding="application/x-tex"]');
+          if (ann && ann.textContent) {
+            const isDisplay = kEl.classList.contains('katex-display') || (kEl.parentElement && kEl.parentElement.classList.contains('katex-display'));
+            const delim = isDisplay ? '$$' : '$';
+            kEl.replaceWith(document.createTextNode(`${delim}${ann.textContent.trim()}${delim}`));
           }
-          if (/\bexam-badge\b/.test(cls)) {
-            return ` ${inner.trim()} `;
-          }
-          return match;
         });
-        // 2. Remove icon spans entirely
-        res = res.replace(/<span\b[^>]*?\bmaterial-symbols-outlined\b[^>]*>[\s\S]*?<\/span>/gi, '');
-        // 3. Convert breaks to spaces
-        res = res.replace(/<br\s*\/?>/gi, ' ');
-        // 4. Strip any other HTML tags so raw markup never leaks into cards
-        res = res.replace(/<[^>]+>/g, '');
-        // 5. Decode common HTML entities
-        res = res.replace(/&nbsp;/g, ' ')
-                 .replace(/&lt;/g, '<')
-                 .replace(/&gt;/g, '>')
-                 .replace(/&amp;/g, '&');
+
+        // 2. Remove UI icon/action/bullet spans and any leftover katex-mathml
+        temp.querySelectorAll('.material-symbols-outlined, .group-actions-wrap, .group-edit-btn, .group-toggle-btn, .subnote-indent-l2-dash, .subnote-indent-l3-bullet, .subnote-indent-l4-arrow, .katex-mathml').forEach(el => el.remove());
+
+        // 3. Convert exam-badge spans to spaced text
+        temp.querySelectorAll('.exam-badge').forEach(badge => {
+          const t = (badge.textContent || '').trim();
+          badge.replaceWith(document.createTextNode(t ? ` ${t} ` : ''));
+        });
+
+        // 4. Convert all .mask-tape elements (innermost first so nested spans never break) to {word}
+        const tapes = Array.from(temp.querySelectorAll('.mask-tape')).reverse();
+        tapes.forEach(tape => {
+          const rawInner = tape.textContent || tape.getAttribute('data-text') || '';
+          const leading = (rawInner.match(/^\s*/) || [''])[0];
+          const trailing = (rawInner.match(/\s*$/) || [''])[0];
+          const core = (tape.getAttribute('data-text') || (tape.querySelector('.tape-typing-input')?.getAttribute('data-answer')) || rawInner).trim();
+          if (core) {
+            tape.replaceWith(document.createTextNode(`${leading}{${core}}${trailing}`));
+          } else {
+            tape.remove();
+          }
+        });
+
+        // 5. Convert <br> to spaces
+        temp.querySelectorAll('br').forEach(br => {
+          br.replaceWith(document.createTextNode(' '));
+        });
+
+        const res = (temp.textContent || '').replace(/\u00A0/g, ' ');
         return res.replace(/[ \t]{2,}/g, ' ').trim();
       }
 
       function editorTextToTapeHtml(text) {
         if (!text) return '';
         let res = text;
+
+        // Protect LaTeX math blocks ($...$ and $$...$$) so LaTeX braces like \frac{a}{b} are not mistaken for {mask-tape}
+        const mathPlaceholders = [];
+        res = res.replace(/\$\$[\s\S]*?\$\$|\$[^$\n]+?\$/g, (m) => {
+          const idx = mathPlaceholders.length;
+          mathPlaceholders.push(m);
+          return `\u0000MATH_${idx}_\u0000`;
+        });
+
         // 1. Convert [[word]] to mask-tape
         res = res.replace(/\[\[([^[\]]+)\]\]/g, (m, inner) => {
           const clean = inner.trim();
           if (!clean) return '';
-          return `<span class="mask-tape" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
+          return `<span class="mask-tape is-taped" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
         });
-        // 2. Convert {word} to mask-tape
-        res = res.replace(/\{([^{}]+)\}/g, (m, inner) => {
+        // 2. Convert {word} to mask-tape (ignoring LaTeX command braces if any outside $)
+        res = res.replace(/(?<![\\_^])\{([^{}]+)\}/g, (m, inner) => {
           const clean = inner.trim();
           if (!clean) return '';
-          return `<span class="mask-tape" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
+          return `<span class="mask-tape is-taped" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
         });
         // 3. Normalize any raw mask-tape spans if user entered them directly
-        res = res.replace(/<span\b[^>]*?\bclass=(["\x27])(.*?)\1[^>]*>([\s\S]*?)<\/span>/gi, (match, quote, cls, inner) => {
-          if (/\bmask-tape\b/.test(cls)) {
-            const clean = inner.trim();
-            return `<span class="mask-tape" data-tape="true" data-text="${escapeHtml(clean)}">${clean}</span>`;
-          }
-          return match;
-        });
+        if (res.includes('mask-tape')) {
+          const temp = document.createElement('div');
+          temp.innerHTML = res;
+          temp.querySelectorAll('.mask-tape').forEach(tape => {
+            const clean = (tape.getAttribute('data-text') || tape.textContent || '').trim();
+            if (clean) {
+              tape.className = 'mask-tape is-taped';
+              tape.setAttribute('data-tape', 'true');
+              tape.setAttribute('data-text', clean);
+              tape.textContent = clean;
+            }
+          });
+          res = temp.innerHTML;
+        }
+
+        // Restore LaTeX math blocks
+        if (mathPlaceholders.length > 0) {
+          res = res.replace(/\u0000MATH_(\d+)_\u0000/g, (m, idx) => mathPlaceholders[Number(idx)] || m);
+        }
         return res;
       }
 
@@ -8027,101 +8111,163 @@
 
         if (groups && groups.length > 0) {
           groups.forEach((group, gIdx) => {
-            // Extract clean title
+            // Extract clean title while preserving any mask-tape inside the title as {word}
             let title = '';
             const titleEl = group.querySelector('.font-bold');
             if (titleEl) {
               const clone = titleEl.cloneNode(true);
-              clone.querySelectorAll('.exam-badge').forEach(b => {
-                const t = b.textContent.trim();
-                b.replaceWith(document.createTextNode(' ' + t + ' '));
-              });
               clone.querySelectorAll('.material-symbols-outlined, .rounded-full, .w-2, .w-2\\.5, .w-3, .group-edit-btn, .group-actions-wrap').forEach(el => el.remove());
-              title = clone.textContent.trim().replace(/(?:&nbsp;|\s)+수정\s*$/g, '').replace(/\s{2,}/g, ' ').trim();
+              title = tapeHtmlToEditorText(clone.innerHTML).replace(/(?:&nbsp;|\s)+수정\s*$/g, '').replace(/\s{2,}/g, ' ').trim();
             }
             if (!title) title = `(${gIdx + 1}) 항목`;
 
-            // Extract items and preserve any table
+            // Extract items and preserve any table / extra blocks
             const items = [];
             let rawTableHtml = '';
+            const extraBlocksPre = [];
+            const extraBlocksPost = [];
             const contentEl = group.querySelector('.group-content');
+            const originalContentHtml = contentEl ? contentEl.innerHTML : '';
+
             if (contentEl) {
-              const tableEl = contentEl.querySelector('table');
-              if (tableEl) {
-                const containerEl = contentEl.querySelector('.overflow-x-auto') || tableEl;
-                rawTableHtml = containerEl.outerHTML;
-              }
               const recallItems = contentEl.querySelectorAll('.recall-item');
               if (recallItems && recallItems.length > 0) {
-                recallItems.forEach(itemEl => {
-                  // 1. Check if this item is an outline-enhanced item with bullet span + flex-1
-                  const flexDiv = itemEl.querySelector(':scope > .flex-1');
-                  if (flexDiv) {
-                    let prefix = '- ';
-                    if (itemEl.classList.contains('subnote-indent-l3') || itemEl.querySelector('.subnote-indent-l3-bullet')) prefix = '• ';
-                    else if (itemEl.classList.contains('subnote-indent-l4') || itemEl.querySelector('.subnote-indent-l4-arrow')) prefix = '→ ';
-                    const contentText = tapeHtmlToEditorText(flexDiv.innerHTML);
-                    if (contentText && contentText !== '내용 없음' && !/^[\s-–—⦁•*→]*$/.test(contentText)) {
-                      items.push({
-                        text: prefix + contentText,
-                        isSub: true
-                      });
+                // Collect any non-.recall-item direct children (such as tables, details, callout boxes, diagrams) so they are never lost
+                let seenRecallItem = false;
+                Array.from(contentEl.children).forEach(child => {
+                  if (child.classList.contains('recall-item') || child.querySelector('.recall-item')) {
+                    seenRecallItem = true;
+                  } else {
+                    if (!seenRecallItem) {
+                      extraBlocksPre.push(child.outerHTML);
+                    } else {
+                      extraBlocksPost.push(child.outerHTML);
                     }
-                    return;
+                  }
+                });
+
+                recallItems.forEach(itemEl => {
+                  let prefix = '';
+                  let isOutlineSub = false;
+                  if (itemEl.classList.contains('subnote-indent-l3') || itemEl.querySelector('.subnote-indent-l3-bullet')) {
+                    prefix = '• ';
+                    isOutlineSub = true;
+                  } else if (itemEl.classList.contains('subnote-indent-l4') || itemEl.querySelector('.subnote-indent-l4-arrow')) {
+                    const arrowEl = itemEl.querySelector('.subnote-indent-l4-arrow');
+                    const arrowTxt = arrowEl ? arrowEl.textContent.trim() : '→';
+                    prefix = (arrowTxt || '→') + ' ';
+                    isOutlineSub = true;
+                  } else if (itemEl.classList.contains('subnote-indent-l2') || itemEl.querySelector('.subnote-indent-l2-dash')) {
+                    prefix = '- ';
+                    isOutlineSub = true;
                   }
 
-                  const innerDivs = Array.from(itemEl.querySelectorAll('div, p')).filter(d => d.textContent.trim());
-                  if (innerDivs.length > 0) {
-                    const clone = itemEl.cloneNode(true);
-                    clone.querySelectorAll('div, p').forEach(d => d.remove());
-                    const topText = tapeHtmlToEditorText(clone.innerHTML);
+                  const itemClone = itemEl.cloneNode(true);
+                  itemClone.querySelectorAll('.subnote-indent-l2-dash, .subnote-indent-l3-bullet, .subnote-indent-l4-arrow').forEach(el => el.remove());
+                  // Unwrap any .flex-1 wrapper divs (even if nested inside .mask-tape or split) so all text and tapes are preserved linearly
+                  itemClone.querySelectorAll('.flex-1').forEach(fDiv => {
+                    const p = fDiv.parentNode;
+                    if (p) {
+                      while (fDiv.firstChild) p.insertBefore(fDiv.firstChild, fDiv);
+                      p.removeChild(fDiv);
+                    }
+                  });
+
+                  const directSubBlocks = Array.from(itemClone.querySelectorAll(':scope > div, :scope > p')).filter(d => !d.closest('.mask-tape') && d.textContent.trim());
+                  if (directSubBlocks.length > 0 && !isOutlineSub) {
+                    const topClone = itemClone.cloneNode(true);
+                    topClone.querySelectorAll(':scope > div, :scope > p').forEach(d => d.remove());
+                    const topText = tapeHtmlToEditorText(topClone.innerHTML);
                     if (topText && topText !== '내용 없음' && !/^[\s-–—⦁•*→]*$/.test(topText)) {
+                      const topIsSub = itemEl.classList.contains('pl-6') || topText.startsWith('-');
                       items.push({
                         text: topText,
-                        isSub: itemEl.classList.contains('pl-6') || topText.startsWith('-')
+                        isSub: topIsSub,
+                        originalText: topText,
+                        originalIsSub: topIsSub,
+                        originalItemHtml: null
                       });
                     }
-                    innerDivs.forEach(subDiv => {
+                    directSubBlocks.forEach(subDiv => {
                       const subText = tapeHtmlToEditorText(subDiv.innerHTML);
                       if (subText && subText !== '내용 없음' && !/^[\s-–—⦁•*→]*$/.test(subText)) {
                         items.push({
                           text: subText,
-                          isSub: true
+                          isSub: true,
+                          originalText: subText,
+                          originalIsSub: true,
+                          originalItemHtml: null
                         });
                       }
                     });
                   } else {
-                    const rawText = itemEl.innerHTML.trim();
-                    if (rawText === '내용 없음') return;
-                    const cleanText = tapeHtmlToEditorText(rawText);
-                    if (!cleanText || /^[\s-–—⦁•*→]*$/.test(cleanText)) return;
-                    const isSub = itemEl.classList.contains('pl-6') || itemEl.classList.contains('text-slate-600') || cleanText.startsWith('-');
+                    let cleanText = tapeHtmlToEditorText(itemClone.innerHTML);
+                    if (!cleanText || cleanText === '내용 없음' || /^[\s-–—⦁•*→]*$/.test(cleanText)) return;
+                    if (prefix && !/^[-–—⦁•*※→➔]/.test(cleanText)) {
+                      cleanText = prefix + cleanText;
+                    }
+                    const isSub = isOutlineSub || itemEl.classList.contains('pl-6') || itemEl.classList.contains('text-slate-600') || /^[-–—⦁•*※→➔]/.test(cleanText);
                     items.push({
                       text: cleanText,
-                      isSub: isSub
+                      isSub: isSub,
+                      originalText: cleanText,
+                      originalIsSub: isSub,
+                      originalItemHtml: itemEl.outerHTML
                     });
                   }
                 });
-              } else if (!rawTableHtml) {
-                // Fallback: look for p or direct children only if no table
-                const paragraphs = contentEl.querySelectorAll('p, div');
-                paragraphs.forEach(p => {
-                  const cleanText = tapeHtmlToEditorText(p.innerHTML.trim());
-                  if (cleanText && cleanText !== '내용 없음') {
-                    items.push({
-                      text: cleanText,
-                      isSub: cleanText.startsWith('-')
+              } else {
+                const tableEl = contentEl.querySelector('table');
+                if (tableEl) {
+                  const containerEl = contentEl.querySelector('.overflow-x-auto') || tableEl;
+                  rawTableHtml = containerEl.outerHTML;
+                } else {
+                  const paragraphs = contentEl.querySelectorAll('p, div');
+                  if (paragraphs.length > 0) {
+                    paragraphs.forEach(p => {
+                      if (p.querySelector('p, div')) return;
+                      const cleanText = tapeHtmlToEditorText(p.innerHTML.trim());
+                      if (cleanText && cleanText !== '내용 없음') {
+                        const isSub = cleanText.startsWith('-');
+                        items.push({
+                          text: cleanText,
+                          isSub: isSub,
+                          originalText: cleanText,
+                          originalIsSub: isSub,
+                          originalItemHtml: p.outerHTML
+                        });
+                      }
                     });
+                  } else {
+                    const cleanText = tapeHtmlToEditorText(contentEl.innerHTML.trim());
+                    if (cleanText && cleanText !== '내용 없음') {
+                      items.push({
+                        text: cleanText,
+                        isSub: cleanText.startsWith('-'),
+                        originalText: cleanText,
+                        originalIsSub: cleanText.startsWith('-'),
+                        originalItemHtml: null
+                      });
+                    }
                   }
-                });
+                }
               }
             }
 
-            if (items.length === 0 && !rawTableHtml) {
+            if (items.length === 0 && !rawTableHtml && extraBlocksPre.length === 0 && extraBlocksPost.length === 0) {
               items.push({ text: '', isSub: false });
             }
 
-            cards.push({ title, items, rawTableHtml: rawTableHtml || null });
+            cards.push({
+              title,
+              originalTitle: title,
+              items,
+              rawTableHtml: rawTableHtml || null,
+              extraBlocksPre,
+              extraBlocksPost,
+              originalContentHtml,
+              isDirty: false
+            });
           });
         } else {
           // If no .topic-group exists, parse paragraphs or lines into a single default card
@@ -8138,7 +8284,8 @@
           }
           cards.push({
             title: '본문 내용',
-            items: items.length > 0 ? items : [{ text: '', isSub: false }]
+            items: items.length > 0 ? items : [{ text: '', isSub: false }],
+            isDirty: true
           });
         }
 
@@ -8150,29 +8297,62 @@
         const bodyContent = cards.map((card, cIdx) => {
           let title = (card.title || '').trim().replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
           if (!title) title = `(${cIdx + 1}) 항목`;
+          const titleHtml = editorTextToTapeHtml(title);
+
+          // If this card's body was NOT modified by the user during this editor session, preserve its exact original innerHTML!
+          if (!card.isDirty && typeof card.originalContentHtml === 'string' && card.originalContentHtml.trim().length > 0) {
+            return `<div class="topic-group mb-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-2xs transition-all" data-group-index="${cIdx}">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-2.5 mb-2.5">
+    <div class="font-bold text-sm md:text-base text-blue-700 dark:text-blue-400 flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
+      <span>${titleHtml}</span>
+    </div>
+    <button class="group-toggle-btn text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-1 cursor-pointer" type="button" title="이 항목 블러 토글">
+      <span class="material-symbols-outlined text-[16px]">visibility</span>
+    </button>
+  </div>
+  <div class="group-content space-y-2 pl-1">${card.originalContentHtml}</div>
+</div>`;
+          }
+
           let itemsHtml = '';
-          if (card.rawTableHtml) {
+          if (card.rawTableHtml && (!card.items || card.items.length === 0)) {
             itemsHtml = card.rawTableHtml;
           } else {
-            itemsHtml = (card.items || [])
+            const parts = [];
+            if (card.extraBlocksPre && card.extraBlocksPre.length > 0) {
+              parts.push(...card.extraBlocksPre);
+            }
+            const renderedItems = (card.items || [])
               .map(item => {
                 let text = (item.text || '').trim();
                 if (!text || /^[\s-–—⦁•*→]*$/.test(text)) return '';
+                // If this specific line was not edited, preserve its original recall-item HTML (retaining bold/colors/badges/tapes)
+                if (item.originalItemHtml && item.text === item.originalText && item.isSub === item.originalIsSub) {
+                  return '    ' + item.originalItemHtml;
+                }
                 text = editorTextToTapeHtml(text);
                 if (item.isSub) {
                   return `    <div class="recall-item text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pl-6 py-0.5 transition-all">${text}</div>`;
                 }
                 return `    <div class="recall-item text-sm md:text-[15px] text-slate-800 dark:text-slate-100 leading-relaxed pl-3.5 border-l-2 border-blue-200 dark:border-blue-900/60 py-1 transition-all">${text}</div>`;
               })
-              .filter(Boolean)
-              .join('\n');
+              .filter(Boolean);
+            parts.push(...renderedItems);
+            if (card.extraBlocksPost && card.extraBlocksPost.length > 0) {
+              parts.push(...card.extraBlocksPost);
+            }
+            if (card.rawTableHtml) {
+              parts.push(card.rawTableHtml);
+            }
+            itemsHtml = parts.join('\n');
           }
 
           return `<div class="topic-group mb-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-2xs transition-all" data-group-index="${cIdx}">
   <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-2.5 mb-2.5">
     <div class="font-bold text-sm md:text-base text-blue-700 dark:text-blue-400 flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
-      <span>${title}</span>
+      <span>${titleHtml}</span>
     </div>
     <button class="group-toggle-btn text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-1 cursor-pointer" type="button" title="이 항목 블러 토글">
       <span class="material-symbols-outlined text-[16px]">visibility</span>
@@ -8197,7 +8377,7 @@
         }
 
         // Tokenize rawText into chunks: {masked} or plain chunks
-        const regex = /\{([^{}]+)\}|([^{}]+)/g;
+        const regex = /(?<![\\_^])\{([^{}]+)\}|([^{}]+|[\\_^]\{[^{}]*\})/g;
         let match;
 
         while ((match = regex.exec(rawText)) !== null) {
@@ -8222,9 +8402,12 @@
 
             badge.addEventListener('click', (e) => {
               e.stopPropagation();
-              const currentItem = activeEditorCards[cIdx].items[iIdx];
+              const card = activeEditorCards[cIdx];
+              const currentItem = card.items[iIdx];
               const newText = currentItem.text.substring(0, matchStart) + maskedContent + currentItem.text.substring(matchEnd);
               currentItem.text = newText;
+              currentItem.originalItemHtml = null;
+              card.isDirty = true;
               renderTopicCardEditor();
             });
 
@@ -8297,9 +8480,12 @@
 
               wordSpan.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const currentItem = activeEditorCards[cIdx].items[iIdx];
+                const card = activeEditorCards[cIdx];
+                const currentItem = card.items[iIdx];
                 const newText = currentItem.text.substring(0, coreStart) + `{${core}}` + currentItem.text.substring(coreEnd);
                 currentItem.text = newText;
+                currentItem.originalItemHtml = null;
+                card.isDirty = true;
                 renderTopicCardEditor();
               });
 
@@ -8360,6 +8546,47 @@
         });
       }
 
+      function applyCardTextareaEdit(card, cIdx, titleVal, textareaVal) {
+        if (!card) return;
+        const newTitle = (titleVal || '').trim() || `(${cIdx + 1}) 항목`;
+        card.title = newTitle;
+        const val = (textareaVal || '').trim();
+        card.isDirty = true;
+
+        if (val.includes('<table')) {
+          card.rawTableHtml = val;
+          card.items = [];
+        } else {
+          if (!card.extraBlocksPre) card.extraBlocksPre = [];
+          if (!card.extraBlocksPost) card.extraBlocksPost = [];
+          const prevItems = Array.isArray(card.items) ? card.items : [];
+          const usedPrevIndices = new Set();
+          const lines = val.split('\n').map(l => l.trimEnd()).filter(l => l.trim().length > 0);
+          card.items = lines.map(line => {
+            const trimmed = line.trim();
+            const isSub = line.startsWith('  ') || line.startsWith('\t') || /^[-–—⦁•*※→➔]/.test(trimmed);
+            let matchedOriginalHtml = null;
+            for (let i = 0; i < prevItems.length; i++) {
+              if (!usedPrevIndices.has(i) && prevItems[i].originalItemHtml && prevItems[i].originalText === trimmed && prevItems[i].originalIsSub === isSub) {
+                matchedOriginalHtml = prevItems[i].originalItemHtml;
+                usedPrevIndices.add(i);
+                break;
+              }
+            }
+            return {
+              text: trimmed,
+              isSub: isSub,
+              originalText: trimmed,
+              originalIsSub: isSub,
+              originalItemHtml: matchedOriginalHtml
+            };
+          });
+          if (card.items.length === 0 && !card.rawTableHtml && card.extraBlocksPre.length === 0 && card.extraBlocksPost.length === 0) {
+            card.items = [{ text: '', isSub: false }];
+          }
+        }
+      }
+
       function syncCurrentEditingCards() {
         if (!topicEditCardsContainer) return;
         activeEditorCards.forEach((card, cIdx) => {
@@ -8368,27 +8595,12 @@
             if (cardRow) {
               const titleInput = cardRow.querySelector('.card-edit-title-input');
               const textarea = cardRow.querySelector('.card-edit-textarea');
-              if (titleInput) {
-                card.title = titleInput.value.trim() || `(${cIdx + 1}) 항목`;
-              }
-              if (textarea) {
-                const val = textarea.value.trim();
-                if (val.includes('<table')) {
-                  card.rawTableHtml = val;
-                  card.items = [];
-                } else {
-                  card.rawTableHtml = null;
-                  const lines = val.split('\n').map(l => l.trimEnd()).filter(l => l.trim().length > 0);
-                  card.items = lines.map(line => {
-                    const trimmed = line.trim();
-                    const isSub = line.startsWith('  ') || line.startsWith('\t') || trimmed.startsWith('-') || trimmed.startsWith('⦁') || trimmed.startsWith('•');
-                    return { text: trimmed, isSub };
-                  });
-                  if (card.items.length === 0) {
-                    card.items = [{ text: '', isSub: false }];
-                  }
-                }
-              }
+              applyCardTextareaEdit(
+                card,
+                cIdx,
+                titleInput ? titleInput.value : card.title,
+                textarea ? textarea.value : ''
+              );
             }
           }
         });
@@ -8426,7 +8638,8 @@
           activeEditorCards = [{
             title: '(1) 첫 번째 항목',
             items: [{ text: '', isSub: false }],
-            isEditing: true
+            isEditing: true,
+            isDirty: true
           }];
         }
 
@@ -8447,12 +8660,12 @@
           if (card.isEditing) {
             // DIRECT TEXT EDITING MODE FOR THIS CARD (SEAMLESS CARD FRAME)
             let initialText = '';
-            if (card.rawTableHtml) {
+            if (card.rawTableHtml && (!card.items || card.items.length === 0)) {
               initialText = card.rawTableHtml;
             } else {
               initialText = (card.items || []).map(it => {
                 let t = it.text || '';
-                if (it.isSub && !t.startsWith('-') && !t.startsWith('⦁') && !t.startsWith('•')) {
+                if (it.isSub && !/^[-–—⦁•*※→➔]/.test(t)) {
                   return `- ${t}`;
                 }
                 return t;
@@ -8528,27 +8741,12 @@
             }
 
             function finishEditing() {
-              const newTitle = titleInput ? titleInput.value.trim() : '';
-              card.title = newTitle || `(${cIdx + 1}) 항목`;
-              const val = (textarea ? textarea.value : '').trim();
-              if (val.includes('<table')) {
-                card.rawTableHtml = val;
-                card.items = [];
-              } else {
-                card.rawTableHtml = null;
-                const lines = val.split('\n').map(l => l.trimEnd()).filter(l => l.trim().length > 0);
-                card.items = lines.map(line => {
-                  const trimmed = line.trim();
-                  const isSub = line.startsWith('  ') || line.startsWith('\t') || trimmed.startsWith('-') || trimmed.startsWith('⦁') || trimmed.startsWith('•');
-                  return {
-                    text: trimmed,
-                    isSub: isSub
-                  };
-                });
-                if (card.items.length === 0) {
-                  card.items = [{ text: '', isSub: false }];
-                }
-              }
+              applyCardTextareaEdit(
+                card,
+                cIdx,
+                titleInput ? titleInput.value : card.title,
+                textarea ? textarea.value : ''
+              );
               card.isEditing = false;
               renderTopicCardEditor();
             }
@@ -8577,7 +8775,7 @@
 
           } else {
             // INTERACTIVE WORD-TAP VIEW (REFERENCE STYLE)
-            const isOriginal = !customHtml;
+            const isOriginal = !customHtml && !card.isDirty;
             
             const headerHtml = `
               <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800/80">
@@ -8597,12 +8795,14 @@
             const itemsContainer = document.createElement('div');
             itemsContainer.className = 'space-y-1.5 text-xs sm:text-sm leading-relaxed';
 
-            if (card.rawTableHtml) {
-              const tableWrapper = document.createElement('div');
-              tableWrapper.className = 'my-1';
-              tableWrapper.innerHTML = card.rawTableHtml;
-              itemsContainer.appendChild(tableWrapper);
-            } else {
+            if (card.extraBlocksPre && card.extraBlocksPre.length > 0) {
+              const preWrapper = document.createElement('div');
+              preWrapper.className = 'my-1 space-y-1.5';
+              preWrapper.innerHTML = card.extraBlocksPre.join('\n');
+              itemsContainer.appendChild(preWrapper);
+            }
+
+            if (card.items && card.items.length > 0) {
               (card.items || []).forEach((item, iIdx) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = item.isSub
@@ -8612,6 +8812,20 @@
                 renderInteractiveLine(itemDiv, cIdx, iIdx, item.text || '');
                 itemsContainer.appendChild(itemDiv);
               });
+            }
+
+            if (card.extraBlocksPost && card.extraBlocksPost.length > 0) {
+              const postWrapper = document.createElement('div');
+              postWrapper.className = 'my-1 space-y-1.5';
+              postWrapper.innerHTML = card.extraBlocksPost.join('\n');
+              itemsContainer.appendChild(postWrapper);
+            }
+
+            if (card.rawTableHtml) {
+              const tableWrapper = document.createElement('div');
+              tableWrapper.className = 'my-1';
+              tableWrapper.innerHTML = card.rawTableHtml;
+              itemsContainer.appendChild(tableWrapper);
             }
 
             const footerHtml = `
@@ -8882,7 +9096,7 @@
           return;
         }
 
-        const replacement = `<span class="mask-tape">${selected}</span>`;
+        const replacement = `<span class="mask-tape is-taped" data-tape="true" data-text="${escapeHtml(selected.trim())}">${selected}</span>`;
         topicEditTextarea.value = val.substring(0, start) + replacement + val.substring(end);
         topicEditTextarea.selectionStart = start;
         topicEditTextarea.selectionEnd = start + replacement.length;
@@ -8925,7 +9139,8 @@
           activeEditorCards.push({
             title: `(${nextNum}) 새 항목`,
             items: [{ text: '', isSub: false }],
-            isEditing: true
+            isEditing: true,
+            isDirty: true
           });
           renumberEditorCards(activeEditorCards);
           renderTopicCardEditor();
