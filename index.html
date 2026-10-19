@@ -250,7 +250,7 @@
       background-color: rgba(239, 246, 255, 0.92);
       color: #1e3a8a;
       font-weight: 600;
-      padding: 1.5px 5px;
+      padding: 2px 5px;
       border-radius: 5px;
       border-bottom: 1.5px solid #bfdbfe;
       box-decoration-break: clone;
@@ -265,26 +265,23 @@
       background-color: #f8fafc;
       border: 1px solid rgba(226, 232, 240, 0.9);
       border-left: 3.5px solid #3b82f6;
-      border-radius: 0.75rem;
-      padding: 1rem 1.125rem;
+      border-radius: 0.85rem;
+      padding: 1.125rem 1.25rem;
     }
     html.dark .ctx-quote {
       background-color: rgba(15, 23, 42, 0.65);
       border-color: rgba(51, 65, 85, 0.8);
       border-left-color: #3b82f6;
     }
+    #context-guide-modal-body,
     #context-guide-modal-body p {
-      font-size: 13.5px;
-      line-height: 1.72;
-      color: #334155;
+      font-size: calc(15.2px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.78 !important;
+      color: #1e293b;
     }
-    @media (min-width: 640px) {
-      #context-guide-modal-body p {
-        font-size: 14px;
-      }
-    }
+    html.dark #context-guide-modal-body,
     html.dark #context-guide-modal-body p {
-      color: #cbd5e1;
+      color: #e2e8f0;
     }
     #context-guide-modal-body strong {
       color: #0f172a;
@@ -300,27 +297,28 @@
       color: #dbeafe;
     }
     #context-guide-modal-body .space-y-1\.5,
-    #context-guide-modal-body .space-y-2 {
+    #context-guide-modal-body .space-y-2,
+    #context-guide-modal-body [class*="text-\["] {
       background-color: #ffffff;
       border: 1px solid rgba(226, 232, 240, 0.85);
       border-radius: 0.75rem;
-      padding: 0.75rem 0.875rem;
+      padding: 0.875rem 1rem;
       margin-top: 0.5rem;
-      font-size: 13px !important;
-      line-height: 1.68 !important;
-      color: #334155;
+      font-size: calc(14.6px * var(--content-font-scale, 1.15)) !important;
+      line-height: 1.75 !important;
+      color: #1e293b;
     }
-    @media (min-width: 640px) {
-      #context-guide-modal-body .space-y-1\.5,
-      #context-guide-modal-body .space-y-2 {
-        font-size: 13.5px !important;
-      }
+    #context-guide-modal-body .space-y-1\.5 div,
+    #context-guide-modal-body .space-y-2 div {
+      font-size: inherit !important;
+      line-height: inherit !important;
     }
     html.dark #context-guide-modal-body .space-y-1\.5,
-    html.dark #context-guide-modal-body .space-y-2 {
+    html.dark #context-guide-modal-body .space-y-2,
+    html.dark #context-guide-modal-body [class*="text-\["] {
       background-color: rgba(19, 29, 49, 0.85);
       border-color: rgba(51, 65, 85, 0.75);
-      color: #cbd5e1;
+      color: #e2e8f0;
     }
     #context-guide-modal-body .flex.items-start.gap-2 > span.font-bold {
       color: #3b82f6 !important;
@@ -2891,21 +2889,21 @@
 
   <!-- CONTEXT GUIDE MODAL (단원·주제 맥락 설명 팝업) -->
   <div id="context-guide-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-3 sm:p-4 transition-opacity duration-200">
-    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-xl max-h-[85dvh] sm:max-h-[82vh] flex flex-col overflow-hidden relative text-slate-800 dark:text-slate-100 animate-in fade-in zoom-in-95 duration-150" onclick="event.stopPropagation()">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-2xl max-h-[86dvh] sm:max-h-[84vh] flex flex-col overflow-hidden relative text-slate-800 dark:text-slate-100 animate-in fade-in zoom-in-95 duration-150" onclick="event.stopPropagation()">
       <!-- Header -->
-      <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-700/80 bg-slate-50/70 dark:bg-slate-800/80 flex items-center justify-between gap-3 shrink-0">
-        <div class="flex items-center gap-2.5 min-w-0">
-          <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-[21px]">menu_book</span>
+      <div class="px-5 sm:px-6 py-4 border-b border-slate-100 dark:border-slate-700/80 bg-slate-50/70 dark:bg-slate-800/80 flex items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[23px]">menu_book</span>
           </div>
           <div class="min-w-0">
-            <div class="flex items-center gap-1.5">
-              <h3 id="context-guide-modal-title" class="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 truncate">
+            <div class="flex items-center gap-2">
+              <h3 id="context-guide-modal-title" class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100 truncate">
                 설명 보기
               </h3>
-              <span id="context-guide-modal-badge" class="px-2 py-0.5 rounded-md text-[10.5px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 shrink-0">맥락 안내</span>
+              <span id="context-guide-modal-badge" class="px-2 py-0.5 rounded-md text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 shrink-0">맥락 안내</span>
             </div>
-            <p id="context-guide-modal-subtitle" class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">
+            <p id="context-guide-modal-subtitle" class="text-xs sm:text-[13px] text-slate-500 dark:text-slate-400 truncate mt-0.5 font-medium">
               학문사적 배경 및 핵심 구조
             </p>
           </div>
@@ -2915,7 +2913,7 @@
         </button>
       </div>
       <!-- Scrollable Body -->
-      <div id="context-guide-modal-body" class="p-4 sm:p-5 overflow-y-auto text-[13.5px] sm:text-[14px] text-slate-700 dark:text-slate-200 leading-[1.72] space-y-3">
+      <div id="context-guide-modal-body" class="p-5 sm:p-6 overflow-y-auto text-slate-800 dark:text-slate-200 space-y-3.5">
         <!-- Populated dynamically -->
       </div>
     </div>
