@@ -46,28 +46,35 @@
     .math-frac {
       display: inline-flex;
       flex-direction: column;
-      vertical-align: -0.55em;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
       text-align: center;
-      padding: 0 0.22em;
-      font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
-      font-style: italic;
-      font-weight: normal;
-      line-height: 1;
+      padding: 0 0.2em;
+      margin: 0.1em 0.12em;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.1;
     }
     .math-frac > .num {
       display: block;
-      border-bottom: 1.2px solid currentColor;
-      padding: 0 0.15em 1px 0.15em;
-      line-height: 1.15;
-      font-size: 0.84em;
+      width: 100%;
+      border-bottom: 1.4px solid currentColor;
+      padding: 0.05em 0.2em 0.12em 0.2em;
+      line-height: 1.2;
+      font-size: 0.85em;
       text-align: center;
+      white-space: nowrap;
     }
     .math-frac > .den {
       display: block;
-      padding: 1px 0.15em 0 0.15em;
-      line-height: 1.15;
-      font-size: 0.84em;
+      width: 100%;
+      padding: 0.12em 0.2em 0.05em 0.2em;
+      line-height: 1.2;
+      font-size: 0.85em;
       text-align: center;
+      white-space: nowrap;
     }
     .math-sym {
       font-family: 'KaTeX_Math', 'Cambria Math', 'Times New Roman', serif;
@@ -617,11 +624,43 @@
     }
 
     #subnote-content-container .math-frac {
-      font-size: 1.05em !important;
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      vertical-align: middle !important;
+      font-size: 0.96em !important;
+      line-height: 1.15 !important;
+      font-style: normal !important;
+      margin: 2px 0.14em !important;
     }
-    #subnote-content-container .math-frac > .num,
+    #subnote-content-container .math-frac > .num {
+      display: block !important;
+      width: 100% !important;
+      border-bottom: 1.4px solid currentColor !important;
+      padding: 0.04em 0.22em 0.12em 0.22em !important;
+      font-size: 0.85em !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
+    }
     #subnote-content-container .math-frac > .den {
-      font-size: 0.82em !important;
+      display: block !important;
+      width: 100% !important;
+      padding: 0.12em 0.22em 0.04em 0.22em !important;
+      font-size: 0.85em !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
+    }
+    #subnote-content-container strong:has(.math-frac),
+    #subnote-content-container span.border:has(.math-frac),
+    #subnote-content-container span.bg-white:has(.math-frac),
+    #subnote-content-container .recall-tape:has(.math-frac) {
+      display: inline-flex !important;
+      align-items: center !important;
+      vertical-align: middle !important;
+      line-height: 1.2 !important;
+      padding: 3px 6px !important;
+      margin: 2px 1px !important;
     }
     #subnote-content-container .math-sym,
     #subnote-content-container .math-box {
