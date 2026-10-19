@@ -262,31 +262,49 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 16px;
-      height: 16px;
-      border-radius: 9999px;
-      background-color: #1e293b;
-      color: #ffffff;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 10.5px;
-      font-weight: 800;
-      line-height: 1;
+      width: 18px;
+      height: 18px;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #94a3b8;
       cursor: pointer;
       flex-shrink: 0;
       transition: all 0.15s ease;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+    }
+    .ctx-info-btn .material-symbols-outlined {
+      font-size: 15px;
+      line-height: 1;
+      font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 20;
     }
     .ctx-info-btn:hover {
-      background-color: #2563eb;
-      transform: scale(1.1);
+      background-color: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
+    }
+    #topic-header-path .ctx-info-btn {
+      color: #60a5fa;
+      width: 17px;
+      height: 17px;
+    }
+    #topic-header-path .ctx-info-btn .material-symbols-outlined {
+      font-size: 14px;
+    }
+    #topic-header-path .ctx-info-btn:hover {
+      background-color: rgba(37, 99, 235, 0.12);
+      color: #1d4ed8;
     }
     html.dark .ctx-info-btn {
-      background-color: #cbd5e1;
-      color: #0f172a;
+      color: #64748b;
     }
     html.dark .ctx-info-btn:hover {
-      background-color: #60a5fa;
-      color: #0f172a;
+      background-color: rgba(96, 165, 250, 0.15);
+      color: #60a5fa;
+    }
+    html.dark #topic-header-path .ctx-info-btn {
+      color: #60a5fa;
+    }
+    html.dark #topic-header-path .ctx-info-btn:hover {
+      background-color: rgba(96, 165, 250, 0.2);
+      color: #93c5fd;
     }
 
     /* Dynamic Font Scale Controller Rules */
@@ -1882,8 +1900,8 @@
                   <span class="material-symbols-outlined text-[13px]">auto_stories</span>
                   <span id="topic-reps-badge-text">1회독</span>
                 </span>
-                <button id="btn-topic-context-guide" type="button" class="hidden inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 hover:bg-slate-200/90 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 border border-slate-200/90 dark:border-slate-700 transition-all cursor-pointer shrink-0 shadow-2xs active:scale-95" title="이 주제를 왜 배우는지 맥락 설명 보기">
-                  <span class="text-[9px] text-slate-700 dark:text-slate-300">▶</span>
+                <button id="btn-topic-context-guide" type="button" class="hidden inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-bold bg-slate-100/90 hover:bg-blue-50 text-slate-600 hover:text-blue-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200/90 hover:border-blue-200 dark:border-slate-700 transition-all cursor-pointer shrink-0 shadow-2xs active:scale-95" title="이 주제를 왜 배우는지 맥락 설명 보기">
+                  <span class="material-symbols-outlined text-[13.5px]">info</span>
                   <span>설명 보기</span>
                 </button>
                 <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title">
@@ -5631,7 +5649,7 @@
 
           const hasDistinctSecs = Array.from(secMap.keys()).some(s => s && s !== chName);
           const chapCtxBtn = hasContextGuide(chName)
-            ? `<span class="ctx-info-btn ml-1" data-ctx-key="${escapeHtml(chName)}" data-ctx-title="${escapeHtml(chName)}" title="${escapeHtml(chName)} 단원 맥락 보기">i</span>`
+            ? `<span class="ctx-info-btn ml-0.5" data-ctx-key="${escapeHtml(chName)}" data-ctx-title="${escapeHtml(chName)}" title="${escapeHtml(chName)} 단원 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
             : '';
 
           // Show chapter header in ALL / 기출 tabs, OR when the chapter has distinct sections and a context guide (like 3. 국가론 ⓘ)
@@ -5674,7 +5692,7 @@
 
             const secExamTag = (isExamSubject || chName.includes('기출')) ? '' : getSectionExamTag(indices);
             const secCtxBtn = hasContextGuide(secName)
-              ? `<span class="ctx-info-btn ml-0.5" data-ctx-key="${escapeHtml(secName)}" data-ctx-title="${escapeHtml(secName)}" title="${escapeHtml(secName)} 맥락 보기">i</span>`
+              ? `<span class="ctx-info-btn" data-ctx-key="${escapeHtml(secName)}" data-ctx-title="${escapeHtml(secName)}" title="${escapeHtml(secName)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
               : '';
 
             const secGroup = document.createElement('div');
@@ -5862,7 +5880,7 @@
                 subGroup.className = 'subsection-group my-1';
 
                 const subCtxBtn = hasContextGuide(subName)
-                  ? `<span class="ctx-info-btn ml-0.5" data-ctx-key="${escapeHtml(subName)}" data-ctx-title="${escapeHtml(subName)}" title="${escapeHtml(subName)} 맥락 보기">i</span>`
+                  ? `<span class="ctx-info-btn" data-ctx-key="${escapeHtml(subName)}" data-ctx-title="${escapeHtml(subName)}" title="${escapeHtml(subName)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
                   : '';
 
                 const subHeader = document.createElement('button');
@@ -6016,19 +6034,19 @@
           const parts = [];
           if (ch) {
             const btn = hasContextGuide(ch)
-              ? ` <span class="ctx-info-btn align-middle ml-0.5" data-ctx-key="${escapeHtml(ch)}" data-ctx-title="${escapeHtml(ch)}" title="${escapeHtml(ch)} 맥락 보기">i</span>`
+              ? `<span class="ctx-info-btn align-middle" data-ctx-key="${escapeHtml(ch)}" data-ctx-title="${escapeHtml(ch)}" title="${escapeHtml(ch)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
               : '';
             parts.push(`<span class="inline-flex items-center gap-0.5">${escapeHtml(ch)}${btn}</span>`);
           }
           if (sec) {
             const btn = hasContextGuide(sec)
-              ? ` <span class="ctx-info-btn align-middle ml-0.5" data-ctx-key="${escapeHtml(sec)}" data-ctx-title="${escapeHtml(sec)}" title="${escapeHtml(sec)} 맥락 보기">i</span>`
+              ? `<span class="ctx-info-btn align-middle" data-ctx-key="${escapeHtml(sec)}" data-ctx-title="${escapeHtml(sec)}" title="${escapeHtml(sec)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
               : '';
             parts.push(`<span class="inline-flex items-center gap-0.5">${escapeHtml(sec)}${btn}</span>`);
           }
           if (sub) {
             const btn = hasContextGuide(sub)
-              ? ` <span class="ctx-info-btn align-middle ml-0.5" data-ctx-key="${escapeHtml(sub)}" data-ctx-title="${escapeHtml(sub)}" title="${escapeHtml(sub)} 맥락 보기">i</span>`
+              ? `<span class="ctx-info-btn align-middle" data-ctx-key="${escapeHtml(sub)}" data-ctx-title="${escapeHtml(sub)}" title="${escapeHtml(sub)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
               : '';
             parts.push(`<span class="inline-flex items-center gap-0.5">${escapeHtml(sub)}${btn}</span>`);
           }
