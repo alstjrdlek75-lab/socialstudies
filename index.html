@@ -990,12 +990,16 @@
       word-break: keep-all !important;
       overflow-wrap: break-word !important;
     }
-    #subnote-content-container .mask-tape,
-    #subnote-content-container .mask-tape * {
+    #subnote-content-container .mask-tape {
       white-space: nowrap !important;
       word-break: keep-all !important;
       overflow-wrap: normal !important;
       display: inline-flex !important;
+      align-items: center !important;
+    }
+    #subnote-content-container .mask-tape .math-frac > .num,
+    #subnote-content-container .mask-tape .math-frac > .den {
+      display: block !important;
     }
 
     /* =========================================================
@@ -3020,7 +3024,12 @@
           // Clean contaminated trailing '수정' in group header spans safely (strictly inside span without crossing tags)
           .replace(/(<div[^>]*class="[^"]*font-bold[^"]*"[^>]*>[\s\S]*?<span>[^<]*?)(?:&nbsp;|\s)+수정\s*(<\/span>)/g, '$1$2')
           // Clean unnecessary <차경수 모형> badge in EDU-059
-          .replace(/<span[^>]*class="[^"]*bg-slate-100[^"]*"[^>]*>&lt;차경수\s*모형&gt;<\/span>/g, '');
+          .replace(/<span[^>]*class="[^"]*bg-slate-100[^"]*"[^>]*>&lt;차경수\s*모형&gt;<\/span>/g, '')
+          // Repair flattened cost-minimization and marginal-cost formulas in ECON-004
+          .replace(/<span[^>]*class="[^"]*mask-tape[^"]*"[^>]*data-text="비용극소화조건"[^>]*>(?:MPLw\s*=\s*MPKv|비용극소화조건|<span class="math-frac">[\s\S]*?<\/span>\s*=\s*<span class="math-frac">[\s\S]*?<\/span>)<\/span>/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num"><i>MP</i><sub><i>L</i></sub></span><span class="den"><i>w</i></span></span> = <span class="math-frac"><span class="num"><i>MP</i><sub><i>K</i></sub></span><span class="den"><i>v</i></span></span></strong>')
+          .replace(/MPLw\s*=\s*MPKv/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num"><i>MP</i><sub><i>L</i></sub></span><span class="den"><i>w</i></span></span> = <span class="math-frac"><span class="num"><i>MP</i><sub><i>K</i></sub></span><span class="den"><i>v</i></span></span></strong>')
+          .replace(/<span[^>]*class="[^"]*mask-tape[^"]*"[^>]*data-text="한계비용공식"[^>]*>(?:ΔTCΔQ\s*=\s*ΔTVCΔQ|한계비용공식|<span class="math-frac">[\s\S]*?<\/span>\s*=\s*<span class="math-frac">[\s\S]*?<\/span>)<\/span>/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num">Δ<i>TC</i></span><span class="den">Δ<i>Q</i></span></span> = <span class="math-frac"><span class="num">Δ<i>TVC</i></span><span class="den">Δ<i>Q</i></span></span></strong>')
+          .replace(/ΔTCΔQ\s*=\s*ΔTVCΔQ/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num">Δ<i>TC</i></span><span class="den">Δ<i>Q</i></span></span> = <span class="math-frac"><span class="num">Δ<i>TVC</i></span><span class="den">Δ<i>Q</i></span></span></strong>');
       }
 
       // Helper: Check if a localStorage key is an actual topic custom HTML key (excluding metadata like timestamps)
@@ -3053,7 +3062,7 @@
           let val = localStorage.getItem(key);
           if (!val) continue;
           const topicId = key.replace('edurecall_custom_', '');
-          if (val.includes('\uFFFD') || val.includes('??') || val.includes('&lt;차경수 모형&gt;') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val)) {
+          if (val.includes('\uFFFD') || val.includes('??') || val.includes('MPLw') || val.includes('ΔTCΔQ') || val.includes('비용극소화조건') || val.includes('한계비용공식') || val.includes('&lt;차경수 모형&gt;') || /(?:&nbsp;|\s)+수정\s*<\/span>/.test(val) || /<span>(?:(?!<\/div>)[\s\S])*?<\/div>\s*<div class="group-content/.test(val)) {
             const healed = healCorruptedHtml(val);
             if (healed !== val) {
               val = healed;
@@ -3160,6 +3169,17 @@
           localStorage.removeItem('edurecall_custom_EXAM-2026-B-10');
           localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-10');
           localStorage.setItem('edurecall_2026_b_10_refresh_v1', 'true');
+        }
+        if (!localStorage.getItem('edurecall_econ_004_refresh_v1')) {
+          localStorage.removeItem('edurecall_custom_ECON-004');
+          localStorage.removeItem('edurecall_custom_masks_ECON-004');
+          localStorage.removeItem('edurecall_custom_ECON-002');
+          localStorage.removeItem('edurecall_custom_masks_ECON-002');
+          localStorage.removeItem('edurecall_custom_ECON-016');
+          localStorage.removeItem('edurecall_custom_masks_ECON-016');
+          localStorage.removeItem('edurecall_custom_ECON-EXAM-2024-A-12');
+          localStorage.removeItem('edurecall_custom_EXAM-2024-A-12');
+          localStorage.setItem('edurecall_econ_004_refresh_v1', 'true');
         }
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
@@ -6511,11 +6531,14 @@
         });
         // Normalize any typing inputs back to clean tape spans in storage
         tempDiv.querySelectorAll('.mask-tape').forEach(tape => {
+          const hasTypingInput = Boolean(tape.querySelector('.tape-typing-input'));
           const answer = tape.getAttribute('data-text') || (tape.querySelector('.tape-typing-input')?.getAttribute('data-answer')) || tape.textContent.trim();
           tape.className = 'mask-tape is-taped';
           tape.setAttribute('data-tape', 'true');
           tape.setAttribute('data-text', answer);
-          tape.textContent = answer;
+          if (hasTypingInput || tape.children.length === 0) {
+            tape.textContent = answer;
+          }
         });
         localStorage.setItem(`edurecall_custom_${topic.id}`, tempDiv.innerHTML);
         recordTopicCustomTimestamp(topic.id);
@@ -6567,8 +6590,15 @@
         if (!tape || !tape.parentNode) return;
         const parent = tape.parentNode;
         const text = tape.textContent;
-        const textNode = document.createTextNode(text);
-        parent.replaceChild(textNode, tape);
+        if (!tape.classList.contains('is-typing-mode') && tape.children.length > 0) {
+          while (tape.firstChild) {
+            parent.insertBefore(tape.firstChild, tape);
+          }
+          parent.removeChild(tape);
+        } else {
+          const textNode = document.createTextNode(text);
+          parent.replaceChild(textNode, tape);
+        }
         parent.normalize();
 
         hideFloatingMaskBtn();
