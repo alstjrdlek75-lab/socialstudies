@@ -3029,7 +3029,15 @@
           .replace(/<span[^>]*class="[^"]*mask-tape[^"]*"[^>]*data-text="비용극소화조건"[^>]*>(?:MPLw\s*=\s*MPKv|비용극소화조건|<span class="math-frac">[\s\S]*?<\/span>\s*=\s*<span class="math-frac">[\s\S]*?<\/span>)<\/span>/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num"><i>MP</i><sub><i>L</i></sub></span><span class="den"><i>w</i></span></span> = <span class="math-frac"><span class="num"><i>MP</i><sub><i>K</i></sub></span><span class="den"><i>v</i></span></span></strong>')
           .replace(/MPLw\s*=\s*MPKv/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num"><i>MP</i><sub><i>L</i></sub></span><span class="den"><i>w</i></span></span> = <span class="math-frac"><span class="num"><i>MP</i><sub><i>K</i></sub></span><span class="den"><i>v</i></span></span></strong>')
           .replace(/<span[^>]*class="[^"]*mask-tape[^"]*"[^>]*data-text="한계비용공식"[^>]*>(?:ΔTCΔQ\s*=\s*ΔTVCΔQ|한계비용공식|<span class="math-frac">[\s\S]*?<\/span>\s*=\s*<span class="math-frac">[\s\S]*?<\/span>)<\/span>/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num">Δ<i>TC</i></span><span class="den">Δ<i>Q</i></span></span> = <span class="math-frac"><span class="num">Δ<i>TVC</i></span><span class="den">Δ<i>Q</i></span></span></strong>')
-          .replace(/ΔTCΔQ\s*=\s*ΔTVCΔQ/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num">Δ<i>TC</i></span><span class="den">Δ<i>Q</i></span></span> = <span class="math-frac"><span class="num">Δ<i>TVC</i></span><span class="den">Δ<i>Q</i></span></span></strong>');
+          .replace(/ΔTCΔQ\s*=\s*ΔTVCΔQ/g, '<strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded"><span class="math-frac"><span class="num">Δ<i>TC</i></span><span class="den">Δ<i>Q</i></span></span> = <span class="math-frac"><span class="num">Δ<i>TVC</i></span><span class="den">Δ<i>Q</i></span></span></strong>')
+          // Clean up corrupted quote-greater-than fragments from regex substitutions
+          .replace(/rounded">\s*0">Em\s*>/g, 'rounded">Em >')
+          .replace(/rounded">\s*1">Em\s*>/g, 'rounded">Em >')
+          .replace(/rounded">\s*0">Ec\s*>/g, 'rounded">Ec >')
+          .replace(/rounded">\s*1">εs\s*>/g, 'rounded">εs >')
+          .replace(/rounded">\s*MC\)">P\s*\(/g, 'rounded">P (')
+          .replace(/rounded">\s*MPC">APC\s*>/g, 'rounded">APC >')
+          .replace(/rounded">\s*1">εx\s*\+\s*εm\s*>/g, 'rounded">εx + εm >');
       }
 
       // Helper: Check if a localStorage key is an actual topic custom HTML key (excluding metadata like timestamps)
@@ -3180,6 +3188,17 @@
           localStorage.removeItem('edurecall_custom_ECON-EXAM-2024-A-12');
           localStorage.removeItem('edurecall_custom_EXAM-2024-A-12');
           localStorage.setItem('edurecall_econ_004_refresh_v1', 'true');
+        }
+        if (!localStorage.getItem('edurecall_econ_005_refresh_v1')) {
+          localStorage.removeItem('edurecall_custom_ECON-005');
+          localStorage.removeItem('edurecall_custom_masks_ECON-005');
+          localStorage.removeItem('edurecall_custom_ECON-007');
+          localStorage.removeItem('edurecall_custom_masks_ECON-007');
+          localStorage.removeItem('edurecall_custom_ECON-012');
+          localStorage.removeItem('edurecall_custom_masks_ECON-012');
+          localStorage.removeItem('edurecall_custom_ECON-019');
+          localStorage.removeItem('edurecall_custom_masks_ECON-019');
+          localStorage.setItem('edurecall_econ_005_refresh_v1', 'true');
         }
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
