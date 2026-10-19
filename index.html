@@ -238,25 +238,96 @@
       40%, 80% { transform: translateX(4px); }
     }
 
-    /* Context Guide (단원·주제 맥락 설명) Styles */
+    /* Context Guide (단원·주제 맥락 설명) Styles — Harmonized with Edurecall Native Design */
+    #context-guide-modal,
+    #context-guide-modal-body {
+      font-family: 'Plus Jakarta Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      letter-spacing: -0.01em;
+    }
     .ctx-hl {
-      background: linear-gradient(to top, rgba(254, 240, 138, 0.85) 58%, rgba(254, 240, 138, 0.38) 58%);
-      color: inherit;
-      padding: 1px 2px;
-      border-radius: 2px;
+      background-color: rgba(239, 246, 255, 0.92);
+      color: #1e3a8a;
+      font-weight: 600;
+      padding: 1.5px 5px;
+      border-radius: 5px;
+      border-bottom: 1.5px solid #bfdbfe;
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
     }
     html.dark .ctx-hl {
-      background: linear-gradient(to top, rgba(234, 179, 8, 0.35) 58%, rgba(234, 179, 8, 0.18) 58%);
-      color: #fef08a;
+      background-color: rgba(30, 58, 138, 0.35);
+      color: #bfdbfe;
+      border-bottom-color: rgba(59, 130, 246, 0.45);
     }
     .ctx-quote {
-      border-left: 3px solid #cbd5e1;
-      padding-left: 0.875rem;
+      background-color: #f8fafc;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-left: 3.5px solid #3b82f6;
+      border-radius: 0.75rem;
+      padding: 1rem 1.125rem;
     }
     html.dark .ctx-quote {
-      border-left-color: #475569;
+      background-color: rgba(15, 23, 42, 0.65);
+      border-color: rgba(51, 65, 85, 0.8);
+      border-left-color: #3b82f6;
+    }
+    #context-guide-modal-body p {
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: #334155;
+    }
+    @media (min-width: 640px) {
+      #context-guide-modal-body p {
+        font-size: 14px;
+      }
+    }
+    html.dark #context-guide-modal-body p {
+      color: #cbd5e1;
+    }
+    #context-guide-modal-body strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    html.dark #context-guide-modal-body strong {
+      color: #f8fafc;
+    }
+    #context-guide-modal-body .ctx-hl strong {
+      color: #1e3a8a;
+    }
+    html.dark #context-guide-modal-body .ctx-hl strong {
+      color: #dbeafe;
+    }
+    #context-guide-modal-body .space-y-1\.5,
+    #context-guide-modal-body .space-y-2 {
+      background-color: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.875rem;
+      margin-top: 0.5rem;
+      font-size: 13px !important;
+      line-height: 1.68 !important;
+      color: #334155;
+    }
+    @media (min-width: 640px) {
+      #context-guide-modal-body .space-y-1\.5,
+      #context-guide-modal-body .space-y-2 {
+        font-size: 13.5px !important;
+      }
+    }
+    html.dark #context-guide-modal-body .space-y-1\.5,
+    html.dark #context-guide-modal-body .space-y-2 {
+      background-color: rgba(19, 29, 49, 0.85);
+      border-color: rgba(51, 65, 85, 0.75);
+      color: #cbd5e1;
+    }
+    #context-guide-modal-body .flex.items-start.gap-2 > span.font-bold {
+      color: #3b82f6 !important;
+      font-weight: 800 !important;
+    }
+    html.dark #context-guide-modal-body .flex.items-start.gap-2 > span.font-bold {
+      color: #60a5fa !important;
     }
     .ctx-info-btn {
       display: inline-flex;
@@ -1557,6 +1628,7 @@
     #diagram-modal.hidden,
     #library-dashboard.hidden,
     #exam-modal.hidden,
+    #context-guide-modal.hidden,
     .modal-backdrop.hidden,
     [role="dialog"].hidden {
       display: none !important;
@@ -1646,7 +1718,7 @@
   <!-- Core Topic Data (Loaded first) -->
   <script src="topics-data.js?v=20261012_103000"></script>
   <script src="explanations-data.js?v=20261012_103000"></script>
-  <script src="context-guides-data.js?v=20261019_142500"></script>
+  <script src="context-guides-data.js?v=20261019_144000"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2818,23 +2890,32 @@
   </div>
 
   <!-- CONTEXT GUIDE MODAL (단원·주제 맥락 설명 팝업) -->
-  <div id="context-guide-modal" class="hidden fixed inset-0 z-[110] flex items-end sm:items-center justify-center bg-slate-900/45 backdrop-blur-[2px] p-2 sm:p-4 transition-opacity duration-150">
-    <div class="bg-white dark:bg-slate-900 rounded-[28px] shadow-2xl border border-slate-200/80 dark:border-slate-800 w-full max-w-lg max-h-[82dvh] sm:max-h-[80vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150" onclick="event.stopPropagation()">
-      <!-- Top Drag Handle Indicator -->
-      <div class="pt-3 pb-1 shrink-0">
-        <div class="w-10 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto"></div>
-      </div>
+  <div id="context-guide-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-3 sm:p-4 transition-opacity duration-200">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-xl max-h-[85dvh] sm:max-h-[82vh] flex flex-col overflow-hidden relative text-slate-800 dark:text-slate-100 animate-in fade-in zoom-in-95 duration-150" onclick="event.stopPropagation()">
       <!-- Header -->
-      <div class="px-6 pt-2 pb-3 flex items-center justify-between gap-3 shrink-0">
-        <h3 id="context-guide-modal-title" class="text-base sm:text-[17px] font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-snug">
-          설명 보기
-        </h3>
-        <button id="btn-close-context-guide" type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer shrink-0" aria-label="닫기">
-          <span class="material-symbols-outlined text-[22px]">close</span>
+      <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-700/80 bg-slate-50/70 dark:bg-slate-800/80 flex items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[21px]">menu_book</span>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5">
+              <h3 id="context-guide-modal-title" class="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 truncate">
+                설명 보기
+              </h3>
+              <span id="context-guide-modal-badge" class="px-2 py-0.5 rounded-md text-[10.5px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 shrink-0">맥락 안내</span>
+            </div>
+            <p id="context-guide-modal-subtitle" class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">
+              학문사적 배경 및 핵심 구조
+            </p>
+          </div>
+        </div>
+        <button id="btn-close-context-guide" type="button" class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer shrink-0" aria-label="닫기">
+          <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
       <!-- Scrollable Body -->
-      <div id="context-guide-modal-body" class="px-6 pb-6 pt-1 overflow-y-auto text-[14.5px] sm:text-[15px] text-slate-800 dark:text-slate-200 leading-[1.78] space-y-4">
+      <div id="context-guide-modal-body" class="p-4 sm:p-5 overflow-y-auto text-[13.5px] sm:text-[14px] text-slate-700 dark:text-slate-200 leading-[1.72] space-y-3">
         <!-- Populated dynamically -->
       </div>
     </div>
@@ -5079,10 +5160,28 @@
         if (!entry) return;
         const modal = document.getElementById('context-guide-modal');
         const titleEl = document.getElementById('context-guide-modal-title');
+        const subtitleEl = document.getElementById('context-guide-modal-subtitle');
+        const badgeEl = document.getElementById('context-guide-modal-badge');
         const bodyEl = document.getElementById('context-guide-modal-body');
         if (!modal || !titleEl || !bodyEl) return;
 
-        titleEl.textContent = entry.title || fallbackTitle || '설명 보기';
+        const isTopicKey = /^(POL|ECON|LAW|SOC)-/.test(key);
+        const curTopic = TOPICS[currentTopicIndex];
+
+        if (isTopicKey && curTopic && curTopic.id === key) {
+          titleEl.textContent = curTopic.title || fallbackTitle || '설명 보기';
+          const pathParts = [curTopic.subject, curTopic.chapter, (curTopic.section && curTopic.section !== curTopic.chapter) ? curTopic.section : ''].filter(Boolean);
+          if (subtitleEl) subtitleEl.textContent = pathParts.join(' › ') || '주제별 학문사적 배경 및 핵심 구조';
+          if (badgeEl) badgeEl.textContent = '주제 맥락';
+        } else {
+          titleEl.textContent = (entry.title && entry.title !== '설명 보기') ? entry.title : (fallbackTitle || '단원 안내');
+          if (subtitleEl) {
+            const subj = (curTopic && curTopic.subject && curTopic.subject !== '사회과교육론' && curTopic.subject !== '기출') ? `[${curTopic.subject}] ` : '';
+            subtitleEl.textContent = `${subj}단원 학문사적 등장 배경 및 구조 안내`;
+          }
+          if (badgeEl) badgeEl.textContent = '단원 맥락';
+        }
+
         bodyEl.innerHTML = entry.html || '';
         modal.classList.remove('hidden');
       }
