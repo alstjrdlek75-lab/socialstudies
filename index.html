@@ -1758,8 +1758,7 @@
   </script>
   <!-- Core Topic Data (Loaded first) -->
   <script src="topics-data.js?v=20261020_fix6"></script>
-  <script src="explanations-data.js?v=20261021_fix1"></script>
-  <script src="context-guides-data.js?v=20261021_fix1"></script>
+  <script src="context-guides-data.js?v=20261021_fix2"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2044,11 +2043,6 @@
               <button id="btn-reset-custom-tape" class="px-3 py-1.5 sm:px-2 sm:py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                 <span class="material-symbols-outlined text-[13px]">restart_alt</span>
                 <span>원본 복원</span>
-              </button>
-              <button id="btn-open-explanation" class="inline-flex items-center gap-1 px-2.5 py-1.5 sm:py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-indigo-700 bg-slate-100 hover:bg-indigo-50 border border-slate-200/90 hover:border-indigo-200 shadow-2xs transition-all cursor-pointer group" type="button" title="이해를 돕기 위한 보충·배경 해설 보기 [단축키: H]">
-                <span class="material-symbols-outlined text-[15px] text-indigo-500 group-hover:scale-110 transition-transform">help</span>
-                <span>보충 해설</span>
-                <span id="explanation-has-badge" class="w-1.5 h-1.5 rounded-full bg-indigo-600 hidden"></span>
               </button>
             </div>
           </div>
@@ -2550,9 +2544,9 @@
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="mobile-reveal-icon">visibility</span>
       <span class="text-[10px] sm:text-[11px] font-medium" id="mobile-reveal-label">정답</span>
     </button>
-    <button id="mobile-nav-explanation" class="flex-1 flex flex-col items-center justify-center py-1 text-indigo-600 hover:text-indigo-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="보충 해설 열기">
-      <span class="material-symbols-outlined text-[20px] sm:text-[22px]">help</span>
-      <span class="text-[10px] sm:text-[11px] font-medium">해설</span>
+    <button id="mobile-nav-explanation" class="flex-1 flex flex-col items-center justify-center py-1 text-blue-600 hover:text-blue-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="설명 보기">
+      <span class="material-symbols-outlined text-[20px] sm:text-[22px]">info</span>
+      <span class="text-[10px] sm:text-[11px] font-medium">설명</span>
     </button>
     <button id="mobile-nav-next" class="flex-1 flex flex-col items-center justify-center py-1 text-slate-600 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="다음 주제">
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]">chevron_right</span>
@@ -5227,8 +5221,10 @@
       const CONTEXT_GUIDE_DATA = window.CONTEXT_GUIDE_DATA || {};
 
       function hasContextGuide(key, subj = '') {
-        if (subj && (subj === '사회과교육론' || subj === '기출' || subj === '안내')) return false;
-        return Boolean(key && CONTEXT_GUIDE_DATA[key]);
+        if (!key) return false;
+        const isDirectTopicKey = /^(POL|ECON|LAW|SOC|EDU)-/.test(key);
+        if (!isDirectTopicKey && subj && (subj === '사회과교육론' || subj === '기출' || subj === '안내')) return false;
+        return Boolean(CONTEXT_GUIDE_DATA[key]);
       }
 
       function openContextGuide(key, fallbackTitle = '') {
@@ -5241,7 +5237,7 @@
         const bodyEl = document.getElementById('context-guide-modal-body');
         if (!modal || !titleEl || !bodyEl) return;
 
-        const isTopicKey = /^(POL|ECON|LAW|SOC)-/.test(key);
+        const isTopicKey = /^(POL|ECON|LAW|SOC|EDU)-/.test(key);
         const curTopic = TOPICS[currentTopicIndex];
 
         if (isTopicKey && curTopic && curTopic.id === key) {
@@ -8356,10 +8352,21 @@
       }
 
       function toggleExplanation() {
-        if (explanationModal.classList.contains('hidden')) {
-          openExplanation();
-        } else {
-          closeExplanation();
+        const modal = document.getElementById('context-guide-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+          closeContextGuide();
+          return;
+        }
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+        if (hasContextGuide(topic.id, topic.subject)) {
+          openContextGuide(topic.id, '설명 보기');
+        } else if (topic.subsection && hasContextGuide(topic.subsection, topic.subject)) {
+          openContextGuide(topic.subsection, topic.subsection);
+        } else if (topic.section && hasContextGuide(topic.section, topic.subject)) {
+          openContextGuide(topic.section, topic.section);
+        } else if (topic.chapter && hasContextGuide(topic.chapter, topic.subject)) {
+          openContextGuide(topic.chapter, topic.chapter);
         }
       }
 
