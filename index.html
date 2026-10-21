@@ -1757,8 +1757,8 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261021_fix3"></script>
-  <script src="context-guides-data.js?v=20261021_fix2"></script>
+  <script src="topics-data.js?v=20261021_fix4"></script>
+  <script src="context-guides-data.js?v=20261021_fix4"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -5382,17 +5382,26 @@
 
         const renderedLinearIndices = [];
 
-        // Helper to sort topics within a section or subsection: concepts first, then exam questions by year (asc) and question number (asc)
+        // Helper to sort topics within a section or subsection:
+        // - In '기출' tab: sort exam questions by year (asc) and question number (asc)
+        // - In subject tabs (e.g. 경제학): Concepts first -> Past Exam questions (in curated pedagogical order) -> Application TEST at the bottom
         function sortTopicIndicesList(list) {
           return list.sort((idxA, idxB) => {
             const topicA = TOPICS[idxA];
             const topicB = TOPICS[idxB];
-            const isExamA = topicA.id.includes('EXAM-') || topicA.subject === '기출' || topicA.title.includes('학년도');
-            const isExamB = topicB.id.includes('EXAM-') || topicB.subject === '기출' || topicB.title.includes('학년도');
+            const isAppA = topicA.id.includes('APP-') || topicA.title.includes('[응용 TEST]') || topicA.examTag === '응용 TEST';
+            const isAppB = topicB.id.includes('APP-') || topicB.title.includes('[응용 TEST]') || topicB.examTag === '응용 TEST';
+            const isExamA = !isAppA && (topicA.id.includes('EXAM-') || topicA.subject === '기출' || topicA.title.includes('학년도'));
+            const isExamB = !isAppB && (topicB.id.includes('EXAM-') || topicB.subject === '기출' || topicB.title.includes('학년도'));
 
-            if (!isExamA && isExamB) return -1;
-            if (isExamA && !isExamB) return 1;
-            if (!isExamA && !isExamB) return idxA - idxB;
+            const tierA = isAppA ? 2 : (isExamA ? 1 : 0);
+            const tierB = isAppB ? 2 : (isExamB ? 1 : 0);
+            if (tierA !== tierB) return tierA - tierB;
+
+            // Within subject chapters (non-기출), preserve the curated concept-aligned order from topics-data.js
+            if (activeSubject !== '기출' && topicA.subject !== '기출' && topicB.subject !== '기출') {
+              return idxA - idxB;
+            }
 
             const extractYear = (t) => {
               const m = t.title.match(/\[(\d{4})학년도\]/);
