@@ -45,7 +45,7 @@
   <!-- Top Header Banner -->
   <rect x="0" y="0" width="960" height="54" rx="14" fill="#0f172a" />
   <rect x="0" y="40" width="960" height="14" fill="#0f172a" />
-  <text x="480" y="34" font-size="18.5" font-weight="800" text-anchor="middle" fill="#ffffff" letter-spacing="-0.3">4부문 개방경제 소득 순환과 누출(Leakages)·주입(Injections) 균형</text>
+  <text x="480" y="34" font-size="18.5" font-weight="800" text-anchor="middle" fill="#ffffff" letter-spacing="-0.3">4부문 개방경제 소득 순환과 누출(S+T+M) · 주입(I+G+X) 균형</text>
 
   <!-- ==================== PART 1: VISUAL FLOW DIAGRAM (누출 vs 주입 직관적 파이프라인) ==================== -->
 
@@ -157,12 +157,12 @@
     <rect x="0" y="0" width="888" height="114" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8" />
     <rect x="0" y="0" width="888" height="30" rx="12" fill="#1e293b" />
     <rect x="0" y="18" width="888" height="12" fill="#1e293b" />
-    <text x="444" y="20" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">⚖️ 거시경제 균형 대원칙 : 총누출(Leakages) = 총주입(Injections)</text>
+    <text x="444" y="20" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">⚖️ 거시경제 균형 대원칙 : 총누출(S+T+M) = 총주입(I+G+X)</text>
 
     <!-- Leakage Box -->
     <g transform="translate(20, 40)">
       <rect x="0" y="0" width="388" height="62" rx="10" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8" />
-      <text x="194" y="22" font-size="12.5" font-weight="800" fill="#be123c" text-anchor="middle">📤 총누출 (Leakages : 소득 순환에서 빠져나가는 요소)</text>
+      <text x="194" y="22" font-size="12.5" font-weight="800" fill="#be123c" text-anchor="middle">📤 총누출 (소득 순환에서 빠져나가는 부분)</text>
       <text x="194" y="48" font-size="18" font-weight="900" fill="#9f1239" text-anchor="middle">S + T + M <tspan font-size="12.5" font-weight="700" fill="#e11d48">(저축 + 조세 + 수입)</tspan></text>
     </g>
 
@@ -173,7 +173,7 @@
     <!-- Injection Box -->
     <g transform="translate(480, 40)">
       <rect x="0" y="0" width="388" height="62" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8" />
-      <text x="194" y="22" font-size="12.5" font-weight="800" fill="#047857" text-anchor="middle">📥 총주입 (Injections : 소득 순환에 새로 들어오는 요소)</text>
+      <text x="194" y="22" font-size="12.5" font-weight="800" fill="#047857" text-anchor="middle">📥 총주입 (소득 순환에 새로 유입되는 부분)</text>
       <text x="194" y="48" font-size="18" font-weight="900" fill="#065f46" text-anchor="middle">I + G + X <tspan font-size="12.5" font-weight="700" fill="#059669">(투자 + 정부지출 + 수출)</tspan></text>
     </g>
   </g>

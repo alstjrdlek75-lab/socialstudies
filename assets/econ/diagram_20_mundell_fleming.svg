@@ -93,7 +93,7 @@
   <rect x="505" y="64" width="455" height="404" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
   <rect x="505" y="64" width="455" height="38" rx="12" fill="#fef3c7" />
   <path d="M 505 90 L 505 102 L 960 102 L 960 90 Z" fill="#fef3c7" />
-  <text x="732" y="88" font-size="14.5" font-weight="bold" fill="#92400e" text-anchor="middle">② 개방경제의 삼원불가능성 (Impossible Trinity)</text>
+  <text x="732" y="88" font-size="14.5" font-weight="bold" fill="#92400e" text-anchor="middle">② 개방경제의 삼원불가능성 (트릴레마)</text>
 
   <!-- Triangle Vertices: Top (732, 155), Bottom-Left (565, 360), Bottom-Right (900, 360) -->
   <polygon points="732,155 565,360 900,360" fill="#f8fafc" stroke="#94a3b8" stroke-width="3" stroke-linejoin="round" />

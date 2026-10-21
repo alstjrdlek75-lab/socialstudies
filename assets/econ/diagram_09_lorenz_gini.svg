@@ -43,12 +43,12 @@
   <line x1="540" y1="144" x2="890" y2="144" stroke="#cbd5e1" stroke-width="1" />
   <text x="715" y="132" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e293b">소득분배 불평등 지표 핵심 정리</text>
 
-  <text x="565" y="174" font-size="12" font-weight="bold" fill="#1e293b">1. 로렌츠 곡선 (Lorenz Curve)</text>
+  <text x="565" y="174" font-size="12" font-weight="bold" fill="#1e293b">1. 로렌츠 곡선</text>
   <text x="580" y="196" font-size="11" fill="#475569">• 대각선(45°선)에 가까울수록 ➔ 균등</text>
   <text x="580" y="216" font-size="11" fill="#475569">• 대각선에서 멀어져 볼록할수록 ➔ 불균등</text>
   <text x="580" y="236" font-size="11" fill="#475569">• [한계] 두 곡선 교차 시 우열 판정 불가</text>
 
-  <text x="565" y="270" font-size="12" font-weight="bold" fill="#1e293b">2. 지니계수 (Gini Coefficient)</text>
+  <text x="565" y="270" font-size="12" font-weight="bold" fill="#1e293b">2. 지니계수</text>
   <rect x="575" y="282" width="280" height="26" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
   <text x="715" y="299" font-size="11" font-weight="bold" text-anchor="middle" fill="#1d4ed8">지니계수 = 면적 A / 전체 면적 (A + B)</text>
   <text x="580" y="328" font-size="11" fill="#475569">• 0 ≤ Gini ≤ 1 (0에 가까울수록 완전균등)</text>

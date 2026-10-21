@@ -7,7 +7,7 @@
 
   <!-- Header -->
   <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">화폐시장 균형과 케인즈의 유동성 함정 (Liquidity Trap)</text>
+  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">화폐시장 균형과 케인즈의 유동성 함정</text>
   <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
 
   <!-- Subtitle Badge -->

@@ -133,7 +133,7 @@
     <rect x="0" y="0" width="264" height="30" rx="12" fill="#eff6ff" />
     <rect x="0" y="18" width="264" height="12" fill="#eff6ff" />
     <line x1="0" y1="30" x2="264" y2="30" stroke="#bfdbfe" stroke-width="1.2" />
-    <text x="132" y="20" font-size="13.5" font-weight="800" fill="#1e3a8a" text-anchor="middle">🛒 생산물 시장 (Goods Market)</text>
+    <text x="132" y="20" font-size="13.5" font-weight="800" fill="#1e3a8a" text-anchor="middle">🛒 생산물 시장</text>
     <!-- Aspect 1 Pill -->
     <rect x="14" y="38" width="236" height="36" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.2" />
     <text x="132" y="54" font-size="12.5" font-weight="800" fill="#1e40af" text-anchor="middle">① 지출국민소득 (총지출 = C)</text>
@@ -146,7 +146,7 @@
     <rect x="0" y="0" width="264" height="30" rx="12" fill="#f5f3ff" />
     <rect x="0" y="18" width="264" height="12" fill="#f5f3ff" />
     <line x1="0" y1="30" x2="264" y2="30" stroke="#ddd6fe" stroke-width="1.2" />
-    <text x="132" y="20" font-size="13.5" font-weight="800" fill="#4c1d95" text-anchor="middle">🏭 생산요소 시장 (Factor Market)</text>
+    <text x="132" y="20" font-size="13.5" font-weight="800" fill="#4c1d95" text-anchor="middle">🏭 생산요소 시장</text>
     <!-- Aspect 3 Pill -->
     <rect x="14" y="38" width="236" height="36" rx="8" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.2" />
     <text x="132" y="54" font-size="12.5" font-weight="800" fill="#5b21b6" text-anchor="middle">③ 분배국민소득 (요소소득의 합)</text>
@@ -158,7 +158,7 @@
     <rect x="0" y="0" width="224" height="128" rx="14" fill="#ffffff" stroke="#0284c7" stroke-width="2.2" />
     <rect x="0" y="0" width="224" height="34" rx="14" fill="#0284c7" />
     <rect x="0" y="20" width="224" height="14" fill="#0284c7" />
-    <text x="112" y="23" font-size="14.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏠 가계 (Households)</text>
+    <text x="112" y="23" font-size="14.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏠 가계 (소비의 주체)</text>
     
     <text x="16" y="54" font-size="11.5" font-weight="700" fill="#0f172a">• 소비의 주체 (생산물 수요자)</text>
     <text x="24" y="70" font-size="10.5" font-weight="500" fill="#475569">- 재화·서비스 구매로 효용 극대화</text>
@@ -171,7 +171,7 @@
     <rect x="0" y="0" width="224" height="128" rx="14" fill="#ffffff" stroke="#059669" stroke-width="2.2" />
     <rect x="0" y="0" width="224" height="34" rx="14" fill="#059669" />
     <rect x="0" y="20" width="224" height="14" fill="#059669" />
-    <text x="112" y="23" font-size="14.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏢 기업 (Firms)</text>
+    <text x="112" y="23" font-size="14.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏢 기업 (생산의 주체)</text>
 
     <text x="16" y="52" font-size="11.5" font-weight="700" fill="#0f172a">• 생산의 주체 &amp; 요소 수요자</text>
     <text x="24" y="67" font-size="10.5" font-weight="500" fill="#475569">- 요소 결합 ➔ 최종생산물 생산·공급</text>
@@ -201,7 +201,7 @@
     <g transform="translate(0, 0)" filter="url(#shadow-sm)">
       <rect x="0" y="0" width="284" height="86" rx="10" fill="#ffffff" stroke="#6ee7b7" stroke-width="1.5" />
       <rect x="0" y="0" width="8" height="86" rx="4" fill="#059669" />
-      <text x="20" y="24" font-size="13" font-weight="800" fill="#065f46">② 생산국민소득 (Production)</text>
+      <text x="20" y="24" font-size="13" font-weight="800" fill="#065f46">② 생산국민소득 (총부가가치)</text>
       <text x="20" y="45" font-size="11.5" font-weight="600" fill="#334155">• 창출된 최종생산물의 시장가치 합</text>
       <text x="20" y="63" font-size="11" font-weight="700" fill="#047857">• 총산출액 - 중간재 가치 = Σ 부가가치</text>
       <text x="20" y="78" font-size="10" font-weight="500" fill="#64748b">* 중간재는 이중계산 방지를 위해 반드시 공제</text>
@@ -214,7 +214,7 @@
     <g transform="translate(312, 0)" filter="url(#shadow-sm)">
       <rect x="0" y="0" width="264" height="86" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" />
       <rect x="0" y="0" width="8" height="86" rx="4" fill="#2563eb" />
-      <text x="20" y="24" font-size="13" font-weight="800" fill="#1e40af">① 지출국민소득 (Expenditure)</text>
+      <text x="20" y="24" font-size="13" font-weight="800" fill="#1e40af">① 지출국민소득 (총지출)</text>
       <text x="20" y="45" font-size="11.5" font-weight="600" fill="#334155">• 최종생산물 구매에 지출된 총액</text>
       <text x="20" y="63" font-size="11" font-weight="700" fill="#1d4ed8">• Y = C + I + G + (X - M)</text>
       <text x="20" y="78" font-size="10" font-weight="500" fill="#64748b">* 비자발적 재고투자(I) 반영으로 사후 항등</text>
@@ -227,7 +227,7 @@
     <g transform="translate(604, 0)" filter="url(#shadow-sm)">
       <rect x="0" y="0" width="284" height="86" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.5" />
       <rect x="0" y="0" width="8" height="86" rx="4" fill="#7c3aed" />
-      <text x="20" y="24" font-size="13" font-weight="800" fill="#5b21b6">③ 분배국민소득 (Income)</text>
+      <text x="20" y="24" font-size="13" font-weight="800" fill="#5b21b6">③ 분배국민소득 (요소소득 합)</text>
       <text x="20" y="45" font-size="11.5" font-weight="600" fill="#334155">• 요소 제공자에게 돌아간 소득의 합</text>
       <text x="20" y="63" font-size="11" font-weight="700" fill="#6d28d9">• 임금(노동) + 지대(토지) + 이자 + 이윤</text>
       <text x="20" y="78" font-size="10" font-weight="500" fill="#64748b">* 창출된 부가가치는 남김없이 요소소득으로 분배</text>

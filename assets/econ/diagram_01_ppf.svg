@@ -32,7 +32,7 @@
 
   <!-- Shaded Feasible Production Set (Quarter-ellipse: rx=440, ry=330 from (100,460)) -->
   <path d="M 100 130 A 440 330 0 0 1 540 460 L 100 460 Z" fill="#f0fdf4" fill-opacity="0.6" />
-  <text x="190" y="420" font-size="12" font-weight="700" fill="#86efac" letter-spacing="1">생산가능영역 (Feasible Set)</text>
+  <text x="190" y="420" font-size="12" font-weight="700" fill="#86efac" letter-spacing="1">생산가능영역 (내부)</text>
 
   <!-- PPF Curve (Concave to Origin) -->
   <path d="M 100 130 A 440 330 0 0 1 540 460" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round" />

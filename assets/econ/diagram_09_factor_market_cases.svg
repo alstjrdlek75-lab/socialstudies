@@ -216,7 +216,7 @@
 
     <!-- Compact Dual Exploitation Callout Badge (placed cleanly at x=172, y=148) -->
     <rect x="172" y="144" width="168" height="42" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1" />
-    <text x="178" y="158" font-size="9.5" font-weight="bold" fill="#991b1b">⚡ 이중 착취 (Dual Exploitation)</text>
+    <text x="178" y="158" font-size="9.5" font-weight="bold" fill="#991b1b">⚡ 이중 착취 (독점 + 수요독점)</text>
     <text x="178" y="170" font-size="9" fill="#b45309">• 독점적 착취: VMPL - MRPL</text>
     <text x="178" y="181" font-size="9" fill="#6b21a8">• 수요독점 착취: MRPL - wmm</text>
   </g>
