@@ -1757,7 +1757,7 @@
     };
   </script>
   <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261020_fix6"></script>
+  <script src="topics-data.js?v=20261021_fix3"></script>
   <script src="context-guides-data.js?v=20261021_fix2"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2657,6 +2657,10 @@
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>단축키 도움말 보기</span>
           <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">?</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>설명 보기 (단원·주제 맥락 팝업) 열기/닫기</span>
+          <kbd class="px-2 py-1 bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 rounded border border-blue-200 dark:border-blue-800 font-mono font-bold">H</kbd>
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>전체 마스킹 테이프 보기/숨기기</span>
@@ -5926,8 +5930,11 @@
           topicKeywordsTags.appendChild(chip);
         });
 
-        // Insert Structured Content HTML (Check custom user masking first)
-        let customHtml = localStorage.getItem(`edurecall_custom_${topic.id}`);
+        // Insert Structured Content HTML (Check custom user masking first, except GUIDE-001 which always shows latest guide)
+        if (topic.id === 'GUIDE-001') {
+          try { localStorage.removeItem('edurecall_custom_GUIDE-001'); } catch (e) {}
+        }
+        let customHtml = topic.id === 'GUIDE-001' ? null : localStorage.getItem(`edurecall_custom_${topic.id}`);
         if (!customHtml && topic.id.startsWith('ECON-EXAM-')) {
           customHtml = localStorage.getItem(`edurecall_custom_${topic.id.replace('ECON-', '')}`);
         }
