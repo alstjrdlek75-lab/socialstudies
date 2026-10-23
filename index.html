@@ -1807,7 +1807,7 @@
     /* Mobile & Tablet (<1024px) Bottom-Sheet / Full-Screen Overlay TOC Drawer */
     @media (max-width: 1023px) {
       #sidebar-drawer {
-        top: 4dvh !important;
+        top: 6dvh !important;
         bottom: 0 !important;
         left: 0 !important;
         right: 0 !important;
@@ -1816,26 +1816,29 @@
         border-top-left-radius: 1.5rem;
         border-top-right-radius: 1.5rem;
         border-right: none !important;
-        border-top: 1px solid #e2e8f0;
+        border-top: 1px solid #cbd5e1;
+        box-shadow: 0 -20px 45px -10px rgba(15, 23, 42, 0.28) !important;
         transform: translateY(0) !important;
         transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
-      }
-      html.dark #sidebar-drawer {
-        border-top-color: #334155;
       }
       #sidebar-drawer.-translate-x-full {
         transform: translateY(105%) !important;
       }
       .sidebar-topic-item {
-        min-height: 44px;
-        padding-top: 0.6rem !important;
-        padding-bottom: 0.6rem !important;
+        min-height: 48px !important;
+        padding-top: 0.7rem !important;
+        padding-bottom: 0.7rem !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        font-size: 0.875rem !important;
       }
       .section-toggle-btn {
-        min-height: 44px;
+        min-height: 48px !important;
+        padding-top: 0.65rem !important;
+        padding-bottom: 0.65rem !important;
       }
-      /* Mobile Auto-Hide Top Header & Sub-header on Scroll Down (T2) + T4 Layout & 44px Touch Targets (<768px only) */
-      @media (max-width: 767px) {
+      /* Mobile Layout & Generous Touch Targets (<=768px) */
+      @media (max-width: 768px) {
         header#top-app-header,
         #sub-header {
           transition: transform 0.22s ease, margin-top 0.22s ease, opacity 0.18s ease;
@@ -1848,7 +1851,7 @@
         }
         body.mobile-header-hidden #sub-header {
           transform: translateY(-100%);
-          margin-top: -2.25rem;
+          margin-top: -2.75rem;
           opacity: 0;
           pointer-events: none;
         }
@@ -1870,13 +1873,28 @@
           margin-left: 0 !important;
         }
 
-        /* T4-2: Mobile breadcrumb & path fade-scroll without awkward '[기출 C…' truncation */
+        /* Mobile Sub-header Breadcrumb Simplification: Only show Current Topic Title prominently + Prev/Next buttons */
+        #bc-subject,
+        #bc-chapter-sep,
+        #bc-chapter,
         #bc-section,
         #bc-section-sep,
         #bc-subsection,
         #bc-subsection-sep,
+        #bc-title-sep,
         #bc-exam-tag {
           display: none !important;
+        }
+        #bc-title {
+          display: block !important;
+          font-size: 0.925rem !important;
+          font-weight: 800 !important;
+          color: #0f172a !important;
+          line-height: 1.35 !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+          white-space: nowrap !important;
         }
         .mobile-scroll-fade {
           overflow-x: auto !important;
@@ -1892,11 +1910,13 @@
           display: none;
         }
 
-        /* T4-3: Guarantee >= 44x44px touch targets on mobile without bloating visual layout */
+        /* Guarantee >= 44x44px touch targets on mobile with comfortable padding & spacing */
         #btn-mobile-toc,
         #btn-mobile-more,
         #btn-close-mobile-more,
         #btn-close-mobile-toc,
+        #btn-subhead-prev,
+        #btn-subhead-next,
         .mobile-subj-tab,
         #btn-clear-search,
         #btn-filter-bookmark,
@@ -1920,19 +1940,6 @@
           display: inline-flex !important;
           align-items: center !important;
           justify-content: center !important;
-        }
-        /* Compensate vertical spacing for inline header/group buttons so cards stay compact */
-        #btn-toggle-bookmark,
-        #btn-set-pin,
-        #btn-return-pin,
-        #btn-edit-topic-content,
-        #btn-reset-custom-tape,
-        #btn-topic-context-guide,
-        #topic-reps-badge,
-        .group-edit-btn,
-        .group-toggle-btn {
-          margin-top: -4px;
-          margin-bottom: -4px;
         }
         .ctx-info-btn {
           min-height: 28px !important;
@@ -1998,167 +2005,170 @@
 <body class="bg-surface text-text-main h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
   <!-- TOP APP HEADER -->
-  <header id="top-app-header" class="flex-none h-14 sm:h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-border dark:border-slate-800 z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6 relative">
-    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-      <div class="flex items-center gap-2 shrink-0">
-        <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 dark:border-slate-700 shrink-0" />
-        <div class="shrink-0">
+  <header id="top-app-header" class="flex-none h-14 sm:h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6 relative">
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
+      <div class="flex items-center gap-2 shrink-0 min-w-0">
+        <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 shrink-0" />
+        <div class="shrink-0 min-w-0">
           <div class="flex items-center gap-1.5 sm:gap-2">
-            <span class="font-bold text-sm sm:text-[15px] xl:text-base tracking-tight text-slate-900 dark:text-slate-100 whitespace-nowrap">일반사회 단권화</span>
-            <!-- T10: D-Day Badge in Header (Click to set exam date & view daily quota) -->
-            <button id="btn-header-dday" type="button" class="min-h-[28px] px-2 py-0.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/70 dark:hover:bg-indigo-900/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-800 text-[11px] font-extrabold font-mono flex items-center gap-1 transition-colors cursor-pointer shrink-0" title="시험일(D-day) 설정 및 하루 권장 학습량 보기">
+            <span class="font-bold text-sm sm:text-[15px] xl:text-base tracking-tight text-slate-900 whitespace-nowrap">일반사회 단권화</span>
+            <!-- T10: D-Day Badge in Header (Hidden on mobile <=768px to prevent header crowding; available in mobile overflow menu) -->
+            <button id="btn-header-dday" type="button" class="hidden md:flex min-h-[28px] px-2 py-0.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200/80 text-[11px] font-extrabold font-mono items-center gap-1 transition-colors cursor-pointer shrink-0" title="시험일(D-day) 설정 및 하루 권장 학습량 보기">
               <span id="header-dday-text">D-Day 설정</span>
-              <span id="header-daily-quota-text" class="hidden sm:inline text-[10px] font-sans font-semibold text-indigo-500 dark:text-indigo-400"></span>
+              <span id="header-daily-quota-text" class="hidden sm:inline text-[10px] font-sans font-semibold text-indigo-500"></span>
             </button>
             <!-- T15: Offline Status Badge in Header -->
-            <span id="header-offline-badge" class="hidden px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 text-[10px] font-extrabold items-center gap-1 shrink-0" title="오프라인 모드 (인터넷 연결 시 자동 백업됩니다)">
+            <span id="header-offline-badge" class="hidden px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[10px] font-extrabold items-center gap-1 shrink-0" title="오프라인 모드 (인터넷 연결 시 자동 백업됩니다)">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
               <span>오프라인</span>
             </span>
           </div>
-          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap hidden sm:flex items-center gap-2">
+          <div class="text-[11px] text-slate-500 font-medium whitespace-nowrap hidden sm:flex items-center gap-2">
             <span>일반사회 시험 대비</span>
-            <span id="header-last-sync-sub" class="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold hidden"></span>
+            <span id="header-last-sync-sub" class="text-[10px] text-emerald-600 font-semibold hidden"></span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Subject Selector Navigation -->
-    <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 dark:bg-slate-800/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 dark:border-slate-700 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="오늘 복습" type="button">
+    <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="오늘 복습" type="button">
         오늘 복습 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-due">0</span>
       </button>
 
       <button class="subject-tab-btn active px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="사회과교육론" type="button">
         사회과교육론 <span class="text-[10px] font-bold bg-white text-blue-700 px-1.5 py-0.2 rounded-md shadow-2xs leading-none" id="count-edu">99</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="법학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="법학" type="button">
         법 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-law">173</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="사회학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="사회학" type="button">
         사회 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-soc">151</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="정치학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="정치학" type="button">
         정치 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-pol">129</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="경제학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="경제학" type="button">
         경제 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-econ">6</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="기출" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="기출" type="button">
         기출 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-exam">213</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="안내" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="안내" type="button">
         안내
       </button>
     </nav>
 
-    <!-- Top Tools (Consolidated on Mobile <=768px with generous touch targets, Full toolbar on md+) -->
-    <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 shrink-0">
-      <!-- T6: Mobile Header Quick Due Review Queue Button -->
-      <button id="btn-mobile-due-header" class="lg:hidden min-h-[40px] px-2.5 py-1.5 flex items-center justify-center gap-1 rounded-xl border border-rose-200 dark:border-rose-800/80 bg-rose-50/90 dark:bg-rose-950/50 hover:bg-rose-100 text-xs font-bold text-rose-700 dark:text-rose-300 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="오늘 복습 큐 시작" title="오늘 복습 큐 진입">
-        <span>복습</span>
-        <span id="count-due-header-mobile" class="px-1.5 py-0.2 rounded-md bg-rose-600 text-white text-[10px] font-mono font-extrabold leading-tight">0</span>
-      </button>
-
-      <!-- Mobile TOC Button (Primary action on mobile/tablet < lg) -->
-      <button id="btn-mobile-toc" class="lg:hidden min-h-[40px] px-3 py-1.5 flex items-center justify-center gap-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/90 dark:bg-blue-950/60 hover:bg-blue-100 text-xs font-bold text-blue-700 dark:text-blue-300 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="목차 열기" title="단원별 전체 목차 열기">
-        <span class="material-symbols-outlined text-[19px] text-blue-600 dark:text-blue-400">toc</span>
+    <!-- Top Tools (Consolidated on Mobile <=768px into just 2 large touch-target buttons: [목차] + [메뉴]) -->
+    <div class="flex items-center gap-2 xl:gap-2.5 shrink-0">
+      <!-- Mobile TOC Button (Primary action on mobile/tablet < lg, generous >=44px touch target) -->
+      <button id="btn-mobile-toc" class="lg:hidden min-h-[44px] px-3.5 py-2 flex items-center justify-center gap-1.5 rounded-xl border border-blue-200 bg-blue-50/95 hover:bg-blue-100 text-xs font-extrabold text-blue-700 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="목차 열기" title="단원별 전체 목차 열기">
+        <span class="material-symbols-outlined text-[20px] text-blue-600">toc</span>
         <span>목차</span>
       </button>
 
-      <!-- Mobile Overflow Menu Button (Visible on <=768px to prevent header crowding) -->
-      <button id="btn-mobile-more" class="md:hidden min-h-[40px] px-2.5 py-1.5 flex items-center justify-center gap-1 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="도구 메뉴 열기" aria-expanded="false" title="동기화·보관함·타이머 메뉴">
+      <!-- Mobile Overflow Menu Button (Visible on <=768px to prevent header crowding, generous >=44px touch target) -->
+      <button id="btn-mobile-more" class="md:hidden min-h-[44px] px-3.5 py-2 flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-extrabold text-slate-700 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="도구 메뉴 열기" aria-expanded="false" title="복습·동기화·보관함·글자크기 메뉴">
         <span class="material-symbols-outlined text-[20px]">more_horiz</span>
         <span>메뉴</span>
       </button>
 
       <!-- Desktop / Tablet (md+) Action Buttons -->
-      <!-- Cloud Sync Button (Calm optional tone when unconnected, shows last sync time per T15) -->
-      <button id="btn-cloud-sync" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화 (선택 사항)" title="기기 간 동기화 설정 (선택 사항) [단축키: Cmd+B]">
+      <button id="btn-cloud-sync" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-medium text-slate-600 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화 (선택 사항)" title="기기 간 동기화 설정 (선택 사항) [단축키: Cmd+B]">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors" id="cloud-sync-icon">cloud_queue</span>
-        <span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300" id="cloud-sync-text">동기화 (선택)</span>
-        <span class="hidden text-[10px] font-mono text-emerald-600 dark:text-emerald-400" id="header-sync-last-time"></span>
+        <span class="text-[11px] font-semibold text-slate-600" id="cloud-sync-text">동기화 (선택)</span>
+        <span class="hidden text-[10px] font-mono text-emerald-600" id="header-sync-last-time"></span>
       </button>
 
       <!-- Library/Dashboard Button -->
-      <button id="btn-library-dashboard" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all shadow-2xs cursor-pointer" type="button" aria-label="카드 보관함" title="학습 통계 및 카드 보관함">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-indigo-600 dark:text-indigo-400">dashboard</span>
+      <button id="btn-library-dashboard" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" aria-label="카드 보관함" title="학습 통계 및 카드 보관함">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-indigo-600">dashboard</span>
         <span class="hidden xl:inline text-[11px] font-bold">보관함</span>
       </button>
 
       <!-- Export All Button (단권화 전체 내보내기) -->
-      <button id="btn-export-all" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="단권화 전체 내보내기" title="단권화 본문 전체 내보내기 (JSON 및 과목별 마크다운 ZIP 다운로드)">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform" id="export-icon">download</span>
-        <span class="hidden xl:inline text-[11px] font-bold text-slate-700 dark:text-slate-200" id="export-btn-text">내보내기</span>
+      <button id="btn-export-all" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="단권화 전체 내보내기" title="단권화 본문 전체 내보내기 (JSON 및 과목별 마크다운 ZIP 다운로드)">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-emerald-600 group-hover:scale-110 transition-transform" id="export-icon">download</span>
+        <span class="hidden xl:inline text-[11px] font-bold text-slate-700" id="export-btn-text">내보내기</span>
       </button>
 
       <!-- Pomodoro Timer Controls -->
       <div class="hidden md:flex items-center gap-1">
-        <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-xs text-slate-700 dark:text-slate-200 transition-all cursor-pointer" type="button" title="클릭: 타이머 시작/일시정지 | 우측 리셋 버튼으로 25분 초기화">
+        <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" type="button" title="클릭: 타이머 시작/일시정지 | 우측 리셋 버튼으로 25분 초기화">
           <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
           <span class="hidden xl:inline-block px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700" id="pomodoro-mode-badge">집중</span>
           <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
         </button>
-        <button id="pomodoro-reset-btn" class="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-500 hover:text-rose-600 text-xs transition-all cursor-pointer" type="button" title="뽀모도로 25:00 집중 모드로 리셋">
+        <button id="pomodoro-reset-btn" class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-rose-600 text-xs transition-all cursor-pointer" type="button" title="뽀모도로 25:00 집중 모드로 리셋">
           <span class="material-symbols-outlined text-[15px] xl:text-[16px]">restart_alt</span>
         </button>
       </div>
 
       <!-- Onboarding / Tour Help Button -->
-      <button id="btn-open-onboarding" class="hidden md:flex w-8 h-8 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700 text-slate-500 hover:text-blue-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer" type="button" title="처음 사용법 안내 투어 보기" aria-label="사용법 안내">
+      <button id="btn-open-onboarding" class="hidden md:flex w-8 h-8 items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-blue-50 text-slate-500 hover:text-blue-600 transition-all shadow-2xs cursor-pointer" type="button" title="처음 사용법 안내 투어 보기" aria-label="사용법 안내">
         <span class="material-symbols-outlined text-[17px]">help</span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Overflow Dropdown Menu (Moved outside <header> so backdrop-blur never clips it, positioned right below header) -->
-  <div id="mobile-more-dropdown" class="hidden md:hidden fixed left-3 right-3 top-16 z-[95] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-3.5 flex flex-col gap-2.5 animate-in fade-in zoom-in-95 duration-150" style="top: calc(3.75rem + env(safe-area-inset-top, 0px));">
-    <div class="flex items-center justify-between px-1 pb-1.5 border-b border-slate-100 dark:border-slate-800">
-      <span class="text-xs font-extrabold text-slate-700 dark:text-slate-200">학습 도구 및 설정</span>
-      <button id="btn-close-mobile-more" type="button" class="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-        <span class="material-symbols-outlined text-[18px]">close</span>
+  <!-- Mobile Overflow Dropdown Menu (All secondary top actions grouped here with large touch targets) -->
+  <div id="mobile-more-dropdown" class="hidden md:hidden fixed left-3 right-3 top-16 z-[95] bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 flex flex-col gap-3 animate-in fade-in zoom-in-95 duration-150" style="top: calc(3.75rem + env(safe-area-inset-top, 0px));">
+    <div class="flex items-center justify-between px-1 pb-2 border-b border-slate-100">
+      <span class="text-xs font-extrabold text-slate-800">학습 도구 및 설정 메뉴</span>
+      <button id="btn-close-mobile-more" type="button" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 hover:text-slate-800">
+        <span class="material-symbols-outlined text-[20px]">close</span>
       </button>
     </div>
-    <div class="grid grid-cols-2 gap-2">
-      <button id="mobile-menu-sync" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-        <span class="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0" id="mobile-menu-sync-icon">cloud_queue</span>
+    <div class="grid grid-cols-2 gap-2.5">
+      <button id="btn-mobile-due-header" type="button" class="min-h-[52px] px-3.5 py-2.5 rounded-xl border border-rose-200 bg-rose-50/90 hover:bg-rose-100 text-left flex items-center justify-between gap-2 text-xs font-extrabold text-rose-700 active:scale-95 transition-all">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="material-symbols-outlined text-[19px] text-rose-600 shrink-0">schedule</span>
+          <div class="min-w-0">
+            <div class="truncate">오늘 복습 큐</div>
+            <div class="text-[10px] font-normal text-rose-600/80 truncate">예정 복습 시작</div>
+          </div>
+        </div>
+        <span id="count-due-header-mobile" class="px-2 py-0.5 rounded-lg bg-rose-600 text-white text-[11px] font-mono font-extrabold shrink-0">0</span>
+      </button>
+      <button id="mobile-menu-library" type="button" class="min-h-[52px] px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-indigo-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[19px] text-indigo-600 shrink-0">dashboard</span>
+        <div class="min-w-0">
+          <div class="truncate">보관함 · D-Day</div>
+          <div class="text-[10px] font-normal text-slate-400 truncate">통계 · 시험일 설정</div>
+        </div>
+      </button>
+      <button id="mobile-menu-sync" type="button" class="min-h-[52px] px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[19px] text-blue-600 shrink-0" id="mobile-menu-sync-icon">cloud_queue</span>
         <div class="min-w-0">
           <div class="truncate" id="mobile-menu-sync-label">동기화 (선택)</div>
           <div class="text-[10px] font-normal text-slate-400 truncate">기기 간 기록 연동</div>
         </div>
       </button>
-      <button id="mobile-menu-library" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-indigo-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-        <span class="material-symbols-outlined text-[18px] text-indigo-600 dark:text-indigo-400 shrink-0">dashboard</span>
-        <div class="min-w-0">
-          <div class="truncate">카드 보관함</div>
-          <div class="text-[10px] font-normal text-slate-400 truncate">학습 현황 · 통계</div>
-        </div>
-      </button>
-      <button id="mobile-menu-essay" type="button" class="col-span-2 min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 active:scale-95 transition-all">
-        <span class="material-symbols-outlined text-[18px] text-emerald-600 shrink-0">edit_note</span>
+      <button id="mobile-menu-essay" type="button" class="min-h-[52px] px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[19px] text-emerald-600 shrink-0">edit_note</span>
         <div class="min-w-0">
           <div class="truncate">인출 서술창</div>
-          <div class="text-[10px] font-normal text-slate-400 truncate">백지 인출 · FSRS 평가</div>
+          <div class="text-[10px] font-normal text-slate-400 truncate">백지 인출 · 채점</div>
         </div>
       </button>
     </div>
-    <div class="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-100 dark:border-slate-800">
+    <div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-100">
       <div class="flex items-center gap-1.5">
-        <button id="mobile-menu-pomo" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5 active:scale-95">
+        <button id="mobile-more-font-dec" type="button" class="min-h-[44px] min-w-[48px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-extrabold text-slate-700 active:scale-95">A-</button>
+        <button id="mobile-more-font-inc" type="button" class="min-h-[44px] min-w-[48px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-extrabold text-slate-700 active:scale-95">A+</button>
+        <button id="mobile-menu-pomo" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-700 flex items-center gap-1.5 active:scale-95">
           <span class="material-symbols-outlined text-[16px] text-blue-600">timer</span>
           <span id="mobile-pomo-display" class="font-mono">25:00</span>
         </button>
-        <button id="mobile-menu-pomo-reset" type="button" class="min-h-[44px] px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-500 hover:text-rose-600 text-xs flex items-center justify-center active:scale-95" title="타이머 리셋">
-          <span class="material-symbols-outlined text-[16px]">restart_alt</span>
-        </button>
+        <button id="mobile-menu-pomo-reset" type="button" class="hidden"></button>
       </div>
       <div class="flex items-center gap-1.5">
-        <button id="mobile-menu-export" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 active:scale-95">
+        <button id="mobile-menu-export" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-700 flex items-center gap-1 active:scale-95">
           <span class="material-symbols-outlined text-[16px] text-emerald-600">download</span>
           <span>내보내기</span>
         </button>
-        <button id="mobile-menu-onboarding" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/70 dark:bg-blue-950/50 text-xs font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1 active:scale-95">
+        <button id="mobile-menu-onboarding" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-blue-200 bg-blue-50/70 text-xs font-bold text-blue-700 flex items-center gap-1 active:scale-95">
           <span class="material-symbols-outlined text-[16px]">help</span>
           <span>사용법</span>
         </button>
@@ -2166,44 +2176,44 @@
     </div>
   </div>
 
-  <!-- SUB-HEADER (Mobile <768px: Compact Subject + Current Topic Title, Prev/Next hidden per T2 | Desktop md+: Full Breadcrumb) -->
-  <div id="sub-header" class="flex-none h-9 md:h-10 bg-slate-50/95 dark:bg-slate-900/90 backdrop-blur-sm border-b border-border dark:border-slate-800 z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
+  <!-- SUB-HEADER (Mobile <=768px: Current Topic Title prominently + Prev/Next buttons | Desktop md+: Full Breadcrumb) -->
+  <div id="sub-header" class="flex-none h-11 md:h-10 bg-slate-50/95 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
     <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
-      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600 dark:text-blue-400" id="sidebar-toggle-icon">dock_to_left</span>
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
       <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
-      <!-- Breadcrumb -->
-      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar mobile-scroll-fade text-slate-700 dark:text-slate-200 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
+      <!-- Breadcrumb (On mobile <=768px, CSS shows ONLY #bc-title prominently) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden text-slate-700 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
         <span class="px-2 py-0.5 rounded-md text-[11px] md:text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
         <span class="text-slate-400 shrink-0" id="bc-chapter-sep">/</span>
-        <span class="text-slate-700 dark:text-slate-300 shrink-0 truncate max-w-[220px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px]" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
+        <span class="text-slate-700 shrink-0 truncate max-w-[220px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px]" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-section-sep">/</span>
-        <span class="text-indigo-800 dark:text-indigo-300 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 dark:bg-indigo-950/60 px-1.5 py-0.5 rounded border border-indigo-200 dark:border-indigo-800 hidden" id="bc-section">1-1. 세 가지 전통</span>
+        <span class="text-indigo-800 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200 hidden" id="bc-section">1-1. 세 가지 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-subsection-sep">/</span>
-        <span class="text-amber-900 dark:text-amber-300 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 dark:bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-300 dark:border-amber-800 hidden" id="bc-subsection">세부단원</span>
+        <span class="text-amber-900 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-300 hidden" id="bc-subsection">세부단원</span>
         <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
-        <span class="text-slate-900 dark:text-white text-[13px] md:text-xs font-extrabold truncate hidden md:inline max-w-none md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
+        <span class="text-slate-900 text-sm md:text-xs font-extrabold truncate block md:inline max-w-full md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
         <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden md:inline-block" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
 
-    <!-- Right Controls in Sub-Header: Prev/Next hidden on <768px per T2 (only bottom bar has Prev/Next on mobile) -->
+    <!-- Right Controls in Sub-Header: Prev/Next buttons visible on mobile <=768px with generous touch targets -->
     <div class="flex items-center gap-1.5 shrink-0">
-      <button id="btn-subhead-prev" class="hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 단원">
-        <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+      <button id="btn-subhead-prev" class="flex md:hidden min-h-[38px] min-w-[52px] px-2.5 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-extrabold items-center justify-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 단원">
+        <span class="material-symbols-outlined text-[18px]">chevron_left</span>
         <span>이전</span>
       </button>
-      <button id="btn-subhead-next" class="hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 단원">
+      <button id="btn-subhead-next" class="flex md:hidden min-h-[38px] min-w-[52px] px-2.5 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-extrabold items-center justify-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 단원">
         <span>다음</span>
-        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
       </button>
 
       <!-- Toggle Right Essay Tab in Fixed Sub-header (Desktop) -->
-      <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 서술창 접기/열기 [단축키: W]">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600 dark:text-blue-400" id="subhead-essay-icon">dock_to_right</span>
+      <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 서술창 접기/열기 [단축키: W]">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="subhead-essay-icon">dock_to_right</span>
         <span class="font-bold text-[11px]" id="subhead-essay-text">인출창</span>
       </button>
     </div>
@@ -2215,38 +2225,38 @@
     <!-- BACKDROP FOR MOBILE SIDEBAR -->
     <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"></div>
 
-    <!-- LEFT SIDEBAR: Table of Contents Tree (Flex column on desktop, Bottom Sheet / Full-screen Overlay on mobile) -->
-    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-full lg:w-[280px] xl:w-[300px] 2xl:w-[320px] bg-white dark:bg-slate-900 border-r border-border dark:border-slate-800 z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
+    <!-- LEFT SIDEBAR: Table of Contents Tree (Flex column on desktop, Intuitive Bottom Sheet Overlay on mobile) -->
+    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-full lg:w-[280px] xl:w-[300px] 2xl:w-[320px] bg-white border-r border-border z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
     <!-- Mobile Bottom-Sheet Handle & Header with Large Close Button -->
-    <div class="lg:hidden pt-2 pb-2.5 px-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-t-3xl flex flex-col gap-1.5">
-      <div class="w-12 h-1.5 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto"></div>
+    <div class="lg:hidden pt-2.5 pb-2.5 px-4 border-b border-slate-200 bg-white rounded-t-3xl flex flex-col gap-2">
+      <div class="w-12 h-1.5 bg-slate-300 rounded-full mx-auto"></div>
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-7 h-7 rounded-lg object-cover shadow-2xs border border-slate-200/80 dark:border-slate-700 shrink-0" />
-          <span class="font-extrabold text-base text-slate-900 dark:text-slate-100">단원별 전체 목차</span>
+          <span class="material-symbols-outlined text-blue-600 text-[22px]">toc</span>
+          <span class="font-extrabold text-base text-slate-900">단원별 전체 목차</span>
         </div>
-        <button id="btn-close-mobile-toc" class="min-h-[40px] px-3 py-1.5 rounded-xl flex items-center justify-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 font-bold text-xs transition-colors cursor-pointer" type="button" aria-label="목차 닫기">
+        <button id="btn-close-mobile-toc" class="min-h-[44px] px-4 py-2 rounded-xl flex items-center justify-center gap-1.5 bg-slate-100 text-slate-700 hover:bg-slate-200 font-extrabold text-xs transition-colors cursor-pointer" type="button" aria-label="목차 닫기">
           <span class="material-symbols-outlined text-[18px]">close</span>
           <span>닫기</span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Subject Tabs inside Bottom Sheet / Overlay (Generous touch targets) -->
-    <div class="lg:hidden p-2.5 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 overflow-x-auto flex items-center gap-1.5 text-xs no-scrollbar" id="mobile-subject-tabs">
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 shadow-xs border border-slate-200 dark:border-slate-700 flex items-center gap-1" data-subject="오늘 복습" type="button">오늘 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due-mobile">(0)</span></button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회과교육론" type="button">사교론</button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="법학" type="button">법</button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회</button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치</button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제</button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="기출" type="button">기출</button>
-      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="안내" type="button">안내</button>
+    <!-- Mobile Subject Tabs inside Bottom Sheet / Overlay (4x2 Grid so all 8 subjects are visible at once with >=44px touch targets) -->
+    <div class="lg:hidden p-3 bg-slate-50 border-b border-slate-200 grid grid-cols-4 gap-1.5 text-xs" id="mobile-subject-tabs">
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-bold transition-all bg-white text-blue-700 shadow-xs border border-slate-200 flex items-center justify-center gap-1" data-subject="오늘 복습" type="button">복습 <span class="opacity-80 text-[10px]" id="count-due-mobile">(0)</span></button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="사회과교육론" type="button">사교론</button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="법학" type="button">법학</button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="사회학" type="button">사회학</button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="정치학" type="button">정치학</button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="경제학" type="button">경제학</button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="기출" type="button">기출</button>
+      <button class="mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center" data-subject="안내" type="button">안내</button>
     </div>
 
     <!-- Sidebar Header & Search -->
     <div class="p-3 border-b border-border bg-white flex flex-col gap-2.5">
-      <div class="flex items-center justify-between">
+      <div class="hidden lg:flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-blue-600 text-[22px]">folder_open</span>
           <span class="font-extrabold text-slate-900 text-base tracking-tight" id="sidebar-subject-label">단원 목차</span>
@@ -2259,17 +2269,17 @@
 
       <!-- Search Input -->
       <div class="relative flex items-center">
-        <span class="material-symbols-outlined absolute left-2.5 text-slate-400 text-[16px]">search</span>
-        <input id="sidebar-search" type="text" placeholder="단원·주제 검색..." class="w-full pl-8 pr-8 py-2 text-xs bg-slate-100/80 rounded-xl border border-slate-200/70 focus:bg-white focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400">
-        <kbd id="sidebar-search-kbd" class="pointer-events-none absolute right-2.5 px-1.5 py-0.5 rounded bg-white border border-slate-200 text-slate-400 font-mono text-[10px] font-semibold shadow-2xs">⌘K</kbd>
-        <button id="btn-clear-search" class="hidden absolute right-2.5 text-slate-400 hover:text-slate-600" type="button">
-          <span class="material-symbols-outlined text-[14px]">close</span>
+        <span class="material-symbols-outlined absolute left-3 text-slate-400 text-[18px]">search</span>
+        <input id="sidebar-search" type="text" placeholder="단원·주제 검색..." class="w-full min-h-[42px] pl-9 pr-9 py-2 text-xs sm:text-sm bg-slate-100/80 rounded-xl border border-slate-200/70 focus:bg-white focus:border-blue-500 focus:outline-none transition-all placeholder:text-slate-400">
+        <kbd id="sidebar-search-kbd" class="hidden lg:inline-block pointer-events-none absolute right-2.5 px-1.5 py-0.5 rounded bg-white border border-slate-200 text-slate-400 font-mono text-[10px] font-semibold shadow-2xs">⌘K</kbd>
+        <button id="btn-clear-search" class="hidden absolute right-2 text-slate-400 hover:text-slate-600 min-w-[36px] min-h-[36px] flex items-center justify-center" type="button">
+          <span class="material-symbols-outlined text-[16px]">close</span>
         </button>
       </div>
 
       <!-- Filter: Bookmark / Scrap -->
-      <div class="flex items-center gap-1.5">
-        <button id="btn-filter-bookmark" class="flex-1 flex items-center justify-between text-xs font-bold py-2 px-2.5 rounded-xl border border-blue-100/80 bg-blue-50/60 hover:bg-blue-100/60 text-blue-700 transition-colors cursor-pointer shadow-2xs" type="button">
+      <div class="flex items-center gap-2">
+        <button id="btn-filter-bookmark" class="flex-1 min-h-[42px] flex items-center justify-between text-xs font-bold py-2 px-3 rounded-xl border border-blue-100/80 bg-blue-50/60 hover:bg-blue-100/60 text-blue-700 transition-colors cursor-pointer shadow-2xs" type="button">
           <div class="flex items-center gap-1">
             <span class="text-amber-400 text-sm">★</span>
             <span>중요 주제</span>
@@ -2277,7 +2287,7 @@
           <span class="bg-white text-blue-700 font-bold px-1.5 py-0.5 rounded-md shadow-2xs text-[11px] border border-blue-100/60 font-mono" id="bookmark-filter-count">19</span>
         </button>
         <!-- T7: Exam Year / Frequency Filter in Sidebar TOC -->
-        <select id="sidebar-exam-filter" class="min-h-[38px] px-2 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-[11px] font-bold text-slate-700 dark:text-slate-200 focus:outline-none focus:border-blue-500 cursor-pointer shrink-0" title="기출 연도별 / 빈출순 필터">
+        <select id="sidebar-exam-filter" class="min-h-[42px] px-2.5 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-700 focus:outline-none focus:border-blue-500 cursor-pointer shrink-0" title="기출 연도별 / 빈출순 필터">
           <option value="all">기출 필터: 전체</option>
           <option value="freq">🔥 빈출순 정렬</option>
           <option value="exam_only">기출 출제 단원만</option>
@@ -2291,14 +2301,14 @@
     </div>
 
     <!-- Tree Navigation List -->
-    <nav class="flex-1 overflow-y-auto p-2 space-y-2 text-xs" id="sidebar-tree">
+    <nav class="flex-1 overflow-y-auto p-2.5 space-y-2 text-xs" id="sidebar-tree">
       <!-- Injected by JS -->
     </nav>
 
     <!-- Sidebar Bottom Status -->
-    <div class="p-2.5 border-t border-border bg-slate-50 text-[11px] flex items-center justify-end text-slate-500">
-      <button id="btn-reset-grades" class="text-slate-500 hover:text-red-600 hover:underline text-[11px] flex items-center gap-1 cursor-pointer">
-        <span class="material-symbols-outlined text-[14px]">restart_alt</span>학습 기록 초기화
+    <div class="p-3 border-t border-border bg-slate-50 text-xs flex items-center justify-end text-slate-500">
+      <button id="btn-reset-grades" class="min-h-[40px] px-3 py-1.5 rounded-lg text-slate-500 hover:text-red-600 hover:bg-red-50 text-xs flex items-center gap-1 cursor-pointer">
+        <span class="material-symbols-outlined text-[15px]">restart_alt</span>학습 기록 초기화
       </button>
     </div>
   </aside>
@@ -2312,49 +2322,49 @@
         <div id="subnote-inner" class="w-full mx-auto flex flex-col gap-2 sm:gap-4 pb-20 xl:pb-6 transition-all duration-300">
 
         <!-- T6: Today's Review Queue Mode Banner (Progress + Subject Filter + Completion View) -->
-        <div id="due-queue-banner" class="hidden bg-gradient-to-r from-rose-50 via-white to-blue-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl border border-rose-200/80 dark:border-rose-900/60 p-3 sm:p-4 shadow-xs flex flex-col gap-2.5">
+        <div id="due-queue-banner" class="hidden bg-gradient-to-r from-rose-50 via-white to-blue-50 rounded-2xl border border-rose-200/80 p-3 sm:p-4 shadow-xs flex flex-col gap-2.5">
           <div class="flex items-center justify-between gap-2 flex-wrap">
             <div class="flex items-center gap-2">
               <span class="px-2 py-0.5 rounded-lg bg-rose-600 text-white text-xs font-extrabold flex items-center gap-1 shadow-2xs">
                 <span class="material-symbols-outlined text-[14px]">schedule</span>
                 <span>오늘 복습 큐</span>
               </span>
-              <span id="due-queue-progress-text" class="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-100 font-mono">1 / 1</span>
-              <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:inline">(밀린 순서 → 유지율 낮은 순)</span>
+              <span id="due-queue-progress-text" class="text-xs sm:text-sm font-extrabold text-slate-800 font-mono">1 / 1</span>
+              <span class="text-[11px] text-slate-500 hidden sm:inline">(밀린 순서 → 유지율 낮은 순)</span>
             </div>
             <div class="flex items-center gap-1 overflow-x-auto no-scrollbar" id="due-queue-subj-filters">
-              <button type="button" data-due-subj="ALL" class="due-subj-pill min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-600 text-white cursor-pointer">전체</button>
-              <button type="button" data-due-subj="사회과교육론" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">사교론</button>
-              <button type="button" data-due-subj="법학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">법</button>
-              <button type="button" data-due-subj="사회학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">사회</button>
-              <button type="button" data-due-subj="정치학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">정치</button>
-              <button type="button" data-due-subj="경제학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">경제</button>
-              <button type="button" data-due-subj="기출" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">기출</button>
+              <button type="button" data-due-subj="ALL" class="due-subj-pill min-h-[36px] px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-600 text-white cursor-pointer">전체</button>
+              <button type="button" data-due-subj="사회과교육론" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">사교론</button>
+              <button type="button" data-due-subj="법학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">법</button>
+              <button type="button" data-due-subj="사회학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">사회</button>
+              <button type="button" data-due-subj="정치학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">정치</button>
+              <button type="button" data-due-subj="경제학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">경제</button>
+              <button type="button" data-due-subj="기출" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">기출</button>
             </div>
           </div>
-          <div class="w-full h-1.5 bg-slate-200/80 dark:bg-slate-700 rounded-full overflow-hidden">
+          <div class="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
             <div id="due-queue-progress-bar" class="h-full bg-rose-500 transition-all duration-300" style="width: 0%;"></div>
           </div>
           <!-- Completion Screen inside Due Queue -->
-          <div id="due-queue-complete-card" class="hidden mt-1 p-4 rounded-xl bg-emerald-50/90 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-center space-y-2">
-            <div class="text-sm sm:text-base font-extrabold text-emerald-900 dark:text-emerald-200 flex items-center justify-center gap-1.5">
+          <div id="due-queue-complete-card" class="hidden mt-1 p-4 rounded-xl bg-emerald-50/90 border border-emerald-200 text-center space-y-2">
+            <div class="text-sm sm:text-base font-extrabold text-emerald-900 flex items-center justify-center gap-1.5">
               <span class="material-symbols-outlined text-emerald-600">celebration</span>
               <span>오늘 예정된 복습 큐를 모두 완료했습니다!</span>
             </div>
-            <p class="text-xs text-emerald-700 dark:text-emerald-300">밀린 복습 카드를 모두 소화했습니다. 일반 과목 단원으로 돌아가 진도를 이어가세요.</p>
+            <p class="text-xs text-emerald-700">밀린 복습 카드를 모두 소화했습니다. 일반 과목 단원으로 돌아가 진도를 이어가세요.</p>
             <div class="pt-1 flex justify-center gap-2">
-              <button type="button" id="btn-due-complete-return" class="min-h-[40px] px-4 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">사회과교육론 단원으로 이동</button>
+              <button type="button" id="btn-due-complete-return" class="min-h-[44px] px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">사회과교육론 단원으로 이동</button>
             </div>
           </div>
         </div>
 
-        <!-- Topic Banner Card (Compact on mobile <768px per T2 so first content line starts within 35% viewport height) -->
-        <div class="bg-white rounded-2xl border border-border p-2.5 sm:p-5 shadow-xs flex flex-col gap-1.5 sm:gap-3">
-          <!-- Top Row: Chapter Meta Breadcrumb on Left, Prev/Next buttons on Right (Desktop/Tablet md+ only per T2) -->
-          <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-1.5 sm:pb-2.5">
+        <!-- Topic Banner Card (Clean full-width title on mobile without truncation or tag clutter) -->
+        <div class="bg-white rounded-2xl border border-border p-3 sm:p-5 shadow-xs flex flex-col gap-2 sm:gap-3">
+          <!-- Top Row: Chapter Meta Breadcrumb on Left, Quick Actions / Prev-Next on Right -->
+          <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2 sm:pb-2.5">
             <div class="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
-              <span class="text-[11px] sm:text-xs font-semibold text-blue-600 dark:text-blue-400 tracking-normal mobile-scroll-fade md:truncate block w-full" id="topic-header-path">CHAPTER · SECTION</span>
-              <!-- Compatibility elements remain strictly hidden to avoid cluttering -->
+              <span class="text-xs font-semibold text-blue-600 tracking-normal truncate block w-full" id="topic-header-path">CHAPTER · SECTION</span>
+              <!-- Compatibility elements remain strictly hidden -->
               <span class="hidden" id="topic-badge-subject"></span>
               <span class="hidden" id="topic-badge-chapter"></span>
               <span class="hidden" id="topic-badge-section"><span id="topic-section-text"></span></span>
@@ -2362,108 +2372,105 @@
               <span class="hidden" id="topic-badge-tape"><span id="topic-tape-count"></span></span>
               <span class="hidden" id="topic-page-ref"></span>
             </div>
-            <!-- Desktop/Tablet Prev/Next (Hidden on <768px per T2) -->
+            <!-- Desktop/Tablet Prev/Next (Hidden on <=768px because Sub-Header & Bottom Bar have Prev/Next) -->
             <div class="hidden md:flex items-center gap-1.5 shrink-0">
-              <button id="btn-prev-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="이전 주제 (방향키 좌, Cmd+좌)">
+              <button id="btn-prev-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="이전 주제 (방향키 좌, Cmd+좌)">
                 <span class="material-symbols-outlined text-[15px]">chevron_left</span>
                 <span>이전</span>
               </button>
-              <button id="btn-next-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="다음 주제 (방향키 우, Cmd+우)">
+              <button id="btn-next-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="다음 주제 (방향키 우, Cmd+우)">
                 <span>다음</span>
                 <span class="material-symbols-outlined text-[15px]">chevron_right</span>
               </button>
             </div>
           </div>
 
-          <!-- Main Title & Action Buttons (Star + Pin kept together inline next to title per T2) -->
-          <div class="flex items-center justify-between gap-2 flex-wrap sm:flex-nowrap">
-            <div class="flex flex-col min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-wrap">
-                <span id="topic-reps-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-extrabold bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80 shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105" title="클릭하여 회독 정보 확인 및 초기화">
-                  <span class="material-symbols-outlined text-[13px]">auto_stories</span>
+          <!-- Main Title Row (Full width on mobile so title never truncates or gets squeezed by buttons) -->
+          <div class="flex flex-col gap-2">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight break-keep-all w-full" id="topic-title" title="2. 국회의 구성·조직 및 운영">
+              2. 국회의 구성·조직 및 운영
+            </h1>
+            <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 hidden"></div>
+
+            <!-- Action Meta Row (Reps Badge, Context Guide, Star, Pin, Edit Content) with generous touch spacing -->
+            <div class="flex items-center justify-between gap-2 flex-wrap pt-0.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span id="topic-reps-badge" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-extrabold bg-blue-50 text-blue-700 border border-blue-200 shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105" title="클릭하여 회독 정보 확인 및 초기화">
+                  <span class="material-symbols-outlined text-[14px]">auto_stories</span>
                   <span id="topic-reps-badge-text">1회독</span>
                 </span>
-                <button id="btn-topic-context-guide" type="button" class="hidden inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-bold bg-slate-100/90 hover:bg-blue-50 text-slate-600 hover:text-blue-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200/90 hover:border-blue-200 dark:border-slate-700 transition-all cursor-pointer shrink-0 shadow-2xs active:scale-95" title="이 주제를 왜 배우는지 맥락 설명 보기">
-                  <span class="material-symbols-outlined text-[13.5px]">info</span>
+                <button id="btn-topic-context-guide" type="button" class="hidden inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-bold bg-slate-100/90 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200/90 hover:border-blue-200 transition-all cursor-pointer shrink-0 shadow-2xs active:scale-95" title="이 주제를 왜 배우는지 맥락 설명 보기">
+                  <span class="material-symbols-outlined text-[14px]">info</span>
                   <span>설명 보기</span>
                 </button>
-                <h1 class="text-base sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title" title="2. 국회의 구성·조직 및 운영">
-                  2. 국회의 구성·조직 및 운영
-                </h1>
-                <!-- Star + Pin inline group right next to title (never split across lines alone) -->
-                <span class="inline-flex items-center gap-0.5 shrink-0">
-                  <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-8 h-8 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0" type="button" title="중요 주제로 등록 (별표)">
-                    <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="icon-bookmark">star</span>
-                    <span class="hidden" id="bookmark-status-text">중요</span>
-                  </button>
-                  <button id="btn-set-pin" class="inline-flex items-center justify-center w-8 h-8 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
-                    <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="icon-set-pin">push_pin</span>
-                  </button>
-                  <button id="btn-return-pin" class="inline-flex items-center gap-0.5 px-2 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
-                    <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
-                    <span class="hidden sm:inline">핀 복귀</span>
-                  </button>
-                </span>
+                <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0" type="button" title="중요 주제로 등록 (별표)">
+                  <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
+                  <span class="hidden" id="bookmark-status-text">중요</span>
+                </button>
+                <button id="btn-set-pin" class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
+                  <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
+                </button>
+                <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl hover:bg-rose-50 text-slate-500 hover:text-rose-600 transition-colors cursor-pointer shrink-0 text-xs font-bold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
+                  <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
+                  <span>핀 복귀</span>
+                </button>
               </div>
-              <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5 hidden"></div>
-              <!-- T7: Parsed Exam Year / Question Type Tags & Linked Concept Topic Button -->
-              <div id="topic-parsed-exam-tags" class="flex items-center gap-1.5 flex-wrap mt-1 hidden"></div>
+              <div class="flex items-center gap-1.5 shrink-0 ml-auto">
+                <button id="btn-edit-topic-content" class="min-h-[38px] px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+                  <span class="material-symbols-outlined text-[15px]">edit_note</span>
+                  <span>본문 수정</span>
+                </button>
+                <button id="btn-reset-custom-tape" class="min-h-[38px] px-2.5 py-1.5 rounded-xl text-xs font-bold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-1 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
+                  <span class="material-symbols-outlined text-[15px]">restart_alt</span>
+                  <span>원본 복원</span>
+                </button>
+              </div>
             </div>
-            <div class="flex items-center gap-1 shrink-0 ml-auto">
-              <button id="btn-edit-topic-content" class="min-h-[32px] sm:min-h-[36px] px-2 sm:px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 dark:border-slate-700 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
-                <span class="material-symbols-outlined text-[13px] sm:text-[14px]">edit_note</span>
-                <span>본문 수정</span>
-              </button>
-              <button id="btn-reset-custom-tape" class="min-h-[32px] sm:min-h-[36px] px-2 py-1 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 dark:border-slate-700 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
-                <span class="material-symbols-outlined text-[13px]">restart_alt</span>
-                <span>원본 복원</span>
-              </button>
-            </div>
+            <!-- T7: Linked Concept Topic Button (Only shown on exam cards if linked concept exists; hashtag chips removed) -->
+            <div id="topic-parsed-exam-tags" class="flex items-center gap-1.5 flex-wrap hidden"></div>
           </div>
 
-          <!-- Keywords list (Hidden on mobile when not revealed to keep content above 35% height) -->
-          <div class="hidden sm:flex flex-wrap gap-1.5" id="topic-keywords-tags">
-            <!-- Injected by JS -->
-          </div>
+          <!-- Keywords list permanently hidden per user request -->
+          <div class="hidden" id="topic-keywords-tags"></div>
         </div>
 
-        <!-- Mode Controls Bar -->
-        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-1.5 sm:p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-1.5 xl:gap-3">
-          <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile, flex row on desktop) -->
-          <div class="grid grid-cols-4 sm:flex items-center gap-1 sm:gap-1.5 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full xl:w-auto shrink-0">
-            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
-              <span class="material-symbols-outlined text-[15px]">label</span>
+        <!-- Mode Controls Bar (On mobile <=768px: Clean 4-Segment Mode Selector only; secondary buttons in bottom bar / menu) -->
+        <div class="bg-white rounded-xl border border-slate-200/80 p-1.5 sm:p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-1.5 xl:gap-3">
+          <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile with >=44px touch targets) -->
+          <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-slate-100/90 p-1 rounded-xl w-full xl:w-auto shrink-0">
+            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
+              <span class="material-symbols-outlined text-[16px]">label</span>
               <span class="hidden sm:inline">마스킹 테이프</span>
               <span class="sm:hidden">테이프</span>
             </button>
-            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
-              <span class="material-symbols-outlined text-[15px]">edit_note</span>
+            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
+              <span class="material-symbols-outlined text-[16px]">edit_note</span>
               <span class="hidden sm:inline">작성 모드</span>
               <span class="sm:hidden">작성</span>
             </button>
-            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
-              <span class="material-symbols-outlined text-[15px]">menu_book</span>
+            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
               <span class="hidden sm:inline">원문 정독</span>
               <span class="sm:hidden">정독</span>
             </button>
-            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
-              <span class="material-symbols-outlined text-[15px]">blur_on</span>
+            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
+              <span class="material-symbols-outlined text-[16px]">blur_on</span>
               <span class="hidden sm:inline">블러 암기</span>
               <span class="sm:hidden">블러</span>
             </button>
           </div>
 
-          <!-- Actions Toolbar (Font Scaler, Reveal Answer, Desktop Tape Add, Desktop Wide Mode) -->
-          <div class="flex flex-wrap sm:flex-nowrap items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full xl:w-auto overflow-x-auto no-scrollbar py-0.5">
+          <!-- Actions Toolbar (Hidden on mobile <768px to prevent button crowding; available in bottom bar & overflow menu) -->
+          <div class="hidden md:flex flex-wrap sm:flex-nowrap items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full xl:w-auto overflow-x-auto no-scrollbar py-0.5">
 
             <!-- Font Scale Controller -->
-            <div class="flex items-center bg-slate-100/90 dark:bg-slate-800/80 rounded-lg p-0.5 border border-slate-200/80 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 font-bold select-none shrink-0 whitespace-nowrap">
-              <button id="btn-font-down" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 작게 [단축키: - 또는 []">A-</button>
-              <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 dark:text-slate-200 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
-              <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
+            <div class="flex items-center bg-slate-100/90 rounded-lg p-0.5 border border-slate-200/80 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
+              <button id="btn-font-down" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 작게 [단축키: - 또는 []">A-</button>
+              <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
+              <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
             </div>
 
-            <!-- Inline Masking Tape Action Button (Hidden on <768px per T2 to remove duplicate '테이프' button) -->
+            <!-- Inline Masking Tape Action Button -->
             <button id="btn-apply-tape-inline" type="button" class="hidden md:flex min-h-[36px] px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden xl:inline">테이프 [M]</span>
@@ -2471,7 +2478,7 @@
             </button>
 
             <!-- T8: Weak Tapes Only Toggle Button (wrongCount >= 1) -->
-            <button id="btn-weak-tapes-only" type="button" class="min-h-[36px] px-2.5 py-1.5 rounded-lg border border-rose-200 dark:border-rose-800/80 bg-rose-50/70 dark:bg-rose-950/40 hover:bg-rose-100 text-rose-700 dark:text-rose-300 font-bold text-xs flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer whitespace-nowrap shrink-0" title="오답 표시(wrongCount ≥ 1)된 약한 테이프만 가리기">
+            <button id="btn-weak-tapes-only" type="button" class="min-h-[36px] px-2.5 py-1.5 rounded-lg border border-rose-200 bg-rose-50/70 hover:bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer whitespace-nowrap shrink-0" title="오답 표시(wrongCount ≥ 1)된 약한 테이프만 가리기">
               <span class="material-symbols-outlined text-[15px]">filter_alt</span>
               <span id="weak-tapes-btn-label">약한 테이프만</span>
             </button>
@@ -6965,39 +6972,11 @@
           }
         }
 
-        // T7: Render parsed exam year / type tags & linked concept topic button (without mutating title)
+        // T7: Linked concept topic button on exam cards (tag chips removed per user request)
         const parsedTagsEl = document.getElementById('topic-parsed-exam-tags');
         if (parsedTagsEl) {
           parsedTagsEl.innerHTML = '';
-          const exInfo = parseTopicExamInfo(topic);
           let hasAnyTag = false;
-          exInfo.years.forEach(yr => {
-            hasAnyTag = true;
-            const yChip = document.createElement('button');
-            yChip.type = 'button';
-            yChip.className = 'px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 font-mono cursor-pointer transition-colors';
-            yChip.textContent = `'${yr.slice(-2)} 기출`;
-            yChip.title = `${yr}학년도 기출 필터 적용`;
-            yChip.addEventListener('click', () => {
-              const sel = document.getElementById('sidebar-exam-filter');
-              const filterVal = parseInt(yr, 10) <= 2022 ? '2022_prev' : yr;
-              if (sel) {
-                sel.value = filterVal;
-                sidebarExamFilterVal = filterVal;
-                renderSidebar();
-                showToast(`${yr}학년도 기출 단원 필터가 적용되었습니다`, 'filter_alt');
-              }
-            });
-            parsedTagsEl.appendChild(yChip);
-          });
-          exInfo.types.forEach(tp => {
-            hasAnyTag = true;
-            const tChip = document.createElement('span');
-            tChip.className = 'px-1.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
-            tChip.textContent = `${tp}형`;
-            parsedTagsEl.appendChild(tChip);
-          });
-          // If this is an exam card, add a link to the related concept topic
           if (topic.subject === '기출' || (topic.id && topic.id.includes('EXAM-'))) {
             const linkedIdx = findLinkedConceptTopicIndex(topic);
             if (linkedIdx !== -1 && TOPICS[linkedIdx]) {
@@ -7005,8 +6984,8 @@
               const linkedTopic = TOPICS[linkedIdx];
               const linkBtn = document.createElement('button');
               linkBtn.type = 'button';
-              linkBtn.className = 'px-2.5 py-0.5 rounded-lg text-[11px] font-bold bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
-              linkBtn.innerHTML = `<span class="material-symbols-outlined text-[13px]">link</span><span>개념 이동: [${escapeHtml(linkedTopic.subject)}] ${escapeHtml(linkedTopic.title.slice(0, 22))}${linkedTopic.title.length > 22 ? '…' : ''}</span>`;
+              linkBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
+              linkBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">link</span><span>개념 이동: [${escapeHtml(linkedTopic.subject)}] ${escapeHtml(linkedTopic.title.slice(0, 24))}${linkedTopic.title.length > 24 ? '…' : ''}</span>`;
               linkBtn.title = `연결된 본문 개념 주제로 이동: [${linkedTopic.subject}] ${linkedTopic.title}`;
               linkBtn.addEventListener('click', () => {
                 setSubjectTab(linkedTopic.subject, false);
@@ -7025,28 +7004,19 @@
         if (btnToggleBookmark && iconBookmark) {
           const isBookmarked = getStoredBookmarks().includes(topic.id);
           if (isBookmarked) {
-            btnToggleBookmark.className = 'inline-flex items-center p-1 rounded-lg text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0';
+            btnToggleBookmark.className = 'inline-flex items-center justify-center w-10 h-10 rounded-xl text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer shrink-0';
             iconBookmark.className = 'material-symbols-outlined material-symbols-filled text-[22px] text-amber-400';
           } else {
-            btnToggleBookmark.className = 'inline-flex items-center p-1 rounded-lg text-slate-300 hover:text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0';
+            btnToggleBookmark.className = 'inline-flex items-center justify-center w-10 h-10 rounded-xl text-slate-300 hover:text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer shrink-0';
             iconBookmark.className = 'material-symbols-outlined text-[22px] text-slate-300';
           }
         }
 
-        // Keywords & Exam Tag Chips
-        topicKeywordsTags.innerHTML = '';
-        if (currentExamTag) {
-          const examChip = document.createElement('span');
-          examChip.className = 'px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-50 text-amber-900 border border-amber-300/80 flex items-center gap-1 shadow-2xs shrink-0';
-          examChip.innerHTML = `<span class="material-symbols-outlined text-[13px] text-amber-600">school</span><span>기출 ${currentExamTag}</span>`;
-          topicKeywordsTags.appendChild(examChip);
+        // Keywords & Exam Tag Chips removed per user request
+        if (topicKeywordsTags) {
+          topicKeywordsTags.innerHTML = '';
+          topicKeywordsTags.classList.add('hidden');
         }
-        (topic.targetKeywords || []).forEach(kw => {
-          const chip = document.createElement('span');
-          chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200/80';
-          chip.textContent = `#${kw}`;
-          topicKeywordsTags.appendChild(chip);
-        });
 
         // Insert Structured Content HTML (Check custom user masking first, except GUIDE-001 which always shows latest guide)
         if (topic.id === 'GUIDE-001') {
@@ -8216,7 +8186,7 @@
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
-          if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
+          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
         } else if (mode === 'blur') {
           // Blur all groups
           document.querySelectorAll('.topic-group').forEach(grp => blurGroup(grp));
@@ -8446,7 +8416,7 @@
           document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
           restoreTapesFromTyping();
           document.querySelectorAll('.mask-tape').forEach(el => peelTape(el));
-          if (topicKeywordsTags) topicKeywordsTags.classList.remove('hidden');
+          if (topicKeywordsTags) topicKeywordsTags.classList.add('hidden');
           showToast('모든 정답(마스킹 테이프)이 공개되었습니다 [T]', 'visibility');
         } else {
           if (currentMode === 'type') {
@@ -8627,9 +8597,9 @@
         });
         mobileSubjTabs.forEach(b => {
           if (b.dataset.subject === activeSubject) {
-            b.className = 'mobile-subj-tab active px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-blue-600 text-white shadow-xs border border-blue-600 flex items-center gap-1';
+            b.className = 'mobile-subj-tab active min-h-[44px] px-2 py-2 rounded-xl text-xs font-extrabold transition-all bg-blue-600 text-white shadow-xs border border-blue-600 flex items-center justify-center gap-1';
           } else {
-            b.className = 'mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 transition-all whitespace-nowrap border border-transparent flex items-center gap-1';
+            b.className = 'mobile-subj-tab min-h-[44px] px-2 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-100 transition-all border border-slate-200 flex items-center justify-center gap-1';
           }
         });
       }
@@ -9140,6 +9110,7 @@
       const btnMobileDueHeader = document.getElementById('btn-mobile-due-header');
       if (btnMobileDueHeader) {
         btnMobileDueHeader.addEventListener('click', () => {
+          if (typeof closeMobileMoreMenu === 'function') closeMobileMoreMenu();
           dueQueueInitialMax = 0;
           setSubjectTab('오늘 복습', true);
           showToast('오늘 복습 큐 모드로 진입했습니다', 'schedule');
