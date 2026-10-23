@@ -30,15 +30,15 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/edu_cover_1x1.png"/>
-  <link rel="shortcut icon" type="image/png" href="assets/edu_cover_1x1.png"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/edu_cover_1x1.png"/>
-  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/edu_cover_1x1.png">
+  <link rel="shortcut icon" type="image/png" href="assets/edu_cover_1x1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/edu_cover_1x1.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400..600,0..1,0&display=swap"/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400..600,0..1,0&display=swap" rel="stylesheet"/>
   <script>
     (function() {
       function markIconsReady() { document.documentElement.classList.add('icons-ready'); }
@@ -1876,6 +1876,7 @@
         /* Mobile Sub-header Breadcrumb Simplification: Only show Current Topic Title prominently + Prev/Next buttons */
         #bc-subject,
         #bc-chapter-sep,
+        #topic-header-path,
         #bc-chapter,
         #bc-section,
         #bc-section-sep,
@@ -1992,8 +1993,8 @@
   </style>
   <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
-  <script src="data/topics-index.js?v=20261023_v3"></script>
-  <script defer src="context-guides-data.js?v=20261023_v3"></script>
+  <script src="data/topics-index.js?v=20261023_v4"></script>
+  <script defer src="context-guides-data.js?v=20261023_v4"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2171,40 +2172,45 @@
     </div>
   </div>
 
-  <!-- SUB-HEADER (Mobile <=768px: Current Topic Title prominently + Prev/Next buttons | Desktop md+: Full Breadcrumb) -->
+  <!-- SUB-HEADER (Unified Breadcrumb + Chapter/Section Context Path + Prev/Next Navigation) -->
   <div id="sub-header" class="flex-none h-11 md:h-10 bg-slate-50/95 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
     <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
-      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: []">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
       <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
-      <!-- Breadcrumb (On mobile <=768px, CSS shows ONLY #bc-title prominently) -->
+      <!-- Unified Breadcrumb & Chapter/Section Path (On mobile <=768px, CSS shows ONLY #bc-title prominently) -->
       <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden text-slate-700 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
         <span class="px-2 py-0.5 rounded-md text-[11px] md:text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
         <span class="text-slate-400 shrink-0" id="bc-chapter-sep">/</span>
-        <span class="text-slate-700 shrink-0 truncate max-w-[220px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px]" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
-        <span class="text-slate-400 shrink-0 hidden" id="bc-section-sep">/</span>
-        <span class="text-indigo-800 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200 hidden" id="bc-section">1-1. 세 가지 전통</span>
-        <span class="text-slate-400 shrink-0 hidden" id="bc-subsection-sep">/</span>
-        <span class="text-amber-900 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-300 hidden" id="bc-subsection">세부단원</span>
+        <span class="text-xs font-semibold text-blue-700 tracking-normal truncate shrink-0 max-w-[260px] lg:max-w-[380px] xl:max-w-[480px]" id="topic-header-path">1.사회과 교육의 전통 · 1-1. 세 가지 전통</span>
+        <span class="hidden" aria-hidden="true">
+          <span id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
+          <span id="bc-section-sep">/</span>
+          <span id="bc-section">1-1. 세 가지 전통</span>
+          <span id="bc-subsection-sep">/</span>
+          <span id="bc-subsection">세부단원</span>
+        </span>
         <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
-        <span class="text-slate-900 text-sm md:text-xs font-extrabold truncate block md:inline max-w-full md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
+        <span class="text-slate-900 text-sm md:text-xs font-extrabold truncate block md:inline max-w-full md:max-w-[320px] lg:max-w-[420px]" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
         <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden md:inline-block" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
 
-    <!-- Right Controls in Sub-Header: Prev/Next buttons visible on mobile <=768px with generous touch targets -->
+    <!-- Right Controls in Sub-Header: Unified Prev/Next buttons + Essay Drawer Toggle -->
     <div class="flex items-center gap-1.5 shrink-0">
-      <button id="btn-subhead-prev" class="flex md:hidden min-h-[38px] min-w-[52px] px-2.5 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-extrabold items-center justify-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 단원">
-        <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+      <button id="btn-prev-topic" class="min-h-[38px] md:min-h-[30px] min-w-[52px] md:min-w-0 px-2.5 py-1.5 md:py-1 rounded-xl md:rounded-lg bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-extrabold md:font-semibold flex items-center justify-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 주제 (방향키 좌, Cmd+좌)">
+        <span class="material-symbols-outlined text-[18px] md:text-[15px]">chevron_left</span>
         <span>이전</span>
       </button>
-      <button id="btn-subhead-next" class="flex md:hidden min-h-[38px] min-w-[52px] px-2.5 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-extrabold items-center justify-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 단원">
+      <button id="btn-next-topic" class="min-h-[38px] md:min-h-[30px] min-w-[52px] md:min-w-0 px-2.5 py-1.5 md:py-1 rounded-xl md:rounded-lg bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-extrabold md:font-semibold flex items-center justify-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 주제 (방향키 우, Cmd+우)">
         <span>다음</span>
-        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        <span class="material-symbols-outlined text-[18px] md:text-[15px]">chevron_right</span>
       </button>
+      <button id="btn-subhead-prev" class="hidden" type="button" aria-hidden="true"></button>
+      <button id="btn-subhead-next" class="hidden" type="button" aria-hidden="true"></button>
 
       <!-- Toggle Right Essay Tab in Fixed Sub-header (Desktop) -->
       <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 서술창 접기/열기 [단축키: W]">
@@ -2316,9 +2322,9 @@
       <section id="subnote-section" class="flex-1 flex flex-col min-w-0 overflow-y-auto px-2.5 sm:px-4 py-2 sm:py-4 lg:px-6 lg:py-6 gap-2 sm:gap-4 transition-all duration-200 relative">
         <div id="subnote-inner" class="w-full mx-auto flex flex-col gap-2 sm:gap-4 pb-20 xl:pb-6 transition-all duration-300">
 
-        <!-- T6: Today's Review Queue Mode Banner (Progress + Subject Filter + Completion View) -->
-        <div id="due-queue-banner" class="hidden bg-gradient-to-r from-rose-50 via-white to-blue-50 rounded-2xl border border-rose-200/80 p-3 sm:p-4 shadow-xs flex flex-col gap-2.5">
-          <div class="flex items-center justify-between gap-2 flex-wrap">
+        <!-- T6: Today's Review Queue Mode Banner (Progress + Subject Filter + Slim Completion Bar) -->
+        <div id="due-queue-banner" class="hidden bg-gradient-to-r from-rose-50 via-white to-blue-50 rounded-2xl border border-rose-200/80 p-2.5 sm:p-3 shadow-xs flex flex-col gap-2">
+          <div id="due-queue-active-header" class="flex items-center justify-between gap-2 flex-wrap">
             <div class="flex items-center gap-2">
               <span class="px-2 py-0.5 rounded-lg bg-rose-600 text-white text-xs font-extrabold flex items-center gap-1 shadow-2xs">
                 <span class="material-symbols-outlined text-[14px]">schedule</span>
@@ -2328,67 +2334,46 @@
               <span class="text-[11px] text-slate-500 hidden sm:inline">(밀린 순서 → 유지율 낮은 순)</span>
             </div>
             <div class="flex items-center gap-1 overflow-x-auto no-scrollbar" id="due-queue-subj-filters">
-              <button type="button" data-due-subj="ALL" class="due-subj-pill min-h-[36px] px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-600 text-white cursor-pointer">전체</button>
-              <button type="button" data-due-subj="사회과교육론" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">사교론</button>
-              <button type="button" data-due-subj="법학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">법</button>
-              <button type="button" data-due-subj="사회학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">사회</button>
-              <button type="button" data-due-subj="정치학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">정치</button>
-              <button type="button" data-due-subj="경제학" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">경제</button>
-              <button type="button" data-due-subj="기출" class="due-subj-pill min-h-[36px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">기출</button>
+              <button type="button" data-due-subj="ALL" class="due-subj-pill min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-600 text-white cursor-pointer">전체</button>
+              <button type="button" data-due-subj="사회과교육론" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">사교론</button>
+              <button type="button" data-due-subj="법학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">법</button>
+              <button type="button" data-due-subj="사회학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">사회</button>
+              <button type="button" data-due-subj="정치학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">정치</button>
+              <button type="button" data-due-subj="경제학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">경제</button>
+              <button type="button" data-due-subj="기출" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white text-slate-600 border border-slate-200 cursor-pointer">기출</button>
             </div>
           </div>
-          <div class="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
+          <div id="due-queue-progress-track" class="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
             <div id="due-queue-progress-bar" class="h-full bg-rose-500 transition-all duration-300" style="width: 0%;"></div>
           </div>
-          <!-- Completion Screen inside Due Queue -->
-          <div id="due-queue-complete-card" class="hidden mt-1 p-4 rounded-xl bg-emerald-50/90 border border-emerald-200 text-center space-y-2">
-            <div class="text-sm sm:text-base font-extrabold text-emerald-900 flex items-center justify-center gap-1.5">
-              <span class="material-symbols-outlined text-emerald-600">celebration</span>
-              <span>오늘 예정된 복습 큐를 모두 완료했습니다!</span>
+          <!-- Compact 1-Line Completion Banner inside Due Queue -->
+          <div id="due-queue-complete-card" class="hidden px-3 py-1.5 rounded-xl bg-emerald-50/90 border border-emerald-200 flex items-center justify-between gap-2 text-xs">
+            <div class="font-extrabold text-emerald-900 flex items-center gap-1.5 min-w-0 truncate">
+              <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0">check_circle</span>
+              <span class="truncate">✓ 오늘 예정된 복습 큐 완료</span>
+              <span class="text-[11px] font-medium text-emerald-700 hidden md:inline truncate">· 밀린 복습 카드를 모두 소화했습니다</span>
             </div>
-            <p class="text-xs text-emerald-700">밀린 복습 카드를 모두 소화했습니다. 일반 과목 단원으로 돌아가 진도를 이어가세요.</p>
-            <div class="pt-1 flex justify-center gap-2">
-              <button type="button" id="btn-due-complete-return" class="min-h-[44px] px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">사회과교육론 단원으로 이동</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" id="btn-due-complete-return" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold shadow-2xs cursor-pointer whitespace-nowrap">사회과교육론 단원으로 이동</button>
+              <button type="button" id="btn-due-complete-collapse" class="p-1 rounded-lg text-emerald-700 hover:bg-emerald-100 cursor-pointer flex items-center justify-center" title="완료 배너 접기" aria-label="완료 배너 접기">
+                <span class="material-symbols-outlined text-[16px]">close</span>
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Topic Banner Card (Clean full-width title on mobile without truncation or tag clutter) -->
-        <div class="bg-white rounded-2xl border border-border p-3 sm:p-5 shadow-xs flex flex-col gap-2 sm:gap-3">
-          <!-- Top Row: Chapter Meta Breadcrumb on Left, Quick Actions / Prev-Next on Right -->
-          <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2 sm:pb-2.5">
-            <div class="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
-              <span class="text-xs font-semibold text-blue-600 tracking-normal truncate block w-full" id="topic-header-path">CHAPTER · SECTION</span>
-              <!-- Compatibility elements remain strictly hidden -->
-              <span class="hidden" id="topic-badge-subject"></span>
-              <span class="hidden" id="topic-badge-chapter"></span>
-              <span class="hidden" id="topic-badge-section"><span id="topic-section-text"></span></span>
-              <span class="hidden" id="topic-badge-exam"></span>
-              <span class="hidden" id="topic-badge-tape"><span id="topic-tape-count"></span></span>
-              <span class="hidden" id="topic-page-ref"></span>
+        <!-- Topic Banner Card (Unified with Sub-Header breadcrumb to maximize vertical viewport) -->
+        <div class="bg-white rounded-2xl border border-border px-3 py-2.5 sm:px-4 sm:py-3 shadow-xs">
+          <!-- Main Title & Action Controls (No duplicate CHAPTER·SECTION row or empty divs) -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-1.5 md:gap-3">
+            <div class="min-w-0 flex-1">
+              <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight break-keep-all w-full" id="topic-title" title="1.시민성 전달 모형">1.시민성 전달 모형</h1>
+              <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 mt-0.5 hidden"></div>
+              <div id="topic-parsed-exam-tags" class="flex items-center gap-1.5 flex-wrap mt-1 hidden"></div>
             </div>
-            <!-- Desktop/Tablet Prev/Next (Hidden on <=768px because Sub-Header & Bottom Bar have Prev/Next) -->
-            <div class="hidden md:flex items-center gap-1.5 shrink-0">
-              <button id="btn-prev-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="이전 주제 (방향키 좌, Cmd+좌)">
-                <span class="material-symbols-outlined text-[15px]">chevron_left</span>
-                <span>이전</span>
-              </button>
-              <button id="btn-next-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="다음 주제 (방향키 우, Cmd+우)">
-                <span>다음</span>
-                <span class="material-symbols-outlined text-[15px]">chevron_right</span>
-              </button>
-            </div>
-          </div>
 
-          <!-- Main Title Row (Full width on mobile so title never truncates or gets squeezed by buttons) -->
-          <div class="flex flex-col gap-2">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight break-keep-all w-full" id="topic-title" title="2. 국회의 구성·조직 및 운영">
-              2. 국회의 구성·조직 및 운영
-            </h1>
-            <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 hidden"></div>
-
-            <!-- Action Meta Row (Reps Badge, Context Guide, Star, Pin, Edit Content) with generous touch spacing -->
-            <div class="flex items-center justify-between gap-2 flex-wrap pt-0.5">
+            <!-- Action Meta Row (Reps Badge, Context Guide, Star, Pin, Edit Content) -->
+            <div class="flex items-center justify-between md:justify-end gap-1.5 flex-wrap shrink-0">
               <div class="flex items-center gap-1.5 flex-wrap">
                 <span id="topic-reps-badge" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-extrabold bg-blue-50 text-blue-700 border border-blue-200 shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105" title="클릭하여 회독 정보 확인 및 초기화">
                   <span class="material-symbols-outlined text-[14px]">auto_stories</span>
@@ -2398,35 +2383,40 @@
                   <span class="material-symbols-outlined text-[14px]">info</span>
                   <span>설명 보기</span>
                 </button>
-                <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0" type="button" title="중요 주제로 등록 (별표)">
-                  <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
+                <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-9 h-9 rounded-xl hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0" type="button" title="중요 주제로 등록 (별표)">
+                  <span class="material-symbols-outlined text-[21px]" id="icon-bookmark">star</span>
                   <span class="hidden" id="bookmark-status-text">중요</span>
                 </button>
-                <button id="btn-set-pin" class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
-                  <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
+                <button id="btn-set-pin" class="inline-flex items-center justify-center w-9 h-9 rounded-xl hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
+                  <span class="material-symbols-outlined text-[21px]" id="icon-set-pin">push_pin</span>
                 </button>
                 <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl hover:bg-rose-50 text-slate-500 hover:text-rose-600 transition-colors cursor-pointer shrink-0 text-xs font-bold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
                   <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
                   <span>핀 복귀</span>
                 </button>
               </div>
-              <div class="flex items-center gap-1.5 shrink-0 ml-auto">
-                <button id="btn-edit-topic-content" class="min-h-[38px] px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+              <div class="flex items-center gap-1.5 shrink-0 ml-auto md:ml-0">
+                <button id="btn-edit-topic-content" class="min-h-[36px] px-2.5 py-1 rounded-xl text-xs font-bold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
                   <span class="material-symbols-outlined text-[15px]">edit_note</span>
                   <span>본문 수정</span>
                 </button>
-                <button id="btn-reset-custom-tape" class="min-h-[38px] px-2.5 py-1.5 rounded-xl text-xs font-bold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-1 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
+                <button id="btn-reset-custom-tape" class="min-h-[36px] px-2.5 py-1 rounded-xl text-xs font-bold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-1 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                   <span class="material-symbols-outlined text-[15px]">restart_alt</span>
                   <span>원본 복원</span>
                 </button>
               </div>
             </div>
-            <!-- T7: Linked Concept Topic Button (Only shown on exam cards if linked concept exists; hashtag chips removed) -->
-            <div id="topic-parsed-exam-tags" class="flex items-center gap-1.5 flex-wrap hidden"></div>
           </div>
-
-          <!-- Keywords list permanently hidden per user request -->
-          <div class="hidden" id="topic-keywords-tags"></div>
+          <!-- Compatibility targets kept strictly inside a single hidden container so zero layout gap is generated -->
+          <div class="hidden" aria-hidden="true">
+            <span id="topic-badge-subject"></span>
+            <span id="topic-badge-chapter"></span>
+            <span id="topic-badge-section"><span id="topic-section-text"></span></span>
+            <span id="topic-badge-exam"></span>
+            <span id="topic-badge-tape"><span id="topic-tape-count"></span></span>
+            <span id="topic-page-ref"></span>
+            <div id="topic-keywords-tags"></div>
+          </div>
         </div>
 
         <!-- Mode Controls Bar (On mobile <=768px: Clean 4-Segment Mode Selector only; secondary buttons in bottom bar / menu) -->
@@ -2460,9 +2450,9 @@
 
             <!-- Font Scale Controller -->
             <div class="flex items-center bg-slate-100/90 rounded-lg p-0.5 border border-slate-200/80 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
-              <button id="btn-font-down" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 작게 [단축키: - 또는 []">A-</button>
+              <button id="btn-font-down" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 작게 [단축키: -]">A-</button>
               <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
-              <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
+              <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 크게 [단축키: =]">A+</button>
             </div>
 
             <!-- Inline Masking Tape Action Button -->
@@ -2662,7 +2652,7 @@
       </div>
       <div class="flex items-center gap-1.5">
         <span class="text-slate-500">목차 열기/접기</span>
-        <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">Space</kbd>
+        <kbd class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">[</kbd>
       </div>
       <div class="flex items-center gap-1.5">
         <span class="text-slate-500">전체보기</span>
@@ -2844,7 +2834,7 @@
       </div>
       <!-- Modal Body (Image Container) -->
       <div class="flex-1 overflow-auto p-2 sm:p-3 bg-slate-100/50 flex items-center justify-center min-h-[300px]">
-        <img id="diagram-modal-img" src="" alt="도해" class="max-w-full max-h-[85vh] w-auto object-contain rounded-lg shadow-sm border border-slate-200/80 cursor-zoom-in transition-all duration-200" />
+        <img id="diagram-modal-img" alt="도해" class="max-w-full max-h-[85vh] w-auto object-contain rounded-lg shadow-sm border border-slate-200/80 cursor-zoom-in transition-all duration-200" />
       </div>
       <!-- Modal Footer -->
       <div class="px-4 py-2 border-t border-slate-200 bg-slate-50 flex items-center justify-between text-xs text-slate-600 shrink-0 font-medium">
@@ -3198,7 +3188,7 @@
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>좌측 목차 패널 열기/닫기</span>
-          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Space</kbd>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">[</kbd>
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>현재 과목 학습 핀 설정/해제</span>
@@ -3243,7 +3233,6 @@
           <div class="flex items-center gap-1 font-mono font-bold">
             <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono">=</kbd>
             <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono">-</kbd>
-            <span class="text-xs text-slate-400 font-sans font-normal">(또는 [ / ])</span>
           </div>
         </div>
         <div class="flex justify-between items-center py-2">
@@ -3704,7 +3693,7 @@
 
         inflightChunkPromises[subject] = new Promise((resolve) => {
           const script = document.createElement('script');
-          script.src = chunkSrc + '?v=20261023_v3';
+          script.src = chunkSrc + '?v=20261023_v4';
           script.async = true;
           script.dataset.subjectChunk = subject;
           script.onload = () => {
@@ -4002,7 +3991,7 @@
           sidebarToggleIcon.textContent = isCollapsed ? 'menu' : 'dock_to_left';
         }
         if (btnToggleSidebar) {
-          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 [단축키: Space]' : '목차 사이드바 접기 [단축키: Space]';
+          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 [단축키: []' : '목차 사이드바 접기 [단축키: []';
         }
       }
 
@@ -4010,10 +3999,10 @@
         if (window.innerWidth < 1024) {
           if (sidebarDrawer.classList.contains('-translate-x-full')) {
             openMobileSidebar();
-            showToast('목차를 열었습니다 [Space]', 'menu_open');
+            showToast('목차를 열었습니다 [[]', 'menu_open');
           } else {
             closeMobileSidebar();
-            showToast('목차를 닫았습니다 [Space]', 'dock_to_left');
+            showToast('목차를 닫았습니다 [[]', 'dock_to_left');
           }
           return;
         }
@@ -4025,7 +4014,7 @@
           localStorage.setItem('edurecall_sidebar_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateSidebarToggleUI(willCollapse);
-        showToast(willCollapse ? '목차 탭을 접었습니다 [Space]' : '목차 탭을 펼쳤습니다 [Space]', willCollapse ? 'dock_to_left' : 'menu_open');
+        showToast(willCollapse ? '목차 탭을 접었습니다 [[]' : '목차 탭을 펼쳤습니다 [[]', willCollapse ? 'dock_to_left' : 'menu_open');
       }
 
       function setSidebarCollapsed(collapsed) {
@@ -6080,6 +6069,8 @@
         const banner = document.getElementById('due-queue-banner');
         const progText = document.getElementById('due-queue-progress-text');
         const progBar = document.getElementById('due-queue-progress-bar');
+        const progTrack = document.getElementById('due-queue-progress-track');
+        const activeHeader = document.getElementById('due-queue-active-header');
         const completeCard = document.getElementById('due-queue-complete-card');
         if (!banner) return;
 
@@ -6099,12 +6090,20 @@
         if (remaining === 0) {
           if (progText) progText.textContent = `완료 (${total} / ${total})`;
           if (progBar) progBar.style.width = '100%';
+          if (progTrack) progTrack.classList.add('hidden');
+          if (activeHeader && dueQueueSubjFilter === 'ALL') activeHeader.classList.add('hidden');
+          banner.classList.remove('p-2.5', 'sm:p-3');
+          banner.classList.add('p-1.5');
           if (completeCard) completeCard.classList.remove('hidden');
         } else {
           const stepNum = currentPos !== -1 ? (done + currentPos + 1) : (done + 1);
           const denom = Math.max(total, stepNum);
           if (progText) progText.textContent = `${stepNum} / ${denom} (남은 복습 ${remaining}개)`;
           if (progBar) progBar.style.width = `${Math.min(100, Math.round((done / Math.max(1, denom)) * 100))}%`;
+          if (progTrack) progTrack.classList.remove('hidden');
+          if (activeHeader) activeHeader.classList.remove('hidden');
+          banner.classList.remove('p-1.5');
+          banner.classList.add('p-2.5', 'sm:p-3');
           if (completeCard) completeCard.classList.add('hidden');
         }
       }
@@ -7018,6 +7017,13 @@
           try { localStorage.setItem('edurecall_custom_EDU-040', customHtml); } catch(e) {}
         }
 
+        // Integrity safeguard: If EXAM-2024-A-05, EXAM-2024-B-05, or EXAM-2025-B-04 custom HTML is missing the official <table, discard and restore official contentHtml
+        if (customHtml && (topic.id === 'EXAM-2024-A-05' || topic.id === 'EXAM-2024-B-05' || topic.id === 'EXAM-2025-B-04') && !customHtml.includes('<table')) {
+          localStorage.removeItem(`edurecall_custom_${topic.id}`);
+          localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
+          customHtml = null;
+        }
+
         // Integrity safeguard: If custom HTML is severely corrupted (empty), discard and restore official contentHtml
         if (customHtml && (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topic.id, customHtml))) {
           localStorage.removeItem(`edurecall_custom_${topic.id}`);
@@ -7099,6 +7105,7 @@
         // Reset Essay and match
         essayInput.value = '';
         charCounter.textContent = '아직 작성 전 · 0자';
+        if (typeof resetEssayDiffGuardState === 'function') resetEssayDiffGuardState();
         checkKeywords();
 
         // Highlight Active in Sidebar
@@ -8414,24 +8421,111 @@
         }
       }
 
-      // 7. Real-Time Essay Keyword Matching
+      // 7. Real-Time Essay Keyword Matching (with Korean Particle/Ending Stem & Space/Punctuation Normalization)
+      let diffCheckedForCurrentTopic = false;
+      let pendingShortcutGrade = null;
+      let pendingShortcutGradeTimer = null;
+
+      function resetEssayDiffGuardState() {
+        diffCheckedForCurrentTopic = false;
+        pendingShortcutGrade = null;
+        if (pendingShortcutGradeTimer) {
+          clearTimeout(pendingShortcutGradeTimer);
+          pendingShortcutGradeTimer = null;
+        }
+      }
+
+      const KO_SUFFIX_REGEX = /(?:으로부터|에서부터|이라고|라고|이라는|라는|이라도|라도|이어서|여서|이므로|므로|이지만|지만|이라서|라서|에게서|한테서|으로만|로만|에서는|에는|에게|한테|에서|으로|이나|거나|조차|마저|까지|부터|처럼|만큼|보다|하고|이며|이고|든지|란|이란|은|는|이|가|을|를|의|에|로|과|와|도|만|하다|되다|한다|된다|했다|됐다|하였다|되었다|하는|되는|한|된|할|될|함|됨|하기|되기|하여|되어|해서|돼서|해|돼)$/;
+
+      function stripPunctAndSpaces(str) {
+        if (!str) return '';
+        return String(str).toLowerCase().replace(/[\s·•\-,/()[\]{}'":;.~_!?]+/g, '');
+      }
+
+      function stripKoreanSuffixFromToken(token) {
+        if (!token) return '';
+        let t = token.trim().toLowerCase().replace(/^[·•\-,/()[\]{}'":;.~_!?]+|[·•\-,/()[\]{}'":;.~_!?]+$/g, '');
+        if (t.length <= 1) return t;
+        for (let pass = 0; pass < 2; pass++) {
+          const m = t.match(KO_SUFFIX_REGEX);
+          if (m && t.length - m[0].length >= 1) {
+            // Preserve at least 2 chars unless the stem is a meaningful 1-char root after a 2+ char suffix
+            if (t.length - m[0].length >= 2 || m[0].length >= 2) {
+              t = t.slice(0, t.length - m[0].length);
+            } else {
+              break;
+            }
+          } else {
+            break;
+          }
+        }
+        return t;
+      }
+
+      function normalizeKoreanStemCompact(str) {
+        if (!str) return '';
+        const tokens = String(str)
+          .toLowerCase()
+          .split(/[\s·•\-,/()[\]{}'":;.~_!?]+/)
+          .filter(Boolean);
+        return tokens.map(stripKoreanSuffixFromToken).join('');
+      }
+
+      function isKeywordMatchedInEssay(kw, essayText) {
+        if (!kw || !essayText) return false;
+        const rawKw = String(kw).trim();
+        if (rawKw.length < 1) return false;
+        const rawText = String(essayText);
+
+        // 1) Direct substring match (case-insensitive)
+        if (rawText.toLowerCase().includes(rawKw.toLowerCase())) return true;
+
+        // 2) Whitespace & special characters (·, -, , etc.) stripped comparison
+        const compactKw = stripPunctAndSpaces(rawKw);
+        const compactText = stripPunctAndSpaces(rawText);
+        if (compactKw.length >= 2 && compactText.includes(compactKw)) return true;
+
+        // 3) Korean particle (조사) & verb/adjective ending (어미) stripped stem comparison
+        const stemKw = normalizeKoreanStemCompact(rawKw);
+        if (stemKw.length >= 2) {
+          if (compactText.includes(stemKw)) return true;
+          const stemText = normalizeKoreanStemCompact(rawText);
+          if (stemText.includes(stemKw)) return true;
+        }
+
+        // 4) Token-by-token stem check for multi-word / middle-dot compound keywords (e.g., "비례의 원칙", "가치·태도")
+        const kwTokens = rawKw
+          .toLowerCase()
+          .split(/[\s·•\-,/()]+/)
+          .map(stripKoreanSuffixFromToken)
+          .filter(t => t.length >= 2);
+        if (kwTokens.length >= 2) {
+          const stemText = normalizeKoreanStemCompact(rawText);
+          if (kwTokens.every(tok => compactText.includes(tok) || stemText.includes(tok))) {
+            return true;
+          }
+        }
+
+        return false;
+      }
+
       function checkKeywords() {
         const text = essayInput.value;
         charCounter.textContent = text.length > 0 ? `${text.length}자 작성됨` : '아직 작성 전 · 0자';
         const topic = TOPICS[currentTopicIndex];
-        const keywords = topic.targetKeywords || [];
+        const keywords = (topic && topic.targetKeywords) ? topic.targetKeywords : [];
 
         keywordMatchChips.innerHTML = '';
         let matched = 0;
 
         keywords.forEach(kw => {
-          const isIncluded = kw.length >= 2 && text.includes(kw);
+          const isIncluded = kw.length >= 1 && isKeywordMatchedInEssay(kw, text);
           if (isIncluded) matched++;
 
           const chip = document.createElement('span');
           if (isIncluded) {
             chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-bold bg-blue-600 text-white flex items-center gap-0.5 shadow-2xs';
-            chip.innerHTML = `#${kw} <span class="material-symbols-outlined text-[12px]">check</span>`;
+            chip.innerHTML = `#${escapeHtml(kw)} <span class="material-symbols-outlined text-[12px]">check</span>`;
           } else {
             const isBlindMode = (currentMode === 'type' || currentMode === 'tape');
             chip.className = 'px-2 py-0.5 rounded-md text-[11px] font-medium bg-white text-slate-400 border border-slate-200';
@@ -9087,6 +9181,13 @@
           setSubjectTab('사회과교육론', true);
         });
       }
+      const btnDueCompleteCollapse = document.getElementById('btn-due-complete-collapse');
+      if (btnDueCompleteCollapse) {
+        btnDueCompleteCollapse.addEventListener('click', () => {
+          const banner = document.getElementById('due-queue-banner');
+          if (banner) banner.classList.add('hidden');
+        });
+      }
       const mobileDuePrompt = document.getElementById('mobile-due-prompt');
       const btnStartMobileDueQueue = document.getElementById('btn-start-mobile-due-queue');
       const btnDismissMobileDuePrompt = document.getElementById('btn-dismiss-mobile-due-prompt');
@@ -9125,7 +9226,7 @@
         if (!topic) return;
         const text = (essayInput ? essayInput.value : '').trim();
         const keywords = topic.targetKeywords || [];
-        const missingKws = keywords.filter(kw => !(kw.length >= 2 && text.includes(kw)));
+        const missingKws = keywords.filter(kw => !(kw.length >= 1 && isKeywordMatchedInEssay(kw, text)));
 
         if (diffModal && !diffModal.classList.contains('hidden')) {
           diffModal.classList.add('hidden');
@@ -9144,7 +9245,7 @@
           const tText = getTapeCanonicalKey(tape);
           const isMissingMatch = missingKws.length === 0
             ? false
-            : missingKws.some(kw => tText.includes(kw) || kw.includes(tText));
+            : missingKws.some(kw => tText.includes(kw) || kw.includes(tText) || (stripPunctAndSpaces(tText) && stripPunctAndSpaces(tText) === stripPunctAndSpaces(kw)));
           if (isMissingMatch) {
             stickTape(tape);
             tape.classList.add('ring-2', 'ring-rose-400');
@@ -9156,10 +9257,10 @@
           }
         });
         if (focusedCount === 0 && missingKws.length > 0) {
-          // Fallback: if targetKeywords didn't exact-match tape text, cover all tapes not present in essayInput
+          // Fallback: if targetKeywords didn't exact-match tape text, cover all tapes not matched in essayInput
           tapes.forEach(tape => {
             const tText = getTapeCanonicalKey(tape);
-            if (tText && !text.includes(tText)) {
+            if (tText && !isKeywordMatchedInEssay(tText, text)) {
               stickTape(tape);
               if (!firstFocusedTape) firstFocusedTape = tape;
               focusedCount++;
@@ -9517,13 +9618,93 @@
         }
       });
 
-      // Diff Modal Handlers
+      // Diff Modal Handlers (with Keyword Hit/Miss Highlighting in Model Subnote)
+      function buildDiffHighlightedModelHtml(topic, userEssayText) {
+        const modelText = (topic && topic.defaultAnswer) ? String(topic.defaultAnswer) : '';
+        const kwSet = new Set();
+        if (topic && Array.isArray(topic.targetKeywords)) {
+          topic.targetKeywords.forEach(k => {
+            if (k && String(k).trim().length >= 2) kwSet.add(String(k).trim());
+          });
+        }
+        if (subnoteContainer) {
+          subnoteContainer.querySelectorAll('.mask-tape').forEach(tape => {
+            const tKey = getTapeCanonicalKey(tape);
+            if (tKey && tKey.trim().length >= 2 && tKey.trim().length <= 40) {
+              kwSet.add(tKey.trim());
+            }
+          });
+        }
+        const allKeywords = Array.from(kwSet);
+        const hitList = [];
+        const missList = [];
+        const matchMap = new Map();
+
+        allKeywords.forEach(kw => {
+          const hit = isKeywordMatchedInEssay(kw, userEssayText);
+          matchMap.set(kw, hit);
+          if (hit) hitList.push(kw);
+          else missList.push(kw);
+        });
+
+        // Highlight keywords inside escaped model text (longest keyword first, single pass)
+        let bodyHtml = escapeHtml(modelText);
+        const sortedForRegex = allKeywords
+          .map(kw => ({ raw: kw, escaped: escapeHtml(kw) }))
+          .filter(item => item.escaped.length >= 2)
+          .sort((a, b) => b.escaped.length - a.escaped.length);
+
+        if (sortedForRegex.length > 0) {
+          const pattern = sortedForRegex
+            .map(item => item.escaped.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+            .join('|');
+          const escapedToRaw = new Map(sortedForRegex.map(item => [item.escaped, item.raw]));
+          const regex = new RegExp(`(${pattern})`, 'g');
+          bodyHtml = bodyHtml.replace(regex, (matchedEscaped) => {
+            const rawKw = escapedToRaw.get(matchedEscaped) || matchedEscaped;
+            const isHit = matchMap.get(rawKw);
+            if (isHit) {
+              return `<mark class="diff-kw-hit bg-emerald-100 text-emerald-900 border border-emerald-400 px-1 py-0.5 rounded font-bold" title="적중 키워드 (내 인출 답안 포함)">${matchedEscaped}</mark>`;
+            }
+            return `<mark class="diff-kw-miss bg-rose-100 text-rose-900 border border-rose-400 px-1 py-0.5 rounded font-bold" title="누락 키워드 (내 인출 답안 미포함)">${matchedEscaped}</mark>`;
+          });
+        }
+
+        if (allKeywords.length === 0) {
+          return bodyHtml;
+        }
+
+        const chipsHtml = allKeywords.map(kw => {
+          const isHit = matchMap.get(kw);
+          if (isHit) {
+            return `<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-400">✓ ${escapeHtml(kw)}</span>`;
+          }
+          return `<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md text-[11px] font-bold bg-rose-100 text-rose-900 border border-rose-400">✗ ${escapeHtml(kw)}</span>`;
+        }).join('');
+
+        const summaryHeader = `<div class="mb-3 p-2.5 rounded-xl bg-white/90 border border-slate-200/90 font-sans whitespace-normal flex flex-col gap-1.5 shadow-2xs">` +
+          `<div class="flex items-center justify-between gap-2 flex-wrap text-xs">` +
+            `<span class="font-extrabold text-slate-800">핵심 키워드 대조 결과</span>` +
+            `<div class="flex items-center gap-1.5 text-[11px] font-bold">` +
+              `<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 border border-emerald-300">적중 ${hitList.length}</span>` +
+              `<span class="px-2 py-0.5 rounded bg-rose-100 text-rose-900 border border-rose-300">누락 ${missList.length}</span>` +
+            `</div>` +
+          `</div>` +
+          `<div class="flex flex-wrap gap-1">${chipsHtml}</div>` +
+        `</div>`;
+
+        return `${summaryHeader}<div class="whitespace-pre-wrap">${bodyHtml}</div>`;
+      }
+
       btnOpenDiff.addEventListener('click', () => {
         const topic = TOPICS[currentTopicIndex];
-        diffUserBox.textContent = essayInput.value.trim() ? essayInput.value : '아직 인출한 내용이 없어요. 마스킹을 가리고 직접 작성해보세요.';
-        diffUserLen.textContent = essayInput.value.length > 0 ? `${essayInput.value.length}자 작성됨` : '아직 작성 전';
-        diffModelBox.textContent = topic.defaultAnswer;
-        diffModelLen.textContent = `${topic.defaultAnswer.length}자`;
+        const rawUserText = essayInput.value;
+        diffCheckedForCurrentTopic = true;
+        pendingShortcutGrade = null;
+        diffUserBox.textContent = rawUserText.trim() ? rawUserText : '아직 인출한 내용이 없어요. 마스킹을 가리고 직접 작성해보세요.';
+        diffUserLen.textContent = rawUserText.length > 0 ? `${rawUserText.length}자 작성됨` : '아직 작성 전';
+        diffModelBox.innerHTML = buildDiffHighlightedModelHtml(topic, rawUserText);
+        diffModelLen.textContent = `${(topic && topic.defaultAnswer ? topic.defaultAnswer.length : 0)}자`;
         diffModal.classList.remove('hidden');
       });
 
@@ -11081,7 +11262,9 @@
         if (btnDiagramZoomToggle) {
           btnDiagramZoomToggle.innerHTML = '<span class="material-symbols-outlined text-[18px]">zoom_in</span><span class="hidden sm:inline">확대</span>';
         }
-        diagramModalImg.src = src;
+        if (src) {
+          diagramModalImg.setAttribute('src', src);
+        }
         diagramModalImg.alt = title || '도해';
         if (diagramModalTitle) {
           diagramModalTitle.textContent = title || '도해 상세 보기';
@@ -11097,7 +11280,7 @@
         if (!diagramModal) return;
         diagramModal.classList.add('hidden');
         if (diagramModalImg) {
-          diagramModalImg.src = '';
+          diagramModalImg.removeAttribute('src');
           diagramModalImg.classList.remove('scale-125', 'md:scale-150', 'origin-top');
         }
         document.body.style.overflow = '';
@@ -11540,32 +11723,29 @@
           return;
         }
 
-        // 4. FSRS Self-Grading Shortcuts: Strictly [1], [2], [3], [4] only
-        // [1] -> Again (Grade 1)
-        if (e.key === '1' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 4. FSRS Self-Grading Shortcuts: [1], [2], [3], [4] (with safety guard when essay has text & 1:1 Diff not yet checked)
+        const gradeKeyMatch = (!e.ctrlKey && !e.metaKey) ? (
+          (e.key === '1' || e.code === 'Digit1') ? 1 :
+          (e.key === '2' || e.code === 'Digit2') ? 2 :
+          (e.key === '3' || e.code === 'Digit3') ? 3 :
+          (e.key === '4' || e.code === 'Digit4') ? 4 : 0
+        ) : 0;
+        if (gradeKeyMatch >= 1 && gradeKeyMatch <= 4) {
           e.preventDefault();
-          handleGrade(1);
-          return;
-        }
-
-        // [2] -> Hard (Grade 2)
-        if (e.key === '2' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(2);
-          return;
-        }
-
-        // [3] -> Good (Grade 3)
-        if (e.key === '3' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(3);
-          return;
-        }
-
-        // [4] -> Easy (Grade 4)
-        if (e.key === '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          handleGrade(4);
+          const hasUncheckedEssay = Boolean(essayInput && essayInput.value.trim().length > 0 && !diffCheckedForCurrentTopic);
+          // Allow immediate grading if Alt+1~4 is pressed, or if 1:1 Diff was already checked, or if user confirms by pressing the same number key a second time
+          if (hasUncheckedEssay && !e.altKey && pendingShortcutGrade !== gradeKeyMatch) {
+            pendingShortcutGrade = gradeKeyMatch;
+            if (pendingShortcutGradeTimer) clearTimeout(pendingShortcutGradeTimer);
+            pendingShortcutGradeTimer = setTimeout(() => {
+              pendingShortcutGrade = null;
+              pendingShortcutGradeTimer = null;
+            }, 3000);
+            showToast(`✍️ 작성 중인 인출 답안이 있습니다. [원문 1:1 대조] 후 평가하거나, [${gradeKeyMatch}] 키를 한 번 더(또는 Alt+${gradeKeyMatch}) 누르면 즉시 평가됩니다.`, 'warning');
+            return;
+          }
+          resetEssayDiffGuardState();
+          handleGrade(gradeKeyMatch);
           return;
         }
 
@@ -11594,8 +11774,8 @@
           return;
         }
 
-        // 8. [Space] Toggle Table of Contents (단원 목차 사이드바 열기/접기)
-        if (e.code === 'Space' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 8. [[] (BracketLeft) Toggle Table of Contents (단원 목차 사이드바 열기/접기 — Space는 본문 스크롤 충돌 방지를 위해 제외)
+        if ((e.key === '[' || e.code === 'BracketLeft') && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleDesktopSidebar();
           return;
@@ -11683,9 +11863,9 @@
           return;
         }
 
-        // 10. Font scaling: [ / ] or - / =
+        // 10. Font scaling: - / =
         const isFontUpKey = (e.key === ']' || e.key === '}' || e.key === '=' || e.key === '+' || e.code === 'Equal' || e.code === 'NumpadAdd');
-        const isFontDownKey = (e.key === '[' || e.key === '{' || e.key === '-' || e.key === '_' || e.code === 'Minus' || e.code === 'NumpadSubtract');
+        const isFontDownKey = (e.key === '-' || e.key === '_' || e.code === 'Minus' || e.code === 'NumpadSubtract');
 
         if (isFontUpKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
