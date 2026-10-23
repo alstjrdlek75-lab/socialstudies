@@ -5,8 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
   <title>일반사회 단권화 · EduRecall - 시험 대비</title>
   <meta name="description" content="중등 임용 일반사회(사회과교육론·법학·사회학·정치학·경제학·기출) 단권화 서브노트. 마스킹 테이프, 백지 인출 서술, FSRS 간격 반복 복습을 지원하는 인터랙티브 학습 웹앱입니다."/>
-  <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)"/>
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#2563eb"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
   <meta name="apple-mobile-web-app-title" content="일반사회 단권화"/>
@@ -26,13 +25,8 @@
   <script>
     (function() {
       try {
-        const savedTheme = localStorage.getItem('edurecall_theme');
-        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.remove('dark');
+        localStorage.removeItem('edurecall_theme');
       } catch (e) {}
     })();
   </script>
@@ -2074,18 +2068,12 @@
       </button>
 
       <!-- Mobile Overflow Menu Button (Visible on <=768px to prevent header crowding) -->
-      <button id="btn-mobile-more" class="md:hidden min-h-[40px] px-2.5 py-1.5 flex items-center justify-center gap-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 text-xs font-bold text-slate-700 dark:text-slate-200 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="도구 메뉴 열기" aria-expanded="false" title="동기화·보관함·타이머·테마 메뉴">
+      <button id="btn-mobile-more" class="md:hidden min-h-[40px] px-2.5 py-1.5 flex items-center justify-center gap-1 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="도구 메뉴 열기" aria-expanded="false" title="동기화·보관함·타이머 메뉴">
         <span class="material-symbols-outlined text-[20px]">more_horiz</span>
         <span>메뉴</span>
       </button>
 
       <!-- Desktop / Tablet (md+) Action Buttons -->
-      <button id="theme-toggle-btn" class="hidden md:flex w-9 h-9 xl:w-auto xl:px-2.5 xl:py-1.5 items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all shadow-2xs cursor-pointer" type="button" title="테마 전환: 다크모드 / 라이트모드 [단축키: D]" aria-label="다크모드 전환">
-        <span class="material-symbols-outlined text-[17px] text-amber-500 block dark:hidden" id="theme-icon-light">dark_mode</span>
-        <span class="material-symbols-outlined text-[17px] text-amber-400 hidden dark:block" id="theme-icon-dark">light_mode</span>
-        <span class="hidden xl:inline text-[11px] font-medium" id="theme-text">다크</span>
-      </button>
-
       <!-- Cloud Sync Button (Calm optional tone when unconnected, shows last sync time per T15) -->
       <button id="btn-cloud-sync" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화 (선택 사항)" title="기기 간 동기화 설정 (선택 사항) [단축키: Cmd+B]">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors" id="cloud-sync-icon">cloud_queue</span>
@@ -2147,18 +2135,11 @@
           <div class="text-[10px] font-normal text-slate-400 truncate">학습 현황 · 통계</div>
         </div>
       </button>
-      <button id="mobile-menu-essay" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-        <span class="material-symbols-outlined text-[18px] text-emerald-600 dark:text-emerald-400 shrink-0">edit_note</span>
+      <button id="mobile-menu-essay" type="button" class="col-span-2 min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px] text-emerald-600 shrink-0">edit_note</span>
         <div class="min-w-0">
           <div class="truncate">인출 서술창</div>
           <div class="text-[10px] font-normal text-slate-400 truncate">백지 인출 · FSRS 평가</div>
-        </div>
-      </button>
-      <button id="mobile-menu-theme" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-amber-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-        <span class="material-symbols-outlined text-[18px] text-amber-500 shrink-0">dark_mode</span>
-        <div class="min-w-0">
-          <div class="truncate">다크 / 라이트 모드</div>
-          <div class="text-[10px] font-normal text-slate-400 truncate">화면 테마 전환</div>
         </div>
       </button>
     </div>
@@ -4267,49 +4248,22 @@
       const pomodoroModeBadge = document.getElementById('pomodoro-mode-badge');
       const pomodoroResetBtn = document.getElementById('pomodoro-reset-btn');
 
-      // Theme Control (Dark / Light Mode)
-      const themeToggleBtn = document.getElementById('theme-toggle-btn');
-      const scBtnTheme = document.getElementById('sc-btn-theme');
-      const themeText = document.getElementById('theme-text');
-
+      // Theme Control (Light Mode Only — Dark mode disabled)
       function isDarkMode() {
-        return document.documentElement.classList.contains('dark');
+        return false;
       }
 
-      function updateThemeUI(isDark) {
-        if (themeText) {
-          themeText.textContent = isDark ? '라이트' : '다크';
-        }
-        if (themeToggleBtn) {
-          themeToggleBtn.title = isDark ? '라이트 모드로 전환 [단축키: D]' : '다크 모드로 전환 [단축키: D]';
-        }
-        if (scBtnTheme) {
-          scBtnTheme.title = isDark ? '라이트 모드로 전환 [단축키: D]' : '다크 모드로 전환 [단축키: D]';
-        }
+      function updateThemeUI() {
+        document.documentElement.classList.remove('dark');
       }
 
-      function applyTheme(isDark, notify = true) {
-        if (isDark) {
-          document.documentElement.classList.add('dark');
-          try { localStorage.setItem('edurecall_theme', 'dark'); } catch (e) {}
-          if (notify) showToast('다크 모드 적용 [단축키: D]', 'dark_mode');
-        } else {
-          document.documentElement.classList.remove('dark');
-          try { localStorage.setItem('edurecall_theme', 'light'); } catch (e) {}
-          if (notify) showToast('라이트 모드 적용 [단축키: D]', 'light_mode');
-        }
-        updateThemeUI(isDark);
+      function applyTheme() {
+        document.documentElement.classList.remove('dark');
+        try { localStorage.removeItem('edurecall_theme'); } catch (e) {}
       }
 
       function toggleTheme() {
-        applyTheme(!isDarkMode(), true);
-      }
-
-      if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-      }
-      if (scBtnTheme) {
-        scBtnTheme.addEventListener('click', toggleTheme);
+        document.documentElement.classList.remove('dark');
       }
 
       
@@ -11749,14 +11703,6 @@
           return;
         }
 
-        // 8-1. [D] or [d] or [ㅇ] Toggle Dark/Light Theme Mode
-        const isDKey = (e.key === 'd' || e.key === 'D' || e.key === 'ㅇ' || e.code === 'KeyD' || e.keyCode === 68 || e.which === 68);
-        if (isDKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          e.preventDefault();
-          toggleTheme();
-          return;
-        }
-
         // 8-2. [P] or [p] or [ㅔ] Toggle Study Pin on current topic (학습 핀 설정/해제)
         const isPKey = (e.key === 'p' || e.key === 'P' || e.key === 'ㅔ' || e.code === 'KeyP');
         if (isPKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
@@ -12041,7 +11987,7 @@
       const initialDueCount = updateSubjectCountBadges();
       updateOverallStats();
       setSubjectTab(activeSubject, false);
-      updateThemeUI(isDarkMode());
+      updateThemeUI();
 
       // T6: Mobile startup due review prompt banner
       try {
@@ -12054,14 +12000,6 @@
           }
         }
       } catch (e) {}
-
-      if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('edurecall_theme')) {
-            applyTheme(e.matches, false);
-          }
-        });
-      }
 
       try {
         // One-time tablet & mobile optimization v3: prevent 3-column squishing on tablets/mobile (< 1280px)
@@ -12278,7 +12216,6 @@
       if (mobileMoreOnboarding) mobileMoreOnboarding.addEventListener('click', () => { closeMobileMoreMenu(); openOnboardingModal(); });
       if (mobileMoreFontDec) mobileMoreFontDec.addEventListener('click', () => { document.getElementById('btn-font-down')?.click(); });
       if (mobileMoreFontInc) mobileMoreFontInc.addEventListener('click', () => { document.getElementById('btn-font-up')?.click(); });
-      if (mobileMoreTheme) mobileMoreTheme.addEventListener('click', () => { closeMobileMoreMenu(); toggleTheme(); });
 
       // 5-Step Onboarding Tour Logic (T5: Touch-aware + PWA Install Prompt)
       const onboardingModal = document.getElementById('onboarding-modal');
