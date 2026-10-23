@@ -1809,6 +1809,25 @@
       .section-toggle-btn {
         min-height: 42px;
       }
+      /* Mobile Auto-Hide Top Header & Sub-header on Scroll Down (T2, <768px only) */
+      @media (max-width: 767px) {
+        header#top-app-header,
+        #sub-header {
+          transition: transform 0.22s ease, margin-top 0.22s ease, opacity 0.18s ease;
+        }
+        body.mobile-header-hidden header#top-app-header {
+          transform: translateY(-100%);
+          margin-top: -3.5rem;
+          opacity: 0;
+          pointer-events: none;
+        }
+        body.mobile-header-hidden #sub-header {
+          transform: translateY(-100%);
+          margin-top: -2.25rem;
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -1852,7 +1871,7 @@
 <body class="bg-surface text-text-main h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
   <!-- TOP APP HEADER -->
-  <header class="flex-none h-14 sm:h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-border dark:border-slate-800 z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6 relative">
+  <header id="top-app-header" class="flex-none h-14 sm:h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-border dark:border-slate-800 z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6 relative">
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <div class="flex items-center gap-2 shrink-0">
         <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 dark:border-slate-700 shrink-0" />
@@ -1950,71 +1969,71 @@
         <span class="material-symbols-outlined text-[17px]">help</span>
       </button>
     </div>
-
-    <!-- Mobile Overflow Dropdown Menu (<=768px) -->
-    <div id="mobile-more-dropdown" class="hidden md:hidden fixed inset-x-3 top-15 z-[70] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-3 flex flex-col gap-2 animate-in fade-in zoom-in-95 duration-150">
-      <div class="flex items-center justify-between px-1 pb-1.5 border-b border-slate-100 dark:border-slate-800">
-        <span class="text-xs font-extrabold text-slate-700 dark:text-slate-200">학습 도구 및 설정</span>
-        <button id="btn-close-mobile-more" type="button" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-          <span class="material-symbols-outlined text-[18px]">close</span>
-        </button>
-      </div>
-      <div class="grid grid-cols-2 gap-2">
-        <button id="mobile-menu-sync" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-          <span class="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400" id="mobile-menu-sync-icon">cloud_queue</span>
-          <div class="min-w-0">
-            <div class="truncate" id="mobile-menu-sync-label">동기화 (선택)</div>
-            <div class="text-[10px] font-normal text-slate-400 truncate">기기 간 기록 연동</div>
-          </div>
-        </button>
-        <button id="mobile-menu-library" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-indigo-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-          <span class="material-symbols-outlined text-[18px] text-indigo-600 dark:text-indigo-400">dashboard</span>
-          <div class="min-w-0">
-            <div class="truncate">카드 보관함</div>
-            <div class="text-[10px] font-normal text-slate-400 truncate">학습 현황 · 통계</div>
-          </div>
-        </button>
-        <button id="mobile-menu-essay" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-          <span class="material-symbols-outlined text-[18px] text-emerald-600 dark:text-emerald-400">edit_note</span>
-          <div class="min-w-0">
-            <div class="truncate">인출 서술창</div>
-            <div class="text-[10px] font-normal text-slate-400 truncate">백지 인출 · FSRS 평가</div>
-          </div>
-        </button>
-        <button id="mobile-menu-theme" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-amber-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
-          <span class="material-symbols-outlined text-[18px] text-amber-500">dark_mode</span>
-          <div class="min-w-0">
-            <div class="truncate">다크 / 라이트 모드</div>
-            <div class="text-[10px] font-normal text-slate-400 truncate">화면 테마 전환</div>
-          </div>
-        </button>
-      </div>
-      <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100 dark:border-slate-800">
-        <div class="flex items-center gap-1.5">
-          <button id="mobile-menu-pomo" type="button" class="min-h-[40px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5 active:scale-95">
-            <span class="material-symbols-outlined text-[16px] text-blue-600">timer</span>
-            <span id="mobile-pomo-display" class="font-mono">25:00</span>
-          </button>
-          <button id="mobile-menu-pomo-reset" type="button" class="min-h-[40px] px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-500 hover:text-rose-600 text-xs flex items-center justify-center active:scale-95" title="타이머 리셋">
-            <span class="material-symbols-outlined text-[16px]">restart_alt</span>
-          </button>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <button id="mobile-menu-export" type="button" class="min-h-[40px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 active:scale-95">
-            <span class="material-symbols-outlined text-[16px] text-emerald-600">download</span>
-            <span>내보내기</span>
-          </button>
-          <button id="mobile-menu-onboarding" type="button" class="min-h-[40px] px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/70 dark:bg-blue-950/50 text-xs font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1 active:scale-95">
-            <span class="material-symbols-outlined text-[16px]">help</span>
-            <span>사용법</span>
-          </button>
-        </div>
-      </div>
-    </div>
   </header>
 
-  <!-- SUB-HEADER (Mobile <=768px: Prominent Current Topic Title + Prev/Next Buttons | Desktop md+: Full Breadcrumb) -->
-  <div id="sub-header" class="flex-none h-11 md:h-10 bg-slate-50/95 dark:bg-slate-900/90 backdrop-blur-sm border-b border-border dark:border-slate-800 z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
+  <!-- Mobile Overflow Dropdown Menu (Moved outside <header> so backdrop-blur never clips it, positioned right below header) -->
+  <div id="mobile-more-dropdown" class="hidden md:hidden fixed left-3 right-3 top-16 z-[95] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-3.5 flex flex-col gap-2.5 animate-in fade-in zoom-in-95 duration-150" style="top: calc(3.75rem + env(safe-area-inset-top, 0px));">
+    <div class="flex items-center justify-between px-1 pb-1.5 border-b border-slate-100 dark:border-slate-800">
+      <span class="text-xs font-extrabold text-slate-700 dark:text-slate-200">학습 도구 및 설정</span>
+      <button id="btn-close-mobile-more" type="button" class="min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <button id="mobile-menu-sync" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0" id="mobile-menu-sync-icon">cloud_queue</span>
+        <div class="min-w-0">
+          <div class="truncate" id="mobile-menu-sync-label">동기화 (선택)</div>
+          <div class="text-[10px] font-normal text-slate-400 truncate">기기 간 기록 연동</div>
+        </div>
+      </button>
+      <button id="mobile-menu-library" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-indigo-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px] text-indigo-600 dark:text-indigo-400 shrink-0">dashboard</span>
+        <div class="min-w-0">
+          <div class="truncate">카드 보관함</div>
+          <div class="text-[10px] font-normal text-slate-400 truncate">학습 현황 · 통계</div>
+        </div>
+      </button>
+      <button id="mobile-menu-essay" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px] text-emerald-600 dark:text-emerald-400 shrink-0">edit_note</span>
+        <div class="min-w-0">
+          <div class="truncate">인출 서술창</div>
+          <div class="text-[10px] font-normal text-slate-400 truncate">백지 인출 · FSRS 평가</div>
+        </div>
+      </button>
+      <button id="mobile-menu-theme" type="button" class="min-h-[48px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-amber-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-[18px] text-amber-500 shrink-0">dark_mode</span>
+        <div class="min-w-0">
+          <div class="truncate">다크 / 라이트 모드</div>
+          <div class="text-[10px] font-normal text-slate-400 truncate">화면 테마 전환</div>
+        </div>
+      </button>
+    </div>
+    <div class="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-100 dark:border-slate-800">
+      <div class="flex items-center gap-1.5">
+        <button id="mobile-menu-pomo" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5 active:scale-95">
+          <span class="material-symbols-outlined text-[16px] text-blue-600">timer</span>
+          <span id="mobile-pomo-display" class="font-mono">25:00</span>
+        </button>
+        <button id="mobile-menu-pomo-reset" type="button" class="min-h-[44px] px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-500 hover:text-rose-600 text-xs flex items-center justify-center active:scale-95" title="타이머 리셋">
+          <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <button id="mobile-menu-export" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 active:scale-95">
+          <span class="material-symbols-outlined text-[16px] text-emerald-600">download</span>
+          <span>내보내기</span>
+        </button>
+        <button id="mobile-menu-onboarding" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/70 dark:bg-blue-950/50 text-xs font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1 active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">help</span>
+          <span>사용법</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUB-HEADER (Mobile <768px: Compact Subject + Current Topic Title, Prev/Next hidden per T2 | Desktop md+: Full Breadcrumb) -->
+  <div id="sub-header" class="flex-none h-9 md:h-10 bg-slate-50/95 dark:bg-slate-900/90 backdrop-blur-sm border-b border-border dark:border-slate-800 z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
     <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
       <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
@@ -2022,7 +2041,7 @@
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
       <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
-      <!-- Breadcrumb (On Mobile <=768px: shows current topic title prominently; On md+: shows full hierarchy) -->
+      <!-- Breadcrumb -->
       <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden md:overflow-x-auto no-scrollbar text-slate-700 dark:text-slate-200 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
         <span class="px-2 py-0.5 rounded-md text-[11px] md:text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
         <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-chapter-sep">/</span>
@@ -2032,18 +2051,18 @@
         <span class="text-slate-400 shrink-0 hidden" id="bc-subsection-sep">/</span>
         <span class="text-amber-900 dark:text-amber-300 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 dark:bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-300 dark:border-amber-800 hidden" id="bc-subsection">세부단원</span>
         <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
-        <span class="text-slate-900 dark:text-white text-[13.5px] md:text-xs font-extrabold truncate flex-1 md:flex-initial max-w-none md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
+        <span class="text-slate-900 dark:text-white text-[13px] md:text-xs font-extrabold truncate flex-1 md:flex-initial max-w-none md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
         <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden md:inline-block" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
 
-    <!-- Right Controls in Sub-Header: Mobile Prev/Next Buttons (<=768px) + Desktop Essay Toggle (lg+) -->
+    <!-- Right Controls in Sub-Header: Prev/Next hidden on <768px per T2 (only bottom bar has Prev/Next on mobile) -->
     <div class="flex items-center gap-1.5 shrink-0">
-      <button id="btn-subhead-prev" class="md:hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 단원">
+      <button id="btn-subhead-prev" class="hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 단원">
         <span class="material-symbols-outlined text-[16px]">chevron_left</span>
         <span>이전</span>
       </button>
-      <button id="btn-subhead-next" class="md:hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 단원">
+      <button id="btn-subhead-next" class="hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 단원">
         <span>다음</span>
         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
       </button>
@@ -2144,15 +2163,15 @@
     <main id="main-content-grid" class="flex-1 flex w-full min-w-0">
 
       <!-- CENTER: Sub-note Authentic Content -->
-      <section id="subnote-section" class="flex-1 flex flex-col min-w-0 overflow-y-auto px-3 sm:px-4 py-4 lg:px-6 lg:py-6 gap-3 sm:gap-4 transition-all duration-200 relative">
-        <div id="subnote-inner" class="w-full mx-auto flex flex-col gap-3 sm:gap-4 pb-20 xl:pb-6 transition-all duration-300">
+      <section id="subnote-section" class="flex-1 flex flex-col min-w-0 overflow-y-auto px-2.5 sm:px-4 py-2 sm:py-4 lg:px-6 lg:py-6 gap-2 sm:gap-4 transition-all duration-200 relative">
+        <div id="subnote-inner" class="w-full mx-auto flex flex-col gap-2 sm:gap-4 pb-20 xl:pb-6 transition-all duration-300">
 
-        <!-- Topic Banner Card -->
-        <div class="bg-white rounded-2xl border border-border p-4 sm:p-5 shadow-xs flex flex-col gap-3">
-          <!-- Top Row: Chapter Meta Breadcrumb on Left, Prev/Next buttons on Right -->
-          <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+        <!-- Topic Banner Card (Compact on mobile <768px per T2 so first content line starts within 35% viewport height) -->
+        <div class="bg-white rounded-2xl border border-border p-2.5 sm:p-5 shadow-xs flex flex-col gap-1.5 sm:gap-3">
+          <!-- Top Row: Chapter Meta Breadcrumb on Left, Prev/Next buttons on Right (Desktop/Tablet md+ only per T2) -->
+          <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-1.5 sm:pb-2.5">
             <div class="flex items-center gap-2 min-w-0 flex-1">
-              <span class="text-xs font-semibold text-blue-600 tracking-normal truncate" id="topic-header-path">CHAPTER · SECTION</span>
+              <span class="text-[11px] sm:text-xs font-semibold text-blue-600 tracking-normal truncate" id="topic-header-path">CHAPTER · SECTION</span>
               <!-- Compatibility elements remain strictly hidden to avoid cluttering -->
               <span class="hidden" id="topic-badge-subject"></span>
               <span class="hidden" id="topic-badge-chapter"></span>
@@ -2161,7 +2180,8 @@
               <span class="hidden" id="topic-badge-tape"><span id="topic-tape-count"></span></span>
               <span class="hidden" id="topic-page-ref"></span>
             </div>
-            <div class="flex items-center gap-1.5 shrink-0">
+            <!-- Desktop/Tablet Prev/Next (Hidden on <768px per T2) -->
+            <div class="hidden md:flex items-center gap-1.5 shrink-0">
               <button id="btn-prev-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="이전 주제 (방향키 좌, Cmd+좌)">
                 <span class="material-symbols-outlined text-[15px]">chevron_left</span>
                 <span>이전</span>
@@ -2173,74 +2193,76 @@
             </div>
           </div>
 
-          <!-- Main Title & Action Buttons -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <!-- Main Title & Action Buttons (Star + Pin kept together inline next to title per T2) -->
+          <div class="flex items-center justify-between gap-2 flex-wrap sm:flex-nowrap">
             <div class="flex flex-col min-w-0 flex-1">
-              <div class="flex items-start sm:items-center gap-2 min-w-0 flex-wrap">
-                <span id="topic-reps-badge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80 shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105" title="클릭하여 회독 정보 확인 및 초기화">
+              <div class="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-wrap">
+                <span id="topic-reps-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-extrabold bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80 shrink-0 select-none cursor-pointer shadow-2xs transition-all hover:scale-105" title="클릭하여 회독 정보 확인 및 초기화">
                   <span class="material-symbols-outlined text-[13px]">auto_stories</span>
                   <span id="topic-reps-badge-text">1회독</span>
                 </span>
-                <button id="btn-topic-context-guide" type="button" class="hidden inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-bold bg-slate-100/90 hover:bg-blue-50 text-slate-600 hover:text-blue-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200/90 hover:border-blue-200 dark:border-slate-700 transition-all cursor-pointer shrink-0 shadow-2xs active:scale-95" title="이 주제를 왜 배우는지 맥락 설명 보기">
+                <button id="btn-topic-context-guide" type="button" class="hidden inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-bold bg-slate-100/90 hover:bg-blue-50 text-slate-600 hover:text-blue-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200/90 hover:border-blue-200 dark:border-slate-700 transition-all cursor-pointer shrink-0 shadow-2xs active:scale-95" title="이 주제를 왜 배우는지 맥락 설명 보기">
                   <span class="material-symbols-outlined text-[13.5px]">info</span>
                   <span>설명 보기</span>
                 </button>
-                <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title" title="2. 국회의 구성·조직 및 운영">
+                <h1 class="text-base sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title" title="2. 국회의 구성·조직 및 운영">
                   2. 국회의 구성·조직 및 운영
                 </h1>
-                <button id="btn-toggle-bookmark" class="inline-flex items-center p-1.5 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
-                  <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
-                  <span class="hidden" id="bookmark-status-text">중요</span>
-                </button>
-                <div class="h-5 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
-                <button id="btn-set-pin" class="inline-flex items-center p-1.5 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
-                  <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
-                </button>
-                <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
-                  <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
-                  <span class="hidden sm:inline">핀 복귀</span>
-                </button>
+                <!-- Star + Pin inline group right next to title (never split across lines alone) -->
+                <span class="inline-flex items-center gap-0.5 shrink-0">
+                  <button id="btn-toggle-bookmark" class="inline-flex items-center justify-center w-8 h-8 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0" type="button" title="중요 주제로 등록 (별표)">
+                    <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="icon-bookmark">star</span>
+                    <span class="hidden" id="bookmark-status-text">중요</span>
+                  </button>
+                  <button id="btn-set-pin" class="inline-flex items-center justify-center w-8 h-8 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
+                    <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="icon-set-pin">push_pin</span>
+                  </button>
+                  <button id="btn-return-pin" class="inline-flex items-center gap-0.5 px-2 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
+                    <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
+                    <span class="hidden sm:inline">핀 복귀</span>
+                  </button>
+                </span>
               </div>
-              <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1 hidden"></div>
+              <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5 hidden"></div>
             </div>
-            <div class="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
-              <button id="btn-edit-topic-content" class="min-h-[36px] px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 dark:border-slate-700 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
-                <span class="material-symbols-outlined text-[14px]">edit_note</span>
+            <div class="flex items-center gap-1 shrink-0 ml-auto">
+              <button id="btn-edit-topic-content" class="min-h-[32px] sm:min-h-[36px] px-2 sm:px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 dark:border-slate-700 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+                <span class="material-symbols-outlined text-[13px] sm:text-[14px]">edit_note</span>
                 <span>본문 수정</span>
               </button>
-              <button id="btn-reset-custom-tape" class="min-h-[36px] px-3 py-1.5 sm:px-2 sm:py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 dark:border-slate-700 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
+              <button id="btn-reset-custom-tape" class="min-h-[32px] sm:min-h-[36px] px-2 py-1 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 dark:border-slate-700 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                 <span class="material-symbols-outlined text-[13px]">restart_alt</span>
                 <span>원본 복원</span>
               </button>
             </div>
           </div>
 
-          <!-- Keywords list -->
-          <div class="flex flex-wrap gap-1.5" id="topic-keywords-tags">
+          <!-- Keywords list (Hidden on mobile when not revealed to keep content above 35% height) -->
+          <div class="hidden sm:flex flex-wrap gap-1.5" id="topic-keywords-tags">
             <!-- Injected by JS -->
           </div>
         </div>
 
         <!-- Mode Controls Bar -->
-        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-2 xl:gap-3">
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-1.5 sm:p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-1.5 xl:gap-3">
           <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile, flex row on desktop) -->
-          <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full xl:w-auto shrink-0">
-            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
+          <div class="grid grid-cols-4 sm:flex items-center gap-1 sm:gap-1.5 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full xl:w-auto shrink-0">
+            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden sm:inline">마스킹 테이프</span>
               <span class="sm:hidden">테이프</span>
             </button>
-            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
+            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
               <span class="material-symbols-outlined text-[15px]">edit_note</span>
               <span class="hidden sm:inline">작성 모드</span>
               <span class="sm:hidden">작성</span>
             </button>
-            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
+            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
               <span class="material-symbols-outlined text-[15px]">menu_book</span>
               <span class="hidden sm:inline">원문 정독</span>
               <span class="sm:hidden">정독</span>
             </button>
-            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
+            <button class="mode-pill min-h-[36px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
               <span class="material-symbols-outlined text-[15px]">blur_on</span>
               <span class="hidden sm:inline">블러 암기</span>
               <span class="sm:hidden">블러</span>
@@ -2257,8 +2279,8 @@
               <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
             </div>
 
-            <!-- Inline Masking Tape Action Button -->
-            <button id="btn-apply-tape-inline" type="button" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
+            <!-- Inline Masking Tape Action Button (Hidden on <768px per T2 to remove duplicate '테이프' button) -->
+            <button id="btn-apply-tape-inline" type="button" class="hidden md:flex min-h-[36px] px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden xl:inline">테이프 [M]</span>
               <span class="xl:hidden">테이프</span>
@@ -4502,6 +4524,8 @@
         const syncLastTimeEl = document.getElementById('sync-last-time');
         const quickConnectContainer = document.getElementById('quick-connect-container');
         const mobileMoreSyncStatus = document.getElementById('mobile-more-sync-status');
+        const mobileMenuSyncLabel = document.getElementById('mobile-menu-sync-label');
+        const mobileMenuSyncIcon = document.getElementById('mobile-menu-sync-icon');
 
         if (syncCode) {
           if (cloudSyncBtn) {
@@ -4519,6 +4543,14 @@
           if (mobileMoreSyncStatus) {
             mobileMoreSyncStatus.textContent = `연결됨 (${syncCode})`;
             mobileMoreSyncStatus.className = 'text-[11px] font-bold text-emerald-600 dark:text-emerald-400';
+          }
+          if (mobileMenuSyncLabel) {
+            mobileMenuSyncLabel.textContent = `동기화 (${syncCode})`;
+            mobileMenuSyncLabel.className = 'truncate text-emerald-700 dark:text-emerald-300 font-bold';
+          }
+          if (mobileMenuSyncIcon) {
+            mobileMenuSyncIcon.textContent = 'cloud_done';
+            mobileMenuSyncIcon.className = 'material-symbols-outlined text-[18px] text-emerald-600 dark:text-emerald-400 shrink-0';
           }
           if (syncStatusBadge) {
             syncStatusBadge.textContent = '동기화 연결됨';
@@ -4554,6 +4586,14 @@
           if (mobileMoreSyncStatus) {
             mobileMoreSyncStatus.textContent = '미연결 (선택)';
             mobileMoreSyncStatus.className = 'text-[11px] font-medium text-slate-400 dark:text-slate-500';
+          }
+          if (mobileMenuSyncLabel) {
+            mobileMenuSyncLabel.textContent = '동기화 (선택)';
+            mobileMenuSyncLabel.className = 'truncate';
+          }
+          if (mobileMenuSyncIcon) {
+            mobileMenuSyncIcon.textContent = 'cloud_queue';
+            mobileMenuSyncIcon.className = 'material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 shrink-0';
           }
           if (syncStatusBadge) {
             syncStatusBadge.textContent = '아직 연결되지 않음 (선택 사항)';
@@ -6644,6 +6684,7 @@
         isAllRevealed = false;
         updateRevealButton(false);
         if (typeof closeMobileGradeSheet === 'function') closeMobileGradeSheet();
+        document.body.classList.remove('mobile-header-hidden');
         updateExplanationBadge();
         if (typeof updateStudyPinUI === 'function') updateStudyPinUI();
         if (explanationModal && !explanationModal.classList.contains('hidden')) {
@@ -11130,6 +11171,11 @@
       if (btnMobileMore && mobileMoreDropdown) {
         btnMobileMore.addEventListener('click', (e) => {
           e.stopPropagation();
+          document.body.classList.remove('mobile-header-hidden');
+          const rect = btnMobileMore.getBoundingClientRect();
+          if (rect && rect.bottom > 0) {
+            mobileMoreDropdown.style.top = Math.max(54, Math.round(rect.bottom + 8)) + 'px';
+          }
           const isHidden = mobileMoreDropdown.classList.toggle('hidden');
           btnMobileMore.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
         });
@@ -11138,6 +11184,37 @@
             closeMobileMoreMenu();
           }
         });
+      }
+
+      function openSyncModal() {
+        updateSyncUI();
+        const modal = document.getElementById('cloud-sync-modal');
+        if (modal) modal.classList.remove('hidden');
+      }
+      function closeSyncModal() {
+        const modal = document.getElementById('cloud-sync-modal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      // T2: Mobile (<768px) Auto-hide top header & sub-header on scroll down, show on scroll up
+      const subnoteSectionEl = document.getElementById('subnote-section');
+      if (subnoteSectionEl) {
+        let lastMobileScrollTop = 0;
+        subnoteSectionEl.addEventListener('scroll', () => {
+          if (window.innerWidth >= 768) {
+            document.body.classList.remove('mobile-header-hidden');
+            return;
+          }
+          const st = subnoteSectionEl.scrollTop;
+          const delta = st - lastMobileScrollTop;
+          if (st <= 24 || delta < -8) {
+            document.body.classList.remove('mobile-header-hidden');
+          } else if (delta > 12 && st > 48) {
+            document.body.classList.add('mobile-header-hidden');
+            closeMobileMoreMenu();
+          }
+          lastMobileScrollTop = Math.max(0, st);
+        }, { passive: true });
       }
 
       if (mobileMoreSync) mobileMoreSync.addEventListener('click', () => { closeMobileMoreMenu(); openSyncModal(); });
@@ -11161,7 +11238,7 @@
       if (mobileMoreOnboarding) mobileMoreOnboarding.addEventListener('click', () => { closeMobileMoreMenu(); openOnboardingModal(); });
       if (mobileMoreFontDec) mobileMoreFontDec.addEventListener('click', () => { document.getElementById('btn-font-down')?.click(); });
       if (mobileMoreFontInc) mobileMoreFontInc.addEventListener('click', () => { document.getElementById('btn-font-up')?.click(); });
-      if (mobileMoreTheme) mobileMoreTheme.addEventListener('click', () => { closeMobileMoreMenu(); document.getElementById('btn-theme-toggle')?.click(); });
+      if (mobileMoreTheme) mobileMoreTheme.addEventListener('click', () => { closeMobileMoreMenu(); toggleTheme(); });
 
       // 4-Step Onboarding Tour Logic
       const onboardingModal = document.getElementById('onboarding-modal');
