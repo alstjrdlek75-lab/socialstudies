@@ -1,0 +1,26 @@
+{
+  "name": "일반사회 단권화 · EduRecall",
+  "short_name": "일반사회 단권화",
+  "description": "중등 임용 일반사회(사회과교육론·법학·사회학·정치학·경제학·기출) 마스킹 테이프·백지 인출·FSRS 간격 반복 단권화 학습 웹앱",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "assets/edu_cover_1x1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/edu_cover_1x1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

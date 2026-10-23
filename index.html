@@ -2,8 +2,27 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>일반사회 단권화 - 시험 대비</title>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <title>일반사회 단권화 · EduRecall - 시험 대비</title>
+  <meta name="description" content="중등 임용 일반사회(사회과교육론·법학·사회학·정치학·경제학·기출) 단권화 서브노트. 마스킹 테이프, 백지 인출 서술, FSRS 간격 반복 복습을 지원하는 인터랙티브 학습 웹앱입니다."/>
+  <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)"/>
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="일반사회 단권화"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="일반사회 단권화 · EduRecall"/>
+  <meta property="og:title" content="일반사회 단권화 · EduRecall - 마스킹 & 백지 인출 서브노트"/>
+  <meta property="og:description" content="사회과교육론·법학·사회학·정치학·경제학 단권화 요약 및 연도별 기출 분석. 마스킹 테이프와 FSRS 간격 반복으로 완벽하게 인출 학습하세요."/>
+  <meta property="og:image" content="https://edurecall.vercel.app/assets/edu_cover_16x9.png"/>
+  <meta property="og:url" content="https://edurecall.vercel.app/"/>
+  <meta property="og:locale" content="ko_KR"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="일반사회 단권화 · EduRecall - 마스킹 & 백지 인출 서브노트"/>
+  <meta name="twitter:description" content="사회과교육론·법학·사회학·정치학·경제학 단권화 요약 및 연도별 기출 분석. 마스킹 테이프와 FSRS 간격 반복으로 완벽하게 인출 학습하세요."/>
+  <meta name="twitter:image" content="https://edurecall.vercel.app/assets/edu_cover_16x9.png"/>
   <script>
     (function() {
       try {
@@ -17,7 +36,10 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="icon" type="image/png" href="assets/edu_cover_1x1.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/edu_cover_1x1.png"/>
+  <link rel="shortcut icon" type="image/png" href="assets/edu_cover_1x1.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/edu_cover_1x1.png"/>
+  <link rel="manifest" href="manifest.json"/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
   <style>
@@ -1728,6 +1750,66 @@
       background-color: rgba(159, 18, 57, 0.7);
       border-color: rgba(244, 63, 94, 0.7);
     }
+
+    /* High-contrast accessible focus rings for keyboard navigation (Light & Dark Mode) */
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 2px solid #2563eb !important;
+      outline-offset: 2px !important;
+    }
+    html.dark button:focus-visible,
+    html.dark a:focus-visible,
+    html.dark input:focus-visible,
+    html.dark select:focus-visible,
+    html.dark textarea:focus-visible,
+    html.dark summary:focus-visible,
+    html.dark [tabindex]:focus-visible {
+      outline: 2px solid #60a5fa !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Defer rendering of off-screen topic cards below the fold for faster initial render */
+    #subnote-content-container > .topic-group:nth-child(n+4) {
+      content-visibility: auto;
+      contain-intrinsic-size: auto none auto 150px;
+    }
+
+    /* Mobile & Tablet (<1024px) Bottom-Sheet / Full-Screen Overlay TOC Drawer */
+    @media (max-width: 1023px) {
+      #sidebar-drawer {
+        top: 4dvh !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        border-right: none !important;
+        border-top: 1px solid #e2e8f0;
+        transform: translateY(0) !important;
+        transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
+      }
+      html.dark #sidebar-drawer {
+        border-top-color: #334155;
+      }
+      #sidebar-drawer.-translate-x-full {
+        transform: translateY(105%) !important;
+      }
+      .sidebar-topic-item {
+        min-height: 42px;
+        padding-top: 0.6rem !important;
+        padding-bottom: 0.6rem !important;
+      }
+      .section-toggle-btn {
+        min-height: 42px;
+      }
+    }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/fsrs.umd.js"></script>
@@ -1756,137 +1838,219 @@
       }
     };
   </script>
-  <!-- Core Topic Data (Loaded first) -->
-  <script src="topics-data.js?v=20261023_fix4"></script>
-  <script src="context-guides-data.js?v=20261021_fix4"></script>
+  <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
+  <script src="data/topics-index.js?v=20261023_v2"></script>
+  <script defer src="context-guides-data.js?v=20261023_v2"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <!-- Supabase Client SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- JSZip for exporting ZIP archives -->
-  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body class="bg-surface text-text-main h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
 
   <!-- TOP APP HEADER -->
-  <header class="flex-none h-14 sm:h-16 bg-white/95 backdrop-blur-md border-b border-border z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6">
+  <header class="flex-none h-14 sm:h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-border dark:border-slate-800 z-50 flex items-center justify-between px-3 sm:px-4 lg:px-4 xl:px-6 relative">
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <div class="flex items-center gap-2 shrink-0">
-        <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 shrink-0" />
+        <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 dark:border-slate-700 shrink-0" />
         <div class="shrink-0">
           <div class="flex items-center gap-2">
-            <span class="font-bold text-sm sm:text-[15px] xl:text-base tracking-tight text-slate-900 whitespace-nowrap">일반사회 단권화</span>
+            <span class="font-bold text-sm sm:text-[15px] xl:text-base tracking-tight text-slate-900 dark:text-slate-100 whitespace-nowrap">일반사회 단권화</span>
           </div>
-          <div class="text-[11px] text-slate-500 font-medium whitespace-nowrap hidden sm:block">일반사회 시험 대비</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap hidden sm:block">일반사회 시험 대비</div>
         </div>
       </div>
     </div>
 
     <!-- Subject Selector Navigation -->
-    <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="오늘 복습" type="button">
+    <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-100/80 dark:bg-slate-800/80 p-0.5 xl:p-1 rounded-xl border border-slate-200 dark:border-slate-700 shrink min-w-0 overflow-x-auto no-scrollbar" id="subject-tabs">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="오늘 복습" type="button">
         오늘 복습 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-due">0</span>
       </button>
 
       <button class="subject-tab-btn active px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="사회과교육론" type="button">
         사회과교육론 <span class="text-[10px] font-bold bg-white text-blue-700 px-1.5 py-0.2 rounded-md shadow-2xs leading-none" id="count-edu">99</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="법학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="법학" type="button">
         법 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-law">173</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="사회학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="사회학" type="button">
         사회 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-soc">151</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="정치학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="정치학" type="button">
         정치 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-pol">129</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="경제학" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="경제학" type="button">
         경제 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-econ">6</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="기출" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="기출" type="button">
         기출 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-exam">213</span>
       </button>
-      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="안내" type="button">
+      <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="안내" type="button">
         안내
       </button>
     </nav>
 
-    <!-- Top Tools (Pomodoro, Global Stats, Mobile Menu) -->
-    <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-3 shrink-0">
-      <!-- Theme Toggle Button (Light/Dark Mode) -->
-      <button id="theme-toggle-btn" class="w-8 h-8 xl:w-auto xl:px-2.5 xl:py-1.5 flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" title="테마 전환: 다크모드 / 라이트모드 [단축키: D]" aria-label="다크모드 전환">
+    <!-- Top Tools (Consolidated on Mobile <=768px with generous touch targets, Full toolbar on md+) -->
+    <div class="flex items-center gap-2 xl:gap-2.5 shrink-0">
+      <!-- Mobile TOC Button (Primary action on mobile/tablet < lg) -->
+      <button id="btn-mobile-toc" class="lg:hidden min-h-[40px] px-3 py-1.5 flex items-center justify-center gap-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/90 dark:bg-blue-950/60 hover:bg-blue-100 text-xs font-bold text-blue-700 dark:text-blue-300 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="목차 열기" title="단원별 전체 목차 열기">
+        <span class="material-symbols-outlined text-[19px] text-blue-600 dark:text-blue-400">toc</span>
+        <span>목차</span>
+      </button>
+
+      <!-- Mobile Overflow Menu Button (Visible on <=768px to prevent header crowding) -->
+      <button id="btn-mobile-more" class="md:hidden min-h-[40px] px-2.5 py-1.5 flex items-center justify-center gap-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 text-xs font-bold text-slate-700 dark:text-slate-200 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="도구 메뉴 열기" aria-expanded="false" title="동기화·보관함·타이머·테마 메뉴">
+        <span class="material-symbols-outlined text-[20px]">more_horiz</span>
+        <span>메뉴</span>
+      </button>
+
+      <!-- Desktop / Tablet (md+) Action Buttons -->
+      <button id="theme-toggle-btn" class="hidden md:flex w-9 h-9 xl:w-auto xl:px-2.5 xl:py-1.5 items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all shadow-2xs cursor-pointer" type="button" title="테마 전환: 다크모드 / 라이트모드 [단축키: D]" aria-label="다크모드 전환">
         <span class="material-symbols-outlined text-[17px] text-amber-500 block dark:hidden" id="theme-icon-light">dark_mode</span>
         <span class="material-symbols-outlined text-[17px] text-amber-400 hidden dark:block" id="theme-icon-dark">light_mode</span>
         <span class="hidden xl:inline text-[11px] font-medium" id="theme-text">다크</span>
       </button>
 
-      <!-- Mobile TOC Button (visible only on mobile/tablet < lg) -->
-      <button id="btn-mobile-toc" class="lg:hidden w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-800 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="목차 열기" title="단원별 전체 목차">
-        <span class="material-symbols-outlined text-[18px] text-blue-600">menu</span>
-      </button>
-
-      <!-- Cloud Sync Button -->
-      <button id="btn-cloud-sync" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화" title="태블릿/폰/노트북 클라우드 동기화 [단축키: Cmd+B]">
+      <!-- Cloud Sync Button (Calm optional tone when unconnected) -->
+      <button id="btn-cloud-sync" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화 (선택 사항)" title="기기 간 동기화 설정 (선택 사항) [단축키: Cmd+B]">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors" id="cloud-sync-icon">cloud_queue</span>
-        <span class="text-[11px] font-bold text-slate-700" id="cloud-sync-text">동기화</span>
+        <span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300" id="cloud-sync-text">동기화 (선택)</span>
       </button>
 
       <!-- Library/Dashboard Button -->
-      <button id="btn-library-dashboard" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer" type="button" aria-label="카드 보관함" title="학습 통계 및 카드 보관함">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-indigo-600">dashboard</span>
+      <button id="btn-library-dashboard" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all shadow-2xs cursor-pointer" type="button" aria-label="카드 보관함" title="학습 통계 및 카드 보관함">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-indigo-600 dark:text-indigo-400">dashboard</span>
         <span class="hidden xl:inline text-[11px] font-bold">보관함</span>
       </button>
 
       <!-- Export All Button (단권화 전체 내보내기) -->
-      <button id="btn-export-all" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="단권화 전체 내보내기" title="단권화 본문 전체 내보내기 (JSON 및 과목별 마크다운 ZIP 다운로드)">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-emerald-600 group-hover:scale-110 transition-transform" id="export-icon">download</span>
-        <span class="text-[11px] font-bold text-slate-700" id="export-btn-text">내보내기</span>
+      <button id="btn-export-all" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="단권화 전체 내보내기" title="단권화 본문 전체 내보내기 (JSON 및 과목별 마크다운 ZIP 다운로드)">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform" id="export-icon">download</span>
+        <span class="hidden xl:inline text-[11px] font-bold text-slate-700 dark:text-slate-200" id="export-btn-text">내보내기</span>
       </button>
 
       <!-- Pomodoro Timer Controls -->
-      <div class="flex items-center gap-1">
-        <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-all cursor-pointer" type="button" title="클릭: 타이머 시작/일시정지 | 우측 리셋 버튼으로 25분 초기화">
+      <div class="hidden md:flex items-center gap-1">
+        <button id="pomodoro-btn" class="flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-xs text-slate-700 dark:text-slate-200 transition-all cursor-pointer" type="button" title="클릭: 타이머 시작/일시정지 | 우측 리셋 버튼으로 25분 초기화">
           <span class="material-symbols-outlined text-[15px] xl:text-[16px] text-blue-600" id="pomodoro-icon">timer</span>
           <span class="hidden xl:inline-block px-1 py-0.2 rounded text-[10px] font-bold bg-blue-100 text-blue-700" id="pomodoro-mode-badge">집중</span>
           <span class="font-mono font-bold text-[11px] xl:text-xs" id="pomodoro-display">25:00</span>
         </button>
-        <button id="pomodoro-reset-btn" class="p-1 xl:p-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-rose-600 text-xs transition-all cursor-pointer" type="button" title="뽀모도로 25:00 집중 모드로 리셋">
+        <button id="pomodoro-reset-btn" class="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-500 hover:text-rose-600 text-xs transition-all cursor-pointer" type="button" title="뽀모도로 25:00 집중 모드로 리셋">
           <span class="material-symbols-outlined text-[15px] xl:text-[16px]">restart_alt</span>
         </button>
       </div>
 
+      <!-- Onboarding / Tour Help Button -->
+      <button id="btn-open-onboarding" class="hidden md:flex w-8 h-8 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700 text-slate-500 hover:text-blue-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer" type="button" title="처음 사용법 안내 투어 보기" aria-label="사용법 안내">
+        <span class="material-symbols-outlined text-[17px]">help</span>
+      </button>
+    </div>
+
+    <!-- Mobile Overflow Dropdown Menu (<=768px) -->
+    <div id="mobile-more-dropdown" class="hidden md:hidden fixed inset-x-3 top-15 z-[70] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-3 flex flex-col gap-2 animate-in fade-in zoom-in-95 duration-150">
+      <div class="flex items-center justify-between px-1 pb-1.5 border-b border-slate-100 dark:border-slate-800">
+        <span class="text-xs font-extrabold text-slate-700 dark:text-slate-200">학습 도구 및 설정</span>
+        <button id="btn-close-mobile-more" type="button" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <button id="mobile-menu-sync" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+          <span class="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400" id="mobile-menu-sync-icon">cloud_queue</span>
+          <div class="min-w-0">
+            <div class="truncate" id="mobile-menu-sync-label">동기화 (선택)</div>
+            <div class="text-[10px] font-normal text-slate-400 truncate">기기 간 기록 연동</div>
+          </div>
+        </button>
+        <button id="mobile-menu-library" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-indigo-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+          <span class="material-symbols-outlined text-[18px] text-indigo-600 dark:text-indigo-400">dashboard</span>
+          <div class="min-w-0">
+            <div class="truncate">카드 보관함</div>
+            <div class="text-[10px] font-normal text-slate-400 truncate">학습 현황 · 통계</div>
+          </div>
+        </button>
+        <button id="mobile-menu-essay" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-blue-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+          <span class="material-symbols-outlined text-[18px] text-emerald-600 dark:text-emerald-400">edit_note</span>
+          <div class="min-w-0">
+            <div class="truncate">인출 서술창</div>
+            <div class="text-[10px] font-normal text-slate-400 truncate">백지 인출 · FSRS 평가</div>
+          </div>
+        </button>
+        <button id="mobile-menu-theme" type="button" class="min-h-[44px] px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 hover:bg-amber-50 text-left flex items-center gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 active:scale-95 transition-all">
+          <span class="material-symbols-outlined text-[18px] text-amber-500">dark_mode</span>
+          <div class="min-w-0">
+            <div class="truncate">다크 / 라이트 모드</div>
+            <div class="text-[10px] font-normal text-slate-400 truncate">화면 테마 전환</div>
+          </div>
+        </button>
+      </div>
+      <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100 dark:border-slate-800">
+        <div class="flex items-center gap-1.5">
+          <button id="mobile-menu-pomo" type="button" class="min-h-[40px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5 active:scale-95">
+            <span class="material-symbols-outlined text-[16px] text-blue-600">timer</span>
+            <span id="mobile-pomo-display" class="font-mono">25:00</span>
+          </button>
+          <button id="mobile-menu-pomo-reset" type="button" class="min-h-[40px] px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-500 hover:text-rose-600 text-xs flex items-center justify-center active:scale-95" title="타이머 리셋">
+            <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+          </button>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <button id="mobile-menu-export" type="button" class="min-h-[40px] px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 active:scale-95">
+            <span class="material-symbols-outlined text-[16px] text-emerald-600">download</span>
+            <span>내보내기</span>
+          </button>
+          <button id="mobile-menu-onboarding" type="button" class="min-h-[40px] px-3 py-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/70 dark:bg-blue-950/50 text-xs font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1 active:scale-95">
+            <span class="material-symbols-outlined text-[16px]">help</span>
+            <span>사용법</span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- SUB-HEADER (Breadcrumb, Prev/Next, Shortcuts Hint) -->
-  <div id="sub-header" class="flex-none h-9 sm:h-10 bg-slate-50/90 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs">
+  <!-- SUB-HEADER (Mobile <=768px: Prominent Current Topic Title + Prev/Next Buttons | Desktop md+: Full Breadcrumb) -->
+  <div id="sub-header" class="flex-none h-11 md:h-10 bg-slate-50/95 dark:bg-slate-900/90 backdrop-blur-sm border-b border-border dark:border-slate-800 z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
     <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
-      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 (Ctrl+B)">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600 dark:text-blue-400" id="sidebar-toggle-icon">dock_to_left</span>
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
       <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
-      <!-- Breadcrumb -->
-      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar text-slate-700 font-semibold min-w-0 flex-1 py-0.5 text-[11px] sm:text-xs" id="bc-container">
-        <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
-        <span class="text-slate-400 shrink-0 hidden sm:inline" id="bc-chapter-sep">/</span>
-        <span class="text-slate-700 shrink-0 truncate max-w-[140px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px] hidden sm:inline" id="bc-chapter">1.사회과 교육의 전통</span>
+      <!-- Breadcrumb (On Mobile <=768px: shows current topic title prominently; On md+: shows full hierarchy) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden md:overflow-x-auto no-scrollbar text-slate-700 dark:text-slate-200 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
+        <span class="px-2 py-0.5 rounded-md text-[11px] md:text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
+        <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-chapter-sep">/</span>
+        <span class="text-slate-700 dark:text-slate-300 shrink-0 truncate max-w-[140px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px] hidden md:inline" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-section-sep">/</span>
-        <span class="text-indigo-800 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200 hidden" id="bc-section">1-1. 세 가지 전통</span>
+        <span class="text-indigo-800 dark:text-indigo-300 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 dark:bg-indigo-950/60 px-1.5 py-0.5 rounded border border-indigo-200 dark:border-indigo-800 hidden" id="bc-section">1-1. 세 가지 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-subsection-sep">/</span>
-        <span class="text-amber-900 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 px-1.5 py-0.5 rounded border border-amber-300 hidden" id="bc-subsection">세부단원</span>
-        <span class="text-slate-400 shrink-0">/</span>
-        <span class="text-slate-900 font-extrabold truncate max-w-[220px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-none" id="bc-title">1.시민성 전달 모형</span>
-        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden" id="bc-exam-tag">22,23,26(단답)</span>
+        <span class="text-amber-900 dark:text-amber-300 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 dark:bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-300 dark:border-amber-800 hidden" id="bc-subsection">세부단원</span>
+        <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
+        <span class="text-slate-900 dark:text-white text-[13.5px] md:text-xs font-extrabold truncate flex-1 md:flex-initial max-w-none md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
+        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden md:inline-block" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
 
-    <div class="hidden sm:flex items-center gap-1.5 sm:gap-2 shrink-0">
-      <!-- Toggle Right Essay Tab in Fixed Sub-header -->
-      <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 서술창 접기/열기 [단축키: W]">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="subhead-essay-icon">dock_to_right</span>
+    <!-- Right Controls in Sub-Header: Mobile Prev/Next Buttons (<=768px) + Desktop Essay Toggle (lg+) -->
+    <div class="flex items-center gap-1.5 shrink-0">
+      <button id="btn-subhead-prev" class="md:hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="이전 단원" title="이전 단원">
+        <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+        <span>이전</span>
+      </button>
+      <button id="btn-subhead-next" class="md:hidden min-h-[36px] px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center gap-0.5 shadow-2xs active:scale-95 cursor-pointer" type="button" aria-label="다음 단원" title="다음 단원">
+        <span>다음</span>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      </button>
+
+      <!-- Toggle Right Essay Tab in Fixed Sub-header (Desktop) -->
+      <button id="btn-toggle-essay-subhead" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="우측 백지 인출 서술창 접기/열기 [단축키: W]">
+        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600 dark:text-blue-400" id="subhead-essay-icon">dock_to_right</span>
         <span class="font-bold text-[11px]" id="subhead-essay-text">인출창</span>
       </button>
     </div>
@@ -1898,29 +2062,33 @@
     <!-- BACKDROP FOR MOBILE SIDEBAR -->
     <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"></div>
 
-    <!-- LEFT SIDEBAR: Table of Contents Tree (Flex column on desktop, Drawer on mobile) -->
-    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-[85vw] max-w-[320px] lg:w-[280px] xl:w-[300px] 2xl:w-[320px] bg-white border-r border-border z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
-    <!-- Mobile Drawer Header with Close Button -->
-    <div class="lg:hidden p-3 border-b border-slate-200 bg-white flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-7 h-7 rounded-lg object-cover shadow-2xs border border-slate-200/80 shrink-0" />
-        <span class="font-bold text-sm text-slate-900">단원별 전체 목차</span>
+    <!-- LEFT SIDEBAR: Table of Contents Tree (Flex column on desktop, Bottom Sheet / Full-screen Overlay on mobile) -->
+    <aside id="sidebar-drawer" class="fixed inset-y-0 left-0 lg:static lg:flex-none w-full lg:w-[280px] xl:w-[300px] 2xl:w-[320px] bg-white dark:bg-slate-900 border-r border-border dark:border-slate-800 z-50 lg:z-auto flex flex-col shadow-2xl lg:shadow-none transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
+    <!-- Mobile Bottom-Sheet Handle & Header with Large Close Button -->
+    <div class="lg:hidden pt-2 pb-2.5 px-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-t-3xl flex flex-col gap-1.5">
+      <div class="w-12 h-1.5 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto"></div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-7 h-7 rounded-lg object-cover shadow-2xs border border-slate-200/80 dark:border-slate-700 shrink-0" />
+          <span class="font-extrabold text-base text-slate-900 dark:text-slate-100">단원별 전체 목차</span>
+        </div>
+        <button id="btn-close-mobile-toc" class="min-h-[40px] px-3 py-1.5 rounded-xl flex items-center justify-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 font-bold text-xs transition-colors cursor-pointer" type="button" aria-label="목차 닫기">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+          <span>닫기</span>
+        </button>
       </div>
-      <button id="btn-close-mobile-toc" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors" type="button" aria-label="목차 닫기">
-        <span class="material-symbols-outlined text-[20px]">close</span>
-      </button>
     </div>
 
-    <!-- Mobile Subject Tabs inside Drawer -->
-    <div class="lg:hidden p-2 bg-slate-50 border-b border-slate-200 overflow-x-auto flex items-center gap-1 text-xs no-scrollbar" id="mobile-subject-tabs">
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-white text-blue-700 shadow-xs border border-slate-200 flex items-center gap-1" data-subject="오늘 복습" type="button">오늘 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due-mobile">(0)</span></button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회과교육론" type="button">사교론</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="법학" type="button">법</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="기출" type="button">기출</button>
-      <button class="mobile-subj-tab px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="안내" type="button">안내</button>
+    <!-- Mobile Subject Tabs inside Bottom Sheet / Overlay (Generous touch targets) -->
+    <div class="lg:hidden p-2.5 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 overflow-x-auto flex items-center gap-1.5 text-xs no-scrollbar" id="mobile-subject-tabs">
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 shadow-xs border border-slate-200 dark:border-slate-700 flex items-center gap-1" data-subject="오늘 복습" type="button">오늘 복습 <span class="opacity-75 text-[10px] xl:text-[11px]" id="count-due-mobile">(0)</span></button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회과교육론" type="button">사교론</button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="법학" type="button">법</button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="사회학" type="button">사회</button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="정치학" type="button">정치</button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="경제학" type="button">경제</button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="기출" type="button">기출</button>
+      <button class="mobile-subj-tab min-h-[38px] px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 transition-all whitespace-nowrap" data-subject="안내" type="button">안내</button>
     </div>
 
     <!-- Sidebar Header & Search -->
@@ -1994,11 +2162,11 @@
               <span class="hidden" id="topic-page-ref"></span>
             </div>
             <div class="flex items-center gap-1.5 shrink-0">
-              <button id="btn-prev-topic" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="이전 주제 (방향키 좌, Cmd+좌)">
+              <button id="btn-prev-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="이전 주제 (방향키 좌, Cmd+좌)">
                 <span class="material-symbols-outlined text-[15px]">chevron_left</span>
                 <span>이전</span>
               </button>
-              <button id="btn-next-topic" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="다음 주제 (방향키 우, Cmd+우)">
+              <button id="btn-next-topic" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium flex items-center gap-0.5 transition-colors cursor-pointer shadow-2xs active:scale-95" type="button" title="다음 주제 (방향키 우, Cmd+우)">
                 <span>다음</span>
                 <span class="material-symbols-outlined text-[15px]">chevron_right</span>
               </button>
@@ -2017,18 +2185,18 @@
                   <span class="material-symbols-outlined text-[13.5px]">info</span>
                   <span>설명 보기</span>
                 </button>
-                <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title">
+                <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug tracking-tight break-keep-all" id="topic-title" title="2. 국회의 구성·조직 및 운영">
                   2. 국회의 구성·조직 및 운영
                 </h1>
-                <button id="btn-toggle-bookmark" class="inline-flex items-center p-1 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
+                <button id="btn-toggle-bookmark" class="inline-flex items-center p-1.5 rounded-lg hover:bg-amber-50 text-slate-400 hover:text-amber-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="중요 주제로 등록 (별표)">
                   <span class="material-symbols-outlined text-[22px]" id="icon-bookmark">star</span>
                   <span class="hidden" id="bookmark-status-text">중요</span>
                 </button>
                 <div class="h-5 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
-                <button id="btn-set-pin" class="inline-flex items-center p-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
+                <button id="btn-set-pin" class="inline-flex items-center p-1.5 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0" type="button" title="현재 위치를 학습 핀으로 설정/해제">
                   <span class="material-symbols-outlined text-[22px]" id="icon-set-pin">push_pin</span>
                 </button>
-                <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
+                <button id="btn-return-pin" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors cursor-pointer shrink-0 mt-0.5 sm:mt-0 text-xs font-semibold hidden" type="button" title="저장된 학습 핀 위치로 복귀">
                   <span class="material-symbols-outlined text-[16px]">keyboard_return</span>
                   <span class="hidden sm:inline">핀 복귀</span>
                 </button>
@@ -2036,11 +2204,11 @@
               <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1 hidden"></div>
             </div>
             <div class="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
-              <button id="btn-edit-topic-content" class="px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+              <button id="btn-edit-topic-content" class="min-h-[36px] px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 dark:border-slate-700 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
                 <span class="material-symbols-outlined text-[14px]">edit_note</span>
                 <span>본문 수정</span>
               </button>
-              <button id="btn-reset-custom-tape" class="px-3 py-1.5 sm:px-2 sm:py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
+              <button id="btn-reset-custom-tape" class="min-h-[36px] px-3 py-1.5 sm:px-2 sm:py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 dark:border-slate-700 hover:border-red-200 hidden flex items-center gap-0.5 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                 <span class="material-symbols-outlined text-[13px]">restart_alt</span>
                 <span>원본 복원</span>
               </button>
@@ -2054,25 +2222,25 @@
         </div>
 
         <!-- Mode Controls Bar -->
-        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-1.5 sm:p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-2 xl:gap-3">
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-2 xl:gap-3">
           <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile, flex row on desktop) -->
-          <div class="grid grid-cols-4 sm:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full xl:w-auto shrink-0">
-            <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
+          <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-slate-100/90 dark:bg-slate-800/80 p-1 rounded-xl w-full xl:w-auto shrink-0">
+            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden sm:inline">마스킹 테이프</span>
               <span class="sm:hidden">테이프</span>
             </button>
-            <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
+            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
               <span class="material-symbols-outlined text-[15px]">edit_note</span>
               <span class="hidden sm:inline">작성 모드</span>
               <span class="sm:hidden">작성</span>
             </button>
-            <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
+            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
               <span class="material-symbols-outlined text-[15px]">menu_book</span>
               <span class="hidden sm:inline">원문 정독</span>
               <span class="sm:hidden">정독</span>
             </button>
-            <button class="mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
+            <button class="mode-pill min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 sm:py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
               <span class="material-symbols-outlined text-[15px]">blur_on</span>
               <span class="hidden sm:inline">블러 암기</span>
               <span class="sm:hidden">블러</span>
@@ -2084,26 +2252,26 @@
 
             <!-- Font Scale Controller -->
             <div class="flex items-center bg-slate-100/90 dark:bg-slate-800/80 rounded-lg p-0.5 border border-slate-200/80 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 font-bold select-none shrink-0 whitespace-nowrap">
-              <button id="btn-font-down" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 작게 [단축키: - 또는 []">A-</button>
+              <button id="btn-font-down" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 작게 [단축키: - 또는 []">A-</button>
               <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 dark:text-slate-200 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
-              <button id="btn-font-up" type="button" class="px-2 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
+              <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white dark:hover:bg-slate-700 hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 dark:text-slate-200 cursor-pointer" title="글자 크게 [단축키: = 또는 ]]">A+</button>
             </div>
 
             <!-- Inline Masking Tape Action Button -->
-            <button id="btn-apply-tape-inline" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
+            <button id="btn-apply-tape-inline" type="button" class="min-h-[36px] px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden xl:inline">테이프 [M]</span>
               <span class="xl:hidden">테이프</span>
             </button>
 
             <!-- Single Consolidated Reveal / Hide Button -->
-            <button id="btn-reveal-all" class="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체보기 / 다시 가리기 [단축키: T]">
+            <button id="btn-reveal-all" class="min-h-[36px] flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체보기 / 다시 가리기 [단축키: T]">
               <span class="material-symbols-outlined text-[16px] text-blue-800" id="reveal-eye-icon">visibility</span>
               <span id="reveal-btn-label"><span class="hidden xl:inline">전체보기 [T]</span><span class="hidden sm:inline xl:hidden">전체보기</span><span class="sm:hidden">전체보기</span></span>
             </button>
 
             <!-- Wide View / Essay Pad Toggle Button (available on desktop & tablet) -->
-            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex px-2.5 sm:px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
+            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex min-h-[36px] px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
               <span class="material-symbols-outlined text-[16px] text-slate-600" id="toggle-essay-icon">fit_screen</span>
               <span id="toggle-essay-label">와이드 보기</span>
             </button>
@@ -2147,10 +2315,10 @@
 
           <!-- Textarea -->
           <div class="relative">
-            <textarea id="essay-input" rows="9" placeholder="예: (1) 목표: 사회유지 존속...&#10;(2) 주요 학습 내용...&#10;(3) 교수학습 방법: 직접적/간접적..." class="w-full p-3.5 text-sm md:text-[15px] leading-relaxed rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-y font-mono"></textarea>
+            <textarea id="essay-input" rows="9" placeholder="아직 인출한 내용이 없어요. 마스킹을 가리고 직접 작성해보세요.&#10;&#10;예: (1) 목표: 사회유지 존속...&#10;(2) 주요 학습 내용...&#10;💡 아래 핵심 키워드(#)를 포함해 작성하면 자동으로 매칭됩니다." class="w-full p-3.5 text-sm md:text-[15px] leading-relaxed rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 focus:bg-white focus:border-blue-500 focus:outline-none transition-all resize-y font-mono"></textarea>
             <div class="flex justify-between items-center mt-1.5 text-[11px] text-slate-400">
               <div class="flex items-center gap-2">
-                <span id="char-counter">0자 작성됨</span>
+                <span id="char-counter">아직 인출 전 · 직접 작성해보세요</span>
                 <button id="btn-essay-to-memo" class="text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-0.5 bg-indigo-50 hover:bg-indigo-100 px-1.5 py-0.5 rounded border border-indigo-200 transition-colors" type="button" title="작성한 내용을 하단의 '나만의 메모'에 이어붙입니다.">
                   <span class="material-symbols-outlined text-[12px]">edit_document</span>
                   <span>메모로 스크랩</span>
@@ -2582,6 +2750,25 @@
       </div>
       <div id="dashboard-stats-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"></div>
 
+      <!-- Friendly Empty State Banner when 0 reps across all topics -->
+      <div id="library-empty-banner" class="hidden bg-gradient-to-r from-blue-50 to-indigo-50/70 dark:from-slate-800/90 dark:to-indigo-950/30 border border-blue-200/80 dark:border-indigo-800/50 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+        <div class="flex items-start gap-3.5">
+          <div class="w-11 h-11 rounded-2xl bg-blue-600/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">아직 기록된 복습 데이터가 없어요!</h3>
+            <p class="text-xs sm:text-[13px] text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+              단원 본문에서 마스킹 테이프를 가려보거나 인출 노트를 작성한 뒤, 우측의 <strong>FSRS 평가 버튼(다시·어려움·알맞음·쉬움)</strong>을 누르면 나만의 학습 달력과 복습 예측 그래프가 채워집니다.
+            </p>
+          </div>
+        </div>
+        <button id="btn-library-start-first" type="button" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 shrink-0">
+          <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+          <span>이 단원부터 시작하기</span>
+        </button>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Learning Calendar (Heatmap) -->
         <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
@@ -2815,16 +3002,16 @@
       <!-- Current Sync Status Banner -->
       <div id="sync-status-card" class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex flex-col gap-2 mb-3">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-semibold text-slate-600 dark:text-slate-400">내 동기화 코드</span>
-          <span id="sync-status-badge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">미연결</span>
+          <span class="text-xs font-semibold text-slate-600 dark:text-slate-400">동기화 상태</span>
+          <span id="sync-status-badge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">아직 연결되지 않음 (선택 사항)</span>
         </div>
         <div class="flex items-center gap-2">
-          <span id="sync-current-code" class="text-base sm:text-lg font-mono font-extrabold tracking-wider text-blue-600 dark:text-blue-400 select-all">없음</span>
+          <span id="sync-current-code" class="text-sm sm:text-base font-mono font-bold tracking-wider text-slate-600 dark:text-slate-300 select-all">연결 없이도 이 기기에 자동 저장됩니다</span>
           <button id="btn-copy-sync-code" class="hidden text-xs px-2 py-1 rounded bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-100 font-semibold border border-blue-200 dark:border-blue-800 transition-colors cursor-pointer" type="button">
             복사
           </button>
         </div>
-        <span id="sync-last-time" class="text-[11px] text-slate-400 dark:text-slate-500">마지막 동기화: -</span>
+        <span id="sync-last-time" class="text-[11px] text-slate-500 dark:text-slate-400">💡 한 대의 기기만 사용 중이라면 연결하지 않아도 모든 학습 기능이 정상 작동합니다.</span>
       </div>
 
       <!-- Quick Connect Recommended Box (EDU-7194) -->
@@ -2960,6 +3147,128 @@
     </div>
   </div>
 
+  <!-- FIRST-VISIT ONBOARDING TOUR MODAL (4단계 온보딩 투어) -->
+  <div id="onboarding-modal" class="hidden fixed inset-0 z-[120] flex items-center justify-center bg-slate-900/55 backdrop-blur-xs p-3 sm:p-4 transition-opacity duration-200" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-lg flex flex-col overflow-hidden relative text-slate-800 dark:text-slate-100" onclick="event.stopPropagation()">
+      <!-- Top Header -->
+      <div class="px-5 sm:px-6 pt-5 pb-3 flex items-center justify-between border-b border-slate-100 dark:border-slate-700/80">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs shrink-0">
+            <span class="material-symbols-outlined text-[20px]">school</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 id="onboarding-title" class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">EduRecall 시작 가이드</h2>
+              <span id="onboarding-step-badge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border border-blue-200/70 dark:border-blue-800">1 / 4</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">일반사회 임용 단권화 & 백지인출 노트</p>
+          </div>
+        </div>
+        <button id="btn-onboarding-start-now-top" type="button" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs font-bold transition-colors cursor-pointer shrink-0">
+          바로 시작하기
+        </button>
+      </div>
+
+      <!-- Step Dots Indicator -->
+      <div class="px-5 sm:px-6 pt-3 flex items-center gap-1.5" id="onboarding-dots">
+        <button type="button" data-step="0" class="onboarding-dot h-1.5 flex-1 rounded-full bg-blue-600 transition-all cursor-pointer" aria-label="1단계"></button>
+        <button type="button" data-step="1" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="2단계"></button>
+        <button type="button" data-step="2" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="3단계"></button>
+        <button type="button" data-step="3" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="4단계"></button>
+      </div>
+
+      <!-- Slides Container -->
+      <div class="p-5 sm:p-6 min-h-[250px] flex flex-col justify-between">
+        <!-- Step 1: 마스킹 테이프 사용법 -->
+        <div class="onboarding-slide space-y-3.5" data-step-panel="0">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 text-xs font-bold border border-amber-200/80 dark:border-amber-800/60">
+            <span class="material-symbols-outlined text-[16px]">ink_highlighter</span>
+            <span>STEP 1 · 마스킹 테이프 사용법</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">핵심 키워드를 가리고 클릭하며 암기하세요</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            본문의 노란색 <strong>마스킹 테이프</strong>를 클릭(터치)하면 정답이 나타납니다. 원하는 구절을 드래그하면 <strong>나만의 마스킹 테이프</strong>도 즉시 추가할 수 있어요.
+          </p>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-amber-200 text-amber-950 font-bold">클릭 / 터치</span><span>개별 마스킹 테이프 떼기 · 다시 가리기</span></div>
+            <div class="flex items-center gap-2"><kbd class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 font-mono font-bold">A</kbd> / <kbd class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 font-mono font-bold">S</kbd><span>위에서부터 순차 공개(A) / 역순 다시 가리기(S)</span></div>
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold">텍스트 드래그</span><span>선택한 구절에 새 마스킹 테이프 부착</span></div>
+          </div>
+        </div>
+
+        <!-- Step 2: 인출(작성) 모드 사용법 -->
+        <div class="onboarding-slide hidden space-y-3.5" data-step-panel="1">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 text-xs font-bold border border-blue-200/80 dark:border-blue-800/60">
+            <span class="material-symbols-outlined text-[16px]">edit_note</span>
+            <span>STEP 2 · 인출(작성) 모드 사용법</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">직접 서술하며 키워드 포함 여부를 실시간 점검하세요</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            우측(모바일은 하단) <strong>능동적 인출 및 서술</strong> 창에 기억나는 내용을 적어보세요. 작성한 답안에 핵심 키워드가 포함되면 자동으로 초록색 체크가 켜집니다.
+          </p>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
+            <div class="flex items-center gap-2"><span class="font-bold text-blue-600 dark:text-blue-400">타이핑 / 전체블러 모드</span><span>마스킹 빈칸에 직접 입력하거나 본문 전체를 가린 채 백지인출</span></div>
+            <div class="flex items-center gap-2"><span class="font-bold text-emerald-600 dark:text-emerald-400">원문 대조 및 채점</span><span>내 서술 답안과 단권화 원문을 나란히 비교하며 누락 키워드 확인</span></div>
+          </div>
+        </div>
+
+        <!-- Step 3: FSRS 평가 방법 -->
+        <div class="onboarding-slide hidden space-y-3.5" data-step-panel="2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 text-xs font-bold border border-emerald-200/80 dark:border-emerald-800/60">
+            <span class="material-symbols-outlined text-[16px]">psychology</span>
+            <span>STEP 3 · FSRS 간격 반복 평가</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">체감 난이도를 선택하면 최적의 복습 주기를 계산합니다</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            학습을 마친 뒤 <strong>다시(1) · 어려움(2) · 알맞음(3) · 쉬움(4)</strong> 중 하나를 누르면 FSRS 알고리즘이 기억 유지율을 계산해 다음 복습일을 자동으로 예약해 줍니다.
+          </p>
+          <div class="grid grid-cols-4 gap-2 pt-1 text-center text-xs font-bold">
+            <div class="p-2 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800/60">1 · 다시<div class="text-[10px] font-normal opacity-80 mt-0.5">거의 못 외움</div></div>
+            <div class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-600">2 · 어려움<div class="text-[10px] font-normal opacity-80 mt-0.5">애먹으며 인출</div></div>
+            <div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60">3 · 알맞음<div class="text-[10px] font-normal opacity-80 mt-0.5">무난히 인출</div></div>
+            <div class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60">4 · 쉬움<div class="text-[10px] font-normal opacity-80 mt-0.5">완벽히 숙지</div></div>
+          </div>
+        </div>
+
+        <!-- Step 4: 동기화 코드 발급/연결 방법 -->
+        <div class="onboarding-slide hidden space-y-3.5" data-step-panel="3">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold border border-indigo-200/80 dark:border-indigo-800/60">
+            <span class="material-symbols-outlined text-[16px]">cloud_sync</span>
+            <span>STEP 4 · 기기 간 동기화 (선택 사항)</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">연결 없이 바로 써도 OK! 여러 기기라면 코드로 연결하세요</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            모든 학습 기록은 <strong>현재 브라우저에 자동 저장</strong>되므로 동기화를 연결하지 않아도 정상 이용 가능합니다. 아이패드·스마트폰·PC를 오가며 공부할 때만 상단 <strong>동기화 (선택)</strong> 버튼에서 코드를 발급해 연결해 주세요.
+          </p>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+            <div>✓ <strong>단일 기기 학습자</strong>: 별도 가입이나 코드 연결 없이 지금 바로 학습 시작</div>
+            <div>✓ <strong>다기기 학습자</strong>: [새 동기화 코드 발급] 후 다른 기기에 같은 코드 입력</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Controls -->
+      <div class="px-5 sm:px-6 py-4 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-100 dark:border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
+        <label class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 cursor-pointer select-none">
+          <input type="checkbox" id="onboarding-dont-show-again" class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500" checked />
+          <span>다시 보지 않기</span>
+        </label>
+        <div class="flex items-center gap-2 ml-auto">
+          <button id="btn-onboarding-prev" type="button" class="hidden px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 transition-colors cursor-pointer">
+            이전
+          </button>
+          <button id="btn-onboarding-next" type="button" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1">
+            <span id="onboarding-next-label">다음</span>
+            <span class="material-symbols-outlined text-[16px]" id="onboarding-next-icon">arrow_forward</span>
+          </button>
+          <button id="btn-onboarding-start-now" type="button" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer">
+            바로 시작하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- APPLICATION LOGIC SCRIPT -->
   <script>
     (function () {
@@ -2974,6 +3283,97 @@
       let filteredIndices = [];
       const expandedSections = new Set();
       let autoAdvanceTimeout = null;
+
+      // Lazy Chunk Loader for Subject Data (Code-Splitting)
+      const SUBJECT_CHUNK_MAP = {
+        '사회과교육론': 'data/chunk-edu.js',
+        '법학': 'data/chunk-law.js',
+        '사회학': 'data/chunk-soc.js',
+        '정치학': 'data/chunk-pol.js',
+        '경제학': 'data/chunk-econ.js',
+        '기출': 'data/chunk-exam.js',
+        '안내': 'data/chunk-guide.js'
+      };
+      const loadedSubjectChunks = new Set(['사회과교육론', '안내']);
+      const inflightChunkPromises = {};
+
+      function applyChunkDataToTopics(subject, chunkMap) {
+        if (!chunkMap) return;
+        for (let i = 0; i < TOPICS.length; i++) {
+          const t = TOPICS[i];
+          const entry = chunkMap[t.id];
+          if (entry) {
+            if (!t.contentHtml) t.contentHtml = entry.contentHtml || '';
+            if (!t.rawText) t.rawText = entry.rawText || '';
+            if ((!t.keywords || t.keywords.length === 0) && entry.keywords) {
+              t.keywords = entry.keywords;
+            }
+            t._hydrated = true;
+          }
+        }
+        loadedSubjectChunks.add(subject);
+      }
+
+      function ensureSubjectLoaded(subject) {
+        if (!subject || subject === 'ALL' || subject === 'all') {
+          const allSubjects = Object.keys(SUBJECT_CHUNK_MAP);
+          return Promise.all(allSubjects.map(s => ensureSubjectLoaded(s)));
+        }
+        if (loadedSubjectChunks.has(subject)) {
+          return Promise.resolve(true);
+        }
+        if (window.__EDURECALL_CHUNKS__ && window.__EDURECALL_CHUNKS__[subject]) {
+          applyChunkDataToTopics(subject, window.__EDURECALL_CHUNKS__[subject]);
+          return Promise.resolve(true);
+        }
+        if (inflightChunkPromises[subject]) {
+          return inflightChunkPromises[subject];
+        }
+        const chunkSrc = SUBJECT_CHUNK_MAP[subject];
+        if (!chunkSrc) return Promise.resolve(false);
+
+        inflightChunkPromises[subject] = new Promise((resolve) => {
+          const script = document.createElement('script');
+          script.src = chunkSrc + '?v=20261023_v2';
+          script.async = true;
+          script.onload = () => {
+            if (window.__EDURECALL_CHUNKS__ && window.__EDURECALL_CHUNKS__[subject]) {
+              applyChunkDataToTopics(subject, window.__EDURECALL_CHUNKS__[subject]);
+            }
+            delete inflightChunkPromises[subject];
+            resolve(true);
+          };
+          script.onerror = () => {
+            console.warn('Failed to load subject chunk:', subject);
+            delete inflightChunkPromises[subject];
+            resolve(false);
+          };
+          document.head.appendChild(script);
+        });
+        return inflightChunkPromises[subject];
+      }
+
+      // Schedule background prefetch of remaining subject chunks during idle time after initial load
+      function scheduleIdleChunkPrefetch() {
+        const subjectsToPrefetch = ['법학', '사회학', '정치학', '경제학', '기출'];
+        let idx = 0;
+        const loadNext = () => {
+          if (idx >= subjectsToPrefetch.length) return;
+          const subj = subjectsToPrefetch[idx++];
+          ensureSubjectLoaded(subj).finally(() => {
+            if ('requestIdleCallback' in window) {
+              window.requestIdleCallback(loadNext, { timeout: 2500 });
+            } else {
+              setTimeout(loadNext, 600);
+            }
+          });
+        };
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadNext, { timeout: 2000 });
+        } else {
+          setTimeout(loadNext, 1200);
+        }
+      }
 
       // Helper: Global Healer for corrupted Unicode replacement characters (\uFFFD or ??)
       function healCorruptedHtml(html) {
@@ -3089,115 +3489,29 @@
         if (soc069 && !soc069.includes('지배와 피지배의 갈등이 일탈의 원인이다')) {
           localStorage.setItem('edurecall_custom_SOC-069', soc069.replace(/<div class="group-content space-y-2 pl-1"><\/div>/, '<div class="group-content space-y-2 pl-1"><div class="recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all">- 지배와 피지배의 갈등이 일탈의 원인이다.</div></div>'));
         }
-        if (!localStorage.getItem('edurecall_legacy_corrupt_purge_done_v1')) {
-          localStorage.removeItem('edurecall_custom_POL-050');
-          localStorage.removeItem('edurecall_custom_POL-038');
-          localStorage.removeItem('edurecall_custom_POL-044');
-          localStorage.removeItem('edurecall_custom_masks_POL-044');
-          localStorage.removeItem('edurecall_custom_POL-014');
-          localStorage.removeItem('edurecall_custom_masks_POL-014');
-          localStorage.removeItem('edurecall_custom_POL-092');
-          localStorage.removeItem('edurecall_custom_masks_POL-092');
-          localStorage.removeItem('edurecall_custom_POL-093');
-          localStorage.removeItem('edurecall_custom_masks_POL-093');
-          localStorage.removeItem('edurecall_custom_POL-094');
-          localStorage.removeItem('edurecall_custom_masks_POL-094');
-          localStorage.removeItem('edurecall_custom_POL-095');
-          localStorage.removeItem('edurecall_custom_masks_POL-095');
-          localStorage.removeItem('edurecall_custom_EDU-095');
-          localStorage.removeItem('edurecall_custom_masks_EDU-095');
-          localStorage.removeItem('edurecall_custom_LAW-162');
-          localStorage.removeItem('edurecall_custom_masks_LAW-162');
-          localStorage.removeItem('edurecall_custom_LAW-164');
-          localStorage.removeItem('edurecall_custom_masks_LAW-164');
-          localStorage.removeItem('edurecall_custom_SOC-145');
-          localStorage.removeItem('edurecall_custom_masks_SOC-145');
-          localStorage.removeItem('edurecall_custom_POL-086');
-          localStorage.removeItem('edurecall_custom_masks_POL-086');
-          localStorage.removeItem('edurecall_custom_POL-127');
-          localStorage.removeItem('edurecall_custom_masks_POL-127');
-          localStorage.removeItem('edurecall_custom_POL-097');
-          localStorage.removeItem('edurecall_custom_masks_POL-097');
-          localStorage.removeItem('edurecall_custom_POL-109');
-          localStorage.removeItem('edurecall_custom_masks_POL-109');
-          localStorage.removeItem('edurecall_custom_POL-110');
-          localStorage.removeItem('edurecall_custom_masks_POL-110');
-          localStorage.removeItem('edurecall_custom_POL-111');
-          localStorage.removeItem('edurecall_custom_masks_POL-111');
-          localStorage.removeItem('edurecall_custom_POL-113');
-          localStorage.removeItem('edurecall_custom_masks_POL-113');
-          localStorage.removeItem('edurecall_custom_LAW-005');
-          localStorage.removeItem('edurecall_custom_masks_LAW-005');
-          localStorage.removeItem('edurecall_custom_LAW-018');
-          localStorage.removeItem('edurecall_custom_masks_LAW-018');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2013-1-27');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2013-1-27');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2014-A-05');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2014-A-05');
-          localStorage.removeItem('edurecall_custom_EXAM-2014-A-05');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-05');
-          localStorage.removeItem('edurecall_custom_EXAM-2014-A-19');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2014-A-19');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2015-A-05');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2015-A-05');
-          localStorage.removeItem('edurecall_custom_EXAM-2015-A-05');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2015-A-05');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2018-B-07');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2018-B-07');
-          localStorage.removeItem('edurecall_custom_EXAM-2018-B-07');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2018-B-07');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2019-B-01');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2019-B-01');
-          localStorage.removeItem('edurecall_custom_EXAM-2019-B-01');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-01');
-          localStorage.removeItem('edurecall_custom_EXAM-2019-B-02');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2019-B-02');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2021-B-07');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2021-B-07');
-          localStorage.removeItem('edurecall_custom_EXAM-2021-B-07');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-07');
-          localStorage.removeItem('edurecall_custom_LAW-042');
-          localStorage.removeItem('edurecall_custom_masks_LAW-042');
-          localStorage.removeItem('edurecall_custom_EXAM-2026-B-08');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-08');
-          localStorage.removeItem('edurecall_custom_EXAM-2021-B-11');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2021-B-11');
-          localStorage.setItem('edurecall_legacy_corrupt_purge_done_v1', 'true');
-        }
-        if (!localStorage.getItem('edurecall_econ_app_07_refresh_v2')) {
-          localStorage.removeItem('edurecall_custom_ECON-APP-07');
-          localStorage.removeItem('edurecall_custom_masks_ECON-APP-07');
-          localStorage.setItem('edurecall_econ_app_07_refresh_v2', 'true');
-        }
-        if (!localStorage.getItem('edurecall_2026_b_10_refresh_v1')) {
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2026-B-10');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2026-B-10');
-          localStorage.removeItem('edurecall_custom_EXAM-2026-B-10');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-10');
-          localStorage.setItem('edurecall_2026_b_10_refresh_v1', 'true');
-        }
-        if (!localStorage.getItem('edurecall_econ_004_refresh_v1')) {
-          localStorage.removeItem('edurecall_custom_ECON-004');
-          localStorage.removeItem('edurecall_custom_masks_ECON-004');
-          localStorage.removeItem('edurecall_custom_ECON-002');
-          localStorage.removeItem('edurecall_custom_masks_ECON-002');
-          localStorage.removeItem('edurecall_custom_ECON-016');
-          localStorage.removeItem('edurecall_custom_masks_ECON-016');
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2024-A-12');
-          localStorage.removeItem('edurecall_custom_EXAM-2024-A-12');
-          localStorage.setItem('edurecall_econ_004_refresh_v1', 'true');
-        }
-        if (!localStorage.getItem('edurecall_econ_005_refresh_v1')) {
-          localStorage.removeItem('edurecall_custom_ECON-005');
-          localStorage.removeItem('edurecall_custom_masks_ECON-005');
-          localStorage.removeItem('edurecall_custom_ECON-007');
-          localStorage.removeItem('edurecall_custom_masks_ECON-007');
-          localStorage.removeItem('edurecall_custom_ECON-012');
-          localStorage.removeItem('edurecall_custom_masks_ECON-012');
-          localStorage.removeItem('edurecall_custom_ECON-019');
-          localStorage.removeItem('edurecall_custom_masks_ECON-019');
-          localStorage.setItem('edurecall_econ_005_refresh_v1', 'true');
-        }
+        // Consolidate legacy migration flags into single unified key (edurecall_migration_unified_v15)
+        const LEGACY_MIGRATION_FLAGS = [
+          'edurecall_legacy_corrupt_purge_done_v1',
+          'edurecall_econ_app_07_refresh_v2',
+          'edurecall_2026_b_10_refresh_v1',
+          'edurecall_econ_004_refresh_v1',
+          'edurecall_econ_005_refresh_v1',
+          'edurecall_purge_law114_done',
+          'edurecall_migration_v2_done',
+          'edurecall_migration_v3_done',
+          'edurecall_migration_v4_done',
+          'edurecall_migration_v5_done',
+          'edurecall_migration_v6_done',
+          'edurecall_migration_v7_done',
+          'edurecall_migration_v8_done',
+          'edurecall_migration_v9_done',
+          'edurecall_migration_v10_done',
+          'edurecall_migration_v11_done',
+          'edurecall_migration_v12_done',
+          'edurecall_migration_v13_done',
+          'edurecall_migration_v14_done'
+        ];
+        LEGACY_MIGRATION_FLAGS.forEach(flag => localStorage.removeItem(flag));
       } catch (e) {
         console.error('Auto-heal localStorage failed', e);
       }
@@ -4122,10 +4436,11 @@
         const btnCopySyncCode = document.getElementById('btn-copy-sync-code');
         const syncLastTimeEl = document.getElementById('sync-last-time');
         const quickConnectContainer = document.getElementById('quick-connect-container');
+        const mobileMoreSyncStatus = document.getElementById('mobile-more-sync-status');
 
         if (syncCode) {
           if (cloudSyncBtn) {
-            cloudSyncBtn.className = 'flex items-center gap-1 sm:gap-1.5 px-2 xl:px-2.5 py-1 xl:py-1.5 rounded-lg border border-emerald-300 dark:border-emerald-800 bg-emerald-50/80 hover:bg-emerald-100/90 dark:bg-emerald-950/40 text-xs font-semibold text-emerald-800 dark:text-emerald-300 transition-all shadow-2xs cursor-pointer group';
+            cloudSyncBtn.className = 'hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg border border-emerald-300 dark:border-emerald-800 bg-emerald-50/80 hover:bg-emerald-100/90 dark:bg-emerald-950/40 text-xs font-semibold text-emerald-800 dark:text-emerald-300 transition-all shadow-2xs cursor-pointer group';
             cloudSyncBtn.title = `클라우드 동기화 연결됨 (${syncCode}) [단축키: Cmd+B]`;
           }
           if (cloudSyncIcon) {
@@ -4136,12 +4451,17 @@
             cloudSyncText.textContent = syncCode;
             cloudSyncText.className = 'inline text-[11px] font-bold text-emerald-800 dark:text-emerald-300';
           }
+          if (mobileMoreSyncStatus) {
+            mobileMoreSyncStatus.textContent = `연결됨 (${syncCode})`;
+            mobileMoreSyncStatus.className = 'text-[11px] font-bold text-emerald-600 dark:text-emerald-400';
+          }
           if (syncStatusBadge) {
             syncStatusBadge.textContent = '동기화 연결됨';
             syncStatusBadge.className = 'px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300';
           }
           if (syncCurrentCode) {
             syncCurrentCode.textContent = syncCode;
+            syncCurrentCode.className = 'text-base sm:text-lg font-mono font-extrabold tracking-wider text-blue-600 dark:text-blue-400 select-all';
           }
           if (btnCopySyncCode) {
             btnCopySyncCode.classList.remove('hidden');
@@ -4153,31 +4473,36 @@
             quickConnectContainer.classList.add('hidden');
           }
         } else {
-          // PROMINENT UNCONNECTED WARNING BADGE (Option 4)
+          // CALM OPTIONAL UNCONNECTED TONE (No warning red/amber or pulse)
           if (cloudSyncBtn) {
-            cloudSyncBtn.className = 'flex items-center gap-1 sm:gap-1.5 px-2.5 xl:px-3 py-1 xl:py-1.5 rounded-lg border-2 border-amber-400 dark:border-amber-600 bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/70 text-xs font-extrabold text-amber-900 dark:text-amber-200 transition-all shadow-xs cursor-pointer group animate-pulse';
-            cloudSyncBtn.title = '클라우드 동기화 미연결! (클릭하여 내 데이터 연결) [단축키: Cmd+B]';
+            cloudSyncBtn.className = 'hidden md:flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer group';
+            cloudSyncBtn.title = '기기 간 클라우드 동기화 (선택 사항 · 연결하지 않아도 이 기기에 자동 저장됩니다)';
           }
           if (cloudSyncIcon) {
-            cloudSyncIcon.textContent = 'cloud_off';
-            cloudSyncIcon.className = 'material-symbols-outlined text-[16px] xl:text-[17px] text-amber-600 dark:text-amber-400 transition-colors';
+            cloudSyncIcon.textContent = 'cloud_sync';
+            cloudSyncIcon.className = 'material-symbols-outlined text-[16px] xl:text-[17px] text-slate-500 dark:text-slate-400 group-hover:text-blue-600 transition-colors';
           }
           if (cloudSyncText) {
-            cloudSyncText.textContent = '⚠️ 동기화 미연결';
-            cloudSyncText.className = 'inline text-[11px] font-extrabold text-amber-900 dark:text-amber-200';
+            cloudSyncText.textContent = '동기화 (선택)';
+            cloudSyncText.className = 'inline text-[11px] font-semibold text-slate-600 dark:text-slate-300';
+          }
+          if (mobileMoreSyncStatus) {
+            mobileMoreSyncStatus.textContent = '미연결 (선택)';
+            mobileMoreSyncStatus.className = 'text-[11px] font-medium text-slate-400 dark:text-slate-500';
           }
           if (syncStatusBadge) {
-            syncStatusBadge.textContent = '미연결 (유실 주의)';
-            syncStatusBadge.className = 'px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300';
+            syncStatusBadge.textContent = '아직 연결되지 않음 (선택 사항)';
+            syncStatusBadge.className = 'px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300';
           }
           if (syncCurrentCode) {
-            syncCurrentCode.textContent = '미연결';
+            syncCurrentCode.textContent = '연결 없이도 이 기기에 자동 저장됩니다';
+            syncCurrentCode.className = 'text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300';
           }
           if (btnCopySyncCode) {
             btnCopySyncCode.classList.add('hidden');
           }
           if (syncLastTimeEl) {
-            syncLastTimeEl.textContent = '마지막 동기화: 없음 (로컬에만 임시 보관 중)';
+            syncLastTimeEl.textContent = '💡 다른 기기(태블릿·스마트폰)와 학습 기록을 함께 쓸 때만 연결해 주세요.';
           }
           if (quickConnectContainer) {
             quickConnectContainer.classList.remove('hidden');
@@ -4494,12 +4819,6 @@
       function triggerAutoSync() {
         const syncCode = localStorage.getItem('edurecall_sync_code');
         if (!syncCode) {
-          // Warning toast when user edits without sync connection!
-          if (!window._syncWarningShown) {
-            window._syncWarningShown = true;
-            showToast('⚠️ 클라우드 미연결: 로컬에만 저장 중입니다. 상단 [동기화 미연결]을 눌러 백업하세요!', 'cloud_off');
-            setTimeout(() => { window._syncWarningShown = false; }, 30000);
-          }
           return;
         }
         if (autoSyncTimeout) clearTimeout(autoSyncTimeout);
@@ -5222,17 +5541,21 @@
       // -------------------------------------------------------------
       // Context Guide System (단원·중단원·소분류·주제 맥락 설명 팝업)
       // -------------------------------------------------------------
-      const CONTEXT_GUIDE_DATA = window.CONTEXT_GUIDE_DATA || {};
+      function getContextGuideMap() {
+        return window.CONTEXT_GUIDE_DATA || {};
+      }
 
       function hasContextGuide(key, subj = '') {
         if (!key) return false;
         const isDirectTopicKey = /^(POL|ECON|LAW|SOC|EDU)-/.test(key);
         if (!isDirectTopicKey && subj && (subj === '사회과교육론' || subj === '기출' || subj === '안내')) return false;
-        return Boolean(CONTEXT_GUIDE_DATA[key]);
+        const map = getContextGuideMap();
+        return Boolean(map[key]);
       }
 
       function openContextGuide(key, fallbackTitle = '') {
-        const entry = CONTEXT_GUIDE_DATA[key];
+        const map = getContextGuideMap();
+        const entry = map[key];
         if (!entry) return;
         const modal = document.getElementById('context-guide-modal');
         const titleEl = document.getElementById('context-guide-modal-title');
@@ -5246,11 +5569,13 @@
 
         if (isTopicKey && curTopic && curTopic.id === key) {
           titleEl.textContent = curTopic.title || fallbackTitle || '설명 보기';
+          titleEl.title = titleEl.textContent;
           const pathParts = [curTopic.subject, curTopic.chapter, (curTopic.section && curTopic.section !== curTopic.chapter) ? curTopic.section : ''].filter(Boolean);
           if (subtitleEl) subtitleEl.textContent = pathParts.join(' › ') || '주제별 학문사적 배경 및 핵심 구조';
           if (badgeEl) badgeEl.textContent = '주제 맥락';
         } else {
           titleEl.textContent = (entry.title && entry.title !== '설명 보기') ? entry.title : (fallbackTitle || '단원 안내');
+          titleEl.title = titleEl.textContent;
           if (subtitleEl) {
             const subj = (curTopic && curTopic.subject && curTopic.subject !== '사회과교육론' && curTopic.subject !== '기출') ? `[${curTopic.subject}] ` : '';
             subtitleEl.textContent = `${subj}단원 학문사적 등장 배경 및 구조 안내`;
@@ -5345,9 +5670,67 @@
         });
 
         if (filteredIndices.length === 0) {
-          sidebarTree.innerHTML = '<div class="p-6 text-xs text-slate-400 text-center">검색 조건에 맞는 주제가 없습니다.</div>';
           sidebarSubjectLabel.textContent = `${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 목차`;
-          sidebarTopicCount.textContent = '0개 주제';
+          sidebarTopicCount.textContent = '0';
+          if (activeSubject === '오늘 복습') {
+            sidebarTree.innerHTML = `
+              <div class="p-6 text-center space-y-3 bg-slate-50/70 dark:bg-slate-800/40 rounded-2xl border border-slate-200/70 dark:border-slate-700/60 my-2">
+                <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
+                  <span class="material-symbols-outlined text-[22px]">task_alt</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="text-xs font-bold text-slate-800 dark:text-slate-200">오늘 예정된 복습 카드가 없어요!</div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">단원을 학습하고 우측 FSRS 난이도를 평가하면 복습 주기에 맞춰 이곳에 자동으로 추가됩니다.</p>
+                </div>
+                <button type="button" id="btn-empty-start-edu" class="w-full py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-colors cursor-pointer">
+                  이 단원부터 시작하기
+                </button>
+              </div>
+            `;
+            const btnStart = document.getElementById('btn-empty-start-edu');
+            if (btnStart) {
+              btnStart.addEventListener('click', () => {
+                setSubjectTab('사회과교육론', true);
+              });
+            }
+          } else if (isFilterBookmark) {
+            sidebarTree.innerHTML = `
+              <div class="p-6 text-center space-y-3 bg-slate-50/70 dark:bg-slate-800/40 rounded-2xl border border-slate-200/70 dark:border-slate-700/60 my-2">
+                <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto">
+                  <span class="material-symbols-outlined text-[22px]">star</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="text-xs font-bold text-slate-800 dark:text-slate-200">아직 별표(북마크)한 단원이 없어요</div>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">자주 복습하고 싶은 단원 제목 옆의 별(☆) 아이콘을 눌러 나만의 북마크를 모아보세요.</p>
+                </div>
+                <button type="button" id="btn-empty-clear-bm" class="w-full py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 text-white text-xs font-bold transition-colors cursor-pointer">
+                  전체 단원 목차 보기
+                </button>
+              </div>
+            `;
+            const btnClearBm = document.getElementById('btn-empty-clear-bm');
+            if (btnClearBm && btnFilterBookmark) {
+              btnClearBm.addEventListener('click', () => btnFilterBookmark.click());
+            }
+          } else {
+            sidebarTree.innerHTML = `
+              <div class="p-6 text-center space-y-3 bg-slate-50/70 dark:bg-slate-800/40 rounded-2xl border border-slate-200/70 dark:border-slate-700/60 my-2">
+                <div class="text-xs font-bold text-slate-700 dark:text-slate-300">검색 조건에 맞는 단원이 없습니다</div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">다른 검색어를 입력하거나 검색 필터를 초기화해 보세요.</p>
+                <button type="button" id="btn-empty-clear-search" class="py-1.5 px-3 rounded-lg bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 text-xs font-bold cursor-pointer">
+                  검색어 초기화
+                </button>
+              </div>
+            `;
+            const btnClearSearch = document.getElementById('btn-empty-clear-search');
+            if (btnClearSearch && searchInput) {
+              btnClearSearch.addEventListener('click', () => {
+                searchInput.value = '';
+                searchQuery = '';
+                renderSidebar();
+              });
+            }
+          }
           return;
         }
 
@@ -5528,9 +5911,10 @@
             // Section Header (Clickable Accordion)
             const secHeader = document.createElement('button');
             secHeader.type = 'button';
+            secHeader.title = secName;
             secHeader.className = isExpanded
-              ? 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group'
-              : 'section-toggle-btn w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left';
+              ? 'section-toggle-btn w-full min-h-[40px] flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group'
+              : 'section-toggle-btn w-full min-h-[40px] flex items-center justify-between px-2.5 py-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left';
 
             secHeader.innerHTML = isExpanded
               ? `
@@ -5613,6 +5997,7 @@
               const item = document.createElement('a');
               item.href = '#';
               item.dataset.globalIndex = globalIdx;
+              item.title = topic.title || '';
               const isCurrent = (globalIdx === currentTopicIndex);
               const isBm = bookmarks.includes(topic.id);
               const isPinned = (typeof getSubjectStudyPin === 'function' && getSubjectStudyPin(topic.subject) === topic.id);
@@ -5630,11 +6015,11 @@
               const dotHtml = `<div class="w-1.5 h-1.5 rounded-full shrink-0 ${dotColor} mr-2"></div>`;
 
               if (isCurrent) {
-                item.className = 'sidebar-topic-item active flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
+                item.className = 'sidebar-topic-item active min-h-[40px] flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
                 item.innerHTML = `
                   <div class="flex items-center min-w-0 flex-1 pr-2">
                     ${dotHtml.replace(dotColor, dotColor + ' ring-1 ring-white/50')}
-                    <span class="truncate font-bold text-white">${topic.title}</span>
+                    <span class="truncate font-bold text-white" title="${escapeHtml(topic.title)}">${topic.title}</span>
                   </div>
                   <div class="flex items-center gap-1.5 shrink-0">
                     ${isPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-200 shrink-0" title="[' + topic.subject + '] 학습 핀">push_pin</span>' : ''}
@@ -5643,11 +6028,11 @@
                   </div>
                 `;
               } else {
-                item.className = 'sidebar-topic-item flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
+                item.className = 'sidebar-topic-item min-h-[40px] flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
                 item.innerHTML = `
                   <div class="flex items-center min-w-0 flex-1 pr-2">
                     ${dotHtml}
-                    <span class="truncate font-medium text-slate-800">${topic.title}</span>
+                    <span class="truncate font-medium text-slate-800" title="${escapeHtml(topic.title)}">${topic.title}</span>
                   </div>
                   <div class="flex items-center gap-1.5 shrink-0">
                     ${isPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-500 shrink-0" title="[' + topic.subject + '] 학습 핀">push_pin</span>' : ''}
@@ -5710,11 +6095,12 @@
 
                 const subHeader = document.createElement('button');
                 subHeader.type = 'button';
-                subHeader.className = 'subsection-toggle-btn w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left bg-slate-50 border border-slate-200/80 shadow-3xs';
+                subHeader.title = subName;
+                subHeader.className = 'subsection-toggle-btn w-full min-h-[38px] flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer group text-left bg-slate-50 border border-slate-200/80 shadow-3xs';
                 subHeader.innerHTML = `
                   <div class="flex items-center gap-1.5 min-w-0 flex-1 pr-1">
                     <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-blue-600 transition-transform duration-150 sub-chevron shrink-0 ${isSubExpanded ? 'rotate-90 text-blue-600' : ''}">chevron_right</span>
-                    <span class="truncate font-bold text-slate-800 group-hover:text-blue-700">${subName}</span>
+                    <span class="truncate font-bold text-slate-800 group-hover:text-blue-700" title="${escapeHtml(subName)}">${subName}</span>
                     ${subCtxBtn}
                   </div>
                   <span class="text-[9px] text-slate-400 font-medium px-1.5 py-0.2 bg-white rounded-full border border-slate-200/80 shrink-0">${subIndices.length}</span>
@@ -5788,6 +6174,17 @@
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
 
+        // Lazy load subject chunk on demand if not hydrated yet
+        if (!topic._hydrated && !topic.contentHtml) {
+          if (subnoteContainer) {
+            subnoteContainer.innerHTML = '<div class="py-16 text-center text-sm text-slate-400 dark:text-slate-500 flex flex-col items-center gap-2"><span class="material-symbols-outlined animate-spin text-blue-500">progress_activity</span><span>단원 데이터를 불러오는 중...</span></div>';
+          }
+          ensureSubjectLoaded(topic.subject).then(() => {
+            renderTopic(currentTopicIndex, keepMobileDrawer);
+          });
+          return;
+        }
+
         // Reset any selection range and floating buttons from previous topic
         lastValidSelectionRange = null;
         lastValidSelectionText = '';
@@ -5822,11 +6219,13 @@
           closeMobileSidebar();
         }
 
-        // Update Breadcrumb
+        // Update Breadcrumb (with title attributes for truncated text)
         bcSubject.textContent = topic.subject;
         bcChapter.textContent = topic.chapter;
+        bcChapter.title = topic.chapter || '';
         if (topic.section && topic.section !== topic.chapter) {
           bcSection.textContent = topic.section;
+          bcSection.title = topic.section;
           bcSection.classList.remove('hidden');
           bcSectionSep.classList.remove('hidden');
         } else {
@@ -5835,6 +6234,7 @@
         }
         if (topic.subsection) {
           bcSubsection.textContent = topic.subsection;
+          bcSubsection.title = topic.subsection;
           bcSubsection.classList.remove('hidden');
           bcSubsectionSep.classList.remove('hidden');
         } else {
@@ -5842,6 +6242,7 @@
           bcSubsectionSep.classList.add('hidden');
         }
         bcTitle.textContent = topic.title;
+        bcTitle.title = topic.title || '';
         const currentExamTag = formatExamTag(topic.examTag, topic);
         if (currentExamTag) {
           bcExamTag.textContent = currentExamTag;
@@ -5902,6 +6303,7 @@
         const totalPages = getSubjectTotalPages(topic.subject);
         if (topicPageRef) topicPageRef.textContent = totalPages ? `PDF p.${topic.page || 1} / ${totalPages}` : `PDF p.${topic.page || 1}`;
         topicTitle.textContent = topic.title;
+        topicTitle.title = topic.title || '';
         if (topicSubtitle) {
           if (topic.subtitle) {
             topicSubtitle.textContent = topic.subtitle;
@@ -6068,7 +6470,7 @@
 
         // Reset Essay and match
         essayInput.value = '';
-        charCounter.textContent = '0자 작성됨';
+        charCounter.textContent = '아직 작성 전 · 0자';
         checkKeywords();
 
         // Highlight Active in Sidebar
@@ -6078,14 +6480,15 @@
           const isCur = (gIdx === currentTopicIndex);
           const topicItem = TOPICS[gIdx];
           if (!topicItem) return;
+          item.title = topicItem.title || '';
           const isBm = bookmarks.includes(topicItem.id);
           const isItemPinned = (typeof getSubjectStudyPin === 'function' && topicItem && getSubjectStudyPin(topicItem.subject) === topicItem.id);
           const formattedTag = formatExamTag(topicItem.examTag, topicItem);
 
           if (isCur) {
-            item.className = 'sidebar-topic-item active flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
+            item.className = 'sidebar-topic-item active min-h-[40px] flex items-center justify-between px-3 py-2.5 rounded-xl text-xs md:text-[13px] font-bold bg-blue-600 text-white shadow-xs transition-all my-0.5';
             item.innerHTML = `
-              <span class="truncate font-bold text-white min-w-0 flex-1 pr-2">${topicItem.title}</span>
+              <span class="truncate font-bold text-white min-w-0 flex-1 pr-2" title="${escapeHtml(topicItem.title)}">${topicItem.title}</span>
               <div class="flex items-center gap-1.5 shrink-0">
                 ${isItemPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-200 shrink-0" title="[' + topicItem.subject + '] 학습 핀">push_pin</span>' : ''}
                 ${formattedTag ? `<span class="text-[10px] font-bold text-blue-100 tracking-tight">${formattedTag}</span>` : ''}
@@ -6102,7 +6505,7 @@
                 secGroup.className = 'section-group bg-blue-50/50 rounded-2xl p-2 border border-blue-100/60 my-1.5 space-y-1';
                 const secHeader = secGroup.querySelector('.section-toggle-btn');
                 if (secHeader) {
-                  secHeader.className = 'section-toggle-btn w-full flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group';
+                  secHeader.className = 'section-toggle-btn w-full min-h-[40px] flex items-center justify-between px-2 py-1.5 rounded-xl text-left cursor-pointer group';
                   const chevron = secHeader.querySelector('.sec-chevron');
                   if (chevron) {
                     chevron.textContent = 'expand_more';
@@ -6132,9 +6535,9 @@
             }
             item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           } else {
-            item.className = 'sidebar-topic-item flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
+            item.className = 'sidebar-topic-item min-h-[40px] flex items-center justify-between px-3 py-2 rounded-xl text-xs md:text-[13px] font-medium text-slate-700 hover:bg-blue-100/50 hover:text-slate-900 transition-colors my-0.5';
             item.innerHTML = `
-              <span class="truncate font-medium text-slate-800 min-w-0 flex-1 pr-2">${topicItem.title}</span>
+              <span class="truncate font-medium text-slate-800 min-w-0 flex-1 pr-2" title="${escapeHtml(topicItem.title)}">${topicItem.title}</span>
               <div class="flex items-center gap-1.5 shrink-0">
                 ${isItemPinned ? '<span class="material-symbols-outlined text-[14px] text-rose-500 shrink-0" title="[' + topicItem.subject + '] 학습 핀">push_pin</span>' : ''}
                 ${formattedTag ? `<span class="text-[10px] font-bold text-indigo-500 tracking-tight">${formattedTag}</span>` : ''}
@@ -7268,7 +7671,7 @@
       // 7. Real-Time Essay Keyword Matching
       function checkKeywords() {
         const text = essayInput.value;
-        charCounter.textContent = `${text.length}자 작성됨`;
+        charCounter.textContent = text.length > 0 ? `${text.length}자 작성됨` : '아직 작성 전 · 0자';
         const topic = TOPICS[currentTopicIndex];
         const keywords = topic.targetKeywords || [];
 
@@ -8033,6 +8436,11 @@
 
 
 
+      const btnSubheadPrev = document.getElementById('btn-subhead-prev');
+      const btnSubheadNext = document.getElementById('btn-subhead-next');
+      if (btnSubheadPrev) btnSubheadPrev.addEventListener('click', () => btnPrevTopic.click());
+      if (btnSubheadNext) btnSubheadNext.addEventListener('click', () => btnNextTopic.click());
+
       // Reset All Grades
       document.getElementById('btn-reset-grades').addEventListener('click', () => {
         if (confirm('모든 학습 복습 기록을 초기화하시겠습니까?')) {
@@ -8048,8 +8456,8 @@
       // Diff Modal Handlers
       btnOpenDiff.addEventListener('click', () => {
         const topic = TOPICS[currentTopicIndex];
-        diffUserBox.textContent = essayInput.value || '(작성된 내용이 없습니다)';
-        diffUserLen.textContent = `${essayInput.value.length}자`;
+        diffUserBox.textContent = essayInput.value.trim() ? essayInput.value : '아직 인출한 내용이 없어요. 마스킹을 가리고 직접 작성해보세요.';
+        diffUserLen.textContent = essayInput.value.length > 0 ? `${essayInput.value.length}자 작성됨` : '아직 작성 전';
         diffModelBox.textContent = topic.defaultAnswer;
         diffModelLen.textContent = `${topic.defaultAnswer.length}자`;
         diffModal.classList.remove('hidden');
@@ -9853,6 +10261,80 @@
           return;
         }
 
+        // Top-priority Escape handler: reliably closes zoomed diagrams, onboarding, library, sync, and modals first
+        if (e.key === 'Escape' || e.code === 'Escape') {
+          if (diagramModal && !diagramModal.classList.contains('hidden')) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeDiagramLightbox();
+            return;
+          }
+          const onboardingModalEl = document.getElementById('onboarding-modal');
+          if (onboardingModalEl && !onboardingModalEl.classList.contains('hidden')) {
+            e.preventDefault();
+            if (typeof closeOnboardingModal === 'function') closeOnboardingModal();
+            else onboardingModalEl.classList.add('hidden');
+            return;
+          }
+          const syncModalEl = document.getElementById('cloud-sync-modal');
+          if (syncModalEl && !syncModalEl.classList.contains('hidden')) {
+            e.preventDefault();
+            closeSyncModal();
+            return;
+          }
+          const libDashEl = document.getElementById('library-dashboard');
+          if (libDashEl && !libDashEl.classList.contains('hidden')) {
+            e.preventDefault();
+            closeLibraryDashboard();
+            return;
+          }
+          if (diffModal && !diffModal.classList.contains('hidden')) {
+            e.preventDefault();
+            closeDiff();
+            return;
+          }
+          if (explanationModal && !explanationModal.classList.contains('hidden')) {
+            e.preventDefault();
+            closeExplanation();
+            return;
+          }
+          const ctxModal = document.getElementById('context-guide-modal');
+          if (ctxModal && !ctxModal.classList.contains('hidden')) {
+            e.preventDefault();
+            ctxModal.classList.add('hidden');
+            return;
+          }
+          const shortcutModal = document.getElementById('shortcut-modal');
+          if (shortcutModal && !shortcutModal.classList.contains('hidden')) {
+            e.preventDefault();
+            shortcutModal.classList.add('hidden');
+            return;
+          }
+          const repsModal = document.getElementById('topic-reps-modal');
+          if (repsModal && !repsModal.classList.contains('hidden')) {
+            e.preventDefault();
+            repsModal.classList.add('hidden');
+            return;
+          }
+          const exportModal = document.getElementById('export-result-modal');
+          if (exportModal && !exportModal.classList.contains('hidden')) {
+            e.preventDefault();
+            exportModal.classList.add('hidden');
+            return;
+          }
+          const moreDropdown = document.getElementById('mobile-more-dropdown');
+          if (moreDropdown && !moreDropdown.classList.contains('hidden')) {
+            e.preventDefault();
+            moreDropdown.classList.add('hidden');
+            return;
+          }
+          if (window.innerWidth < 1024 && sidebarDrawer && !sidebarDrawer.classList.contains('-translate-x-full')) {
+            e.preventDefault();
+            closeMobileSidebar();
+            return;
+          }
+        }
+
         const activeEl = document.activeElement;
         const isTapeInput = activeEl && activeEl.classList.contains('tape-typing-input');
         if (isTapeInput) {
@@ -10264,436 +10746,44 @@
         activeSubject = savedSubject;
       }
 
-      // Non-destructive startup repairs (never delete valid user custom masking tapes on reload!)
+      // Unified single-version localStorage migration (edurecall_migration_unified_v15)
       try {
-        if (!localStorage.getItem('edurecall_purge_law114_done')) {
-          localStorage.removeItem('edurecall_custom_LAW-114');
-          localStorage.setItem('edurecall_purge_law114_done', 'true');
-        }
-        // Fix LAW-165 custom typo in-place if it contains 보당노동행위
-        const law165Custom = localStorage.getItem('edurecall_custom_LAW-165');
-        if (law165Custom && law165Custom.includes('보당노동행위')) {
-          localStorage.setItem('edurecall_custom_LAW-165', law165Custom.replace(/보당노동행위/g, '부당노동행위'));
-        }
-        // Fix SOC-022 custom in-place if it contains 방법론적 이원론
-        const soc022Custom = localStorage.getItem('edurecall_custom_SOC-022');
-        if (soc022Custom && soc022Custom.includes('방법론적 이원론')) {
-          localStorage.setItem('edurecall_custom_SOC-022', soc022Custom.replace(/방법론적 이원론/g, '방법론적 일원론'));
-        }
-        // Fix ECON-011 custom in-place if corrupted
-        const econ011Custom = localStorage.getItem('edurecall_custom_ECON-011');
-        if (econ011Custom && econ011Custom.includes('양변 결합 및 정리: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거')) {
-          const badPattern = /<div class="recall-item[^>]*>[\s\S]*?<strong class="text-slate-800 font-bold"><\/strong><\/div><\/div>양변 결합 및 정리:[\s\S]*?<div class="recall-item[^>]*><div class="flex-1 min-w-0"><\/div>\s*<\/div>\s*(?=<div class="my-2\.5)/;
-          const cleanReplacement = `<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
-  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
-  <div class="flex-1 min-w-0"><strong class="text-slate-800 font-bold">양변 결합 및 정리</strong>: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거: S + T = I + G + X - M ➔ 수입(-M) 이항: <strong class="text-blue-900 font-bold bg-blue-50/80 px-1 py-0.5 rounded">S + T + M = I + G + X</strong></div>
-</div>
-<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
-  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
-  <div class="flex-1 min-w-0"><strong class="text-rose-700 font-bold">누출 (Leakages)</strong>: <strong>소득 순환에서 빠져나가는 요소</strong> ➔ <strong class="text-rose-800 font-bold bg-rose-50 px-1 py-0.5 rounded">S + T + M</strong> (저축 + 조세 + 수입)</div>
-</div>
-<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
-  <span class="subnote-indent-l2-dash select-none text-slate-400 dark:text-slate-500 font-semibold">–</span>
-  <div class="flex-1 min-w-0"><strong class="text-amber-700 font-bold">주입 (Injections)</strong>: <strong>소득 순환에 새롭게 들어오는 요소</strong> ➔ <strong class="text-amber-800 font-bold bg-amber-50 px-1 py-0.5 rounded">I + G + X</strong> (투자 + 정부지출 + 수출)</div>
-</div>
-`;
-          localStorage.setItem('edurecall_custom_ECON-011', econ011Custom.replace(badPattern, cleanReplacement));
-        }
-        // Clean any phantom '내용 없음' and raw ** in localStorage custom items
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k && isTopicCustomKey(k)) {
-            let v = localStorage.getItem(k);
-            if (v) {
-              let changed = false;
-              if (v.includes('내용 없음')) {
-                v = v.replace(/<div class="recall-item[^>]*>내용 없음<\/div>/g, '');
-                changed = true;
-              }
-              if (v.includes('**')) {
-                v = v.replace(/\*\*([^*\n]+?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
-                changed = true;
-              }
-              if (changed) {
-                localStorage.setItem(k, v);
-              }
-            }
-          }
-        }
-      } catch (e) {}
-
-      // Clean legacy corrupted localStorage entries where header title was split (Execute ONCE)
-      try {
-        if (!localStorage.getItem('edurecall_migration_v2_done')) {
-          localStorage.removeItem('edurecall_custom_SOC-151');
-          localStorage.removeItem('edurecall_custom_SOC-147');
-          localStorage.removeItem('edurecall_custom_POL-002');
-          localStorage.removeItem('edurecall_custom_POL-007');
-          localStorage.removeItem('edurecall_custom_POL-008');
-          localStorage.removeItem('edurecall_custom_POL-013');
-          localStorage.removeItem('edurecall_custom_POL-003');
-          localStorage.removeItem('edurecall_custom_POL-004');
-          localStorage.removeItem('edurecall_custom_POL-005');
-          // Migrate POL-004, POL-005 -> POL-003
-          ['edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            localStorage.removeItem(`${prefix}_POL-004`);
-            localStorage.removeItem(`${prefix}_POL-005`);
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'POL-004' || localStorage.getItem('edurecall_last_topic_id') === 'POL-005') {
-            localStorage.setItem('edurecall_last_topic_id', 'POL-003');
-          }
-          if (localStorage.getItem('edurecall_last_topic_정치학') === 'POL-004' || localStorage.getItem('edurecall_last_topic_정치학') === 'POL-005') {
-            localStorage.setItem('edurecall_last_topic_정치학', 'POL-003');
-          }
-
-          localStorage.removeItem('edurecall_custom_POL-054');
-          localStorage.removeItem('edurecall_custom_POL-056');
-          localStorage.removeItem('edurecall_custom_SOC-146');
-          localStorage.removeItem('edurecall_custom_SOC-145');
-          localStorage.removeItem('edurecall_custom_POL-027');
-          localStorage.removeItem('edurecall_custom_POL-031');
-          localStorage.removeItem('edurecall_custom_POL-014');
-          localStorage.removeItem('edurecall_custom_POL-054');
-          // Migrate POL-034 -> POL-027
-          ['edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            localStorage.removeItem(`${prefix}_POL-034`);
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'POL-034') localStorage.setItem('edurecall_last_topic_id', 'POL-027');
-          if (localStorage.getItem('edurecall_last_topic_정치학') === 'POL-034') localStorage.setItem('edurecall_last_topic_정치학', 'POL-027');
-
-          // Migrate POL-035 -> POL-031
-          ['edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            localStorage.removeItem(`${prefix}_POL-035`);
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'POL-035') localStorage.setItem('edurecall_last_topic_id', 'POL-031');
-          if (localStorage.getItem('edurecall_last_topic_정치학') === 'POL-035') localStorage.setItem('edurecall_last_topic_정치학', 'POL-031');
-
-          // Migrate POL-032 -> POL-014
-          ['edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            localStorage.removeItem(`${prefix}_POL-032`);
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'POL-032') localStorage.setItem('edurecall_last_topic_id', 'POL-014');
-          if (localStorage.getItem('edurecall_last_topic_정치학') === 'POL-032') localStorage.setItem('edurecall_last_topic_정치학', 'POL-014');
-
-          const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
-          let changed = false;
-          ['POL-034', 'POL-035', 'POL-032'].forEach(id => {
-            if (fsrsMap[id]) {
-              delete fsrsMap[id];
-              changed = true;
-            }
-          });
-          if (changed) localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
-
-          localStorage.setItem('edurecall_migration_v2_done', 'true');
-        }
-
-        // Migration V3: Clean legacy custom overrides where topic contents were shifted or misassigned
-        if (!localStorage.getItem('edurecall_migration_v3_done')) {
-          const shiftedLawIds = ['LAW-037', 'LAW-038', 'LAW-039', 'LAW-040', 'LAW-041', 'LAW-042', 'LAW-043', 'LAW-044', 'LAW-045', 'LAW-046', 'LAW-047', 'LAW-048', 'LAW-049', 'LAW-050'];
-          shiftedLawIds.forEach(id => {
-            const val = localStorage.getItem(`edurecall_custom_${id}`);
-            if (val) {
-              // If LAW-040 has 사무관리, or LAW-038 has 계약 총론, or LAW-039 has 주요 계약 유형
-              if (id === 'LAW-040' && (val.includes('사무관리') || val.includes('사무를 관리하는'))) {
-                localStorage.removeItem(`edurecall_custom_${id}`);
-              } else if (id === 'LAW-038' && (val.includes('계약이 성립하여') || val.includes('쌍무계약'))) {
-                localStorage.removeItem(`edurecall_custom_${id}`);
-              } else if (id === 'LAW-039' && (val.includes('매매') || val.includes('임대차'))) {
-                localStorage.removeItem(`edurecall_custom_${id}`);
-              }
-            }
-          });
-          localStorage.setItem('edurecall_migration_v3_done', 'true');
-        }
-
-        // Migration V4: Comprehensive scan for shifted topics using text similarity
-        if (!localStorage.getItem('edurecall_migration_v4_done')) {
-          function getBigrams(str) {
-            const bigrams = new Set();
-            for (let i = 0; i < str.length - 1; i++) {
-              bigrams.add(str.substring(i, i+2));
-            }
-            return bigrams;
-          }
-          function jaccardSimilarity(str1, str2) {
-            if (str1.length < 2 || str2.length < 2) return 0;
-            const set1 = getBigrams(str1);
-            const set2 = getBigrams(str2);
-            let intersection = 0;
-            for (const b of set1) {
-              if (set2.has(b)) intersection++;
-            }
-            const union = set1.size + set2.size - intersection;
-            return intersection / union;
-          }
-          const stripHtml = (html) => (html || '').replace(/<[^>]*>?/gm, '').replace(/\s+/g, '').trim();
-
-          const allKeys = [];
-          for (let i = 0; i < localStorage.length; i++) {
-            const k = localStorage.key(i);
-            if (k && isTopicCustomKey(k)) allKeys.push(k);
-          }
-          
-          allKeys.forEach(key => {
-            const val = localStorage.getItem(key);
-            const topicId = key.replace('edurecall_custom_', '');
-            const canonicalTopic = window.ALL_TOPICS.find(t => t.id === topicId);
-            
-            if (canonicalTopic && val) {
-              const valText = stripHtml(val);
-              const canonicalText = stripHtml(canonicalTopic.contentHtml);
-              if (valText.length > 10 && canonicalText.length > 10) {
-                const sim = jaccardSimilarity(valText, canonicalText);
-                if (sim < 0.2) {
-                  localStorage.removeItem(key);
-                }
-              }
-            }
-          });
-          localStorage.setItem('edurecall_migration_v4_done', 'true');
-        }
-
-        // Migration V5: Aggressive forced cleanup for LAW- topics
-        // Due to widespread corruption/shift in LAW topics, similarity heuristic might not have caught heavily modified shifted topics.
-        if (!localStorage.getItem('edurecall_migration_v5_done')) {
-          const allKeys = [];
-          for (let i = 0; i < localStorage.length; i++) {
-            allKeys.push(localStorage.key(i));
-          }
-          
-          // Delete all custom HTML for LAW topics from LAW-035 to LAW-150 unconditionally
-          // as the shift rendered the entire sequence corrupted.
-          for (let idNum = 30; idNum <= 150; idNum++) {
-            const id = `LAW-${idNum.toString().padStart(3, '0')}`;
+        if (!localStorage.getItem('edurecall_migration_unified_v15')) {
+          const obsoleteCustomIds = [
+            'LAW-114', 'POL-050', 'POL-038', 'POL-044', 'POL-014', 'POL-092', 'POL-093', 'POL-094', 'POL-095',
+            'EDU-095', 'LAW-162', 'LAW-164', 'SOC-145', 'POL-086', 'POL-127', 'POL-097', 'POL-109', 'POL-110',
+            'POL-111', 'POL-113', 'LAW-005', 'LAW-018', 'ECON-EXAM-2013-1-27', 'ECON-EXAM-2014-A-05', 'EXAM-2014-A-05',
+            'EXAM-2014-A-19', 'ECON-EXAM-2015-A-05', 'EXAM-2015-A-05', 'ECON-EXAM-2018-B-07', 'EXAM-2018-B-07',
+            'ECON-EXAM-2019-B-01', 'EXAM-2019-B-01', 'EXAM-2019-B-02', 'ECON-EXAM-2021-B-07', 'EXAM-2021-B-07',
+            'LAW-042', 'EXAM-2026-B-08', 'EXAM-2021-B-11', 'ECON-APP-07', 'ECON-EXAM-2026-B-10', 'EXAM-2026-B-10',
+            'ECON-004', 'ECON-002', 'ECON-016', 'ECON-EXAM-2024-A-12', 'EXAM-2024-A-12', 'ECON-005', 'ECON-007',
+            'ECON-012', 'ECON-019', 'SOC-151', 'SOC-147', 'POL-002', 'POL-007', 'POL-008', 'POL-013', 'POL-003',
+            'POL-004', 'POL-005', 'POL-054', 'POL-056', 'SOC-146', 'POL-027', 'POL-031', 'LAW-059', 'LAW-060',
+            'LAW-041', 'SOC-075', 'SOC-076', 'ECON-017', 'ECON-EXAM-2011-1-24'
+          ];
+          obsoleteCustomIds.forEach(id => {
             localStorage.removeItem(`edurecall_custom_${id}`);
-            // Also clean up associated broken metadata (masks, grades, memos)
             localStorage.removeItem(`edurecall_custom_masks_${id}`);
-            localStorage.removeItem(`edurecall_memo_${id}`);
-            
-            // Remove FSRS grades from the map
-            try {
-              const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+          });
+          ['POL-004', 'POL-005', 'POL-034', 'POL-035', 'POL-032', 'LAW-060', 'SOC-076', 'ECON-017', 'ECON-EXAM-2011-1-24'].forEach(delId => {
+            ['edurecall_grade', 'edurecall_memo'].forEach(prefix => localStorage.removeItem(`${prefix}_${delId}`));
+          });
+          try {
+            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+            let fsrsChanged = false;
+            if (fsrsMap['SOC-076'] && !fsrsMap['SOC-075']) {
+              fsrsMap['SOC-075'] = fsrsMap['SOC-076'];
+              fsrsChanged = true;
+            }
+            ['POL-004', 'POL-005', 'POL-034', 'POL-035', 'POL-032', 'LAW-060', 'SOC-076', 'ECON-017', 'ECON-EXAM-2011-1-24'].forEach(id => {
               if (fsrsMap[id]) {
                 delete fsrsMap[id];
-                localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
+                fsrsChanged = true;
               }
-            } catch(e) {}
-          }
-          
-          // Force reload to apply changes instantly without requiring user to hard-refresh again
-          localStorage.setItem('edurecall_migration_v5_done', 'true');
-          window.location.reload();
-        }
-
-        // Migration V6: Clean up LAW-060 and redirect to LAW-059
-        if (!localStorage.getItem('edurecall_migration_v6_done')) {
-          ['edurecall_custom', 'edurecall_custom_masks', 'edurecall_fsrs_grades', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            localStorage.removeItem(`${prefix}_LAW-060`);
-          });
-          localStorage.removeItem('edurecall_custom_LAW-059');
-          if (localStorage.getItem('edurecall_last_topic_id') === 'LAW-060') localStorage.setItem('edurecall_last_topic_id', 'LAW-059');
-          if (localStorage.getItem('edurecall_last_topic_법학') === 'LAW-060') localStorage.setItem('edurecall_last_topic_법학', 'LAW-059');
-
-          try {
-            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
-            if (fsrsMap['LAW-060']) {
-              delete fsrsMap['LAW-060'];
-              localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
-            }
-          } catch(e) {}
-          localStorage.setItem('edurecall_migration_v6_done', 'true');
-        }
-
-        // Migration V7: Purge corrupted custom POL-044 where card titles were missing
-        if (!localStorage.getItem('edurecall_migration_v7_done')) {
-          localStorage.removeItem('edurecall_custom_POL-044');
-          localStorage.removeItem('edurecall_custom_masks_POL-044');
-          localStorage.setItem('edurecall_migration_v7_done', 'true');
-        }
-
-        // Migration V8: Purge corrupted custom LAW-041 where table was flattened
-        if (!localStorage.getItem('edurecall_migration_v8_done')) {
-          localStorage.removeItem('edurecall_custom_LAW-041');
-          localStorage.removeItem('edurecall_custom_masks_LAW-041');
-          localStorage.setItem('edurecall_migration_v8_done', 'true');
-        }
-
-        // Migration V9: Clean up stray '수정' from group header titles and remove serialized group-actions-wrap across all custom topics
-        if (!localStorage.getItem('edurecall_migration_v9_done')) {
-          localStorage.setItem('edurecall_migration_v9_done', 'true');
-        }
-
-        // Migration V10: Heal group header structure and clean stray '수정' from titles safely
-        if (!localStorage.getItem('edurecall_migration_v10_done')) {
-          for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && isTopicCustomKey(key)) {
-              let val = localStorage.getItem(key);
-              if (val) {
-                const cleaned = typeof healCorruptedHtml === 'function' ? healCorruptedHtml(val) : val;
-                if (cleaned !== val) {
-                  localStorage.setItem(key, cleaned);
-                }
-              }
-            }
-          }
-          localStorage.setItem('edurecall_migration_v10_done', 'true');
-        }
-
-
-        // Safely extract all custom keys to apply non-destructive typo fixes and badge normalization
-        const customKeys = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k && isTopicCustomKey(k)) {
-            customKeys.push(k);
-          }
-        }
-
-        for (const key of customKeys) {
-          const val = localStorage.getItem(key);
-          if (val) {
-            const typoReplacements = [
-              ['것으 로', '것으로'],
-              ['배 상책임', '배상책임'],
-              ['문회적', '문화적'],
-              ['총레적', '총체적'],
-              ['문하 인류학', '문화인류학'],
-              ['유 형 (', '유형 ('],
-              ['모집 단', '모집단'],
-              ['수 밖에', '수밖에'],
-              ['내릴수 있는', '내릴 수 있는'],
-              ['공유함으로서', '공유함으로써'],
-              ['참여함으로서', '참여함으로써'],
-              ['유지함으로 무역', '유지함으로써 무역'],
-              ['가치x확률이', '가치 × 확률이'],
-              ['배 액을', '배액을'],
-              ['최우선변제권(대항력+확정일자+소액, 그럼에도 전액 반환은 아님)', '최우선변제권(대항력+소액, 그럼에도 전액 반환은 아님)'],
-              ['대항력+확정일자+소액', '대항력+소액'],
-              ['햊어각부', '행정각부'],
-              ['횃어각부', '행정각부'],
-              ['자기 보전', '자기보존'],
-              ['자기보전', '자기보존'],
-              ['단계 23:', '단계 <span class="exam-badge">23 기출</span>:'],
-              ['단계 23 :', '단계 <span class="exam-badge">23 기출</span>:'],
-              ['게임 단계 23:', '게임 단계 <span class="exam-badge">23 기출</span>:'],
-              ['임 단계 23:', '임 단계 <span class="exam-badge">23 기출</span>:']
-            ];
-            let updatedVal = val;
-            let changed = false;
-            for (const [fromStr, toStr] of typoReplacements) {
-              if (updatedVal.includes(fromStr)) {
-                updatedVal = updatedVal.replaceAll(fromStr, toStr);
-                changed = true;
-              }
-            }
-            const badgeNormalized = typeof normalizeExamBadges === 'function' ? normalizeExamBadges(updatedVal) : updatedVal;
-            if (badgeNormalized !== updatedVal) {
-              updatedVal = badgeNormalized;
-              changed = true;
-            }
-            if (changed) {
-              localStorage.setItem(key, updatedVal);
-            }
-          }
-        }
-      } catch (e) {}
-
-      // Migration V11: Merge SOC-076 into SOC-075 and redirect
-      try {
-        if (!localStorage.getItem('edurecall_migration_v11_done')) {
-          ['edurecall_custom', 'edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-            localStorage.removeItem(`${prefix}_SOC-076`);
-          });
-          localStorage.removeItem('edurecall_custom_SOC-075');
-          localStorage.removeItem('edurecall_custom_masks_SOC-075');
-          if (localStorage.getItem('edurecall_last_topic_id') === 'SOC-076') localStorage.setItem('edurecall_last_topic_id', 'SOC-075');
-          if (localStorage.getItem('edurecall_last_topic_사회학') === 'SOC-076') localStorage.setItem('edurecall_last_topic_사회학', 'SOC-075');
-          if (localStorage.getItem('edurecall_study_pin_사회학') === 'SOC-076') localStorage.setItem('edurecall_study_pin_사회학', 'SOC-075');
-          if (localStorage.getItem('edurecall_study_pin') === 'SOC-076') localStorage.setItem('edurecall_study_pin', 'SOC-075');
-
-          try {
-            const bms = JSON.parse(localStorage.getItem('edurecall_bookmarks')) || [];
-            if (Array.isArray(bms) && bms.includes('SOC-076')) {
-              const updatedBms = bms.filter(id => id !== 'SOC-076');
-              if (!updatedBms.includes('SOC-075')) updatedBms.push('SOC-075');
-              localStorage.setItem('edurecall_bookmarks', JSON.stringify(updatedBms));
-            }
-          } catch(e) {}
-
-          try {
-            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
-            if (fsrsMap['SOC-076']) {
-              if (!fsrsMap['SOC-075']) {
-                fsrsMap['SOC-075'] = fsrsMap['SOC-076'];
-              }
-              delete fsrsMap['SOC-076'];
-              localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
-            }
-          } catch(e) {}
-          localStorage.setItem('edurecall_migration_v11_done', 'true');
-        }
-      } catch (e) {}
-
-      // Migration V12: Clean up deleted 2-7. 경제성장론 (ECON-017, ECON-EXAM-2011-1-24)
-      try {
-        if (!localStorage.getItem('edurecall_migration_v12_done')) {
-          ['ECON-017', 'ECON-EXAM-2011-1-24'].forEach(delId => {
-            ['edurecall_custom', 'edurecall_custom_masks', 'edurecall_grade', 'edurecall_memo'].forEach(prefix => {
-              localStorage.removeItem(`${prefix}_${delId}`);
             });
-          });
-          if (localStorage.getItem('edurecall_last_topic_id') === 'ECON-017' || localStorage.getItem('edurecall_last_topic_id') === 'ECON-EXAM-2011-1-24') {
-            localStorage.setItem('edurecall_last_topic_id', 'ECON-016');
-          }
-          if (localStorage.getItem('edurecall_last_topic_경제학') === 'ECON-017' || localStorage.getItem('edurecall_last_topic_경제학') === 'ECON-EXAM-2011-1-24') {
-            localStorage.setItem('edurecall_last_topic_경제학', 'ECON-016');
-          }
-          if (localStorage.getItem('edurecall_study_pin_경제학') === 'ECON-017' || localStorage.getItem('edurecall_study_pin_경제학') === 'ECON-EXAM-2011-1-24') {
-            localStorage.removeItem('edurecall_study_pin_경제학');
-          }
-          if (localStorage.getItem('edurecall_study_pin') === 'ECON-017' || localStorage.getItem('edurecall_study_pin') === 'ECON-EXAM-2011-1-24') {
-            localStorage.removeItem('edurecall_study_pin');
-          }
-
-          try {
-            const bms = JSON.parse(localStorage.getItem('edurecall_bookmarks')) || [];
-            if (Array.isArray(bms) && (bms.includes('ECON-017') || bms.includes('ECON-EXAM-2011-1-24'))) {
-              const updatedBms = bms.filter(id => id !== 'ECON-017' && id !== 'ECON-EXAM-2011-1-24');
-              localStorage.setItem('edurecall_bookmarks', JSON.stringify(updatedBms));
-            }
-          } catch(e) {}
-
-          try {
-            const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
-            if (fsrsMap['ECON-017'] || fsrsMap['ECON-EXAM-2011-1-24']) {
-              delete fsrsMap['ECON-017'];
-              delete fsrsMap['ECON-EXAM-2011-1-24'];
-              localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
-            }
-          } catch(e) {}
-          localStorage.setItem('edurecall_migration_v12_done', 'true');
-        }
-      } catch (e) {}
-
-      // Migration V13: Refresh ECON-APP-07 test 2 explanation
-      try {
-        if (!localStorage.getItem('edurecall_migration_v13_done')) {
-          localStorage.removeItem('edurecall_custom_ECON-APP-07');
-          localStorage.removeItem('edurecall_custom_masks_ECON-APP-07');
-          localStorage.setItem('edurecall_migration_v13_done', 'true');
-        }
-      } catch (e) {}
-
-      // Migration V14: Refresh 2026-B-10 explanation (both purchase and sale)
-      try {
-        if (!localStorage.getItem('edurecall_migration_v14_done')) {
-          localStorage.removeItem('edurecall_custom_ECON-EXAM-2026-B-10');
-          localStorage.removeItem('edurecall_custom_masks_ECON-EXAM-2026-B-10');
-          localStorage.removeItem('edurecall_custom_EXAM-2026-B-10');
-          localStorage.removeItem('edurecall_custom_masks_EXAM-2026-B-10');
-          localStorage.setItem('edurecall_migration_v14_done', 'true');
+            if (fsrsChanged) localStorage.setItem('edurecall_fsrs_grades', JSON.stringify(fsrsMap));
+          } catch (e) {}
+          localStorage.setItem('edurecall_migration_unified_v15', 'true');
         }
       } catch (e) {}
 
@@ -10740,11 +10830,172 @@
       } catch (e) {}
 
       renderTopic(initialIndex);
+      scheduleIdleChunkPrefetch();
+
+      // Re-refresh context guide icons once deferred context-guides-data.js finishes loading
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.CONTEXT_GUIDES) {
+          renderSidebar();
+          const curTopic = TOPICS[currentTopicIndex];
+          if (curTopic && btnOpenContextGuide) {
+            const guideKey = findContextGuideKey(curTopic.subject, curTopic.chapter, curTopic.section);
+            if (guideKey) {
+              btnOpenContextGuide.dataset.guideKey = guideKey;
+              btnOpenContextGuide.classList.remove('hidden');
+              btnOpenContextGuide.classList.add('inline-flex');
+            }
+          }
+        }
+      });
 
       if (initialTopicId && targetTopic && initialIndex !== 0) {
         showToast(`이전 학습 위치 복원: [${targetTopic.subject}] ${targetTopic.title}`, 'history');
       } else {
         showToast('일반사회 단권화 준비 완료', 'verified');
+      }
+
+      // ==========================================
+      // MOBILE OVERFLOW MENU & ONBOARDING TOUR
+      // ==========================================
+      const btnMobileMore = document.getElementById('btn-mobile-more');
+      const mobileMoreDropdown = document.getElementById('mobile-more-dropdown');
+      const mobileMoreSync = document.getElementById('mobile-more-sync');
+      const mobileMoreLibrary = document.getElementById('mobile-more-library');
+      const mobileMorePomodoro = document.getElementById('mobile-more-pomodoro');
+      const mobileMoreExport = document.getElementById('mobile-more-export');
+      const mobileMoreOnboarding = document.getElementById('mobile-more-onboarding');
+      const mobileMoreFontDec = document.getElementById('mobile-more-font-dec');
+      const mobileMoreFontInc = document.getElementById('mobile-more-font-inc');
+      const mobileMoreTheme = document.getElementById('mobile-more-theme');
+
+      function closeMobileMoreMenu() {
+        if (mobileMoreDropdown) mobileMoreDropdown.classList.add('hidden');
+        if (btnMobileMore) btnMobileMore.setAttribute('aria-expanded', 'false');
+      }
+
+      if (btnMobileMore && mobileMoreDropdown) {
+        btnMobileMore.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isHidden = mobileMoreDropdown.classList.toggle('hidden');
+          btnMobileMore.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+        });
+        document.addEventListener('click', (e) => {
+          if (!mobileMoreDropdown.classList.contains('hidden') && !mobileMoreDropdown.contains(e.target) && !btnMobileMore.contains(e.target)) {
+            closeMobileMoreMenu();
+          }
+        });
+      }
+
+      if (mobileMoreSync) mobileMoreSync.addEventListener('click', () => { closeMobileMoreMenu(); openSyncModal(); });
+      if (mobileMoreLibrary) mobileMoreLibrary.addEventListener('click', () => { closeMobileMoreMenu(); openLibraryDashboard(); });
+      if (mobileMorePomodoro) mobileMorePomodoro.addEventListener('click', () => { closeMobileMoreMenu(); togglePomo(); });
+      if (mobileMoreExport) mobileMoreExport.addEventListener('click', () => { closeMobileMoreMenu(); exportAllContent(); });
+      if (mobileMoreOnboarding) mobileMoreOnboarding.addEventListener('click', () => { closeMobileMoreMenu(); openOnboardingModal(); });
+      if (mobileMoreFontDec) mobileMoreFontDec.addEventListener('click', () => { document.getElementById('btn-font-dec')?.click(); });
+      if (mobileMoreFontInc) mobileMoreFontInc.addEventListener('click', () => { document.getElementById('btn-font-inc')?.click(); });
+      if (mobileMoreTheme) mobileMoreTheme.addEventListener('click', () => { closeMobileMoreMenu(); document.getElementById('btn-theme-toggle')?.click(); });
+
+      // 4-Step Onboarding Tour Logic
+      const onboardingModal = document.getElementById('onboarding-modal');
+      const btnOpenOnboarding = document.getElementById('btn-open-onboarding');
+      const btnOnboardingPrev = document.getElementById('btn-onboarding-prev');
+      const btnOnboardingNext = document.getElementById('btn-onboarding-next');
+      const btnOnboardingStartNow = document.getElementById('btn-onboarding-start-now');
+      const btnOnboardingStartNowTop = document.getElementById('btn-onboarding-start-now-top');
+      const onboardingDontShowAgain = document.getElementById('onboarding-dont-show-again');
+      const onboardingStepBadge = document.getElementById('onboarding-step-badge');
+      const onboardingProgressBar = document.getElementById('onboarding-progress-bar');
+      const onboardingDots = document.querySelectorAll('.onboarding-dot');
+      const onboardingSteps = document.querySelectorAll('.onboarding-step');
+      const btnOnboardingOpenSync = document.getElementById('btn-onboarding-open-sync');
+      let currentOnboardingStep = 1;
+      const TOTAL_ONBOARDING_STEPS = 4;
+
+      function updateOnboardingStepUI(step) {
+        currentOnboardingStep = Math.max(1, Math.min(TOTAL_ONBOARDING_STEPS, step));
+        onboardingSteps.forEach(el => {
+          const s = parseInt(el.dataset.step, 10);
+          el.classList.toggle('hidden', s !== currentOnboardingStep);
+        });
+        onboardingDots.forEach(dot => {
+          const d = parseInt(dot.dataset.dot, 10);
+          if (d === currentOnboardingStep) {
+            dot.className = 'onboarding-dot w-5 h-2 rounded-full bg-blue-600 transition-all cursor-pointer';
+          } else {
+            dot.className = 'onboarding-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 transition-all cursor-pointer';
+          }
+        });
+        if (onboardingStepBadge) onboardingStepBadge.textContent = `STEP ${currentOnboardingStep} / ${TOTAL_ONBOARDING_STEPS}`;
+        if (onboardingProgressBar) onboardingProgressBar.style.width = `${(currentOnboardingStep / TOTAL_ONBOARDING_STEPS) * 100}%`;
+        if (btnOnboardingPrev) btnOnboardingPrev.classList.toggle('hidden', currentOnboardingStep === 1);
+        if (btnOnboardingNext) {
+          if (currentOnboardingStep === TOTAL_ONBOARDING_STEPS) {
+            btnOnboardingNext.innerHTML = '공부 시작하기 <span class="material-symbols-outlined text-[16px]">rocket_launch</span>';
+          } else {
+            btnOnboardingNext.innerHTML = '다음 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>';
+          }
+        }
+      }
+
+      function openOnboardingModal() {
+        if (!onboardingModal) return;
+        updateOnboardingStepUI(1);
+        onboardingModal.classList.remove('hidden');
+      }
+
+      function closeOnboardingModal(markSeen = true) {
+        if (!onboardingModal) return;
+        if (markSeen || (onboardingDontShowAgain && onboardingDontShowAgain.checked)) {
+          try { localStorage.setItem('edurecall_onboarding_hide_v1', 'true'); } catch (e) {}
+        }
+        onboardingModal.classList.add('hidden');
+      }
+
+      if (btnOpenOnboarding) btnOpenOnboarding.addEventListener('click', openOnboardingModal);
+      if (btnOnboardingPrev) btnOnboardingPrev.addEventListener('click', () => updateOnboardingStepUI(currentOnboardingStep - 1));
+      if (btnOnboardingNext) {
+        btnOnboardingNext.addEventListener('click', () => {
+          if (currentOnboardingStep < TOTAL_ONBOARDING_STEPS) {
+            updateOnboardingStepUI(currentOnboardingStep + 1);
+          } else {
+            closeOnboardingModal(true);
+          }
+        });
+      }
+      if (btnOnboardingStartNow) btnOnboardingStartNow.addEventListener('click', () => closeOnboardingModal(true));
+      if (btnOnboardingStartNowTop) btnOnboardingStartNowTop.addEventListener('click', () => closeOnboardingModal(true));
+      onboardingDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const targetStep = parseInt(dot.dataset.dot, 10);
+          if (targetStep) updateOnboardingStepUI(targetStep);
+        });
+      });
+      if (onboardingModal) {
+        onboardingModal.addEventListener('click', (e) => {
+          if (e.target === onboardingModal) closeOnboardingModal(false);
+        });
+      }
+      if (btnOnboardingOpenSync) {
+        btnOnboardingOpenSync.addEventListener('click', () => {
+          closeOnboardingModal(true);
+          openSyncModal();
+        });
+      }
+
+      // Show onboarding automatically on first visit if user has no existing study history or hide flag
+      try {
+        const hideOnboarding = localStorage.getItem('edurecall_onboarding_hide_v1');
+        const hasExistingHistory = localStorage.getItem('edurecall_fsrs_grades') || localStorage.getItem('edurecall_sync_key');
+        if (!hideOnboarding && !hasExistingHistory) {
+          setTimeout(() => openOnboardingModal(), 400);
+        }
+      } catch (e) {}
+
+      // Register Service Worker for offline PWA support
+      if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').catch(() => {});
+        });
       }
 
       // ==========================================
@@ -10787,12 +11038,22 @@
         }, 300);
       }
 
+      const libraryEmptyBanner = document.getElementById('library-empty-banner');
+      const btnLibraryStartFirst = document.getElementById('btn-library-start-first');
+      if (btnLibraryStartFirst) {
+        btnLibraryStartFirst.addEventListener('click', () => {
+          closeLibraryDashboard();
+          setSubjectTab('사회과교육론', true);
+        });
+      }
+
       function renderLibraryStats() {
         const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
         const subjects = ['사회과교육론', '법학', '사회학', '정치학', '경제학', '기출'];
         const now = new Date();
         statGrid.innerHTML = '';
         const template = document.getElementById('stat-card-template');
+        let grandTotalReps = 0;
         
         subjects.forEach(subj => {
           const subjTopics = TOPICS.filter(t => t.subject === subj);
@@ -10815,6 +11076,7 @@
               }
             }
           });
+          grandTotalReps += totalReps;
           
           const avgR = cardsWithHistory > 0 ? (totalRetrievability / cardsWithHistory * 100).toFixed(1) : 0;
           
@@ -10827,6 +11089,10 @@
           clone.querySelector('.due-val').textContent = dueCount;
           statGrid.appendChild(clone);
         });
+
+        if (libraryEmptyBanner) {
+          libraryEmptyBanner.classList.toggle('hidden', grandTotalReps > 0);
+        }
       }
 
       function renderHeatmap() {
@@ -10988,7 +11254,7 @@
         });
         
         if (pageItems.length === 0) {
-          tableBody.innerHTML = '<tr><td colspan="5" class="py-8 text-center text-slate-500 font-medium bg-slate-50/50 dark:bg-slate-800/50 rounded-lg">검색된 카드가 없습니다.</td></tr>';
+          tableBody.innerHTML = '<tr><td colspan="5" class="py-10 text-center text-slate-500 dark:text-slate-400 font-medium bg-slate-50/50 dark:bg-slate-800/50 rounded-lg">조건에 맞는 학습 카드가 없어요. 검색어나 과목 필터를 변경해보세요.</td></tr>';
         }
         
         paginationContainer.innerHTML = '';
@@ -11263,6 +11529,7 @@
         if (exportBtnText) exportBtnText.textContent = '내보내는 중...';
 
         try {
+          await ensureSubjectLoaded('ALL');
           await new Promise(resolve => setTimeout(resolve, 50));
 
           const bookmarks = typeof getStoredBookmarks === 'function' ? getStoredBookmarks() : [];
