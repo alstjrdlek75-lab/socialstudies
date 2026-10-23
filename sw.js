@@ -1,10 +1,18 @@
-const CACHE_NAME = 'edurecall-cache-v15';
+const CACHE_NAME = 'edurecall-cache-v16';
 const PRECACHE_URLS = [
   './',
   './index.html',
   './manifest.json',
   './assets/fsrs.umd.js',
+  './assets/tailwind.out.css',
   './data/topics-index.js',
+  './data/chunk-edu.js',
+  './data/chunk-law.js',
+  './data/chunk-soc.js',
+  './data/chunk-pol.js',
+  './data/chunk-econ.js',
+  './data/chunk-exam.js',
+  './context-guides-data.js',
   './assets/edu_cover_1x1.png',
   './assets/edu_cover_16x9.png'
 ];
@@ -48,10 +56,10 @@ self.addEventListener('fetch', (event) => {
         return networkRes;
       })
       .catch(() => {
-        return caches.match(req).then((cachedRes) => {
+        return caches.match(req, { ignoreSearch: true }).then((cachedRes) => {
           if (cachedRes) return cachedRes;
           if (req.mode === 'navigate') {
-            return caches.match('./index.html') || caches.match('./');
+            return caches.match('./index.html', { ignoreSearch: true }) || caches.match('./');
           }
           return new Response('', { status: 408, statusText: 'Offline' });
         });

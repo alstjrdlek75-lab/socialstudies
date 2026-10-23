@@ -40,16 +40,47 @@
   <link rel="shortcut icon" type="image/png" href="assets/edu_cover_1x1.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/edu_cover_1x1.png"/>
   <link rel="manifest" href="manifest.json"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-  <style>
-    @layer base {
-      html, body { 
-        margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Pretendard', sans-serif;
-        -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet"/>
+  <script>
+    (function() {
+      function markIconsReady() { document.documentElement.classList.add('icons-ready'); }
+      if (document.fonts && document.fonts.load) {
+        document.fonts.load('24px "Material Symbols Outlined"').then(markIconsReady).catch(markIconsReady);
+        setTimeout(markIconsReady, 900);
+      } else {
+        markIconsReady();
       }
-      body { overscroll-behavior: none; }
-      button, a { touch-action: manipulation; }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/tailwind.out.css?v=20261023_v3"/>
+  <style>
+    html, body { 
+      margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Pretendard', sans-serif;
+      -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+    }
+    body { overscroll-behavior: none; }
+    button, a { touch-action: manipulation; }
+    /* T14: Prevent Material Symbols FOUT (raw text like cloud_sync) & lock icon dimensions */
+    .material-symbols-outlined {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    html:not(.icons-ready) .material-symbols-outlined {
+      color: transparent !important;
     }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -1802,14 +1833,14 @@
         transform: translateY(105%) !important;
       }
       .sidebar-topic-item {
-        min-height: 42px;
+        min-height: 44px;
         padding-top: 0.6rem !important;
         padding-bottom: 0.6rem !important;
       }
       .section-toggle-btn {
-        min-height: 42px;
+        min-height: 44px;
       }
-      /* Mobile Auto-Hide Top Header & Sub-header on Scroll Down (T2, <768px only) */
+      /* Mobile Auto-Hide Top Header & Sub-header on Scroll Down (T2) + T4 Layout & 44px Touch Targets (<768px only) */
       @media (max-width: 767px) {
         header#top-app-header,
         #sub-header {
@@ -1827,44 +1858,146 @@
           opacity: 0;
           pointer-events: none;
         }
-      }
-    }
-  </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/fsrs.umd.js"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#2563eb",
-            "primary-light": "#60a5fa",
-            "primary-dark": "#1d4ed8",
-            "surface": "#f8f9ff",
-            "card": "#ffffff",
-            "border": "#e2e8f0",
-            "text-main": "#0f172a",
-            "text-muted": "#64748b",
-            "masking": "#10b981",
-            "masking-bg": "#d1fae5"
-          },
-          spacing: {
-            "sidebar-width": "320px",
-            "essay-width": "400px"
-          }
+
+        /* T4-1: Diagram card header stacks in 2 clean lines on narrow screens so '클릭 시 확대' never splits vertically */
+        .diagram-card-header {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 0.35rem !important;
+        }
+        .diagram-card-header > .font-bold {
+          width: 100% !important;
+          word-break: keep-all !important;
+          line-height: 1.4 !important;
+        }
+        .diagram-card-header > .group-actions-wrap {
+          width: 100% !important;
+          justify-content: space-between !important;
+          margin-left: 0 !important;
+        }
+
+        /* T4-2: Mobile breadcrumb & path fade-scroll without awkward '[기출 C…' truncation */
+        #bc-section,
+        #bc-section-sep,
+        #bc-subsection,
+        #bc-subsection-sep,
+        #bc-exam-tag {
+          display: none !important;
+        }
+        .mobile-scroll-fade {
+          overflow-x: auto !important;
+          white-space: nowrap !important;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent 100%);
+          mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent 100%);
+          padding-right: 18px !important;
+        }
+        .mobile-scroll-fade::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* T4-3: Guarantee >= 44x44px touch targets on mobile without bloating visual layout */
+        #btn-mobile-toc,
+        #btn-mobile-more,
+        #btn-close-mobile-more,
+        #btn-close-mobile-toc,
+        .mobile-subj-tab,
+        #btn-clear-search,
+        #btn-filter-bookmark,
+        #btn-reset-grades,
+        .mode-pill,
+        #btn-font-down,
+        #btn-font-up,
+        #btn-reveal-all,
+        #btn-toggle-bookmark,
+        #btn-set-pin,
+        #btn-return-pin,
+        #btn-edit-topic-content,
+        #btn-reset-custom-tape,
+        #btn-topic-context-guide,
+        #topic-reps-badge,
+        .group-edit-btn,
+        .group-toggle-btn,
+        .ctx-info-btn {
+          min-height: 44px !important;
+          min-width: 44px !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        /* Compensate vertical spacing for inline header/group buttons so cards stay compact */
+        #btn-toggle-bookmark,
+        #btn-set-pin,
+        #btn-return-pin,
+        #btn-edit-topic-content,
+        #btn-reset-custom-tape,
+        #btn-topic-context-guide,
+        #topic-reps-badge,
+        .group-edit-btn,
+        .group-toggle-btn {
+          margin-top: -4px;
+          margin-bottom: -4px;
+        }
+        .ctx-info-btn {
+          min-height: 28px !important;
+          min-width: 28px !important;
+          position: relative;
+        }
+        .ctx-info-btn::after {
+          content: "";
+          position: absolute;
+          inset: -8px;
         }
       }
-    };
-  </script>
+    }
+    /* T5: Touch device (pointer: coarse) vs PC guide display */
+    @media (pointer: coarse) {
+      .touch-only-guide {
+        display: block !important;
+      }
+      .pc-only-guide {
+        display: none !important;
+      }
+    }
+    /* T8: Per-tape wrongCount tracking & Mark-wrong-tape mode */
+    body.mark-wrong-tape-mode .mask-tape {
+      outline: 2px dashed #f43f5e !important;
+      outline-offset: 2px;
+      cursor: pointer !important;
+    }
+    .mask-tape[data-wrong-count]:not([data-wrong-count="0"])::after {
+      content: "×" attr(data-wrong-count);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 3px;
+      padding: 0 4px;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.3;
+      border-radius: 9999px;
+      background-color: #ffe4e6;
+      color: #be123c;
+      border: 1px solid #fda4af;
+      vertical-align: middle;
+    }
+    html.dark .mask-tape[data-wrong-count]:not([data-wrong-count="0"])::after {
+      background-color: rgba(159, 18, 57, 0.45);
+      color: #fecdd3;
+      border-color: #fb7185;
+    }
+  </style>
+  <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
-  <script src="data/topics-index.js?v=20261023_v2"></script>
-  <script defer src="context-guides-data.js?v=20261023_v2"></script>
+  <script src="data/topics-index.js?v=20261023_v3"></script>
+  <script defer src="context-guides-data.js?v=20261023_v3"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-  <!-- Supabase Client SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Supabase Client SDK (Pinned exact version per T13) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js"></script>
   <!-- JSZip for exporting ZIP archives -->
   <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
@@ -1876,10 +2009,23 @@
       <div class="flex items-center gap-2 shrink-0">
         <img src="assets/edu_cover_1x1.png" alt="사회과교육론" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl object-cover shadow-xs border border-slate-200/80 dark:border-slate-700 shrink-0" />
         <div class="shrink-0">
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5 sm:gap-2">
             <span class="font-bold text-sm sm:text-[15px] xl:text-base tracking-tight text-slate-900 dark:text-slate-100 whitespace-nowrap">일반사회 단권화</span>
+            <!-- T10: D-Day Badge in Header (Click to set exam date & view daily quota) -->
+            <button id="btn-header-dday" type="button" class="min-h-[28px] px-2 py-0.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/70 dark:hover:bg-indigo-900/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-800 text-[11px] font-extrabold font-mono flex items-center gap-1 transition-colors cursor-pointer shrink-0" title="시험일(D-day) 설정 및 하루 권장 학습량 보기">
+              <span id="header-dday-text">D-Day 설정</span>
+              <span id="header-daily-quota-text" class="hidden sm:inline text-[10px] font-sans font-semibold text-indigo-500 dark:text-indigo-400"></span>
+            </button>
+            <!-- T15: Offline Status Badge in Header -->
+            <span id="header-offline-badge" class="hidden px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 text-[10px] font-extrabold items-center gap-1 shrink-0" title="오프라인 모드 (인터넷 연결 시 자동 백업됩니다)">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+              <span>오프라인</span>
+            </span>
           </div>
-          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap hidden sm:block">일반사회 시험 대비</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap hidden sm:flex items-center gap-2">
+            <span>일반사회 시험 대비</span>
+            <span id="header-last-sync-sub" class="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold hidden"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -1914,7 +2060,13 @@
     </nav>
 
     <!-- Top Tools (Consolidated on Mobile <=768px with generous touch targets, Full toolbar on md+) -->
-    <div class="flex items-center gap-2 xl:gap-2.5 shrink-0">
+    <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 shrink-0">
+      <!-- T6: Mobile Header Quick Due Review Queue Button -->
+      <button id="btn-mobile-due-header" class="lg:hidden min-h-[40px] px-2.5 py-1.5 flex items-center justify-center gap-1 rounded-xl border border-rose-200 dark:border-rose-800/80 bg-rose-50/90 dark:bg-rose-950/50 hover:bg-rose-100 text-xs font-bold text-rose-700 dark:text-rose-300 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="오늘 복습 큐 시작" title="오늘 복습 큐 진입">
+        <span>복습</span>
+        <span id="count-due-header-mobile" class="px-1.5 py-0.2 rounded-md bg-rose-600 text-white text-[10px] font-mono font-extrabold leading-tight">0</span>
+      </button>
+
       <!-- Mobile TOC Button (Primary action on mobile/tablet < lg) -->
       <button id="btn-mobile-toc" class="lg:hidden min-h-[40px] px-3 py-1.5 flex items-center justify-center gap-1.5 rounded-xl border border-blue-200 dark:border-blue-800 bg-blue-50/90 dark:bg-blue-950/60 hover:bg-blue-100 text-xs font-bold text-blue-700 dark:text-blue-300 transition-all active:scale-95 shadow-2xs cursor-pointer" type="button" aria-label="목차 열기" title="단원별 전체 목차 열기">
         <span class="material-symbols-outlined text-[19px] text-blue-600 dark:text-blue-400">toc</span>
@@ -1934,10 +2086,11 @@
         <span class="hidden xl:inline text-[11px] font-medium" id="theme-text">다크</span>
       </button>
 
-      <!-- Cloud Sync Button (Calm optional tone when unconnected) -->
+      <!-- Cloud Sync Button (Calm optional tone when unconnected, shows last sync time per T15) -->
       <button id="btn-cloud-sync" class="hidden md:flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 transition-all shadow-2xs cursor-pointer group" type="button" aria-label="기기 간 클라우드 동기화 (선택 사항)" title="기기 간 동기화 설정 (선택 사항) [단축키: Cmd+B]">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-slate-400 group-hover:text-blue-600 transition-colors" id="cloud-sync-icon">cloud_queue</span>
         <span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300" id="cloud-sync-text">동기화 (선택)</span>
+        <span class="hidden text-[10px] font-mono text-emerald-600 dark:text-emerald-400" id="header-sync-last-time"></span>
       </button>
 
       <!-- Library/Dashboard Button -->
@@ -2042,16 +2195,16 @@
       </button>
       <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
       <!-- Breadcrumb -->
-      <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden md:overflow-x-auto no-scrollbar text-slate-700 dark:text-slate-200 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar mobile-scroll-fade text-slate-700 dark:text-slate-200 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
         <span class="px-2 py-0.5 rounded-md text-[11px] md:text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
-        <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-chapter-sep">/</span>
-        <span class="text-slate-700 dark:text-slate-300 shrink-0 truncate max-w-[140px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px] hidden md:inline" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
+        <span class="text-slate-400 shrink-0" id="bc-chapter-sep">/</span>
+        <span class="text-slate-700 dark:text-slate-300 shrink-0 truncate max-w-[220px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[260px]" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-section-sep">/</span>
         <span class="text-indigo-800 dark:text-indigo-300 font-bold shrink-0 truncate max-w-[160px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[340px] bg-indigo-50 dark:bg-indigo-950/60 px-1.5 py-0.5 rounded border border-indigo-200 dark:border-indigo-800 hidden" id="bc-section">1-1. 세 가지 전통</span>
         <span class="text-slate-400 shrink-0 hidden" id="bc-subsection-sep">/</span>
         <span class="text-amber-900 dark:text-amber-300 font-bold shrink-0 truncate max-w-[140px] md:max-w-[200px] lg:max-w-[260px] xl:max-w-[320px] bg-amber-50 dark:bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-300 dark:border-amber-800 hidden" id="bc-subsection">세부단원</span>
         <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
-        <span class="text-slate-900 dark:text-white text-[13px] md:text-xs font-extrabold truncate flex-1 md:flex-initial max-w-none md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
+        <span class="text-slate-900 dark:text-white text-[13px] md:text-xs font-extrabold truncate hidden md:inline max-w-none md:max-w-[380px] lg:max-w-none" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
         <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden md:inline-block" id="bc-exam-tag">22,23,26(단답)</span>
       </div>
     </div>
@@ -2134,14 +2287,25 @@
       </div>
 
       <!-- Filter: Bookmark / Scrap -->
-      <div class="flex items-center">
-        <button id="btn-filter-bookmark" class="w-full flex items-center justify-between text-xs font-bold py-2 px-3 rounded-xl border border-blue-100/80 bg-blue-50/60 hover:bg-blue-100/60 text-blue-700 transition-colors cursor-pointer shadow-2xs" type="button">
-          <div class="flex items-center gap-1.5">
+      <div class="flex items-center gap-1.5">
+        <button id="btn-filter-bookmark" class="flex-1 flex items-center justify-between text-xs font-bold py-2 px-2.5 rounded-xl border border-blue-100/80 bg-blue-50/60 hover:bg-blue-100/60 text-blue-700 transition-colors cursor-pointer shadow-2xs" type="button">
+          <div class="flex items-center gap-1">
             <span class="text-amber-400 text-sm">★</span>
-            <span>중요 주제만 모아보기</span>
+            <span>중요 주제</span>
           </div>
-          <span class="bg-white text-blue-700 font-bold px-2 py-0.5 rounded-md shadow-2xs text-xs border border-blue-100/60 font-mono" id="bookmark-filter-count">19</span>
+          <span class="bg-white text-blue-700 font-bold px-1.5 py-0.5 rounded-md shadow-2xs text-[11px] border border-blue-100/60 font-mono" id="bookmark-filter-count">19</span>
         </button>
+        <!-- T7: Exam Year / Frequency Filter in Sidebar TOC -->
+        <select id="sidebar-exam-filter" class="min-h-[38px] px-2 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-[11px] font-bold text-slate-700 dark:text-slate-200 focus:outline-none focus:border-blue-500 cursor-pointer shrink-0" title="기출 연도별 / 빈출순 필터">
+          <option value="all">기출 필터: 전체</option>
+          <option value="freq">🔥 빈출순 정렬</option>
+          <option value="exam_only">기출 출제 단원만</option>
+          <option value="2026">'26학년도 기출</option>
+          <option value="2025">'25학년도 기출</option>
+          <option value="2024">'24학년도 기출</option>
+          <option value="2023">'23학년도 기출</option>
+          <option value="2022_prev">'22학년도 이전</option>
+        </select>
       </div>
     </div>
 
@@ -2166,12 +2330,49 @@
       <section id="subnote-section" class="flex-1 flex flex-col min-w-0 overflow-y-auto px-2.5 sm:px-4 py-2 sm:py-4 lg:px-6 lg:py-6 gap-2 sm:gap-4 transition-all duration-200 relative">
         <div id="subnote-inner" class="w-full mx-auto flex flex-col gap-2 sm:gap-4 pb-20 xl:pb-6 transition-all duration-300">
 
+        <!-- T6: Today's Review Queue Mode Banner (Progress + Subject Filter + Completion View) -->
+        <div id="due-queue-banner" class="hidden bg-gradient-to-r from-rose-50 via-white to-blue-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl border border-rose-200/80 dark:border-rose-900/60 p-3 sm:p-4 shadow-xs flex flex-col gap-2.5">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-lg bg-rose-600 text-white text-xs font-extrabold flex items-center gap-1 shadow-2xs">
+                <span class="material-symbols-outlined text-[14px]">schedule</span>
+                <span>오늘 복습 큐</span>
+              </span>
+              <span id="due-queue-progress-text" class="text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-100 font-mono">1 / 1</span>
+              <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:inline">(밀린 순서 → 유지율 낮은 순)</span>
+            </div>
+            <div class="flex items-center gap-1 overflow-x-auto no-scrollbar" id="due-queue-subj-filters">
+              <button type="button" data-due-subj="ALL" class="due-subj-pill min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-600 text-white cursor-pointer">전체</button>
+              <button type="button" data-due-subj="사회과교육론" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">사교론</button>
+              <button type="button" data-due-subj="법학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">법</button>
+              <button type="button" data-due-subj="사회학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">사회</button>
+              <button type="button" data-due-subj="정치학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">정치</button>
+              <button type="button" data-due-subj="경제학" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">경제</button>
+              <button type="button" data-due-subj="기출" class="due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer">기출</button>
+            </div>
+          </div>
+          <div class="w-full h-1.5 bg-slate-200/80 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div id="due-queue-progress-bar" class="h-full bg-rose-500 transition-all duration-300" style="width: 0%;"></div>
+          </div>
+          <!-- Completion Screen inside Due Queue -->
+          <div id="due-queue-complete-card" class="hidden mt-1 p-4 rounded-xl bg-emerald-50/90 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-center space-y-2">
+            <div class="text-sm sm:text-base font-extrabold text-emerald-900 dark:text-emerald-200 flex items-center justify-center gap-1.5">
+              <span class="material-symbols-outlined text-emerald-600">celebration</span>
+              <span>오늘 예정된 복습 큐를 모두 완료했습니다!</span>
+            </div>
+            <p class="text-xs text-emerald-700 dark:text-emerald-300">밀린 복습 카드를 모두 소화했습니다. 일반 과목 단원으로 돌아가 진도를 이어가세요.</p>
+            <div class="pt-1 flex justify-center gap-2">
+              <button type="button" id="btn-due-complete-return" class="min-h-[40px] px-4 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">사회과교육론 단원으로 이동</button>
+            </div>
+          </div>
+        </div>
+
         <!-- Topic Banner Card (Compact on mobile <768px per T2 so first content line starts within 35% viewport height) -->
         <div class="bg-white rounded-2xl border border-border p-2.5 sm:p-5 shadow-xs flex flex-col gap-1.5 sm:gap-3">
           <!-- Top Row: Chapter Meta Breadcrumb on Left, Prev/Next buttons on Right (Desktop/Tablet md+ only per T2) -->
           <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-1.5 sm:pb-2.5">
-            <div class="flex items-center gap-2 min-w-0 flex-1">
-              <span class="text-[11px] sm:text-xs font-semibold text-blue-600 tracking-normal truncate" id="topic-header-path">CHAPTER · SECTION</span>
+            <div class="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
+              <span class="text-[11px] sm:text-xs font-semibold text-blue-600 dark:text-blue-400 tracking-normal mobile-scroll-fade md:truncate block w-full" id="topic-header-path">CHAPTER · SECTION</span>
               <!-- Compatibility elements remain strictly hidden to avoid cluttering -->
               <span class="hidden" id="topic-badge-subject"></span>
               <span class="hidden" id="topic-badge-chapter"></span>
@@ -2224,6 +2425,8 @@
                 </span>
               </div>
               <div id="topic-subtitle" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5 hidden"></div>
+              <!-- T7: Parsed Exam Year / Question Type Tags & Linked Concept Topic Button -->
+              <div id="topic-parsed-exam-tags" class="flex items-center gap-1.5 flex-wrap mt-1 hidden"></div>
             </div>
             <div class="flex items-center gap-1 shrink-0 ml-auto">
               <button id="btn-edit-topic-content" class="min-h-[32px] sm:min-h-[36px] px-2 sm:px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 dark:border-slate-700 hover:border-blue-200 flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
@@ -2284,6 +2487,12 @@
               <span class="material-symbols-outlined text-[15px]">label</span>
               <span class="hidden xl:inline">테이프 [M]</span>
               <span class="xl:hidden">테이프</span>
+            </button>
+
+            <!-- T8: Weak Tapes Only Toggle Button (wrongCount >= 1) -->
+            <button id="btn-weak-tapes-only" type="button" class="min-h-[36px] px-2.5 py-1.5 rounded-lg border border-rose-200 dark:border-rose-800/80 bg-rose-50/70 dark:bg-rose-950/40 hover:bg-rose-100 text-rose-700 dark:text-rose-300 font-bold text-xs flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer whitespace-nowrap shrink-0" title="오답 표시(wrongCount ≥ 1)된 약한 테이프만 가리기">
+              <span class="material-symbols-outlined text-[15px]">filter_alt</span>
+              <span id="weak-tapes-btn-label">약한 테이프만</span>
             </button>
 
             <!-- Single Consolidated Reveal / Hide Button -->
@@ -2355,12 +2564,19 @@
 
           <!-- Real-time Keywords Matching -->
           <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-2">
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
               <span class="text-xs font-bold text-slate-700 flex items-center gap-1">
                 <span class="material-symbols-outlined text-slate-500 text-[15px]">tag</span>
                 <span>목표 키워드 인출 현황</span>
               </span>
-              <span class="text-[11px] font-mono text-blue-700 font-bold" id="keyword-match-ratio">0 / 0 매칭</span>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[11px] font-mono text-blue-700 font-bold" id="keyword-match-ratio">0 / 0 매칭</span>
+                <!-- T9: Focus on missing keywords as tapes -->
+                <button id="btn-focus-missing-keywords" type="button" class="px-2 py-0.5 rounded-md bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-[10px] font-extrabold flex items-center gap-0.5 transition-colors cursor-pointer" title="매칭되지 않은 누락 키워드 테이프만 가린 상태로 본문 재학습">
+                  <span class="material-symbols-outlined text-[12px]">center_focus_strong</span>
+                  <span>누락 키워드 테이프로 집중</span>
+                </button>
+              </div>
             </div>
             <div class="flex flex-wrap gap-1" id="keyword-match-chips">
               <!-- Injected by JS -->
@@ -2524,11 +2740,18 @@
         </div>
       </div>
 
-      <div class="p-3 border-t border-slate-100 flex items-center justify-between bg-slate-50 text-xs">
+      <div class="p-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap bg-slate-50 text-xs">
         <span class="text-slate-500">원문과 대조하여 누락된 키워드와 위계를 점검하세요.</span>
-        <button id="diff-pass-btn" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all">
-          완벽 인출(P) 반영하고 닫기
-        </button>
+        <div class="flex items-center gap-2 ml-auto">
+          <!-- T9: Focus on missing keywords button inside Diff Modal -->
+          <button id="btn-diff-focus-missing" type="button" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-bold rounded-lg transition-all flex items-center gap-1 cursor-pointer">
+            <span class="material-symbols-outlined text-[15px]">center_focus_strong</span>
+            <span>누락 키워드 테이프로 집중</span>
+          </button>
+          <button id="diff-pass-btn" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all cursor-pointer">
+            완벽 인출(P) 반영하고 닫기
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2772,18 +2995,49 @@
       </button>
     </div>
 
-    <!-- Bottom Options Row: Auto-advance toggle & Open full essay pad -->
-    <div class="flex items-center justify-between gap-2 mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-      <label class="min-h-[44px] flex items-center gap-2 text-slate-600 dark:text-slate-300 font-semibold cursor-pointer select-none px-1">
-        <input type="checkbox" id="mobile-auto-advance-checkbox" checked class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer" />
-        <span>평가 후 다음 주제로 자동 이동</span>
-      </label>
-      <button id="btn-mobile-sheet-hide-tapes" type="button" class="min-h-[44px] px-2.5 py-1 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold flex items-center gap-1 transition-colors cursor-pointer">
-        <span class="material-symbols-outlined text-[15px]">visibility_off</span>
-        <span>다시 가리기</span>
-      </button>
+    <!-- Bottom Options Row: Auto-advance toggle, Mark wrong tapes (T8), Weak tapes only (T8), & Re-hide -->
+    <div class="flex flex-col gap-1.5 mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
+      <div class="flex items-center justify-between gap-1.5">
+        <button id="btn-toggle-mark-wrong-tape" type="button" class="min-h-[44px] flex-1 px-2.5 py-1.5 rounded-xl border border-rose-200 dark:border-rose-800 bg-rose-50/80 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 font-bold flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer" title="켜고 본문 테이프를 탭하면 해당 테이프의 오답 횟수(wrongCount)가 증가합니다">
+          <span class="material-symbols-outlined text-[15px]">touch_app</span>
+          <span id="mark-wrong-tape-label">틀린 테이프 표시</span>
+        </button>
+        <button id="btn-mobile-weak-tapes-only" type="button" class="min-h-[44px] flex-1 px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer" title="오답 횟수가 1 이상인 약한 테이프만 가리기">
+          <span class="material-symbols-outlined text-[15px]">filter_alt</span>
+          <span id="mobile-weak-tapes-label">약한 테이프만 가리기</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between gap-2">
+        <label class="min-h-[44px] flex items-center gap-2 text-slate-600 dark:text-slate-300 font-semibold cursor-pointer select-none px-1">
+          <input type="checkbox" id="mobile-auto-advance-checkbox" checked class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer" />
+          <span>평가 후 다음 주제로 자동 이동</span>
+        </label>
+        <button id="btn-mobile-sheet-hide-tapes" type="button" class="min-h-[44px] px-2.5 py-1 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold flex items-center gap-1 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-[15px]">visibility_off</span>
+          <span>다시 가리기</span>
+        </button>
+      </div>
     </div>
   </section>
+
+  <!-- T6: Mobile Startup Due Review Prompt Banner (Shown when opening app on mobile with due cards > 0) -->
+  <div id="mobile-due-prompt" class="md:hidden fixed left-3 right-3 bottom-16 z-[43] bg-slate-900/95 dark:bg-slate-800/95 text-white rounded-2xl p-3 shadow-2xl border border-slate-700 flex items-center justify-between gap-2 hidden">
+    <div class="flex items-center gap-2 min-w-0">
+      <span class="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">notifications_active</span>
+      </span>
+      <div class="min-w-0">
+        <div class="text-xs font-extrabold truncate" id="mobile-due-prompt-title">오늘 복습할 카드가 있습니다</div>
+        <div class="text-[10px] text-slate-300 truncate">밀린 순서·유지율 낮은 순으로 바로 복습해보세요</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-1 shrink-0">
+      <button id="btn-start-mobile-due-queue" type="button" class="min-h-[44px] px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-extrabold cursor-pointer">복습 시작</button>
+      <button id="btn-dismiss-mobile-due-prompt" type="button" class="min-w-[44px] min-h-[44px] rounded-xl text-slate-400 hover:text-white flex items-center justify-center cursor-pointer" aria-label="닫기">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+  </div>
 
   <!-- MOBILE / TABLET BOTTOM NAVIGATION BAR (Thumb Friendly, visible on mobile & tablets < xl) -->
   <nav id="mobile-bottom-bar" class="xl:hidden fixed bottom-0 left-0 right-0 h-14 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 z-40 flex items-center justify-around px-2 sm:px-6 shadow-lg select-none" aria-label="하단 탐색바">
@@ -2836,6 +3090,28 @@
         </div>
       </div>
       <div id="dashboard-stats-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"></div>
+
+      <!-- T10: D-Day Exam Date & Daily Recommended Quota Setting Banner -->
+      <div id="dashboard-dday-banner" class="bg-white dark:bg-slate-800 rounded-xl border border-indigo-200/80 dark:border-indigo-900/60 p-4 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">event_available</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-sm font-extrabold text-slate-900 dark:text-slate-100">시험 D-Day 및 하루 권장 분량</span>
+              <span id="dashboard-dday-badge" class="px-2 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-mono font-extrabold">D-Day 미설정</span>
+            </div>
+            <p id="dashboard-quota-desc" class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+              시험일을 설정하면 (남은 미학습 카드 + 복습 예정 카드) ÷ 남은 일수로 하루 권장 학습량을 자동 계산합니다.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto shrink-0">
+          <input type="date" id="input-exam-date" class="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-xs font-mono font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-500" />
+          <button type="button" id="btn-save-exam-date" class="min-h-[40px] px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-2xs cursor-pointer whitespace-nowrap">저장</button>
+        </div>
+      </div>
 
       <!-- Friendly Empty State Banner when 0 reps across all topics -->
       <div id="library-empty-banner" class="hidden bg-gradient-to-r from-blue-50 to-indigo-50/70 dark:from-slate-800/90 dark:to-indigo-950/30 border border-blue-200/80 dark:border-indigo-800/50 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
@@ -2894,6 +3170,17 @@
               <option value="정치학">정치학</option>
               <option value="경제학">경제학</option>
               <option value="기출">기출</option>
+            </select>
+            <!-- T7: Exam Year / Frequency Filter in Library -->
+            <select id="library-exam-filter" class="px-2 py-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500">
+              <option value="all">기출 연도/빈출 전체</option>
+              <option value="freq">🔥 기출 빈출순 정렬</option>
+              <option value="exam_only">기출 출제 카드만</option>
+              <option value="2026">'26학년도 기출</option>
+              <option value="2025">'25학년도 기출</option>
+              <option value="2024">'24학년도 기출</option>
+              <option value="2023">'23학년도 기출</option>
+              <option value="2022_prev">'22학년도 이전</option>
             </select>
           </div>
         </div>
@@ -3234,10 +3521,10 @@
     </div>
   </div>
 
-  <!-- FIRST-VISIT ONBOARDING TOUR MODAL (4단계 온보딩 투어) -->
+  <!-- FIRST-VISIT ONBOARDING TOUR MODAL (5단계 온보딩 투어 · T5 모바일 터치/PWA 안내 포함) -->
   <div id="onboarding-modal" class="hidden fixed inset-0 z-[120] flex items-center justify-center bg-slate-900/55 backdrop-blur-xs p-3 sm:p-4 transition-opacity duration-200" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
     <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-lg flex flex-col overflow-hidden relative text-slate-800 dark:text-slate-100" onclick="event.stopPropagation()">
-      <!-- Top Header -->
+      <!-- Top Header (Single close icon button; '바로 시작하기' consolidated in footer per T5) -->
       <div class="px-5 sm:px-6 pt-5 pb-3 flex items-center justify-between border-b border-slate-100 dark:border-slate-700/80">
         <div class="flex items-center gap-2.5">
           <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs shrink-0">
@@ -3246,13 +3533,13 @@
           <div>
             <div class="flex items-center gap-2">
               <h2 id="onboarding-title" class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">EduRecall 시작 가이드</h2>
-              <span id="onboarding-step-badge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border border-blue-200/70 dark:border-blue-800">1 / 4</span>
+              <span id="onboarding-step-badge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border border-blue-200/70 dark:border-blue-800">1 / 5</span>
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400">일반사회 임용 단권화 & 백지인출 노트</p>
           </div>
         </div>
-        <button id="btn-onboarding-start-now-top" type="button" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs font-bold transition-colors cursor-pointer shrink-0">
-          바로 시작하기
+        <button id="btn-onboarding-close-top" type="button" class="min-w-[44px] min-h-[44px] -mr-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 flex items-center justify-center transition-colors cursor-pointer shrink-0" aria-label="가이드 닫기">
+          <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
 
@@ -3262,24 +3549,32 @@
         <button type="button" data-step="1" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="2단계"></button>
         <button type="button" data-step="2" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="3단계"></button>
         <button type="button" data-step="3" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="4단계"></button>
+        <button type="button" data-step="4" class="onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer" aria-label="5단계"></button>
       </div>
 
       <!-- Slides Container -->
       <div class="p-5 sm:p-6 min-h-[250px] flex flex-col justify-between">
-        <!-- Step 1: 마스킹 테이프 사용법 -->
+        <!-- Step 1: 마스킹 테이프 사용법 (PC vs 터치 기기 자동 분기 per T5) -->
         <div class="onboarding-slide space-y-3.5" data-step-panel="0">
           <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 text-xs font-bold border border-amber-200/80 dark:border-amber-800/60">
             <span class="material-symbols-outlined text-[16px]">ink_highlighter</span>
             <span>STEP 1 · 마스킹 테이프 사용법</span>
           </div>
-          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">핵심 키워드를 가리고 클릭하며 암기하세요</h3>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">핵심 키워드를 가리고 능동적으로 인출하세요</h3>
           <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            본문의 노란색 <strong>마스킹 테이프</strong>를 클릭(터치)하면 정답이 나타납니다. 원하는 구절을 드래그하면 <strong>나만의 마스킹 테이프</strong>도 즉시 추가할 수 있어요.
+            본문의 민트색 <strong>마스킹 테이프</strong>를 확인하며 암기하고, 원하는 구절을 선택해 <strong>나만의 마스킹 테이프</strong>도 즉시 추가할 수 있어요.
           </p>
-          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
-            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-amber-200 text-amber-950 font-bold">클릭 / 터치</span><span>개별 마스킹 테이프 떼기 · 다시 가리기</span></div>
+          <!-- Touch device guide (pointer: coarse) -->
+          <div class="touch-only-guide hidden p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-950 font-bold shrink-0">탭 = 테이프 떼기/가리기</span><span>개별 마스킹 테이프 즉시 확인 및 재가리기</span></div>
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold shrink-0">길게 눌러 구절 선택 → 테이프 추가</span><span>원하는 구절에 내 테이프 부착</span></div>
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-bold shrink-0">정답 버튼 → 평가</span><span>하단 [정답] 탭으로 전체 공개 및 복습 평가</span></div>
+          </div>
+          <!-- PC keyboard/mouse guide (pointer: fine) -->
+          <div class="pc-only-guide p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-amber-200 text-amber-950 font-bold">클릭</span><span>개별 마스킹 테이프 떼기 · 다시 가리기</span></div>
             <div class="flex items-center gap-2"><kbd class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 font-mono font-bold">A</kbd> / <kbd class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 font-mono font-bold">S</kbd><span>위에서부터 순차 공개(A) / 역순 다시 가리기(S)</span></div>
-            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold">텍스트 드래그</span><span>선택한 구절에 새 마스킹 테이프 부착</span></div>
+            <div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold">텍스트 드래그</span><span>선택한 구절에 새 마스킹 테이프 부착 [M]</span></div>
           </div>
         </div>
 
@@ -3287,15 +3582,15 @@
         <div class="onboarding-slide hidden space-y-3.5" data-step-panel="1">
           <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 text-xs font-bold border border-blue-200/80 dark:border-blue-800/60">
             <span class="material-symbols-outlined text-[16px]">edit_note</span>
-            <span>STEP 2 · 인출(작성) 모드 사용법</span>
+            <span>STEP 2 · 인출(작성) 모드 & 스와이프 이동</span>
           </div>
-          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">직접 서술하며 키워드 포함 여부를 실시간 점검하세요</h3>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">다양한 인출 모드와 빠른 주제 이동</h3>
           <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            우측(모바일은 하단) <strong>능동적 인출 및 서술</strong> 창에 기억나는 내용을 적어보세요. 작성한 답안에 핵심 키워드가 포함되면 자동으로 초록색 체크가 켜집니다.
+            <strong>테이프 · 작성 · 정독 · 블러</strong> 4가지 학습 모드를 지원하며, 모바일에서는 본문을 좌우로 스와이프해 이전·다음 주제로 빠르게 넘어갈 수 있습니다.
           </p>
           <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
             <div class="flex items-center gap-2"><span class="font-bold text-blue-600 dark:text-blue-400">타이핑 / 전체블러 모드</span><span>마스킹 빈칸에 직접 입력하거나 본문 전체를 가린 채 백지인출</span></div>
-            <div class="flex items-center gap-2"><span class="font-bold text-emerald-600 dark:text-emerald-400">원문 대조 및 채점</span><span>내 서술 답안과 단권화 원문을 나란히 비교하며 누락 키워드 확인</span></div>
+            <div class="flex items-center gap-2"><span class="font-bold text-emerald-600 dark:text-emerald-400">좌우 스와이프 / 하단 바</span><span>모바일 한 손 조작으로 이전·다음 주제 즉시 전환</span></div>
           </div>
         </div>
 
@@ -3305,15 +3600,15 @@
             <span class="material-symbols-outlined text-[16px]">psychology</span>
             <span>STEP 3 · FSRS 간격 반복 평가</span>
           </div>
-          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">체감 난이도를 선택하면 최적의 복습 주기를 계산합니다</h3>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">정답 확인 후 바텀시트에서 바로 평가하세요</h3>
           <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            학습을 마친 뒤 <strong>다시(1) · 어려움(2) · 알맞음(3) · 쉬움(4)</strong> 중 하나를 누르면 FSRS 알고리즘이 기억 유지율을 계산해 다음 복습일을 자동으로 예약해 줍니다.
+            모바일 하단의 <strong>[정답]</strong> 버튼을 누르면 모든 테이프가 공개되면서 <strong>Again · Hard · Good · Easy</strong> 평가 시트가 올라와 한 손으로 복습 주기를 기록할 수 있습니다.
           </p>
           <div class="grid grid-cols-4 gap-2 pt-1 text-center text-xs font-bold">
-            <div class="p-2 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800/60">1 · 다시<div class="text-[10px] font-normal opacity-80 mt-0.5">거의 못 외움</div></div>
-            <div class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-600">2 · 어려움<div class="text-[10px] font-normal opacity-80 mt-0.5">애먹으며 인출</div></div>
-            <div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60">3 · 알맞음<div class="text-[10px] font-normal opacity-80 mt-0.5">무난히 인출</div></div>
-            <div class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60">4 · 쉬움<div class="text-[10px] font-normal opacity-80 mt-0.5">완벽히 숙지</div></div>
+            <div class="p-2 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800/60">Again<div class="text-[10px] font-normal opacity-80 mt-0.5">10분 후</div></div>
+            <div class="p-2 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60">Hard<div class="text-[10px] font-normal opacity-80 mt-0.5">1일 후</div></div>
+            <div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60">Good<div class="text-[10px] font-normal opacity-80 mt-0.5">3일 후</div></div>
+            <div class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60">Easy<div class="text-[10px] font-normal opacity-80 mt-0.5">7일 후</div></div>
           </div>
         </div>
 
@@ -3325,30 +3620,56 @@
           </div>
           <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">연결 없이 바로 써도 OK! 여러 기기라면 코드로 연결하세요</h3>
           <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            모든 학습 기록은 <strong>현재 브라우저에 자동 저장</strong>되므로 동기화를 연결하지 않아도 정상 이용 가능합니다. 아이패드·스마트폰·PC를 오가며 공부할 때만 상단 <strong>동기화 (선택)</strong> 버튼에서 코드를 발급해 연결해 주세요.
+            모든 학습 기록은 <strong>현재 기기에 자동 저장</strong>됩니다. 아이패드·스마트폰·PC를 오가며 공부할 때만 <strong>동기화 (선택)</strong> 메뉴에서 코드를 발급해 연결해 주세요.
           </p>
           <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
             <div>✓ <strong>단일 기기 학습자</strong>: 별도 가입이나 코드 연결 없이 지금 바로 학습 시작</div>
             <div>✓ <strong>다기기 학습자</strong>: [새 동기화 코드 발급] 후 다른 기기에 같은 코드 입력</div>
           </div>
         </div>
+
+        <!-- Step 5: 홈 화면에 추가 안내 (T5: iOS 공유 -> 홈 화면에 추가, Android beforeinstallprompt) -->
+        <div class="onboarding-slide hidden space-y-3.5" data-step-panel="4">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 text-xs font-bold border border-rose-200/80 dark:border-rose-800/60">
+            <span class="material-symbols-outlined text-[16px]">install_mobile</span>
+            <span>STEP 5 · 홈 화면에 앱으로 추가</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900 dark:text-slate-100">주소창 없이 전체 화면 & 오프라인에서도 복습하세요</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            홈 화면에 추가하면 전용 앱처럼 전체 화면으로 열리며, 지하철·비행기 등 오프라인 환경에서도 단권화 노트를 그대로 열람할 수 있습니다.
+          </p>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-700 space-y-2 text-xs text-slate-700 dark:text-slate-300">
+            <div class="flex items-start gap-2">
+              <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold shrink-0">iOS (iPhone/iPad)</span>
+              <span>Safari 하단 <strong>[공유 ⬆️]</strong> 버튼 탭 → <strong>[홈 화면에 추가]</strong> 선택</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300 font-bold shrink-0">Android / Chrome</span>
+              <span>아래 설치 버튼을 누르거나 브라우저 메뉴(⋮) → <strong>[앱 설치 / 홈 화면에 추가]</strong></span>
+            </div>
+          </div>
+          <button id="btn-pwa-install-onboarding" type="button" class="hidden w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>홈 화면에 바로 설치하기</span>
+          </button>
+        </div>
       </div>
 
-      <!-- Footer Controls -->
+      <!-- Footer Controls (Single '바로 시작하기' button per T5) -->
       <div class="px-5 sm:px-6 py-4 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-100 dark:border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
-        <label class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 cursor-pointer select-none">
+        <label class="min-h-[44px] inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 cursor-pointer select-none">
           <input type="checkbox" id="onboarding-dont-show-again" class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500" checked />
           <span>다시 보지 않기</span>
         </label>
         <div class="flex items-center gap-2 ml-auto">
-          <button id="btn-onboarding-prev" type="button" class="hidden px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 transition-colors cursor-pointer">
+          <button id="btn-onboarding-prev" type="button" class="hidden min-h-[44px] px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 transition-colors cursor-pointer">
             이전
           </button>
-          <button id="btn-onboarding-next" type="button" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1">
+          <button id="btn-onboarding-next" type="button" class="min-h-[44px] px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1">
             <span id="onboarding-next-label">다음</span>
             <span class="material-symbols-outlined text-[16px]" id="onboarding-next-icon">arrow_forward</span>
           </button>
-          <button id="btn-onboarding-start-now" type="button" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer">
+          <button id="btn-onboarding-start-now" type="button" class="min-h-[44px] px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer">
             바로 시작하기
           </button>
         </div>
@@ -3402,11 +3723,12 @@
       }
 
       function ensureSubjectLoaded(subject) {
-        if (!subject || subject === 'ALL' || subject === 'all') {
+        if (!subject || subject === 'ALL' || subject === 'all' || subject === '오늘 복습') {
           const allSubjects = Object.keys(SUBJECT_CHUNK_MAP);
           return Promise.all(allSubjects.map(s => ensureSubjectLoaded(s)));
         }
-        if (loadedSubjectChunks.has(subject)) {
+        if (loadedSubjectChunks.has(subject) || (window.__EDURECALL_HYDRATED_SUBJECTS__ && window.__EDURECALL_HYDRATED_SUBJECTS__[subject])) {
+          loadedSubjectChunks.add(subject);
           return Promise.resolve(true);
         }
         if (window.__EDURECALL_CHUNKS__ && window.__EDURECALL_CHUNKS__[subject]) {
@@ -3421,11 +3743,16 @@
 
         inflightChunkPromises[subject] = new Promise((resolve) => {
           const script = document.createElement('script');
-          script.src = chunkSrc + '?v=20261023_v2';
+          script.src = chunkSrc + '?v=20261023_v3';
           script.async = true;
+          script.dataset.subjectChunk = subject;
           script.onload = () => {
             if (window.__EDURECALL_CHUNKS__ && window.__EDURECALL_CHUNKS__[subject]) {
               applyChunkDataToTopics(subject, window.__EDURECALL_CHUNKS__[subject]);
+            }
+            loadedSubjectChunks.add(subject);
+            if (window.__EDURECALL_HYDRATED_SUBJECTS__) {
+              window.__EDURECALL_HYDRATED_SUBJECTS__[subject] = true;
             }
             delete inflightChunkPromises[subject];
             resolve(true);
@@ -3440,25 +3767,30 @@
         return inflightChunkPromises[subject];
       }
 
-      // Schedule background prefetch of remaining subject chunks during idle time after initial load
+      // Schedule background prefetch of remaining subject chunks during idle time after initial load (T12: never duplicates already-loaded chunks)
       function scheduleIdleChunkPrefetch() {
         const subjectsToPrefetch = ['법학', '사회학', '정치학', '경제학', '기출'];
         let idx = 0;
         const loadNext = () => {
-          if (idx >= subjectsToPrefetch.length) return;
-          const subj = subjectsToPrefetch[idx++];
-          ensureSubjectLoaded(subj).finally(() => {
-            if ('requestIdleCallback' in window) {
-              window.requestIdleCallback(loadNext, { timeout: 2500 });
-            } else {
-              setTimeout(loadNext, 600);
+          while (idx < subjectsToPrefetch.length) {
+            const candidate = subjectsToPrefetch[idx++];
+            if (loadedSubjectChunks.has(candidate) || (window.__EDURECALL_HYDRATED_SUBJECTS__ && window.__EDURECALL_HYDRATED_SUBJECTS__[candidate]) || inflightChunkPromises[candidate]) {
+              continue;
             }
-          });
+            ensureSubjectLoaded(candidate).finally(() => {
+              if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(loadNext, { timeout: 3000 });
+              } else {
+                setTimeout(loadNext, 800);
+              }
+            });
+            return;
+          }
         };
         if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(loadNext, { timeout: 2000 });
+          window.requestIdleCallback(loadNext, { timeout: 2500 });
         } else {
-          setTimeout(loadNext, 1200);
+          setTimeout(loadNext, 1500);
         }
       }
 
@@ -4448,6 +4780,28 @@
             if (k === '__study_pins__' || k === '__deleted_custom_tapes__' || k === '__reset_grades__' || k === '__custom_timestamps__') {
               return;
             }
+            if (k === '__tape_wrong_counts__' && v && typeof v === 'object') {
+              try {
+                const localWc = JSON.parse(localStorage.getItem('edurecall_tape_wrong_counts') || '{}');
+                const mergedWc = { ...v, ...localWc };
+                Object.entries(v).forEach(([tid, tmap]) => {
+                  if (tmap && typeof tmap === 'object') {
+                    mergedWc[tid] = { ...(v[tid] || {}), ...(localWc[tid] || {}) };
+                    Object.entries(tmap).forEach(([tk, tv]) => {
+                      mergedWc[tid][tk] = Math.max(Number(tv) || 0, Number(mergedWc[tid][tk]) || 0);
+                    });
+                  }
+                });
+                localStorage.setItem('edurecall_tape_wrong_counts', JSON.stringify(mergedWc));
+              } catch (e) {}
+              return;
+            }
+            if (k === '__exam_date__' && typeof v === 'string' && v) {
+              if (!localStorage.getItem('edurecall_exam_date')) {
+                localStorage.setItem('edurecall_exam_date', v);
+              }
+              return;
+            }
             if (k.startsWith('edurecall_memo_')) {
               localStorage.setItem(k, v);
             } else if (k.startsWith('edurecall_study_pin')) {
@@ -4468,6 +4822,8 @@
           delete mergedMemos.__deleted_custom_tapes__;
           delete mergedMemos.__reset_grades__;
           delete mergedMemos.__study_pins__;
+          delete mergedMemos.__tape_wrong_counts__;
+          delete mergedMemos.__exam_date__;
           localStorage.setItem('edurecall_user_memos', JSON.stringify(mergedMemos));
           if (pinsChanged) {
             if (typeof updateStudyPinUI === 'function') updateStudyPinUI();
@@ -4569,6 +4925,24 @@
           if (quickConnectContainer) {
             quickConnectContainer.classList.add('hidden');
           }
+          const headerSyncLastTime = document.getElementById('header-sync-last-time');
+          const headerLastSyncSub = document.getElementById('header-last-sync-sub');
+          if (headerSyncLastTime) {
+            if (syncLastTime) {
+              headerSyncLastTime.textContent = `· ${syncLastTime}`;
+              headerSyncLastTime.classList.remove('hidden');
+            } else {
+              headerSyncLastTime.classList.add('hidden');
+            }
+          }
+          if (headerLastSyncSub) {
+            if (syncLastTime) {
+              headerLastSyncSub.textContent = `· 동기화 ${syncLastTime}`;
+              headerLastSyncSub.classList.remove('hidden');
+            } else {
+              headerLastSyncSub.classList.add('hidden');
+            }
+          }
         } else {
           // CALM OPTIONAL UNCONNECTED TONE (No warning red/amber or pulse)
           if (cloudSyncBtn) {
@@ -4612,8 +4986,43 @@
           if (quickConnectContainer) {
             quickConnectContainer.classList.remove('hidden');
           }
+          const headerSyncLastTime = document.getElementById('header-sync-last-time');
+          const headerLastSyncSub = document.getElementById('header-last-sync-sub');
+          if (headerSyncLastTime) headerSyncLastTime.classList.add('hidden');
+          if (headerLastSyncSub) headerLastSyncSub.classList.add('hidden');
         }
       }
+
+      // T15: Offline / Online Network Status Badge & Auto-Backup on Reconnect
+      function updateOnlineStatusUI() {
+        const badge = document.getElementById('header-offline-badge');
+        if (!badge) return;
+        const isOffline = (typeof navigator !== 'undefined' && navigator.onLine === false);
+        if (isOffline) {
+          badge.classList.remove('hidden');
+          badge.classList.add('inline-flex');
+        } else {
+          badge.classList.add('hidden');
+          badge.classList.remove('inline-flex');
+        }
+      }
+      window.addEventListener('offline', () => {
+        updateOnlineStatusUI();
+        if (typeof showToast === 'function') {
+          showToast('오프라인 상태입니다. 학습 기록은 기기에 안전하게 저장됩니다.', 'wifi_off');
+        }
+      });
+      window.addEventListener('online', () => {
+        updateOnlineStatusUI();
+        const syncCode = localStorage.getItem('edurecall_sync_code');
+        if (syncCode) {
+          if (typeof showToast === 'function') {
+            showToast('온라인으로 연결되었습니다. 클라우드에 자동 백업합니다.', 'cloud_upload');
+          }
+          pushDataToCloud(true);
+        }
+      });
+      updateOnlineStatusUI();
 
       let isPushingToCloud = false;
       let pendingPushRequested = false;
@@ -4802,7 +5211,9 @@
             __study_pins__: currentPins,
             __deleted_custom_tapes__: JSON.parse(localStorage.getItem('edurecall_deleted_custom_tapes') || '[]'),
             __reset_grades__: JSON.parse(localStorage.getItem('edurecall_reset_grades') || '{}'),
-            __custom_timestamps__: getCustomTimestamps()
+            __custom_timestamps__: getCustomTimestamps(),
+            __tape_wrong_counts__: JSON.parse(localStorage.getItem('edurecall_tape_wrong_counts') || '{}'),
+            __exam_date__: localStorage.getItem('edurecall_exam_date') || ''
           };
 
           const { data, error } = await supabaseClient
@@ -5672,6 +6083,120 @@
         return `[기출 ${formatted}]`;
       }
 
+      // T7: Parse exam years, question types (단답/서술/기입), and frequency from examTag and title without mutating title
+      const examInfoCache = {};
+      function parseTopicExamInfo(topic) {
+        if (!topic) return { years: [], types: [], freq: 0 };
+        if (examInfoCache[topic.id]) return examInfoCache[topic.id];
+        const rawSources = [topic.examTag || '', topic.title || '', topic.id || ''].join(' ');
+        const yearsSet = new Set();
+        const typesSet = new Set();
+
+        // 4-digit years (2009~2027)
+        const fourDigitMatches = rawSources.match(/\b(20(?:09|1\d|2[0-7]))\b/g) || [];
+        fourDigitMatches.forEach(y => yearsSet.add(y));
+
+        // 2-digit years in examTag or title e.g. 22,23,26(단답) or '24
+        const tagSource = (topic.examTag || '') + ' ' + ((topic.title || '').match(/\(([^)]*(?:단답|서술|기입)[^)]*)\)/)?.[1] || '');
+        if (tagSource && !tagSource.includes('이론핵심')) {
+          const twoDigitMatches = tagSource.match(/(?:^|[\s,'/])(09|1\d|2[0-7])(?=\b|[^\d])/g) || [];
+          twoDigitMatches.forEach(m => {
+            const clean = m.replace(/\D/g, '');
+            if (clean.length === 2) yearsSet.add('20' + clean);
+          });
+        }
+
+        ['단답', '서술', '기입', '논술', '객관식'].forEach(t => {
+          if (rawSources.includes(t)) typesSet.add(t);
+        });
+
+        const years = Array.from(yearsSet).sort();
+        const types = Array.from(typesSet);
+        const info = { years, types, freq: years.length };
+        examInfoCache[topic.id] = info;
+        return info;
+      }
+
+      // T7: Find linked concept topic for an exam card (기출 -> 본문 개념 주제 연결)
+      function findLinkedConceptTopicIndex(examTopic) {
+        if (!examTopic) return -1;
+        const examTitle = (examTopic.title || '').replace(/^\[[^\]]+\]\s*/, '').replace(/^\d+번\.?\s*/, '');
+        const kws = Array.isArray(examTopic.targetKeywords) ? examTopic.targetKeywords : [];
+        let bestIdx = -1;
+        let bestScore = 0;
+
+        for (let i = 0; i < TOPICS.length; i++) {
+          const cand = TOPICS[i];
+          if (!cand || cand.subject === '기출' || cand.subject === '안내' || cand.id === examTopic.id) continue;
+          if (cand.id.includes('EXAM-') || cand.id.includes('APP-')) continue;
+          let score = 0;
+          const candTitle = cand.title || '';
+          const candKws = Array.isArray(cand.targetKeywords) ? cand.targetKeywords : [];
+          kws.forEach(kw => {
+            if (kw && kw.length >= 2) {
+              if (candTitle.includes(kw)) score += 4;
+              if (candKws.includes(kw)) score += 3;
+            }
+          });
+          // Title token overlap
+          const tokens = examTitle.split(/[\s·,()[\]/]+/).filter(w => w.length >= 2 && !['학년도', '전공', '기출', '문제', '해설'].includes(w));
+          tokens.forEach(tok => {
+            if (candTitle.includes(tok)) score += 3;
+            else if (cand.section && cand.section.includes(tok)) score += 1;
+          });
+          if (score > bestScore) {
+            bestScore = score;
+            bestIdx = i;
+          }
+        }
+        return bestScore >= 3 ? bestIdx : -1;
+      }
+
+      // T6: Due Queue State & Banner Updater
+      let dueQueueSubjFilter = 'ALL';
+      let dueQueueInitialMax = 0;
+      let sidebarExamFilterVal = 'all';
+
+      function getCardRetrievability(card, nowTime) {
+        if (!card || !card.stability || !card.last_review) return 0;
+        const elapsedDays = Math.max(0, (nowTime - new Date(card.last_review).getTime()) / 86400000);
+        const r = Math.exp(Math.log(0.9) * elapsedDays / card.stability);
+        return Math.max(0, Math.min(1, r));
+      }
+
+      function updateDueQueueBannerUI() {
+        const banner = document.getElementById('due-queue-banner');
+        const progText = document.getElementById('due-queue-progress-text');
+        const progBar = document.getElementById('due-queue-progress-bar');
+        const completeCard = document.getElementById('due-queue-complete-card');
+        if (!banner) return;
+
+        if (activeSubject !== '오늘 복습') {
+          banner.classList.add('hidden');
+          return;
+        }
+        banner.classList.remove('hidden');
+        const remaining = filteredIndices.length;
+        if (remaining > dueQueueInitialMax) {
+          dueQueueInitialMax = remaining;
+        }
+        const total = Math.max(dueQueueInitialMax, remaining);
+        const done = Math.max(0, total - remaining);
+        const currentPos = filteredIndices.indexOf(currentTopicIndex);
+
+        if (remaining === 0) {
+          if (progText) progText.textContent = `완료 (${total} / ${total})`;
+          if (progBar) progBar.style.width = '100%';
+          if (completeCard) completeCard.classList.remove('hidden');
+        } else {
+          const stepNum = currentPos !== -1 ? (done + currentPos + 1) : (done + 1);
+          const denom = Math.max(total, stepNum);
+          if (progText) progText.textContent = `${stepNum} / ${denom} (남은 복습 ${remaining}개)`;
+          if (progBar) progBar.style.width = `${Math.min(100, Math.round((done / Math.max(1, denom)) * 100))}%`;
+          if (completeCard) completeCard.classList.add('hidden');
+        }
+      }
+
       // -------------------------------------------------------------
       // Context Guide System (단원·중단원·소분류·주제 맥락 설명 팝업)
       // -------------------------------------------------------------
@@ -5778,7 +6303,7 @@
           if (activeSubject === '오늘 복습') {
             const card = fsrsMap[topic.id];
             if (card && card.state !== 0 && card.due && new Date(card.due).getTime() <= nowTime) {
-              matchSubj = true;
+              matchSubj = (dueQueueSubjFilter === 'ALL' || topic.subject === dueQueueSubjFilter);
             }
           } else {
             matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
@@ -5798,12 +6323,49 @@
             matchBookmark = bookmarks.includes(topic.id);
           }
 
-          if (matchSubj && matchSearch && matchBookmark) {
+          // T7: Sidebar Exam Year / Frequency filter
+          let matchExamFilter = true;
+          if (sidebarExamFilterVal && sidebarExamFilterVal !== 'all') {
+            const exInfo = parseTopicExamInfo(topic);
+            if (sidebarExamFilterVal === 'exam_only' || sidebarExamFilterVal === 'freq') {
+              matchExamFilter = exInfo.freq > 0 || topic.subject === '기출';
+            } else if (sidebarExamFilterVal === '2022_prev') {
+              matchExamFilter = exInfo.years.some(y => parseInt(y, 10) <= 2022);
+            } else {
+              matchExamFilter = exInfo.years.includes(sidebarExamFilterVal);
+            }
+          }
+
+          if (matchSubj && matchSearch && matchBookmark && matchExamFilter) {
             filteredIndices.push(idx);
           }
         });
 
+        // T6: Sort '오늘 복습' queue by overdue time descending -> retrievability ascending
+        if (activeSubject === '오늘 복습') {
+          filteredIndices.sort((idxA, idxB) => {
+            const cardA = fsrsMap[TOPICS[idxA].id];
+            const cardB = fsrsMap[TOPICS[idxB].id];
+            const overdueA = cardA && cardA.due ? (nowTime - new Date(cardA.due).getTime()) : 0;
+            const overdueB = cardB && cardB.due ? (nowTime - new Date(cardB.due).getTime()) : 0;
+            const overdueDaysDiff = Math.floor(overdueB / 86400000) - Math.floor(overdueA / 86400000);
+            if (overdueDaysDiff !== 0) return overdueDaysDiff;
+            const rA = getCardRetrievability(cardA, nowTime);
+            const rB = getCardRetrievability(cardB, nowTime);
+            if (Math.abs(rA - rB) > 0.001) return rA - rB;
+            return overdueB - overdueA;
+          });
+        } else if (sidebarExamFilterVal === 'freq') {
+          // T7: Sort by exam frequency descending
+          filteredIndices.sort((idxA, idxB) => {
+            const freqA = parseTopicExamInfo(TOPICS[idxA]).freq;
+            const freqB = parseTopicExamInfo(TOPICS[idxB]).freq;
+            return (freqB - freqA) || (idxA - idxB);
+          });
+        }
+
         if (filteredIndices.length === 0) {
+          updateDueQueueBannerUI();
           sidebarSubjectLabel.textContent = `${activeSubject === 'ALL' ? '전체 과목' : activeSubject} 목차`;
           sidebarTopicCount.textContent = '0';
           if (activeSubject === '오늘 복습') {
@@ -6279,10 +6841,11 @@
           sidebarTree.appendChild(chapContainer);
         });
 
-        // Synchronize filteredIndices with the exact rendered tree order so Next/Prev navigation follows the sidebar 1:1
-        if (renderedLinearIndices.length > 0) {
+        // Synchronize filteredIndices with the exact rendered tree order so Next/Prev navigation follows the sidebar 1:1 (except in priority-sorted modes: '오늘 복습' or 'freq')
+        if (renderedLinearIndices.length > 0 && activeSubject !== '오늘 복습' && sidebarExamFilterVal !== 'freq') {
           filteredIndices = renderedLinearIndices;
         }
+        updateDueQueueBannerUI();
 
         if (filteredIndices.length === 0) {
           sidebarTree.innerHTML = '<div class="p-6 text-xs text-slate-400 text-center">검색 조건에 맞는 주제가 없습니다.</div>';
@@ -6447,6 +7010,62 @@
             topicSubtitle.classList.add('hidden');
           }
         }
+
+        // T7: Render parsed exam year / type tags & linked concept topic button (without mutating title)
+        const parsedTagsEl = document.getElementById('topic-parsed-exam-tags');
+        if (parsedTagsEl) {
+          parsedTagsEl.innerHTML = '';
+          const exInfo = parseTopicExamInfo(topic);
+          let hasAnyTag = false;
+          exInfo.years.forEach(yr => {
+            hasAnyTag = true;
+            const yChip = document.createElement('button');
+            yChip.type = 'button';
+            yChip.className = 'px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 font-mono cursor-pointer transition-colors';
+            yChip.textContent = `'${yr.slice(-2)} 기출`;
+            yChip.title = `${yr}학년도 기출 필터 적용`;
+            yChip.addEventListener('click', () => {
+              const sel = document.getElementById('sidebar-exam-filter');
+              const filterVal = parseInt(yr, 10) <= 2022 ? '2022_prev' : yr;
+              if (sel) {
+                sel.value = filterVal;
+                sidebarExamFilterVal = filterVal;
+                renderSidebar();
+                showToast(`${yr}학년도 기출 단원 필터가 적용되었습니다`, 'filter_alt');
+              }
+            });
+            parsedTagsEl.appendChild(yChip);
+          });
+          exInfo.types.forEach(tp => {
+            hasAnyTag = true;
+            const tChip = document.createElement('span');
+            tChip.className = 'px-1.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800';
+            tChip.textContent = `${tp}형`;
+            parsedTagsEl.appendChild(tChip);
+          });
+          // If this is an exam card, add a link to the related concept topic
+          if (topic.subject === '기출' || (topic.id && topic.id.includes('EXAM-'))) {
+            const linkedIdx = findLinkedConceptTopicIndex(topic);
+            if (linkedIdx !== -1 && TOPICS[linkedIdx]) {
+              hasAnyTag = true;
+              const linkedTopic = TOPICS[linkedIdx];
+              const linkBtn = document.createElement('button');
+              linkBtn.type = 'button';
+              linkBtn.className = 'px-2.5 py-0.5 rounded-lg text-[11px] font-bold bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
+              linkBtn.innerHTML = `<span class="material-symbols-outlined text-[13px]">link</span><span>개념 이동: [${escapeHtml(linkedTopic.subject)}] ${escapeHtml(linkedTopic.title.slice(0, 22))}${linkedTopic.title.length > 22 ? '…' : ''}</span>`;
+              linkBtn.title = `연결된 본문 개념 주제로 이동: [${linkedTopic.subject}] ${linkedTopic.title}`;
+              linkBtn.addEventListener('click', () => {
+                setSubjectTab(linkedTopic.subject, false);
+                renderTopic(linkedIdx);
+                showToast(`연결된 개념 단원으로 이동: ${linkedTopic.title}`, 'menu_book');
+              });
+              parsedTagsEl.appendChild(linkBtn);
+            }
+          }
+          parsedTagsEl.classList.toggle('hidden', !hasAnyTag);
+        }
+
+        updateDueQueueBannerUI();
         
         // Update Bookmark Button & Icon State
         if (btnToggleBookmark && iconBookmark) {
@@ -6716,6 +7335,20 @@
           let toggleBtn = header.querySelector('.group-toggle-btn');
           if (!fontBold) return;
 
+          const isDiagramGroup = header.textContent.includes('핵심 개념 도해') || !!grp.querySelector('img[src*="diagram"]');
+          if (isDiagramGroup) {
+            header.classList.add('diagram-card-header');
+            // Auto-heal any icon span where '클릭 시 확대' was previously appended inside .material-symbols-outlined
+            fontBold.querySelectorAll('.material-symbols-outlined').forEach(ic => {
+              if (ic.textContent.includes('클릭 시 확대')) {
+                ic.textContent = ic.textContent.replace(/클릭\s*시\s*확대/g, '').trim() || 'monitoring';
+              }
+            });
+            fontBold.querySelectorAll('span:not(.material-symbols-outlined)').forEach(sp => {
+              if (sp.textContent.trim() === '클릭 시 확대') sp.remove();
+            });
+          }
+
           // If toggleBtn is missing, generate it
           if (!toggleBtn) {
             toggleBtn = document.createElement('button');
@@ -6733,6 +7366,7 @@
                   node.classList?.contains('group-actions-wrap') || 
                   node.classList?.contains('group-edit-btn') || 
                   node.classList?.contains('group-toggle-btn') ||
+                  node.classList?.contains('diagram-zoom-hint') ||
                   node.querySelector?.('.group-actions-wrap') ||
                   node.querySelector?.('.group-edit-btn') ||
                   node.querySelector?.('.group-toggle-btn')
@@ -6740,8 +7374,12 @@
               return;
             }
             const txt = node.textContent.trim();
+            if (txt === '클릭 시 확대') {
+              node.remove();
+              return;
+            }
             if (txt && txt !== 'visibility' && txt !== 'edit' && txt !== '수정' && !txt.endsWith('수정')) {
-              let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
+              let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full):not(.material-symbols-outlined)') || fontBold.querySelector('span:not(.rounded-full):not(.material-symbols-outlined)');
               if (node.nodeType === Node.ELEMENT_NODE) {
                 if (titleSpan) {
                   titleSpan.appendChild(node.cloneNode(true));
@@ -6765,8 +7403,8 @@
           });
 
           if (fontBold) {
-            fontBold.querySelectorAll('.group-actions-wrap, .group-edit-btn').forEach(el => el.remove());
-            let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full)') || fontBold.querySelector('span:not(.rounded-full)');
+            fontBold.querySelectorAll('.group-actions-wrap, .group-edit-btn, .diagram-zoom-hint').forEach(el => el.remove());
+            let titleSpan = fontBold.querySelector(':scope > span:not(.rounded-full):not(.material-symbols-outlined)') || fontBold.querySelector('span:not(.rounded-full):not(.material-symbols-outlined)');
             if (titleSpan && titleSpan.innerHTML) {
               titleSpan.innerHTML = titleSpan.innerHTML.replace(/(?:&nbsp;|\s)+수정\s*$/g, '').trim();
             }
@@ -6775,7 +7413,7 @@
             const cleanedTitle = titleSpan ? titleSpan.textContent.replace(/visibility|수정/g, '').trim() : '';
             if ((!titleSpan || !cleanedTitle || /^\(\d+\)$/.test(cleanedTitle)) && officialGroups && officialGroups[grpIdx]) {
               const offFontBold = officialGroups[grpIdx].querySelector('.font-bold');
-              const offTitleSpan = offFontBold ? (offFontBold.querySelector(':scope > span:not(.rounded-full)') || offFontBold.querySelector('span:not(.rounded-full)')) : null;
+              const offTitleSpan = offFontBold ? (offFontBold.querySelector(':scope > span:not(.rounded-full):not(.material-symbols-outlined)') || offFontBold.querySelector('span:not(.rounded-full):not(.material-symbols-outlined)')) : null;
               if (offTitleSpan && offTitleSpan.textContent.trim()) {
                 if (!titleSpan) {
                   titleSpan = document.createElement('span');
@@ -6915,6 +7553,13 @@
           }
 
           if (actionsWrap) {
+            const headerEl = grp.querySelector('.diagram-card-header');
+            if (headerEl && !actionsWrap.querySelector('.diagram-zoom-hint')) {
+              const zoomHint = document.createElement('span');
+              zoomHint.className = 'diagram-zoom-hint text-[11px] text-slate-500 dark:text-slate-400 font-medium shrink-0 whitespace-nowrap mr-1';
+              zoomHint.textContent = '클릭 시 확대';
+              actionsWrap.insertBefore(zoomHint, actionsWrap.firstChild);
+            }
             if (!editBtn) {
               editBtn = document.createElement('button');
               editBtn.type = 'button';
@@ -6972,9 +7617,90 @@
         if (icon) icon.textContent = 'visibility';
       }
 
+      // T8: Per-tape wrongCount tracking & Weak Tapes Only filter
+      let isWeakTapesOnlyMode = false;
+      function getTapeWrongCountsAll() {
+        try {
+          return JSON.parse(localStorage.getItem('edurecall_tape_wrong_counts') || '{}') || {};
+        } catch (e) {
+          return {};
+        }
+      }
+      function getTapeCanonicalKey(tape) {
+        if (!tape) return '';
+        return (tape.getAttribute('data-text') || tape.textContent || '').trim();
+      }
+      function incrementTapeWrongCount(tape) {
+        const curTopic = TOPICS[currentTopicIndex];
+        if (!curTopic || !tape) return 0;
+        const key = getTapeCanonicalKey(tape);
+        if (!key) return 0;
+        const all = getTapeWrongCountsAll();
+        if (!all[curTopic.id]) all[curTopic.id] = {};
+        const nextVal = (parseInt(all[curTopic.id][key] || tape.getAttribute('data-wrong-count') || '0', 10) || 0) + 1;
+        all[curTopic.id][key] = nextVal;
+        try {
+          localStorage.setItem('edurecall_tape_wrong_counts', JSON.stringify(all));
+        } catch (e) {}
+        tape.setAttribute('data-wrong-count', String(nextVal));
+        if (typeof saveCurrentTopicCustomContent === 'function') {
+          saveCurrentTopicCustomContent();
+        }
+        if (typeof triggerAutoSync === 'function') {
+          triggerAutoSync();
+        }
+        return nextVal;
+      }
+      function applyWeakTapesFilterToCurrentTopic(notify = false) {
+        const tapes = subnoteContainer ? subnoteContainer.querySelectorAll('.mask-tape') : [];
+        let weakCount = 0;
+        tapes.forEach(tape => {
+          const wc = parseInt(tape.getAttribute('data-wrong-count') || '0', 10) || 0;
+          if (isWeakTapesOnlyMode) {
+            if (wc >= 1) {
+              stickTape(tape);
+              weakCount++;
+            } else {
+              peelTape(tape);
+            }
+          }
+        });
+        const btnWeakDesktop = document.getElementById('btn-weak-tapes-only');
+        const btnWeakMobile = document.getElementById('btn-mobile-weak-tapes-only');
+        [btnWeakDesktop, btnWeakMobile].forEach(btn => {
+          if (!btn) return;
+          if (isWeakTapesOnlyMode) {
+            btn.classList.add('ring-2', 'ring-rose-500', 'bg-rose-600', 'text-white');
+          } else {
+            btn.classList.remove('ring-2', 'ring-rose-500', 'bg-rose-600', 'text-white');
+          }
+        });
+        if (notify) {
+          if (isWeakTapesOnlyMode) {
+            if (weakCount > 0) {
+              showToast(`약한 테이프(${weakCount}개)만 가렸습니다`, 'filter_alt');
+            } else {
+              showToast('아직 표시된 약한 테이프(wrongCount ≥ 1)가 없습니다. [틀린 테이프 표시]로 체크해보세요.', 'info');
+            }
+          } else {
+            toggleMasterReveal(false);
+            showToast('전체 테이프 가리기 모드로 복귀했습니다', 'label');
+          }
+        }
+      }
+
       // Authentic Masking Tape Functions
       function bindSingleTape(tape) {
         tape.title = '클릭: 떼기/가리기 | 길게 누르기 또는 마우스 우클릭: 테이프 삭제';
+        const curTopic = TOPICS[currentTopicIndex];
+        if (curTopic) {
+          const key = getTapeCanonicalKey(tape);
+          const allWc = getTapeWrongCountsAll();
+          const savedWc = (allWc[curTopic.id] && key && allWc[curTopic.id][key]) || parseInt(tape.getAttribute('data-wrong-count') || '0', 10) || 0;
+          if (savedWc > 0) {
+            tape.setAttribute('data-wrong-count', String(savedWc));
+          }
+        }
 
         // Right-Click (contextmenu): instant delete (Mac trackpad two-finger tap or Ctrl+click or long-press on mobile)
         tape.addEventListener('contextmenu', (e) => {
@@ -7016,7 +7742,7 @@
           }
         });
 
-        // Left-Click: toggle (or delete if modifier held)
+        // Left-Click: toggle (or delete if modifier held, or increment wrongCount in mark-wrong-tape-mode per T8)
         tape.addEventListener('click', (e) => {
           e.stopPropagation();
           if (isLongPress) {
@@ -7031,6 +7757,12 @@
             removeTape(tape);
             return;
           }
+          if (document.body.classList.contains('mark-wrong-tape-mode')) {
+            const newCount = incrementTapeWrongCount(tape);
+            const kw = getTapeCanonicalKey(tape).slice(0, 14);
+            showToast(`'${kw}' 오답 표시 완료 (누적 ${newCount}회)`, 'priority_high');
+            return;
+          }
           if (tape.classList.contains('is-taped')) {
             peelTape(tape);
           } else {
@@ -7042,6 +7774,9 @@
       function setupTapeInteractions() {
         const tapes = subnoteContainer.querySelectorAll('.mask-tape');
         tapes.forEach(tape => bindSingleTape(tape));
+        if (isWeakTapesOnlyMode) {
+          applyWeakTapesFilterToCurrentTopic(false);
+        }
       }
 
       function stickTape(tape) {
@@ -8182,7 +8917,10 @@
         btnClearSearch.classList.toggle('hidden', !hasText);
         if (sidebarSearchKbd) sidebarSearchKbd.classList.toggle('hidden', hasText);
         clearTimeout(searchDebounceTimer);
-        searchDebounceTimer = setTimeout(() => {
+        searchDebounceTimer = setTimeout(async () => {
+          if (hasText && loadedSubjectChunks.size < 6) {
+            await ensureSubjectLoaded('ALL');
+          }
           renderSidebar();
         }, 100);
       });
@@ -8392,6 +9130,11 @@
       }
 
       function closeMobileGradeSheet() {
+        document.body.classList.remove('mark-wrong-tape-mode');
+        const btnMarkWrong = document.getElementById('btn-toggle-mark-wrong-tape');
+        const markWrongLabel = document.getElementById('mark-wrong-tape-label');
+        if (btnMarkWrong) btnMarkWrong.classList.remove('ring-2', 'ring-rose-500', 'bg-rose-600', 'text-white');
+        if (markWrongLabel) markWrongLabel.textContent = '틀린 테이프 표시';
         if (!mobileGradeSheet) return;
         mobileGradeSheet.style.transform = '';
         mobileGradeSheet.classList.add('translate-y-full');
@@ -8406,6 +9149,166 @@
             mobileGradeBackdrop.classList.add('hidden');
           }
         }, 200);
+      }
+
+      // T8: Mark wrong tape mode & Weak tapes only buttons
+      const btnToggleMarkWrongTape = document.getElementById('btn-toggle-mark-wrong-tape');
+      const markWrongTapeLabel = document.getElementById('mark-wrong-tape-label');
+      if (btnToggleMarkWrongTape) {
+        btnToggleMarkWrongTape.addEventListener('click', () => {
+          const active = document.body.classList.toggle('mark-wrong-tape-mode');
+          btnToggleMarkWrongTape.classList.toggle('ring-2', active);
+          btnToggleMarkWrongTape.classList.toggle('ring-rose-500', active);
+          btnToggleMarkWrongTape.classList.toggle('bg-rose-600', active);
+          btnToggleMarkWrongTape.classList.toggle('text-white', active);
+          if (markWrongTapeLabel) {
+            markWrongTapeLabel.textContent = active ? '틀린 테이프 탭 중 (완료)' : '틀린 테이프 표시';
+          }
+          if (active) {
+            showToast('본문에서 틀린 테이프를 탭하면 오답 횟수(×1)가 기록됩니다', 'touch_app');
+          } else {
+            showToast('틀린 테이프 표시 모드가 종료되었습니다', 'check');
+          }
+        });
+      }
+
+      const btnWeakTapesOnly = document.getElementById('btn-weak-tapes-only');
+      const btnMobileWeakTapesOnly = document.getElementById('btn-mobile-weak-tapes-only');
+      [btnWeakTapesOnly, btnMobileWeakTapesOnly].forEach(btn => {
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          isWeakTapesOnlyMode = !isWeakTapesOnlyMode;
+          applyWeakTapesFilterToCurrentTopic(true);
+        });
+      });
+
+      // T6: Due Queue Controls & Mobile Header / Startup Prompt
+      const btnMobileDueHeader = document.getElementById('btn-mobile-due-header');
+      if (btnMobileDueHeader) {
+        btnMobileDueHeader.addEventListener('click', () => {
+          dueQueueInitialMax = 0;
+          setSubjectTab('오늘 복습', true);
+          showToast('오늘 복습 큐 모드로 진입했습니다', 'schedule');
+        });
+      }
+      document.querySelectorAll('.due-subj-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          dueQueueSubjFilter = pill.dataset.dueSubj || 'ALL';
+          dueQueueInitialMax = 0;
+          document.querySelectorAll('.due-subj-pill').forEach(p => {
+            if (p.dataset.dueSubj === dueQueueSubjFilter) {
+              p.className = 'due-subj-pill min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-600 text-white cursor-pointer';
+            } else {
+              p.className = 'due-subj-pill min-h-[32px] px-2 py-1 rounded-lg text-[11px] font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 cursor-pointer';
+            }
+          });
+          setSubjectTab('오늘 복습', true);
+        });
+      });
+      const btnDueCompleteReturn = document.getElementById('btn-due-complete-return');
+      if (btnDueCompleteReturn) {
+        btnDueCompleteReturn.addEventListener('click', () => {
+          setSubjectTab('사회과교육론', true);
+        });
+      }
+      const mobileDuePrompt = document.getElementById('mobile-due-prompt');
+      const btnStartMobileDueQueue = document.getElementById('btn-start-mobile-due-queue');
+      const btnDismissMobileDuePrompt = document.getElementById('btn-dismiss-mobile-due-prompt');
+      if (btnStartMobileDueQueue) {
+        btnStartMobileDueQueue.addEventListener('click', () => {
+          if (mobileDuePrompt) mobileDuePrompt.classList.add('hidden');
+          dueQueueInitialMax = 0;
+          setSubjectTab('오늘 복습', true);
+        });
+      }
+      if (btnDismissMobileDuePrompt) {
+        btnDismissMobileDuePrompt.addEventListener('click', () => {
+          if (mobileDuePrompt) mobileDuePrompt.classList.add('hidden');
+          try { sessionStorage.setItem('edurecall_due_prompt_dismissed', 'true'); } catch (e) {}
+        });
+      }
+
+      // T7: Sidebar Exam Filter Select
+      const sidebarExamFilterSelect = document.getElementById('sidebar-exam-filter');
+      if (sidebarExamFilterSelect) {
+        sidebarExamFilterSelect.addEventListener('change', async () => {
+          sidebarExamFilterVal = sidebarExamFilterSelect.value;
+          if (sidebarExamFilterVal !== 'all' && loadedSubjectChunks.size < 6) {
+            await ensureSubjectLoaded('ALL');
+          }
+          renderSidebar();
+          if (filteredIndices.length > 0 && !filteredIndices.includes(currentTopicIndex)) {
+            renderTopic(filteredIndices[0], true);
+          }
+        });
+      }
+
+      // T9: Focus Missing Keywords as Mask Tapes
+      function focusMissingKeywordTapes() {
+        const topic = TOPICS[currentTopicIndex];
+        if (!topic) return;
+        const text = (essayInput ? essayInput.value : '').trim();
+        const keywords = topic.targetKeywords || [];
+        const missingKws = keywords.filter(kw => !(kw.length >= 2 && text.includes(kw)));
+
+        if (diffModal && !diffModal.classList.contains('hidden')) {
+          diffModal.classList.add('hidden');
+        }
+        if (currentMode !== 'tape') {
+          applyMode('tape');
+        }
+        const tapes = subnoteContainer ? Array.from(subnoteContainer.querySelectorAll('.mask-tape')) : [];
+        if (tapes.length === 0) {
+          showToast('이 주제에는 마스킹 테이프가 없습니다', 'info');
+          return;
+        }
+        let focusedCount = 0;
+        let firstFocusedTape = null;
+        tapes.forEach(tape => {
+          const tText = getTapeCanonicalKey(tape);
+          const isMissingMatch = missingKws.length === 0
+            ? false
+            : missingKws.some(kw => tText.includes(kw) || kw.includes(tText));
+          if (isMissingMatch) {
+            stickTape(tape);
+            tape.classList.add('ring-2', 'ring-rose-400');
+            setTimeout(() => tape.classList.remove('ring-2', 'ring-rose-400'), 1800);
+            if (!firstFocusedTape) firstFocusedTape = tape;
+            focusedCount++;
+          } else {
+            peelTape(tape);
+          }
+        });
+        if (focusedCount === 0 && missingKws.length > 0) {
+          // Fallback: if targetKeywords didn't exact-match tape text, cover all tapes not present in essayInput
+          tapes.forEach(tape => {
+            const tText = getTapeCanonicalKey(tape);
+            if (tText && !text.includes(tText)) {
+              stickTape(tape);
+              if (!firstFocusedTape) firstFocusedTape = tape;
+              focusedCount++;
+            } else {
+              peelTape(tape);
+            }
+          });
+        }
+        isAllRevealed = (focusedCount === 0);
+        updateRevealButton(isAllRevealed);
+        if (firstFocusedTape) {
+          scrollTapeIntoViewCentered(firstFocusedTape);
+          showToast(`누락 키워드 테이프 ${focusedCount}개만 가려 집중 학습합니다`, 'center_focus_strong');
+        } else {
+          showToast('모든 목표 키워드가 인출 답안에 포함되었습니다! 🎉', 'verified');
+        }
+      }
+
+      const btnFocusMissingKeywords = document.getElementById('btn-focus-missing-keywords');
+      const btnDiffFocusMissing = document.getElementById('btn-diff-focus-missing');
+      if (btnFocusMissingKeywords) {
+        btnFocusMissingKeywords.addEventListener('click', focusMissingKeywordTapes);
+      }
+      if (btnDiffFocusMissing) {
+        btnDiffFocusMissing.addEventListener('click', focusMissingKeywordTapes);
       }
 
       if (btnCloseMobileGradeSheet) {
@@ -10964,6 +11867,61 @@
         }
       });
 
+      // T10: Exam D-day & Daily Quota Calculator
+      function getExamDdayInfo() {
+        const examDateStr = localStorage.getItem('edurecall_exam_date') || '';
+        if (!examDateStr) return null;
+        const targetDate = new Date(examDateStr + 'T00:00:00');
+        if (isNaN(targetDate.getTime())) return null;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const diffDays = Math.ceil((targetDate.getTime() - today.getTime()) / 86400000);
+        const daysLeft = Math.max(1, diffDays);
+
+        const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
+        const nowTime = Date.now();
+        let unstudiedCount = 0;
+        let dueCount = 0;
+        TOPICS.forEach(t => {
+          if (t.subject === '안내') return;
+          const card = fsrsMap[t.id];
+          if (!card || card.state === 0 || !card.reps) {
+            unstudiedCount++;
+          } else if (card.due && new Date(card.due).getTime() <= nowTime) {
+            dueCount++;
+          }
+        });
+
+        const dailyQuota = Math.max(1, Math.ceil((unstudiedCount + dueCount) / daysLeft));
+        const ddayLabel = diffDays > 0 ? `D-${diffDays}` : (diffDays === 0 ? 'D-Day' : `D+${Math.abs(diffDays)}`);
+        return { examDateStr, diffDays, daysLeft, unstudiedCount, dueCount, dailyQuota, ddayLabel };
+      }
+
+      function updateExamDdayUI() {
+        const info = getExamDdayInfo();
+        const headerDdayLabel = document.getElementById('header-dday-label');
+        const dashboardDdayBadge = document.getElementById('dashboard-dday-badge');
+        const dashboardQuotaDesc = document.getElementById('dashboard-daily-quota-desc');
+        const inputExamDate = document.getElementById('input-exam-date');
+
+        if (inputExamDate && info && !inputExamDate.value) {
+          inputExamDate.value = info.examDateStr;
+        }
+        if (info) {
+          if (headerDdayLabel) headerDdayLabel.textContent = `${info.ddayLabel} · ${info.dailyQuota}개/일`;
+          if (dashboardDdayBadge) dashboardDdayBadge.textContent = info.ddayLabel;
+          if (dashboardQuotaDesc) {
+            dashboardQuotaDesc.textContent = `일일 권장 학습량: 하루 ${info.dailyQuota}개 (미학습 ${info.unstudiedCount}개 + 복습 예정 ${info.dueCount}개 / 남은 ${info.daysLeft}일)`;
+          }
+        } else {
+          if (headerDdayLabel) headerDdayLabel.textContent = 'D-Day 설정';
+          if (dashboardDdayBadge) dashboardDdayBadge.textContent = 'D-Day 미설정';
+          if (dashboardQuotaDesc) {
+            dashboardQuotaDesc.textContent = '시험 예정일을 입력하면 (미학습 + 복습 예정) / 남은 일수로 일일 권장 학습량을 계산합니다.';
+          }
+        }
+      }
+
       function updateSubjectCountBadges() {
         const counts = { '사회과교육론': 0, '법학': 0, '사회학': 0, '정치학': 0, '경제학': 0, '기출': 0, '안내': 0 };
         const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
@@ -10980,6 +11938,7 @@
         const map = {
           'count-due': dueSet.size,
           'count-due-mobile': dueSet.size,
+          'count-due-header-mobile': dueSet.size,
           'count-edu': counts['사회과교육론'],
           'count-law': counts['법학'],
           'count-soc': counts['사회학'],
@@ -10991,6 +11950,8 @@
           const el = document.getElementById(id);
           if (el) el.textContent = id === 'count-due-mobile' ? `(${map[id]})` : map[id];
         });
+        updateExamDdayUI();
+        return dueSet.size;
       }
 
       // Initial Boot & Session Restoration
@@ -11077,10 +12038,22 @@
         }
       } catch (e) {}
 
-      updateSubjectCountBadges();
+      const initialDueCount = updateSubjectCountBadges();
       updateOverallStats();
       setSubjectTab(activeSubject, false);
       updateThemeUI(isDarkMode());
+
+      // T6: Mobile startup due review prompt banner
+      try {
+        if (window.innerWidth < 768 && initialDueCount > 0 && activeSubject !== '오늘 복습' && !sessionStorage.getItem('edurecall_due_prompt_dismissed')) {
+          const mobileDuePrompt = document.getElementById('mobile-due-prompt');
+          const mobileDuePromptText = document.getElementById('mobile-due-prompt-text');
+          if (mobileDuePrompt && mobileDuePromptText) {
+            mobileDuePromptText.textContent = `오늘 복습할 카드 ${initialDueCount}개가 있습니다`;
+            mobileDuePrompt.classList.remove('hidden');
+          }
+        }
+      } catch (e) {}
 
       if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -11197,6 +12170,7 @@
       }
 
       // T2: Mobile (<768px) Auto-hide top header & sub-header on scroll down, show on scroll up
+      // T3: Horizontal Swipe Left/Right on #subnote-section to navigate topics (>=80px, |dx| > |dy|, ignore during selection/modals)
       const subnoteSectionEl = document.getElementById('subnote-section');
       if (subnoteSectionEl) {
         let lastMobileScrollTop = 0;
@@ -11214,6 +12188,72 @@
             closeMobileMoreMenu();
           }
           lastMobileScrollTop = Math.max(0, st);
+        }, { passive: true });
+
+        let swipeStartX = 0;
+        let swipeStartY = 0;
+        let swipeMaxAbsDy = 0;
+        let swipeTracking = false;
+
+        subnoteSectionEl.addEventListener('touchstart', (e) => {
+          if (!e.touches || e.touches.length !== 1) {
+            swipeTracking = false;
+            return;
+          }
+          const target = e.target;
+          if (target && target.closest('input, textarea, select, table, .mobile-scroll-fade, .overflow-x-auto')) {
+            swipeTracking = false;
+            return;
+          }
+          if (diagramModal && !diagramModal.classList.contains('hidden')) {
+            swipeTracking = false;
+            return;
+          }
+          const sel = window.getSelection ? window.getSelection() : null;
+          if ((sel && !sel.isCollapsed && sel.toString().trim().length > 0) ||
+              (floatingMaskBtn && !floatingMaskBtn.classList.contains('hidden'))) {
+            swipeTracking = false;
+            return;
+          }
+          swipeStartX = e.touches[0].clientX;
+          swipeStartY = e.touches[0].clientY;
+          swipeMaxAbsDy = 0;
+          swipeTracking = true;
+        }, { passive: true });
+
+        subnoteSectionEl.addEventListener('touchmove', (e) => {
+          if (!swipeTracking || !e.touches || e.touches.length !== 1) return;
+          const dy = Math.abs(e.touches[0].clientY - swipeStartY);
+          if (dy > swipeMaxAbsDy) swipeMaxAbsDy = dy;
+          const sel = window.getSelection ? window.getSelection() : null;
+          if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) {
+            swipeTracking = false;
+          }
+        }, { passive: true });
+
+        subnoteSectionEl.addEventListener('touchend', (e) => {
+          if (!swipeTracking || !e.changedTouches || e.changedTouches.length !== 1) {
+            swipeTracking = false;
+            return;
+          }
+          swipeTracking = false;
+          if (diagramModal && !diagramModal.classList.contains('hidden')) return;
+          const sel = window.getSelection ? window.getSelection() : null;
+          if ((sel && !sel.isCollapsed && sel.toString().trim().length > 0) ||
+              (floatingMaskBtn && !floatingMaskBtn.classList.contains('hidden'))) {
+            return;
+          }
+          const dx = e.changedTouches[0].clientX - swipeStartX;
+          const dy = e.changedTouches[0].clientY - swipeStartY;
+          const absDx = Math.abs(dx);
+          const absDy = Math.max(Math.abs(dy), swipeMaxAbsDy);
+          if (absDx >= 80 && absDx > absDy * 1.4) {
+            if (dx < 0) {
+              btnNextTopic?.click();
+            } else {
+              btnPrevTopic?.click();
+            }
+          }
         }, { passive: true });
       }
 
@@ -11240,51 +12280,71 @@
       if (mobileMoreFontInc) mobileMoreFontInc.addEventListener('click', () => { document.getElementById('btn-font-up')?.click(); });
       if (mobileMoreTheme) mobileMoreTheme.addEventListener('click', () => { closeMobileMoreMenu(); toggleTheme(); });
 
-      // 4-Step Onboarding Tour Logic
+      // 5-Step Onboarding Tour Logic (T5: Touch-aware + PWA Install Prompt)
       const onboardingModal = document.getElementById('onboarding-modal');
       const btnOpenOnboarding = document.getElementById('btn-open-onboarding');
       const btnOnboardingPrev = document.getElementById('btn-onboarding-prev');
       const btnOnboardingNext = document.getElementById('btn-onboarding-next');
       const btnOnboardingStartNow = document.getElementById('btn-onboarding-start-now');
-      const btnOnboardingStartNowTop = document.getElementById('btn-onboarding-start-now-top');
+      const btnOnboardingCloseTop = document.getElementById('btn-onboarding-close-top');
       const onboardingDontShowAgain = document.getElementById('onboarding-dont-show-again');
       const onboardingStepBadge = document.getElementById('onboarding-step-badge');
-      const onboardingProgressBar = document.getElementById('onboarding-progress-bar');
       const onboardingDots = document.querySelectorAll('.onboarding-dot');
-      const onboardingSteps = document.querySelectorAll('.onboarding-step');
+      const onboardingSlides = document.querySelectorAll('.onboarding-slide');
       const btnOnboardingOpenSync = document.getElementById('btn-onboarding-open-sync');
-      let currentOnboardingStep = 1;
-      const TOTAL_ONBOARDING_STEPS = 4;
+      const btnPwaInstallOnboarding = document.getElementById('btn-pwa-install-onboarding');
+      let currentOnboardingStep = 0; // 0-indexed (0..4)
+      const TOTAL_ONBOARDING_STEPS = 5;
+      let deferredInstallPrompt = null;
 
-      function updateOnboardingStepUI(step) {
-        currentOnboardingStep = Math.max(1, Math.min(TOTAL_ONBOARDING_STEPS, step));
-        onboardingSteps.forEach(el => {
-          const s = parseInt(el.dataset.step, 10);
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredInstallPrompt = e;
+        if (btnPwaInstallOnboarding) {
+          btnPwaInstallOnboarding.classList.remove('hidden');
+        }
+      });
+
+      if (btnPwaInstallOnboarding) {
+        btnPwaInstallOnboarding.addEventListener('click', async () => {
+          if (!deferredInstallPrompt) return;
+          deferredInstallPrompt.prompt();
+          try {
+            await deferredInstallPrompt.userChoice;
+          } catch (e) {}
+          deferredInstallPrompt = null;
+          btnPwaInstallOnboarding.classList.add('hidden');
+        });
+      }
+
+      function updateOnboardingStepUI(stepIdx) {
+        currentOnboardingStep = Math.max(0, Math.min(TOTAL_ONBOARDING_STEPS - 1, stepIdx));
+        onboardingSlides.forEach(el => {
+          const s = parseInt(el.dataset.stepPanel, 10);
           el.classList.toggle('hidden', s !== currentOnboardingStep);
         });
         onboardingDots.forEach(dot => {
-          const d = parseInt(dot.dataset.dot, 10);
+          const d = parseInt(dot.dataset.step, 10);
           if (d === currentOnboardingStep) {
-            dot.className = 'onboarding-dot w-5 h-2 rounded-full bg-blue-600 transition-all cursor-pointer';
+            dot.className = 'onboarding-dot h-1.5 flex-1 rounded-full bg-blue-600 transition-all cursor-pointer';
           } else {
-            dot.className = 'onboarding-dot w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 transition-all cursor-pointer';
+            dot.className = 'onboarding-dot h-1.5 flex-1 rounded-full bg-slate-200 dark:bg-slate-700 transition-all cursor-pointer';
           }
         });
-        if (onboardingStepBadge) onboardingStepBadge.textContent = `STEP ${currentOnboardingStep} / ${TOTAL_ONBOARDING_STEPS}`;
-        if (onboardingProgressBar) onboardingProgressBar.style.width = `${(currentOnboardingStep / TOTAL_ONBOARDING_STEPS) * 100}%`;
-        if (btnOnboardingPrev) btnOnboardingPrev.classList.toggle('hidden', currentOnboardingStep === 1);
+        if (onboardingStepBadge) onboardingStepBadge.textContent = `${currentOnboardingStep + 1} / ${TOTAL_ONBOARDING_STEPS}`;
+        if (btnOnboardingPrev) btnOnboardingPrev.classList.toggle('hidden', currentOnboardingStep === 0);
         if (btnOnboardingNext) {
-          if (currentOnboardingStep === TOTAL_ONBOARDING_STEPS) {
-            btnOnboardingNext.innerHTML = '공부 시작하기 <span class="material-symbols-outlined text-[16px]">rocket_launch</span>';
+          if (currentOnboardingStep === TOTAL_ONBOARDING_STEPS - 1) {
+            btnOnboardingNext.classList.add('hidden');
           } else {
-            btnOnboardingNext.innerHTML = '다음 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>';
+            btnOnboardingNext.classList.remove('hidden');
           }
         }
       }
 
       function openOnboardingModal() {
         if (!onboardingModal) return;
-        updateOnboardingStepUI(1);
+        updateOnboardingStepUI(0);
         onboardingModal.classList.remove('hidden');
       }
 
@@ -11300,7 +12360,7 @@
       if (btnOnboardingPrev) btnOnboardingPrev.addEventListener('click', () => updateOnboardingStepUI(currentOnboardingStep - 1));
       if (btnOnboardingNext) {
         btnOnboardingNext.addEventListener('click', () => {
-          if (currentOnboardingStep < TOTAL_ONBOARDING_STEPS) {
+          if (currentOnboardingStep < TOTAL_ONBOARDING_STEPS - 1) {
             updateOnboardingStepUI(currentOnboardingStep + 1);
           } else {
             closeOnboardingModal(true);
@@ -11308,11 +12368,11 @@
         });
       }
       if (btnOnboardingStartNow) btnOnboardingStartNow.addEventListener('click', () => closeOnboardingModal(true));
-      if (btnOnboardingStartNowTop) btnOnboardingStartNowTop.addEventListener('click', () => closeOnboardingModal(true));
+      if (btnOnboardingCloseTop) btnOnboardingCloseTop.addEventListener('click', () => closeOnboardingModal(true));
       onboardingDots.forEach(dot => {
         dot.addEventListener('click', () => {
-          const targetStep = parseInt(dot.dataset.dot, 10);
-          if (targetStep) updateOnboardingStepUI(targetStep);
+          const targetStep = parseInt(dot.dataset.step, 10);
+          if (!isNaN(targetStep)) updateOnboardingStepUI(targetStep);
         });
       });
       if (onboardingModal) {
@@ -11355,24 +12415,57 @@
       const tableBody = document.getElementById('library-table-body');
       const searchInput = document.getElementById('library-search-input');
       const subjectFilter = document.getElementById('library-subject-filter');
+      const libraryExamFilter = document.getElementById('library-exam-filter');
       const paginationContainer = document.getElementById('library-pagination');
+      const btnHeaderDday = document.getElementById('btn-header-dday');
+      const inputExamDate = document.getElementById('input-exam-date');
+      const btnSaveExamDate = document.getElementById('btn-save-exam-date');
       let libraryPage = 1;
       const CARDS_PER_PAGE = 15;
       
       if (btnLibrary) btnLibrary.addEventListener('click', openLibraryDashboard);
+      if (btnHeaderDday) {
+        btnHeaderDday.addEventListener('click', async () => {
+          await openLibraryDashboard();
+          if (inputExamDate) {
+            inputExamDate.focus();
+            inputExamDate.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      }
+      if (btnSaveExamDate && inputExamDate) {
+        btnSaveExamDate.addEventListener('click', () => {
+          const val = inputExamDate.value.trim();
+          if (val) {
+            localStorage.setItem('edurecall_exam_date', val);
+            showToast(`시험 예정일(${val}) 및 일일 권장량이 저장되었습니다`, 'event_available');
+          } else {
+            localStorage.removeItem('edurecall_exam_date');
+            showToast('시험 예정일 설정이 해제되었습니다', 'info');
+          }
+          updateExamDdayUI();
+          renderHeatmap();
+          scheduleAutoBackup();
+        });
+      }
       if (btnCloseDashboard) btnCloseDashboard.addEventListener('click', closeLibraryDashboard);
       if (searchInput) searchInput.addEventListener('input', () => { libraryPage = 1; renderLibraryTable(); });
       if (subjectFilter) subjectFilter.addEventListener('change', () => { libraryPage = 1; renderLibraryTable(); });
+      if (libraryExamFilter) libraryExamFilter.addEventListener('change', () => { libraryPage = 1; renderLibraryTable(); });
 
-      function openLibraryDashboard() {
+      async function openLibraryDashboard() {
         libraryDashboard.classList.remove('hidden');
         void libraryDashboard.offsetWidth; // trigger reflow
         libraryDashboard.classList.remove('opacity-0');
+        document.body.style.overflow = 'hidden';
+        if (loadedSubjectChunks.size < 6) {
+          await ensureSubjectLoaded('ALL');
+        }
+        updateExamDdayUI();
         renderLibraryStats();
         renderHeatmap();
         renderForecast();
         renderLibraryTable();
-        document.body.style.overflow = 'hidden';
       }
 
       function closeLibraryDashboard() {
@@ -11443,6 +12536,8 @@
       function renderHeatmap() {
         heatmapContainer.innerHTML = '';
         const dailyStats = JSON.parse(localStorage.getItem('edurecall_daily_stats')) || {};
+        const ddayInfo = getExamDdayInfo();
+        const dailyQuota = ddayInfo ? ddayInfo.dailyQuota : 0;
         const today = new Date();
         const days = [];
         
@@ -11458,9 +12553,10 @@
         
         days.forEach((day, idx) => {
           const block = document.createElement('div');
-          block.className = 'w-[calc(100%/11)] sm:w-[15px] sm:h-[15px] rounded-sm sm:rounded-[3px] transition-colors border shadow-xs';
+          block.className = 'w-[calc(100%/11)] sm:w-[15px] sm:h-[15px] rounded-sm sm:rounded-[3px] transition-colors border shadow-xs relative';
           const monthStr = (day.dayObj.getMonth()+1) + '/' + day.dayObj.getDate();
-          block.title = `${monthStr}: ${day.count}회 복습`;
+          const goalMet = dailyQuota > 0 && day.count >= dailyQuota;
+          block.title = goalMet ? `${monthStr}: ${day.count}회 복습 (🎯 일일 목표 달성)` : `${monthStr}: ${day.count}회 복습`;
           
           if (day.count === 0) {
             block.classList.add('bg-slate-100', 'dark:bg-slate-700/50', 'border-slate-200', 'dark:border-slate-600');
@@ -11470,6 +12566,9 @@
             else if (intensity < 0.5) block.classList.add('bg-emerald-300', 'dark:bg-emerald-800', 'border-emerald-400', 'dark:border-emerald-700');
             else if (intensity < 0.75) block.classList.add('bg-emerald-400', 'dark:bg-emerald-600', 'border-emerald-500', 'dark:border-emerald-600');
             else block.classList.add('bg-emerald-500', 'dark:bg-emerald-500', 'border-emerald-600', 'dark:border-emerald-400');
+          }
+          if (goalMet) {
+            block.classList.add('ring-2', 'ring-indigo-500', 'dark:ring-indigo-400');
           }
           heatmapContainer.appendChild(block);
         });
@@ -11520,15 +12619,31 @@
         const fsrsMap = JSON.parse(localStorage.getItem('edurecall_fsrs_grades')) || {};
         const q = searchInput.value.toLowerCase().trim();
         const f = subjectFilter.value;
+        const examF = libraryExamFilter ? libraryExamFilter.value : 'all';
         const now = new Date();
         
         let filtered = TOPICS.filter(t => {
           if (f !== 'all' && t.subject !== f) return false;
           if (q && !t.title.toLowerCase().includes(q) && !(t.chapter && t.chapter.toLowerCase().includes(q))) return false;
+          if (examF !== 'all') {
+            const info = parseTopicExamInfo(t);
+            if (examF === 'exam_only' || examF === 'freq') {
+              if (!info.hasExam) return false;
+            } else if (examF === '2022_prev') {
+              if (!info.years.some(y => parseInt(y, 10) <= 2022)) return false;
+            } else {
+              if (!info.years.includes(examF)) return false;
+            }
+          }
           return true;
         });
         
         filtered.sort((a, b) => {
+          if (examF === 'freq') {
+            const infoA = parseTopicExamInfo(a);
+            const infoB = parseTopicExamInfo(b);
+            if (infoB.freq !== infoA.freq) return infoB.freq - infoA.freq;
+          }
           const ca = fsrsMap[a.id];
           const cb = fsrsMap[b.id];
           if (!ca && !cb) return 0;
