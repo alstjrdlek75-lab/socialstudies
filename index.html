@@ -2147,7 +2147,7 @@
   <div id="sub-header" class="flex-none h-11 md:h-10 bg-slate-50/95 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
     <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
-      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: []">
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
         <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
         <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
       </button>
@@ -3156,7 +3156,7 @@
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>좌측 목차 패널 열기/닫기</span>
-          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">[</kbd>
+          <kbd class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 font-mono font-bold">Space</kbd>
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>현재 과목 학습 핀 설정/해제</span>
@@ -3960,7 +3960,7 @@
           sidebarToggleIcon.textContent = isCollapsed ? 'menu' : 'dock_to_left';
         }
         if (btnToggleSidebar) {
-          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 [단축키: []' : '목차 사이드바 접기 [단축키: []';
+          btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 [단축키: Space]' : '목차 사이드바 접기 [단축키: Space]';
         }
       }
 
@@ -3968,10 +3968,10 @@
         if (window.innerWidth < 1024) {
           if (sidebarDrawer.classList.contains('-translate-x-full')) {
             openMobileSidebar();
-            showToast('목차를 열었습니다 [[]', 'menu_open');
+            showToast('목차를 열었습니다 [Space]', 'menu_open');
           } else {
             closeMobileSidebar();
-            showToast('목차를 닫았습니다 [[]', 'dock_to_left');
+            showToast('목차를 닫았습니다 [Space]', 'dock_to_left');
           }
           return;
         }
@@ -3983,7 +3983,7 @@
           localStorage.setItem('edurecall_sidebar_collapsed', willCollapse ? 'true' : 'false');
         } catch (e) {}
         updateSidebarToggleUI(willCollapse);
-        showToast(willCollapse ? '목차 탭을 접었습니다 [[]' : '목차 탭을 펼쳤습니다 [[]', willCollapse ? 'dock_to_left' : 'menu_open');
+        showToast(willCollapse ? '목차 탭을 접었습니다 [Space]' : '목차 탭을 펼쳤습니다 [Space]', willCollapse ? 'dock_to_left' : 'menu_open');
       }
 
       function setSidebarCollapsed(collapsed) {
@@ -12390,17 +12390,17 @@
           return;
         }
 
-        // 8. [[] (BracketLeft) Toggle Table of Contents (단원 목차 사이드바 열기/접기 — Space는 본문 스크롤 충돌 방지를 위해 제외)
-        if ((e.key === '[' || e.code === 'BracketLeft') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // 8. [Space] or [[] Toggle Table of Contents (단원 목차 사이드바 열기/접기)
+        const isSpaceToc = (e.code === 'Space' && (!activeEl || activeEl.tagName !== 'BUTTON'));
+        if ((isSpaceToc || e.key === '[' || e.code === 'BracketLeft') && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleDesktopSidebar();
           return;
         }
 
-        // 8-1. [T] or [ㅅ] or [Space] Toggle master reveal (전체보기 / 다시 가리기)
+        // 8-1. [T] or [ㅅ] Toggle master reveal (전체보기 / 다시 가리기)
         const isTKey = (e.key === 't' || e.key === 'T' || e.key === 'ㅅ' || e.code === 'KeyT' || e.keyCode === 84);
-        const isSpaceKey = (e.code === 'Space' && (!activeEl || activeEl.tagName !== 'BUTTON'));
-        if ((isTKey || isSpaceKey) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        if (isTKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleMasterReveal();
           return;
