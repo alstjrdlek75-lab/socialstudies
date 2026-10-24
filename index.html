@@ -1993,8 +1993,8 @@
   </style>
   <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
-  <script src="data/topics-index.js?v=20261023_v4"></script>
-  <script defer src="context-guides-data.js?v=20261023_v4"></script>
+  <script src="data/topics-index.js?v=20261024_v5"></script>
+  <script defer src="context-guides-data.js?v=20261024_v5"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3693,7 +3693,7 @@
 
         inflightChunkPromises[subject] = new Promise((resolve) => {
           const script = document.createElement('script');
-          script.src = chunkSrc + '?v=20261023_v4';
+          script.src = chunkSrc + '?v=20261024_v5';
           script.async = true;
           script.dataset.subjectChunk = subject;
           script.onload = () => {
@@ -3827,6 +3827,7 @@
         if (!topicId || topicId === 'timestamps') return false;
         if (!val || typeof val !== 'string' || val.trim().length < 30) return true;
         if (/<div class="font-bold[^"]*"[^>]*>\s*<span[^>]*class="[^"]*rounded-full[^"]*"[^>]*><\/span>\s*<span>\s*<\/span>\s*<\/div>/.test(val)) return true;
+        if ((topicId === 'EXAM-2024-A-05' || topicId === 'EXAM-2024-B-05' || topicId === 'EXAM-2025-A-06' || topicId === 'EXAM-2025-B-04') && !val.includes('<table')) return true;
         return false;
       }
 
@@ -7017,8 +7018,8 @@
           try { localStorage.setItem('edurecall_custom_EDU-040', customHtml); } catch(e) {}
         }
 
-        // Integrity safeguard: If EXAM-2024-A-05, EXAM-2024-B-05, or EXAM-2025-B-04 custom HTML is missing the official <table, discard and restore official contentHtml
-        if (customHtml && (topic.id === 'EXAM-2024-A-05' || topic.id === 'EXAM-2024-B-05' || topic.id === 'EXAM-2025-B-04') && !customHtml.includes('<table')) {
+        // Integrity safeguard: If EXAM-2024-A-05, EXAM-2024-B-05, EXAM-2025-A-06, or EXAM-2025-B-04 custom HTML is missing the official <table, discard and restore official contentHtml
+        if (customHtml && (topic.id === 'EXAM-2024-A-05' || topic.id === 'EXAM-2024-B-05' || topic.id === 'EXAM-2025-A-06' || topic.id === 'EXAM-2025-B-04') && !customHtml.includes('<table')) {
           localStorage.removeItem(`edurecall_custom_${topic.id}`);
           localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
           customHtml = null;
@@ -12438,7 +12439,9 @@
       // Register Service Worker for offline PWA support
       if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js').catch(() => {});
+          navigator.serviceWorker.register('sw.js?v=20261024_v5').then((reg) => {
+            if (reg && typeof reg.update === 'function') reg.update().catch(() => {});
+          }).catch(() => {});
         });
       }
 

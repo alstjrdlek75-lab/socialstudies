@@ -1,4 +1,4 @@
-const CACHE_NAME = 'edurecall-cache-v17';
+const CACHE_NAME = 'edurecall-cache-v18';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -44,8 +44,9 @@ self.addEventListener('fetch', (event) => {
   if (url.hostname.includes('supabase.co')) return;
 
   // Network-first with cache fallback for HTML and JS data files so online users always get latest updates, while offline works seamlessly
+  const isSameOrigin = url.origin === self.location.origin;
   event.respondWith(
-    fetch(req)
+    fetch(req, isSameOrigin ? { cache: 'no-cache' } : undefined)
       .then((networkRes) => {
         if (networkRes && networkRes.status === 200 && (url.origin === self.location.origin || url.hostname.includes('cdn.jsdelivr.net'))) {
           const resClone = networkRes.clone();
