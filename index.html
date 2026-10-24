@@ -4554,10 +4554,12 @@
                 cleanVal = cleanVal.replace(/<div class="mt-3 bg-blue-50\/70[^>]*><div class="font-bold text-blue-900[^>]*><span class="material-symbols-outlined[^>]*>psychology<\/span><span>\[보충 해설\][\s\S]*?<\/div><\/div><\/div>/g, '');
               }
               const requiredSupplementMarkers = {
+                'POL-001': '국가 현상설',
                 'POL-027': '재분배 과세 반대',
                 'POL-028': '도덕적 명령',
                 'POL-030': '정의관의 비교',
                 'POL-031': '서사적 자아',
+                'POL-086': '준연동형',
                 'POL-097': '국제 사회의 행위 주체',
                 'POL-110': '국제 사회의 행위 주체',
                 'LAW-066': '인권의 의미'
@@ -7639,10 +7641,12 @@
 
         // Integrity safeguard: If supplemented topics have outdated custom HTML missing the newly supplemented content, restore official contentHtml
         const requiredSupplementMarkers = {
+          'POL-001': '국가 현상설',
           'POL-027': '재분배 과세 반대',
           'POL-028': '도덕적 명령',
           'POL-030': '정의관의 비교',
           'POL-031': '서사적 자아',
+          'POL-086': '준연동형',
           'POL-097': '국제 사회의 행위 주체',
           'POL-110': '국제 사회의 행위 주체',
           'LAW-066': '인권의 의미'
