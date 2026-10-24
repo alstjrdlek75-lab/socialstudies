@@ -1798,10 +1798,14 @@
       outline-offset: 2px !important;
     }
 
-    /* Defer rendering of off-screen topic cards below the fold for faster initial render */
-    #subnote-content-container > .topic-group:nth-child(n+4) {
-      content-visibility: auto;
-      contain-intrinsic-size: auto none auto 150px;
+    /* A.1: Removed content-visibility: auto on .topic-group to prevent blank white screen during fast scroll */
+
+    /* B.5: Keep diagram zoom caption small and muted (never scaled up like section titles) */
+    .diagram-zoom-hint {
+      font-size: 12px !important;
+      line-height: 1.3 !important;
+      color: #64748b !important;
+      font-weight: 500 !important;
     }
 
     /* Mobile & Tablet (<1024px) Bottom-Sheet / Full-Screen Overlay TOC Drawer */
@@ -1873,7 +1877,8 @@
           margin-left: 0 !important;
         }
 
-        /* Mobile Sub-header Breadcrumb Simplification: Only show Current Topic Title prominently + Prev/Next buttons */
+        /* B.7: Mobile Sub-header: Hide duplicate breadcrumb title on mobile (<=768px) and keep only Prev/Next buttons */
+        #bc-container,
         #bc-subject,
         #bc-chapter-sep,
         #topic-header-path,
@@ -1883,19 +1888,12 @@
         #bc-subsection,
         #bc-subsection-sep,
         #bc-title-sep,
+        #bc-title,
         #bc-exam-tag {
           display: none !important;
         }
-        #bc-title {
-          display: block !important;
-          font-size: 0.925rem !important;
-          font-weight: 800 !important;
-          color: #0f172a !important;
-          line-height: 1.35 !important;
-          max-width: 100% !important;
-          overflow: hidden !important;
-          text-overflow: ellipsis !important;
-          white-space: nowrap !important;
+        #sub-header {
+          justify-content: flex-end !important;
         }
         .mobile-scroll-fade {
           overflow-x: auto !important;
@@ -2419,66 +2417,104 @@
           </div>
         </div>
 
-        <!-- Mode Controls Bar (On mobile <=768px: Clean 4-Segment Mode Selector only; secondary buttons in bottom bar / menu) -->
-        <div class="bg-white rounded-xl border border-slate-200/80 p-1.5 sm:p-2 shadow-2xs flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-1.5 xl:gap-3">
-          <!-- 4-Segment Mode Selector (Full-width 4-grid on mobile with >=44px touch targets) -->
-          <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-slate-100/90 p-1 rounded-xl w-full xl:w-auto shrink-0">
-            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="키워드 빈칸 마스킹 모드">
-              <span class="material-symbols-outlined text-[16px]">label</span>
-              <span class="hidden sm:inline">마스킹 테이프</span>
-              <span class="sm:hidden">테이프</span>
-            </button>
-            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
-              <span class="material-symbols-outlined text-[16px]">edit_note</span>
-              <span class="hidden sm:inline">작성 모드</span>
-              <span class="sm:hidden">작성</span>
-            </button>
-            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
-              <span class="material-symbols-outlined text-[16px]">menu_book</span>
-              <span class="hidden sm:inline">원문 정독</span>
-              <span class="sm:hidden">정독</span>
-            </button>
-            <button class="mode-pill min-h-[42px] sm:min-h-[38px] flex-1 sm:flex-initial flex items-center justify-center gap-1 py-2 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
-              <span class="material-symbols-outlined text-[16px]">blur_on</span>
-              <span class="hidden sm:inline">블러 암기</span>
-              <span class="sm:hidden">블러</span>
-            </button>
-          </div>
+        <!-- C.9: Simplified 3-Step Primary Study Flow Bar: ① 마스킹 테이프 인출 → ② 정답 확인 → ③ Again/Hard/Good/Easy 평가 (+ 더보기 메뉴) -->
+        <div class="bg-white rounded-xl border border-slate-200/80 p-2 sm:p-2.5 shadow-2xs flex flex-col gap-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <!-- Step 1 & Step 2: Primary Recall & Answer Check -->
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-1 sm:flex-initial min-w-0">
+              <!-- ① 마스킹 테이프 인출 -->
+              <button class="mode-pill min-h-[40px] sm:min-h-[38px] px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-blue-600 text-white shadow-xs flex items-center justify-center gap-1.5 cursor-pointer select-none shrink-0" data-mode="tape" type="button" title="1단계: 마스킹 테이프로 키워드 인출">
+                <span class="px-1.5 py-0.2 rounded bg-white/20 text-[10px] font-mono">1</span>
+                <span class="material-symbols-outlined text-[16px]">label</span>
+                <span>마스킹 인출</span>
+              </button>
 
-          <!-- Actions Toolbar (Hidden on mobile <768px to prevent button crowding; available in bottom bar & overflow menu) -->
-          <div class="hidden md:flex flex-wrap sm:flex-nowrap items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full xl:w-auto overflow-x-auto no-scrollbar py-0.5">
+              <span class="material-symbols-outlined text-slate-300 text-[16px] hidden sm:inline select-none">arrow_forward</span>
 
-            <!-- Font Scale Controller -->
-            <div class="flex items-center bg-slate-100/90 rounded-lg p-0.5 border border-slate-200/80 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
-              <button id="btn-font-down" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 작게 [단축키: -]">A-</button>
-              <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 font-mono font-bold min-w-[2.6rem] text-center">115%</span>
-              <button id="btn-font-up" type="button" class="min-h-[34px] px-2.5 py-1 rounded hover:bg-white hover:shadow-xs transition-all active:scale-90 font-bold text-slate-700 cursor-pointer" title="글자 크게 [단축키: =]">A+</button>
+              <!-- ② 정답 확인 [T] -->
+              <button id="btn-reveal-all" class="min-h-[40px] sm:min-h-[38px] flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-400 font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="2단계: 정답(마스킹 테이프) 확인 / 다시 가리기 [단축키: T]">
+                <span class="px-1.5 py-0.2 rounded bg-emerald-700/15 text-emerald-950 text-[10px] font-mono">2</span>
+                <span class="material-symbols-outlined text-[16px] text-emerald-800" id="reveal-eye-icon">visibility</span>
+                <span id="reveal-btn-label"><span class="hidden sm:inline">정답 확인 [T]</span><span class="sm:hidden">정답 확인</span></span>
+              </button>
             </div>
 
-            <!-- Inline Masking Tape Action Button -->
-            <button id="btn-apply-tape-inline" type="button" class="hidden md:flex min-h-[36px] px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs items-center justify-center gap-1 shadow-2xs active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
-              <span class="material-symbols-outlined text-[15px]">label</span>
-              <span class="hidden xl:inline">테이프 [M]</span>
-              <span class="xl:hidden">테이프</span>
-            </button>
+            <!-- Step 3: Primary FSRS Evaluation (Again / Hard / Good / Easy) + '더보기' Toggle -->
+            <div class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-between sm:justify-end">
+              <div class="grid grid-cols-4 gap-1 sm:gap-1.5 flex-1 sm:flex-initial" id="inline-fsrs-bar" aria-label="3단계 FSRS 자기평가">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-red-200 bg-red-50/90 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="1" type="button" title="3단계 평가: 다시 (단축키: 1)">
+                  <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Again</span>
+                  <span class="text-[10px] text-red-600 font-mono font-bold leading-tight" id="inline-fsrs-ivl-1">10분</span>
+                </button>
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-amber-900 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="2" type="button" title="3단계 평가: 어려움 (단축키: 2)">
+                  <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Hard</span>
+                  <span class="text-[10px] text-amber-700 font-mono font-bold leading-tight" id="inline-fsrs-ivl-2">1일</span>
+                </button>
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-blue-200 bg-blue-50/90 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="3" type="button" title="3단계 평가: 알맞음 (단축키: 3)">
+                  <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Good</span>
+                  <span class="text-[10px] text-blue-700 font-mono font-bold leading-tight" id="inline-fsrs-ivl-3">3일</span>
+                </button>
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-emerald-200 bg-emerald-50/90 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="4" type="button" title="3단계 평가: 쉬움 (단축키: 4)">
+                  <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Easy</span>
+                  <span class="text-[10px] text-emerald-700 font-mono font-bold leading-tight" id="inline-fsrs-ivl-4">7일</span>
+                </button>
+              </div>
 
-            <!-- T8: Weak Tapes Only Toggle Button (wrongCount >= 1) -->
-            <button id="btn-weak-tapes-only" type="button" class="min-h-[36px] px-2.5 py-1.5 rounded-lg border border-rose-200 bg-rose-50/70 hover:bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer whitespace-nowrap shrink-0" title="오답 표시(wrongCount ≥ 1)된 약한 테이프만 가리기">
-              <span class="material-symbols-outlined text-[15px]">filter_alt</span>
-              <span id="weak-tapes-btn-label">약한 테이프만</span>
-            </button>
+              <!-- Secondary Modes & Tools Toggle Button ('더보기') -->
+              <button id="btn-toggle-study-more" type="button" aria-expanded="false" class="min-h-[40px] sm:min-h-[38px] px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer shrink-0" title="작성/정독/블러 모드, 백지 인출, Diff 대조 등 보조 학습 도구 더보기">
+                <span class="material-symbols-outlined text-[16px]" id="study-more-icon">tune</span>
+                <span>더보기</span>
+              </button>
+            </div>
+          </div>
 
-            <!-- Single Consolidated Reveal / Hide Button -->
-            <button id="btn-reveal-all" class="min-h-[36px] flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="정답(마스킹 테이프) 전체보기 / 다시 가리기 [단축키: T]">
-              <span class="material-symbols-outlined text-[16px] text-blue-800" id="reveal-eye-icon">visibility</span>
-              <span id="reveal-btn-label"><span class="hidden xl:inline">전체보기 [T]</span><span class="hidden sm:inline xl:hidden">전체보기</span><span class="sm:hidden">전체보기</span></span>
-            </button>
+          <!-- Collapsed Secondary Panel: 작성/정독/블러 모드, 백지 인출, Diff 대조, 약한 테이프, 글자 크기 -->
+          <div id="study-more-panel" class="hidden pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+            <!-- Secondary Modes: 작성 / 정독 / 블러 -->
+            <div class="flex items-center gap-1 bg-slate-100/90 p-1 rounded-xl flex-wrap">
+              <span class="text-[11px] font-bold text-slate-500 px-2">보조 모드:</span>
+              <button class="mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
+                <span class="material-symbols-outlined text-[15px]">edit_note</span>
+                <span>작성 모드</span>
+              </button>
+              <button class="mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="study" type="button" title="모든 마스킹을 해제하고 전체 원문을 정독하는 모드">
+                <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                <span>원문 정독</span>
+              </button>
+              <button class="mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="blur" type="button" title="문단 단위로 흐리게 가려 통째로 인출하는 블러 암기 모드">
+                <span class="material-symbols-outlined text-[15px]">blur_on</span>
+                <span>블러 암기</span>
+              </button>
+            </div>
 
-            <!-- Wide View / Essay Pad Toggle Button (available on desktop & tablet) -->
-            <button id="btn-toggle-essay-pad" type="button" class="hidden lg:flex min-h-[36px] px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" title="우측 백지 인출 서술창을 접거나 펼쳐 봅니다 [단축키: W]">
-              <span class="material-symbols-outlined text-[16px] text-slate-600" id="toggle-essay-icon">fit_screen</span>
-              <span id="toggle-essay-label">와이드 보기</span>
-            </button>
+            <!-- Secondary Recall Tools: 백지 인출, Diff 대조, 약한 테이프, 테이프 추가, 글자 크기 -->
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button id="btn-toggle-essay-pad" type="button" class="min-h-[34px] px-2.5 py-1 rounded-lg border border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50 text-slate-700 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer shadow-2xs whitespace-nowrap" title="백지 인출 서술창 열기/접기 [단축키: W 또는 Tab]">
+                <span class="material-symbols-outlined text-[15px] text-blue-600" id="toggle-essay-icon">dock_to_right</span>
+                <span id="toggle-essay-label">백지 인출</span>
+              </button>
+
+              <button id="btn-open-diff-more" type="button" class="min-h-[34px] px-2.5 py-1 rounded-lg border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer whitespace-nowrap" title="내 인출 답안과 원문 서브노트 1:1 대조 (Diff)">
+                <span class="material-symbols-outlined text-[15px]">compare</span>
+                <span>Diff 대조</span>
+              </button>
+
+              <button id="btn-weak-tapes-only" type="button" class="min-h-[34px] px-2.5 py-1 rounded-lg border border-rose-200 bg-rose-50/70 hover:bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer whitespace-nowrap" title="오답 표시(wrongCount ≥ 1)된 약한 테이프만 가리기">
+                <span class="material-symbols-outlined text-[15px]">filter_alt</span>
+                <span id="weak-tapes-btn-label">약한 테이프만</span>
+              </button>
+
+              <button id="btn-apply-tape-inline" type="button" class="hidden md:flex min-h-[34px] px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs items-center justify-center gap-1 transition-all cursor-pointer whitespace-nowrap" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
+                <span class="material-symbols-outlined text-[14px]">label</span>
+                <span>테이프 붙이기 [M]</span>
+              </button>
+
+              <div class="flex items-center bg-slate-100/90 rounded-lg p-0.5 border border-slate-200/80 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
+                <button id="btn-font-down" type="button" class="min-h-[30px] px-2 py-0.5 rounded hover:bg-white hover:shadow-xs transition-all font-bold text-slate-700 cursor-pointer" title="글자 작게 [단축키: -]">A-</button>
+                <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 font-mono font-bold min-w-[2.4rem] text-center">115%</span>
+                <button id="btn-font-up" type="button" class="min-h-[30px] px-2 py-0.5 rounded hover:bg-white hover:shadow-xs transition-all font-bold text-slate-700 cursor-pointer" title="글자 크게 [단축키: =]">A+</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2832,10 +2868,8 @@
           </button>
         </div>
       </div>
-      <!-- Modal Body (Image Container) -->
-      <div class="flex-1 overflow-auto p-2 sm:p-3 bg-slate-100/50 flex items-center justify-center min-h-[300px]">
-        <img id="diagram-modal-img" alt="도해" class="max-w-full max-h-[85vh] w-auto object-contain rounded-lg shadow-sm border border-slate-200/80 cursor-zoom-in transition-all duration-200" />
-      </div>
+      <!-- Modal Body (Image Container - A.2: img is mounted dynamically only when a valid src exists) -->
+      <div id="diagram-modal-body" class="flex-1 overflow-auto p-2 sm:p-3 bg-slate-100/50 flex items-center justify-center min-h-[300px]"></div>
       <!-- Modal Footer -->
       <div class="px-4 py-2 border-t border-slate-200 bg-slate-50 flex items-center justify-between text-xs text-slate-600 shrink-0 font-medium">
         <span class="flex items-center gap-1">
@@ -3026,7 +3060,7 @@
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]" id="mobile-reveal-icon">visibility</span>
       <span class="text-[10px] sm:text-[11px] font-medium" id="mobile-reveal-label">정답</span>
     </button>
-    <button id="mobile-nav-explanation" class="min-h-[44px] flex-1 flex flex-col items-center justify-center py-1 text-blue-600 dark:text-blue-400 hover:text-blue-800 active:scale-90 transition-all cursor-pointer" type="button" aria-label="설명 보기">
+    <button id="mobile-nav-explanation" class="min-h-[44px] flex-1 flex flex-col items-center justify-center py-1 text-slate-600 dark:text-slate-300 hover:text-blue-700 active:scale-90 transition-all cursor-pointer" type="button" aria-label="설명 보기">
       <span class="material-symbols-outlined text-[20px] sm:text-[22px]">info</span>
       <span class="text-[10px] sm:text-[11px] font-medium">설명</span>
     </button>
@@ -4035,23 +4069,23 @@
       const subheadEssayText = document.getElementById('subhead-essay-text');
 
       function updateEssayToggleUI(isCollapsed) {
-        // 1. In-page Mode Controls button
+        // 1. In-page Mode Controls ('더보기' panel) button
         if (toggleEssayIcon && toggleEssayLabel) {
           if (isCollapsed) {
             toggleEssayIcon.textContent = 'dock_to_right';
-            toggleEssayLabel.textContent = '서술창 열기';
+            toggleEssayLabel.textContent = '백지 인출';
             if (btnToggleEssayPad) {
-              btnToggleEssayPad.title = '우측 백지 인출 서술창 열기 [단축키: W]';
-              btnToggleEssayPad.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-300');
-              btnToggleEssayPad.classList.remove('bg-white', 'text-slate-700');
+              btnToggleEssayPad.title = '백지 인출 서술창 열기 [단축키: W]';
+              btnToggleEssayPad.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+              btnToggleEssayPad.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
             }
           } else {
             toggleEssayIcon.textContent = 'fit_screen';
-            toggleEssayLabel.textContent = '와이드 보기';
+            toggleEssayLabel.textContent = '백지 인출 닫기';
             if (btnToggleEssayPad) {
-              btnToggleEssayPad.title = '우측 서술창을 접고 본문을 넓게 봅니다 [단축키: W]';
-              btnToggleEssayPad.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-300');
-              btnToggleEssayPad.classList.add('bg-white', 'text-slate-700');
+              btnToggleEssayPad.title = '서술창을 접고 본문을 넓게 봅니다 [단축키: W]';
+              btnToggleEssayPad.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+              btnToggleEssayPad.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
             }
           }
         }
@@ -5782,7 +5816,7 @@
            const ivlGood = formatFSRSInterval(scheduling[window.FSRS.Rating.Good].card.due.getTime() - now.getTime());
            const ivlEasy = formatFSRSInterval(scheduling[window.FSRS.Rating.Easy].card.due.getTime() - now.getTime());
 
-           // Update FSRS 4-button labels
+           // Update FSRS 4-button labels (Essay Aside + Inline Primary Flow Bar)
            const el1 = document.getElementById('fsrs-ivl-1');
            const el2 = document.getElementById('fsrs-ivl-2');
            const el3 = document.getElementById('fsrs-ivl-3');
@@ -5791,6 +5825,15 @@
            if (el2) el2.textContent = ivlHard;
            if (el3) el3.textContent = ivlGood;
            if (el4) el4.textContent = ivlEasy;
+
+           const iEl1 = document.getElementById('inline-fsrs-ivl-1');
+           const iEl2 = document.getElementById('inline-fsrs-ivl-2');
+           const iEl3 = document.getElementById('inline-fsrs-ivl-3');
+           const iEl4 = document.getElementById('inline-fsrs-ivl-4');
+           if (iEl1) iEl1.textContent = ivlAgain;
+           if (iEl2) iEl2.textContent = ivlHard;
+           if (iEl3) iEl3.textContent = ivlGood;
+           if (iEl4) iEl4.textContent = ivlEasy;
 
            // Update Mobile Bottom Sheet 4-button labels (T1)
            const mEl1 = document.getElementById('mobile-fsrs-ivl-1');
@@ -6124,6 +6167,25 @@
         return Boolean(map[key]);
       }
 
+      // B.6: Sync mobile bottom bar '설명' button active state only when explanation or context guide modal is actually open
+      function updateMobileExplanationNavState() {
+        const navBtn = document.getElementById('mobile-nav-explanation');
+        if (!navBtn) return;
+        const ctxModal = document.getElementById('context-guide-modal');
+        const expModal = document.getElementById('explanation-modal');
+        const isOpen = Boolean(
+          (ctxModal && !ctxModal.classList.contains('hidden')) ||
+          (expModal && !expModal.classList.contains('hidden'))
+        );
+        if (isOpen) {
+          navBtn.classList.remove('text-slate-600', 'dark:text-slate-300');
+          navBtn.classList.add('text-blue-600', 'dark:text-blue-400', 'font-bold');
+        } else {
+          navBtn.classList.remove('text-blue-600', 'dark:text-blue-400', 'font-bold');
+          navBtn.classList.add('text-slate-600', 'dark:text-slate-300');
+        }
+      }
+
       function openContextGuide(key, fallbackTitle = '') {
         const map = getContextGuideMap();
         const entry = map[key];
@@ -6156,11 +6218,13 @@
 
         bodyEl.innerHTML = entry.html || '';
         modal.classList.remove('hidden');
+        updateMobileExplanationNavState();
       }
 
       function closeContextGuide() {
         const modal = document.getElementById('context-guide-modal');
         if (modal) modal.classList.add('hidden');
+        updateMobileExplanationNavState();
       }
 
       const contextGuideModal = document.getElementById('context-guide-modal');
@@ -6820,8 +6884,10 @@
           }
         } catch (e) {}
 
-        // Scroll to top of page content on topic change
+        // A.3: Scroll both window and #subnote-section scroll container to top on topic entry / reload
         window.scrollTo({ top: 0, behavior: 'instant' });
+        const subnoteSecEl = document.getElementById('subnote-section');
+        if (subnoteSecEl) subnoteSecEl.scrollTop = 0;
 
         // Auto-close mobile drawer when topic is rendered on small screens (unless keepMobileDrawer is true)
         if (window.innerWidth < 1024 && !keepMobileDrawer) {
@@ -7076,9 +7142,22 @@
           d.removeAttribute('open');
         });
 
+        // A.2: Strip any <img> with empty/missing src (and its wrapper container if empty)
+        subnoteContainer.querySelectorAll('img').forEach(img => {
+          const rawSrc = img.getAttribute('src');
+          if (!rawSrc || !rawSrc.trim()) {
+            const parentFig = img.closest('figure') || img.parentElement;
+            img.remove();
+            if (parentFig && parentFig !== subnoteContainer && !parentFig.textContent.trim() && !parentFig.querySelector('img')) {
+              parentFig.remove();
+            }
+          }
+        });
+
         // Normalize group headers to guarantee uniform layout and typography
         sanitizeAndNormalizeGroupHeaders(subnoteContainer);
         enhanceSubnoteReadability(subnoteContainer);
+        enhanceMobileDiagrams(subnoteContainer);
 
         // Bind interactive handlers to groups and items
         setupGroupInteractions();
@@ -7223,12 +7302,13 @@
             header.classList.add('diagram-card-header');
             // Auto-heal any icon span where '클릭 시 확대' was previously appended inside .material-symbols-outlined
             fontBold.querySelectorAll('.material-symbols-outlined').forEach(ic => {
-              if (ic.textContent.includes('클릭 시 확대')) {
-                ic.textContent = ic.textContent.replace(/클릭\s*시\s*확대/g, '').trim() || 'monitoring';
+              if (ic.textContent.includes('클릭 시 확대') || ic.textContent.includes('클릭 시 원본 크기 확대')) {
+                ic.textContent = ic.textContent.replace(/클릭\s*시\s*(?:원본\s*크기\s*)?확대/g, '').trim() || 'monitoring';
               }
             });
             fontBold.querySelectorAll('span:not(.material-symbols-outlined)').forEach(sp => {
-              if (sp.textContent.trim() === '클릭 시 확대') sp.remove();
+              const spTxt = sp.textContent.trim();
+              if (spTxt === '클릭 시 확대' || spTxt === '클릭 시 원본 크기 확대') sp.remove();
             });
           }
 
@@ -7257,7 +7337,7 @@
               return;
             }
             const txt = node.textContent.trim();
-            if (txt === '클릭 시 확대') {
+            if (txt === '클릭 시 확대' || txt === '클릭 시 원본 크기 확대') {
               node.remove();
               return;
             }
@@ -7413,6 +7493,97 @@
               return;
             }
           });
+        });
+      }
+
+      // B.4: Mobile (<768px) Diagram Readability Enhancement
+      // - Renders text summary ('💡 핵심 개념 한눈에 정리' or diagram summary caption) FIRST above the diagram on mobile
+      // - Collapses inline infographic on <768px into a compact thumbnail + "도해 보기" button that opens the zoom viewer on tap
+      const DIAGRAM_SVG_SUMMARIES = {
+        'diagram_01_ppf.svg': `
+          <div class="font-extrabold text-slate-900 text-xs mb-1.5 flex items-center gap-1">
+            <span>💡 핵심 개념 한눈에 정리</span>
+          </div>
+          <ul class="space-y-1 text-xs text-slate-700 leading-relaxed">
+            <li><strong class="text-slate-900">1. 생산점의 위치별 의미</strong>: 곡선 상(A, B) 완전고용·효율적 / 내부(C) 비효율·실업 / 외부(D) 현재 기술·자원으로 달성 불가</li>
+            <li><strong class="text-rose-700">2. 기회비용 체증의 법칙</strong>: X재 추가 생산 시 포기해야 하는 Y재 양이 점증 (생산요소의 특화성 차이)</li>
+            <li><strong class="text-blue-800">3. 한계변환율(MRT<sub>XY</sub>)과 형태</strong>: 접선의 기울기 절대값 = ΔY/ΔX = MC<sub>X</sub>/MC<sub>Y</sub> (원점에 대해 오목)</li>
+          </ul>
+        `
+      };
+
+      function enhanceMobileDiagrams(container) {
+        if (!container) return;
+        container.querySelectorAll('.topic-group').forEach(grp => {
+          const img = grp.querySelector('img[src*="diagram"], img[src*="assets/econ/"]');
+          if (!img) return;
+          const src = img.getAttribute('src') || '';
+          if (!src.trim()) return;
+          const alt = img.getAttribute('alt') || '핵심 개념 도해';
+
+          // Avoid duplicate enhancement
+          if (grp.querySelector('.mobile-diagram-collapse-wrap')) return;
+
+          const contentArea = grp.querySelector('.group-content') || img.parentElement;
+          if (!contentArea) return;
+
+          // 1) Check if there is an existing text summary sibling inside the diagram card, or a known SVG text summary (like PPF)
+          let summaryHtml = '';
+          const svgFile = src.split('/').pop().split('?')[0];
+          if (DIAGRAM_SVG_SUMMARIES[svgFile]) {
+            summaryHtml = DIAGRAM_SVG_SUMMARIES[svgFile];
+          }
+
+          const existingSummaryBoxes = Array.from(contentArea.children).filter(ch => {
+            return ch !== img && !ch.contains(img) && ch.textContent.trim().length > 0 && !ch.classList.contains('mobile-diagram-summary-first');
+          });
+          if (existingSummaryBoxes.length > 0) {
+            existingSummaryBoxes.forEach(box => {
+              box.classList.add('diagram-inline-summary-orig', 'hidden', 'md:block');
+            });
+            if (!summaryHtml) {
+              summaryHtml = existingSummaryBoxes.map(b => b.innerHTML).join('<div class="my-1.5 border-t border-slate-200/70"></div>');
+            }
+          }
+
+          // Hide full inline image wrapper on <768px (keep visible on >=768px)
+          const imgWrapper = (img.parentElement && img.parentElement !== contentArea) ? img.parentElement : img;
+          imgWrapper.classList.add('desktop-diagram-wrap', 'hidden', 'md:flex');
+
+          // Render text summary FIRST on mobile (<768px) if available
+          if (summaryHtml) {
+            const mobileSummaryEl = document.createElement('div');
+            mobileSummaryEl.className = 'mobile-diagram-summary-first md:hidden mb-2.5 p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-slate-700 leading-relaxed';
+            mobileSummaryEl.innerHTML = summaryHtml;
+            contentArea.insertBefore(mobileSummaryEl, contentArea.firstChild);
+          }
+
+          // Render collapsed diagram preview (thumbnail + "도해 보기" button) on <768px
+          const mobileCollapseBtn = document.createElement('button');
+          mobileCollapseBtn.type = 'button';
+          mobileCollapseBtn.className = 'mobile-diagram-collapse-wrap md:hidden w-full p-2.5 rounded-xl border border-blue-200 bg-blue-50/50 hover:bg-blue-50/90 active:scale-[0.99] transition-all flex items-center justify-between gap-3 text-left cursor-pointer shadow-2xs';
+          mobileCollapseBtn.innerHTML = `
+            <div class="flex items-center gap-2.5 min-w-0 flex-1">
+              <div class="w-16 h-12 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
+                <img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" class="max-w-full max-h-full object-contain" loading="lazy" />
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="text-xs font-extrabold text-slate-800 truncate">${escapeHtml(alt)}</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">탭하면 확대 뷰어로 선명하게 볼 수 있습니다</div>
+              </div>
+            </div>
+            <span class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-extrabold flex items-center gap-1 shrink-0 shadow-2xs">
+              <span class="material-symbols-outlined text-[15px]">zoom_in</span>
+              <span>도해 보기</span>
+            </span>
+          `;
+          mobileCollapseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openDiagramModal(src, alt);
+          });
+
+          contentArea.appendChild(mobileCollapseBtn);
         });
       }
 
@@ -7700,8 +7871,14 @@
           d.open = false;
           d.removeAttribute('open');
         });
-        // Remove interactive action buttons and edit buttons before persisting
-        tempDiv.querySelectorAll('.group-actions-wrap, .group-edit-btn').forEach(el => el.remove());
+        // Remove interactive action buttons, edit buttons, and mobile diagram wrappers before persisting
+        tempDiv.querySelectorAll('.group-actions-wrap, .group-edit-btn, .mobile-diagram-collapse-wrap, .mobile-diagram-summary-first').forEach(el => el.remove());
+        tempDiv.querySelectorAll('.desktop-diagram-wrap').forEach(el => {
+          el.classList.remove('desktop-diagram-wrap', 'hidden', 'md:flex', 'md:block');
+        });
+        tempDiv.querySelectorAll('.diagram-inline-summary-orig').forEach(el => {
+          el.classList.remove('diagram-inline-summary-orig', 'hidden', 'md:block');
+        });
         tempDiv.querySelectorAll('.topic-group .font-bold span').forEach(s => {
           if (s.innerHTML && /(?:&nbsp;|\s)+수정\s*$/.test(s.innerHTML)) {
             s.innerHTML = s.innerHTML.replace(/(?:&nbsp;|\s)+수정\s*$/, '').trim();
@@ -8114,18 +8291,23 @@
         currentMode = mode;
         try { localStorage.setItem('edurecall_mode', mode); } catch (e) {}
         modePills.forEach(pill => {
+          const isPrimaryTapeBtn = pill.dataset.mode === 'tape';
           if (pill.dataset.mode === mode) {
-            if (mode === 'tape') {
-              pill.className = 'mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none';
+            if (isPrimaryTapeBtn) {
+              pill.className = 'mode-pill min-h-[40px] sm:min-h-[38px] px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-blue-600 text-white shadow-xs flex items-center justify-center gap-1.5 cursor-pointer select-none shrink-0';
             } else if (mode === 'type') {
-              pill.className = 'mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-emerald-600 text-white shadow-xs cursor-pointer select-none';
+              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-emerald-600 text-white shadow-xs cursor-pointer select-none';
             } else if (mode === 'study') {
-              pill.className = 'mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none';
+              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none';
             } else if (mode === 'blur') {
-              pill.className = 'mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs cursor-pointer select-none';
+              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs cursor-pointer select-none';
             }
           } else {
-            pill.className = 'mode-pill flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2 sm:px-3 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none';
+            if (isPrimaryTapeBtn) {
+              pill.className = 'mode-pill min-h-[40px] sm:min-h-[38px] px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 flex items-center justify-center gap-1.5 cursor-pointer select-none shrink-0';
+            } else {
+              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none';
+            }
           }
         });
 
@@ -8395,18 +8577,16 @@
         if (!revealBtnLabel || !revealEyeIcon || !btnRevealAll) return;
         if (revealed) {
           revealBtnLabel.innerHTML = (currentMode === 'type')
-            ? '<span class="hidden sm:inline">다시 가리고 작성하기 [T]</span><span class="sm:hidden">작성 복귀</span>'
+            ? '<span class="hidden sm:inline">다시 가리고 작성 [T]</span><span class="sm:hidden">작성 복귀</span>'
             : '<span class="hidden sm:inline">다시 가리기 [T]</span><span class="sm:hidden">다시 가리기</span>';
           revealEyeIcon.textContent = 'visibility_off';
-          btnRevealAll.className = 'flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 border border-slate-300 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
+          btnRevealAll.className = 'min-h-[40px] sm:min-h-[38px] flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 border border-slate-300 font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
           btnRevealAll.title = '정답 다시 가리기 [단축키: T]';
         } else {
-          revealBtnLabel.innerHTML = (currentMode === 'type')
-            ? '<span class="hidden sm:inline">정답 확인 [T]</span><span class="sm:hidden">정답 확인</span>'
-            : '<span class="hidden xl:inline">전체보기 [T]</span><span class="hidden sm:inline xl:hidden">전체보기</span><span class="sm:hidden">전체보기</span>';
+          revealBtnLabel.innerHTML = '<span class="hidden sm:inline">정답 확인 [T]</span><span class="sm:hidden">정답 확인</span>';
           revealEyeIcon.textContent = 'visibility';
-          btnRevealAll.className = 'flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
-          btnRevealAll.title = '정답(마스킹 테이프) 전체보기 / 다시 가리기 [단축키: T]';
+          btnRevealAll.className = 'min-h-[40px] sm:min-h-[38px] flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-400 font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0';
+          btnRevealAll.title = '2단계: 정답(마스킹 테이프) 확인 / 다시 가리기 [단축키: T]';
         }
 
         const mobileRevealIcon = document.getElementById('mobile-reveal-icon');
@@ -8933,6 +9113,26 @@
           showToast(`${pill.textContent.trim()} 적용됨`, 'tune');
         });
       });
+
+      const btnToggleStudyMore = document.getElementById('btn-toggle-study-more');
+      const studyMorePanel = document.getElementById('study-more-panel');
+      const studyMoreIcon = document.getElementById('study-more-icon');
+      if (btnToggleStudyMore && studyMorePanel) {
+        btnToggleStudyMore.addEventListener('click', () => {
+          const isHidden = studyMorePanel.classList.toggle('hidden');
+          btnToggleStudyMore.setAttribute('aria-expanded', String(!isHidden));
+          if (studyMoreIcon) {
+            studyMoreIcon.textContent = isHidden ? 'more_horiz' : 'expand_less';
+          }
+        });
+      }
+
+      const btnOpenDiffMore = document.getElementById('btn-open-diff-more');
+      if (btnOpenDiffMore && btnOpenDiff) {
+        btnOpenDiffMore.addEventListener('click', () => {
+          btnOpenDiff.click();
+        });
+      }
 
       if (btnResetCustomTape) {
         btnResetCustomTape.addEventListener('click', resetTopicCustomContent);
@@ -10009,6 +10209,7 @@
         }
 
         explanationModal.classList.remove('hidden');
+        updateMobileExplanationNavState();
         requestAnimationFrame(() => {
           explanationSheet.classList.remove('translate-x-full');
         });
@@ -10018,6 +10219,7 @@
         explanationSheet.classList.add('translate-x-full');
         setTimeout(() => {
           explanationModal.classList.add('hidden');
+          updateMobileExplanationNavState();
         }, 200);
       }
 
@@ -11225,9 +11427,10 @@
         });
       }
 
-      // Diagram Lightbox Modal Logic
+      // Diagram Lightbox Modal Logic (A.2: Never keep an <img> with empty src in the DOM)
       const diagramModal = document.getElementById('diagram-modal');
-      const diagramModalImg = document.getElementById('diagram-modal-img');
+      const diagramModalBody = document.getElementById('diagram-modal-body');
+      let diagramModalImg = document.getElementById('diagram-modal-img');
       const diagramModalTitle = document.getElementById('diagram-modal-title');
       const closeDiagramModalBtn = document.getElementById('close-diagram-modal-btn');
       const btnCloseDiagramBottom = document.getElementById('btn-close-diagram-bottom');
@@ -11256,17 +11459,25 @@
       }
 
       function openDiagramModal(src, title) {
-        if (!diagramModal || !diagramModalImg) return;
+        if (!diagramModal || !diagramModalBody || !src || !String(src).trim()) return;
         isDiagramZoomed = false;
+        if (!diagramModalImg) {
+          diagramModalImg = document.createElement('img');
+          diagramModalImg.id = 'diagram-modal-img';
+          diagramModalImg.className = 'max-w-full max-h-[85vh] w-auto object-contain rounded-lg shadow-sm border border-slate-200/80 cursor-zoom-in transition-all duration-200';
+          diagramModalImg.addEventListener('click', toggleDiagramZoom);
+        }
         diagramModalImg.classList.remove('scale-125', 'md:scale-150', 'origin-top', 'cursor-zoom-out');
         diagramModalImg.classList.add('cursor-zoom-in');
+        diagramModalImg.setAttribute('src', String(src).trim());
+        diagramModalImg.alt = title || '도해';
+        if (!diagramModalBody.contains(diagramModalImg)) {
+          diagramModalBody.innerHTML = '';
+          diagramModalBody.appendChild(diagramModalImg);
+        }
         if (btnDiagramZoomToggle) {
           btnDiagramZoomToggle.innerHTML = '<span class="material-symbols-outlined text-[18px]">zoom_in</span><span class="hidden sm:inline">확대</span>';
         }
-        if (src) {
-          diagramModalImg.setAttribute('src', src);
-        }
-        diagramModalImg.alt = title || '도해';
         if (diagramModalTitle) {
           diagramModalTitle.textContent = title || '도해 상세 보기';
         }
@@ -11281,8 +11492,11 @@
         if (!diagramModal) return;
         diagramModal.classList.add('hidden');
         if (diagramModalImg) {
-          diagramModalImg.removeAttribute('src');
-          diagramModalImg.classList.remove('scale-125', 'md:scale-150', 'origin-top');
+          diagramModalImg.remove();
+          diagramModalImg = null;
+        }
+        if (diagramModalBody) {
+          diagramModalBody.innerHTML = '';
         }
         document.body.style.overflow = '';
       }
@@ -11292,9 +11506,6 @@
 
       if (btnDiagramZoomToggle) {
         btnDiagramZoomToggle.addEventListener('click', toggleDiagramZoom);
-      }
-      if (diagramModalImg) {
-        diagramModalImg.addEventListener('click', toggleDiagramZoom);
       }
       if (closeDiagramModalBtn) {
         closeDiagramModalBtn.addEventListener('click', closeDiagramModal);
@@ -11549,7 +11760,7 @@
           const ctxModal = document.getElementById('context-guide-modal');
           if (ctxModal && !ctxModal.classList.contains('hidden')) {
             e.preventDefault();
-            ctxModal.classList.add('hidden');
+            closeContextGuide();
             return;
           }
           const shortcutModal = document.getElementById('shortcut-modal');
@@ -11664,7 +11875,7 @@
           const ctxModal = document.getElementById('context-guide-modal');
           if (ctxModal && !ctxModal.classList.contains('hidden')) {
             e.preventDefault();
-            ctxModal.classList.add('hidden');
+            closeContextGuide();
             return;
           }
           const shortcutModal = document.getElementById('shortcut-modal');
@@ -11782,9 +11993,10 @@
           return;
         }
 
-        // 8-1. [T] or [ㅅ] Toggle master reveal (전체보기 / 다시 가리기)
+        // 8-1. [T] or [ㅅ] or [Space] Toggle master reveal (전체보기 / 다시 가리기)
         const isTKey = (e.key === 't' || e.key === 'T' || e.key === 'ㅅ' || e.code === 'KeyT' || e.keyCode === 84);
-        if (isTKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        const isSpaceKey = (e.code === 'Space' && (!activeEl || activeEl.tagName !== 'BUTTON'));
+        if ((isTKey || isSpaceKey) && !e.ctrlKey && !e.metaKey && !e.altKey) {
           e.preventDefault();
           toggleMasterReveal();
           return;
@@ -12003,6 +12215,11 @@
         return dueSet.size;
       }
 
+      // A.3: Disable automatic browser scroll restoration on reload and start from top
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
       // Initial Boot & Session Restoration
       const savedMode = localStorage.getItem('edurecall_mode');
       if (savedMode && ['tape', 'type', 'study', 'blur'].includes(savedMode)) {
@@ -12125,7 +12342,7 @@
         }
 
         const savedEssayCollapsed = localStorage.getItem('edurecall_essay_collapsed');
-        if (savedEssayCollapsed === 'true' || (savedEssayCollapsed === null && window.innerWidth < 1280)) {
+        if (savedEssayCollapsed !== 'false') {
           setEssayPadCollapsed(true);
         } else {
           setEssayPadCollapsed(false);
