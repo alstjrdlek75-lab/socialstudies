@@ -6062,39 +6062,574 @@
         return info;
       }
 
-      // T7: Find linked concept topic for an exam card (기출 -> 본문 개념 주제 연결)
-      function findLinkedConceptTopicIndex(examTopic) {
-        if (!examTopic) return -1;
-        const examTitle = (examTopic.title || '').replace(/^\[[^\]]+\]\s*/, '').replace(/^\d+번\.?\s*/, '');
-        const kws = Array.isArray(examTopic.targetKeywords) ? examTopic.targetKeywords : [];
-        let bestIdx = -1;
-        let bestScore = 0;
+      // T7: Multi-concept mapping & smart concept matcher for exam cards (기출 <-> 본문 다중 개념 연결)
+      let lastExamReturnState = null;
 
+      const EXAM_CONCEPT_MAP = {
+        // === ECON-EXAM (103 items) ===
+        'ECON-EXAM-2009-1-20': ['ECON-001', 'ECON-012'],
+        'ECON-EXAM-2012-1-20': ['ECON-002'],
+        'ECON-EXAM-2020-A-03': ['ECON-002', 'ECON-003'],
+        'ECON-EXAM-2011-1-22': ['ECON-003'],
+        'ECON-EXAM-2024-A-12': ['ECON-003'],
+        'ECON-EXAM-2007-13': ['ECON-003', 'ECON-012'],
+        'ECON-EXAM-2019-B-02': ['ECON-003', 'ECON-012'],
+        'ECON-EXAM-2008-13': ['ECON-004', 'ECON-007'],
+        'ECON-EXAM-2009-1-24': ['ECON-001', 'ECON-004'],
+        'ECON-EXAM-2016-A-12': ['ECON-004', 'ECON-006'],
+        'ECON-EXAM-2009-1-23': ['ECON-005'],
+        'ECON-EXAM-2010-1-28': ['ECON-005', 'ECON-006'],
+        'ECON-EXAM-2010-2-02': ['ECON-005', 'ECON-006', 'ECON-019'],
+        'ECON-EXAM-2013-1-25': ['ECON-005', 'ECON-006'],
+        'ECON-EXAM-2014-A-06': ['ECON-005', 'ECON-006'],
+        'ECON-EXAM-2010-1-21': ['ECON-006'],
+        'ECON-EXAM-2019-A-03': ['ECON-006'],
+        'ECON-EXAM-2022-A-09': ['ECON-006'],
+        'ECON-EXAM-2011-1-21': ['ECON-006'],
+        'ECON-EXAM-2012-1-19': ['ECON-005', 'ECON-006'],
+        'ECON-EXAM-2018-B-07': ['ECON-006'],
+        'ECON-EXAM-2011-1-20': ['ECON-001', 'ECON-004', 'ECON-007'],
+        'ECON-EXAM-2017-A-07': ['ECON-007', 'ECON-004'],
+        'ECON-EXAM-2018-A-03': ['ECON-007', 'ECON-004'],
+        'ECON-EXAM-2025-B-11': ['ECON-007', 'ECON-004'],
+        'ECON-EXAM-2012-1-21': ['ECON-007'],
+        'ECON-EXAM-2022-B-07': ['ECON-007', 'ECON-006'],
+        'ECON-EXAM-2008-12': ['ECON-007'],
+        'ECON-EXAM-2021-A-09': ['ECON-007'],
+        'ECON-EXAM-2024-B-11': ['ECON-007', 'ECON-010'],
+        'ECON-EXAM-2026-B-11': ['ECON-008', 'ECON-007'],
+        'ECON-EXAM-2006-16': ['ECON-008'],
+        'ECON-EXAM-2013-1-21': ['ECON-008'],
+        'ECON-EXAM-2020-A-09': ['ECON-008'],
+        'ECON-EXAM-2014-A-19': ['ECON-009', 'ECON-003'],
+        'ECON-EXAM-2021-B-08': ['ECON-009', 'ECON-002'],
+        'ECON-EXAM-2015-A-13': ['ECON-009'],
+        'ECON-EXAM-2013-1-24': ['ECON-021'],
+        'ECON-EXAM-2023-A-09': ['ECON-021'],
+        'ECON-EXAM-2007-14': ['ECON-010'],
+        'ECON-EXAM-2020-B-07': ['ECON-010'],
+        'ECON-EXAM-2025-A-12': ['ECON-010', 'ECON-006'],
+        'ECON-EXAM-2010-1-24': ['ECON-010'],
+        'ECON-EXAM-2013-1-26': ['ECON-010'],
+        'ECON-EXAM-2017-A-13': ['ECON-010'],
+        'ECON-EXAM-2023-B-07': ['ECON-010'],
+        'ECON-EXAM-2026-A-12': ['ECON-010'],
+        'ECON-EXAM-2006-13': ['ECON-010'],
+        'ECON-EXAM-2011-1-23': ['ECON-010'],
+        'ECON-EXAM-2008-14': ['ECON-011', 'ECON-018'],
+        'ECON-EXAM-2013-1-23': ['ECON-011', 'ECON-013'],
+        'ECON-EXAM-2012-1-25': ['ECON-011', 'ECON-016'],
+        'ECON-EXAM-2022-B-08': ['ECON-012'],
+        'ECON-EXAM-2019-A-04': ['ECON-012', 'ECON-001'],
+        'ECON-EXAM-2006-15': ['ECON-012', 'ECON-013'],
+        'ECON-EXAM-2009-2-02': ['ECON-012', 'ECON-013', 'ECON-014'],
+        'ECON-EXAM-2013-1-22': ['ECON-012', 'ECON-013'],
+        'ECON-EXAM-2014-A-07': ['ECON-013', 'ECON-012'],
+        'ECON-EXAM-2018-A-04': ['ECON-013'],
+        'ECON-EXAM-2023-B-08': ['ECON-013', 'ECON-012'],
+        'ECON-EXAM-2011-1-25': ['ECON-012', 'ECON-013'],
+        'ECON-EXAM-2016-B-03': ['ECON-012', 'ECON-013'],
+        'ECON-EXAM-2007-15': ['ECON-014', 'ECON-015'],
+        'ECON-EXAM-2009-1-25': ['ECON-014', 'ECON-016'],
+        'ECON-EXAM-2011-2-02': ['ECON-014', 'ECON-015'],
+        'ECON-EXAM-2013-1-20': ['ECON-014', 'ECON-015'],
+        'ECON-EXAM-2015-B-02': ['ECON-014', 'ECON-015'],
+        'ECON-EXAM-2020-B-08': ['ECON-014', 'ECON-015'],
+        'ECON-EXAM-2012-1-22': ['ECON-014', 'ECON-012'],
+        'ECON-EXAM-2026-B-10': ['ECON-014', 'ECON-015'],
+        'ECON-EXAM-2012-1-24': ['ECON-015', 'ECON-011'],
+        'ECON-EXAM-2012-2-02': ['ECON-015'],
+        'ECON-EXAM-2017-B-06': ['ECON-015', 'ECON-012'],
+        'ECON-EXAM-2010-1-23': ['ECON-015', 'ECON-014'],
+        'ECON-EXAM-2019-A-10': ['ECON-015', 'ECON-014'],
+        'ECON-EXAM-2009-1-21': ['ECON-016', 'ECON-013'],
+        'ECON-EXAM-2010-1-22': ['ECON-016'],
+        'ECON-EXAM-2025-B-10': ['ECON-016', 'ECON-009'],
+        'ECON-EXAM-2010-1-25': ['ECON-016', 'ECON-014'],
+        'ECON-EXAM-2011-1-27': ['ECON-016'],
+        'ECON-EXAM-2018-B-03': ['ECON-016', 'ECON-015'],
+        'ECON-EXAM-2009-1-26': ['ECON-018', 'ECON-001'],
+        'ECON-EXAM-2010-1-27': ['ECON-018'],
+        'ECON-EXAM-2013-1-27': ['ECON-018', 'ECON-001'],
+        'ECON-EXAM-2015-A-05': ['ECON-018'],
+        'ECON-EXAM-2020-B-02': ['ECON-018'],
+        'ECON-EXAM-2021-B-07': ['ECON-018', 'ECON-001'],
+        'ECON-EXAM-2012-1-23': ['ECON-018'],
+        'ECON-EXAM-2014-A-05': ['ECON-018'],
+        'ECON-EXAM-2010-1-26': ['ECON-018', 'ECON-008'],
+        'ECON-EXAM-2015-A-06': ['ECON-018', 'ECON-006'],
+        'ECON-EXAM-2007-16': ['ECON-018', 'ECON-006'],
+        'ECON-EXAM-2019-B-01': ['ECON-018', 'ECON-006'],
+        'ECON-EXAM-2024-B-10': ['ECON-018', 'ECON-006'],
+        'ECON-EXAM-2009-1-22': ['ECON-019'],
+        'ECON-EXAM-2008-11': ['ECON-019'],
+        'ECON-EXAM-2012-1-26': ['ECON-019'],
+        'ECON-EXAM-2017-A-14': ['ECON-019', 'ECON-018'],
+        'ECON-EXAM-2006-14': ['ECON-020', 'ECON-014', 'ECON-019'],
+        'ECON-EXAM-2011-1-26': ['ECON-020', 'ECON-019'],
+        'ECON-EXAM-2013-2-02': ['ECON-020', 'ECON-014', 'ECON-019'],
+        'ECON-EXAM-2014-B-05': ['EDU-032', 'ECON-020', 'ECON-014'],
+        'ECON-EXAM-2016-B-07': ['ECON-020', 'ECON-019'],
+
+        // === EXAM-2014 (26 items) ===
+        'EXAM-2014-A-01': ['EDU-067', 'EDU-069'],
+        'EXAM-2014-A-02': ['POL-080'],
+        'EXAM-2014-A-03': ['POL-114', 'POL-097'],
+        'EXAM-2014-A-04': ['POL-090', 'POL-077'],
+        'EXAM-2014-A-05': ['ECON-018'],
+        'EXAM-2014-A-06': ['ECON-005', 'ECON-006'],
+        'EXAM-2014-A-07': ['ECON-013', 'ECON-012'],
+        'EXAM-2014-A-08': ['SOC-026', 'SOC-002'],
+        'EXAM-2014-A-09': ['SOC-085', 'SOC-086', 'SOC-045'],
+        'EXAM-2014-A-10': ['SOC-144', 'POL-126'],
+        'EXAM-2014-A-11': ['SOC-112'],
+        'EXAM-2014-A-12': ['LAW-105'],
+        'EXAM-2014-A-13': ['LAW-122'],
+        'EXAM-2014-A-14': ['LAW-061', 'LAW-059', 'LAW-056'],
+        'EXAM-2014-A-15': ['LAW-169', 'LAW-091'],
+        'EXAM-2014-A-16': ['EDU-001', 'EDU-003'],
+        'EXAM-2014-A-17': ['EDU-011', 'EDU-012', 'EDU-013', 'EDU-036'],
+        'EXAM-2014-A-18': ['POL-024', 'POL-048'],
+        'EXAM-2014-A-19': ['ECON-009', 'ECON-003'],
+        'EXAM-2014-A-20': ['SOC-012', 'SOC-010'],
+        'EXAM-2014-A-21': ['SOC-060', 'SOC-030'],
+        'EXAM-2014-B-01': ['EDU-054', 'EDU-055'],
+        'EXAM-2014-B-02': ['LAW-083', 'POL-002'],
+        'EXAM-2014-B-03': ['LAW-038'],
+        'EXAM-2014-B-04': ['EDU-073', 'POL-086', 'POL-089'],
+        'EXAM-2014-B-05': ['EDU-032', 'ECON-020', 'ECON-014'],
+
+        // === EXAM-2015 (20 items) ===
+        'EXAM-2015-A-01': ['EDU-009', 'EDU-035'],
+        'EXAM-2015-A-02': ['EDU-065'],
+        'EXAM-2015-A-03': ['POL-031'],
+        'EXAM-2015-A-04': ['POL-123'],
+        'EXAM-2015-A-05': ['ECON-018'],
+        'EXAM-2015-A-06': ['ECON-018', 'ECON-006'],
+        'EXAM-2015-A-07': ['SOC-074', 'SOC-030'],
+        'EXAM-2015-A-08': ['SOC-026', 'SOC-079'],
+        'EXAM-2015-A-09': ['LAW-105', 'POL-094'],
+        'EXAM-2015-A-10': ['LAW-008', 'LAW-006'],
+        'EXAM-2015-A-11': ['EDU-014', 'EDU-011', 'EDU-036'],
+        'EXAM-2015-A-12': ['POL-101'],
+        'EXAM-2015-A-13': ['ECON-009', 'LAW-163'],
+        'EXAM-2015-A-14': ['SOC-063', 'SOC-067', 'SOC-062'],
+        'EXAM-2015-B-01': ['EDU-058', 'EDU-056'],
+        'EXAM-2015-B-02': ['ECON-014', 'ECON-015'],
+        'EXAM-2015-B-03': ['LAW-108', 'LAW-120', 'LAW-122'],
+        'EXAM-2015-B-04': ['LAW-031', 'LAW-033', 'LAW-034'],
+        'EXAM-2015-B-05': ['POL-081', 'EDU-058'],
+        'EXAM-2015-B-06': ['EDU-050', 'SOC-002', 'SOC-014', 'SOC-100'],
+
+        // === EXAM-2016 (22 items) ===
+        'EXAM-2016-A-01': ['EDU-026', 'EDU-025', 'EDU-033'],
+        'EXAM-2016-A-02': ['EDU-001', 'EDU-004'],
+        'EXAM-2016-A-03': ['SOC-025', 'SOC-059'],
+        'EXAM-2016-A-04': ['SOC-085', 'SOC-086'],
+        'EXAM-2016-A-05': ['SOC-119'],
+        'EXAM-2016-A-06': ['POL-083', 'LAW-081'],
+        'EXAM-2016-A-07': ['LAW-148', 'LAW-074'],
+        'EXAM-2016-A-08': ['LAW-155', 'LAW-159'],
+        'EXAM-2016-A-09': ['EDU-049', 'EDU-050'],
+        'EXAM-2016-A-10': ['EDU-058', 'EDU-059'],
+        'EXAM-2016-A-11': ['POL-074', 'POL-068', 'POL-061', 'POL-064'],
+        'EXAM-2016-A-12': ['ECON-004', 'ECON-006'],
+        'EXAM-2016-A-13': ['SOC-007', 'SOC-004'],
+        'EXAM-2016-A-14': ['LAW-105'],
+        'EXAM-2016-B-01': ['EDU-025', 'EDU-026', 'EDU-027'],
+        'EXAM-2016-B-02': ['POL-030'],
+        'EXAM-2016-B-03': ['ECON-012', 'ECON-013'],
+        'EXAM-2016-B-04': ['SOC-142', 'SOC-143', 'POL-124', 'POL-125'],
+        'EXAM-2016-B-05': ['LAW-013', 'LAW-004'],
+        'EXAM-2016-B-06': ['POL-012', 'POL-087', 'POL-086'],
+        'EXAM-2016-B-07': ['ECON-020', 'ECON-019'],
+        'EXAM-2016-B-08': ['EDU-038', 'EDU-039', 'EDU-098', 'EDU-078'],
+
+        // === EXAM-2017 (22 items) ===
+        'EXAM-2017-A-01': ['EDU-029', 'EDU-033'],
+        'EXAM-2017-A-02': ['SOC-025', 'SOC-055'],
+        'EXAM-2017-A-03': ['SOC-131', 'SOC-132'],
+        'EXAM-2017-A-04': ['POL-042', 'POL-056'],
+        'EXAM-2017-A-05': ['LAW-004'],
+        'EXAM-2017-A-06': ['LAW-105'],
+        'EXAM-2017-A-07': ['ECON-007', 'ECON-004'],
+        'EXAM-2017-A-08': ['SOC-077', 'POL-091'],
+        'EXAM-2017-A-09': ['LAW-117', 'LAW-126'],
+        'EXAM-2017-A-10': ['EDU-069', 'EDU-064', 'EDU-083'],
+        'EXAM-2017-A-11': ['SOC-012'],
+        'EXAM-2017-A-12': ['POL-070', 'POL-071'],
+        'EXAM-2017-A-13': ['ECON-010'],
+        'EXAM-2017-A-14': ['ECON-019', 'ECON-018'],
+        'EXAM-2017-B-01': ['EDU-056', 'EDU-058', 'EDU-059', 'EDU-060'],
+        'EXAM-2017-B-02': ['POL-086', 'POL-062'],
+        'EXAM-2017-B-03': ['POL-025', 'POL-048'],
+        'EXAM-2017-B-04': ['SOC-060', 'SOC-068'],
+        'EXAM-2017-B-05': ['SOC-075', 'SOC-079', 'SOC-026'],
+        'EXAM-2017-B-06': ['ECON-015', 'ECON-012'],
+        'EXAM-2017-B-07': ['LAW-056'],
+        'EXAM-2017-B-08': ['EDU-039', 'EDU-032'],
+
+        // === EXAM-2018 (22 items) ===
+        'EXAM-2018-A-01': ['POL-040', 'POL-001'],
+        'EXAM-2018-A-02': ['POL-014'],
+        'EXAM-2018-A-03': ['ECON-007', 'ECON-004'],
+        'EXAM-2018-A-04': ['ECON-013'],
+        'EXAM-2018-A-05': ['SOC-089'],
+        'EXAM-2018-A-06': ['SOC-079', 'SOC-026'],
+        'EXAM-2018-A-07': ['LAW-102', 'LAW-105'],
+        'EXAM-2018-A-08': ['LAW-162'],
+        'EXAM-2018-A-09': ['EDU-001', 'EDU-003', 'EDU-056'],
+        'EXAM-2018-A-10': ['EDU-073', 'EDU-081', 'EDU-083'],
+        'EXAM-2018-A-11': ['SOC-113', 'SOC-117', 'SOC-014'],
+        'EXAM-2018-A-12': ['SOC-063', 'SOC-065', 'SOC-067'],
+        'EXAM-2018-A-13': ['LAW-120', 'LAW-145'],
+        'EXAM-2018-A-14': ['LAW-041'],
+        'EXAM-2018-B-01': ['EDU-069', 'EDU-049'],
+        'EXAM-2018-B-02': ['POL-096', 'POL-098', 'POL-102', 'POL-108'],
+        'EXAM-2018-B-03': ['ECON-016', 'ECON-015'],
+        'EXAM-2018-B-04': ['SOC-007', 'SOC-004'],
+        'EXAM-2018-B-05': ['LAW-107'],
+        'EXAM-2018-B-06': ['POL-086', 'POL-080'],
+        'EXAM-2018-B-07': ['ECON-006'],
+        'EXAM-2018-B-08': ['EDU-026', 'EDU-029', 'EDU-033', 'EDU-032'],
+
+        // === EXAM-2019 (22 items) ===
+        'EXAM-2019-A-01': ['POL-085', 'POL-002'],
+        'EXAM-2019-A-02': ['POL-077'],
+        'EXAM-2019-A-03': ['ECON-006'],
+        'EXAM-2019-A-04': ['ECON-012', 'ECON-001'],
+        'EXAM-2019-A-05': ['SOC-078'],
+        'EXAM-2019-A-06': ['SOC-114', 'SOC-014'],
+        'EXAM-2019-A-07': ['LAW-001'],
+        'EXAM-2019-A-08': ['LAW-165', 'LAW-157', 'LAW-166'],
+        'EXAM-2019-A-09': ['POL-082'],
+        'EXAM-2019-A-10': ['ECON-015', 'ECON-014'],
+        'EXAM-2019-A-11': ['SOC-030', 'SOC-060'],
+        'EXAM-2019-A-12': ['LAW-096', 'LAW-098', 'LAW-077'],
+        'EXAM-2019-A-13': ['EDU-001', 'EDU-002'],
+        'EXAM-2019-A-14': ['EDU-025', 'EDU-026', 'EDU-028', 'EDU-029'],
+        'EXAM-2019-B-01': ['ECON-018', 'ECON-006'],
+        'EXAM-2019-B-02': ['ECON-003', 'ECON-012'],
+        'EXAM-2019-B-03': ['LAW-038', 'LAW-034'],
+        'EXAM-2019-B-04': ['LAW-107', 'LAW-109'],
+        'EXAM-2019-B-05': ['EDU-092', 'EDU-062', 'EDU-059', 'EDU-072'],
+        'EXAM-2019-B-06': ['POL-086', 'POL-089'],
+        'EXAM-2019-B-07': ['SOC-001', 'SOC-010', 'SOC-006'],
+        'EXAM-2019-B-08': ['EDU-036', 'EDU-044', 'EDU-050', 'EDU-081'],
+
+        // === EXAM-2020 (23 items) ===
+        'EXAM-2020-A-01': ['EDU-019', 'EDU-022', 'EDU-025'],
+        'EXAM-2020-A-02': ['EDU-055', 'EDU-083'],
+        'EXAM-2020-A-03': ['ECON-002', 'ECON-003'],
+        'EXAM-2020-A-04': ['LAW-002', 'LAW-003'],
+        'EXAM-2020-A-05': ['EDU-033', 'EDU-018'],
+        'EXAM-2020-A-06': ['EDU-050', 'EDU-049'],
+        'EXAM-2020-A-07': ['POL-116', 'POL-099'],
+        'EXAM-2020-A-08': ['POL-002', 'LAW-083'],
+        'EXAM-2020-A-09': ['ECON-008'],
+        'EXAM-2020-A-10': ['SOC-100', 'SOC-118', 'SOC-119'],
+        'EXAM-2020-A-11': ['SOC-029', 'SOC-027_2'],
+        'EXAM-2020-A-12': ['LAW-105'],
+        'EXAM-2020-B-01': ['LAW-166', 'LAW-158'],
+        'EXAM-2020-B-02': ['ECON-018'],
+        'EXAM-2020-B-03': ['EDU-001', 'EDU-002', 'EDU-003'],
+        'EXAM-2020-B-04': ['EDU-065'],
+        'EXAM-2020-B-05': ['EDU-058', 'EDU-056'],
+        'EXAM-2020-B-06': ['POL-086'],
+        'EXAM-2020-B-07': ['ECON-010'],
+        'EXAM-2020-B-08': ['ECON-014', 'ECON-015'],
+        'EXAM-2020-B-09': ['SOC-014', 'SOC-013', 'SOC-002', 'SOC-004'],
+        'EXAM-2020-B-10': ['LAW-133', 'LAW-131', 'LAW-112'],
+        'EXAM-2020-B-11': ['LAW-021'],
+
+        // === EXAM-2021 (23 items) ===
+        'EXAM-2021-A-01': ['EDU-011', 'EDU-020'],
+        'EXAM-2021-A-02': ['SOC-062'],
+        'EXAM-2021-A-03': ['SOC-084', 'SOC-086'],
+        'EXAM-2021-A-04': ['LAW-020', 'LAW-019'],
+        'EXAM-2021-A-05': ['EDU-003', 'EDU-002', 'EDU-073'],
+        'EXAM-2021-A-06': ['EDU-067', 'EDU-064', 'EDU-069'],
+        'EXAM-2021-A-07': ['POL-040', 'SOC-026', 'POL-027'],
+        'EXAM-2021-A-08': ['POL-086', 'POL-089'],
+        'EXAM-2021-A-09': ['ECON-007'],
+        'EXAM-2021-A-10': ['SOC-007', 'SOC-001'],
+        'EXAM-2021-A-11': ['LAW-074', 'LAW-147', 'LAW-149'],
+        'EXAM-2021-A-12': ['LAW-003', 'LAW-067', 'LAW-069'],
+        'EXAM-2021-B-01': ['EDU-087', 'EDU-089'],
+        'EXAM-2021-B-02': ['LAW-037', 'LAW-151'],
+        'EXAM-2021-B-03': ['EDU-027', 'EDU-028', 'EDU-029', 'EDU-039'],
+        'EXAM-2021-B-04': ['EDU-058', 'EDU-056', 'EDU-059'],
+        'EXAM-2021-B-05': ['EDU-098', 'EDU-083'],
+        'EXAM-2021-B-06': ['POL-064', 'POL-066', 'POL-068', 'POL-080'],
+        'EXAM-2021-B-07': ['ECON-018', 'ECON-001'],
+        'EXAM-2021-B-08': ['ECON-009', 'ECON-002'],
+        'EXAM-2021-B-09': ['SOC-043', 'SOC-037'],
+        'EXAM-2021-B-10': ['SOC-114'],
+        'EXAM-2021-B-11': ['LAW-042', 'LAW-041'],
+
+        // === EXAM-2022 (23 items) ===
+        'EXAM-2022-A-01': ['EDU-018', 'EDU-029', 'EDU-037'],
+        'EXAM-2022-A-02': ['EDU-001', 'EDU-003'],
+        'EXAM-2022-A-03': ['SOC-030', 'SOC-027'],
+        'EXAM-2022-A-04': ['LAW-085', 'LAW-101'],
+        'EXAM-2022-A-05': ['EDU-094', 'LAW-138'],
+        'EXAM-2022-A-06': ['EDU-059', 'EDU-072'],
+        'EXAM-2022-A-07': ['POL-041', 'POL-042', 'POL-056', 'POL-091'],
+        'EXAM-2022-A-08': ['POL-061', 'POL-064', 'POL-074'],
+        'EXAM-2022-A-09': ['ECON-006'],
+        'EXAM-2022-A-10': ['SOC-141', 'SOC-146'],
+        'EXAM-2022-A-11': ['LAW-122', 'LAW-108'],
+        'EXAM-2022-A-12': ['LAW-019'],
+        'EXAM-2022-B-01': ['SOC-089'],
+        'EXAM-2022-B-02': ['LAW-159', 'LAW-156'],
+        'EXAM-2022-B-03': ['EDU-035', 'EDU-036', 'EDU-052'],
+        'EXAM-2022-B-04': ['EDU-078', 'EDU-083'],
+        'EXAM-2022-B-05': ['EDU-049', 'EDU-050', 'POL-083', 'LAW-081'],
+        'EXAM-2022-B-06': ['POL-086'],
+        'EXAM-2022-B-07': ['ECON-007', 'ECON-006'],
+        'EXAM-2022-B-08': ['ECON-012'],
+        'EXAM-2022-B-09': ['SOC-001', 'SOC-011', 'SOC-015'],
+        'EXAM-2022-B-10': ['SOC-146', 'SOC-147'],
+        'EXAM-2022-B-11': ['LAW-105', 'LAW-069', 'LAW-075'],
+
+        // === EXAM-2023 (23 items) ===
+        'EXAM-2023-A-01': ['EDU-029'],
+        'EXAM-2023-A-02': ['EDU-001', 'EDU-002'],
+        'EXAM-2023-A-03': ['SOC-038', 'SOC-049'],
+        'EXAM-2023-A-04': ['LAW-091', 'LAW-165', 'LAW-167'],
+        'EXAM-2023-A-05': ['EDU-031', 'EDU-032'],
+        'EXAM-2023-A-06': ['EDU-081', 'EDU-082', 'EDU-084'],
+        'EXAM-2023-A-07': ['POL-025', 'POL-027', 'SOC-151'],
+        'EXAM-2023-A-08': ['POL-106', 'POL-096', 'POL-099'],
+        'EXAM-2023-A-09': ['ECON-021'],
+        'EXAM-2023-A-10': ['SOC-110', 'SOC-109'],
+        'EXAM-2023-A-11': ['LAW-024'],
+        'EXAM-2023-A-12': ['LAW-120', 'LAW-122'],
+        'EXAM-2023-B-01': ['SOC-147'],
+        'EXAM-2023-B-02': ['LAW-012', 'LAW-011'],
+        'EXAM-2023-B-03': ['EDU-029', 'EDU-033'],
+        'EXAM-2023-B-04': ['EDU-058', 'EDU-057'],
+        'EXAM-2023-B-05': ['EDU-073', 'SOC-001', 'EDU-054'],
+        'EXAM-2023-B-06': ['POL-086', 'POL-080'],
+        'EXAM-2023-B-07': ['ECON-010'],
+        'EXAM-2023-B-08': ['ECON-013', 'ECON-012'],
+        'EXAM-2023-B-09': ['SOC-007', 'SOC-004'],
+        'EXAM-2023-B-10': ['SOC-025', 'SOC-056'],
+        'EXAM-2023-B-11': ['LAW-095', 'LAW-099', 'POL-073'],
+
+        // === EXAM-2024 (23 items) ===
+        'EXAM-2024-A-01': ['EDU-030'],
+        'EXAM-2024-A-02': ['LAW-004'],
+        'EXAM-2024-A-03': ['SOC-026', 'SOC-047'],
+        'EXAM-2024-A-04': ['LAW-092', 'LAW-090', 'LAW-156'],
+        'EXAM-2024-A-05': ['EDU-081', 'EDU-082', 'EDU-083'],
+        'EXAM-2024-A-06': ['SOC-073', 'SOC-074'],
+        'EXAM-2024-A-07': ['SOC-010', 'SOC-011'],
+        'EXAM-2024-A-08': ['POL-085', 'LAW-003', 'POL-002', 'POL-078'],
+        'EXAM-2024-A-09': ['POL-114', 'POL-097'],
+        'EXAM-2024-A-10': ['LAW-105'],
+        'EXAM-2024-A-11': ['LAW-141', 'LAW-122', 'LAW-138'],
+        'EXAM-2024-A-12': ['ECON-003'],
+        'EXAM-2024-B-01': ['SOC-116', 'SOC-119'],
+        'EXAM-2024-B-02': ['EDU-098', 'EDU-099'],
+        'EXAM-2024-B-03': ['EDU-008', 'EDU-035', 'EDU-032', 'EDU-036'],
+        'EXAM-2024-B-04': ['EDU-001', 'EDU-004'],
+        'EXAM-2024-B-05': ['EDU-050', 'EDU-073', 'SOC-009'],
+        'EXAM-2024-B-06': ['EDU-065', 'EDU-064'],
+        'EXAM-2024-B-07': ['SOC-060', 'SOC-068'],
+        'EXAM-2024-B-08': ['LAW-066', 'LAW-067', 'LAW-069'],
+        'EXAM-2024-B-09': ['LAW-033', 'LAW-036'],
+        'EXAM-2024-B-10': ['ECON-018', 'ECON-006'],
+        'EXAM-2024-B-11': ['ECON-007', 'ECON-010'],
+
+        // === EXAM-2025 (23 items) ===
+        'EXAM-2025-A-01': ['EDU-030', 'EDU-029'],
+        'EXAM-2025-A-02': ['EDU-098'],
+        'EXAM-2025-A-03': ['SOC-151'],
+        'EXAM-2025-A-04': ['LAW-011'],
+        'EXAM-2025-A-05': ['EDU-002', 'EDU-003'],
+        'EXAM-2025-A-06': ['EDU-058', 'EDU-050'],
+        'EXAM-2025-A-07': ['SOC-043', 'SOC-037', 'SOC-039'],
+        'EXAM-2025-A-08': ['LAW-099', 'LAW-098'],
+        'EXAM-2025-A-09': ['LAW-035', 'LAW-034'],
+        'EXAM-2025-A-10': ['SOC-110', 'SOC-134'],
+        'EXAM-2025-A-11': ['POL-086'],
+        'EXAM-2025-A-12': ['ECON-010', 'ECON-006'],
+        'EXAM-2025-B-01': ['SOC-079', 'SOC-082'],
+        'EXAM-2025-B-02': ['LAW-156', 'LAW-161'],
+        'EXAM-2025-B-03': ['EDU-029', 'EDU-033'],
+        'EXAM-2025-B-04': ['EDU-081', 'EDU-082', 'EDU-077'],
+        'EXAM-2025-B-05': ['EDU-068', 'EDU-065'],
+        'EXAM-2025-B-06': ['POL-020', 'POL-031', 'POL-062'],
+        'EXAM-2025-B-07': ['SOC-001', 'SOC-007', 'SOC-015'],
+        'EXAM-2025-B-08': ['LAW-115', 'LAW-113', 'LAW-120'],
+        'EXAM-2025-B-09': ['POL-099', 'POL-108'],
+        'EXAM-2025-B-10': ['ECON-016', 'ECON-009'],
+        'EXAM-2025-B-11': ['ECON-007', 'ECON-004'],
+
+        // === EXAM-2026 (23 items) ===
+        'EXAM-2026-A-01': ['EDU-007', 'EDU-011'],
+        'EXAM-2026-A-02': ['EDU-001', 'EDU-030'],
+        'EXAM-2026-A-03': ['SOC-026', 'SOC-079'],
+        'EXAM-2026-A-04': ['LAW-069', 'LAW-066'],
+        'EXAM-2026-A-05': ['EDU-049', 'EDU-057', 'EDU-067'],
+        'EXAM-2026-A-06': ['EDU-077', 'EDU-082', 'EDU-083'],
+        'EXAM-2026-A-07': ['SOC-012', 'SOC-001', 'SOC-007'],
+        'EXAM-2026-A-08': ['LAW-082', 'LAW-105'],
+        'EXAM-2026-A-09': ['LAW-042', 'LAW-151', 'LAW-014'],
+        'EXAM-2026-A-10': ['POL-064', 'POL-070', 'POL-077', 'POL-090'],
+        'EXAM-2026-A-11': ['POL-037', 'POL-041', 'POL-042', 'POL-043', 'POL-053'],
+        'EXAM-2026-A-12': ['ECON-010'],
+        'EXAM-2026-B-01': ['SOC-133'],
+        'EXAM-2026-B-02': ['LAW-120'],
+        'EXAM-2026-B-03': ['EDU-040', 'EDU-025', 'EDU-029'],
+        'EXAM-2026-B-04': ['EDU-073', 'EDU-059', 'EDU-072', 'SOC-006'],
+        'EXAM-2026-B-05': ['EDU-029', 'EDU-030'],
+        'EXAM-2026-B-06': ['SOC-070', 'SOC-038', 'SOC-065'],
+        'EXAM-2026-B-07': ['SOC-025', 'SOC-059'],
+        'EXAM-2026-B-08': ['LAW-042', 'LAW-041', 'LAW-049'],
+        'EXAM-2026-B-09': ['POL-099', 'POL-100', 'POL-107'],
+        'EXAM-2026-B-10': ['ECON-014', 'ECON-015'],
+        'EXAM-2026-B-11': ['ECON-008', 'ECON-007']
+      };
+
+      const CONCEPT_GENERIC_TITLES = new Set([
+        '개요', '배경', '주장', '방법', '한계', '의의', '특징', '주요 특징', '개념', '관점', '기능',
+        '역사', '시각', '이론', '사회문제론', '학습 내용', '구체적 형태', '채점 방법', '선행연구',
+        '비판 및 반론', '수업의 목표', '평가의 개념', '평가의 목적', '최근 동향', '평가의 방법',
+        '의미와 특징', '관련 개념', '의미', '원인', '그 외', '속성', '장점', '단점', '평가', '분석수준'
+      ]);
+
+      function formatConceptButtonLabel(conceptTopic) {
+        if (!conceptTopic) return '';
+        const cleanTitle = (conceptTopic.title || '').replace(/^\d+(?:-\d+)?\.?\s*/, '').trim();
+        const cleanSec = (conceptTopic.subsection || conceptTopic.section || '').replace(/^\d+(?:-\d+)?\.?\s*/, '').replace(/^\(\d+\)\s*/, '').trim();
+        if (CONCEPT_GENERIC_TITLES.has(cleanTitle) && cleanSec) {
+          const combined = `${cleanSec} › ${cleanTitle}`;
+          return combined.length > 28 ? combined.slice(0, 28) + '…' : combined;
+        }
+        return cleanTitle.length > 26 ? cleanTitle.slice(0, 26) + '…' : cleanTitle;
+      }
+
+      function findLinkedConceptTopicIndices(examTopic) {
+        if (!examTopic) return [];
+        const mappedIds = EXAM_CONCEPT_MAP[examTopic.id];
+        if (Array.isArray(mappedIds) && mappedIds.length > 0) {
+          const indices = [];
+          mappedIds.forEach(cid => {
+            const idx = TOPICS.findIndex(t => t && t.id === cid);
+            if (idx !== -1 && !indices.includes(idx)) indices.push(idx);
+          });
+          if (indices.length > 0) return indices;
+        }
+
+        // Smart multi-concept fallback for any unmapped or custom exam topics
+        const examTitle = (examTopic.title || '')
+          .replace(/^\[[^\]]+\]\s*/, '')
+          .replace(/^\d+번\.?\s*/, '')
+          .replace(/^\[(?:기입|서술|논술)\d*\]\s*/, '')
+          .replace(/\[\d+(?:\.\d+)?점(?:[^\]]*)?\]/g, '')
+          .trim();
+        const kws = Array.isArray(examTopic.targetKeywords) ? examTopic.targetKeywords : [];
+        const STOPWORDS = new Set([
+          '학년도', '전공', '기출', '문제', '해설', '비교', '분석', '적용', '변화', '효과', '계산',
+          '의미', '특징', '유형', '원칙', '개념', '이론', '모형', '차이', '원인', '한계', '방안',
+          '기준', '성립', '요건', '절차', '역할', '방법', '관점', '구분', '제도', '과정', '단계',
+          '조건', '형태', '변동', '결정', '관계', '수준', '측정', '국내', '국제', '사회', '국가'
+        ]);
+        const tokens = examTitle
+          .split(/[\s·,()[\]/➕➔~]+/)
+          .map(w => w.replace(/(?:에서의|에서|으로|로써|로서|이란|와|과|의|에|을|를|이|가|은|는|및|등)$/, ''))
+          .filter(w => w.length >= 2 && !STOPWORDS.has(w));
+
+        const scored = [];
         for (let i = 0; i < TOPICS.length; i++) {
           const cand = TOPICS[i];
           if (!cand || cand.subject === '기출' || cand.subject === '안내' || cand.id === examTopic.id) continue;
           if (cand.id.includes('EXAM-') || cand.id.includes('APP-')) continue;
+          if (examTopic.subject && examTopic.subject !== '기출' && cand.subject !== examTopic.subject) continue;
+
           let score = 0;
           const candTitle = cand.title || '';
+          const candSec = `${cand.chapter || ''} ${cand.section || ''} ${cand.subsection || ''}`;
           const candKws = Array.isArray(cand.targetKeywords) ? cand.targetKeywords : [];
+
           kws.forEach(kw => {
-            if (kw && kw.length >= 2) {
-              if (candTitle.includes(kw)) score += 4;
-              if (candKws.includes(kw)) score += 3;
+            if (kw && kw.length >= 2 && !STOPWORDS.has(kw)) {
+              if (candTitle.includes(kw)) score += 5;
+              else if (candSec.includes(kw)) score += 3;
+              if (candKws.includes(kw)) score += 4;
             }
           });
-          // Title token overlap
-          const tokens = examTitle.split(/[\s·,()[\]/]+/).filter(w => w.length >= 2 && !['학년도', '전공', '기출', '문제', '해설'].includes(w));
           tokens.forEach(tok => {
-            if (candTitle.includes(tok)) score += 3;
-            else if (cand.section && cand.section.includes(tok)) score += 1;
+            if (candTitle.includes(tok)) score += (tok.length >= 3 ? 5 : 3);
+            else if (candSec.includes(tok)) score += (tok.length >= 3 ? 3 : 1.5);
+          });
+          if (score >= 4) {
+            scored.push({ idx: i, score });
+          }
+        }
+        scored.sort((a, b) => b.score - a.score);
+        return scored.slice(0, 3).map(s => s.idx);
+      }
+
+      function findLinkedConceptTopicIndex(examTopic) {
+        const indices = findLinkedConceptTopicIndices(examTopic);
+        return indices.length > 0 ? indices[0] : -1;
+      }
+
+      // Highlight the specific sub-card (.topic-group) within a multi-concept topic when jumping from an exam question
+      function highlightMatchedConceptSubgroup(examTopic) {
+        if (!examTopic || !subnoteContainer) return;
+        const groups = Array.from(subnoteContainer.querySelectorAll('.topic-group'));
+        if (groups.length <= 1) return;
+
+        const cleanTitle = (examTopic.title || '')
+          .replace(/^\[[^\]]+\]\s*/, '')
+          .replace(/^\d+번\.?\s*/, '')
+          .replace(/^\[(?:기입|서술|논술)\d*\]\s*/, '')
+          .replace(/\[\d+(?:\.\d+)?점(?:[^\]]*)?\]/g, '');
+        const kws = Array.isArray(examTopic.targetKeywords) ? examTopic.targetKeywords : [];
+        const tokens = [
+          ...kws.filter(w => w && w.length >= 2),
+          ...cleanTitle.split(/[\s·,()[\]/➕➔~]+/)
+            .map(w => w.replace(/(?:에서의|에서|으로|로써|로서|와|과|의|에|을|를|이|가|은|는|및)$/, ''))
+            .filter(w => w.length >= 2 && !['학년도', '전공', '기출', '문제', '해설', '비교', '분석', '계산', '효과', '의미', '개념'].includes(w))
+        ];
+        if (tokens.length === 0) return;
+
+        let bestGrp = null;
+        let bestScore = 0;
+        let bestIdx = -1;
+
+        groups.forEach((grp, idx) => {
+          const headerEl = grp.querySelector('.font-bold');
+          const headerTxt = headerEl ? headerEl.textContent : '';
+          if (headerTxt.includes('핵심 개념 도해')) return;
+          const bodyTxt = grp.textContent || '';
+          let score = 0;
+          tokens.forEach(tok => {
+            if (headerTxt.includes(tok)) score += (tok.length >= 3 ? 6 : 4);
+            else if (bodyTxt.includes(tok)) score += 1.5;
           });
           if (score > bestScore) {
             bestScore = score;
-            bestIdx = i;
+            bestGrp = grp;
+            bestIdx = idx;
           }
+        });
+
+        if (bestGrp && bestScore >= 4) {
+          bestGrp.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-50/30', 'transition-all', 'duration-500');
+          if (bestIdx > 0) {
+            setTimeout(() => {
+              bestGrp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 80);
+          }
+          setTimeout(() => {
+            bestGrp.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-50/30');
+          }, 2600);
         }
-        return bestScore >= 3 ? bestIdx : -1;
       }
 
       // T6: Due Queue State & Banner Updater
@@ -6989,27 +7524,83 @@
           }
         }
 
-        // T7: Linked concept topic button on exam cards (tag chips removed per user request)
+        // T7: Multi-concept linked topic buttons on exam cards + Return-to-exam chip on concept cards
         const parsedTagsEl = document.getElementById('topic-parsed-exam-tags');
         if (parsedTagsEl) {
           parsedTagsEl.innerHTML = '';
           let hasAnyTag = false;
           if (topic.subject === '기출' || (topic.id && topic.id.includes('EXAM-'))) {
-            const linkedIdx = findLinkedConceptTopicIndex(topic);
-            if (linkedIdx !== -1 && TOPICS[linkedIdx]) {
+            const linkedIndices = findLinkedConceptTopicIndices(topic);
+            if (linkedIndices.length > 0) {
               hasAnyTag = true;
-              const linkedTopic = TOPICS[linkedIdx];
-              const linkBtn = document.createElement('button');
-              linkBtn.type = 'button';
-              linkBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
-              linkBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">link</span><span>개념 이동: [${escapeHtml(linkedTopic.subject)}] ${escapeHtml(linkedTopic.title.slice(0, 24))}${linkedTopic.title.length > 24 ? '…' : ''}</span>`;
-              linkBtn.title = `연결된 본문 개념 주제로 이동: [${linkedTopic.subject}] ${linkedTopic.title}`;
-              linkBtn.addEventListener('click', () => {
-                setSubjectTab(linkedTopic.subject, false);
-                renderTopic(linkedIdx);
-                showToast(`연결된 개념 단원으로 이동: ${linkedTopic.title}`, 'menu_book');
+              const isMulti = linkedIndices.length > 1;
+              linkedIndices.forEach((linkedIdx, orderIdx) => {
+                const linkedTopic = TOPICS[linkedIdx];
+                if (!linkedTopic) return;
+                const linkBtn = document.createElement('button');
+                linkBtn.type = 'button';
+                linkBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
+                const labelText = formatConceptButtonLabel(linkedTopic);
+                const prefixText = isMulti ? `개념 이동 ${orderIdx + 1}` : '개념 이동';
+                linkBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">link</span><span>${prefixText}: [${escapeHtml(linkedTopic.subject)}] ${escapeHtml(labelText)}</span>`;
+                const fullPath = [linkedTopic.chapter, linkedTopic.section, linkedTopic.subsection, linkedTopic.title].filter(Boolean).join(' › ');
+                linkBtn.title = `연결된 본문 개념 주제로 이동: [${linkedTopic.subject}] ${fullPath}`;
+                linkBtn.addEventListener('click', () => {
+                  lastExamReturnState = {
+                    examIdx: index,
+                    examId: topic.id,
+                    examSubjectTab: activeSubject,
+                    examTitle: topic.title,
+                    conceptIndices: linkedIndices
+                  };
+                  setSubjectTab(linkedTopic.subject, false);
+                  renderTopic(linkedIdx);
+                  highlightMatchedConceptSubgroup(topic);
+                  showToast(`연결된 개념 단원으로 이동: ${labelText}`, 'menu_book');
+                });
+                parsedTagsEl.appendChild(linkBtn);
               });
-              parsedTagsEl.appendChild(linkBtn);
+            }
+          } else if (lastExamReturnState && Array.isArray(lastExamReturnState.conceptIndices) && lastExamReturnState.conceptIndices.includes(index)) {
+            hasAnyTag = true;
+            const retState = lastExamReturnState;
+            const backBtn = document.createElement('button');
+            backBtn.type = 'button';
+            backBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-50 hover:bg-indigo-100 text-indigo-800 border border-indigo-300 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
+            const shortExamTitle = (retState.examTitle || '').replace(/\s*\[\d+(?:\.\d+)?점[^\]]*\]$/, '').slice(0, 26);
+            backBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">undo</span><span>방금 본 기출로 돌아가기: ${escapeHtml(shortExamTitle)}${(retState.examTitle || '').length > 26 ? '…' : ''}</span>`;
+            backBtn.title = `방금 학습하던 기출문제로 복귀: ${retState.examTitle || ''}`;
+            backBtn.addEventListener('click', () => {
+              const targetTab = retState.examSubjectTab || '기출';
+              const targetIdx = retState.examIdx;
+              lastExamReturnState = null;
+              setSubjectTab(targetTab, false);
+              renderTopic(targetIdx);
+              showToast('기출문제로 돌아왔습니다', 'quiz');
+            });
+            parsedTagsEl.appendChild(backBtn);
+
+            // If that exam question had multiple linked concepts, also show sibling concept jump chips right next to it!
+            if (retState.conceptIndices.length > 1) {
+              retState.conceptIndices.forEach((sibIdx, sOrder) => {
+                if (sibIdx === index) return;
+                const sibTopic = TOPICS[sibIdx];
+                if (!sibTopic) return;
+                const sibBtn = document.createElement('button');
+                sibBtn.type = 'button';
+                sibBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 flex items-center gap-1 cursor-pointer transition-colors shadow-2xs';
+                const sibLabel = formatConceptButtonLabel(sibTopic);
+                sibBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">swap_horiz</span><span>함께 출제된 개념 ${sOrder + 1}: [${escapeHtml(sibTopic.subject)}] ${escapeHtml(sibLabel)}</span>`;
+                sibBtn.title = `이 기출문항에 함께 결합된 다른 개념으로 이동: [${sibTopic.subject}] ${sibTopic.title}`;
+                sibBtn.addEventListener('click', () => {
+                  const examTopicObj = TOPICS[retState.examIdx];
+                  setSubjectTab(sibTopic.subject, false);
+                  renderTopic(sibIdx);
+                  if (examTopicObj) highlightMatchedConceptSubgroup(examTopicObj);
+                  showToast(`함께 출제된 개념으로 이동: ${sibLabel}`, 'menu_book');
+                });
+                parsedTagsEl.appendChild(sibBtn);
+              });
             }
           }
           parsedTagsEl.classList.toggle('hidden', !hasAnyTag);
