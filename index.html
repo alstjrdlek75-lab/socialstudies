@@ -4553,6 +4553,19 @@
               if (k === 'edurecall_custom_POL-049' || k === 'edurecall_custom_POL-050' || k === 'edurecall_custom_POL-051') {
                 cleanVal = cleanVal.replace(/<div class="mt-3 bg-blue-50\/70[^>]*><div class="font-bold text-blue-900[^>]*><span class="material-symbols-outlined[^>]*>psychology<\/span><span>\[보충 해설\][\s\S]*?<\/div><\/div><\/div>/g, '');
               }
+              const requiredSupplementMarkers = {
+                'POL-027': '재분배 과세 반대',
+                'POL-028': '도덕적 명령',
+                'POL-030': '정의관의 비교',
+                'POL-031': '서사적 자아',
+                'POL-097': '국제 사회의 행위 주체',
+                'POL-110': '국제 사회의 행위 주체',
+                'LAW-066': '인권의 의미'
+              };
+              if (requiredSupplementMarkers[topicId] && !cleanVal.includes(requiredSupplementMarkers[topicId])) {
+                localStorage.removeItem(k);
+                return;
+              }
               if (k === 'edurecall_custom_ECON-011' && cleanVal.includes('양변 결합 및 정리: C + S + T = C + I + G + X - M ➔ 공통 소비(C) 소거')) {
                 const badPattern = /<div class="recall-item[^>]*>[\s\S]*?<strong class="text-slate-800 font-bold"><\/strong><\/div><\/div>양변 결합 및 정리:[\s\S]*?<div class="recall-item[^>]*><div class="flex-1 min-w-0"><\/div>\s*<\/div>\s*(?=<div class="my-2\.5)/;
                 const cleanReplacement = `<div class="recall-item text-xs md:text-sm text-slate-600 leading-relaxed transition-all subnote-indent-l2">
@@ -7624,6 +7637,22 @@
           }
         }
 
+        // Integrity safeguard: If supplemented topics have outdated custom HTML missing the newly supplemented content, restore official contentHtml
+        const requiredSupplementMarkers = {
+          'POL-027': '재분배 과세 반대',
+          'POL-028': '도덕적 명령',
+          'POL-030': '정의관의 비교',
+          'POL-031': '서사적 자아',
+          'POL-097': '국제 사회의 행위 주체',
+          'POL-110': '국제 사회의 행위 주체',
+          'LAW-066': '인권의 의미'
+        };
+        if (customHtml && requiredSupplementMarkers[topic.id] && !customHtml.includes(requiredSupplementMarkers[topic.id])) {
+          localStorage.removeItem(`edurecall_custom_${topic.id}`);
+          localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
+          customHtml = null;
+        }
+
         // Integrity safeguard: If custom HTML is severely corrupted (empty), discard and restore official contentHtml
         if (customHtml && (typeof isCustomHtmlCorrupted === 'function' && isCustomHtmlCorrupted(topic.id, customHtml))) {
           localStorage.removeItem(`edurecall_custom_${topic.id}`);
@@ -8179,6 +8208,23 @@
             if (e.target.closest('.group-edit-btn') || e.target.closest('.group-toggle-btn')) return;
             if (grp.classList.contains('is-blurred')) {
               revealGroup(grp);
+            }
+          };
+        });
+
+        document.querySelectorAll('[data-jump-topic]').forEach(badge => {
+          badge.onclick = (e) => {
+            e.stopPropagation();
+            const targetId = badge.getAttribute('data-jump-topic');
+            if (!targetId || typeof TOPICS === 'undefined') return;
+            const targetIdx = TOPICS.findIndex(t => t.id === targetId);
+            if (targetIdx !== -1) {
+              const targetTopic = TOPICS[targetIdx];
+              if (targetTopic.subject && activeSubject !== targetTopic.subject) {
+                setSubjectTab(targetTopic.subject, false);
+              }
+              renderTopic(targetIdx);
+              showToast(`주제 이동: ${targetTopic.title}`, 'menu_book');
             }
           };
         });
