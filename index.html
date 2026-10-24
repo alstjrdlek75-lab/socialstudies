@@ -1961,33 +1961,6 @@
         display: none !important;
       }
     }
-    /* T8: Per-tape wrongCount tracking & Mark-wrong-tape mode */
-    body.mark-wrong-tape-mode .mask-tape {
-      outline: 2px dashed #f43f5e !important;
-      outline-offset: 2px;
-      cursor: pointer !important;
-    }
-    .mask-tape[data-wrong-count]:not([data-wrong-count="0"])::after {
-      content: "×" attr(data-wrong-count);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 3px;
-      padding: 0 4px;
-      font-size: 10px;
-      font-weight: 800;
-      line-height: 1.3;
-      border-radius: 9999px;
-      background-color: #ffe4e6;
-      color: #be123c;
-      border: 1px solid #fda4af;
-      vertical-align: middle;
-    }
-    html.dark .mask-tape[data-wrong-count]:not([data-wrong-count="0"])::after {
-      background-color: rgba(159, 18, 57, 0.45);
-      color: #fecdd3;
-      border-color: #fb7185;
-    }
   </style>
   <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
@@ -2442,33 +2415,29 @@
             <!-- Step 3: Primary FSRS Evaluation (Again / Hard / Good / Easy) + '더보기' Toggle -->
             <div class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-between sm:justify-end">
               <div class="grid grid-cols-4 gap-1 sm:gap-1.5 flex-1 sm:flex-initial" id="inline-fsrs-bar" aria-label="3단계 FSRS 자기평가">
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-red-200 bg-red-50/90 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="1" type="button" title="3단계 평가: 다시 (단축키: 1)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-red-200 bg-red-50/90 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="1" type="button" title="3단계 평가: 다시 (단축키: 1)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Again</span>
-                  <span class="text-[10px] text-red-600 font-mono font-bold leading-tight" id="inline-fsrs-ivl-1">10분</span>
                 </button>
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-amber-900 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="2" type="button" title="3단계 평가: 어려움 (단축키: 2)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-amber-900 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="2" type="button" title="3단계 평가: 어려움 (단축키: 2)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Hard</span>
-                  <span class="text-[10px] text-amber-700 font-mono font-bold leading-tight" id="inline-fsrs-ivl-2">1일</span>
                 </button>
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-blue-200 bg-blue-50/90 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="3" type="button" title="3단계 평가: 알맞음 (단축키: 3)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-blue-200 bg-blue-50/90 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="3" type="button" title="3단계 평가: 알맞음 (단축키: 3)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Good</span>
-                  <span class="text-[10px] text-blue-700 font-mono font-bold leading-tight" id="inline-fsrs-ivl-3">3일</span>
                 </button>
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2 sm:px-2.5 py-1 rounded-lg border border-emerald-200 bg-emerald-50/90 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex flex-col sm:flex-row items-center justify-center sm:gap-1" data-grade="4" type="button" title="3단계 평가: 쉬움 (단축키: 4)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-emerald-200 bg-emerald-50/90 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="4" type="button" title="3단계 평가: 쉬움 (단축키: 4)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Easy</span>
-                  <span class="text-[10px] text-emerald-700 font-mono font-bold leading-tight" id="inline-fsrs-ivl-4">7일</span>
                 </button>
               </div>
 
               <!-- Secondary Modes & Tools Toggle Button ('더보기') -->
-              <button id="btn-toggle-study-more" type="button" aria-expanded="false" class="min-h-[40px] sm:min-h-[38px] px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer shrink-0" title="작성/정독/블러 모드, 백지 인출, Diff 대조 등 보조 학습 도구 더보기">
+              <button id="btn-toggle-study-more" type="button" aria-expanded="false" class="min-h-[40px] sm:min-h-[38px] px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer shrink-0" title="작성/정독/블러 모드, 백지 인출, 글자 크기 등 보조 학습 도구 더보기">
                 <span class="material-symbols-outlined text-[16px]" id="study-more-icon">tune</span>
                 <span>더보기</span>
               </button>
             </div>
           </div>
 
-          <!-- Collapsed Secondary Panel: 작성/정독/블러 모드, 백지 인출, Diff 대조, 약한 테이프, 글자 크기 -->
+          <!-- Collapsed Secondary Panel: 작성/정독/블러 모드, 백지 인출, 글자 크기 -->
           <div id="study-more-panel" class="hidden pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
             <!-- Secondary Modes: 작성 / 정독 / 블러 -->
             <div class="flex items-center gap-1 bg-slate-100/90 p-1 rounded-xl flex-wrap">
@@ -2487,21 +2456,11 @@
               </button>
             </div>
 
-            <!-- Secondary Recall Tools: 백지 인출, Diff 대조, 약한 테이프, 테이프 추가, 글자 크기 -->
+            <!-- Secondary Recall Tools: 백지 인출, 테이프 추가, 글자 크기 -->
             <div class="flex flex-wrap items-center gap-1.5">
               <button id="btn-toggle-essay-pad" type="button" class="min-h-[34px] px-2.5 py-1 rounded-lg border border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50 text-slate-700 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer shadow-2xs whitespace-nowrap" title="백지 인출 서술창 열기/접기 [단축키: W 또는 Tab]">
                 <span class="material-symbols-outlined text-[15px] text-blue-600" id="toggle-essay-icon">dock_to_right</span>
                 <span id="toggle-essay-label">백지 인출</span>
-              </button>
-
-              <button id="btn-open-diff-more" type="button" class="min-h-[34px] px-2.5 py-1 rounded-lg border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer whitespace-nowrap" title="내 인출 답안과 원문 서브노트 1:1 대조 (Diff)">
-                <span class="material-symbols-outlined text-[15px]">compare</span>
-                <span>Diff 대조</span>
-              </button>
-
-              <button id="btn-weak-tapes-only" type="button" class="min-h-[34px] px-2.5 py-1 rounded-lg border border-rose-200 bg-rose-50/70 hover:bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer whitespace-nowrap" title="오답 표시(wrongCount ≥ 1)된 약한 테이프만 가리기">
-                <span class="material-symbols-outlined text-[15px]">filter_alt</span>
-                <span id="weak-tapes-btn-label">약한 테이프만</span>
               </button>
 
               <button id="btn-apply-tape-inline" type="button" class="hidden md:flex min-h-[34px] px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs items-center justify-center gap-1 transition-all cursor-pointer whitespace-nowrap" title="선택한 글자에 마스킹 테이프 붙이기 [단축키: M]">
@@ -2564,10 +2523,6 @@
                   <span>메모로 스크랩</span>
                 </button>
               </div>
-              <button id="btn-open-diff" class="text-blue-600 hover:underline font-bold flex items-center gap-0.5" type="button">
-                <span class="material-symbols-outlined text-[13px]">compare</span>
-                <span>원문 1:1 대조창 (Diff)</span>
-              </button>
             </div>
           </div>
 
@@ -2613,22 +2568,18 @@
           <div class="grid grid-cols-4 gap-1.5" id="fsrs-buttons-container">
             <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 bg-red-50/80 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="1" type="button" title="다시 (단축키: 1)">
               <span class="text-xs font-bold">Again</span>
-              <span class="text-[10px] text-red-700 font-medium mt-0.5" id="fsrs-ivl-1">10분 후</span>
               <span class="mt-1 px-1.5 py-0.2 rounded bg-red-200/60 text-red-900 text-[9px] font-mono font-bold">1</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-slate-200 bg-slate-50/90 hover:bg-slate-100 text-slate-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="2" type="button" title="어려움 (단축키: 2)">
               <span class="text-xs font-bold">Hard</span>
-              <span class="text-[10px] text-slate-600 font-medium mt-0.5" id="fsrs-ivl-2">1일 후</span>
               <span class="mt-1 px-1.5 py-0.2 rounded bg-slate-200/70 text-slate-800 text-[9px] font-mono font-bold">2</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="3" type="button" title="알맞음 (단축키: 3)">
               <span class="text-xs font-bold">Good</span>
-              <span class="text-[10px] text-blue-700 font-medium mt-0.5" id="fsrs-ivl-3">3일 후</span>
               <span class="mt-1 px-1.5 py-0.2 rounded bg-blue-200/60 text-blue-900 text-[9px] font-mono font-bold">3</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs group" data-grade="4" type="button" title="쉬움 (단축키: 4)">
               <span class="text-xs font-bold">Easy</span>
-              <span class="text-[10px] text-emerald-700 font-medium mt-0.5" id="fsrs-ivl-4">7일 후</span>
               <span class="mt-1 px-1.5 py-0.2 rounded bg-emerald-200/60 text-emerald-900 text-[9px] font-mono font-bold">4</span>
             </button>
           </div>
@@ -2640,21 +2591,18 @@
                 <span class="text-sm font-extrabold text-red-700">F</span>
                 <span class="text-xs font-bold">Fail (오답)</span>
               </div>
-              <span class="text-[10px] text-red-600 font-medium mt-0.5" id="fap-ivl-fail">-</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 transition-all active:scale-95 cursor-pointer group" data-grade="ambiguous" type="button" title="애매함 / 부분정답 (단축키: A 또는 2)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-amber-700">A</span>
                 <span class="text-xs font-bold">Ambiguous (세모)</span>
               </div>
-              <span class="text-[10px] text-amber-600 font-medium mt-0.5" id="fap-ivl-ambiguous">-</span>
             </button>
             <button class="grade-btn flex flex-col items-center justify-center p-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer group" data-grade="pass" type="button" title="정답 / 패스 (단축키: P 또는 3, 4)">
               <div class="flex items-center gap-1">
                 <span class="text-sm font-extrabold text-blue-700">P</span>
                 <span class="text-xs font-bold">Pass (정답)</span>
               </div>
-              <span class="text-[10px] text-blue-600 font-medium mt-0.5" id="fap-ivl-pass">-</span>
             </button>
           </div>
 
@@ -2984,36 +2932,22 @@
 
     <!-- 4-Button Single Horizontal Row (Again / Hard / Good / Easy, min 44x44px touch targets) -->
     <div class="grid grid-cols-4 gap-2" id="mobile-fsrs-buttons-row">
-      <button class="mobile-grade-btn min-h-[54px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 dark:border-red-900/70 bg-red-50/90 dark:bg-red-950/50 hover:bg-red-100 text-red-800 dark:text-red-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="1" type="button">
+      <button class="mobile-grade-btn min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-red-200 dark:border-red-900/70 bg-red-50/90 dark:bg-red-950/50 hover:bg-red-100 text-red-800 dark:text-red-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="1" type="button">
         <span class="text-xs font-extrabold leading-tight">Again</span>
-        <span class="text-[11px] text-red-700 dark:text-red-300 font-bold mt-0.5" id="mobile-fsrs-ivl-1">10분</span>
       </button>
-      <button class="mobile-grade-btn min-h-[54px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-amber-200 dark:border-amber-900/70 bg-amber-50/90 dark:bg-amber-950/50 hover:bg-amber-100 text-amber-900 dark:text-amber-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="2" type="button">
+      <button class="mobile-grade-btn min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-amber-200 dark:border-amber-900/70 bg-amber-50/90 dark:bg-amber-950/50 hover:bg-amber-100 text-amber-900 dark:text-amber-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="2" type="button">
         <span class="text-xs font-extrabold leading-tight">Hard</span>
-        <span class="text-[11px] text-amber-700 dark:text-amber-300 font-bold mt-0.5" id="mobile-fsrs-ivl-2">1일</span>
       </button>
-      <button class="mobile-grade-btn min-h-[54px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 dark:border-blue-900/70 bg-blue-50/90 dark:bg-blue-950/50 hover:bg-blue-100 text-blue-800 dark:text-blue-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="3" type="button">
+      <button class="mobile-grade-btn min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-blue-200 dark:border-blue-900/70 bg-blue-50/90 dark:bg-blue-950/50 hover:bg-blue-100 text-blue-800 dark:text-blue-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="3" type="button">
         <span class="text-xs font-extrabold leading-tight">Good</span>
-        <span class="text-[11px] text-blue-700 dark:text-blue-300 font-bold mt-0.5" id="mobile-fsrs-ivl-3">3일</span>
       </button>
-      <button class="mobile-grade-btn min-h-[54px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 dark:border-emerald-900/70 bg-emerald-50/90 dark:bg-emerald-950/50 hover:bg-emerald-100 text-emerald-800 dark:text-emerald-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="4" type="button">
+      <button class="mobile-grade-btn min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-xl border border-emerald-200 dark:border-emerald-900/70 bg-emerald-50/90 dark:bg-emerald-950/50 hover:bg-emerald-100 text-emerald-800 dark:text-emerald-200 transition-all active:scale-95 cursor-pointer shadow-2xs" data-grade="4" type="button">
         <span class="text-xs font-extrabold leading-tight">Easy</span>
-        <span class="text-[11px] text-emerald-700 dark:text-emerald-300 font-bold mt-0.5" id="mobile-fsrs-ivl-4">7일</span>
       </button>
     </div>
 
-    <!-- Bottom Options Row: Auto-advance toggle, Mark wrong tapes (T8), Weak tapes only (T8), & Re-hide -->
+    <!-- Bottom Options Row: Auto-advance toggle & Re-hide -->
     <div class="flex flex-col gap-1.5 mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-      <div class="flex items-center justify-between gap-1.5">
-        <button id="btn-toggle-mark-wrong-tape" type="button" class="min-h-[44px] flex-1 px-2.5 py-1.5 rounded-xl border border-rose-200 dark:border-rose-800 bg-rose-50/80 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 font-bold flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer" title="켜고 본문 테이프를 탭하면 해당 테이프의 오답 횟수(wrongCount)가 증가합니다">
-          <span class="material-symbols-outlined text-[15px]">touch_app</span>
-          <span id="mark-wrong-tape-label">틀린 테이프 표시</span>
-        </button>
-        <button id="btn-mobile-weak-tapes-only" type="button" class="min-h-[44px] flex-1 px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold flex items-center justify-center gap-1 transition-all active:scale-95 cursor-pointer" title="오답 횟수가 1 이상인 약한 테이프만 가리기">
-          <span class="material-symbols-outlined text-[15px]">filter_alt</span>
-          <span id="mobile-weak-tapes-label">약한 테이프만 가리기</span>
-        </button>
-      </div>
       <div class="flex items-center justify-between gap-2">
         <label class="min-h-[44px] flex items-center gap-2 text-slate-600 dark:text-slate-300 font-semibold cursor-pointer select-none px-1">
           <input type="checkbox" id="mobile-auto-advance-checkbox" checked class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer" />
@@ -8270,90 +8204,14 @@
         if (icon) icon.textContent = 'visibility';
       }
 
-      // T8: Per-tape wrongCount tracking & Weak Tapes Only filter
-      let isWeakTapesOnlyMode = false;
-      function getTapeWrongCountsAll() {
-        try {
-          return JSON.parse(localStorage.getItem('edurecall_tape_wrong_counts') || '{}') || {};
-        } catch (e) {
-          return {};
-        }
-      }
       function getTapeCanonicalKey(tape) {
         if (!tape) return '';
         return (tape.getAttribute('data-text') || tape.textContent || '').trim();
-      }
-      function incrementTapeWrongCount(tape) {
-        const curTopic = TOPICS[currentTopicIndex];
-        if (!curTopic || !tape) return 0;
-        const key = getTapeCanonicalKey(tape);
-        if (!key) return 0;
-        const all = getTapeWrongCountsAll();
-        if (!all[curTopic.id]) all[curTopic.id] = {};
-        const nextVal = (parseInt(all[curTopic.id][key] || tape.getAttribute('data-wrong-count') || '0', 10) || 0) + 1;
-        all[curTopic.id][key] = nextVal;
-        try {
-          localStorage.setItem('edurecall_tape_wrong_counts', JSON.stringify(all));
-        } catch (e) {}
-        tape.setAttribute('data-wrong-count', String(nextVal));
-        if (typeof saveCurrentTopicCustomContent === 'function') {
-          saveCurrentTopicCustomContent();
-        }
-        if (typeof triggerAutoSync === 'function') {
-          triggerAutoSync();
-        }
-        return nextVal;
-      }
-      function applyWeakTapesFilterToCurrentTopic(notify = false) {
-        const tapes = subnoteContainer ? subnoteContainer.querySelectorAll('.mask-tape') : [];
-        let weakCount = 0;
-        tapes.forEach(tape => {
-          const wc = parseInt(tape.getAttribute('data-wrong-count') || '0', 10) || 0;
-          if (isWeakTapesOnlyMode) {
-            if (wc >= 1) {
-              stickTape(tape);
-              weakCount++;
-            } else {
-              peelTape(tape);
-            }
-          }
-        });
-        const btnWeakDesktop = document.getElementById('btn-weak-tapes-only');
-        const btnWeakMobile = document.getElementById('btn-mobile-weak-tapes-only');
-        [btnWeakDesktop, btnWeakMobile].forEach(btn => {
-          if (!btn) return;
-          if (isWeakTapesOnlyMode) {
-            btn.classList.add('ring-2', 'ring-rose-500', 'bg-rose-600', 'text-white');
-          } else {
-            btn.classList.remove('ring-2', 'ring-rose-500', 'bg-rose-600', 'text-white');
-          }
-        });
-        if (notify) {
-          if (isWeakTapesOnlyMode) {
-            if (weakCount > 0) {
-              showToast(`약한 테이프(${weakCount}개)만 가렸습니다`, 'filter_alt');
-            } else {
-              showToast('아직 표시된 약한 테이프(wrongCount ≥ 1)가 없습니다. [틀린 테이프 표시]로 체크해보세요.', 'info');
-            }
-          } else {
-            toggleMasterReveal(false);
-            showToast('전체 테이프 가리기 모드로 복귀했습니다', 'label');
-          }
-        }
       }
 
       // Authentic Masking Tape Functions
       function bindSingleTape(tape) {
         tape.title = '클릭: 떼기/가리기 | 길게 누르기 또는 마우스 우클릭: 테이프 삭제';
-        const curTopic = TOPICS[currentTopicIndex];
-        if (curTopic) {
-          const key = getTapeCanonicalKey(tape);
-          const allWc = getTapeWrongCountsAll();
-          const savedWc = (allWc[curTopic.id] && key && allWc[curTopic.id][key]) || parseInt(tape.getAttribute('data-wrong-count') || '0', 10) || 0;
-          if (savedWc > 0) {
-            tape.setAttribute('data-wrong-count', String(savedWc));
-          }
-        }
 
         // Right-Click (contextmenu): instant delete (Mac trackpad two-finger tap or Ctrl+click or long-press on mobile)
         tape.addEventListener('contextmenu', (e) => {
@@ -8395,7 +8253,7 @@
           }
         });
 
-        // Left-Click: toggle (or delete if modifier held, or increment wrongCount in mark-wrong-tape-mode per T8)
+        // Left-Click: toggle (or delete if modifier held)
         tape.addEventListener('click', (e) => {
           e.stopPropagation();
           if (isLongPress) {
@@ -8410,12 +8268,6 @@
             removeTape(tape);
             return;
           }
-          if (document.body.classList.contains('mark-wrong-tape-mode')) {
-            const newCount = incrementTapeWrongCount(tape);
-            const kw = getTapeCanonicalKey(tape).slice(0, 14);
-            showToast(`'${kw}' 오답 표시 완료 (누적 ${newCount}회)`, 'priority_high');
-            return;
-          }
           if (tape.classList.contains('is-taped')) {
             peelTape(tape);
           } else {
@@ -8427,9 +8279,6 @@
       function setupTapeInteractions() {
         const tapes = subnoteContainer.querySelectorAll('.mask-tape');
         tapes.forEach(tape => bindSingleTape(tape));
-        if (isWeakTapesOnlyMode) {
-          applyWeakTapesFilterToCurrentTopic(false);
-        }
       }
 
       function stickTape(tape) {
@@ -9899,11 +9748,6 @@
       }
 
       function closeMobileGradeSheet() {
-        document.body.classList.remove('mark-wrong-tape-mode');
-        const btnMarkWrong = document.getElementById('btn-toggle-mark-wrong-tape');
-        const markWrongLabel = document.getElementById('mark-wrong-tape-label');
-        if (btnMarkWrong) btnMarkWrong.classList.remove('ring-2', 'ring-rose-500', 'bg-rose-600', 'text-white');
-        if (markWrongLabel) markWrongLabel.textContent = '틀린 테이프 표시';
         if (!mobileGradeSheet) return;
         mobileGradeSheet.style.transform = '';
         mobileGradeSheet.classList.add('translate-y-full');
@@ -9919,37 +9763,6 @@
           }
         }, 200);
       }
-
-      // T8: Mark wrong tape mode & Weak tapes only buttons
-      const btnToggleMarkWrongTape = document.getElementById('btn-toggle-mark-wrong-tape');
-      const markWrongTapeLabel = document.getElementById('mark-wrong-tape-label');
-      if (btnToggleMarkWrongTape) {
-        btnToggleMarkWrongTape.addEventListener('click', () => {
-          const active = document.body.classList.toggle('mark-wrong-tape-mode');
-          btnToggleMarkWrongTape.classList.toggle('ring-2', active);
-          btnToggleMarkWrongTape.classList.toggle('ring-rose-500', active);
-          btnToggleMarkWrongTape.classList.toggle('bg-rose-600', active);
-          btnToggleMarkWrongTape.classList.toggle('text-white', active);
-          if (markWrongTapeLabel) {
-            markWrongTapeLabel.textContent = active ? '틀린 테이프 탭 중 (완료)' : '틀린 테이프 표시';
-          }
-          if (active) {
-            showToast('본문에서 틀린 테이프를 탭하면 오답 횟수(×1)가 기록됩니다', 'touch_app');
-          } else {
-            showToast('틀린 테이프 표시 모드가 종료되었습니다', 'check');
-          }
-        });
-      }
-
-      const btnWeakTapesOnly = document.getElementById('btn-weak-tapes-only');
-      const btnMobileWeakTapesOnly = document.getElementById('btn-mobile-weak-tapes-only');
-      [btnWeakTapesOnly, btnMobileWeakTapesOnly].forEach(btn => {
-        if (!btn) return;
-        btn.addEventListener('click', () => {
-          isWeakTapesOnlyMode = !isWeakTapesOnlyMode;
-          applyWeakTapesFilterToCurrentTopic(true);
-        });
-      });
 
       // T6: Due Queue Controls & Mobile Header / Startup Prompt
       const btnMobileDueHeader = document.getElementById('btn-mobile-due-header');
@@ -10496,25 +10309,29 @@
         return `${summaryHeader}<div class="whitespace-pre-wrap">${bodyHtml}</div>`;
       }
 
-      btnOpenDiff.addEventListener('click', () => {
-        const topic = TOPICS[currentTopicIndex];
-        const rawUserText = essayInput.value;
-        diffCheckedForCurrentTopic = true;
-        pendingShortcutGrade = null;
-        diffUserBox.textContent = rawUserText.trim() ? rawUserText : '아직 인출한 내용이 없어요. 마스킹을 가리고 직접 작성해보세요.';
-        diffUserLen.textContent = rawUserText.length > 0 ? `${rawUserText.length}자 작성됨` : '아직 작성 전';
-        diffModelBox.innerHTML = buildDiffHighlightedModelHtml(topic, rawUserText);
-        diffModelLen.textContent = `${(topic && topic.defaultAnswer ? topic.defaultAnswer.length : 0)}자`;
-        diffModal.classList.remove('hidden');
-      });
+      if (btnOpenDiff) {
+        btnOpenDiff.addEventListener('click', () => {
+          const topic = TOPICS[currentTopicIndex];
+          const rawUserText = essayInput.value;
+          diffCheckedForCurrentTopic = true;
+          pendingShortcutGrade = null;
+          diffUserBox.textContent = rawUserText.trim() ? rawUserText : '아직 인출한 내용이 없어요. 마스킹을 가리고 직접 작성해보세요.';
+          diffUserLen.textContent = rawUserText.length > 0 ? `${rawUserText.length}자 작성됨` : '아직 작성 전';
+          diffModelBox.innerHTML = buildDiffHighlightedModelHtml(topic, rawUserText);
+          diffModelLen.textContent = `${(topic && topic.defaultAnswer ? topic.defaultAnswer.length : 0)}자`;
+          diffModal.classList.remove('hidden');
+        });
+      }
 
-      function closeDiff() { diffModal.classList.add('hidden'); }
-      closeDiffModalBtn.addEventListener('click', closeDiff);
-      diffModal.addEventListener('click', (e) => { if (e.target === diffModal) closeDiff(); });
-      diffPassBtn.addEventListener('click', () => {
-        closeDiff();
-        handleGrade(3);
-      });
+      function closeDiff() { if (diffModal) diffModal.classList.add('hidden'); }
+      if (closeDiffModalBtn) closeDiffModalBtn.addEventListener('click', closeDiff);
+      if (diffModal) diffModal.addEventListener('click', (e) => { if (e.target === diffModal) closeDiff(); });
+      if (diffPassBtn) {
+        diffPassBtn.addEventListener('click', () => {
+          closeDiff();
+          handleGrade(3);
+        });
+      }
 
       // Helper: Escape HTML
       function escapeHtml(str) {
@@ -12534,7 +12351,7 @@
           return;
         }
 
-        // 4. FSRS Self-Grading Shortcuts: [1], [2], [3], [4] (with safety guard when essay has text & 1:1 Diff not yet checked)
+        // 4. FSRS Self-Grading Shortcuts: [1], [2], [3], [4]
         const gradeKeyMatch = (!e.ctrlKey && !e.metaKey) ? (
           (e.key === '1' || e.code === 'Digit1') ? 1 :
           (e.key === '2' || e.code === 'Digit2') ? 2 :
@@ -12543,18 +12360,6 @@
         ) : 0;
         if (gradeKeyMatch >= 1 && gradeKeyMatch <= 4) {
           e.preventDefault();
-          const hasUncheckedEssay = Boolean(essayInput && essayInput.value.trim().length > 0 && !diffCheckedForCurrentTopic);
-          // Allow immediate grading if Alt+1~4 is pressed, or if 1:1 Diff was already checked, or if user confirms by pressing the same number key a second time
-          if (hasUncheckedEssay && !e.altKey && pendingShortcutGrade !== gradeKeyMatch) {
-            pendingShortcutGrade = gradeKeyMatch;
-            if (pendingShortcutGradeTimer) clearTimeout(pendingShortcutGradeTimer);
-            pendingShortcutGradeTimer = setTimeout(() => {
-              pendingShortcutGrade = null;
-              pendingShortcutGradeTimer = null;
-            }, 3000);
-            showToast(`✍️ 작성 중인 인출 답안이 있습니다. [원문 1:1 대조] 후 평가하거나, [${gradeKeyMatch}] 키를 한 번 더(또는 Alt+${gradeKeyMatch}) 누르면 즉시 평가됩니다.`, 'warning');
-            return;
-          }
           resetEssayDiffGuardState();
           handleGrade(gradeKeyMatch);
           return;
