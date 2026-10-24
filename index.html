@@ -1991,8 +1991,8 @@
   </style>
   <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
-  <script src="data/topics-index.js?v=20261024_v5"></script>
-  <script defer src="context-guides-data.js?v=20261024_v5"></script>
+  <script src="data/topics-index.js?v=20261024_v6"></script>
+  <script defer src="context-guides-data.js?v=20261024_v6"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -3727,7 +3727,7 @@
 
         inflightChunkPromises[subject] = new Promise((resolve) => {
           const script = document.createElement('script');
-          script.src = chunkSrc + '?v=20261024_v5';
+          script.src = chunkSrc + '?v=20261024_v6';
           script.async = true;
           script.dataset.subjectChunk = subject;
           script.onload = () => {
