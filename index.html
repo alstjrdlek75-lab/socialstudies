@@ -2390,58 +2390,43 @@
           </div>
         </div>
 
-        <!-- C.9: Simplified 3-Step Primary Study Flow Bar: ① 마스킹 테이프 인출 → ② 정답 확인 → ③ Again/Hard/Good/Easy 평가 (+ 더보기 메뉴) -->
+        <!-- C.9: Simplified Primary Study Flow Bar: Again/Hard/Good/Easy 평가 (+ 더보기 메뉴) -->
         <div class="bg-white rounded-xl border border-slate-200/80 p-2 sm:p-2.5 shadow-2xs flex flex-col gap-2">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <!-- Step 1 & Step 2: Primary Recall & Answer Check -->
-            <div class="flex items-center gap-1.5 sm:gap-2 flex-1 sm:flex-initial min-w-0">
-              <!-- ① 마스킹 테이프 인출 -->
-              <button class="mode-pill min-h-[40px] sm:min-h-[38px] px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-blue-600 text-white shadow-xs flex items-center justify-center gap-1.5 cursor-pointer select-none shrink-0" data-mode="tape" type="button" title="1단계: 마스킹 테이프로 키워드 인출">
-                <span class="px-1.5 py-0.2 rounded bg-white/20 text-[10px] font-mono">1</span>
-                <span class="material-symbols-outlined text-[16px]">label</span>
-                <span>마스킹 인출</span>
-              </button>
-
-              <span class="material-symbols-outlined text-slate-300 text-[16px] hidden sm:inline select-none">arrow_forward</span>
-
-              <!-- ② 정답 확인 [T] -->
-              <button id="btn-reveal-all" class="min-h-[40px] sm:min-h-[38px] flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-400 font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-2xs whitespace-nowrap shrink-0" type="button" title="2단계: 정답(마스킹 테이프) 확인 / 다시 가리기 [단축키: T]">
-                <span class="px-1.5 py-0.2 rounded bg-emerald-700/15 text-emerald-950 text-[10px] font-mono">2</span>
-                <span class="material-symbols-outlined text-[16px] text-emerald-800" id="reveal-eye-icon">visibility</span>
-                <span id="reveal-btn-label"><span class="hidden sm:inline">정답 확인 [T]</span><span class="sm:hidden">정답 확인</span></span>
-              </button>
-            </div>
-
-            <!-- Step 3: Primary FSRS Evaluation (Again / Hard / Good / Easy) + '더보기' Toggle -->
+          <div class="flex flex-wrap items-center justify-end gap-2">
+            <!-- Primary FSRS Evaluation (Again / Hard / Good / Easy) + '더보기' Toggle -->
             <div class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-between sm:justify-end">
-              <div class="grid grid-cols-4 gap-1 sm:gap-1.5 flex-1 sm:flex-initial" id="inline-fsrs-bar" aria-label="3단계 FSRS 자기평가">
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-red-200 bg-red-50/90 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="1" type="button" title="3단계 평가: 다시 (단축키: 1)">
+              <div class="grid grid-cols-4 gap-1 sm:gap-1.5 flex-1 sm:flex-initial" id="inline-fsrs-bar" aria-label="FSRS 자기평가">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-red-200 bg-red-50/90 hover:bg-red-100 text-red-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="1" type="button" title="평가: 다시 (단축키: 1)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Again</span>
                 </button>
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-amber-900 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="2" type="button" title="3단계 평가: 어려움 (단축키: 2)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-amber-200 bg-amber-50/90 hover:bg-amber-100 text-amber-900 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="2" type="button" title="평가: 어려움 (단축키: 2)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Hard</span>
                 </button>
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-blue-200 bg-blue-50/90 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="3" type="button" title="3단계 평가: 알맞음 (단축키: 3)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-blue-200 bg-blue-50/90 hover:bg-blue-100 text-blue-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="3" type="button" title="평가: 알맞음 (단축키: 3)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Good</span>
                 </button>
-                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-emerald-200 bg-emerald-50/90 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="4" type="button" title="3단계 평가: 쉬움 (단축키: 4)">
+                <button class="grade-btn min-h-[40px] sm:min-h-[38px] px-2.5 sm:px-3 py-1 rounded-lg border border-emerald-200 bg-emerald-50/90 hover:bg-emerald-100 text-emerald-800 transition-all active:scale-95 cursor-pointer shadow-2xs flex items-center justify-center" data-grade="4" type="button" title="평가: 쉬움 (단축키: 4)">
                   <span class="text-[11px] sm:text-xs font-extrabold leading-tight">Easy</span>
                 </button>
               </div>
 
               <!-- Secondary Modes & Tools Toggle Button ('더보기') -->
-              <button id="btn-toggle-study-more" type="button" aria-expanded="false" class="min-h-[40px] sm:min-h-[38px] px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer shrink-0" title="작성/정독/블러 모드, 백지 인출, 글자 크기 등 보조 학습 도구 더보기">
+              <button id="btn-toggle-study-more" type="button" aria-expanded="false" class="min-h-[40px] sm:min-h-[38px] px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 transition-all cursor-pointer shrink-0" title="마스킹/작성/정독/블러 모드, 백지 인출, 글자 크기 등 보조 학습 도구 더보기">
                 <span class="material-symbols-outlined text-[16px]" id="study-more-icon">tune</span>
                 <span>더보기</span>
               </button>
             </div>
           </div>
 
-          <!-- Collapsed Secondary Panel: 작성/정독/블러 모드, 백지 인출, 글자 크기 -->
+          <!-- Collapsed Secondary Panel: 마스킹/작성/정독/블러 모드, 백지 인출, 글자 크기 -->
           <div id="study-more-panel" class="hidden pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
-            <!-- Secondary Modes: 작성 / 정독 / 블러 -->
+            <!-- Secondary Modes: 마스킹 / 작성 / 정독 / 블러 -->
             <div class="flex items-center gap-1 bg-slate-100/90 p-1 rounded-xl flex-wrap">
-              <span class="text-[11px] font-bold text-slate-500 px-2">보조 모드:</span>
+              <span class="text-[11px] font-bold text-slate-500 px-2">학습 모드:</span>
+              <button class="mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none" data-mode="tape" type="button" title="마스킹 테이프로 키워드 인출">
+                <span class="material-symbols-outlined text-[15px]">label</span>
+                <span>마스킹</span>
+              </button>
               <button class="mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none" data-mode="type" type="button" title="정답을 미리 보지 않고 빈칸을 직접 타이핑하여 맞히는 작성 모드 [단축키: I]">
                 <span class="material-symbols-outlined text-[15px]">edit_note</span>
                 <span>작성 모드</span>
@@ -8809,23 +8794,16 @@
         currentMode = mode;
         try { localStorage.setItem('edurecall_mode', mode); } catch (e) {}
         modePills.forEach(pill => {
-          const isPrimaryTapeBtn = pill.dataset.mode === 'tape';
           if (pill.dataset.mode === mode) {
-            if (isPrimaryTapeBtn) {
-              pill.className = 'mode-pill min-h-[40px] sm:min-h-[38px] px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-blue-600 text-white shadow-xs flex items-center justify-center gap-1.5 cursor-pointer select-none shrink-0';
+            if (mode === 'tape' || mode === 'study') {
+              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none';
             } else if (mode === 'type') {
               pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-emerald-600 text-white shadow-xs cursor-pointer select-none';
-            } else if (mode === 'study') {
-              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-xs cursor-pointer select-none';
             } else if (mode === 'blur') {
               pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-xs cursor-pointer select-none';
             }
           } else {
-            if (isPrimaryTapeBtn) {
-              pill.className = 'mode-pill min-h-[40px] sm:min-h-[38px] px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 flex items-center justify-center gap-1.5 cursor-pointer select-none shrink-0';
-            } else {
-              pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none';
-            }
+            pill.className = 'mode-pill min-h-[34px] flex items-center justify-center gap-1 py-1 px-2.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer select-none';
           }
         });
 
