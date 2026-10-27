@@ -403,6 +403,31 @@
       background-color: rgba(37, 99, 235, 0.1);
       color: #2563eb;
     }
+    #topic-header-path .ctx-info-btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    #topic-header-path .ctx-info-btn-pill:hover {
+      background-color: #dbeafe;
+      border-color: #93c5fd;
+      color: #1d4ed8;
+    }
+    #topic-header-path .ctx-info-btn-pill .material-symbols-outlined {
+      font-size: 14px;
+      color: #3b82f6;
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+    }
     #topic-header-path .ctx-info-btn {
       color: #60a5fa;
       width: 17px;
@@ -1881,7 +1906,6 @@
         #bc-container,
         #bc-subject,
         #bc-chapter-sep,
-        #topic-header-path,
         #bc-chapter,
         #bc-section,
         #bc-section-sep,
@@ -2144,29 +2168,25 @@
   </div>
 
   <!-- SUB-HEADER (Unified Breadcrumb + Chapter/Section Context Path + Prev/Next Navigation) -->
-  <div id="sub-header" class="flex-none h-11 md:h-10 bg-slate-50/95 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
-    <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
+  <div id="sub-header" class="flex-none h-11 md:h-11 bg-white/95 backdrop-blur-sm border-b border-border z-40 flex items-center justify-between px-3 lg:px-4 xl:px-6 text-xs gap-2">
+    <div class="flex items-center gap-2 sm:gap-2.5 overflow-hidden min-w-0 flex-1">
       <!-- Sidebar Toggle Button (Desktop Only) -->
-      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-200/80 hover:text-blue-700 border border-slate-200/90 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
-        <span class="material-symbols-outlined text-[16px] xl:text-[17px] text-blue-600" id="sidebar-toggle-icon">dock_to_left</span>
-        <span class="font-bold text-[11px]" id="sidebar-toggle-text">목차</span>
+      <button id="btn-toggle-sidebar" class="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-200 bg-white shadow-2xs transition-all shrink-0 cursor-pointer" type="button" title="목차 사이드바 접기/열기 [단축키: Space]">
+        <span class="material-symbols-outlined text-[16px] text-slate-600" id="sidebar-toggle-icon">dock_to_left</span>
+        <span class="font-bold text-xs" id="sidebar-toggle-text">목차</span>
       </button>
-      <span class="text-slate-400 shrink-0 hidden lg:inline">|</span>
-      <!-- Unified Breadcrumb & Chapter/Section Path (On mobile <=768px, CSS shows ONLY #bc-title prominently) -->
+      <!-- Unified Breadcrumb & Chapter/Section Path -->
       <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden text-slate-700 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
-        <span class="px-2 py-0.5 rounded-md text-[11px] md:text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
-        <span class="text-slate-400 shrink-0" id="bc-chapter-sep">/</span>
-        <span class="text-xs font-semibold text-blue-700 tracking-normal truncate shrink-0 max-w-[260px] lg:max-w-[380px] xl:max-w-[480px]" id="topic-header-path">1.사회과 교육의 전통 · 1-1. 세 가지 전통</span>
-        <span class="hidden" aria-hidden="true">
-          <span id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
-          <span id="bc-section-sep">/</span>
-          <span id="bc-section">1-1. 세 가지 전통</span>
-          <span id="bc-subsection-sep">/</span>
-          <span id="bc-subsection">세부단원</span>
-        </span>
-        <span class="text-slate-400 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
+        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
+        <span class="text-slate-300 shrink-0" id="bc-chapter-sep">/</span>
+        <span class="text-slate-500 font-medium text-xs truncate shrink-0 max-w-[180px] lg:max-w-[260px]" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
+        <span class="text-slate-300 shrink-0" id="bc-section-sep">/</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-bold text-xs truncate shrink-0 max-w-[200px] lg:max-w-[280px]" id="bc-section">1-1. 세 가지 전통</span>
+        <span class="text-slate-300 shrink-0 hidden" id="bc-subsection-sep">/</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-bold text-xs truncate shrink-0 max-w-[180px] lg:max-w-[240px] hidden" id="bc-subsection">세부단원</span>
+        <span class="text-slate-300 shrink-0 hidden md:inline" id="bc-title-sep">/</span>
         <span class="text-slate-900 text-sm md:text-xs font-extrabold truncate block md:inline max-w-full md:max-w-[320px] lg:max-w-[420px]" id="bc-title" title="1.시민성 전달 모형">1.시민성 전달 모형</span>
-        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300 shrink-0 hidden md:inline-block" id="bc-exam-tag">22,23,26(단답)</span>
+        <span class="hidden" id="bc-exam-tag" aria-hidden="true"></span>
       </div>
     </div>
 
@@ -2333,9 +2353,11 @@
           </div>
         </div>
 
-        <!-- Topic Banner Card (Unified with Sub-Header breadcrumb to maximize vertical viewport) -->
-        <div class="bg-white rounded-2xl border border-border px-3 py-2.5 sm:px-4 sm:py-3 shadow-xs">
-          <!-- Main Title & Action Controls (No duplicate CHAPTER·SECTION row or empty divs) -->
+        <!-- Topic Banner Card -->
+        <div class="bg-white rounded-2xl border border-border px-3.5 py-3 sm:px-5 sm:py-3.5 shadow-xs">
+          <!-- Context Chapter / Section Pill Row (with clickable ⓘ info icon & subtle bottom divider) -->
+          <div id="topic-header-path" class="flex items-center gap-1.5 flex-wrap pb-2.5 mb-2.5 border-b border-slate-100"></div>
+          <!-- Main Title & Action Controls -->
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-1.5 md:gap-3">
             <div class="min-w-0 flex-1">
               <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight break-keep-all w-full" id="topic-title" title="1.시민성 전달 모형">1.시민성 전달 모형</h1>
@@ -3942,7 +3964,7 @@
 
       function updateSidebarToggleUI(isCollapsed) {
         if (sidebarToggleIcon) {
-          sidebarToggleIcon.textContent = isCollapsed ? 'menu' : 'dock_to_left';
+          sidebarToggleIcon.textContent = 'dock_to_left';
         }
         if (btnToggleSidebar) {
           btnToggleSidebar.title = isCollapsed ? '목차 사이드바 펼치기 [단축키: Space]' : '목차 사이드바 접기 [단축키: Space]';
@@ -6734,8 +6756,25 @@
         });
       }
 
-      // Delegated listener for any .ctx-info-btn in sidebar or header path
+      // Delegated listener for any .ctx-info-btn in sidebar or .ctx-info-btn-pill in topic banner header
       document.addEventListener('click', (e) => {
+        const pillBtn = e.target.closest('.ctx-info-btn-pill');
+        if (pillBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          const key = pillBtn.dataset.ctxKey || '';
+          const title = pillBtn.dataset.ctxTitle || key;
+          const curTopic = TOPICS[currentTopicIndex];
+          const subj = curTopic ? curTopic.subject : '';
+          if (key && hasContextGuide(key, subj)) {
+            openContextGuide(key, title);
+          } else if (curTopic && hasContextGuide(curTopic.id, subj)) {
+            openContextGuide(curTopic.id, curTopic.title || title);
+          } else {
+            openExplanation();
+          }
+          return;
+        }
         const ctxBtn = e.target.closest('.ctx-info-btn');
         if (ctxBtn && ctxBtn.dataset.ctxKey) {
           e.preventDefault();
@@ -7398,39 +7437,28 @@
         bcTitle.textContent = topic.title;
         bcTitle.title = topic.title || '';
         const currentExamTag = formatExamTag(topic.examTag, topic);
-        if (currentExamTag) {
-          bcExamTag.textContent = currentExamTag;
-          bcExamTag.classList.remove('hidden');
-        } else {
+        if (bcExamTag) {
+          bcExamTag.textContent = currentExamTag || '';
           bcExamTag.classList.add('hidden');
         }
 
-        // Update Topic Banner Header Path (with clickable ⓘ context guide icons)
+        // Update Topic Banner Header Path (light-blue pill badges with ⓘ context/explanation trigger)
         const topicHeaderPath = document.getElementById('topic-header-path');
         if (topicHeaderPath) {
           const ch = topic.chapter || '';
           const sec = (topic.section && topic.section !== ch) ? topic.section : '';
-          const sub = topic.subsection || '';
-          const parts = [];
-          if (ch) {
-            const btn = hasContextGuide(ch, topic.subject)
-              ? `<span class="ctx-info-btn align-middle" data-ctx-key="${escapeHtml(ch)}" data-ctx-title="${escapeHtml(ch)}" title="${escapeHtml(ch)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
-              : '';
-            parts.push(`<span class="inline-flex items-center gap-0.5">${escapeHtml(ch)}${btn}</span>`);
+          const sub = (topic.subsection && topic.subsection !== sec) ? topic.subsection : '';
+          const rawParts = [ch, sec, sub].filter(Boolean);
+          if (rawParts.length > 0) {
+            const pills = rawParts.map(part => {
+              return `<button type="button" class="ctx-info-btn-pill inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50/80 hover:bg-blue-100/90 text-blue-600 border border-blue-200/80 text-xs font-bold transition-colors cursor-pointer" data-ctx-key="${escapeHtml(part)}" data-ctx-title="${escapeHtml(part)}" title="${escapeHtml(part)} 맥락·배경 설명 보기"><span>${escapeHtml(part)}</span><span class="material-symbols-outlined text-[14px] text-blue-500">info</span></button>`;
+            });
+            topicHeaderPath.innerHTML = pills.join('<span class="mx-0.5 text-slate-300 font-bold select-none">·</span>');
+            topicHeaderPath.classList.remove('hidden');
+          } else {
+            topicHeaderPath.innerHTML = '';
+            topicHeaderPath.classList.add('hidden');
           }
-          if (sec) {
-            const btn = hasContextGuide(sec, topic.subject)
-              ? `<span class="ctx-info-btn align-middle" data-ctx-key="${escapeHtml(sec)}" data-ctx-title="${escapeHtml(sec)}" title="${escapeHtml(sec)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
-              : '';
-            parts.push(`<span class="inline-flex items-center gap-0.5">${escapeHtml(sec)}${btn}</span>`);
-          }
-          if (sub) {
-            const btn = hasContextGuide(sub, topic.subject)
-              ? `<span class="ctx-info-btn align-middle" data-ctx-key="${escapeHtml(sub)}" data-ctx-title="${escapeHtml(sub)}" title="${escapeHtml(sub)} 맥락 보기"><span class="material-symbols-outlined">info</span></span>`
-              : '';
-            parts.push(`<span class="inline-flex items-center gap-0.5">${escapeHtml(sub)}${btn}</span>`);
-          }
-          topicHeaderPath.innerHTML = parts.join(' <span class="mx-1 text-slate-300 dark:text-slate-600">·</span> ');
         }
 
         // Update Topic Context Guide Pill Button (▶ 설명 보기)
