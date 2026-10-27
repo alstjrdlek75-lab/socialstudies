@@ -2177,7 +2177,7 @@
       </button>
       <!-- Unified Breadcrumb & Chapter/Section Path -->
       <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden text-slate-700 font-semibold min-w-0 flex-1 py-0.5 text-xs" id="bc-container">
-        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-2xs shrink-0" id="bc-subject">사회과교육론</span>
+        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-2xs shrink-0 cursor-pointer transition-colors" id="bc-subject" title="클릭하여 이 과목 탭으로 이동">사회과교육론</span>
         <span class="text-slate-300 shrink-0" id="bc-chapter-sep">/</span>
         <span class="text-slate-500 font-medium text-xs truncate shrink-0 max-w-[180px] lg:max-w-[260px]" id="bc-chapter" title="1.사회과 교육의 전통">1.사회과 교육의 전통</span>
         <span class="text-slate-300 shrink-0" id="bc-section-sep">/</span>
@@ -7335,8 +7335,8 @@
           sidebarTree.appendChild(chapContainer);
         });
 
-        // Synchronize filteredIndices with the exact rendered tree order so Next/Prev navigation follows the sidebar 1:1 (except in priority-sorted modes: '오늘 복습' or 'freq')
-        if (renderedLinearIndices.length > 0 && activeSubject !== '오늘 복습' && sidebarExamFilterVal !== 'freq') {
+        // Synchronize filteredIndices with the exact rendered tree order so Next/Prev navigation and initial topic selection follow the sidebar 1:1
+        if (renderedLinearIndices.length > 0 && sidebarExamFilterVal !== 'freq') {
           filteredIndices = renderedLinearIndices;
         }
         updateDueQueueBannerUI();
@@ -9379,7 +9379,7 @@
             if (activeSubject === '오늘 복습') {
               const card = fsrsMap[topic.id];
               if (card && card.state !== 0 && card.due && new Date(card.due).getTime() <= nowTime) {
-                matchSubj = true;
+                matchSubj = (dueQueueSubjFilter === 'ALL' || topic.subject === dueQueueSubjFilter);
               }
             } else {
               matchSubj = (activeSubject === 'ALL' || topic.subject === activeSubject);
@@ -9402,6 +9402,15 @@
               // If viewing all subjects, keep current topic if it exists in filtered list
               if (matchIndices.includes(currentTopicIndex)) {
                 targetIndex = currentTopicIndex;
+              }
+            } else if (subj === '오늘 복습') {
+              // In Due Queue, if a specific subject filter is chosen, pick the first matching topic of that subject (or keep current if it matches)
+              if (dueQueueSubjFilter !== 'ALL') {
+                targetIndex = matchIndices[0];
+              } else if (matchIndices.includes(currentTopicIndex)) {
+                targetIndex = currentTopicIndex;
+              } else {
+                targetIndex = matchIndices[0];
               }
             } else {
               // Look up previously viewed topic for this specific subject
@@ -9431,6 +9440,9 @@
         renderSidebar();
 
         if (autoSelectTopic && filteredIndices.length > 0) {
+          if (!filteredIndices.includes(currentTopicIndex) || (subj === '오늘 복습' && dueQueueSubjFilter !== 'ALL')) {
+            currentTopicIndex = filteredIndices[0];
+          }
           renderTopic(currentTopicIndex, keepMobileDrawer);
         } else if (sidebarTree) {
           sidebarTree.scrollTop = 0;
@@ -9556,6 +9568,21 @@
       if (labelScSidebar) labelScSidebar.textContent = `[${modPrefix}B] 목차`;
       const labelScDel = document.getElementById('label-sc-del');
       if (labelScDel && isMacUser) labelScDel.textContent = `[우클릭/⌥클릭] 테이프 삭제`;
+
+      if (bcSubject) {
+        bcSubject.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const curTopic = TOPICS[currentTopicIndex];
+          const targetSubj = curTopic ? curTopic.subject : bcSubject.textContent.trim();
+          if (targetSubj) {
+            setSubjectTab(targetSubj, false, false);
+            if (window.innerWidth >= 1024 && document.body.classList.contains('sidebar-collapsed')) {
+              setSidebarCollapsed(false);
+            }
+            showToast(`${targetSubj} 목차로 이동했습니다`, 'menu_book');
+          }
+        });
+      }
 
       if (bcContainer) {
         bcContainer.addEventListener('click', () => {
@@ -9862,6 +9889,12 @@
             }
           });
           setSubjectTab('오늘 복습', true);
+          if (filteredIndices.length === 0 && dueQueueSubjFilter !== 'ALL') {
+            const targetSubj = dueQueueSubjFilter;
+            dueQueueSubjFilter = 'ALL';
+            setSubjectTab(targetSubj, true);
+            showToast(`${targetSubj} 과목은 오늘 예정된 복습이 없어 기본 단원으로 이동합니다`, 'menu_book');
+          }
         });
       });
       const btnDueCompleteReturn = document.getElementById('btn-due-complete-return');
