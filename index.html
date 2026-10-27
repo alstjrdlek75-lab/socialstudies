@@ -7653,12 +7653,15 @@
           localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
           customHtml = null;
         }
-        // Integrity safeguard: If EXAM-2024-B-09 custom HTML is missing the updated explanation section, refresh its <details> block from official contentHtml
-        if (customHtml && topic.id === 'EXAM-2024-B-09' && !customHtml.includes('연결 포인트 (앞에서 배운 위험부담)')) {
+        // Integrity safeguard: Always sync the official audited <details> answer/explanation block (v35) into any cached customHtml for EXAM items while preserving prompt masks
+        if (customHtml && (topic.id.startsWith('EXAM-') || topic.id.startsWith('ECON-EXAM-'))) {
           const officialDetails = (topic.contentHtml || '').match(/<details[\s\S]*?<\/details>/);
-          if (officialDetails) {
-            customHtml = customHtml.replace(/<details[\s\S]*?<\/details>/, officialDetails[0]);
-            try { localStorage.setItem('edurecall_custom_EXAM-2024-B-09', customHtml); } catch(e) {}
+          if (officialDetails && /<details[\s\S]*?<\/details>/.test(customHtml)) {
+            const updatedCustom = customHtml.replace(/<details[\s\S]*?<\/details>/, officialDetails[0]);
+            if (updatedCustom !== customHtml) {
+              customHtml = updatedCustom;
+              try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
+            }
           }
         }
 
