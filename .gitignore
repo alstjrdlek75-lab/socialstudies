@@ -9,3 +9,4 @@ debug_pages/
 .vercel
 AGENTS.md
 scripts/
+graphify-out/
