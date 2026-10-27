@@ -1,0 +1,2333 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Community 0",
+      "x": 0,
+      "y": 0,
+      "width": 1100,
+      "height": 620,
+      "color": "1"
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_apply_fuzz",
+      "type": "file",
+      "file": "dot-apply_fuzz().md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "type": "file",
+      "file": "dot-calculate_interval_modifier().md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_constructor",
+      "type": "file",
+      "file": "dot-constructor().md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "type": "file",
+      "file": "dot-init_difficulty().md",
+      "x": 620,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_init_stability",
+      "type": "file",
+      "file": "dot-init_stability().md",
+      "x": 820,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_interval_modifier",
+      "type": "file",
+      "file": "dot-interval_modifier().md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_linear_damping",
+      "type": "file",
+      "file": "dot-linear_damping().md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_mean_reversion",
+      "type": "file",
+      "file": "dot-mean_reversion().md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "type": "file",
+      "file": "dot-next_difficulty().md",
+      "x": 620,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "type": "file",
+      "file": "dot-next_forget_stability().md",
+      "x": 820,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_next_interval",
+      "type": "file",
+      "file": "dot-next_interval().md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "type": "file",
+      "file": "dot-next_recall_stability().md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "type": "file",
+      "file": "dot-next_short_term_stability().md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "type": "file",
+      "file": "dot-next_state().md",
+      "x": 620,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_parameters",
+      "type": "file",
+      "file": "dot-parameters().md",
+      "x": 820,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_params_handler_proxy",
+      "type": "file",
+      "file": "dot-params_handler_proxy().md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy",
+      "type": "file",
+      "file": "dot-params_handler_proxy()_1.md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_seed",
+      "type": "file",
+      "file": "dot-seed().md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm_update_parameters",
+      "type": "file",
+      "file": "dot-update_parameters().md",
+      "x": 620,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsalgorithm",
+      "type": "file",
+      "file": "FSRSAlgorithm.md",
+      "x": 820,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_clamp",
+      "type": "file",
+      "file": "clamp().md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_forgetting_curve",
+      "type": "file",
+      "file": "forgetting_curve().md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_get_fuzz_range",
+      "type": "file",
+      "file": "get_fuzz_range().md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_roundto",
+      "type": "file",
+      "file": "roundTo().md",
+      "x": 620,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Community 1",
+      "x": 1180,
+      "y": 0,
+      "width": 1100,
+      "height": 620,
+      "color": "2"
+    },
+    {
+      "id": "n_assets_fsrs_umd_alea_constructor",
+      "type": "file",
+      "file": "dot-constructor()_1.md",
+      "x": 1200,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrserror_constructor",
+      "type": "file",
+      "file": "dot-constructor()_2.md",
+      "x": 1400,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_date_dueformat",
+      "type": "file",
+      "file": "dot-dueFormat().md",
+      "x": 1600,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_date_format",
+      "type": "file",
+      "file": "dot-format().md",
+      "x": 1800,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_init",
+      "type": "file",
+      "file": "dot-init().md",
+      "x": 2000,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_alea_next",
+      "type": "file",
+      "file": "dot-next().md",
+      "x": 1200,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_date_scheduler",
+      "type": "file",
+      "file": "dot-scheduler().md",
+      "x": 1400,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_alea_state",
+      "type": "file",
+      "file": "dot-state().md",
+      "x": 1600,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_alea",
+      "type": "file",
+      "file": "Alea.md",
+      "x": 1800,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_defaultinitseedstrategy",
+      "type": "file",
+      "file": "DefaultInitSeedStrategy().md",
+      "x": 2000,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrserror",
+      "type": "file",
+      "file": "FSRSError.md",
+      "x": 1200,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_genseedstrategywithcardid",
+      "type": "file",
+      "file": "GenSeedStrategyWithCardId().md",
+      "x": 1400,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_mash",
+      "type": "file",
+      "file": "Mash().md",
+      "x": 1600,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_datediffindays",
+      "type": "file",
+      "file": "dateDiffInDays().md",
+      "x": 1800,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fixdate",
+      "type": "file",
+      "file": "fixDate().md",
+      "x": 2000,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fixrating",
+      "type": "file",
+      "file": "fixRating().md",
+      "x": 1200,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fixstate",
+      "type": "file",
+      "file": "fixState().md",
+      "x": 1400,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_formatdate",
+      "type": "file",
+      "file": "formatDate().md",
+      "x": 1600,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd",
+      "type": "file",
+      "file": "fsrs.umd.js.md",
+      "x": 1800,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_padzero",
+      "type": "file",
+      "file": "padZero().md",
+      "x": 2000,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_show_diff_message",
+      "type": "file",
+      "file": "show_diff_message().md",
+      "x": 1200,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Community 2",
+      "x": 2360,
+      "y": 0,
+      "width": 1100,
+      "height": 620,
+      "color": "3"
+    },
+    {
+      "id": "n_assets_fsrs_umd_typeconvert_card",
+      "type": "file",
+      "file": "dot-card().md",
+      "x": 2380,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_clearstrategy",
+      "type": "file",
+      "file": "dot-clearStrategy().md",
+      "x": 2580,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_constructor",
+      "type": "file",
+      "file": "dot-constructor()_3.md",
+      "x": 2780,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_constructor",
+      "type": "file",
+      "file": "dot-constructor()_4.md",
+      "x": 2980,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsvalidationerror_constructor",
+      "type": "file",
+      "file": "dot-constructor()_5.md",
+      "x": 3180,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_date_diff",
+      "type": "file",
+      "file": "dot-diff().md",
+      "x": 2380,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_forget",
+      "type": "file",
+      "file": "dot-forget().md",
+      "x": 2580,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_getscheduler",
+      "type": "file",
+      "file": "dot-getScheduler().md",
+      "x": 2780,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_get_retrievability",
+      "type": "file",
+      "file": "dot-get_retrievability().md",
+      "x": 2980,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_next",
+      "type": "file",
+      "file": "dot-next()_1.md",
+      "x": 3180,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_typeconvert_rating",
+      "type": "file",
+      "file": "dot-rating().md",
+      "x": 2380,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_repeat",
+      "type": "file",
+      "file": "dot-repeat().md",
+      "x": 2580,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_typeconvert_review_log",
+      "type": "file",
+      "file": "dot-review_log().md",
+      "x": 2780,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_rollback",
+      "type": "file",
+      "file": "dot-rollback().md",
+      "x": 2980,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_typeconvert_state",
+      "type": "file",
+      "file": "dot-state()_1.md",
+      "x": 3180,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_typeconvert_time",
+      "type": "file",
+      "file": "dot-time().md",
+      "x": 2380,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_usestrategy",
+      "type": "file",
+      "file": "dot-useStrategy().md",
+      "x": 2580,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs",
+      "type": "file",
+      "file": "FSRS.md",
+      "x": 2780,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "type": "file",
+      "file": "FSRSValidationError.md",
+      "x": 2980,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_typeconvert",
+      "type": "file",
+      "file": "TypeConvert.md",
+      "x": 3180,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_applyafterhandler",
+      "type": "file",
+      "file": "applyAfterHandler().md",
+      "x": 2380,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Community 3",
+      "x": 3540,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "4"
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_checkgrade",
+      "type": "file",
+      "file": "dot-checkGrade().md",
+      "x": 3560,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_learningstate",
+      "type": "file",
+      "file": "dot-learningState().md",
+      "x": 3760,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "type": "file",
+      "file": "dot-newState().md",
+      "x": 3960,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_next_ds",
+      "type": "file",
+      "file": "dot-next_ds().md",
+      "x": 4160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_next_interval",
+      "type": "file",
+      "file": "dot-next_interval()_1.md",
+      "x": 3560,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_next_state",
+      "type": "file",
+      "file": "dot-next_state()_1.md",
+      "x": 3760,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_preview",
+      "type": "file",
+      "file": "dot-preview().md",
+      "x": 3960,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_previewiterator",
+      "type": "file",
+      "file": "dot-previewIterator().md",
+      "x": 4160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_review",
+      "type": "file",
+      "file": "dot-review().md",
+      "x": 3560,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "type": "file",
+      "file": "dot-reviewState().md",
+      "x": 3760,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler_update_next",
+      "type": "file",
+      "file": "dot-update_next().md",
+      "x": 3960,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler",
+      "type": "file",
+      "file": "AbstractScheduler.md",
+      "x": 4160,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_longtermscheduler",
+      "type": "file",
+      "file": "LongTermScheduler.md",
+      "x": 3560,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Community 4",
+      "x": 0,
+      "y": 700,
+      "width": 880,
+      "height": 420,
+      "color": "5"
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_applylearningsteps",
+      "type": "file",
+      "file": "dot-applyLearningSteps().md",
+      "x": 20,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_abstractscheduler_buildlog",
+      "type": "file",
+      "file": "dot-buildLog().md",
+      "x": 220,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_constructor",
+      "type": "file",
+      "file": "dot-constructor()_6.md",
+      "x": 420,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_getlearninginfo",
+      "type": "file",
+      "file": "dot-getLearningInfo().md",
+      "x": 620,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_learningstate",
+      "type": "file",
+      "file": "dot-learningState()_1.md",
+      "x": 20,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_newstate",
+      "type": "file",
+      "file": "dot-newState()_1.md",
+      "x": 220,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_next_ds",
+      "type": "file",
+      "file": "dot-next_ds()_1.md",
+      "x": 420,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_next_interval",
+      "type": "file",
+      "file": "dot-next_interval()_2.md",
+      "x": 620,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_next_state",
+      "type": "file",
+      "file": "dot-next_state()_2.md",
+      "x": 20,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler_reviewstate",
+      "type": "file",
+      "file": "dot-reviewState()_1.md",
+      "x": 220,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_basicscheduler",
+      "type": "file",
+      "file": "BasicScheduler.md",
+      "x": 420,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Community 5",
+      "x": 1180,
+      "y": 700,
+      "width": 880,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_package_dependencies",
+      "type": "file",
+      "file": "dependencies.md",
+      "x": 1200,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_description",
+      "type": "file",
+      "file": "description.md",
+      "x": 1400,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_dependencies_fsrs_browser",
+      "type": "file",
+      "file": "fsrs-browser.md",
+      "x": 1600,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ref_fsrs_browser",
+      "type": "file",
+      "file": "fsrs-browser_1.md",
+      "x": 1800,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_name",
+      "type": "file",
+      "file": "name.md",
+      "x": 1200,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package",
+      "type": "file",
+      "file": "package.json.md",
+      "x": 1400,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_private",
+      "type": "file",
+      "file": "private.md",
+      "x": 1600,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_dependencies_ts_fsrs",
+      "type": "file",
+      "file": "ts-fsrs.md",
+      "x": 1800,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ref_ts_fsrs",
+      "type": "file",
+      "file": "ts-fsrs_1.md",
+      "x": 1200,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_version",
+      "type": "file",
+      "file": "version.md",
+      "x": 1400,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Community 6",
+      "x": 2360,
+      "y": 700,
+      "width": 660,
+      "height": 420,
+      "color": "1"
+    },
+    {
+      "id": "n_assets_fsrs_umd_reschedule_calculatemanualrecord",
+      "type": "file",
+      "file": "dot-calculateManualRecord().md",
+      "x": 2380,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_reschedule_constructor",
+      "type": "file",
+      "file": "dot-constructor()_7.md",
+      "x": 2580,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_reschedule_handlemanualrating",
+      "type": "file",
+      "file": "dot-handleManualRating().md",
+      "x": 2780,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_reschedule_replay",
+      "type": "file",
+      "file": "dot-replay().md",
+      "x": 2380,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_fsrs_reschedule",
+      "type": "file",
+      "file": "dot-reschedule().md",
+      "x": 2580,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_reschedule_reschedule",
+      "type": "file",
+      "file": "dot-reschedule()_1.md",
+      "x": 2780,
+      "y": 860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_reschedule",
+      "type": "file",
+      "file": "Reschedule.md",
+      "x": 2380,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_assets_fsrs_umd_createemptycard",
+      "type": "file",
+      "file": "createEmptyCard().md",
+      "x": 2580,
+      "y": 940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Community 7",
+      "x": 3540,
+      "y": 700,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_deploy",
+      "type": "file",
+      "file": "deploy.sh.md",
+      "x": 3560,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_deploy_sh__entry",
+      "type": "file",
+      "file": "deploy.sh script.md",
+      "x": 3760,
+      "y": 780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Community 8",
+      "x": 0,
+      "y": 1200,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_context_guides_data",
+      "type": "file",
+      "file": "context-guides-data.js.md",
+      "x": 20,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Community 9",
+      "x": 1180,
+      "y": 1200,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_explanations_data",
+      "type": "file",
+      "file": "explanations-data.js.md",
+      "x": 1200,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Community 10",
+      "x": 2360,
+      "y": 1200,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_topics_data",
+      "type": "file",
+      "file": "topics-data.js.md",
+      "x": 2380,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrsalgorithm",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fsrsalgorithm",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_constructor",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_interval_modifier",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_interval_modifier",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_seed",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_seed",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_parameters",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_parameters",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_update_parameters",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_update_parameters",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_init_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_init_stability",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_apply_fuzz",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_apply_fuzz",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_next_interval",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_interval",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_linear_damping",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_linear_damping",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_mean_reversion",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_mean_reversion",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_alea_assets_fsrs_umd_alea",
+      "fromNode": "n_assets_fsrs_umd_alea",
+      "toNode": "n_assets_fsrs_umd_alea",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_alea",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_alea",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_alea_assets_fsrs_umd_alea_constructor",
+      "fromNode": "n_assets_fsrs_umd_alea",
+      "toNode": "n_assets_fsrs_umd_alea_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_alea_assets_fsrs_umd_alea_next",
+      "fromNode": "n_assets_fsrs_umd_alea",
+      "toNode": "n_assets_fsrs_umd_alea_next",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_alea_assets_fsrs_umd_alea_state",
+      "fromNode": "n_assets_fsrs_umd_alea",
+      "toNode": "n_assets_fsrs_umd_alea_state",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsvalidationerror_assets_fsrs_umd_fsrserror",
+      "fromNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "toNode": "n_assets_fsrs_umd_fsrserror",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fsrserror",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fsrserror",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrserror_assets_fsrs_umd_fsrserror_constructor",
+      "fromNode": "n_assets_fsrs_umd_fsrserror",
+      "toNode": "n_assets_fsrs_umd_fsrserror_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fsrs",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fsrs",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_constructor",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_params_handler_proxy",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_params_handler_proxy",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_usestrategy",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_usestrategy",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_clearstrategy",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_clearstrategy",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_getscheduler",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_getscheduler",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_repeat",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_repeat",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_next",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_next",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_get_retrievability",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_get_retrievability",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_rollback",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_rollback",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_forget",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_forget",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_assets_fsrs_umd_fsrs_reschedule",
+      "fromNode": "n_assets_fsrs_umd_fsrs",
+      "toNode": "n_assets_fsrs_umd_fsrs_reschedule",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_checkgrade_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_checkgrade",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_date_diff_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_date_diff",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_next_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_fsrs_next",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_rollback_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_fsrs_rollback",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_handlemanualrating_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_reschedule_handlemanualrating",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_rating_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_rating",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_state_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_state",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_time_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_time",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fsrsvalidationerror",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsvalidationerror_assets_fsrs_umd_fsrsvalidationerror_constructor",
+      "fromNode": "n_assets_fsrs_umd_fsrsvalidationerror",
+      "toNode": "n_assets_fsrs_umd_fsrsvalidationerror_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_typeconvert",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_typeconvert",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_assets_fsrs_umd_typeconvert_review_log",
+      "fromNode": "n_assets_fsrs_umd_typeconvert",
+      "toNode": "n_assets_fsrs_umd_typeconvert_review_log",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_typeconvert",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_assets_fsrs_umd_typeconvert_rating",
+      "fromNode": "n_assets_fsrs_umd_typeconvert",
+      "toNode": "n_assets_fsrs_umd_typeconvert_rating",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_assets_fsrs_umd_typeconvert_state",
+      "fromNode": "n_assets_fsrs_umd_typeconvert",
+      "toNode": "n_assets_fsrs_umd_typeconvert_state",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_typeconvert",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_abstractscheduler",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_abstractscheduler",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_abstractscheduler",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_constructor",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_checkgrade",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_checkgrade",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_init",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_init",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_preview",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_preview",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_previewiterator",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_previewiterator",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_review",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_assets_fsrs_umd_abstractscheduler_buildlog",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_buildlog",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_longtermscheduler",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_newstate",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_next_ds",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_ds",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_learningstate",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_learningstate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_next_interval",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_interval",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_next_state",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_state",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_assets_fsrs_umd_longtermscheduler_update_next",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_update_next",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_basicscheduler",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_basicscheduler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_constructor",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_getlearninginfo",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_getlearninginfo",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_applylearningsteps",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_applylearningsteps",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_newstate",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_newstate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_learningstate",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_learningstate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_reviewstate",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_reviewstate",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_next_ds",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_next_ds",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_next_interval",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_next_interval",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_assets_fsrs_umd_basicscheduler_next_state",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler",
+      "toNode": "n_assets_fsrs_umd_basicscheduler_next_state",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_reschedule_assets_fsrs_umd_reschedule",
+      "fromNode": "n_assets_fsrs_umd_fsrs_reschedule",
+      "toNode": "n_assets_fsrs_umd_reschedule",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_reschedule",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_reschedule",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_assets_fsrs_umd_reschedule_constructor",
+      "fromNode": "n_assets_fsrs_umd_reschedule",
+      "toNode": "n_assets_fsrs_umd_reschedule_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_assets_fsrs_umd_reschedule_replay",
+      "fromNode": "n_assets_fsrs_umd_reschedule",
+      "toNode": "n_assets_fsrs_umd_reschedule_replay",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_assets_fsrs_umd_reschedule_handlemanualrating",
+      "fromNode": "n_assets_fsrs_umd_reschedule",
+      "toNode": "n_assets_fsrs_umd_reschedule_handlemanualrating",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_assets_fsrs_umd_reschedule_reschedule",
+      "fromNode": "n_assets_fsrs_umd_reschedule",
+      "toNode": "n_assets_fsrs_umd_reschedule_reschedule",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_assets_fsrs_umd_reschedule_calculatemanualrecord",
+      "fromNode": "n_assets_fsrs_umd_reschedule",
+      "toNode": "n_assets_fsrs_umd_reschedule_calculatemanualrecord",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_difficulty_assets_fsrs_umd_clamp",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "toNode": "n_assets_fsrs_umd_clamp",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_forget_stability_assets_fsrs_umd_clamp",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "toNode": "n_assets_fsrs_umd_clamp",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_recall_stability_assets_fsrs_umd_clamp",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "toNode": "n_assets_fsrs_umd_clamp",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability_assets_fsrs_umd_clamp",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "toNode": "n_assets_fsrs_umd_clamp",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_clamp",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_clamp",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_clamp",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_clamp",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_forgetting_curve_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_forgetting_curve",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_get_retrievability_assets_fsrs_umd_forgetting_curve",
+      "fromNode": "n_assets_fsrs_umd_fsrs_get_retrievability",
+      "toNode": "n_assets_fsrs_umd_forgetting_curve",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_forgetting_curve",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_forgetting_curve",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_forgetting_curve",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_forgetting_curve",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_params_handler_proxy_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "fromNode": "n_assets_fsrs_umd_fsrs_params_handler_proxy",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_apply_fuzz_assets_fsrs_umd_get_fuzz_range",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_apply_fuzz",
+      "toNode": "n_assets_fsrs_umd_get_fuzz_range",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_interval_assets_fsrs_umd_fsrsalgorithm_apply_fuzz",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_interval",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_apply_fuzz",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_constructor_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_constructor",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_calculate_interval_modifier",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_constructor_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_constructor",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_params_handler_proxy",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_init_difficulty_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_difficulty_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_init_difficulty",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsalgorithm_init_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_init_stability",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_linear_damping_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_linear_damping",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_difficulty_assets_fsrs_umd_fsrsalgorithm_linear_damping",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_linear_damping",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_mean_reversion_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_mean_reversion",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_difficulty_assets_fsrs_umd_fsrsalgorithm_mean_reversion",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_mean_reversion",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_difficulty",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_forget_stability_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_forget_stability",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_recall_stability_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_recall_stability",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_next_short_term_stability",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_next_state_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_next_state",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrsalgorithm_parameters_assets_fsrs_umd_fsrsalgorithm_update_parameters",
+      "fromNode": "n_assets_fsrs_umd_fsrsalgorithm_parameters",
+      "toNode": "n_assets_fsrs_umd_fsrsalgorithm_update_parameters",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_get_fuzz_range",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_get_fuzz_range",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_roundto",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_roundto",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_constructor_assets_fsrs_umd_abstractscheduler_init",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_constructor",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_init",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_init_assets_fsrs_umd_datediffindays",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_init",
+      "toNode": "n_assets_fsrs_umd_datediffindays",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_alea_constructor_assets_fsrs_umd_mash",
+      "fromNode": "n_assets_fsrs_umd_alea_constructor",
+      "toNode": "n_assets_fsrs_umd_mash",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_date_dueformat_assets_fsrs_umd_show_diff_message",
+      "fromNode": "n_assets_fsrs_umd_date_dueformat",
+      "toNode": "n_assets_fsrs_umd_show_diff_message",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_date_format_assets_fsrs_umd_formatdate",
+      "fromNode": "n_assets_fsrs_umd_date_format",
+      "toNode": "n_assets_fsrs_umd_formatdate",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_date_scheduler_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_date_scheduler",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_date_scheduler",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_date_scheduler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_datediffindays",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_datediffindays",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_defaultinitseedstrategy",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_defaultinitseedstrategy",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fixdate_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_fixdate",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fixdate",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fixdate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fixrating_assets_fsrs_umd_typeconvert_rating",
+      "fromNode": "n_assets_fsrs_umd_fixrating",
+      "toNode": "n_assets_fsrs_umd_typeconvert_rating",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fixrating",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fixrating",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fixstate_assets_fsrs_umd_typeconvert_state",
+      "fromNode": "n_assets_fsrs_umd_fixstate",
+      "toNode": "n_assets_fsrs_umd_typeconvert_state",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_fixstate",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_fixstate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_formatdate_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_formatdate",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_formatdate_assets_fsrs_umd_padzero",
+      "fromNode": "n_assets_fsrs_umd_formatdate",
+      "toNode": "n_assets_fsrs_umd_padzero",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_formatdate",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_formatdate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_genseedstrategywithcardid",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_genseedstrategywithcardid",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_mash",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_mash",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_padzero",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_padzero",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_show_diff_message_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_show_diff_message",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_show_diff_message",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_show_diff_message",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_constructor_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_constructor",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_constructor_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_constructor",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_forget_assets_fsrs_umd_applyafterhandler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_forget",
+      "toNode": "n_assets_fsrs_umd_applyafterhandler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_next_assets_fsrs_umd_applyafterhandler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_next",
+      "toNode": "n_assets_fsrs_umd_applyafterhandler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_repeat_assets_fsrs_umd_applyafterhandler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_repeat",
+      "toNode": "n_assets_fsrs_umd_applyafterhandler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_reschedule_assets_fsrs_umd_applyafterhandler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_reschedule",
+      "toNode": "n_assets_fsrs_umd_applyafterhandler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_rollback_assets_fsrs_umd_applyafterhandler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_rollback",
+      "toNode": "n_assets_fsrs_umd_applyafterhandler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_applyafterhandler",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_applyafterhandler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_date_diff_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_date_diff",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_assets_fsrs_umd_date_diff",
+      "fromNode": "n_assets_fsrs_umd",
+      "toNode": "n_assets_fsrs_umd_date_diff",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_forget_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_fsrs_forget",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_forget_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_fsrs_forget",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_get_retrievability_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_fsrs_get_retrievability",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_get_retrievability_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_fsrs_get_retrievability",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_next_assets_fsrs_umd_fsrs_getscheduler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_next",
+      "toNode": "n_assets_fsrs_umd_fsrs_getscheduler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_repeat_assets_fsrs_umd_fsrs_getscheduler",
+      "fromNode": "n_assets_fsrs_umd_fsrs_repeat",
+      "toNode": "n_assets_fsrs_umd_fsrs_getscheduler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_next_assets_fsrs_umd_typeconvert_rating",
+      "fromNode": "n_assets_fsrs_umd_fsrs_next",
+      "toNode": "n_assets_fsrs_umd_typeconvert_rating",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_next_assets_fsrs_umd_abstractscheduler_review",
+      "fromNode": "n_assets_fsrs_umd_fsrs_next",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_repeat_assets_fsrs_umd_abstractscheduler_preview",
+      "fromNode": "n_assets_fsrs_umd_fsrs_repeat",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_preview",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_rollback_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_fsrs_rollback",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_rollback_assets_fsrs_umd_typeconvert_review_log",
+      "fromNode": "n_assets_fsrs_umd_fsrs_rollback",
+      "toNode": "n_assets_fsrs_umd_typeconvert_review_log",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_basicscheduler_next_ds_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_basicscheduler_next_ds",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_fsrs_reschedule_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_fsrs_reschedule",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_next_ds_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_next_ds",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_calculatemanualrecord_assets_fsrs_umd_typeconvert_card",
+      "fromNode": "n_assets_fsrs_umd_reschedule_calculatemanualrecord",
+      "toNode": "n_assets_fsrs_umd_typeconvert_card",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_card_assets_fsrs_umd_typeconvert_state",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_card",
+      "toNode": "n_assets_fsrs_umd_typeconvert_state",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_card_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_card",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_review_log_assets_fsrs_umd_typeconvert_rating",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_review_log",
+      "toNode": "n_assets_fsrs_umd_typeconvert_rating",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_review_log_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_review_log",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_typeconvert_review_log_assets_fsrs_umd_typeconvert_state",
+      "fromNode": "n_assets_fsrs_umd_typeconvert_review_log",
+      "toNode": "n_assets_fsrs_umd_typeconvert_state",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_createemptycard_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_createemptycard",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_calculatemanualrecord_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_reschedule_calculatemanualrecord",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_reschedule_reschedule_assets_fsrs_umd_typeconvert_time",
+      "fromNode": "n_assets_fsrs_umd_reschedule_reschedule",
+      "toNode": "n_assets_fsrs_umd_typeconvert_time",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_review_assets_fsrs_umd_abstractscheduler_checkgrade",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_checkgrade",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_preview_assets_fsrs_umd_abstractscheduler_review",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_preview",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_previewiterator_assets_fsrs_umd_abstractscheduler_review",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_previewiterator",
+      "toNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_review_assets_fsrs_umd_longtermscheduler_newstate",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_review_assets_fsrs_umd_longtermscheduler_learningstate",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_learningstate",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_abstractscheduler_review_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "fromNode": "n_assets_fsrs_umd_abstractscheduler_review",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_learningstate_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_learningstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_newstate_assets_fsrs_umd_longtermscheduler_next_ds",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_ds",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_newstate_assets_fsrs_umd_longtermscheduler_next_interval",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_interval",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_newstate_assets_fsrs_umd_longtermscheduler_next_state",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_state",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_newstate_assets_fsrs_umd_longtermscheduler_update_next",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_newstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_update_next",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_reviewstate_assets_fsrs_umd_longtermscheduler_next_ds",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_ds",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_reviewstate_assets_fsrs_umd_longtermscheduler_next_interval",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_interval",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_reviewstate_assets_fsrs_umd_longtermscheduler_next_state",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_next_state",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_assets_fsrs_umd_longtermscheduler_reviewstate_assets_fsrs_umd_longtermscheduler_update_next",
+      "fromNode": "n_assets_fsrs_umd_longtermscheduler_reviewstate",
+      "toNode": "n_assets_fsrs_umd_longtermscheduler_update_next",
+      "label": "calls [EXTRACTED]"
+    }
+  ]
+}
