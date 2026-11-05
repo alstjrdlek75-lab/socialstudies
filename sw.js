@@ -1,4 +1,4 @@
-const CACHE_NAME = 'edurecall-cache-v35';
+const CACHE_NAME = 'edurecall-cache-v36';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -20,7 +20,8 @@ const PRECACHE_URLS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(PRECACHE_URLS).catch(() => {});
+      const freshRequests = PRECACHE_URLS.map((u) => new Request(u, { cache: 'reload' }));
+      return cache.addAll(freshRequests).catch(() => {});
     }).then(() => self.skipWaiting())
   );
 });
@@ -43,12 +44,17 @@ self.addEventListener('fetch', (event) => {
   // Skip Supabase API requests so cloud sync is always live
   if (url.hostname.includes('supabase.co')) return;
 
-  // Network-first with cache fallback for HTML and JS data files so online users always get latest updates, while offline works seamlessly
+  // Network-first with cache fallback for HTML and JS data files.
+  // Pass req.url string when overriding cache mode so WebKit/iOS Safari never throws TypeError on navigate-mode Request objects.
   const isSameOrigin = url.origin === self.location.origin;
+  const networkFetch = isSameOrigin
+    ? fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' })
+    : fetch(req);
+
   event.respondWith(
-    fetch(req, isSameOrigin ? { cache: 'no-cache' } : undefined)
+    networkFetch
       .then((networkRes) => {
-        if (networkRes && networkRes.status === 200 && (url.origin === self.location.origin || url.hostname.includes('cdn.jsdelivr.net'))) {
+        if (networkRes && networkRes.status === 200 && (isSameOrigin || url.hostname.includes('cdn.jsdelivr.net'))) {
           const resClone = networkRes.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(req, resClone).catch(() => {});
