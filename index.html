@@ -2199,8 +2199,8 @@
   </style>
   <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
-  <script src="data/topics-index.js?v=20261024_v6"></script>
-  <script defer src="context-guides-data.js?v=20261024_v6"></script>
+  <script src="data/topics-index.js?v=20261106_v39"></script>
+  <script defer src="context-guides-data.js?v=20261106_v39"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -2254,7 +2254,7 @@
         사회 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-soc">151</span>
       </button>
       <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="정치학" type="button">
-        정치 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-pol">129</span>
+        정치 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-pol">120</span>
       </button>
       <button class="subject-tab-btn px-2.5 xl:px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5" data-subject="경제학" type="button">
         경제 <span class="text-[10px] font-bold bg-slate-200/80 text-slate-600 px-1.5 py-0.2 rounded-md leading-none" id="count-econ">6</span>
@@ -3849,7 +3849,7 @@
 
         inflightChunkPromises[subject] = new Promise((resolve) => {
           const script = document.createElement('script');
-          script.src = chunkSrc + '?v=20261024_v6';
+          script.src = chunkSrc + '?v=20261106_v39';
           script.async = true;
           script.dataset.subjectChunk = subject;
           script.onload = () => {
@@ -13497,7 +13497,7 @@
           }
         });
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js?v=20261105_v38').then((reg) => {
+          navigator.serviceWorker.register('sw.js?v=20261106_v39').then((reg) => {
             if (reg && typeof reg.update === 'function') reg.update().catch(() => {});
           }).catch(() => {});
         });
