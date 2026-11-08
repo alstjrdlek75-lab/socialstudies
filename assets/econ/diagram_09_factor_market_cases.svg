@@ -1,223 +1,198 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
-  <!-- Title Header -->
-  <rect x="0" y="0" width="1000" height="55" fill="#f8fafc" />
-  <text x="500" y="35" font-size="19" font-weight="bold" text-anchor="middle" fill="#0f172a">생산요소시장 균형 4대 케이스 종합 비교 (생산물시장 × 생산요소시장 구조)</text>
-  <line x1="0" y1="55" x2="1000" y2="55" stroke="#cbd5e1" stroke-width="1.5" />
-
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
     </marker>
-    <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.06" />
-    </filter>
   </defs>
 
+  <!-- Title Header -->
+  <rect x="0" y="0" width="1000" height="52" fill="#f8fafc" />
+  <text x="500" y="33" font-size="18.5" font-weight="800" text-anchor="middle" fill="#0f172a">생산요소시장 균형 4대 케이스 종합 비교 (생산물시장 × 생산요소시장 구조)</text>
+  <line x1="0" y1="52" x2="1000" y2="52" stroke="#e2e8f0" stroke-width="1.2" />
+
   <!-- ==================== QUADRANT 1: [Case 1] 완경 x 완경 ==================== -->
-  <g transform="translate(25, 70)">
-    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.5" filter="url(#shadow)" />
-    <!-- Header -->
-    <rect x="0" y="0" width="465" height="36" rx="10" fill="#eff6ff" />
-    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#eff6ff" />
-    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#1d4ed8">[Case 1] 생산물 완전경쟁 × 요소 완전경쟁 (양 시장 완전경쟁)</text>
+  <g transform="translate(25, 68)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <path d="M 0 10 Q 0 0 10 0 L 455 0 Q 465 0 465 10 L 465 36 L 0 36 Z" fill="#f8fafc" />
+    <line x1="0" y1="36" x2="465" y2="36" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="23" font-size="13" font-weight="800" fill="#0f172a">[Case 1] 생산물 완전경쟁 × 요소 완전경쟁 (양 시장 완전경쟁)</text>
 
-    <!-- Subtitle badge (y=42..64) -->
-    <rect x="15" y="42" width="435" height="22" rx="4" fill="#dbeafe" stroke="#bfdbfe" stroke-width="1" />
-    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e40af">• 이윤극대화: VMPL = MRPL = w | 착취 없음, 자원배분 효율적</text>
+    <rect x="15" y="44" width="435" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="232" y="59" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">이윤극대화: VMPL = MRPL = w  |  착취 없음, 자원배분 효율적</text>
 
-    <!-- Axes: Origin (70, 290) -->
-    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">노동량(L)</text>
-    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">임금(w)</text>
-    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (65, 290) -->
+    <line x1="65" y1="290" x2="395" y2="290" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="65" y1="290" x2="65" y2="88" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="402" y="294" font-size="11" font-weight="700" fill="#334155">노동량(L)</text>
+    <text x="65" y="79" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">임금(w)</text>
+    <text x="53" y="302" font-size="10" fill="#64748b">0</text>
 
-    <!-- Demand: DL = VMPL = MRPL (y = 0.5*x + 50) -->
-    <line x1="100" y1="100" x2="380" y2="240" stroke="#dc2626" stroke-width="2.5" />
-    <text x="385" y="244" font-size="11" font-weight="bold" fill="#dc2626">DL = VMPL = MRPL</text>
+    <!-- Demand: DL = VMPL = MRPL: (90, 105) to (330, 225); at x=220, y=170 -->
+    <line x1="90" y1="105" x2="330" y2="225" stroke="#1d4ed8" stroke-width="2.5" />
+    <text x="336" y="229" font-size="10.5" font-weight="700" fill="#1d4ed8">DL = VMPL = MRPL</text>
 
-    <!-- Supply: SL = AFCL = MFCL = wc (Horizontal at y=170) -->
-    <line x1="70" y1="170" x2="380" y2="170" stroke="#2563eb" stroke-width="2.5" />
-    <text x="385" y="174" font-size="11" font-weight="bold" fill="#2563eb">SL = AFCL = MFCL = wc</text>
+    <!-- Supply: SL = AFCL = MFCL: horizontal at y=170 -->
+    <line x1="65" y1="170" x2="330" y2="170" stroke="#1e293b" stroke-width="2.4" />
+    <text x="336" y="174" font-size="10.5" font-weight="700" fill="#1e293b">SL = AFCL = MFCL</text>
 
-    <!-- Equilibrium Point Ec (240, 170) -->
-    <circle cx="240" cy="170" r="5" fill="#1d4ed8" />
-    <line x1="240" y1="170" x2="240" y2="290" stroke="#1d4ed8" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="240" y="306" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Lc (균형고용)</text>
-    <text x="52" y="174" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="end">wc</text>
-    <text x="250" y="162" font-size="11.5" font-weight="bold" fill="#1d4ed8">Ec (균형)</text>
+    <!-- Equilibrium Point Ec (220, 170) -->
+    <line x1="220" y1="170" x2="220" y2="290" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2" />
+    <circle cx="220" cy="170" r="5" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.8" />
+    <text x="220" y="308" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="middle">Lc (균형고용)</text>
+    <text x="55" y="174" font-size="11" font-weight="700" fill="#1e293b" text-anchor="end">wc</text>
+    <text x="230" y="160" font-size="11.5" font-weight="800" fill="#0f172a">Ec (균형)</text>
   </g>
 
   <!-- ==================== QUADRANT 2: [Case 2] 독점 x 완경 ==================== -->
-  <g transform="translate(510, 70)">
-    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <!-- Header -->
-    <rect x="0" y="0" width="465" height="36" rx="10" fill="#fef3c7" />
-    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#fef3c7" />
-    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#b45309">[Case 2] 생산물 독점 × 요소 완전경쟁 (생산물시장 독점)</text>
+  <g transform="translate(510, 68)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <path d="M 0 10 Q 0 0 10 0 L 455 0 Q 465 0 465 10 L 465 36 L 0 36 Z" fill="#f8fafc" />
+    <line x1="0" y1="36" x2="465" y2="36" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="23" font-size="13" font-weight="800" fill="#0f172a">[Case 2] 생산물 독점 × 요소 완전경쟁 (생산물시장 독점)</text>
 
-    <!-- Subtitle badge -->
-    <rect x="15" y="42" width="435" height="22" rx="4" fill="#fef9c3" stroke="#fde047" stroke-width="1" />
-    <text x="232" y="57" font-size="11" font-weight="bold" text-anchor="middle" fill="#854d0e">• 이윤극대화: MRPL = w | 고용량 감소(Lm &lt; Lc), 독점적 착취 발생</text>
+    <rect x="15" y="44" width="435" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="232" y="59" font-size="10.5" font-weight="700" text-anchor="middle" fill="#334155">이윤극대화: MRPL = w  |  고용량 감소(Lm &lt; Lc), 독점적 착취 발생</text>
 
-    <!-- Axes: Origin (70, 290) -->
-    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">노동량(L)</text>
-    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">임금(w)</text>
-    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (65, 290) -->
+    <line x1="65" y1="290" x2="395" y2="290" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="65" y1="290" x2="65" y2="88" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="402" y="294" font-size="11" font-weight="700" fill="#334155">노동량(L)</text>
+    <text x="65" y="79" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">임금(w)</text>
+    <text x="53" y="302" font-size="10" fill="#64748b">0</text>
 
-    <!-- Curves -->
-    <!-- VMPL: y = 0.5*x + 50 -->
-    <line x1="100" y1="100" x2="380" y2="240" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,3" />
-    <text x="385" y="244" font-size="11" font-weight="bold" fill="#64748b">VMPL (P × MPL)</text>
+    <!-- VMPL: (90, 105) to (330, 225); at x=165, y=142.5; at x=220, y=170 -->
+    <line x1="90" y1="105" x2="330" y2="225" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3" />
+    <text x="336" y="229" font-size="10.5" font-weight="700" fill="#64748b">VMPL (P×MPL)</text>
 
-    <!-- MRPL: y = 0.75*x + 35 -->
-    <line x1="80" y1="95" x2="300" y2="260" stroke="#dc2626" stroke-width="2.5" />
-    <text x="305" y="265" font-size="11" font-weight="bold" fill="#dc2626">DL = MRPL (MR × MPL)</text>
+    <!-- MRPL: (80, 102) to (280, 262); at x=165, y=170 -->
+    <line x1="80" y1="102" x2="280" y2="262" stroke="#1d4ed8" stroke-width="2.5" />
+    <text x="286" y="266" font-size="10.5" font-weight="700" fill="#1d4ed8">DL = MRPL</text>
 
-    <!-- Supply: w = AFCL = MFCL at y=170 -->
-    <line x1="70" y1="170" x2="380" y2="170" stroke="#2563eb" stroke-width="2.5" />
-    <text x="385" y="174" font-size="11" font-weight="bold" fill="#2563eb">SL = w</text>
+    <!-- Supply: SL = w at y=170 -->
+    <line x1="65" y1="170" x2="330" y2="170" stroke="#1e293b" stroke-width="2.4" />
+    <text x="336" y="174" font-size="10.5" font-weight="700" fill="#1e293b">SL = w</text>
 
-    <!-- Intersection MRPL = w at Lm = 180, y = 170 -->
-    <circle cx="180" cy="170" r="5" fill="#dc2626" />
-    <line x1="180" y1="170" x2="180" y2="290" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="180" y="306" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Lm</text>
-    <text x="52" y="174" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="end">w</text>
-    <text x="160" y="185" font-size="11" font-weight="bold" fill="#dc2626">Em</text>
+    <!-- Competitive ref Lc at (220, 170) -->
+    <line x1="220" y1="170" x2="220" y2="290" stroke="#cbd5e1" stroke-dasharray="3,3" stroke-width="1.2" />
+    <circle cx="220" cy="170" r="4" fill="#94a3b8" />
+    <text x="220" y="308" font-size="11" fill="#64748b" text-anchor="middle">Lc</text>
 
-    <!-- VMPL at Lm=180 is y = 140 -->
-    <circle cx="180" cy="140" r="4.5" fill="#f59e0b" />
-    <line x1="70" y1="140" x2="180" y2="140" stroke="#f59e0b" stroke-dasharray="2,2" stroke-width="1" />
-    <text x="52" y="144" font-size="10" font-weight="bold" fill="#b45309" text-anchor="end">VMPL</text>
+    <!-- Equilibrium MRPL = w at Lm = 165, y = 170; VMPL = 142.5 -->
+    <line x1="165" y1="142.5" x2="165" y2="290" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2" />
+    <line x1="65" y1="142.5" x2="165" y2="142.5" stroke="#94a3b8" stroke-dasharray="2,2" stroke-width="1.2" />
+    <line x1="165" y1="142.5" x2="165" y2="170" stroke="#1d4ed8" stroke-width="4" />
+    <circle cx="165" cy="142.5" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2" />
+    <circle cx="165" cy="170" r="5" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.8" />
 
-    <!-- Exploitation bar: orange highlight from y=140 to y=170 at x=180 -->
-    <line x1="180" y1="140" x2="180" y2="170" stroke="#f59e0b" stroke-width="4.5" />
+    <text x="165" y="308" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">Lm</text>
+    <text x="55" y="174" font-size="11" font-weight="700" fill="#1e293b" text-anchor="end">w</text>
+    <text x="55" y="146" font-size="10" font-weight="700" fill="#475569" text-anchor="end">VMPL</text>
+    <text x="148" y="186" font-size="11" font-weight="800" fill="#0f172a" text-anchor="end">Em</text>
 
-    <!-- Clean compact exploitation callout badge (placed safely at x=195, y=132) -->
-    <rect x="192" y="128" width="148" height="26" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" />
-    <text x="198" y="145" font-size="10" font-weight="bold" fill="#92400e">⚡ 독점적 착취 (VMPL - w)</text>
-
-    <!-- Competitive reference Lc at (240, 170) -->
-    <circle cx="240" cy="170" r="4" fill="#94a3b8" />
-    <line x1="240" y1="170" x2="240" y2="290" stroke="#cbd5e1" stroke-dasharray="3,3" />
-    <text x="240" y="306" font-size="11" fill="#64748b" text-anchor="middle">Lc</text>
+    <rect x="178" y="128" width="144" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+    <text x="250" y="144" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="middle">독점적 착취 (VMPL - w)</text>
   </g>
 
   <!-- ==================== QUADRANT 3: [Case 3] 완경 x 수요독점 ==================== -->
-  <g transform="translate(25, 435)">
-    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <!-- Header -->
-    <rect x="0" y="0" width="465" height="36" rx="10" fill="#ede9fe" />
-    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#ede9fe" />
-    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#6d28d9">[Case 3] 생산물 완전경쟁 × 요소 수요독점 (요소시장 수요독점)</text>
+  <g transform="translate(25, 434)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <path d="M 0 10 Q 0 0 10 0 L 455 0 Q 465 0 465 10 L 465 36 L 0 36 Z" fill="#f8fafc" />
+    <line x1="0" y1="36" x2="465" y2="36" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="23" font-size="13" font-weight="800" fill="#0f172a">[Case 3] 생산물 완전경쟁 × 요소 수요독점 (요소시장 수요독점)</text>
 
-    <!-- Subtitle badge -->
-    <rect x="15" y="42" width="435" height="22" rx="4" fill="#fae8ff" stroke="#e9d5ff" stroke-width="1" />
-    <text x="232" y="57" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#581c87">• MFCL = VMPL에서 Ls 결정 ➔ 임금은 SL 높이(ws) | 최저임금 시 L, w 동시증가</text>
+    <rect x="15" y="44" width="435" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="232" y="59" font-size="10.5" font-weight="700" text-anchor="middle" fill="#334155">MFCL = VMPL에서 Ls 결정 → 임금은 SL 높이(ws)  |  최저임금 시 L, w 동시증가</text>
 
-    <!-- Axes: Origin (70, 290) -->
-    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">노동량(L)</text>
-    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">임금(w)</text>
-    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (65, 290) -->
+    <line x1="65" y1="290" x2="395" y2="290" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="65" y1="290" x2="65" y2="88" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="402" y="294" font-size="11" font-weight="700" fill="#334155">노동량(L)</text>
+    <text x="65" y="79" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">임금(w)</text>
+    <text x="53" y="302" font-size="10" fill="#64748b">0</text>
 
-    <!-- Demand: VMPL = MRPL (y = 0.5*x + 64) -->
-    <line x1="90" y1="109" x2="380" y2="254" stroke="#dc2626" stroke-width="2.5" />
-    <text x="385" y="258" font-size="11" font-weight="bold" fill="#dc2626">VMPL = MRPL</text>
+    <!-- Demand: VMPL = MRPL: (85, 112) to (335, 237); y = 0.5*x + 69.5 -->
+    <line x1="85" y1="112" x2="335" y2="237" stroke="#1d4ed8" stroke-width="2.5" />
+    <text x="341" y="241" font-size="10.5" font-weight="700" fill="#1d4ed8">VMPL = MRPL</text>
 
-    <!-- Supply: SL = AFCL = w(L) (y = -0.35*x + 259) -->
-    <line x1="80" y1="231" x2="380" y2="126" stroke="#2563eb" stroke-width="2.5" />
-    <text x="385" y="130" font-size="11" font-weight="bold" fill="#2563eb">SL = AFCL = w(L)</text>
+    <!-- Supply: SL = AFCL: (80, 231) to (335, 142); y = -0.35*x + 259 -->
+    <line x1="80" y1="231" x2="335" y2="142" stroke="#1e293b" stroke-width="2.4" />
+    <text x="341" y="145" font-size="10.5" font-weight="700" fill="#1e293b">SL = AFCL</text>
 
-    <!-- MFCL (y = -0.7*x + 280) - stays safely below badge: at x=265, y=94.5 -->
-    <line x1="80" y1="224" x2="265" y2="95" stroke="#7c3aed" stroke-width="2.5" />
-    <text x="270" y="98" font-size="11" font-weight="bold" fill="#7c3aed">MFCL (한계요소비용)</text>
+    <!-- MFCL: (80, 224) to (260, 98); y = -0.7*x + 280 -->
+    <line x1="80" y1="224" x2="260" y2="98" stroke="#475569" stroke-width="2.3" stroke-dasharray="6,3" />
+    <text x="266" y="102" font-size="10.5" font-weight="700" fill="#334155">MFCL (한계요소비용)</text>
 
-    <!-- Intersection MFCL = VMPL at Ls = 180, y = 154 -->
-    <circle cx="180" cy="154" r="5" fill="#7c3aed" />
-    <line x1="180" y1="154" x2="180" y2="290" stroke="#7c3aed" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="180" y="306" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ls</text>
+    <!-- Competitive ref Lc (223, 181) -->
+    <line x1="223" y1="181" x2="223" y2="290" stroke="#cbd5e1" stroke-dasharray="3,3" />
+    <line x1="65" y1="181" x2="223" y2="181" stroke="#cbd5e1" stroke-dasharray="3,3" />
+    <circle cx="223" cy="181" r="4" fill="#94a3b8" />
+    <text x="223" y="308" font-size="11" fill="#64748b" text-anchor="middle">Lc</text>
+    <text x="55" y="184" font-size="10" fill="#64748b" text-anchor="end">wc</text>
 
-    <!-- Wage ws on SL at Ls=180: y = 196 -->
-    <circle cx="180" cy="196" r="5" fill="#2563eb" />
-    <line x1="70" y1="196" x2="180" y2="196" stroke="#2563eb" stroke-dasharray="2,2" stroke-width="1.2" />
-    <text x="52" y="200" font-size="11" font-weight="bold" fill="#2563eb" text-anchor="end">ws</text>
+    <!-- Intersection MFCL = VMPL at Ls = 175, y = 157; ws on SL = 198 -->
+    <line x1="175" y1="157" x2="175" y2="290" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2" />
+    <line x1="65" y1="198" x2="175" y2="198" stroke="#64748b" stroke-dasharray="2,2" stroke-width="1.2" />
+    <line x1="175" y1="157" x2="175" y2="198" stroke="#1d4ed8" stroke-width="4" />
+    <circle cx="175" cy="157" r="4.5" fill="#ffffff" stroke="#334155" stroke-width="2" />
+    <circle cx="175" cy="198" r="5" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.8" />
 
-    <!-- Exploitation bar: purple highlight from y=154 to y=196 at x=180 -->
-    <line x1="180" y1="154" x2="180" y2="196" stroke="#9333ea" stroke-width="4.5" />
+    <text x="175" y="308" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">Ls</text>
+    <text x="55" y="202" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="end">ws</text>
 
-    <!-- Compact exploitation callout badge (safely placed at x=195, y=166) -->
-    <rect x="192" y="162" width="158" height="26" rx="4" fill="#f3e8ff" stroke="#9333ea" stroke-width="1" />
-    <text x="198" y="179" font-size="10" font-weight="bold" fill="#6b21a8">⚡ 수요독점적 착취 (VMPL - ws)</text>
-
-    <!-- Competitive ref Lc, wc (intersection of SL and DL at x=229, y=179) -->
-    <circle cx="229" cy="179" r="4" fill="#94a3b8" />
-    <line x1="229" y1="179" x2="229" y2="290" stroke="#cbd5e1" stroke-dasharray="3,3" />
-    <line x1="70" y1="179" x2="229" y2="179" stroke="#cbd5e1" stroke-dasharray="3,3" />
-    <text x="229" y="306" font-size="11" fill="#64748b" text-anchor="middle">Lc</text>
-    <text x="52" y="183" font-size="10" fill="#64748b" text-anchor="end">wc</text>
+    <rect x="188" y="156" width="154" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+    <text x="265" y="172" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="middle">수요독점적 착취 (VMPL - ws)</text>
   </g>
 
   <!-- ==================== QUADRANT 4: [Case 4] 독점 x 수요독점 ==================== -->
-  <g transform="translate(510, 435)">
-    <rect x="0" y="0" width="465" height="345" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-    <!-- Header -->
-    <rect x="0" y="0" width="465" height="36" rx="10" fill="#fee2e2" />
-    <path d="M 0 26 L 0 36 L 465 36 L 465 26 Z" fill="#fee2e2" />
-    <text x="16" y="24" font-size="13.5" font-weight="bold" fill="#b91c1c">[Case 4] 생산물 독점 × 요소 수요독점 (양 시장 독점/불완전경쟁)</text>
+  <g transform="translate(510, 434)">
+    <rect x="0" y="0" width="465" height="345" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <path d="M 0 10 Q 0 0 10 0 L 455 0 Q 465 0 465 10 L 465 36 L 0 36 Z" fill="#f8fafc" />
+    <line x1="0" y1="36" x2="465" y2="36" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="23" font-size="13" font-weight="800" fill="#0f172a">[Case 4] 생산물 독점 × 요소 수요독점 (양 시장 불완전경쟁)</text>
 
-    <!-- Subtitle badge -->
-    <rect x="15" y="42" width="435" height="22" rx="4" fill="#ffe4e6" stroke="#fecdd3" stroke-width="1" />
-    <text x="232" y="57" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#9f1239">• MFCL = MRPL ➔ SL에서 wmm 결정 | 고용량·임금 모두 최저 수준</text>
+    <rect x="15" y="44" width="435" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="232" y="59" font-size="10.5" font-weight="700" text-anchor="middle" fill="#334155">MFCL = MRPL → SL에서 wmm 결정  |  고용량·임금 모두 최저 수준</text>
 
-    <!-- Axes: Origin (70, 290) -->
-    <line x1="70" y1="290" x2="425" y2="290" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <line x1="70" y1="290" x2="70" y2="85" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)" />
-    <text x="430" y="294" font-size="11" font-weight="bold" fill="#475569">노동량(L)</text>
-    <text x="70" y="78" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">임금(w)</text>
-    <text x="58" y="302" font-size="10" fill="#94a3b8">0</text>
+    <!-- Axes: Origin (65, 290) -->
+    <line x1="65" y1="290" x2="395" y2="290" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <line x1="65" y1="290" x2="65" y2="88" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)" />
+    <text x="402" y="294" font-size="11" font-weight="700" fill="#334155">노동량(L)</text>
+    <text x="65" y="79" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">임금(w)</text>
+    <text x="53" y="302" font-size="10" fill="#64748b">0</text>
 
-    <!-- Curves -->
-    <!-- VMPL: y = 0.5*x + 64 -->
-    <line x1="90" y1="109" x2="380" y2="254" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,3" />
-    <text x="385" y="258" font-size="11" font-weight="bold" fill="#64748b">VMPL</text>
+    <!-- VMPL: y = 0.5*x + 69.5 -->
+    <line x1="85" y1="112" x2="335" y2="237" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4,3" />
+    <text x="341" y="241" font-size="10.5" font-weight="700" fill="#64748b">VMPL</text>
 
-    <!-- MRPL: y = 0.8*x + 40 -->
-    <line x1="80" y1="104" x2="290" y2="272" stroke="#dc2626" stroke-width="2.5" />
-    <text x="295" y="276" font-size="11" font-weight="bold" fill="#dc2626">MRPL</text>
+    <!-- MRPL: (80, 104) to (285, 268); y = 0.8*x + 40 -->
+    <line x1="80" y1="104" x2="285" y2="268" stroke="#1d4ed8" stroke-width="2.5" />
+    <text x="291" y="272" font-size="10.5" font-weight="700" fill="#1d4ed8">MRPL</text>
 
-    <!-- Supply: SL = AFCL (y = -0.35*x + 259) -->
-    <line x1="80" y1="231" x2="380" y2="126" stroke="#2563eb" stroke-width="2.5" />
-    <text x="385" y="130" font-size="11" font-weight="bold" fill="#2563eb">SL = AFCL</text>
+    <!-- Supply: SL = AFCL: (80, 231) to (335, 142) -->
+    <line x1="80" y1="231" x2="335" y2="142" stroke="#1e293b" stroke-width="2.4" />
+    <text x="341" y="145" font-size="10.5" font-weight="700" fill="#1e293b">SL = AFCL</text>
 
-    <!-- MFCL (y = -0.7*x + 280) - stays safely below badge: at x=265, y=94.5 -->
-    <line x1="80" y1="224" x2="265" y2="95" stroke="#7c3aed" stroke-width="2.5" />
-    <text x="270" y="98" font-size="11" font-weight="bold" fill="#7c3aed">MFCL</text>
+    <!-- MFCL: (80, 224) to (260, 98) -->
+    <line x1="80" y1="224" x2="260" y2="98" stroke="#475569" stroke-width="2.3" stroke-dasharray="6,3" />
+    <text x="266" y="102" font-size="10.5" font-weight="700" fill="#334155">MFCL</text>
 
-    <!-- Equilibrium Intersection: MFCL = MRPL at Lmm = 160, y = 168 -->
-    <circle cx="160" cy="168" r="5" fill="#dc2626" />
-    <line x1="160" y1="168" x2="160" y2="290" stroke="#dc2626" stroke-dasharray="3,3" stroke-width="1.2" />
-    <text x="160" y="306" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Lmm(최소)</text>
+    <!-- Equilibrium MFCL = MRPL at Lmm = 160, y = 168; VMPL = 149.5; wmm = 203 -->
+    <line x1="160" y1="149.5" x2="160" y2="290" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2" />
+    <line x1="65" y1="203" x2="160" y2="203" stroke="#64748b" stroke-dasharray="2,2" stroke-width="1.2" />
 
-    <!-- VMPL at Lmm=160: y = 144 -->
-    <circle cx="160" cy="144" r="4.5" fill="#f59e0b" />
+    <!-- Dual Exploitation Bars -->
+    <line x1="160" y1="149.5" x2="160" y2="168" stroke="#64748b" stroke-width="4" />
+    <line x1="160" y1="168" x2="160" y2="203" stroke="#1d4ed8" stroke-width="4" />
+    <circle cx="160" cy="149.5" r="4" fill="#ffffff" stroke="#64748b" stroke-width="1.8" />
+    <circle cx="160" cy="168" r="4.5" fill="#ffffff" stroke="#334155" stroke-width="2" />
+    <circle cx="160" cy="203" r="5" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.8" />
 
-    <!-- wmm on SL at Lmm=160: y = 203 -->
-    <circle cx="160" cy="203" r="5" fill="#2563eb" />
-    <line x1="70" y1="203" x2="160" y2="203" stroke="#2563eb" stroke-dasharray="2,2" stroke-width="1.2" />
-    <text x="52" y="207" font-size="10.5" font-weight="bold" fill="#2563eb" text-anchor="end">wmm</text>
+    <text x="160" y="308" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">Lmm (최소)</text>
+    <text x="55" y="207" font-size="10.5" font-weight="800" fill="#1d4ed8" text-anchor="end">wmm</text>
 
-    <!-- Dual Exploitation Bars: Orange (144..168), Purple (168..203) -->
-    <line x1="160" y1="144" x2="160" y2="168" stroke="#f59e0b" stroke-width="4.5" />
-    <line x1="160" y1="168" x2="160" y2="203" stroke="#9333ea" stroke-width="4.5" />
-
-    <!-- Compact Dual Exploitation Callout Badge (placed cleanly at x=172, y=148) -->
-    <rect x="172" y="144" width="168" height="42" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1" />
-    <text x="178" y="158" font-size="9.5" font-weight="bold" fill="#991b1b">⚡ 이중 착취 (독점 + 수요독점)</text>
-    <text x="178" y="170" font-size="9" fill="#b45309">• 독점적 착취: VMPL - MRPL</text>
-    <text x="178" y="181" font-size="9" fill="#6b21a8">• 수요독점 착취: MRPL - wmm</text>
+    <rect x="174" y="144" width="166" height="44" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <text x="182" y="158" font-size="9.5" font-weight="800" fill="#0f172a">이중 착취 (독점 + 수요독점)</text>
+    <text x="182" y="171" font-size="9" fill="#475569">• 독점적 착취: VMPL - MRPL</text>
+    <text x="182" y="182" font-size="9" fill="#1d4ed8">• 수요독점 착취: MRPL - wmm</text>
   </g>
 </svg>

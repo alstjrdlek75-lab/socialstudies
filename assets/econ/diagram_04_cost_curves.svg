@@ -1,78 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569" />
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
     </marker>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f8fafc" />
-      <stop offset="100%" stop-color="#f1f5f9" />
-    </linearGradient>
   </defs>
 
   <!-- Header -->
-  <rect x="0" y="0" width="920" height="52" fill="url(#headerGrad)" />
-  <text x="460" y="34" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">단기 비용곡선 체계 (MC, AC, AVC) 및 조업중단·손익분기점</text>
-  <line x1="0" y1="52" x2="920" y2="52" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
+  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">단기 비용곡선 체계 (MC, AC, AVC) 및 조업중단·손익분기점</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Subtitle Guidance Banner -->
-  <rect x="130" y="62" width="660" height="28" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="81" font-size="12" font-weight="600" text-anchor="middle" fill="#1e40af">
-    • AC·AVC는 <tspan fill="#dc2626" font-weight="bold">U자형(아래로 볼록)</tspan> 곡선이며, MC는 각 곡선의 <tspan fill="#dc2626" font-weight="bold">최저점을 아래에서 위로</tspan> 통과함
+  <!-- Subtitle Strip -->
+  <rect x="130" y="60" width="660" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">
+    AC·AVC는 U자형(아래로 볼록) 곡선이며, 한계비용(MC)은 각 곡선의 최저점을 아래에서 위로 통과함
   </text>
 
-  <!-- Grid lines (subtle) -->
-  <line x1="100" y1="315" x2="820" y2="315" stroke="#f1f5f9" stroke-width="1" />
-  <line x1="100" y1="225" x2="820" y2="225" stroke="#f1f5f9" stroke-width="1" />
+  <!-- Subtle Grid lines -->
+  <line x1="100" y1="315" x2="800" y2="315" stroke="#f1f5f9" stroke-width="1" />
+  <line x1="100" y1="225" x2="800" y2="225" stroke="#f1f5f9" stroke-width="1" />
 
   <!-- Axes: Origin (100, 460) -->
-  <line x1="100" y1="460" x2="850" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="100" y1="460" x2="100" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="860" y="465" font-size="12.5" font-weight="bold" fill="#334155">생산량 (Q)</text>
-  <text x="100" y="82" font-size="12.5" font-weight="bold" fill="#334155" text-anchor="middle">비용, 가격 (C, P)</text>
-  <text x="84" y="475" font-size="11" fill="#94a3b8">0</text>
+  <line x1="100" y1="460" x2="825" y2="460" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="100" y1="460" x2="100" y2="96" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <text x="835" y="465" font-size="12.5" font-weight="700" fill="#1e293b">생산량 (Q)</text>
+  <text x="100" y="84" font-size="12.5" font-weight="700" fill="#1e293b" text-anchor="middle">비용, 가격 (C, P)</text>
+  <text x="86" y="475" font-size="11.5" fill="#64748b">0</text>
 
-  <!-- AFC gap indicator (between AC and AVC at Q=420) -->
-  <line x1="420" y1="222" x2="420" y2="302" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2" />
+  <!-- AFC gap indicator -->
+  <line x1="420" y1="222" x2="420" y2="302" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2" />
   <text x="428" y="266" font-size="10.5" fill="#64748b" font-weight="600">AFC 간격 (점차 축소)</text>
 
-  <!-- 1. AVC: Minimum at (330, 315) - Convex Downward (U-shaped) -->
-  <path d="M 160 240 C 220 295, 270 315, 330 315 C 390 315, 560 285, 720 240" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" />
-  <text x="730" y="244" font-size="13" font-weight="bold" fill="#16a34a">AVC (평균가변비용)</text>
+  <!-- 1. AVC: Minimum at (330, 315) -->
+  <path d="M 160 240 C 220 295, 270 315, 330 315 C 390 315, 555 286, 705 244" fill="none" stroke="#64748b" stroke-width="2.5" stroke-dasharray="6,4" stroke-linecap="round" />
+  <text x="714" y="248" font-size="12.5" font-weight="700" fill="#475569">AVC (평균가변비용)</text>
 
-  <!-- 2. AC: Minimum at (510, 225) - Convex Downward (U-shaped) -->
-  <path d="M 160 105 C 250 185, 390 225, 510 225 C 600 225, 680 210, 740 190" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round" />
-  <text x="750" y="194" font-size="13.5" font-weight="bold" fill="#2563eb">AC (평균총비용)</text>
+  <!-- 2. AC: Minimum at (510, 225) -->
+  <path d="M 160 108 C 250 185, 390 225, 510 225 C 595 225, 665 212, 725 192" fill="none" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
+  <text x="734" y="196" font-size="12.5" font-weight="700" fill="#0f172a">AC (평균총비용)</text>
 
   <!-- 3. MC: Passes through AVC min (330, 315) and AC min (510, 225) from below -->
-  <path d="M 170 420 C 220 380, 270 345, 330 315 C 390 285, 450 255, 510 225 C 560 195, 605 150, 650 100" fill="none" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" />
-  <text x="660" y="105" font-size="14" font-weight="bold" fill="#dc2626">MC (한계비용)</text>
+  <path d="M 170 420 C 220 380, 270 345, 330 315 C 390 285, 450 255, 510 225 C 560 195, 605 150, 650 104" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+  <text x="658" y="109" font-size="13" font-weight="800" fill="#1d4ed8">MC (한계비용)</text>
 
-  <!-- Intersections & Key Points -->
   <!-- 1) AVC Minimum Point (330, 315) [조업중단점] -->
-  <line x1="330" y1="315" x2="330" y2="460" stroke="#16a34a" stroke-dasharray="3,3" stroke-width="1.5" />
-  <line x1="100" y1="315" x2="330" y2="315" stroke="#16a34a" stroke-dasharray="3,3" stroke-width="1.2" opacity="0.6" />
-  <circle cx="330" cy="315" r="5.5" fill="#16a34a" stroke="#ffffff" stroke-width="2" />
-  <text x="330" y="480" font-size="11.5" font-weight="bold" fill="#16a34a" text-anchor="middle">Q_sd (조업중단점)</text>
-  <text x="92" y="319" font-size="11" font-weight="bold" fill="#16a34a" text-anchor="end">P_sd</text>
-  <rect x="180" y="325" width="145" height="34" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
-  <text x="185" y="340" font-size="10.5" font-weight="bold" fill="#15803d">AVC 최저점 (조업중단점)</text>
-  <text x="185" y="353" font-size="9.5" fill="#166534">P &lt; AVC_min 시 조업 중단</text>
+  <line x1="330" y1="315" x2="330" y2="460" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.4" />
+  <line x1="100" y1="315" x2="330" y2="315" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.2" />
+  <circle cx="330" cy="315" r="5.5" fill="#ffffff" stroke="#334155" stroke-width="2.2" />
+  <text x="330" y="480" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">Q_sd (조업중단점)</text>
+  <text x="90" y="319" font-size="11" font-weight="700" fill="#334155" text-anchor="end">P_sd</text>
+  <rect x="176" y="326" width="146" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="184" y="341" font-size="10.5" font-weight="700" fill="#1e293b">AVC 최저점 (조업중단점)</text>
+  <text x="184" y="355" font-size="9.5" fill="#475569">P &lt; AVC_min 시 조업 중단</text>
 
   <!-- 2) AC Minimum Point (510, 225) [손익분기점] -->
-  <line x1="510" y1="225" x2="510" y2="460" stroke="#2563eb" stroke-dasharray="3,3" stroke-width="1.5" />
-  <line x1="100" y1="225" x2="510" y2="225" stroke="#2563eb" stroke-dasharray="3,3" stroke-width="1.2" opacity="0.6" />
-  <circle cx="510" cy="225" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" />
-  <text x="510" y="480" font-size="11.5" font-weight="bold" fill="#2563eb" text-anchor="middle">Q_be (손익분기점)</text>
-  <text x="92" y="229" font-size="11" font-weight="bold" fill="#2563eb" text-anchor="end">P_be</text>
-  <rect x="525" y="235" width="145" height="34" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
-  <text x="530" y="250" font-size="10.5" font-weight="bold" fill="#1d4ed8">AC 최저점 (손익분기점)</text>
-  <text x="530" y="263" font-size="9.5" fill="#1e40af">P = AC_min 시 경제적이윤 0</text>
+  <line x1="510" y1="225" x2="510" y2="460" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.4" />
+  <line x1="100" y1="225" x2="510" y2="225" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.2" />
+  <circle cx="510" cy="225" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="510" y="480" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Q_be (손익분기점)</text>
+  <text x="90" y="229" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="end">P_be</text>
+  <rect x="524" y="234" width="150" height="36" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="532" y="249" font-size="10.5" font-weight="800" fill="#1d4ed8">AC 최저점 (손익분기점)</text>
+  <text x="532" y="263" font-size="9.5" fill="#334155">P = AC_min 시 경제적이윤 0</text>
 
-  <!-- Short Summary Card (Bottom-Right) -->
-  <rect x="580" y="325" width="225" height="115" rx="8" fill="#fafafa" stroke="#e2e8f0" stroke-width="1" />
-  <text x="595" y="347" font-size="11.5" font-weight="bold" fill="#0f172a">📌 핵심 정리 요약</text>
-  <text x="595" y="367" font-size="10.5" fill="#334155">• MC = AVC 최저점 ➔ <tspan font-weight="bold" fill="#16a34a">조업중단점</tspan></text>
-  <text x="595" y="385" font-size="10.5" fill="#334155">• MC = AC 최저점 ➔ <tspan font-weight="bold" fill="#2563eb">손익분기점</tspan></text>
-  <text x="595" y="403" font-size="10.5" fill="#334155">• MC &gt; AC ➔ AC 상승 구간</text>
-  <text x="595" y="421" font-size="10.5" fill="#334155">• MC &lt; AC ➔ AC 하락 구간</text>
+  <!-- Summary Card (Bottom-Right) -->
+  <rect x="580" y="324" width="235" height="116" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="595" y="346" font-size="11.5" font-weight="800" fill="#0f172a">핵심 정리 요약</text>
+  <text x="595" y="366" font-size="10.5" fill="#334155">• MC = AVC 최저점 → <tspan font-weight="700" fill="#0f172a">조업중단점</tspan></text>
+  <text x="595" y="384" font-size="10.5" fill="#334155">• MC = AC 최저점 → <tspan font-weight="700" fill="#1d4ed8">손익분기점</tspan></text>
+  <text x="595" y="402" font-size="10.5" fill="#475569">• MC &gt; AC → AC 상승 구간</text>
+  <text x="595" y="420" font-size="10.5" fill="#475569">• MC &lt; AC → AC 하락 구간</text>
 </svg>

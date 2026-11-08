@@ -1,45 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
     </marker>
   </defs>
 
   <!-- Header -->
   <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">총수요-총공급 (AD-AS) 모형과 거시경제 균형</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">총수요-총공급 (AD-AS) 모형과 거시경제 균형</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 단기 균형(AD = SRAS) ➔ 장기 균형(임금·물가 신축적 조정으로 수직의 LRAS, 잠재GDP 복귀)</text>
+  <!-- Subtitle Strip -->
+  <rect x="135" y="60" width="650" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">단기 균형(AD = SRAS)  →  장기 균형(임금·물가 신축적 조정으로 수직의 LRAS, 잠재GDP 복귀)</text>
 
-  <!-- Axes: Origin (100, 460) -->
-  <line x1="100" y1="460" x2="800" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="810" y="465" font-size="12" font-weight="bold" fill="#475569">실질 GDP (Y)</text>
-  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">물가 수준 (P)</text>
-  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+  <!-- Axes: Origin (140, 455) -->
+  <line x1="140" y1="455" x2="795" y2="455" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="140" y1="455" x2="140" y2="98" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <text x="805" y="460" font-size="12.5" font-weight="700" fill="#1e293b">실질 GDP (Y)</text>
+  <text x="140" y="88" font-size="12.5" font-weight="700" fill="#1e293b" text-anchor="middle">물가 수준 (P)</text>
+  <text x="127" y="470" font-size="11.5" fill="#64748b">0</text>
 
-  <!-- Long-Run AS (LRAS): Vertical at Yp = 450 -->
-  <line x1="450" y1="460" x2="450" y2="100" stroke="#dc2626" stroke-width="3" />
-  <text x="450" y="92" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">LRAS (장기 총공급: 잠재GDP Yp)</text>
+  <!-- Long-Run AS (LRAS): Vertical at Yp = 465 -->
+  <line x1="465" y1="455" x2="465" y2="108" stroke="#1e293b" stroke-width="2.8" />
+  <text x="465" y="99" font-size="12.5" font-weight="800" fill="#0f172a" text-anchor="middle">LRAS (장기 총공급: 잠재GDP Yp)</text>
 
-  <!-- Short-Run AS (SRAS0): Upward sloping y = -0.5*x + 500 -->
-  <!-- at x=150: y=425; at x=650: y=175 -->
-  <line x1="150" y1="425" x2="650" y2="175" stroke="#16a34a" stroke-width="3" />
-  <text x="660" y="175" font-size="12.5" font-weight="bold" fill="#16a34a">SRAS0 (단기 총공급)</text>
+  <!-- Short-Run AS (SRAS0): Upward sloping through (465, 275): (195, 410) to (685, 165) -->
+  <line x1="195" y1="410" x2="685" y2="165" stroke="#64748b" stroke-width="2.5" stroke-dasharray="6,4" />
+  <text x="695" y="169" font-size="12.5" font-weight="700" fill="#475569">SRAS₀ (단기 총공급)</text>
 
-  <!-- Aggregate Demand AD0: Downward sloping y = 0.5*x + 50 -->
-  <!-- at x=150: y=125; at x=650: y=375 -->
-  <!-- Intersection with SRAS0: 0.5*x + 50 = -0.5*x + 500 => x = 450 (Matches LRAS!), y = 275 -->
-  <line x1="150" y1="125" x2="650" y2="375" stroke="#2563eb" stroke-width="3" />
-  <text x="660" y="380" font-size="12.5" font-weight="bold" fill="#2563eb">AD0 (총수요곡선)</text>
+  <!-- Aggregate Demand AD0: Downward sloping through (465, 275): (195, 140) to (685, 385) -->
+  <line x1="195" y1="140" x2="685" y2="385" stroke="#1d4ed8" stroke-width="2.8" />
+  <text x="695" y="389" font-size="12.5" font-weight="800" fill="#1d4ed8">AD₀ (총수요곡선)</text>
 
-  <!-- Long-Run Equilibrium Point E0 (450, 275) -->
-  <circle cx="450" cy="275" r="6" fill="#1d4ed8" />
-  <line x1="100" y1="275" x2="450" y2="275" stroke="#475569" stroke-dasharray="3,3" />
-  <text x="60" y="280" font-size="12" font-weight="bold" fill="#1d4ed8">P0 (균형물가)</text>
-  <text x="450" y="478" font-size="12" font-weight="bold" fill="#dc2626" text-anchor="middle">Yp (잠재산출량)</text>
-  <text x="465" y="265" font-size="13" font-weight="bold" fill="#1d4ed8">E0 (장기균형)</text>
+  <!-- Long-Run Equilibrium Point E0 (465, 275) -->
+  <line x1="140" y1="275" x2="465" y2="275" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.4" />
+  <circle cx="465" cy="275" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="130" y="279" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="end">P₀ (균형물가)</text>
+  <text x="465" y="478" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Yp (잠재산출량)</text>
+  <text x="478" y="264" font-size="12.5" font-weight="800" fill="#1d4ed8">E₀ (장기균형)</text>
 </svg>

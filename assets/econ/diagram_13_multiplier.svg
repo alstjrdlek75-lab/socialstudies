@@ -1,83 +1,76 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <!-- Header -->
   <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">재정정책 승수효과 비교 (정부지출승수 vs 조세승수 vs 균형재정승수)</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">재정정책 승수효과 비교 (정부지출승수 vs 조세승수 vs 균형재정승수)</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 정부지출승수 1/(1-c) &gt; 조세승수 |-c/(1-c)| ➔ 균형재정승수 = [1/(1-c)] - [c/(1-c)] = 1</text>
+  <!-- Subtitle Strip -->
+  <rect x="135" y="60" width="650" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">정부지출승수 1/(1-c) &gt; 조세승수 |-c/(1-c)|  →  균형재정승수 = [1/(1-c)] - [c/(1-c)] = 1</text>
 
-  <!-- 3 Comparison Columns -->
   <!-- Column 1: 정부지출 승수 -->
-  <g transform="translate(60, 110)">
-    <rect x="0" y="0" width="250" height="390" rx="10" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.8" />
-    <rect x="0" y="0" width="250" height="40" rx="10" fill="#eff6ff" />
-    <path d="M 0 30 L 0 40 L 250 40 L 250 30 Z" fill="#eff6ff" />
-    <text x="125" y="26" font-size="14" font-weight="bold" fill="#1d4ed8" text-anchor="middle">1. 정부지출 승수 (kG)</text>
+  <g transform="translate(55, 108)">
+    <rect x="0" y="0" width="256" height="392" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <path d="M 0 10 Q 0 0 10 0 L 246 0 Q 256 0 256 10 L 256 40 L 0 40 Z" fill="#f8fafc" />
+    <line x1="0" y1="40" x2="256" y2="40" stroke="#e2e8f0" stroke-width="1" />
+    <text x="128" y="26" font-size="13.5" font-weight="800" fill="#0f172a" text-anchor="middle">1. 정부지출 승수 (kG)</text>
 
-    <!-- Formula Box -->
-    <rect x="25" y="55" width="200" height="45" rx="6" fill="#ffffff" stroke="#bfdbfe" />
-    <text x="125" y="83" font-size="15" font-weight="bold" fill="#1d4ed8" text-anchor="middle">ΔY / ΔG = 1 / (1 - c)</text>
+    <rect x="24" y="56" width="208" height="44" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="128" y="83" font-size="14.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">ΔY / ΔG = 1 / (1 - c)</text>
 
-    <!-- Details -->
-    <text x="25" y="125" font-size="12" font-weight="bold" fill="#0f172a">• 작동 경로 (직접 투입):</text>
-    <text x="35" y="148" font-size="11.5" fill="#334155">ΔG ➔ 총지출 1차 직접 증가</text>
-    <text x="35" y="168" font-size="11.5" fill="#334155">➔ 소득 증가(ΔY = ΔG)</text>
-    <text x="35" y="188" font-size="11.5" fill="#334155">➔ 소비 연쇄 증가(c·ΔG + c²·ΔG...)</text>
+    <text x="24" y="126" font-size="12" font-weight="800" fill="#0f172a">• 작동 경로 (직접 투입)</text>
+    <text x="34" y="149" font-size="11.5" fill="#334155">ΔG → 총지출 1차 직접 증가</text>
+    <text x="34" y="169" font-size="11.5" fill="#334155">→ 소득 증가(ΔY = ΔG)</text>
+    <text x="34" y="189" font-size="11.5" fill="#475569">→ 소비 연쇄 증가(c·ΔG + c²·ΔG…)</text>
 
-    <line x1="25" y1="210" x2="225" y2="210" stroke="#e2e8f0" />
-    <text x="25" y="235" font-size="12" font-weight="bold" fill="#0f172a">• 예시 (c = MPC = 0.8):</text>
-    <text x="35" y="260" font-size="12" font-weight="bold" fill="#1d4ed8">kG = 1 / (1 - 0.8) = 5배</text>
-    <text x="35" y="285" font-size="11" fill="#475569">정부지출 100억 증액 시</text>
-    <text x="35" y="305" font-size="11" font-weight="bold" fill="#1d4ed8">국민소득 500억 증가!</text>
+    <line x1="24" y1="212" x2="232" y2="212" stroke="#e2e8f0" />
+    <text x="24" y="238" font-size="12" font-weight="800" fill="#0f172a">• 예시 (c = MPC = 0.8)</text>
+    <text x="34" y="263" font-size="12" font-weight="800" fill="#1d4ed8">kG = 1 / (1 - 0.8) = 5배</text>
+    <text x="34" y="288" font-size="11" fill="#475569">정부지출 100억 증액 시</text>
+    <text x="34" y="308" font-size="11" font-weight="700" fill="#1e293b">국민소득 500억 증가</text>
   </g>
 
   <!-- Column 2: 조세 승수 -->
-  <g transform="translate(345, 110)">
-    <rect x="0" y="0" width="250" height="390" rx="10" fill="#f8fafc" stroke="#dc2626" stroke-width="1.8" />
-    <rect x="0" y="0" width="250" height="40" rx="10" fill="#fee2e2" />
-    <path d="M 0 30 L 0 40 L 250 40 L 250 30 Z" fill="#fee2e2" />
-    <text x="125" y="26" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">2. 조세 승수 (kT)</text>
+  <g transform="translate(332, 108)">
+    <rect x="0" y="0" width="256" height="392" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <path d="M 0 10 Q 0 0 10 0 L 246 0 Q 256 0 256 10 L 256 40 L 0 40 Z" fill="#f8fafc" />
+    <line x1="0" y1="40" x2="256" y2="40" stroke="#e2e8f0" stroke-width="1" />
+    <text x="128" y="26" font-size="13.5" font-weight="800" fill="#0f172a" text-anchor="middle">2. 조세 승수 (kT)</text>
 
-    <!-- Formula Box -->
-    <rect x="25" y="55" width="200" height="45" rx="6" fill="#ffffff" stroke="#fecaca" />
-    <text x="125" y="83" font-size="15" font-weight="bold" fill="#b91c1c" text-anchor="middle">ΔY / ΔT = - c / (1 - c)</text>
+    <rect x="24" y="56" width="208" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="128" y="83" font-size="14.5" font-weight="800" fill="#1e293b" text-anchor="middle">ΔY / ΔT = - c / (1 - c)</text>
 
-    <!-- Details -->
-    <text x="25" y="125" font-size="12" font-weight="bold" fill="#0f172a">• 작동 경로 (간접 유발):</text>
-    <text x="35" y="148" font-size="11.5" fill="#334155">감세(-ΔT) ➔ 가처분소득 증가</text>
-    <text x="35" y="168" font-size="11.5" fill="#334155">➔ 소비 1차 증가분은 -c·ΔT</text>
-    <text x="35" y="188" font-size="11.5" fill="#dc2626">※ 저축으로 누출되어 kG보다 작음!</text>
+    <text x="24" y="126" font-size="12" font-weight="800" fill="#0f172a">• 작동 경로 (간접 유발)</text>
+    <text x="34" y="149" font-size="11.5" fill="#334155">감세(-ΔT) → 가처분소득 증가</text>
+    <text x="34" y="169" font-size="11.5" fill="#334155">→ 소비 1차 증가분은 -c·ΔT</text>
+    <text x="34" y="189" font-size="11" font-weight="600" fill="#475569">※ 1차 저축 누출로 kG보다 작음</text>
 
-    <line x1="25" y1="210" x2="225" y2="210" stroke="#e2e8f0" />
-    <text x="25" y="235" font-size="12" font-weight="bold" fill="#0f172a">• 예시 (c = MPC = 0.8):</text>
-    <text x="35" y="260" font-size="12" font-weight="bold" fill="#b91c1c">kT = -0.8 / (1 - 0.8) = -4배</text>
-    <text x="35" y="285" font-size="11" fill="#475569">세금 100억 감면 시</text>
-    <text x="35" y="305" font-size="11" font-weight="bold" fill="#b91c1c">국민소득 400억 증가!</text>
+    <line x1="24" y1="212" x2="232" y2="212" stroke="#e2e8f0" />
+    <text x="24" y="238" font-size="12" font-weight="800" fill="#0f172a">• 예시 (c = MPC = 0.8)</text>
+    <text x="34" y="263" font-size="12" font-weight="800" fill="#1e293b">kT = -0.8 / (1 - 0.8) = -4배</text>
+    <text x="34" y="288" font-size="11" fill="#475569">세금 100억 감면 시</text>
+    <text x="34" y="308" font-size="11" font-weight="700" fill="#1e293b">국민소득 400억 증가</text>
   </g>
 
   <!-- Column 3: 균형재정 승수 -->
-  <g transform="translate(630, 110)">
-    <rect x="0" y="0" width="250" height="390" rx="10" fill="#f8fafc" stroke="#16a34a" stroke-width="1.8" />
-    <rect x="0" y="0" width="250" height="40" rx="10" fill="#dcfce7" />
-    <path d="M 0 30 L 0 40 L 250 40 L 250 30 Z" fill="#dcfce7" />
-    <text x="125" y="26" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">3. 균형재정 승수 (kBB)</text>
+  <g transform="translate(609, 108)">
+    <rect x="0" y="0" width="256" height="392" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" />
+    <path d="M 0 10 Q 0 0 10 0 L 246 0 Q 256 0 256 10 L 256 40 L 0 40 Z" fill="#eff6ff" />
+    <line x1="0" y1="40" x2="256" y2="40" stroke="#bfdbfe" stroke-width="1" />
+    <text x="128" y="26" font-size="13.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">3. 균형재정 승수 (kBB)</text>
 
-    <!-- Formula Box -->
-    <rect x="25" y="55" width="200" height="45" rx="6" fill="#ffffff" stroke="#bbf7d0" />
-    <text x="125" y="83" font-size="15" font-weight="bold" fill="#15803d" text-anchor="middle">kBB = kG + kT ≡ 1</text>
+    <rect x="24" y="56" width="208" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+    <text x="128" y="83" font-size="14.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">kBB = kG + kT ≡ 1</text>
 
-    <!-- Details -->
-    <text x="25" y="125" font-size="12" font-weight="bold" fill="#0f172a">• 작동 원리 (증세 동반 지출):</text>
-    <text x="35" y="148" font-size="11.5" fill="#334155">ΔG = ΔT (재정수지 균형 유지)</text>
-    <text x="35" y="168" font-size="11.5" fill="#334155">지출 확대(+5) + 증세 위축(-4)</text>
-    <text x="35" y="188" font-size="11.5" font-weight="bold" fill="#15803d">➔ 순 승수효과는 정확히 1배!</text>
+    <text x="24" y="126" font-size="12" font-weight="800" fill="#0f172a">• 작동 원리 (증세 동반 지출)</text>
+    <text x="34" y="149" font-size="11.5" fill="#334155">ΔG = ΔT (재정수지 균형 유지)</text>
+    <text x="34" y="169" font-size="11.5" fill="#334155">지출 확대(+5) + 증세 위축(-4)</text>
+    <text x="34" y="189" font-size="11.5" font-weight="700" fill="#1d4ed8">→ 순 승수효과는 정확히 1배</text>
 
-    <line x1="25" y1="210" x2="225" y2="210" stroke="#e2e8f0" />
-    <text x="25" y="235" font-size="12" font-weight="bold" fill="#0f172a">• 핵심 결론:</text>
-    <text x="35" y="260" font-size="12" font-weight="bold" fill="#15803d">ΔY = 1 × ΔG</text>
-    <text x="35" y="285" font-size="11" fill="#475569">적자재정을 편성하지 않아도</text>
-    <text x="35" y="305" font-size="11" font-weight="bold" fill="#15803d">지출액만큼 국민소득이 증가함</text>
+    <line x1="24" y1="212" x2="232" y2="212" stroke="#e2e8f0" />
+    <text x="24" y="238" font-size="12" font-weight="800" fill="#0f172a">• 핵심 결론</text>
+    <text x="34" y="263" font-size="12" font-weight="800" fill="#1d4ed8">ΔY = 1 × ΔG</text>
+    <text x="34" y="288" font-size="11" fill="#475569">적자재정을 편성하지 않아도</text>
+    <text x="34" y="308" font-size="11" font-weight="700" fill="#1e293b">지출액만큼 국민소득이 증가함</text>
   </g>
 </svg>

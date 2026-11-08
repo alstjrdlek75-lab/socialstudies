@@ -1,220 +1,165 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 570" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
-    <!-- Gradients -->
-    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc" />
-      <stop offset="100%" stop-color="#f1f5f9" />
-    </linearGradient>
-    <linearGradient id="core-pipe" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1e40af" />
-      <stop offset="50%" stop-color="#2563eb" />
-      <stop offset="100%" stop-color="#1d4ed8" />
-    </linearGradient>
-    <linearGradient id="leak-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#fff1f2" />
-      <stop offset="100%" stop-color="#ffe4e6" />
-    </linearGradient>
-    <linearGradient id="inj-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ecfdf5" />
-      <stop offset="100%" stop-color="#d1fae5" />
-    </linearGradient>
-
-    <!-- Arrow Markers -->
-    <marker id="arr-core" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="6.5" markerHeight="6.5" orient="auto">
-      <path d="M 1 2 L 10 6 L 1 10 L 3 6 Z" fill="#2563eb" />
+    <marker id="arr-core" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#1d4ed8" />
     </marker>
-    <marker id="arr-leak" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="6.5" markerHeight="6.5" orient="auto">
-      <path d="M 1 2 L 10 6 L 1 10 L 3 6 Z" fill="#e11d48" />
+    <marker id="arr-leak" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#64748b" />
     </marker>
-    <marker id="arr-inj" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="6.5" markerHeight="6.5" orient="auto">
-      <path d="M 1 2 L 10 6 L 1 10 L 3 6 Z" fill="#059669" />
+    <marker id="arr-inj" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#1d4ed8" />
     </marker>
-
-    <!-- Drop Shadows -->
-    <filter id="shadow-card" x="-6%" y="-6%" width="112%" height="116%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.07" />
-    </filter>
-    <filter id="shadow-sm" x="-4%" y="-4%" width="108%" height="112%">
-      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.05" />
-    </filter>
   </defs>
 
-  <!-- Background -->
-  <rect x="0" y="0" width="960" height="570" rx="14" fill="url(#bg-canvas)" />
+  <!-- Top Header -->
+  <rect x="0" y="0" width="960" height="50" fill="#f8fafc" />
+  <text x="480" y="32" font-size="18" font-weight="800" text-anchor="middle" fill="#0f172a">4부문 개방경제 소득 순환과 누출(S+T+M) · 주입(I+G+X) 균형</text>
+  <line x1="0" y1="50" x2="960" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Top Header Banner -->
-  <rect x="0" y="0" width="960" height="54" rx="14" fill="#0f172a" />
-  <rect x="0" y="40" width="960" height="14" fill="#0f172a" />
-  <text x="480" y="34" font-size="18.5" font-weight="800" text-anchor="middle" fill="#ffffff" letter-spacing="-0.3">4부문 개방경제 소득 순환과 누출(S+T+M) · 주입(I+G+X) 균형</text>
-
-  <!-- ==================== PART 1: VISUAL FLOW DIAGRAM (누출 vs 주입 직관적 파이프라인) ==================== -->
-
-  <!-- Left Node: 가계 (소득 수취 및 처분) -->
-  <g transform="translate(36, 74)" filter="url(#shadow-card)">
-    <rect x="0" y="0" width="184" height="90" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2.2" />
-    <rect x="0" y="0" width="184" height="30" rx="12" fill="#2563eb" />
-    <rect x="0" y="18" width="184" height="12" fill="#2563eb" />
-    <text x="92" y="20" font-size="13.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏠 가계 (국민소득 처분)</text>
-    <text x="92" y="50" font-size="12.5" font-weight="800" fill="#1e3a8a" text-anchor="middle">Y = C + S + T</text>
-    <text x="92" y="68" font-size="10.5" font-weight="600" fill="#64748b" text-anchor="middle">벌어들인 소득 중 S·T·M은</text>
-    <text x="92" y="81" font-size="10.5" font-weight="700" fill="#e11d48" text-anchor="middle">소비 순환 밖으로 빠져나감(누출)</text>
+  <!-- Left Node: 가계 -->
+  <g transform="translate(36, 70)">
+    <rect x="0" y="0" width="184" height="90" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4" />
+    <path d="M 0 10 Q 0 0 10 0 L 174 0 Q 184 0 184 10 L 184 28 L 0 28 Z" fill="#f1f5f9" />
+    <line x1="0" y1="28" x2="184" y2="28" stroke="#cbd5e1" stroke-width="1" />
+    <text x="92" y="19" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">가계 (국민소득 처분)</text>
+    <text x="92" y="49" font-size="12.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Y = C + S + T</text>
+    <text x="92" y="67" font-size="10.5" fill="#475569" text-anchor="middle">벌어들인 소득 중 S·T·M은</text>
+    <text x="92" y="81" font-size="10.5" font-weight="700" fill="#334155" text-anchor="middle">소비 순환 밖으로 이탈 (누출)</text>
   </g>
 
-  <!-- Right Node: 기업 (생산물 시장 & 총지출) -->
-  <g transform="translate(740, 74)" filter="url(#shadow-card)">
-    <rect x="0" y="0" width="184" height="90" rx="12" fill="#ffffff" stroke="#059669" stroke-width="2.2" />
-    <rect x="0" y="0" width="184" height="30" rx="12" fill="#059669" />
-    <rect x="0" y="18" width="184" height="12" fill="#059669" />
-    <text x="92" y="20" font-size="13.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏢 기업 (총지출·총생산)</text>
-    <text x="92" y="50" font-size="12.5" font-weight="800" fill="#065f46" text-anchor="middle">Y = C + I + G + X - M</text>
-    <text x="92" y="68" font-size="10.5" font-weight="600" fill="#64748b" text-anchor="middle">국내 소비(C - M)에 더해</text>
-    <text x="92" y="81" font-size="10.5" font-weight="700" fill="#059669" text-anchor="middle">I·G·X가 새로 유입됨(주입)</text>
+  <!-- Right Node: 기업 -->
+  <g transform="translate(740, 70)">
+    <rect x="0" y="0" width="184" height="90" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4" />
+    <path d="M 0 10 Q 0 0 10 0 L 174 0 Q 184 0 184 10 L 184 28 L 0 28 Z" fill="#f1f5f9" />
+    <line x1="0" y1="28" x2="184" y2="28" stroke="#cbd5e1" stroke-width="1" />
+    <text x="92" y="19" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">기업 (총지출·총생산)</text>
+    <text x="92" y="49" font-size="12.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Y = C + I + G + X - M</text>
+    <text x="92" y="67" font-size="10.5" fill="#475569" text-anchor="middle">국내 소비(C - M)에 더해</text>
+    <text x="92" y="81" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">I·G·X가 새로 유입 (주입)</text>
   </g>
 
-  <!-- Center Main Pipeline: 국내 소비지출 흐름 -->
-  <g transform="translate(220, 96)">
-    <!-- Thick Pipe Background -->
-    <rect x="14" y="8" width="492" height="30" rx="15" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5" />
-    <line x1="8" y1="23" x2="508" y2="23" stroke="#2563eb" stroke-width="4" marker-end="url(#arr-core)" />
-    <rect x="136" y="4" width="248" height="38" rx="19" fill="#1e40af" stroke="#ffffff" stroke-width="2" filter="url(#shadow-sm)" />
-    <text x="260" y="21" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🔄 기본 소득·소비 순환 파이프라인</text>
-    <text x="260" y="35" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">국내 생산물 소비지출 (C - M)</text>
+  <!-- Center Main Pipeline -->
+  <g transform="translate(220, 92)">
+    <line x1="8" y1="23" x2="508" y2="23" stroke="#1d4ed8" stroke-width="3" marker-end="url(#arr-core)" />
+    <rect x="136" y="4" width="248" height="38" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.4" />
+    <text x="260" y="20" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">기본 소득·소비 순환 흐름</text>
+    <text x="260" y="35" font-size="10.5" font-weight="600" fill="#334155" text-anchor="middle">국내 생산물 소비지출 (C - M)</text>
   </g>
 
-  <!-- ==================== 3 SECTORS BELOW: 금융시장 / 정부 / 해외부문 ==================== -->
+  <!-- ==================== 3 SECTORS BELOW ==================== -->
+  <!-- [SECTOR 1] 금융시장 -->
+  <g transform="translate(46, 176)">
+    <path d="M 92 -12 L 92 52" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr-leak)" />
+    <rect x="16" y="4" width="150" height="38" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+    <text x="91" y="20" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">↓ 누출 ① : 민간저축 (S)</text>
+    <text x="91" y="35" font-size="10" fill="#64748b" text-anchor="middle">소비되지 않고 빠져나감</text>
 
-  <!-- [SECTOR 1] 금융시장 (저축 S ➔ 투자 I) -->
-  <g transform="translate(46, 178)">
-    <!-- Downward Leakage Arrow (S) -->
-    <path d="M 95 -14 L 95 52" fill="none" stroke="#e11d48" stroke-width="3.5" marker-end="url(#arr-leak)" />
-    <rect x="18" y="4" width="154" height="38" rx="8" fill="url(#leak-grad)" stroke="#fb7185" stroke-width="1.5" filter="url(#shadow-sm)" />
-    <text x="95" y="20" font-size="12" font-weight="800" fill="#be123c" text-anchor="middle">📤 누출 ① : 민간저축 (S)</text>
-    <text x="95" y="35" font-size="10" font-weight="600" fill="#e11d48" text-anchor="middle">소비되지 않고 빠져나감</text>
+    <path d="M 248 56 L 248 -12" fill="none" stroke="#1d4ed8" stroke-width="2.4" marker-end="url(#arr-inj)" />
+    <rect x="174" y="4" width="150" height="38" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="249" y="20" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">↑ 주입 ① : 투자지출 (I)</text>
+    <text x="249" y="35" font-size="10" fill="#334155" text-anchor="middle">자본재 구매로 새로 유입</text>
 
-    <!-- Upward Injection Arrow (I) -->
-    <path d="M 215 58 L 215 -14" fill="none" stroke="#059669" stroke-width="3.5" marker-end="url(#arr-inj)" />
-    <rect x="178" y="4" width="154" height="38" rx="8" fill="url(#inj-grad)" stroke="#34d399" stroke-width="1.5" filter="url(#shadow-sm)" />
-    <text x="255" y="20" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">📥 주입 ① : 투자지출 (I)</text>
-    <text x="255" y="35" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">자본재 구매로 새로 유입</text>
-
-    <!-- Sector Box: 금융시장 -->
-    <rect x="35" y="58" width="260" height="54" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.8" filter="url(#shadow-card)" />
-    <rect x="35" y="58" width="260" height="22" rx="10" fill="#334155" />
-    <rect x="35" y="70" width="260" height="10" fill="#334155" />
-    <text x="165" y="74" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🏦 금융시장 (대부자금시장)</text>
-    <text x="165" y="99" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">가계 저축(S)을 기업 투자자금(I)으로 중개</text>
+    <rect x="35" y="58" width="260" height="52" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4" />
+    <path d="M 35 66 Q 35 58 43 58 L 287 58 Q 295 58 295 66 L 295 80 L 35 80 Z" fill="#f1f5f9" />
+    <line x1="35" y1="80" x2="295" y2="80" stroke="#cbd5e1" stroke-width="1" />
+    <text x="165" y="73" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">금융시장 (대부자금시장)</text>
+    <text x="165" y="99" font-size="10.5" font-weight="600" fill="#475569" text-anchor="middle">가계 저축(S)을 기업 투자자금(I)으로 중개</text>
   </g>
 
-  <!-- [SECTOR 2] 정부 부문 (조세 T ➔ 정부지출 G) -->
-  <g transform="translate(345, 178)">
-    <!-- Downward Leakage Arrow (T) -->
-    <path d="M 75 -14 L 75 52" fill="none" stroke="#e11d48" stroke-width="3.5" marker-end="url(#arr-leak)" />
-    <rect x="0" y="4" width="150" height="38" rx="8" fill="url(#leak-grad)" stroke="#fb7185" stroke-width="1.5" filter="url(#shadow-sm)" />
-    <text x="75" y="20" font-size="12" font-weight="800" fill="#be123c" text-anchor="middle">📤 누출 ② : 조세 (T)</text>
-    <text x="75" y="35" font-size="10" font-weight="600" fill="#e11d48" text-anchor="middle">세금 납부로 소득 이탈</text>
+  <!-- [SECTOR 2] 정부 부문 -->
+  <g transform="translate(345, 176)">
+    <path d="M 75 -12 L 75 52" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr-leak)" />
+    <rect x="0" y="4" width="148" height="38" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+    <text x="74" y="20" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">↓ 누출 ② : 조세 (T)</text>
+    <text x="74" y="35" font-size="10" fill="#64748b" text-anchor="middle">세금 납부로 소득 이탈</text>
 
-    <!-- Upward Injection Arrow (G) -->
-    <path d="M 195 58 L 195 -14" fill="none" stroke="#059669" stroke-width="3.5" marker-end="url(#arr-inj)" />
-    <rect x="156" y="4" width="154" height="38" rx="8" fill="url(#inj-grad)" stroke="#34d399" stroke-width="1.5" filter="url(#shadow-sm)" />
-    <text x="233" y="20" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">📥 주입 ② : 정부지출 (G)</text>
-    <text x="233" y="35" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">공공 구매로 수요 창출</text>
+    <path d="M 231 56 L 231 -12" fill="none" stroke="#1d4ed8" stroke-width="2.4" marker-end="url(#arr-inj)" />
+    <rect x="156" y="4" width="150" height="38" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="231" y="20" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">↑ 주입 ② : 정부지출 (G)</text>
+    <text x="231" y="35" font-size="10" fill="#334155" text-anchor="middle">공공 구매로 수요 창출</text>
 
-    <!-- Sector Box: 정부 부문 -->
-    <rect x="15" y="58" width="260" height="54" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.8" filter="url(#shadow-card)" />
-    <rect x="15" y="58" width="260" height="22" rx="10" fill="#334155" />
-    <rect x="15" y="70" width="260" height="10" fill="#334155" />
-    <text x="145" y="74" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🏛️ 정부 부문 (재정 활동)</text>
-    <text x="145" y="99" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">재정수지 = (T - G) [균형·흑자·적자]</text>
+    <rect x="15" y="58" width="260" height="52" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4" />
+    <path d="M 15 66 Q 15 58 23 58 L 267 58 Q 275 58 275 66 L 275 80 L 15 80 Z" fill="#f1f5f9" />
+    <line x1="15" y1="80" x2="275" y2="80" stroke="#cbd5e1" stroke-width="1" />
+    <text x="145" y="73" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">정부 부문 (재정 활동)</text>
+    <text x="145" y="99" font-size="10.5" font-weight="600" fill="#475569" text-anchor="middle">재정수지 = (T - G) [균형·흑자·적자]</text>
   </g>
 
-  <!-- [SECTOR 3] 해외 부문 (수입 M ➔ 수출 X) -->
-  <g transform="translate(644, 178)">
-    <!-- Downward Leakage Arrow (M) -->
-    <path d="M 75 -14 L 75 52" fill="none" stroke="#e11d48" stroke-width="3.5" marker-end="url(#arr-leak)" />
-    <rect x="0" y="4" width="150" height="38" rx="8" fill="url(#leak-grad)" stroke="#fb7185" stroke-width="1.5" filter="url(#shadow-sm)" />
-    <text x="75" y="20" font-size="12" font-weight="800" fill="#be123c" text-anchor="middle">📤 누출 ③ : 수입 (M)</text>
-    <text x="75" y="35" font-size="10" font-weight="600" fill="#e11d48" text-anchor="middle">외국산 구매로 해외 유출</text>
+  <!-- [SECTOR 3] 해외 부문 -->
+  <g transform="translate(644, 176)">
+    <path d="M 75 -12 L 75 52" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr-leak)" />
+    <rect x="0" y="4" width="148" height="38" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+    <text x="74" y="20" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">↓ 누출 ③ : 수입 (M)</text>
+    <text x="74" y="35" font-size="10" fill="#64748b" text-anchor="middle">외국산 구매로 해외 유출</text>
 
-    <!-- Upward Injection Arrow (X) -->
-    <path d="M 195 58 L 195 -14" fill="none" stroke="#059669" stroke-width="3.5" marker-end="url(#arr-inj)" />
-    <rect x="156" y="4" width="150" height="38" rx="8" fill="url(#inj-grad)" stroke="#34d399" stroke-width="1.5" filter="url(#shadow-sm)" />
-    <text x="231" y="20" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">📥 주입 ③ : 수출 (X)</text>
-    <text x="231" y="35" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">외국인의 국산품 구매</text>
+    <path d="M 231 56 L 231 -12" fill="none" stroke="#1d4ed8" stroke-width="2.4" marker-end="url(#arr-inj)" />
+    <rect x="156" y="4" width="148" height="38" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="230" y="20" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">↑ 주입 ③ : 수출 (X)</text>
+    <text x="230" y="35" font-size="10" fill="#334155" text-anchor="middle">외국인의 국산품 구매</text>
 
-    <!-- Sector Box: 해외 부문 -->
-    <rect x="15" y="58" width="260" height="54" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.8" filter="url(#shadow-card)" />
-    <rect x="15" y="58" width="260" height="22" rx="10" fill="#334155" />
-    <rect x="15" y="70" width="260" height="10" fill="#334155" />
-    <text x="145" y="74" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🌐 해외 부문 (대외 교역)</text>
-    <text x="145" y="99" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">순수출(NX) = (X - M) [무역수지]</text>
+    <rect x="15" y="58" width="260" height="52" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4" />
+    <path d="M 15 66 Q 15 58 23 58 L 267 58 Q 275 58 275 66 L 275 80 L 15 80 Z" fill="#f1f5f9" />
+    <line x1="15" y1="80" x2="275" y2="80" stroke="#cbd5e1" stroke-width="1" />
+    <text x="145" y="73" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">해외 부문 (대외 교역)</text>
+    <text x="145" y="99" font-size="10.5" font-weight="600" fill="#475569" text-anchor="middle">순수출(NX) = (X - M) [무역수지]</text>
   </g>
 
+  <!-- ==================== PART 2: EQUILIBRIUM SCALE ==================== -->
+  <g transform="translate(36, 306)">
+    <rect x="0" y="0" width="888" height="114" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <path d="M 0 10 Q 0 0 10 0 L 878 0 Q 888 0 888 10 L 888 30 L 0 30 Z" fill="#f8fafc" />
+    <line x1="0" y1="30" x2="888" y2="30" stroke="#e2e8f0" stroke-width="1" />
+    <text x="444" y="20" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">거시경제 균형 대원칙 : 총누출(S + T + M) = 총주입(I + G + X)</text>
 
-  <!-- ==================== PART 2: EQUILIBRIUM SCALE & FORMULA DERIVATION ==================== -->
-
-  <!-- Left: 누출 = 주입 균형 카드 -->
-  <g transform="translate(36, 308)" filter="url(#shadow-card)">
-    <rect x="0" y="0" width="888" height="114" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8" />
-    <rect x="0" y="0" width="888" height="30" rx="12" fill="#1e293b" />
-    <rect x="0" y="18" width="888" height="12" fill="#1e293b" />
-    <text x="444" y="20" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">⚖️ 거시경제 균형 대원칙 : 총누출(S+T+M) = 총주입(I+G+X)</text>
-
-    <!-- Leakage Box -->
     <g transform="translate(20, 40)">
-      <rect x="0" y="0" width="388" height="62" rx="10" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8" />
-      <text x="194" y="22" font-size="12.5" font-weight="800" fill="#be123c" text-anchor="middle">📤 총누출 (소득 순환에서 빠져나가는 부분)</text>
-      <text x="194" y="48" font-size="18" font-weight="900" fill="#9f1239" text-anchor="middle">S + T + M <tspan font-size="12.5" font-weight="700" fill="#e11d48">(저축 + 조세 + 수입)</tspan></text>
+      <rect x="0" y="0" width="388" height="62" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" />
+      <text x="194" y="22" font-size="12" font-weight="800" fill="#334155" text-anchor="middle">총누출 (소득 순환에서 빠져나가는 부분)</text>
+      <text x="194" y="48" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle">S + T + M <tspan font-size="12" font-weight="600" fill="#475569">(저축 + 조세 + 수입)</tspan></text>
     </g>
 
-    <!-- Center Equals Sign -->
-    <circle cx="444" cy="71" r="20" fill="#eff6ff" stroke="#2563eb" stroke-width="2.2" />
-    <text x="444" y="79" font-size="24" font-weight="900" fill="#1d4ed8" text-anchor="middle">=</text>
+    <circle cx="444" cy="71" r="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6" />
+    <text x="444" y="78" font-size="22" font-weight="800" fill="#1d4ed8" text-anchor="middle">=</text>
 
-    <!-- Injection Box -->
     <g transform="translate(480, 40)">
-      <rect x="0" y="0" width="388" height="62" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8" />
-      <text x="194" y="22" font-size="12.5" font-weight="800" fill="#047857" text-anchor="middle">📥 총주입 (소득 순환에 새로 유입되는 부분)</text>
-      <text x="194" y="48" font-size="18" font-weight="900" fill="#065f46" text-anchor="middle">I + G + X <tspan font-size="12.5" font-weight="700" fill="#059669">(투자 + 정부지출 + 수출)</tspan></text>
+      <rect x="0" y="0" width="388" height="62" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.4" />
+      <text x="194" y="22" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">총주입 (소득 순환에 새로 유입되는 부분)</text>
+      <text x="194" y="48" font-size="17" font-weight="800" fill="#1d4ed8" text-anchor="middle">I + G + X <tspan font-size="12" font-weight="600" fill="#334155">(투자 + 정부지출 + 수출)</tspan></text>
     </g>
   </g>
 
-  <!-- ==================== PART 3: 3-STEP ALGEBRAIC DERIVATION & SECTORAL BALANCES ==================== -->
-  <g transform="translate(36, 434)" filter="url(#shadow-sm)">
-    <rect x="0" y="0" width="888" height="120" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.8" />
-    <rect x="0" y="0" width="8" height="120" rx="4" fill="#2563eb" />
+  <!-- ==================== PART 3: 3-STEP ALGEBRAIC DERIVATION ==================== -->
+  <g transform="translate(36, 434)">
+    <rect x="0" y="0" width="888" height="120" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
 
-    <!-- Step 1 -->
-    <g transform="translate(22, 14)">
-      <rect x="0" y="0" width="268" height="92" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-      <text x="14" y="22" font-size="12" font-weight="800" fill="#1e40af">STEP 1. 처분국민소득 = 지출국민소득</text>
-      <line x1="14" y1="29" x2="254" y2="29" stroke="#e2e8f0" stroke-width="1" />
-      <text x="14" y="49" font-size="11.5" font-weight="700" fill="#334155">• 처분 측면 : <tspan fill="#1d4ed8">Y = C + S + T</tspan></text>
-      <text x="14" y="68" font-size="11.5" font-weight="700" fill="#334155">• 지출 측면 : <tspan fill="#047857">Y = C + I + G + X - M</tspan></text>
-      <text x="14" y="84" font-size="10" font-weight="600" fill="#64748b">➔ 두 식의 양변 일치 시 공통 소비(C) 소거</text>
+    <g transform="translate(18, 14)">
+      <rect x="0" y="0" width="270" height="92" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="14" y="22" font-size="11.5" font-weight="800" fill="#0f172a">STEP 1. 처분국민소득 = 지출국민소득</text>
+      <line x1="14" y1="29" x2="256" y2="29" stroke="#e2e8f0" stroke-width="1" />
+      <text x="14" y="49" font-size="11.5" font-weight="700" fill="#334155">• 처분 측면 : Y = C + S + T</text>
+      <text x="14" y="68" font-size="11.5" font-weight="700" fill="#334155">• 지출 측면 : Y = C + I + G + X - M</text>
+      <text x="14" y="84" font-size="10" fill="#64748b">→ 두 식의 양변 일치 시 공통 소비(C) 소거</text>
     </g>
 
-    <text x="304" y="65" font-size="20" font-weight="900" fill="#2563eb" text-anchor="middle">➔</text>
+    <text x="302" y="65" font-size="18" font-weight="800" fill="#475569" text-anchor="middle">→</text>
 
-    <!-- Step 2 -->
-    <g transform="translate(318, 14)">
-      <rect x="0" y="0" width="264" height="92" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-      <text x="14" y="22" font-size="12" font-weight="800" fill="#1e40af">STEP 2. 누출·주입 및 Y 포함 변형식</text>
-      <line x1="14" y1="29" x2="250" y2="29" stroke="#bfdbfe" stroke-width="1" />
-      <text x="14" y="49" font-size="12" font-weight="800" fill="#0f172a">• 기본형 : <tspan fill="#be123c">S + T + M</tspan> = <tspan fill="#047857">I + G + X</tspan></text>
-      <text x="14" y="68" font-size="11.5" font-weight="800" fill="#1e3a8a">• Y 대입형 (S+T = Y-C 대입) :</text>
-      <text x="22" y="84" font-size="12" font-weight="900" fill="#1d4ed8">(Y - C) + M = I + G + X</text>
+    <g transform="translate(316, 14)">
+      <rect x="0" y="0" width="264" height="92" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="14" y="22" font-size="11.5" font-weight="800" fill="#0f172a">STEP 2. 누출·주입 및 Y 포함 변형식</text>
+      <line x1="14" y1="29" x2="250" y2="29" stroke="#e2e8f0" stroke-width="1" />
+      <text x="14" y="49" font-size="11.5" font-weight="700" fill="#334155">• 기본형 : S + T + M = I + G + X</text>
+      <text x="14" y="68" font-size="11" font-weight="700" fill="#475569">• Y 대입형 (S+T = Y-C 대입) :</text>
+      <text x="22" y="84" font-size="12" font-weight="800" fill="#1d4ed8">(Y - C) + M = I + G + X</text>
     </g>
 
-    <text x="596" y="65" font-size="20" font-weight="900" fill="#2563eb" text-anchor="middle">➔</text>
+    <text x="594" y="65" font-size="18" font-weight="800" fill="#475569" text-anchor="middle">→</text>
 
-    <!-- Step 3: 쌍둥이 적자 항등식 (임용 빈출) -->
-    <g transform="translate(610, 14)">
-      <rect x="0" y="0" width="262" height="92" rx="8" fill="#fefce8" stroke="#fde047" stroke-width="1.5" />
-      <text x="14" y="22" font-size="12" font-weight="800" fill="#854d0e">STEP 3. 3대 부문별 수지 항등식 (빈출)</text>
-      <line x1="14" y1="29" x2="248" y2="29" stroke="#fef08a" stroke-width="1" />
-      <text x="131" y="51" font-size="13" font-weight="900" fill="#713f12" text-anchor="middle">(S - I) + (T - G) = (X - M)</text>
-      <text x="131" y="69" font-size="10.5" font-weight="700" fill="#9a3412" text-anchor="middle">[민간저축초과] + [재정수지] = [무역수지]</text>
-      <text x="131" y="84" font-size="10" font-weight="600" fill="#a16207" text-anchor="middle">* S=I일 때 재정적자(T&lt;G) ➔ 무역적자(쌍둥이 적자)</text>
+    <g transform="translate(608, 14)">
+      <rect x="0" y="0" width="262" height="92" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+      <text x="14" y="22" font-size="11.5" font-weight="800" fill="#1d4ed8">STEP 3. 3대 부문별 수지 항등식 (빈출)</text>
+      <line x1="14" y1="29" x2="248" y2="29" stroke="#bfdbfe" stroke-width="1" />
+      <text x="131" y="51" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">(S - I) + (T - G) = (X - M)</text>
+      <text x="131" y="69" font-size="10.5" font-weight="700" fill="#334155" text-anchor="middle">[민간저축초과] + [재정수지] = [무역수지]</text>
+      <text x="131" y="84" font-size="10" font-weight="600" fill="#475569" text-anchor="middle">* S=I일 때 재정적자(T&lt;G) → 무역적자(쌍둥이 적자)</text>
     </g>
   </g>
 </svg>

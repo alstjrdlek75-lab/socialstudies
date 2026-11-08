@@ -1,144 +1,130 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 570" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
-    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
     </marker>
-    <marker id="arr-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7e22ce" />
-    </marker>
-    <marker id="arr-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#15803d" />
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569" />
     </marker>
     <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1d4ed8" />
     </marker>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08" />
-    </filter>
   </defs>
 
   <!-- Header -->
-  <rect x="0" y="0" width="980" height="52" fill="#f8fafc" />
-  <text x="490" y="34" font-size="21" font-weight="800" text-anchor="middle" fill="#0f172a">가격효과의 분해: 대체효과와 소득효과 (힉스 분해 · 정상재 기준)</text>
-  <line x1="0" y1="52" x2="980" y2="52" stroke="#e2e8f0" stroke-width="1.5" />
+  <rect x="0" y="0" width="980" height="50" fill="#f8fafc" />
+  <text x="490" y="32" font-size="18.5" font-weight="800" text-anchor="middle" fill="#0f172a">가격효과의 분해: 대체효과와 소득효과 (힉스 분해 · 정상재 기준)</text>
+  <line x1="0" y1="50" x2="980" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Subtitle Badge -->
-  <rect x="90" y="62" width="800" height="32" rx="16" fill="#fef3c7" stroke="#facc15" stroke-width="1.2" />
-  <text x="490" y="83" font-size="14" font-weight="800" text-anchor="middle" fill="#854d0e">
-    핵심 공식 : 총 가격효과(A ➔ C) = 대체효과(A ➔ B, 동일 효용 하 상대가격 변화) + 소득효과(B ➔ C, 실질소득 증가)
+  <!-- Subtitle Strip -->
+  <rect x="95" y="60" width="790" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="490" y="78" font-size="12.5" font-weight="700" text-anchor="middle" fill="#334155">
+    핵심 공식 : 총 가격효과(A → C) = 대체효과(A → B, 동일 효용 하 상대가격 변화) + 소득효과(B → C, 실질소득 증가)
   </text>
 
-  <!-- Summary Card (Top-Right, Enlarged & High Contrast) -->
-  <g transform="translate(620, 104)" filter="url(#shadow)">
-    <rect x="0" y="0" width="336" height="212" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-    <rect x="0" y="0" width="336" height="36" rx="12" fill="#e2e8f0" />
-    <path d="M 0 24 L 0 36 L 336 36 L 336 24 z" fill="#e2e8f0" />
-    <text x="16" y="24" font-size="15" font-weight="800" fill="#0f172a">📊 힉스 가격효과 분해 핵심 정리</text>
+  <!-- Summary Card (Top-Right) -->
+  <g transform="translate(620, 102)">
+    <rect x="0" y="0" width="336" height="206" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <path d="M 0 10 Q 0 0 10 0 L 326 0 Q 336 0 336 10 L 336 34 L 0 34 Z" fill="#f8fafc" />
+    <line x1="0" y1="34" x2="336" y2="34" stroke="#e2e8f0" stroke-width="1" />
+    <text x="16" y="22" font-size="13.5" font-weight="800" fill="#0f172a">힉스 가격효과 분해 핵심 정리</text>
 
-    <text x="16" y="60" font-size="14" font-weight="800" fill="#7e22ce">① 대체효과 (A ➔ B : X₀ ➔ X₁)</text>
-    <text x="24" y="81" font-size="12.5" font-weight="600" fill="#334155">• 초기 효용(U₀) 유지하며 상대가격 하락 반영 ➔ 소비 증가(+)</text>
+    <text x="16" y="56" font-size="12.5" font-weight="800" fill="#1e293b">① 대체효과 (A → B : X₀ → X₁)</text>
+    <text x="24" y="75" font-size="11.5" font-weight="500" fill="#475569">• 초기 효용(U₀) 유지, 상대가격 하락 반영 → 소비 증가(+)</text>
 
-    <text x="16" y="109" font-size="14" font-weight="800" fill="#15803d">② 소득효과 (B ➔ C : X₁ ➔ X₂)</text>
-    <text x="24" y="130" font-size="12.5" font-weight="600" fill="#334155">• 실질구매력 증가로 예산선 평행이동 ➔ 정상재 소비 증가(+)</text>
+    <text x="16" y="102" font-size="12.5" font-weight="800" fill="#1e293b">② 소득효과 (B → C : X₁ → X₂)</text>
+    <text x="24" y="121" font-size="11.5" font-weight="500" fill="#475569">• 실질구매력 증가로 예산선 평행이동 → 정상재 소비 증가(+)</text>
 
-    <line x1="14" y1="144" x2="322" y2="144" stroke="#cbd5e1" stroke-width="1.2" />
+    <line x1="14" y1="136" x2="322" y2="136" stroke="#e2e8f0" stroke-width="1" />
 
-    <text x="16" y="168" font-size="14" font-weight="800" fill="#1d4ed8">③ 총 가격효과 (A ➔ C : X₀ ➔ X₂)</text>
-    <text x="24" y="189" font-size="12.5" font-weight="700" fill="#1e293b">• 대체효과(+) + 소득효과(+) ➔ X재 소비량 대폭 증가</text>
-    <text x="24" y="205" font-size="12" font-weight="700" fill="#dc2626">※ 정상재는 두 효과가 같은 방향이므로 수요법칙(우하향) 성립</text>
+    <text x="16" y="158" font-size="12.5" font-weight="800" fill="#1d4ed8">③ 총 가격효과 (A → C : X₀ → X₂)</text>
+    <text x="24" y="177" font-size="11.5" font-weight="700" fill="#1e293b">• 대체효과(+) + 소득효과(+) → X재 소비량 증가</text>
+    <text x="24" y="194" font-size="11" font-weight="600" fill="#475569">※ 정상재는 두 효과가 같은 방향이므로 수요법칙(우하향) 성립</text>
   </g>
 
   <!-- Axes: Origin (95, 445) -->
-  <line x1="95" y1="445" x2="835" y2="445" stroke="#1e293b" stroke-width="2.5" marker-end="url(#axis-arr)" />
-  <line x1="95" y1="445" x2="95" y2="102" stroke="#1e293b" stroke-width="2.5" marker-end="url(#axis-arr)" />
-  <text x="845" y="450" font-size="15" font-weight="800" fill="#0f172a">X재 소비량</text>
-  <text x="95" y="90" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">Y재 소비량</text>
-  <text x="78" y="462" font-size="13" font-weight="700" fill="#64748b">0</text>
+  <line x1="95" y1="445" x2="835" y2="445" stroke="#1e293b" stroke-width="2" marker-end="url(#axis-arr)" />
+  <line x1="95" y1="445" x2="95" y2="104" stroke="#1e293b" stroke-width="2" marker-end="url(#axis-arr)" />
+  <text x="845" y="450" font-size="13.5" font-weight="700" fill="#0f172a">X재 소비량</text>
+  <text x="95" y="91" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="middle">Y재 소비량</text>
+  <text x="80" y="461" font-size="12" font-weight="600" fill="#64748b">0</text>
 
-  <!-- Budget Lines: X price falls -->
-  <!-- 1. 초기 예산선: from (95, 145) to (375, 445) -->
-  <line x1="95" y1="145" x2="375" y2="445" stroke="#dc2626" stroke-width="3" />
-
-  <!-- 2. 가격 하락 후 예산선: from (95, 145) to (775, 445) -->
-  <line x1="95" y1="145" x2="775" y2="445" stroke="#2563eb" stroke-width="3" />
-
-  <!-- 3. 보상예산선 (가격 하락 후 예산선과 평행, 초기 무차별곡선 U₀에 B점에서 접함): from (95, 252) to (532, 445) -->
-  <line x1="95" y1="252" x2="532" y2="445" stroke="#9333ea" stroke-width="2.5" stroke-dasharray="7,5" />
+  <!-- Budget Lines -->
+  <!-- 1. 초기 예산선 -->
+  <line x1="95" y1="145" x2="375" y2="445" stroke="#334155" stroke-width="2.4" />
+  <!-- 2. 가격 하락 후 예산선 -->
+  <line x1="95" y1="145" x2="775" y2="445" stroke="#1d4ed8" stroke-width="2.6" />
+  <!-- 3. 보상예산선 (평행 보조선) -->
+  <line x1="95" y1="252" x2="532" y2="445" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4" />
 
   <!-- Indifference Curves -->
-  <!-- U₀ (초기 효용): A(205, 263)에서 초기 예산선에 접하고, B(335, 358)에서 보상예산선에 접함 -->
-  <path d="M 135 155 C 175 215, 190 245, 205 263 C 230 295, 285 345, 335 358 C 385 370, 445 380, 515 387" fill="none" stroke="#475569" stroke-width="3.5" />
-  <rect x="520" y="372" width="96" height="26" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" />
-  <text x="568" y="390" font-size="13" font-weight="800" fill="#334155" text-anchor="middle">U₀ (초기 효용)</text>
+  <!-- U0 (초기 효용) -->
+  <path d="M 135 155 C 175 215, 190 245, 205 263 C 230 295, 285 345, 335 358 C 385 370, 445 380, 515 387" fill="none" stroke="#475569" stroke-width="2.5" />
+  <rect x="522" y="374" width="96" height="24" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="570" y="390" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">U₀ (초기 효용)</text>
 
-  <!-- U₁ (가격 하락 후 효용): C(475, 313)에서 가격 하락 후 예산선에 접함 -->
-  <path d="M 235 155 C 325 235, 405 295, 475 313 C 545 330, 645 350, 745 360" fill="none" stroke="#16a34a" stroke-width="3.5" />
-  <rect x="752" y="346" width="112" height="26" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" />
-  <text x="808" y="364" font-size="13" font-weight="800" fill="#166534" text-anchor="middle">U₁ (상승한 효용)</text>
+  <!-- U1 (가격 하락 후 효용) -->
+  <path d="M 235 155 C 325 235, 405 295, 475 313 C 545 330, 645 350, 745 360" fill="none" stroke="#1d4ed8" stroke-width="2.8" />
+  <rect x="752" y="347" width="114" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="809" y="363" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="middle">U₁ (상승한 효용)</text>
 
-  <!-- Budget Line Callout Badges (Placed cleanly with leader lines so no line crosses text!) -->
-  <!-- 초기 예산선 배지 -->
-  <line x1="348" y1="416" x2="305" y2="416" stroke="#dc2626" stroke-width="1.5" />
-  <rect x="208" y="402" width="96" height="26" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2" />
-  <text x="256" y="420" font-size="13" font-weight="800" fill="#dc2626" text-anchor="middle">초기 예산선</text>
+  <!-- Budget Line Callout Badges -->
+  <line x1="348" y1="416" x2="306" y2="416" stroke="#475569" stroke-width="1.2" />
+  <rect x="210" y="404" width="94" height="24" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="257" y="420" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">초기 예산선</text>
 
-  <!-- 보상예산선 배지 -->
-  <rect x="485" y="410" width="96" height="26" rx="6" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.2" />
-  <text x="533" y="428" font-size="13" font-weight="800" fill="#7e22ce" text-anchor="middle">보상예산선</text>
+  <rect x="488" y="410" width="92" height="24" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="534" y="426" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle">보상예산선</text>
 
-  <!-- 가격 하락 후 예산선 배지 -->
-  <rect x="655" y="408" width="132" height="26" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-  <text x="721" y="426" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">가격 하락 후 예산선</text>
+  <rect x="658" y="408" width="128" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="722" y="424" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">가격 하락 후 예산선</text>
 
   <!-- Points A, B, C & Vertical Projection Lines -->
   <!-- Point A (205, 263) -->
-  <line x1="205" y1="263" x2="205" y2="445" stroke="#dc2626" stroke-dasharray="4,4" stroke-width="1.6" />
-  <circle cx="205" cy="263" r="6.5" fill="#dc2626" stroke="#ffffff" stroke-width="2" />
-  <g transform="translate(106, 212)" filter="url(#shadow)">
-    <rect x="0" y="0" width="98" height="28" rx="6" fill="#fef2f2" stroke="#f87171" stroke-width="1.3" />
-    <text x="49" y="19" font-size="13" font-weight="800" fill="#dc2626" text-anchor="middle">A (최초 균형점)</text>
+  <line x1="205" y1="263" x2="205" y2="445" stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="1.4" />
+  <circle cx="205" cy="263" r="5.5" fill="#ffffff" stroke="#334155" stroke-width="2.2" />
+  <g transform="translate(106, 214)">
+    <rect x="0" y="0" width="96" height="26" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <text x="48" y="17" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle">A (최초 균형점)</text>
   </g>
-  <line x1="168" y1="240" x2="199" y2="259" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="2,2" />
+  <line x1="168" y1="240" x2="199" y2="259" stroke="#64748b" stroke-width="1.2" stroke-dasharray="2,2" />
 
   <!-- Point B (335, 358) -->
-  <line x1="335" y1="358" x2="335" y2="445" stroke="#9333ea" stroke-dasharray="4,4" stroke-width="1.6" />
-  <circle cx="335" cy="358" r="6.5" fill="#9333ea" stroke="#ffffff" stroke-width="2" />
-  <g transform="translate(338, 316)" filter="url(#shadow)">
-    <rect x="0" y="0" width="98" height="28" rx="6" fill="#faf5ff" stroke="#c084fc" stroke-width="1.3" />
-    <text x="49" y="19" font-size="13" font-weight="800" fill="#7e22ce" text-anchor="middle">B (보상 균형점)</text>
+  <line x1="335" y1="358" x2="335" y2="445" stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="1.4" />
+  <circle cx="335" cy="358" r="5.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2.2" />
+  <g transform="translate(338, 318)">
+    <rect x="0" y="0" width="96" height="26" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <text x="48" y="17" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">B (보상 균형점)</text>
   </g>
 
   <!-- Point C (475, 313) -->
-  <line x1="475" y1="313" x2="475" y2="445" stroke="#16a34a" stroke-dasharray="4,4" stroke-width="1.6" />
-  <circle cx="475" cy="313" r="6.5" fill="#16a34a" stroke="#ffffff" stroke-width="2" />
-  <g transform="translate(482, 268)" filter="url(#shadow)">
-    <rect x="0" y="0" width="98" height="28" rx="6" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.3" />
-    <text x="49" y="19" font-size="13" font-weight="800" fill="#15803d" text-anchor="middle">C (최종 균형점)</text>
+  <line x1="475" y1="313" x2="475" y2="445" stroke="#64748b" stroke-dasharray="4,4" stroke-width="1.4" />
+  <circle cx="475" cy="313" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <g transform="translate(482, 270)">
+    <rect x="0" y="0" width="98" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+    <text x="49" y="17" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">C (최종 균형점)</text>
   </g>
 
-  <!-- X-Axis Quantity Badges (X₀, X₁, X₂ — No awkward English 'Xcomp') -->
-  <rect x="183" y="452" width="44" height="24" rx="5" fill="#fef2f2" stroke="#f87171" stroke-width="1.2" />
-  <text x="205" y="469" font-size="13.5" font-weight="800" fill="#dc2626" text-anchor="middle">X₀</text>
+  <!-- X-Axis Quantity Badges -->
+  <rect x="185" y="452" width="40" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="205" y="467" font-size="12.5" font-weight="700" fill="#1e293b" text-anchor="middle">X₀</text>
 
-  <rect x="313" y="452" width="44" height="24" rx="5" fill="#faf5ff" stroke="#c084fc" stroke-width="1.2" />
-  <text x="335" y="469" font-size="13.5" font-weight="800" fill="#7e22ce" text-anchor="middle">X₁</text>
+  <rect x="315" y="452" width="40" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="335" y="467" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">X₁</text>
 
-  <rect x="453" y="452" width="44" height="24" rx="5" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.2" />
-  <text x="475" y="469" font-size="13.5" font-weight="800" fill="#15803d" text-anchor="middle">X₂</text>
+  <rect x="455" y="452" width="40" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+  <text x="475" y="467" font-size="12.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">X₂</text>
 
-  <!-- Effect Arrows on Bottom (Enlarged & Crisp) -->
-  <!-- 1. 대체효과: 208 to 330 -->
-  <line x1="208" y1="498" x2="330" y2="498" stroke="#7e22ce" stroke-width="3" marker-end="url(#arr-purple)" />
-  <rect x="223" y="484" width="92" height="26" rx="6" fill="#ffffff" stroke="#c084fc" stroke-width="1.4" />
-  <text x="269" y="502" font-size="13" font-weight="800" fill="#7e22ce" text-anchor="middle">대체효과 (+)</text>
+  <!-- Effect Arrows on Bottom -->
+  <line x1="208" y1="496" x2="330" y2="496" stroke="#475569" stroke-width="2.2" marker-end="url(#arr-slate)" />
+  <rect x="225" y="484" width="88" height="24" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="269" y="500" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">대체효과 (+)</text>
 
-  <!-- 2. 소득효과: 340 to 470 -->
-  <line x1="340" y1="498" x2="470" y2="498" stroke="#15803d" stroke-width="3" marker-end="url(#arr-green)" />
-  <rect x="359" y="484" width="92" height="26" rx="6" fill="#ffffff" stroke="#4ade80" stroke-width="1.4" />
-  <text x="405" y="502" font-size="13" font-weight="800" fill="#15803d" text-anchor="middle">소득효과 (+)</text>
+  <line x1="340" y1="496" x2="470" y2="496" stroke="#475569" stroke-width="2.2" marker-end="url(#arr-slate)" />
+  <rect x="361" y="484" width="88" height="24" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="405" y="500" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">소득효과 (+)</text>
 
-  <!-- 3. 총 가격효과: 208 to 470 -->
-  <line x1="208" y1="538" x2="470" y2="538" stroke="#1d4ed8" stroke-width="3.5" marker-end="url(#arr-blue)" />
-  <rect x="255" y="524" width="170" height="28" rx="6" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5" />
-  <text x="340" y="543" font-size="13.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">총 가격효과 (소비량 증가)</text>
+  <line x1="208" y1="536" x2="470" y2="536" stroke="#1d4ed8" stroke-width="2.8" marker-end="url(#arr-blue)" />
+  <rect x="255" y="523" width="170" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+  <text x="340" y="540" font-size="12.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">총 가격효과 (소비량 증가)</text>
 </svg>

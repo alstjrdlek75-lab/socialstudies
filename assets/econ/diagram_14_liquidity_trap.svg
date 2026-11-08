@@ -1,53 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
     </marker>
   </defs>
 
   <!-- Header -->
   <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">화폐시장 균형과 케인즈의 유동성 함정</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">화폐시장 균형과 케인즈의 유동성 함정</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 이자율이 극단적 최저치(r_min)에 도달하면 화폐수요의 이자율 탄력성이 무한대(수평) ➔ 통화정책 무력화</text>
+  <!-- Subtitle Strip -->
+  <rect x="125" y="60" width="670" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">이자율이 최저치(r_min)에 도달하면 화폐수요의 이자율 탄력성이 무한대(수평) → 통화정책 무력화</text>
 
-  <!-- Axes: Origin (100, 460) -->
-  <line x1="100" y1="460" x2="800" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="810" y="465" font-size="12" font-weight="bold" fill="#475569">통화량 (M / P)</text>
-  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">이자율 (r)</text>
-  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+  <!-- Axes: Origin (145, 455) -->
+  <line x1="145" y1="455" x2="800" y2="455" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="145" y1="455" x2="145" y2="98" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <text x="810" y="460" font-size="12.5" font-weight="700" fill="#1e293b">통화량 (M / P)</text>
+  <text x="145" y="88" font-size="12.5" font-weight="700" fill="#1e293b" text-anchor="middle">이자율 (r)</text>
+  <text x="132" y="470" font-size="11.5" fill="#64748b">0</text>
 
-  <!-- Money Demand Curve (Md = L(Y, r)): downward sloping then horizontal at r_min = y=350 -->
-  <path d="M 140 140 Q 260 300, 450 350 L 780 350" fill="none" stroke="#2563eb" stroke-width="3.5" />
-  <text x="785" y="345" font-size="13" font-weight="bold" fill="#2563eb">Md (화폐수요: L)</text>
+  <!-- Minimum Interest Rate reference line (r_min = y=345) -->
+  <line x1="145" y1="345" x2="755" y2="345" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.2" />
+  <text x="135" y="349" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="end">r_min (최저금리)</text>
 
   <!-- Money Supply Lines (Vertical) -->
-  <!-- Ms0: x=260 (Normal region) -->
-  <line x1="260" y1="460" x2="260" y2="120" stroke="#16a34a" stroke-width="2.5" />
-  <text x="260" y="112" font-size="11.5" font-weight="bold" fill="#16a34a" text-anchor="middle">Ms0</text>
-  <circle cx="260" cy="300" r="5" fill="#16a34a" />
-  <line x1="100" y1="300" x2="260" y2="300" stroke="#475569" stroke-dasharray="2,2" />
-  <text x="70" y="304" font-size="11" fill="#475569">r0</text>
+  <!-- Ms0: x=290 (Normal region) -->
+  <line x1="290" y1="455" x2="290" y2="120" stroke="#334155" stroke-width="2.3" />
+  <text x="290" y="111" font-size="11.5" font-weight="700" fill="#1e293b" text-anchor="middle">Ms₀</text>
+  <line x1="145" y1="292" x2="290" y2="292" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.2" />
+  <text x="135" y="296" font-size="11.5" font-weight="700" fill="#334155" text-anchor="end">r₀</text>
 
-  <!-- Ms1: x=480 (Inside Trap) -->
-  <line x1="480" y1="460" x2="480" y2="120" stroke="#dc2626" stroke-width="2.5" />
-  <text x="480" y="112" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">Ms1 (유동성공급)</text>
-  <circle cx="480" cy="350" r="5" fill="#dc2626" />
+  <!-- Ms1: x=505 (Inside Trap) -->
+  <line x1="505" y1="455" x2="505" y2="120" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" />
+  <text x="505" y="111" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle">Ms₁ (유동성 공급)</text>
 
-  <!-- Ms2: x=650 (Further Expansion in Trap) -->
-  <line x1="650" y1="460" x2="650" y2="120" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,4" />
-  <text x="650" y="112" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">Ms2 (추가공급)</text>
-  <circle cx="650" cy="350" r="5" fill="#dc2626" />
+  <!-- Ms2: x=665 (Further Expansion in Trap) -->
+  <line x1="665" y1="455" x2="665" y2="120" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" />
+  <text x="665" y="111" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle">Ms₂ (추가 공급)</text>
 
-  <!-- Minimum Interest Rate line (r_min = 350) -->
-  <line x1="100" y1="350" x2="780" y2="350" stroke="#e11d48" stroke-dasharray="3,3" stroke-width="1.2" />
-  <text x="40" y="355" font-size="11.5" font-weight="bold" fill="#e11d48">r_min (최저금리)</text>
+  <!-- Money Demand Curve Md = L(Y, r): passes through (290, 292), flattens at (460, 345) to (755, 345) -->
+  <path d="M 185 140 Q 275 305, 460 345 L 755 345" fill="none" stroke="#1d4ed8" stroke-width="3" />
+  <text x="763" y="349" font-size="12.5" font-weight="800" fill="#1d4ed8">Md (화폐수요)</text>
 
-  <!-- Shaded Trap Zone: x=450 to 780, y=320 to 460 -->
-  <rect x="450" y="335" width="330" height="30" rx="4" fill="#fee2e2" fill-opacity="0.8" />
-  <text x="615" y="355" font-size="12" font-weight="bold" fill="#b91c1c" text-anchor="middle">유동성 함정 구간 (통화정책 무력화: ΔM 공급해도 r 불변)</text>
+  <!-- Equilibrium Dots cleanly visible ON the curve -->
+  <circle cx="290" cy="292" r="5" fill="#ffffff" stroke="#334155" stroke-width="2" />
+  <circle cx="505" cy="345" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <circle cx="665" cy="345" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+
+  <!-- Liquidity Trap Callout Banner placed cleanly BELOW y=345 so it never hides the curve -->
+  <rect x="455" y="366" width="310" height="32" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
+  <text x="610" y="386" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">유동성 함정 구간 (통화량 증가에도 이자율 r 불변)</text>
 </svg>

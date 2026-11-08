@@ -1,71 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
     </marker>
+    <pattern id="dwl-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#e2e8f0" fill-opacity="0.6" />
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#64748b" stroke-width="1.4" />
+    </pattern>
   </defs>
 
   <!-- Header -->
   <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="33" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">완전경쟁 vs 독점시장: 균형 비교와 자원배분의 비효율성 (DWL)</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">완전경쟁 vs 독점시장: 균형 비교와 자원배분의 비효율성 (DWL)</text>
+  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
 
-  <!-- Subtitle Badge -->
-  <rect x="150" y="62" width="620" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="460" y="78" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">• 독점 균형(MR = MC): 완전경쟁 대비 생산량 감소(Qm &lt; Qc), 가격 상승(Pm &gt; Pc) ➔ 사중손실(DWL) 발생</text>
+  <!-- Subtitle Strip -->
+  <rect x="130" y="60" width="660" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">독점 균형(MR = MC): 완전경쟁 대비 생산량 감소(Qm &lt; Qc), 가격 상승(Pm &gt; Pc) → 사중손실(DWL) 발생</text>
 
-  <!-- Axes: Origin (100, 460) -->
-  <line x1="100" y1="460" x2="800" y2="460" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="100" y1="460" x2="100" y2="95" stroke="#475569" stroke-width="2" marker-end="url(#arr)" />
-  <text x="810" y="465" font-size="12" font-weight="bold" fill="#475569">수량 (Q)</text>
-  <text x="100" y="88" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">가격, 비용 (P, C)</text>
-  <text x="86" y="475" font-size="11" fill="#94a3b8">0</text>
+  <!-- Shaded Regions (Origin at x=140, y=455) -->
+  <!-- Demand: y = 0.5*(x-140) + 150 => at x=310, y=235; at x=480, y=320 -->
+  <!-- Consumer Surplus under Monopoly: (140, 150) -> (310, 235) -> (140, 235) -->
+  <polygon points="140,150 310,235 140,235" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" stroke-dasharray="3,2" />
+  <text x="192" y="212" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">소비자잉여</text>
 
-  <!-- Demand D: y = 0.5*x + 100 -->
-  <!-- at x=100: y=150; at x=660: y=430 -->
-  <line x1="100" y1="150" x2="660" y2="430" stroke="#2563eb" stroke-width="3" />
-  <text x="670" y="435" font-size="13" font-weight="bold" fill="#2563eb">D = AR (수요곡선)</text>
+  <!-- Monopoly Profit: x=140..310, y=235..320 -->
+  <rect x="140" y="235" width="170" height="85" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2" />
+  <text x="225" y="282" font-size="11.5" font-weight="700" fill="#1e293b" text-anchor="middle">독점 초과이윤</text>
 
-  <!-- Marginal Revenue MR (Twice slope): y = 1.0*x + 50 -->
-  <!-- at x=100: y=150; at x=380: y=430 -->
-  <line x1="100" y1="150" x2="380" y2="430" stroke="#dc2626" stroke-width="2.5" />
-  <text x="390" y="435" font-size="12.5" font-weight="bold" fill="#dc2626">MR (한계수입: 기울기 2배)</text>
+  <!-- Deadweight Loss (DWL) Triangle: (310, 235) -> (480, 320) -> (310, 320) -->
+  <polygon points="310,235 480,320 310,320" fill="url(#dwl-hatch)" stroke="#475569" stroke-width="1.6" />
+  <text x="362" y="298" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">DWL (후생손실)</text>
 
-  <!-- Marginal Cost MC = AC (Constant Cost Case for clarity): horizontal at y=320 -->
-  <line x1="100" y1="320" x2="720" y2="320" stroke="#16a34a" stroke-width="3" />
-  <text x="730" y="325" font-size="12.5" font-weight="bold" fill="#16a34a">MC = AC = Pc (완전경쟁 가격)</text>
+  <!-- Axes: Origin (140, 455) -->
+  <line x1="140" y1="455" x2="800" y2="455" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="140" y1="455" x2="140" y2="98" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
+  <text x="810" y="460" font-size="12.5" font-weight="700" fill="#1e293b">수량 (Q)</text>
+  <text x="140" y="88" font-size="12.5" font-weight="700" fill="#1e293b" text-anchor="middle">가격, 비용 (P, C)</text>
+  <text x="127" y="470" font-size="11.5" fill="#64748b">0</text>
 
-  <!-- Intersections: -->
-  <!-- Competitive Eq Ec: P = MC => y=320, 0.5*x + 100 = 320 => x_c = 440 -->
-  <!-- Monopoly Eq Em: MR = MC => y=320, 1.0*x + 50 = 320 => x_m = 270 -->
-  <!-- Monopoly Price Pm: on D at x_m=270 => y = 0.5*(270) + 100 = 235 -->
+  <!-- Demand D: (140, 150) to (680, 420) -->
+  <line x1="140" y1="150" x2="680" y2="420" stroke="#1d4ed8" stroke-width="2.8" />
+  <text x="690" y="425" font-size="12.5" font-weight="800" fill="#1d4ed8">D = AR (수요곡선)</text>
 
-  <!-- Monopoly Profit (Box between 100 to 270, y=235 to y=320) -->
-  <rect x="100" y="235" width="170" height="85" fill="#fef3c7" fill-opacity="0.85" stroke="#d97706" stroke-dasharray="2,2" />
-  <text x="185" y="282" font-size="12" font-weight="bold" fill="#b45309" text-anchor="middle">독점 초과이윤</text>
+  <!-- Marginal Revenue MR (Twice slope): (140, 150) to (410, 420); at x=310, y=320 -->
+  <line x1="140" y1="150" x2="410" y2="420" stroke="#64748b" stroke-width="2.4" stroke-dasharray="6,4" />
+  <text x="418" y="426" font-size="12" font-weight="700" fill="#475569">MR (한계수입: 기울기 2배)</text>
 
-  <!-- Deadweight Loss (DWL) Triangle: (270, 235) on D -> (440, 320) on D -> (270, 320) on MC -->
-  <polygon points="270,235 440,320 270,320" fill="#fecaca" stroke="#dc2626" stroke-width="1.8" />
-  <text x="310" y="295" font-size="12" font-weight="bold" fill="#b91c1c">DWL (후생손실)</text>
-
-  <!-- Consumer Surplus under Monopoly: (100, 150) -> (270, 235) -> (100, 235) -->
-  <polygon points="100,150 270,235 100,235" fill="#eff6ff" fill-opacity="0.8" stroke="#2563eb" stroke-dasharray="2,2" />
-  <text x="150" y="210" font-size="10.5" font-weight="bold" fill="#1d4ed8">소비자잉여</text>
+  <!-- Marginal Cost MC = AC (Constant Cost): horizontal at y=320 -->
+  <line x1="140" y1="320" x2="710" y2="320" stroke="#1e293b" stroke-width="2.8" />
+  <text x="718" y="325" font-size="12" font-weight="700" fill="#0f172a">MC = AC = Pc</text>
 
   <!-- Points and Projections -->
-  <!-- Monopoly Quantity Qm = 270 -->
-  <circle cx="270" cy="320" r="5" fill="#dc2626" />
-  <circle cx="270" cy="235" r="5" fill="#dc2626" />
-  <line x1="270" y1="235" x2="270" y2="460" stroke="#dc2626" stroke-dasharray="3,3" />
-  <text x="270" y="478" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">Qm (독점 생산량)</text>
+  <!-- Monopoly Quantity Qm = 310 -->
+  <line x1="310" y1="235" x2="310" y2="455" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.4" />
+  <line x1="140" y1="235" x2="310" y2="235" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1.4" />
+  <circle cx="310" cy="320" r="5" fill="#ffffff" stroke="#334155" stroke-width="2" />
+  <circle cx="310" cy="235" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="310" y="478" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Qm (독점 생산량)</text>
 
-  <!-- Competitive Quantity Qc = 440 -->
-  <circle cx="440" cy="320" r="5" fill="#16a34a" />
-  <line x1="440" y1="320" x2="440" y2="460" stroke="#16a34a" stroke-dasharray="3,3" />
-  <text x="440" y="478" font-size="11.5" font-weight="bold" fill="#16a34a" text-anchor="middle">Qc (완경 생산량)</text>
+  <!-- Competitive Quantity Qc = 480 -->
+  <line x1="480" y1="320" x2="480" y2="455" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.4" />
+  <circle cx="480" cy="320" r="5.5" fill="#1e293b" stroke="#ffffff" stroke-width="2" />
+  <text x="480" y="478" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">Qc (완경 생산량)</text>
 
-  <!-- Prices on Y-axis -->
-  <line x1="100" y1="235" x2="270" y2="235" stroke="#dc2626" stroke-dasharray="2,2" />
-  <text x="50" y="240" font-size="11.5" font-weight="bold" fill="#dc2626">Pm (독점가격)</text>
-  <text x="50" y="325" font-size="11.5" font-weight="bold" fill="#16a34a">Pc (완경가격)</text>
+  <!-- Prices on Y-axis (Properly right-aligned to x=130!) -->
+  <text x="130" y="239" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="end">Pm (독점가격)</text>
+  <text x="130" y="324" font-size="11.5" font-weight="700" fill="#1e293b" text-anchor="end">Pc (완경가격)</text>
 </svg>

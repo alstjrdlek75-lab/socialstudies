@@ -2199,7 +2199,7 @@
   </style>
   <script src="assets/fsrs.umd.js"></script>
   <!-- Lightweight Topic Index + Default Subject Data (Per-subject chunks lazy-loaded on demand) -->
-  <script src="data/topics-index.js?v=20261106_v39"></script>
+  <script src="data/topics-index.js?v=20261108_v40"></script>
   <script defer src="context-guides-data.js?v=20261106_v39"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -2986,17 +2986,17 @@
       <!-- Modal Header -->
       <div class="px-4 py-2.5 border-b border-slate-200 bg-slate-50 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-2.5 min-w-0">
-          <span class="material-symbols-outlined text-blue-600 text-[20px] shrink-0">monitoring</span>
+          <span class="material-symbols-outlined text-slate-500 text-[20px] shrink-0">monitoring</span>
           <h3 id="diagram-modal-title" class="font-bold text-sm md:text-base text-slate-900 truncate">
             도해 상세 보기
           </h3>
         </div>
-        <div class="flex items-center gap-2">
-          <button id="btn-diagram-zoom-toggle" class="p-1.5 rounded-lg text-slate-600 hover:text-blue-700 hover:bg-blue-50 transition-colors flex items-center gap-1 text-xs font-semibold cursor-pointer" type="button" title="확대/원래 크기 토글">
+        <div class="flex items-center gap-2 shrink-0">
+          <button id="btn-diagram-zoom-toggle" class="p-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 transition-colors flex items-center gap-1 text-xs font-semibold cursor-pointer" type="button" title="확대/원래 크기 토글">
             <span class="material-symbols-outlined text-[18px]">zoom_in</span>
             <span class="hidden sm:inline">확대</span>
           </button>
-          <button id="btn-diagram-open-newtab" class="p-1.5 rounded-lg text-slate-600 hover:text-blue-700 hover:bg-blue-50 transition-colors flex items-center gap-1 text-xs font-semibold cursor-pointer" type="button" title="새 탭에서 원본 열기">
+          <button id="btn-diagram-open-newtab" class="p-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 transition-colors flex items-center gap-1 text-xs font-semibold cursor-pointer" type="button" title="새 탭에서 원본 열기">
             <span class="material-symbols-outlined text-[18px]">open_in_new</span>
             <span class="hidden sm:inline">새 탭</span>
           </button>
@@ -3008,12 +3008,12 @@
       <!-- Modal Body (Image Container - A.2: img is mounted dynamically only when a valid src exists) -->
       <div id="diagram-modal-body" class="flex-1 overflow-auto p-2 sm:p-3 bg-slate-100/50 flex items-center justify-center min-h-[300px]"></div>
       <!-- Modal Footer -->
-      <div class="px-4 py-2 border-t border-slate-200 bg-slate-50 flex items-center justify-between text-xs text-slate-600 shrink-0 font-medium">
-        <span class="flex items-center gap-1">
-          <span class="material-symbols-outlined text-[16px] text-blue-600">touch_app</span>
-          <span>이미지를 클릭하거나 더블탭하면 확대/축소됩니다. (바깥 영역 클릭 또는 <kbd class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-800 font-mono text-[10px] font-bold">Esc</kbd> 닫기)</span>
+      <div class="px-4 py-2 border-t border-slate-200 bg-slate-50 flex items-center justify-between gap-3 text-xs text-slate-600 shrink-0 font-medium">
+        <span class="flex items-center gap-1.5 min-w-0">
+          <span class="material-symbols-outlined text-[16px] text-slate-500 shrink-0">touch_app</span>
+          <span>이미지를 클릭하거나 더블탭하면 확대/축소됩니다. <span class="hidden sm:inline">(바깥 영역 클릭 또는 <kbd class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-800 font-mono text-[10px] font-bold">Esc</kbd> 닫기)</span></span>
         </span>
-        <button id="btn-close-diagram-bottom" class="px-3.5 py-1 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold transition-all text-xs cursor-pointer" type="button">
+        <button id="btn-close-diagram-bottom" class="shrink-0 whitespace-nowrap px-3.5 py-1 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold transition-all text-xs cursor-pointer" type="button">
           닫기
         </button>
       </div>
@@ -3849,7 +3849,7 @@
 
         inflightChunkPromises[subject] = new Promise((resolve) => {
           const script = document.createElement('script');
-          script.src = chunkSrc + '?v=20261106_v39';
+          script.src = chunkSrc + '?v=20261108_v40';
           script.async = true;
           script.dataset.subjectChunk = subject;
           script.onload = () => {
@@ -8307,12 +8307,12 @@
       const DIAGRAM_SVG_SUMMARIES = {
         'diagram_01_ppf.svg': `
           <div class="font-extrabold text-slate-900 text-xs mb-1.5 flex items-center gap-1">
-            <span>💡 핵심 개념 한눈에 정리</span>
+            <span>핵심 개념 한눈에 정리</span>
           </div>
           <ul class="space-y-1 text-xs text-slate-700 leading-relaxed">
             <li><strong class="text-slate-900">1. 생산점의 위치별 의미</strong>: 곡선 상(A, B) 완전고용·효율적 / 내부(C) 비효율·실업 / 외부(D) 현재 기술·자원으로 달성 불가</li>
-            <li><strong class="text-rose-700">2. 기회비용 체증의 법칙</strong>: X재 추가 생산 시 포기해야 하는 Y재 양이 점증 (생산요소의 특화성 차이)</li>
-            <li><strong class="text-blue-800">3. 한계변환율(MRT<sub>XY</sub>)과 형태</strong>: 접선의 기울기 절대값 = ΔY/ΔX = MC<sub>X</sub>/MC<sub>Y</sub> (원점에 대해 오목)</li>
+            <li><strong class="text-slate-900">2. 기회비용 체증의 법칙</strong>: X재 추가 생산 시 포기해야 하는 Y재 양이 점증 (생산요소의 특화성 차이)</li>
+            <li><strong class="text-slate-900">3. 한계변환율(MRT<sub>XY</sub>)과 형태</strong>: 접선의 기울기 절댓값 = ΔY/ΔX = MC<sub>X</sub>/MC<sub>Y</sub> (원점에 대해 오목)</li>
           </ul>
         `
       };
@@ -8358,7 +8358,7 @@
           // Render text summary FIRST on mobile (<768px) if available
           if (summaryHtml) {
             const mobileSummaryEl = document.createElement('div');
-            mobileSummaryEl.className = 'mobile-diagram-summary-first md:hidden mb-2.5 p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-slate-700 leading-relaxed';
+            mobileSummaryEl.className = 'mobile-diagram-summary-first md:hidden mb-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed';
             mobileSummaryEl.innerHTML = summaryHtml;
             contentArea.insertBefore(mobileSummaryEl, contentArea.firstChild);
           }
@@ -8366,7 +8366,7 @@
           // Render collapsed diagram preview (thumbnail + "도해 보기" button) on <768px
           const mobileCollapseBtn = document.createElement('button');
           mobileCollapseBtn.type = 'button';
-          mobileCollapseBtn.className = 'mobile-diagram-collapse-wrap md:hidden w-full p-2.5 rounded-xl border border-blue-200 bg-blue-50/50 hover:bg-blue-50/90 active:scale-[0.99] transition-all flex items-center justify-between gap-3 text-left cursor-pointer shadow-2xs';
+          mobileCollapseBtn.className = 'mobile-diagram-collapse-wrap md:hidden w-full p-2.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-slate-100/80 active:scale-[0.99] transition-all flex items-center justify-between gap-3 text-left cursor-pointer shadow-2xs';
           mobileCollapseBtn.innerHTML = `
             <div class="flex items-center gap-2.5 min-w-0 flex-1">
               <div class="w-16 h-12 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
@@ -8377,7 +8377,7 @@
                 <div class="text-[11px] text-slate-500 mt-0.5">탭하면 확대 뷰어로 선명하게 볼 수 있습니다</div>
               </div>
             </div>
-            <span class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-extrabold flex items-center gap-1 shrink-0 shadow-2xs">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-white text-xs font-extrabold flex items-center gap-1 shrink-0 shadow-2xs">
               <span class="material-symbols-outlined text-[15px]">zoom_in</span>
               <span>도해 보기</span>
             </span>
@@ -13497,7 +13497,7 @@
           }
         });
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js?v=20261106_v39').then((reg) => {
+          navigator.serviceWorker.register('sw.js?v=20261108_v40').then((reg) => {
             if (reg && typeof reg.update === 'function') reg.update().catch(() => {});
           }).catch(() => {});
         });
