@@ -1,159 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 530" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="1230" height="630" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
     <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a" />
     </marker>
-    <marker id="blue-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1d4ed8" />
+    <marker id="blue-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d4ed8" />
     </marker>
-    <marker id="slate-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    <marker id="red-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#b91c1c" />
     </marker>
   </defs>
 
-  <!-- 1. Header Area -->
-  <rect x="0" y="0" width="980" height="48" fill="#f8fafc" />
-  <text x="490" y="30" font-size="17.5" font-weight="700" text-anchor="middle" fill="#0f172a">환율제도별 외환시장 조정 메커니즘과 삼원불가능성 (트릴레마)</text>
-  <line x1="0" y1="48" x2="980" y2="48" stroke="#e2e8f0" stroke-width="1.2" />
+  <line x1="405" y1="20" x2="405" y2="400" stroke="#e2e8f0" stroke-width="1.5" />
 
-  <!-- ==================== LEFT PANEL: 외환시장 수급과 환율제도별 반응 (X: 20 ~ 490) ==================== -->
-  <rect x="20" y="62" width="470" height="406" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-  <rect x="20" y="62" width="470" height="36" rx="10" fill="#f8fafc" />
-  <path d="M 20 86 L 20 98 L 490 98 L 490 86 Z" fill="#f8fafc" />
-  <line x1="20" y1="98" x2="490" y2="98" stroke="#e2e8f0" stroke-width="1" />
-  <text x="255" y="85" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="middle">① 외환시장 수급 그래프: 변동환율제 vs 고정환율제 개입</text>
+  <!-- ==================== LEFT PANEL: 환율제도별 외환시장 조정 ==================== -->
+  <text x="205" y="32" font-size="16.5" font-weight="800" fill="#0f172a" text-anchor="middle">환율제도별 자본유입(S₀ → S₁) 반응</text>
 
-  <!-- Axes: Origin (92, 395) -->
-  <line x1="92" y1="395" x2="465" y2="395" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
-  <line x1="92" y1="395" x2="92" y2="122" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
-  <text x="465" y="415" font-size="12" font-weight="700" fill="#334155" text-anchor="end">외환(달러) 거래량 (Q)</text>
-  <text x="92" y="113" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">환율 (e)</text>
+  <line x1="74" y1="355" x2="355" y2="355" stroke="#0f172a" stroke-width="2.3" marker-end="url(#axis-arr)" />
+  <line x1="74" y1="355" x2="74" y2="62" stroke="#0f172a" stroke-width="2.3" marker-end="url(#axis-arr)" />
+  <text x="362" y="360" font-size="14.5" font-weight="800" fill="#0f172a">외환 Q</text>
+  <text x="74" y="52" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="middle">환율 e</text>
 
-  <!-- Fixed Exchange Rate Line e0 (y = 235) -->
-  <line x1="92" y1="235" x2="450" y2="235" stroke="#475569" stroke-width="1.8" stroke-dasharray="5,4" />
-  <rect x="28" y="223" width="58" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-  <text x="57" y="239" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">e₀ (고정)</text>
+  <!-- Fixed Rate Line e0 (y = 195) & Appreciated Floating Rate e1 (y = 255) -->
+  <line x1="74" y1="195" x2="345" y2="195" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5,4" />
+  <line x1="74" y1="255" x2="255" y2="255" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="62" y="200" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="end">e₀</text>
+  <text x="62" y="260" font-size="14.5" font-weight="800" fill="#1d4ed8" text-anchor="end">e₁</text>
 
-  <!-- Lower Exchange Rate Line e1 (y = 300) -->
-  <line x1="92" y1="300" x2="311" y2="300" stroke="#1d4ed8" stroke-width="1.8" stroke-dasharray="4,4" />
-  <rect x="28" y="288" width="58" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1" />
-  <text x="57" y="304" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">e₁ (절상)</text>
+  <!-- Demand D: y = (x - 195) + 195 = x -> (110, 110) to (325, 325); A=(195,195), C=(255,255) -->
+  <line x1="110" y1="110" x2="325" y2="325" stroke="#0f172a" stroke-width="2.8" />
+  <text x="332" y="330" font-size="14.5" font-weight="800" fill="#0f172a">D</text>
 
-  <!-- Demand D: (145, 162) -> (233, 235) -> (311, 300) -> (395, 370) -->
-  <line x1="145" y1="162" x2="395" y2="370" stroke="#1e293b" stroke-width="2.6" />
-  <text x="402" y="374" font-size="12" font-weight="700" fill="#1e293b">D (외환수요)</text>
+  <!-- Supply S0: y = -(x - 195) + 195 = 390 - x -> (105, 285) to (280, 110) -->
+  <line x1="105" y1="285" x2="280" y2="110" stroke="#64748b" stroke-width="2.3" stroke-dasharray="6,4" />
+  <text x="286" y="108" font-size="14.5" font-weight="700" fill="#475569">S₀</text>
 
-  <!-- Supply S0: (113, 335) -> (233, 235) -> (317, 165) -->
-  <line x1="113" y1="335" x2="317" y2="165" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" />
-  <text x="323" y="162" font-size="12" font-weight="700" fill="#475569">S₀</text>
+  <!-- Supply S1 (Capital Inflow, shifted right by 120): y = 510 - x -> (200, 310) to (360, 150); B=(315, 195), C=(255, 255) -->
+  <line x1="200" y1="310" x2="360" y2="150" stroke="#1d4ed8" stroke-width="3" />
+  <text x="366" y="148" font-size="14.5" font-weight="800" fill="#1d4ed8">S₁</text>
 
-  <!-- Supply S1 (Capital Inflow): (269, 335) -> (311, 300) -> (389, 235) -> (445, 188) -->
-  <line x1="269" y1="335" x2="445" y2="188" stroke="#1d4ed8" stroke-width="2.8" />
-  <text x="430" y="177" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="middle">S₁ (자본유입)</text>
+  <!-- Excess Supply AB under Fixed Rate (at y=195, x=195..315) -->
+  <line x1="203" y1="181" x2="307" y2="181" stroke="#b91c1c" stroke-width="2.2" marker-start="url(#red-arr)" marker-end="url(#red-arr)" />
+  <text x="255" y="166" font-size="13.5" font-weight="800" fill="#b91c1c" text-anchor="middle" class="halo">고정환율: 외환 매입 (통화↑)</text>
 
-  <!-- Shift Arrow S0 -> S1 -->
-  <line x1="220" y1="270" x2="312" y2="270" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#blue-arr)" />
+  <!-- Points A, B, C -->
+  <circle cx="195" cy="195" r="5" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+  <text x="183" y="188" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="end" class="halo">A</text>
 
-  <!-- Bracket for Excess Supply AB at e0 (Fixed Exchange Rate Intervention) - callout cleanly in open top band -->
-  <line x1="241" y1="223" x2="381" y2="223" stroke="#334155" stroke-width="2" marker-start="url(#slate-arr)" marker-end="url(#slate-arr)" />
-  <line x1="305" y1="144" x2="305" y2="221" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,2" />
-  <g transform="translate(142, 118)">
-    <rect x="0" y="0" width="236" height="26" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-    <text x="118" y="17" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">고정환율제: 초과공급(AB) 외환 매입·통화↑</text>
-  </g>
+  <circle cx="315" cy="195" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.8" />
+  <text x="326" y="213" font-size="14.5" font-weight="800" fill="#b91c1c" class="halo">B</text>
 
-  <!-- Equilibrium Points -->
-  <!-- A (E0): (233, 235) -->
-  <circle cx="233" cy="235" r="5" fill="#ffffff" stroke="#334155" stroke-width="2" />
-  <text x="233" y="218" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">A (초기)</text>
+  <circle cx="255" cy="255" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="255" y="284" font-size="14" font-weight="800" fill="#1d4ed8" text-anchor="middle" class="halo">C (변동환율: e 하락)</text>
 
-  <!-- B (At e0 on S1): (389, 235) -->
-  <circle cx="389" cy="235" r="5" fill="#334155" stroke="#ffffff" stroke-width="1.8" />
-  <text x="401" y="252" font-size="12" font-weight="700" fill="#334155">B</text>
+  <!-- ==================== RIGHT PANEL: 삼원불가능성 (트릴레마) ==================== -->
+  <text x="615" y="32" font-size="16.5" font-weight="800" fill="#0f172a" text-anchor="middle">삼원불가능성 (트릴레마)</text>
 
-  <!-- C (Floating Equilibrium E1): (311, 300) - callout cleanly in open lower-left band -->
-  <circle cx="311" cy="300" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
-  <text x="322" y="315" font-size="12" font-weight="700" fill="#1d4ed8">C</text>
-  <line x1="286" y1="352" x2="308" y2="308" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="3,2" />
-  <g transform="translate(110, 352)">
-    <rect x="0" y="0" width="218" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1" />
-    <text x="109" y="17" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="middle">변동환율제(C): 환율 하락(e↓) → 순수출↓</text>
-  </g>
+  <!-- Triangle: Top (615, 118), Bottom-Left (485, 326), Bottom-Right (745, 326) -->
+  <polygon points="615,118 485,326 745,326" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round" />
+  <line x1="615" y1="118" x2="485" y2="326" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round" />
+  <line x1="615" y1="118" x2="745" y2="326" stroke="#0f172a" stroke-width="4" stroke-linecap="round" />
 
-  <!-- Bottom Explanation Box inside Left Panel -->
-  <rect x="34" y="425" width="442" height="30" rx="5" fill="#f8fafc" stroke="#e2e8f0" />
-  <text x="255" y="444" font-size="11.2" font-weight="600" fill="#334155" text-anchor="middle">
-    • <tspan fill="#1d4ed8" font-weight="700">변동환율제:</tspan> 환율 변동(e₀&#x2194;&#xFE0E;e₁)으로 순수출 조정  |  • <tspan fill="#0f172a" font-weight="700">고정환율제:</tspan> 외환 매입·매도로 통화량 변동
-  </text>
+  <!-- Center Rule -->
+  <text x="615" y="258" font-size="14.5" font-weight="800" fill="#b91c1c" text-anchor="middle">3가지 동시 달성 불가</text>
+  <text x="615" y="279" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">(2가지만 선택 가능)</text>
 
-  <!-- ==================== RIGHT PANEL: 삼원불가능성 (트릴레마) 도해 (X: 505 ~ 960) ==================== -->
-  <rect x="505" y="62" width="455" height="406" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-  <rect x="505" y="62" width="455" height="36" rx="10" fill="#f8fafc" />
-  <path d="M 505 86 L 505 98 L 960 98 L 960 86 Z" fill="#f8fafc" />
-  <line x1="505" y1="98" x2="960" y2="98" stroke="#e2e8f0" stroke-width="1" />
-  <text x="732" y="85" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="middle">② 개방경제의 삼원불가능성 (트릴레마)</text>
+  <!-- Left Edge Label: 변동환율제 -->
+  <text x="530" y="205" font-size="14.5" font-weight="800" fill="#1d4ed8" text-anchor="end" class="halo">변동환율제</text>
+  <text x="530" y="224" font-size="13" font-weight="700" fill="#334155" text-anchor="end" class="halo">통화정책 유효</text>
 
-  <!-- Triangle Vertices: Top (732, 160), Bottom-Left (612, 348), Bottom-Right (852, 348) -->
-  <polygon points="732,160 612,348 852,348" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.2" stroke-linejoin="round" />
-  <!-- Left Edge (Floating = Blue) & Right Edge (Fixed = Dark Slate) -->
-  <line x1="732" y1="160" x2="612" y2="348" stroke="#1d4ed8" stroke-width="3.5" />
-  <line x1="732" y1="160" x2="852" y2="348" stroke="#334155" stroke-width="3.5" />
+  <!-- Right Edge Label: 고정환율제 -->
+  <text x="700" y="205" font-size="14.5" font-weight="800" fill="#0f172a" class="halo">고정환율제</text>
+  <text x="700" y="224" font-size="13" font-weight="700" fill="#334155" class="halo">재정정책 유효</text>
 
-  <!-- Center Text inside Triangle -->
-  <text x="732" y="300" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle">3가지 동시 달성 불가</text>
-  <text x="732" y="318" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">(최대 2가지만 선택 가능)</text>
+  <!-- Vertex 1: Top -->
+  <rect x="525" y="68" width="180" height="44" rx="10" fill="#0f172a" />
+  <text x="615" y="96" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle">자유로운 자본 이동</text>
 
-  <!-- Vertex 1: Top (자유로운 자본 이동) -->
-  <g transform="translate(636, 114)">
-    <rect x="0" y="0" width="192" height="40" rx="6" fill="#0f172a" />
-    <text x="96" y="18" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">① 자유로운 자본 이동</text>
-    <text x="96" y="33" font-size="10.5" fill="#cbd5e1" text-anchor="middle">(완전자본이동: r = rf)</text>
-  </g>
+  <!-- Vertex 2: Bottom-Left -->
+  <rect x="425" y="334" width="166" height="44" rx="10" fill="#1d4ed8" />
+  <text x="508" y="362" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle">독립적 통화정책</text>
 
-  <!-- Vertex 2: Bottom-Left (독립적인 통화정책) -->
-  <g transform="translate(518, 353)">
-    <rect x="0" y="0" width="166" height="40" rx="6" fill="#1d4ed8" />
-    <text x="83" y="18" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">② 독립적인 통화정책</text>
-    <text x="83" y="33" font-size="10.5" fill="#dbeafe" text-anchor="middle">(독자적 금리·통화량 조절)</text>
-  </g>
-
-  <!-- Vertex 3: Bottom-Right (환율의 안정성) -->
-  <g transform="translate(780, 353)">
-    <rect x="0" y="0" width="166" height="40" rx="6" fill="#334155" />
-    <text x="83" y="18" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">③ 환율의 안정성</text>
-    <text x="83" y="33" font-size="10.5" fill="#e2e8f0" text-anchor="middle">(고정환율제 유지)</text>
-  </g>
-
-  <!-- Left Side Callout: 변동환율제 (① + ②) - cleanly left of triangle edge -->
-  <line x1="648" y1="226" x2="684" y2="235" stroke="#93c5fd" stroke-width="1.3" stroke-dasharray="3,2" />
-  <g transform="translate(514, 194)">
-    <rect x="0" y="0" width="134" height="62" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <text x="67" y="19" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">[변동환율제 채택]</text>
-    <text x="67" y="37" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">• 통화정책: 유효 (O)</text>
-    <text x="67" y="53" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">• 재정정책: 무력 (X)</text>
-  </g>
-
-  <!-- Right Side Callout: 고정환율제 (① + ③) - cleanly right of triangle edge -->
-  <line x1="816" y1="226" x2="780" y2="235" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="3,2" />
-  <g transform="translate(816, 194)">
-    <rect x="0" y="0" width="134" height="62" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-    <text x="67" y="19" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">[고정환율제 채택]</text>
-    <text x="67" y="37" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="middle">• 재정정책: 유효 (O)</text>
-    <text x="67" y="53" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">• 통화정책: 무력 (X)</text>
-  </g>
-
-  <!-- Bottom Explanation Box inside Right Panel -->
-  <rect x="519" y="410" width="427" height="44" rx="5" fill="#f8fafc" stroke="#e2e8f0" />
-  <text x="732" y="428" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">
-    • 자본이동이 자유로울 때, <tspan fill="#1d4ed8" font-weight="700">변동환율제</tspan>는 환율 안정을 포기하고 <tspan fill="#1d4ed8" font-weight="700">독립적 통화정책</tspan> 확보
-  </text>
-  <text x="732" y="445" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">
-    • 반대로 <tspan fill="#0f172a" font-weight="700">고정환율제</tspan>는 환율 방어를 위해 통화량이 종속되므로 <tspan fill="#0f172a" font-weight="700">독립적 통화정책 포기</tspan>
-  </text>
-
-  <!-- 3. Bottom Summary Banner -->
-  <rect x="20" y="480" width="940" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-  <text x="490" y="503" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">
-    핵심 정리: 완전자본이동(r = rf) 하에서  [변동환율제 = 통화정책 유효 / 재정정책 무력(순수출 구축)]  vs  [고정환율제 = 재정정책 유효 / 통화정책 무력(외환시장 개입)]
-  </text>
+  <!-- Vertex 3: Bottom-Right -->
+  <rect x="639" y="334" width="166" height="44" rx="10" fill="#334155" />
+  <text x="722" y="362" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle">환율 안정 (고정)</text>
 </svg>

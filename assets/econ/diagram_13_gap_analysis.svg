@@ -1,139 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 600" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 410" width="1200" height="615" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
-    <marker id="arr-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 1 2 L 8 5 L 1 8 z" fill="#334155" />
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a" />
     </marker>
-    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 1 2 L 8 5 L 1 8 z" fill="#1d4ed8" />
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d4ed8" />
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#b91c1c" />
     </marker>
   </defs>
 
-  <!-- Title Header -->
-  <rect x="0" y="0" width="1020" height="48" fill="#f8fafc" />
-  <text x="510" y="31" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">소득-지출 분석(45°선 모형)과 인플레이션 갭 · 디플레이션 갭 · GDP 갭</text>
-  <line x1="0" y1="48" x2="1020" y2="48" stroke="#e2e8f0" stroke-width="1.2" />
+  <line x1="400" y1="20" x2="400" y2="392" stroke="#e2e8f0" stroke-width="1.5" />
 
-  <!-- Subtitle Strip -->
-  <rect x="120" y="56" width="780" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-  <text x="510" y="73" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">
-    균형 조건: Y = AE  ┃  완전고용(Yₑ) 기준 수직 거리 = 인플레이션·디플레이션 갭  ┃  수평 거리 = GDP 갭 [GDP 갭 = 디플레이션 갭 × 승수]
-  </text>
+  <!-- ==================== LEFT PANEL: 디플레이션 갭 (경기침체) ==================== -->
+  <g transform="translate(0, 0)">
+    <text x="200" y="32" font-size="16.5" font-weight="800" fill="#0f172a" text-anchor="middle">디플레이션 갭 (경기침체: Y₁ &lt; Yf)</text>
 
-  <!-- Subtle Grid Lines -->
-  <line x1="115" y1="304" x2="835" y2="304" stroke="#f1f5f9" stroke-width="1" />
-  <line x1="115" y1="219" x2="835" y2="219" stroke="#f1f5f9" stroke-width="1" />
+    <!-- Axes: Origin (64, 325) -->
+    <line x1="64" y1="325" x2="355" y2="325" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arr)" />
+    <line x1="64" y1="325" x2="64" y2="62" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arr)" />
+    <text x="363" y="330" font-size="14.5" font-weight="800" fill="#0f172a">Y</text>
+    <text x="64" y="52" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="middle">AE</text>
 
-  <!-- Axes: Origin (115, 430) -->
-  <line x1="115" y1="430" x2="865" y2="430" stroke="#334155" stroke-width="2" marker-end="url(#arr-slate)" />
-  <text x="875" y="435" font-size="13" font-weight="700" fill="#0f172a">국민소득, 총생산 (Y)</text>
-  <text x="98" y="445" font-size="12" font-weight="600" fill="#64748b">0</text>
+    <!-- 45-deg line: (64, 325) to (324, 65) [slope -1] -->
+    <line x1="64" y1="325" x2="324" y2="65" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" />
+    <text x="330" y="68" font-size="13.5" font-weight="700" fill="#475569">45°</text>
 
-  <line x1="115" y1="430" x2="115" y2="104" stroke="#334155" stroke-width="2" marker-end="url(#arr-slate)" />
-  <text x="115" y="93" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">총수요, 총지출 (YD, AE)</text>
+    <!-- AE1 (Recession): y = 265 - 0.5*(x-64) -> meets 45-deg [325 - (x-64)] at 0.5*(x-64)=60 -> x-64=120 -> E1=(184, 205) -->
+    <!-- At Yf = 264 (x-64=200): 45-deg y = 125, AE1 y = 165 -> Vertical Deflationary Gap = 40px! -->
+    <line x1="64" y1="265" x2="334" y2="130" stroke="#1d4ed8" stroke-width="3" />
+    <text x="340" y="134" font-size="14.5" font-weight="800" fill="#1d4ed8">AE</text>
 
-  <!-- 45-DEGREE REFERENCE RAY -->
-  <line x1="115" y1="430" x2="795" y2="124" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4" />
-  <g transform="translate(675, 96)">
-    <rect x="0" y="0" width="146" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <text x="73" y="16" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">45°선 (YD = Y, AE = Y)</text>
+    <!-- Projections -->
+    <line x1="184" y1="205" x2="184" y2="325" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,4" />
+    <line x1="264" y1="125" x2="264" y2="325" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+
+    <!-- Vertical Deflationary Gap at Yf = 264 (y=125..165) -->
+    <line x1="264" y1="125" x2="264" y2="165" stroke="#1d4ed8" stroke-width="4.5" />
+    <circle cx="264" cy="125" r="4.5" fill="#ffffff" stroke="#475569" stroke-width="2" />
+    <circle cx="264" cy="165" r="4.5" fill="#1d4ed8" />
+    <text x="252" y="149" font-size="14" font-weight="800" fill="#1d4ed8" text-anchor="end" class="halo">디플레이션 갭</text>
+
+    <circle cx="184" cy="205" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+    <text x="174" y="196" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="end" class="halo">E₁</text>
+
+    <text x="184" y="348" font-size="14.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Y₁</text>
+    <text x="264" y="348" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="middle">Yf</text>
+
+    <!-- Horizontal GDP Gap -->
+    <line x1="189" y1="368" x2="259" y2="368" stroke="#1d4ed8" stroke-width="2.2" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)" />
+    <text x="224" y="392" font-size="13.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">GDP 갭 (= 디플레 갭 × 승수)</text>
   </g>
 
-  <!-- 3 AGGREGATE DEMAND LINES -->
-  <!-- 1. Y2^D (상단: 과열) -->
-  <line x1="115" y1="282" x2="825" y2="122" stroke="#1e293b" stroke-width="2.4" />
-  <g transform="translate(834, 108)">
-    <rect x="0" y="0" width="138" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <text x="69" y="16" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Y₂ᴰ = a₂ + bY (과열)</text>
-  </g>
+  <!-- ==================== RIGHT PANEL: 인플레이션 갭 (경기과열) ==================== -->
+  <g transform="translate(400, 0)">
+    <text x="200" y="32" font-size="16.5" font-weight="800" fill="#0f172a" text-anchor="middle">인플레이션 갭 (경기과열: Y₂ &gt; Yf)</text>
 
-  <!-- 2. Y0^D (중앙: 완전고용 적정) -->
-  <line x1="115" y1="325" x2="825" y2="165" stroke="#1d4ed8" stroke-width="2.8" />
-  <g transform="translate(834, 152)">
-    <rect x="0" y="0" width="138" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
-    <text x="69" y="16" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Y₀ᴰ = a₀ + bY (적정)</text>
-  </g>
+    <!-- Axes: Origin (64, 325) -->
+    <line x1="64" y1="325" x2="355" y2="325" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arr)" />
+    <line x1="64" y1="325" x2="64" y2="62" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arr)" />
+    <text x="363" y="330" font-size="14.5" font-weight="800" fill="#0f172a">Y</text>
+    <text x="64" y="52" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="middle">AE</text>
 
-  <!-- 3. Y1^D (하단: 경기침체) -->
-  <line x1="115" y1="367" x2="825" y2="207" stroke="#64748b" stroke-width="2.3" stroke-dasharray="6,4" />
-  <g transform="translate(834, 196)">
-    <rect x="0" y="0" width="138" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <text x="69" y="16" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle">Y₁ᴰ = a₁ + bY (침체)</text>
-  </g>
+    <!-- 45-deg line: (64, 325) to (324, 65) -->
+    <line x1="64" y1="325" x2="324" y2="65" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" />
+    <text x="318" y="58" font-size="13.5" font-weight="700" fill="#475569" text-anchor="end">45°</text>
 
-  <!-- Y-Axis Intercept Labels -->
-  <text x="103" y="286" font-size="12" font-weight="700" fill="#0f172a" text-anchor="end">a₂</text>
-  <text x="103" y="329" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="end">a₀</text>
-  <text x="103" y="371" font-size="12" font-weight="700" fill="#475569" text-anchor="end">a₁</text>
+    <!-- AE2 (Overheating): y = 215 - 0.5*(x-64) -> meets 45-deg at 0.5*(x-64)=110 -> x-64=220 -> E2=(284, 105) -->
+    <!-- At Yf = 204 (x-64=140): 45-deg y = 185, AE2 y = 145 -> Vertical Inflationary Gap = 40px! -->
+    <line x1="64" y1="215" x2="334" y2="80" stroke="#b91c1c" stroke-width="3" />
+    <text x="342" y="85" font-size="14.5" font-weight="800" fill="#b91c1c">AE</text>
 
-  <!-- EQUILIBRIUM POINTS -->
-  <!-- E1: (395, 304) -->
-  <line x1="395" y1="304" x2="395" y2="430" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.3" />
-  <circle cx="395" cy="304" r="5" fill="#ffffff" stroke="#334155" stroke-width="2" />
-  <text x="383" y="295" font-size="12" font-weight="800" fill="#334155" text-anchor="end">E₁</text>
+    <!-- Projections -->
+    <line x1="204" y1="145" x2="204" y2="325" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+    <line x1="284" y1="105" x2="284" y2="325" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,4" />
 
-  <!-- E0: (585, 219) -->
-  <line x1="585" y1="140" x2="585" y2="430" stroke="#64748b" stroke-dasharray="4,3" stroke-width="1.4" />
-  <circle cx="585" cy="219" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
-  <text x="573" y="214" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="end">E₀</text>
+    <!-- Vertical Inflationary Gap at Yf = 204 (y=145..185) -->
+    <line x1="204" y1="145" x2="204" y2="185" stroke="#b91c1c" stroke-width="4.5" />
+    <circle cx="204" cy="145" r="4.5" fill="#b91c1c" />
+    <circle cx="204" cy="185" r="4.5" fill="#ffffff" stroke="#475569" stroke-width="2" />
+    <text x="192" y="170" font-size="14" font-weight="800" fill="#b91c1c" text-anchor="end" class="halo">인플레이션 갭</text>
 
-  <!-- E2: (775, 133) -->
-  <circle cx="775" cy="133" r="4.5" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="284" cy="105" r="5.5" fill="#b91c1c" stroke="#ffffff" stroke-width="2" />
+    <text x="295" y="122" font-size="14.5" font-weight="800" fill="#0f172a" class="halo">E₂</text>
 
-  <!-- X-Axis Point Badges -->
-  <g transform="translate(332, 438)">
-    <rect x="0" y="0" width="126" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <text x="63" y="15" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">Y₁ (실제 균형소득)</text>
-  </g>
+    <text x="204" y="348" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="middle">Yf</text>
+    <text x="284" y="348" font-size="14.5" font-weight="800" fill="#b91c1c" text-anchor="middle">Y₂</text>
 
-  <g transform="translate(518, 438)">
-    <rect x="0" y="0" width="134" height="22" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
-    <text x="67" y="15" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Yₑ (완전고용소득)</text>
-  </g>
-
-  <!-- GAPS VISUALIZATION -->
-  <!-- 1. 인플레이션 갭 (x=585, y=176..219) -->
-  <line x1="585" y1="176" x2="585" y2="219" stroke="#0f172a" stroke-width="3.2" />
-  <line x1="578" y1="176" x2="592" y2="176" stroke="#0f172a" stroke-width="1.8" />
-  <line x1="578" y1="219" x2="592" y2="219" stroke="#0f172a" stroke-width="1.8" />
-  <g transform="translate(602, 168)">
-    <rect x="0" y="0" width="212" height="42" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
-    <text x="10" y="16" font-size="12" font-weight="800" fill="#0f172a">▲ 인플레이션 갭 (초과수요)</text>
-    <text x="10" y="32" font-size="11" font-weight="600" fill="#475569">초과수요(a₂-a₀) → 물가상승 압력</text>
-  </g>
-
-  <!-- 2. 디플레이션 갭 (x=585, y=219..261) -->
-  <line x1="585" y1="219" x2="585" y2="261" stroke="#1d4ed8" stroke-width="3.2" />
-  <line x1="578" y1="261" x2="592" y2="261" stroke="#1d4ed8" stroke-width="1.8" />
-  <g transform="translate(602, 224)">
-    <rect x="0" y="0" width="212" height="42" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <text x="10" y="16" font-size="12" font-weight="800" fill="#1d4ed8">▼ 디플레이션 갭 (경기침체 갭)</text>
-    <text x="10" y="32" font-size="11" font-weight="600" fill="#334155">수요부족(a₀-a₁) → 불황·실업 발생</text>
-  </g>
-
-  <!-- 3. GDP 갭 (Horizontal between x=395 and x=585 at y=468) -->
-  <line x1="400" y1="468" x2="580" y2="468" stroke="#1d4ed8" stroke-width="2" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)" />
-  <line x1="395" y1="463" x2="395" y2="473" stroke="#1d4ed8" stroke-width="1.6" />
-  <line x1="585" y1="463" x2="585" y2="473" stroke="#1d4ed8" stroke-width="1.6" />
-  <g transform="translate(415, 475)">
-    <rect x="0" y="0" width="150" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-    <text x="75" y="15" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">&#x2194;&#xFE0E; GDP 갭 (Yₑ - Y₁)</text>
-  </g>
-
-  <!-- CORE TAKEAWAY CARDS -->
-  <g transform="translate(60, 508)">
-    <rect x="0" y="0" width="435" height="76" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <path d="M 0 8 Q 0 0 8 0 L 427 0 Q 435 0 435 8 L 435 24 L 0 24 Z" fill="#f8fafc" />
-    <line x1="0" y1="24" x2="435" y2="24" stroke="#e2e8f0" stroke-width="1" />
-    <text x="14" y="16" font-size="12" font-weight="800" fill="#0f172a">수직 갭(인플레이션·디플레이션 갭): 완전고용(Yₑ) 기준 측정</text>
-    <text x="14" y="43" font-size="11.5" fill="#334155">• <tspan font-weight="700" fill="#0f172a">인플레이션 갭</tspan>: 생산능력 초과 총수요 → 긴축정책(지출 삭감)</text>
-    <text x="14" y="62" font-size="11.5" fill="#334155">• <tspan font-weight="700" fill="#1d4ed8">디플레이션 갭</tspan>: 완전고용 미달 총수요 → 확장정책(지출 증액)</text>
-  </g>
-
-  <g transform="translate(515, 508)">
-    <rect x="0" y="0" width="445" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <path d="M 0 8 Q 0 0 8 0 L 437 0 Q 445 0 445 8 L 445 24 L 0 24 Z" fill="#dbeafe" />
-    <text x="14" y="16" font-size="12" font-weight="800" fill="#1d4ed8">수험 핵심 공식: GDP 갭과 디플레이션 갭의 승수 관계</text>
-    <text x="14" y="43" font-size="12" font-weight="800" fill="#0f172a">GDP 갭 (수평) = 디플레이션 갭 (수직) × 승수 [ 1 / (1 - b) ]</text>
-    <text x="14" y="62" font-size="11" font-weight="600" fill="#334155">→ 정부지출(ΔG)은 GDP 갭 전체가 아닌 디플레이션 갭만큼만 늘리면 해소</text>
+    <!-- Horizontal Overheating Gap -->
+    <line x1="209" y1="368" x2="279" y2="368" stroke="#b91c1c" stroke-width="2.2" marker-start="url(#arr-red)" marker-end="url(#arr-red)" />
+    <text x="244" y="392" font-size="13.5" font-weight="800" fill="#b91c1c" text-anchor="middle">초과 산출 (= 인플레 갭 × 승수)</text>
   </g>
 </svg>

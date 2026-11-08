@@ -1,123 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 420" width="990" height="630" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
-    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a" />
     </marker>
     <marker id="move-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1d4ed8" />
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#b91c1c" />
     </marker>
   </defs>
 
-  <!-- Title Header -->
-  <rect x="0" y="0" width="960" height="48" fill="#f8fafc" />
-  <line x1="0" y1="48" x2="960" y2="48" stroke="#e2e8f0" stroke-width="1.2" />
-  <text x="480" y="31" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">생산가능곡선 (PPF)과 기회비용 체증의 법칙</text>
+  <!-- Feasible Set Shading: Origin (100, 365), rx=390, ry=290 -->
+  <path d="M 100 75 A 390 290 0 0 1 490 365 L 100 365 Z" fill="#f8fafc" />
 
-  <!-- ==================== LEFT GRAPH AREA ==================== -->
-  <!-- Shaded Feasible Production Set: Origin (85, 455), rx=380, ry=320 -->
-  <path d="M 85 135 A 380 320 0 0 1 465 455 L 85 455 Z" fill="#f8fafc" />
-  <text x="175" y="422" font-size="12" font-weight="600" fill="#94a3b8">생산가능영역 (내부)</text>
+  <!-- Axes -->
+  <line x1="100" y1="365" x2="100" y2="34" stroke="#0f172a" stroke-width="2.4" marker-end="url(#axis-arr)" />
+  <line x1="100" y1="365" x2="555" y2="365" stroke="#0f172a" stroke-width="2.4" marker-end="url(#axis-arr)" />
 
-  <!-- Axes: Origin at (85, 455) -->
-  <line x1="85" y1="455" x2="85" y2="78" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
-  <line x1="85" y1="455" x2="505" y2="455" stroke="#334155" stroke-width="2" marker-end="url(#axis-arr)" />
+  <text x="86" y="28" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">Y재</text>
+  <text x="565" y="370" font-size="16" font-weight="800" fill="#0f172a">X재</text>
+  <text x="84" y="384" font-size="15" font-weight="700" fill="#475569">0</text>
 
-  <!-- Axis Labels -->
-  <text x="85" y="65" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">Y재 생산량 (자본재)</text>
-  <text x="513" y="459" font-size="13" font-weight="700" fill="#1e293b">X재 생산량 (소비재)</text>
-  <text x="72" y="471" font-size="12" font-weight="600" fill="#64748b">0</text>
+  <!-- Concave PPF Curve: (x-100)^2 / 390^2 + (365-y)^2 / 290^2 = 1 -->
+  <path d="M 100 75 A 390 290 0 0 1 490 365" fill="none" stroke="#1d4ed8" stroke-width="3.6" stroke-linecap="round" />
+  <text x="498" y="346" font-size="17" font-weight="800" fill="#1d4ed8">PPF</text>
 
-  <!-- PPF Curve (Concave to Origin) -->
-  <path d="M 85 135 A 380 320 0 0 1 465 455" fill="none" stroke="#1d4ed8" stroke-width="3.2" stroke-linecap="round" />
-  <rect x="441" y="466" width="48" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="465" y="481" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">PPF</text>
+  <!-- Point A: theta = 62 deg -> x = 100 + 390*cos(62)=283.1, y = 365 - 290*sin(62)=108.9; dy/dx = (290/390)*cot(62) = 0.395 -->
+  <line x1="210" y1="80" x2="356" y2="137.7" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4" />
+  <circle cx="283" cy="109" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="283" y="88" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle" class="halo">A (완만한 기울기)</text>
 
-  <!-- Point A (263, 172.5): Gentle tangent (slope = 0.448) -->
-  <line x1="195" y1="142" x2="331" y2="203" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5,4" />
-  <circle cx="263" cy="172.5" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
-  <text x="263" y="124" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">점 A</text>
-  <text x="263" y="140" font-size="11.5" font-weight="600" fill="#475569" text-anchor="middle">완만한 접선 기울기 (MRTxy 작음)</text>
+  <!-- Point B: theta = 26 deg -> x = 100 + 390*cos(26)=450.5, y = 365 - 290*sin(26)=237.9; dy/dx = (290/390)*cot(26) = 1.525 -->
+  <line x1="414" y1="182.2" x2="487" y2="293.6" stroke="#b91c1c" stroke-width="2.2" stroke-dasharray="6,4" />
+  <circle cx="450.5" cy="238" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="468" y="232" font-size="16" font-weight="800" fill="#b91c1c" class="halo">B (가파른 기울기)</text>
 
-  <!-- Point B (420.5, 304.8): Steep tangent (slope = 1.584) -->
-  <line x1="385" y1="248" x2="456" y2="361" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5,4" />
-  <circle cx="420.5" cy="304.8" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
-  <text x="438" y="285" font-size="13" font-weight="800" fill="#0f172a">점 B</text>
-  <text x="438" y="302" font-size="11.5" font-weight="600" fill="#475569">가파른 접선 기울기 (MRTxy 큼)</text>
+  <!-- Curved Arrow A -> B showing Increasing Opportunity Cost -->
+  <path d="M 316 128 Q 386 162 428 212" fill="none" stroke="#b91c1c" stroke-width="2.4" marker-end="url(#move-arr)" />
+  <text x="394" y="160" font-size="14" font-weight="800" fill="#b91c1c" class="halo">기회비용(MRT) 체증</text>
 
-  <!-- Curved Arrow along PPF from A toward B -->
-  <path d="M 300 194 Q 362 228 396 274" fill="none" stroke="#1d4ed8" stroke-width="2" marker-end="url(#move-arr)" />
-  <g transform="translate(268, 218)">
-    <rect x="0" y="0" width="176" height="24" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <text x="88" y="16" font-size="10.5" font-weight="700" fill="#1e293b" text-anchor="middle">X재 증산 → 기회비용(MRTxy) 체증</text>
-  </g>
+  <!-- Point C: Inside (Inefficient) -->
+  <circle cx="235" cy="255" r="6" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" />
+  <text x="250" y="260" font-size="15.5" font-weight="800" fill="#0f172a">C (비효율 · 유휴자원)</text>
 
-  <!-- Point C: Inside PPF (Inefficient - Hollow Marker) -->
-  <circle cx="205" cy="332" r="5.5" fill="#ffffff" stroke="#334155" stroke-width="2.2" />
-  <text x="219" y="330" font-size="12" font-weight="800" fill="#1e293b">점 C (비효율적 생산)</text>
-  <text x="219" y="346" font-size="11" font-weight="500" fill="#64748b">실업 및 유휴 자원 존재</text>
+  <!-- Point D: Outside (Unattainable) -->
+  <circle cx="435" cy="88" r="6" fill="#94a3b8" stroke="#475569" stroke-width="2" />
+  <text x="450" y="93" font-size="15.5" font-weight="700" fill="#475569">D (생산 불가능)</text>
 
-  <!-- Point D: Outside PPF (Unattainable - Muted Marker) -->
-  <circle cx="408" cy="134" r="5.5" fill="#cbd5e1" stroke="#64748b" stroke-width="1.8" />
-  <text x="422" y="132" font-size="12" font-weight="800" fill="#334155">점 D (생산 불가능)</text>
-  <text x="422" y="148" font-size="11" font-weight="500" fill="#64748b">현재 자원·기술 수준 초과</text>
-
-  <!-- ==================== RIGHT INFO PANEL ==================== -->
-  <g transform="translate(642, 66)">
-    <rect x="0" y="0" width="300" height="446" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <path d="M 0 10 Q 0 0 10 0 L 290 0 Q 300 0 300 10 L 300 40 L 0 40 Z" fill="#f8fafc" />
-    <line x1="0" y1="40" x2="300" y2="40" stroke="#e2e8f0" stroke-width="1" />
-    <text x="16" y="25" font-size="13.5" font-weight="800" fill="#0f172a">핵심 개념 한눈에 정리</text>
-
-    <!-- Section 1 -->
-    <g transform="translate(16, 56)">
-      <rect x="0" y="0" width="4" height="14" rx="2" fill="#1d4ed8" />
-      <text x="11" y="12" font-size="12" font-weight="800" fill="#0f172a">1. 생산점의 위치별 의미</text>
-
-      <g transform="translate(4, 25)">
-        <circle cx="5" cy="5" r="4.5" fill="#1d4ed8" />
-        <text x="16" y="9" font-size="11.5" font-weight="700" fill="#1e293b">곡선 상 (점 A, B)</text>
-        <text x="16" y="24" font-size="10.5" fill="#475569">모든 자원을 효율적으로 완전고용 생산</text>
-
-        <circle cx="5" cy="42" r="4.5" fill="#ffffff" stroke="#334155" stroke-width="2" />
-        <text x="16" y="46" font-size="11.5" font-weight="700" fill="#1e293b">곡선 내부 (점 C)</text>
-        <text x="16" y="61" font-size="10.5" fill="#475569">자원 낭비 및 실업 존재 (비효율적)</text>
-
-        <circle cx="5" cy="79" r="4.5" fill="#cbd5e1" stroke="#64748b" stroke-width="1.6" />
-        <text x="16" y="83" font-size="11.5" font-weight="700" fill="#334155">곡선 외부 (점 D)</text>
-        <text x="16" y="98" font-size="10.5" fill="#475569">현재의 생산요소·기술로 달성 불가</text>
-      </g>
-    </g>
-
-    <line x1="16" y1="184" x2="284" y2="184" stroke="#e2e8f0" stroke-width="1" />
-
-    <!-- Section 2 -->
-    <g transform="translate(16, 198)">
-      <rect x="0" y="0" width="4" height="14" rx="2" fill="#334155" />
-      <text x="11" y="12" font-size="12" font-weight="800" fill="#0f172a">2. 기회비용 체증의 법칙 원리</text>
-
-      <g transform="translate(6, 25)">
-        <text x="0" y="10" font-size="11" font-weight="700" fill="#1e293b">• X재 증산 시 Y재 포기량 점증</text>
-        <text x="8" y="26" font-size="10.5" fill="#475569">생산요소마다 적합도(특화도)가 상이하여,</text>
-        <text x="8" y="41" font-size="10.5" fill="#475569">X재 생산을 늘릴수록 비효율적인 자원이</text>
-        <text x="8" y="56" font-size="10.5" fill="#475569">투입되므로 포기해야 할 Y재가 증가함</text>
-      </g>
-    </g>
-
-    <line x1="16" y1="286" x2="284" y2="286" stroke="#e2e8f0" stroke-width="1" />
-
-    <!-- Section 3 -->
-    <g transform="translate(16, 300)">
-      <rect x="0" y="0" width="4" height="14" rx="2" fill="#1d4ed8" />
-      <text x="11" y="12" font-size="12" font-weight="800" fill="#0f172a">3. 한계변환율 (MRTxy)과 형태</text>
-
-      <rect x="2" y="24" width="264" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-      <text x="134" y="42" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">MRTxy = - (ΔY / ΔX) = MCx / MCy</text>
-      <text x="134" y="58" font-size="10" font-weight="600" fill="#475569" text-anchor="middle">( = 생산가능곡선 접선 기울기의 절댓값 )</text>
-
-      <g transform="translate(4, 82)">
-        <text x="0" y="12" font-size="11" font-weight="700" fill="#1e293b">• X재 생산 증가 시 MRTxy 상승 (체증)</text>
-        <text x="0" y="29" font-size="11" font-weight="700" fill="#1e293b">• 곡선이 <tspan fill="#1d4ed8" font-weight="800">원점에 대해 오목(Concave)</tspan>한 형태</text>
-      </g>
-    </g>
-  </g>
+  <!-- Clean Formula Note at Bottom -->
+  <text x="320" y="406" font-size="14.5" font-weight="700" fill="#334155" text-anchor="middle">
+    접선 기울기 절댓값 = MRTxy = ΔY / ΔX = MCx / MCy
+  </text>
 </svg>

@@ -1,42 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 410" width="1050" height="615" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a" />
+    </marker>
+    <marker id="blue-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d4ed8" />
+    </marker>
+    <marker id="slate-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#475569" />
     </marker>
   </defs>
 
-  <!-- Header -->
-  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">총수요-총공급 (AD-AS) 모형과 거시경제 균형</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
+  <!-- Axes: Origin (100, 355) -->
+  <line x1="100" y1="355" x2="575" y2="355" stroke="#0f172a" stroke-width="2.4" marker-end="url(#axis-arr)" />
+  <line x1="100" y1="355" x2="100" y2="34" stroke="#0f172a" stroke-width="2.4" marker-end="url(#axis-arr)" />
+  <text x="585" y="360" font-size="16" font-weight="800" fill="#0f172a">실질 GDP (Y)</text>
+  <text x="100" y="24" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">물가 P</text>
+  <text x="84" y="372" font-size="15" font-weight="700" fill="#475569">0</text>
 
-  <!-- Subtitle Strip -->
-  <rect x="135" y="60" width="650" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">단기 균형(AD = SRAS)  →  장기 균형(임금·물가 신축적 조정으로 수직의 LRAS, 잠재GDP 복귀)</text>
+  <!-- Projections: E0(315, 225), E1(385, 183), E2(315, 141) -->
+  <line x1="100" y1="225" x2="315" y2="225" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,4" />
+  <line x1="100" y1="183" x2="385" y2="183" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,4" />
+  <line x1="100" y1="141" x2="315" y2="141" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,4" />
+  <line x1="385" y1="183" x2="385" y2="355" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,4" />
 
-  <!-- Axes: Origin (140, 455) -->
-  <line x1="140" y1="455" x2="795" y2="455" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="140" y1="455" x2="140" y2="98" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
-  <text x="805" y="460" font-size="12.5" font-weight="700" fill="#1e293b">실질 GDP (Y)</text>
-  <text x="140" y="88" font-size="12.5" font-weight="700" fill="#1e293b" text-anchor="middle">물가 수준 (P)</text>
-  <text x="127" y="470" font-size="11.5" fill="#64748b">0</text>
+  <!-- LRAS: Vertical at Yp = 315 -->
+  <line x1="315" y1="355" x2="315" y2="48" stroke="#0f172a" stroke-width="3.2" />
+  <text x="315" y="36" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">LRAS</text>
 
-  <!-- Long-Run AS (LRAS): Vertical at Yp = 465 -->
-  <line x1="465" y1="455" x2="465" y2="108" stroke="#1e293b" stroke-width="2.8" />
-  <text x="465" y="99" font-size="12.5" font-weight="800" fill="#0f172a" text-anchor="middle">LRAS (장기 총공급: 잠재GDP Yp)</text>
+  <!-- SRAS0: slope -0.6 -> passes through E0(315, 225) and E1(385, 183): (155, 321) to (495, 117) -->
+  <line x1="155" y1="321" x2="495" y2="117" stroke="#0f172a" stroke-width="2.6" />
+  <text x="504" y="121" font-size="15" font-weight="800" fill="#0f172a">SRAS₀</text>
 
-  <!-- Short-Run AS (SRAS0): Upward sloping through (465, 275): (195, 410) to (685, 165) -->
-  <line x1="195" y1="410" x2="685" y2="165" stroke="#64748b" stroke-width="2.5" stroke-dasharray="6,4" />
-  <text x="695" y="169" font-size="12.5" font-weight="700" fill="#475569">SRAS₀ (단기 총공급)</text>
+  <!-- SRAS1 (Long-run wage rise, shifted up by 84px): passes through E2(315, 141): (155, 237) to (445, 63) -->
+  <line x1="155" y1="237" x2="445" y2="63" stroke="#64748b" stroke-width="2.3" stroke-dasharray="7,5" />
+  <text x="454" y="67" font-size="15" font-weight="700" fill="#475569">SRAS₁ (장기)</text>
 
-  <!-- Aggregate Demand AD0: Downward sloping through (465, 275): (195, 140) to (685, 385) -->
-  <line x1="195" y1="140" x2="685" y2="385" stroke="#1d4ed8" stroke-width="2.8" />
-  <text x="695" y="389" font-size="12.5" font-weight="800" fill="#1d4ed8">AD₀ (총수요곡선)</text>
+  <!-- AD0: slope +0.6 -> passes through E0(315, 225): (155, 129) to (475, 321) -->
+  <line x1="155" y1="129" x2="475" y2="321" stroke="#64748b" stroke-width="2.3" stroke-dasharray="7,5" />
+  <text x="484" y="325" font-size="15" font-weight="700" fill="#475569">AD₀</text>
 
-  <!-- Long-Run Equilibrium Point E0 (465, 275) -->
-  <line x1="140" y1="275" x2="465" y2="275" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.4" />
-  <circle cx="465" cy="275" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
-  <text x="130" y="279" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="end">P₀ (균형물가)</text>
-  <text x="465" y="478" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Yp (잠재산출량)</text>
-  <text x="478" y="264" font-size="12.5" font-weight="800" fill="#1d4ed8">E₀ (장기균형)</text>
+  <!-- AD1 (Expansion, shifted up/right by 84px): passes through E2(315, 141) and E1(385, 183): (195, 69) to (525, 267) -->
+  <line x1="195" y1="69" x2="525" y2="267" stroke="#1d4ed8" stroke-width="3.2" />
+  <text x="534" y="272" font-size="15.5" font-weight="800" fill="#1d4ed8">AD₁</text>
+
+  <!-- Shift Arrows -->
+  <line x1="415" y1="280" x2="468" y2="246" stroke="#1d4ed8" stroke-width="2" marker-end="url(#blue-arr)" />
+  <line x1="235" y1="265" x2="205" y2="215" stroke="#475569" stroke-width="2" marker-end="url(#slate-arr)" />
+
+  <!-- Equilibrium Points E0 -> E1 -> E2 -->
+  <circle cx="315" cy="225" r="5.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.4" />
+  <text x="299" y="244" font-size="15" font-weight="800" fill="#0f172a" text-anchor="end" class="halo">E₀</text>
+
+  <circle cx="385" cy="183" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="400" y="196" font-size="15" font-weight="800" fill="#1d4ed8" class="halo">E₁ (단기)</text>
+
+  <circle cx="315" cy="141" r="6" fill="#0f172a" stroke="#ffffff" stroke-width="2" />
+  <text x="299" y="132" font-size="15" font-weight="800" fill="#0f172a" text-anchor="end" class="halo">E₂ (장기)</text>
+
+  <!-- Axis Labels -->
+  <text x="88" y="230" font-size="14.5" font-weight="700" fill="#475569" text-anchor="end">P₀</text>
+  <text x="88" y="188" font-size="14.5" font-weight="800" fill="#1d4ed8" text-anchor="end">P₁</text>
+  <text x="88" y="146" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="end">P₂</text>
+
+  <text x="315" y="384" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">Yp (잠재 GDP)</text>
+  <text x="385" y="384" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle">Y₁</text>
 </svg>

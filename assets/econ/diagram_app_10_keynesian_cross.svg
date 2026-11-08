@@ -1,67 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 480" width="100%" height="100%" style="background:#ffffff; font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="960" height="630" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
-    <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 1 2 L 8 5 L 1 8 z" fill="#1e293b" />
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a" />
     </marker>
   </defs>
 
-  <!-- Title / Legend box -->
-  <rect x="25" y="14" width="640" height="34" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1"/>
-  <text x="345" y="36" font-size="14" font-weight="700" text-anchor="middle" fill="#0f172a">케인스의 국민소득결정 모형 해설: 디플레이션 갭 도해</text>
+  <!-- Axes: Origin (105, 355) -->
+  <line x1="105" y1="355" x2="555" y2="355" stroke="#0f172a" stroke-width="2.4" marker-end="url(#arr)" />
+  <line x1="105" y1="355" x2="105" y2="34" stroke="#0f172a" stroke-width="2.4" marker-end="url(#arr)" />
 
-  <!-- Axes: Origin (110, 400) -->
-  <line x1="110" y1="400" x2="585" y2="400" stroke="#1e293b" stroke-width="2" marker-end="url(#arr2)" />
-  <line x1="110" y1="400" x2="110" y2="82" stroke="#1e293b" stroke-width="2" marker-end="url(#arr2)" />
+  <text x="565" y="360" font-size="16" font-weight="800" fill="#0f172a">국민소득 Y</text>
+  <text x="105" y="24" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">총수요 AD</text>
+  <text x="89" y="372" font-size="15" font-weight="700" fill="#475569">0</text>
 
-  <text x="595" y="405" font-size="13" font-weight="700" fill="#1e293b">국민소득 (Y)</text>
-  <text x="110" y="70" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">총지출 및 총수요 (AD)</text>
-  <text x="96" y="415" font-size="13" font-weight="600" fill="#64748b">0</text>
+  <!-- Projections: Y1=200 -> (295, 165); Y3=300 -> x=390, 45-deg y=70, AD y=117.5 -->
+  <line x1="105" y1="165" x2="295" y2="165" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="295" y1="165" x2="295" y2="355" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
 
-  <!-- 45-degree ray: Y = AD (slope 1) - ends cleanly below title bar -->
-  <line x1="110" y1="400" x2="440" y2="70" stroke="#475569" stroke-width="2" stroke-linecap="round" />
-  <text x="448" y="74" font-size="13" font-weight="700" fill="#334155">45°선 (Y = AD)</text>
-  <path d="M 140 400 A 30 30 0 0 0 131.2 378.8" fill="none" stroke="#64748b" stroke-width="1.5" />
-  <text x="146" y="388" font-size="12" font-weight="600" fill="#64748b">45°</text>
+  <line x1="390" y1="70" x2="390" y2="355" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="105" y1="70" x2="390" y2="70" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="105" y1="117.5" x2="390" y2="117.5" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
 
-  <!-- AD curve: AD = 100 + 0.5 Y -->
-  <line x1="110" y1="300" x2="510" y2="100" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" />
-  <text x="518" y="99" font-size="12.5" font-weight="700" fill="#1d4ed8">총수요곡선</text>
-  <text x="518" y="116" font-size="11.5" font-weight="600" fill="#334155">(AD = 100 + 0.5Y)</text>
+  <!-- 45-degree Ray: (105, 355) to (415, 45) [1 unit = 0.95px -> 100=95px, 200=190px, 300=285px] -->
+  <line x1="105" y1="355" x2="415" y2="45" stroke="#475569" stroke-width="2.4" stroke-dasharray="7,5" />
+  <text x="423" y="49" font-size="15" font-weight="800" fill="#475569">45°선 (Y = AD)</text>
+  <text x="142" y="344" font-size="13.5" font-weight="700" fill="#64748b">45°</text>
 
-  <!-- Y-axis intercept 100 -->
-  <text x="98" y="305" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">100</text>
+  <!-- AD = 100 + 0.5Y: starts at (105, 260) [100], through (295, 165) [200], (390, 117.5) [250], ends at (485, 70) -->
+  <line x1="105" y1="260" x2="485" y2="70" stroke="#1d4ed8" stroke-width="3.2" />
+  <text x="493" y="74" font-size="15.5" font-weight="800" fill="#1d4ed8">AD = 100 + 0.5Y</text>
 
-  <!-- Equilibrium at Y=200, AD=200 (Point E) -->
-  <line x1="110" y1="200" x2="310" y2="200" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
-  <line x1="310" y1="200" x2="310" y2="400" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
-  <circle cx="310" cy="200" r="5" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5" />
-  <text x="318" y="218" font-size="13" font-weight="700" fill="#0f172a">E</text>
-  <text x="98" y="205" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">200</text>
-  <text x="310" y="418" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">200</text>
-  <text x="310" y="438" font-size="12.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Y₁</text>
-  <text x="310" y="454" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">(균형소득)</text>
+  <!-- Deflationary Gap Segment at Y3 = 300 (x=390, y=70..117.5) -->
+  <line x1="390" y1="70" x2="390" y2="117.5" stroke="#b91c1c" stroke-width="4.5" />
+  <circle cx="390" cy="70" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+  <circle cx="390" cy="117.5" r="4.5" fill="#b91c1c" />
+  <path d="M 398 70 C 405 70 405 93.8 411 93.8 C 405 93.8 405 117.5 398 117.5" fill="none" stroke="#b91c1c" stroke-width="2" />
+  <line x1="411" y1="93.8" x2="438" y2="136" stroke="#b91c1c" stroke-width="1.6" />
+  <text x="444" y="148" font-size="15" font-weight="800" fill="#b91c1c" class="halo">(가) 디플레이션 갭 = 50</text>
 
-  <!-- At Y=300 (Y3 = Full Employment) -->
-  <line x1="410" y1="400" x2="410" y2="100" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
-  <text x="410" y="418" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">300</text>
-  <text x="410" y="438" font-size="12.5" font-weight="700" fill="#0f172a" text-anchor="middle">Y₃</text>
-  <text x="410" y="454" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">(완전고용소득)</text>
+  <!-- Equilibrium Point E (295, 165) -->
+  <circle cx="295" cy="165" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <text x="306" y="184" font-size="15.5" font-weight="800" fill="#0f172a" class="halo">E</text>
 
-  <!-- Dotted line from 45-line at Y=300 (410, 100) to Y-axis (110, 100) -->
-  <line x1="110" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
-  <circle cx="410" cy="100" r="4" fill="#ffffff" stroke="#334155" stroke-width="2" />
-  <text x="98" y="105" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">300</text>
+  <!-- Axis Numbers -->
+  <text x="93" y="265" font-size="15" font-weight="700" fill="#0f172a" text-anchor="end">100</text>
+  <text x="93" y="170" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="end">200</text>
+  <text x="93" y="123" font-size="15" font-weight="800" fill="#b91c1c" text-anchor="end">250</text>
+  <text x="93" y="75" font-size="15" font-weight="700" fill="#0f172a" text-anchor="end">300</text>
 
-  <!-- Dotted line from AD at Y=300 (410, 150) to Y-axis (110, 150) -->
-  <line x1="110" y1="150" x2="410" y2="150" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
-  <circle cx="410" cy="150" r="4" fill="#1d4ed8" />
-  <text x="98" y="155" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">250</text>
-
-  <!-- Deflationary Gap Bracket & Label (placed cleanly below AD line with dashed pointer) -->
-  <path d="M 418 100 C 424 100 424 125 428 125 C 424 125 424 150 418 150" fill="none" stroke="#1d4ed8" stroke-width="1.8" />
-  <line x1="428" y1="125" x2="452" y2="168" stroke="#93c5fd" stroke-width="1.3" stroke-dasharray="3,2" />
-  <g transform="translate(452, 155)">
-    <rect x="0" y="0" width="166" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
-    <text x="83" y="17" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="middle">(가) 디플레이션 갭 = 50</text>
-  </g>
+  <text x="295" y="380" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle">200 (Y₁)</text>
+  <text x="390" y="380" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">300 (Y₃)</text>
+  <text x="295" y="402" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="middle">균형소득</text>
+  <text x="390" y="402" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">완전고용</text>
 </svg>

@@ -1,181 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="1140" height="660" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
-    <marker id="arrow-money" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+    <marker id="arr-money" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#1d4ed8" />
     </marker>
-    <marker id="arrow-real" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <marker id="arr-real" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#64748b" />
     </marker>
   </defs>
 
-  <!-- Top Header -->
-  <rect x="0" y="0" width="960" height="50" fill="#f8fafc" />
-  <text x="480" y="32" font-size="18" font-weight="800" text-anchor="middle" fill="#0f172a">국민경제의 순환과 GDP 삼면등가의 법칙 (생산 ≡ 지출 ≡ 분배)</text>
-  <line x1="0" y1="50" x2="960" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
+  <!-- Minimal Inline Legend in Open Top Corners -->
+  <line x1="34" y1="22" x2="68" y2="22" stroke="#1d4ed8" stroke-width="3.2" marker-end="url(#arr-money)" />
+  <text x="78" y="27" font-size="13" font-weight="700" fill="#1d4ed8">화폐 흐름 (시계)</text>
 
-  <!-- Legend Strip -->
-  <g transform="translate(180, 62)">
-    <rect x="0" y="0" width="600" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <line x1="28" y1="14" x2="66" y2="14" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#arrow-money)" />
-    <text x="76" y="18.5" font-size="11.5" font-weight="700" fill="#1d4ed8">외곽 실선 (시계 방향) : 화폐 흐름 (지출·소득)</text>
+  <line x1="564" y1="22" x2="598" y2="22" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arr-real)" />
+  <text x="608" y="27" font-size="13" font-weight="700" fill="#475569">실물 흐름 (반시계)</text>
 
-    <line x1="305" y1="6" x2="305" y2="22" stroke="#cbd5e1" stroke-width="1.2" />
+  <!-- 1. OUTER LOOP: 화폐 흐름 (시계 방향) -->
+  <path d="M 96 176 C 104 102, 168 68, 242 66" fill="none" stroke="#1d4ed8" stroke-width="3.2" marker-end="url(#arr-money)" />
+  <text x="122" y="74" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle" class="halo">소비지출</text>
 
-    <line x1="322" y1="14" x2="360" y2="14" stroke="#64748b" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arrow-real)" />
-    <text x="370" y="18.5" font-size="11.5" font-weight="700" fill="#475569">내곽 점선 (반시계 방향) : 실물 흐름 (요소·생산물)</text>
-  </g>
+  <path d="M 514 66 C 592 68, 656 102, 664 166" fill="none" stroke="#1d4ed8" stroke-width="3.2" marker-end="url(#arr-money)" />
+  <text x="638" y="74" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle" class="halo">판매수입</text>
 
-  <!-- Subtle Track Guides -->
-  <ellipse cx="480" cy="272" rx="310" ry="136" fill="none" stroke="#f1f5f9" stroke-width="8" />
-  <ellipse cx="480" cy="272" rx="235" ry="90" fill="none" stroke="#f8fafc" stroke-width="6" />
+  <path d="M 664 282 C 656 348, 592 380, 518 382" fill="none" stroke="#1d4ed8" stroke-width="3.2" marker-end="url(#arr-money)" />
+  <text x="638" y="382" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle" class="halo">요소비용</text>
 
-  <!-- ==================== 1. OUTER LOOP: MONEY FLOW (화폐 흐름 - 시계 방향) ==================== -->
-  <!-- Top-Left: 가계 -> 생산물시장 -->
-  <path d="M 192 205 C 215 148, 280 132, 342 132" fill="none" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#arrow-money)" />
-  <g transform="translate(194, 122)">
-    <rect x="0" y="0" width="124" height="24" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <text x="62" y="16" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">소비지출 (C)</text>
-  </g>
+  <path d="M 246 382 C 168 380, 104 348, 96 274" fill="none" stroke="#1d4ed8" stroke-width="3.2" marker-end="url(#arr-money)" />
+  <text x="122" y="382" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle" class="halo">요소소득</text>
 
-  <!-- Top-Right: 생산물시장 -> 기업 -->
-  <path d="M 618 132 C 680 132, 745 148, 768 205" fill="none" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#arrow-money)" />
-  <g transform="translate(642, 122)">
-    <rect x="0" y="0" width="128" height="24" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <text x="64" y="16" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">기업 판매수입</text>
-  </g>
+  <!-- 2. INNER LOOP: 실물 흐름 (반시계 방향) -->
+  <path d="M 584 198 C 548 156, 512 132, 478 118" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arr-real)" />
+  <text x="502" y="172" font-size="13.5" font-weight="700" fill="#475569" text-anchor="middle" class="halo">생산물 공급</text>
 
-  <!-- Bottom-Right: 기업 -> 생산요소시장 -->
-  <path d="M 768 339 C 745 396, 680 412, 618 412" fill="none" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#arrow-money)" />
-  <g transform="translate(642, 396)">
-    <rect x="0" y="0" width="128" height="24" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <text x="64" y="16" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">생산요소 비용</text>
-  </g>
+  <path d="M 282 118 C 248 132, 212 156, 178 196" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arr-real)" />
+  <text x="258" y="172" font-size="13.5" font-weight="700" fill="#475569" text-anchor="middle" class="halo">생산물 구입</text>
 
-  <!-- Bottom-Left: 생산요소시장 -> 가계 -->
-  <path d="M 342 412 C 280 412, 215 396, 192 339" fill="none" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#arrow-money)" />
-  <g transform="translate(186, 396)">
-    <rect x="0" y="0" width="134" height="24" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" />
-    <text x="67" y="16" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">요소소득 (Y) 수취</text>
-  </g>
+  <path d="M 176 252 C 212 292, 248 314, 280 328" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arr-real)" />
+  <text x="262" y="280" font-size="13.5" font-weight="700" fill="#475569" text-anchor="middle" class="halo">노동·자본·토지</text>
 
-  <!-- ==================== 2. INNER LOOP: REAL FLOW (실물 흐름 - 반시계 방향) ==================== -->
-  <path d="M 702 225 C 675 186, 635 176, 608 176" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arrow-real)" />
-  <g transform="translate(616, 184)">
-    <rect x="0" y="0" width="114" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <text x="57" y="15" font-size="10.5" font-weight="700" fill="#475569" text-anchor="middle">최종생산물 공급</text>
-  </g>
+  <path d="M 480 328 C 512 314, 548 292, 582 254" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arr-real)" />
+  <text x="500" y="280" font-size="13.5" font-weight="700" fill="#475569" text-anchor="middle" class="halo">생산요소 투입</text>
 
-  <path d="M 352 176 C 325 176, 285 186, 258 225" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arrow-real)" />
-  <g transform="translate(230, 184)">
-    <rect x="0" y="0" width="114" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <text x="57" y="15" font-size="10.5" font-weight="700" fill="#475569" text-anchor="middle">재화·서비스 구입</text>
-  </g>
+  <!-- 3. FOUR STRUCTURAL NODES -->
+  <!-- Top: 생산물 시장 -->
+  <rect x="250" y="34" width="260" height="78" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="2.4" />
+  <text x="380" y="66" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">생산물 시장</text>
+  <text x="380" y="94" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">지출 GDP (C + I + G + NX)</text>
 
-  <path d="M 258 319 C 285 358, 325 368, 352 368" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arrow-real)" />
-  <g transform="translate(226, 336)">
-    <rect x="0" y="0" width="120" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <text x="60" y="15" font-size="10.5" font-weight="700" fill="#475569" text-anchor="middle">노동·자본·토지 제공</text>
-  </g>
+  <!-- Bottom: 생산요소 시장 -->
+  <rect x="250" y="334" width="260" height="78" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="2.4" />
+  <text x="380" y="366" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">생산요소 시장</text>
+  <text x="380" y="394" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">분배 GDP (임금·지대·이자·이윤)</text>
 
-  <path d="M 608 368 C 635 368, 675 358, 702 319" fill="none" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#arrow-real)" />
-  <g transform="translate(614, 336)">
-    <rect x="0" y="0" width="118" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <text x="59" y="15" font-size="10.5" font-weight="700" fill="#475569" text-anchor="middle">생산요소 고용·투입</text>
-  </g>
+  <!-- Left: 가계 -->
+  <rect x="28" y="180" width="144" height="88" rx="12" fill="#0f172a" />
+  <text x="100" y="218" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">가계</text>
+  <text x="100" y="244" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">소비 · 요소공급</text>
 
-  <!-- ==================== 3. FOUR CORE NODES ==================== -->
-  <!-- [TOP NODE] 생산물 시장 = 지출국민소득 -->
-  <g transform="translate(348, 104)">
-    <rect x="0" y="0" width="264" height="84" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <path d="M 0 10 Q 0 0 10 0 L 254 0 Q 264 0 264 10 L 264 28 L 0 28 Z" fill="#f8fafc" />
-    <line x1="0" y1="28" x2="264" y2="28" stroke="#e2e8f0" stroke-width="1" />
-    <text x="132" y="19" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">생산물 시장</text>
+  <!-- Right: 기업 -->
+  <rect x="588" y="172" width="144" height="104" rx="12" fill="#0f172a" />
+  <text x="660" y="205" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">기업</text>
+  <text x="660" y="228" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">생산 · 요소수요</text>
+  <rect x="598" y="240" width="124" height="26" rx="6" fill="#1d4ed8" />
+  <text x="660" y="258" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">생산 GDP (부가가치)</text>
 
-    <rect x="14" y="36" width="236" height="38" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-    <text x="132" y="52" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">① 지출국민소득 (총지출 = C)</text>
-    <text x="132" y="67" font-size="10.5" font-weight="600" fill="#334155" text-anchor="middle">4부문 확장 시: Y = C + I + G + (X - M)</text>
-  </g>
-
-  <!-- [BOTTOM NODE] 생산요소 시장 = 분배국민소득 -->
-  <g transform="translate(348, 356)">
-    <rect x="0" y="0" width="264" height="84" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <path d="M 0 10 Q 0 0 10 0 L 254 0 Q 264 0 264 10 L 264 28 L 0 28 Z" fill="#f8fafc" />
-    <line x1="0" y1="28" x2="264" y2="28" stroke="#e2e8f0" stroke-width="1" />
-    <text x="132" y="19" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">생산요소 시장</text>
-
-    <rect x="14" y="36" width="236" height="38" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <text x="132" y="52" font-size="12" font-weight="800" fill="#1e293b" text-anchor="middle">③ 분배국민소득 (요소소득의 합)</text>
-    <text x="132" y="67" font-size="10.5" font-weight="600" fill="#475569" text-anchor="middle">임금(W) + 지대(R) + 이자(i) + 이윤(π)</text>
-  </g>
-
-  <!-- [LEFT NODE] 가계 -->
-  <g transform="translate(36, 208)">
-    <rect x="0" y="0" width="224" height="128" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <path d="M 0 10 Q 0 0 10 0 L 214 0 Q 224 0 224 10 L 224 32 L 0 32 Z" fill="#f1f5f9" />
-    <line x1="0" y1="32" x2="224" y2="32" stroke="#cbd5e1" stroke-width="1" />
-    <text x="112" y="21" font-size="13.5" font-weight="800" fill="#0f172a" text-anchor="middle">가계 (소비의 주체)</text>
-
-    <text x="16" y="54" font-size="11.5" font-weight="700" fill="#1e293b">• 소비의 주체 (생산물 수요자)</text>
-    <text x="24" y="70" font-size="10.5" fill="#475569">- 재화·서비스 구매로 효용 극대화</text>
-    <text x="16" y="92" font-size="11.5" font-weight="700" fill="#1e293b">• 생산요소 공급자 (L, K, N)</text>
-    <text x="24" y="108" font-size="10.5" fill="#475569">- 요소 제공 대가로 요소소득(Y) 수취</text>
-  </g>
-
-  <!-- [RIGHT NODE] 기업 = 생산국민소득 -->
-  <g transform="translate(700, 208)">
-    <rect x="0" y="0" width="224" height="128" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <path d="M 0 10 Q 0 0 10 0 L 214 0 Q 224 0 224 10 L 224 32 L 0 32 Z" fill="#f1f5f9" />
-    <line x1="0" y1="32" x2="224" y2="32" stroke="#cbd5e1" stroke-width="1" />
-    <text x="112" y="21" font-size="13.5" font-weight="800" fill="#0f172a" text-anchor="middle">기업 (생산의 주체)</text>
-
-    <text x="16" y="52" font-size="11.5" font-weight="700" fill="#1e293b">• 생산의 주체 &amp; 요소 수요자</text>
-    <text x="24" y="67" font-size="10.5" fill="#475569">- 요소 결합 → 최종생산물 생산·공급</text>
-
-    <rect x="12" y="76" width="200" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-    <text x="112" y="94" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">② 생산국민소득 (GDP)</text>
-    <text x="112" y="110" font-size="10.5" font-weight="600" fill="#334155" text-anchor="middle">최종생산물 가치 = Σ 부가가치</text>
-  </g>
-
-  <!-- ==================== 4. CENTER HUB ==================== -->
-  <g transform="translate(480, 272)">
-    <line x1="0" y1="-44" x2="0" y2="-84" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3,3" />
-    <line x1="112" y1="0" x2="220" y2="0" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3,3" />
-    <line x1="0" y1="44" x2="0" y2="84" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3,3" />
-
-    <rect x="-114" y="-42" width="228" height="84" rx="12" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.8" />
-    <text x="0" y="-15" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">국민소득 삼면등가의 법칙</text>
-    <text x="0" y="7" font-size="14.5" font-weight="800" fill="#0f172a" text-anchor="middle">생산(Y) ≡ 지출(Y) ≡ 분배(Y)</text>
-    <text x="0" y="26" font-size="10" font-weight="600" fill="#475569" text-anchor="middle">초과수요·공급 시에도 사후적으로 항상 성립</text>
-  </g>
-
-  <!-- ==================== 5. BOTTOM SUMMARY CARDS ==================== -->
-  <g transform="translate(36, 456)">
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="284" height="86" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-      <text x="16" y="23" font-size="12.5" font-weight="800" fill="#0f172a">② 생산국민소득 (총부가가치)</text>
-      <text x="16" y="44" font-size="11" fill="#334155">• 창출된 최종생산물의 시장가치 합</text>
-      <text x="16" y="62" font-size="11" font-weight="700" fill="#1d4ed8">• 총산출액 - 중간재 가치 = Σ 부가가치</text>
-      <text x="16" y="77" font-size="10" fill="#64748b">* 중간재는 이중계산 방지를 위해 반드시 공제</text>
-    </g>
-
-    <text x="298" y="50" font-size="20" font-weight="800" fill="#334155" text-anchor="middle">≡</text>
-
-    <g transform="translate(312, 0)">
-      <rect x="0" y="0" width="264" height="86" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-      <text x="16" y="23" font-size="12.5" font-weight="800" fill="#0f172a">① 지출국민소득 (총지출)</text>
-      <text x="16" y="44" font-size="11" fill="#334155">• 최종생산물 구매에 지출된 총액</text>
-      <text x="16" y="62" font-size="11" font-weight="700" fill="#1d4ed8">• Y = C + I + G + (X - M)</text>
-      <text x="16" y="77" font-size="10" fill="#64748b">* 비자발적 재고투자(I) 반영으로 사후 항등</text>
-    </g>
-
-    <text x="590" y="50" font-size="20" font-weight="800" fill="#334155" text-anchor="middle">≡</text>
-
-    <g transform="translate(604, 0)">
-      <rect x="0" y="0" width="284" height="86" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-      <text x="16" y="23" font-size="12.5" font-weight="800" fill="#0f172a">③ 분배국민소득 (요소소득 합)</text>
-      <text x="16" y="44" font-size="11" fill="#334155">• 요소 제공자에게 돌아간 소득의 합</text>
-      <text x="16" y="62" font-size="11" font-weight="700" fill="#1d4ed8">• 임금(노동) + 지대(토지) + 이자 + 이윤</text>
-      <text x="16" y="77" font-size="10" fill="#64748b">* 창출된 부가가치는 남김없이 요소소득으로 분배</text>
-    </g>
-  </g>
+  <!-- 4. CENTER IDENTITY -->
+  <rect x="266" y="194" width="228" height="60" rx="10" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2" />
+  <text x="380" y="216" font-size="12.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">삼면등가의 법칙 (사후적 항등)</text>
+  <text x="380" y="240" font-size="16.5" font-weight="800" fill="#0f172a" text-anchor="middle">생산(Y) ≡ 지출(Y) ≡ 분배(Y)</text>
 </svg>

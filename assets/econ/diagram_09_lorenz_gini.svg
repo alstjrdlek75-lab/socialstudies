@@ -1,62 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
-  <!-- Header -->
-  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">소득분배 불평등 측정 지표: 로렌츠 곡선과 지니계수</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="960" height="630" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
+  <defs>
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+  </defs>
 
-  <!-- Subtitle Strip -->
-  <rect x="135" y="60" width="650" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">지니계수 = 불평등 면적(A) / 대각선 아래 전체 면적(A + B)  |  0에 가까울수록 완전균등, 1에 가까울수록 완전불균등</text>
+  <!-- Lorenz Square: (110, 42) to (430, 362) [320 x 320] -->
+  <!-- Area B (Under Lorenz Curve) -->
+  <path d="M 110 362 Q 335 352 430 42 L 430 362 Z" fill="#f8fafc" />
 
-  <!-- Square Box for Lorenz Curve: (140, 110) to (500, 470) -->
-  <rect x="140" y="110" width="360" height="360" fill="#ffffff" stroke="#334155" stroke-width="1.8" />
+  <!-- Area A (Between 45° Line and Lorenz Curve) -->
+  <path d="M 110 362 L 430 42 Q 335 352 110 362 Z" fill="#dbeafe" fill-opacity="0.75" />
 
-  <!-- Shaded Area B (under Lorenz curve) -->
-  <path d="M 140 470 Q 380 460, 500 110 L 500 470 Z" fill="#f8fafc" />
-  <text x="430" y="410" font-size="16" font-weight="800" fill="#475569">B</text>
+  <!-- 45-Degree Perfect Equality Line -->
+  <line x1="110" y1="362" x2="430" y2="42" stroke="#64748b" stroke-width="2.4" stroke-dasharray="7,5" />
+  <text x="242" y="185" font-size="14.5" font-weight="700" fill="#475569" transform="rotate(-45 242 185)" text-anchor="middle" class="halo">45° 완전균등선</text>
 
-  <!-- Shaded Area A (between 45 deg line and Lorenz curve) -->
-  <path d="M 140 470 L 500 110 Q 380 460, 140 470 Z" fill="#eff6ff" />
-  <text x="360" y="340" font-size="16" font-weight="800" fill="#1d4ed8">A</text>
+  <!-- Lorenz Curve -->
+  <path d="M 110 362 Q 335 352 430 42" fill="none" stroke="#1d4ed8" stroke-width="3.4" />
+  <text x="342" y="292" font-size="15.5" font-weight="800" fill="#1d4ed8" text-anchor="middle" class="halo">로렌츠 곡선</text>
 
-  <!-- Re-draw outer frame crisp above fills -->
-  <rect x="140" y="110" width="360" height="360" fill="none" stroke="#334155" stroke-width="1.8" />
+  <!-- Crisp Outer Box Frame -->
+  <rect x="110" y="42" width="320" height="320" fill="none" stroke="#0f172a" stroke-width="2.4" />
 
-  <!-- Axes Labels -->
-  <text x="320" y="502" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">누적 인구 비율 (%)</text>
-  <text x="140" y="490" font-size="11" fill="#475569" text-anchor="middle">0%</text>
-  <text x="500" y="490" font-size="11" fill="#475569" text-anchor="middle">100%</text>
+  <!-- Area Letters A & B -->
+  <text x="292" y="246" font-size="22" font-weight="800" fill="#1d4ed8" text-anchor="middle">A</text>
+  <text x="396" y="340" font-size="22" font-weight="800" fill="#475569" text-anchor="middle">B</text>
 
-  <text x="88" y="290" font-size="12" font-weight="700" fill="#334155" transform="rotate(-90 88 290)" text-anchor="middle">누적 소득 점유율 (%)</text>
-  <text x="128" y="474" font-size="11" fill="#475569" text-anchor="end">0%</text>
-  <text x="128" y="115" font-size="11" fill="#475569" text-anchor="end">100%</text>
+  <!-- Axis Labels -->
+  <text x="270" y="402" font-size="15.5" font-weight="800" fill="#0f172a" text-anchor="middle">누적 인구 비율 (%)</text>
+  <text x="110" y="384" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">0</text>
+  <text x="430" y="384" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">100</text>
 
-  <!-- 45-degree Line of Perfect Equality -->
-  <line x1="140" y1="470" x2="500" y2="110" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4" />
-  <text x="336" y="262" font-size="11.5" font-weight="700" fill="#475569" transform="rotate(-45 336 262)">45° 완전균등선</text>
+  <text x="52" y="202" font-size="15.5" font-weight="800" fill="#0f172a" transform="rotate(-90 52 202)" text-anchor="middle">누적 소득 점유율 (%)</text>
+  <text x="98" y="366" font-size="14" font-weight="700" fill="#475569" text-anchor="end">0</text>
+  <text x="98" y="50" font-size="14" font-weight="700" fill="#475569" text-anchor="end">100</text>
 
-  <!-- Lorenz Curve Line -->
-  <path d="M 140 470 Q 380 460, 500 110" fill="none" stroke="#1d4ed8" stroke-width="2.8" />
-  <text x="408" y="440" font-size="12" font-weight="800" fill="#1d4ed8">로렌츠 곡선</text>
+  <!-- Right Formula Callout (Minimal, High-Contrast) -->
+  <text x="535" y="156" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle">지니계수 (Gini)</text>
+  <line x1="468" y1="196" x2="602" y2="196" stroke="#0f172a" stroke-width="2.2" />
+  <text x="535" y="187" font-size="16" font-weight="800" fill="#1d4ed8" text-anchor="middle">불평등 면적 A</text>
+  <text x="535" y="218" font-size="16" font-weight="800" fill="#334155" text-anchor="middle">전체 면적 (A + B)</text>
 
-  <!-- Right Info Panel -->
-  <rect x="540" y="110" width="350" height="360" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-  <path d="M 540 118 Q 540 110 548 110 L 882 110 Q 890 110 890 118 L 890 144 L 540 144 Z" fill="#f8fafc" />
-  <line x1="540" y1="144" x2="890" y2="144" stroke="#e2e8f0" stroke-width="1" />
-  <text x="715" y="132" font-size="13" font-weight="800" text-anchor="middle" fill="#0f172a">소득분배 불평등 지표 핵심 정리</text>
-
-  <text x="565" y="174" font-size="12" font-weight="800" fill="#0f172a">1. 로렌츠 곡선</text>
-  <text x="580" y="196" font-size="11" fill="#475569">• 대각선(45°선)에 가까울수록 → 균등</text>
-  <text x="580" y="216" font-size="11" fill="#475569">• 대각선에서 멀어져 볼록할수록 → 불균등</text>
-  <text x="580" y="236" font-size="11" fill="#475569">• [한계] 두 곡선 교차 시 우열 판정 불가</text>
-
-  <text x="565" y="270" font-size="12" font-weight="800" fill="#0f172a">2. 지니계수</text>
-  <rect x="575" y="282" width="280" height="26" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-  <text x="715" y="299" font-size="11" font-weight="800" text-anchor="middle" fill="#1d4ed8">지니계수 = 면적 A / 전체 면적 (A + B)</text>
-  <text x="580" y="328" font-size="11" fill="#475569">• 0 ≤ Gini ≤ 1 (0에 가까울수록 완전균등)</text>
-  <text x="580" y="348" font-size="11" fill="#475569">• 로렌츠 곡선이 교차해도 단일 수치로 비교 가능</text>
-
-  <text x="565" y="384" font-size="12" font-weight="800" fill="#0f172a">3. 10분위 분배율 vs 5분위 배율</text>
-  <text x="580" y="406" font-size="11" fill="#475569">• 10분위 = 하위 40% 소득 / 상위 20% 소득 (클수록 균등)</text>
-  <text x="580" y="426" font-size="11" fill="#475569">• 5분위 = 상위 20% 소득 / 하위 20% 소득 (작을수록 균등)</text>
+  <text x="535" y="264" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">0 : 완전균등</text>
+  <text x="535" y="288" font-size="14" font-weight="700" fill="#b91c1c" text-anchor="middle">1 : 완전불균등</text>
 </svg>

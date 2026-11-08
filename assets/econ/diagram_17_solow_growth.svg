@@ -1,52 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" width="1020" height="630" style="background:#ffffff; font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
+    <style>
+      .halo { paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+    </style>
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a" />
+    </marker>
+    <marker id="blue-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d4ed8" />
     </marker>
   </defs>
 
-  <!-- Header -->
-  <rect x="0" y="0" width="920" height="50" fill="#f8fafc" />
-  <text x="460" y="32" font-size="17.5" font-weight="800" text-anchor="middle" fill="#0f172a">솔로(Solow) 신고전학파 경제성장모형 (자본축적과 균제상태)</text>
-  <line x1="0" y1="50" x2="920" y2="50" stroke="#e2e8f0" stroke-width="1.2" />
+  <!-- Axes: Origin (100, 360) -->
+  <line x1="100" y1="360" x2="590" y2="360" stroke="#0f172a" stroke-width="2.4" marker-end="url(#axis-arr)" />
+  <line x1="100" y1="360" x2="100" y2="34" stroke="#0f172a" stroke-width="2.4" marker-end="url(#axis-arr)" />
+  <text x="600" y="365" font-size="16" font-weight="800" fill="#0f172a">1인당 자본 k</text>
+  <text x="100" y="24" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">1인당 산출 y</text>
+  <text x="84" y="377" font-size="15" font-weight="700" fill="#475569">0</text>
 
-  <!-- Subtitle Strip -->
-  <rect x="135" y="60" width="650" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-  <text x="460" y="77" font-size="11.5" font-weight="700" text-anchor="middle" fill="#334155">균제상태(Steady State) 조건: s·f(k) = (n + d)k  →  1인당 자본량(k*)과 1인당 소득(y*) 불변</text>
+  <!-- Capital Maintenance Line: (n + d)k from (100, 360) to (540, 118); at k*=340 (dx=240): y = 360 - 240*(242/440) = 228 -->
+  <line x1="100" y1="360" x2="540" y2="118" stroke="#64748b" stroke-width="2.5" stroke-dasharray="7,5" />
+  <text x="548" y="122" font-size="15.5" font-weight="700" fill="#475569">(n + d)k</text>
 
-  <!-- Axes: Origin (120, 455) -->
-  <line x1="120" y1="455" x2="775" y2="455" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
-  <line x1="120" y1="455" x2="120" y2="104" stroke="#334155" stroke-width="2" marker-end="url(#arr)" />
-  <text x="785" y="460" font-size="12.5" font-weight="700" fill="#1e293b">1인당 자본량 (k)</text>
-  <text x="120" y="92" font-size="12" font-weight="700" fill="#1e293b" text-anchor="start" dx="-60">1인당 생산·저축·유지비 (y, sf(k), (n+d)k)</text>
-  <text x="106" y="470" font-size="11.5" fill="#64748b">0</text>
+  <!-- Production Function: y = f(k): at x=340, y* = 148 (exact Q(260, 120) at t=0.58? Let's use exact cubic passing through (340, 148)!)
+       Path from (100,360) through (340,148) to (540,86): -->
+  <path d="M 100 360 C 150 230, 240 174, 340 148 C 415 128, 480 102, 540 86" fill="none" stroke="#0f172a" stroke-width="3.2" />
+  <text x="548" y="90" font-size="16" font-weight="800" fill="#0f172a">y = f(k)</text>
 
-  <!-- 1. Capital Maintenance Line: (n + d)k from (120, 455) to (680, 195); at x=430, y=311 -->
-  <line x1="120" y1="455" x2="680" y2="195" stroke="#475569" stroke-width="2.3" stroke-dasharray="6,4" />
-  <text x="690" y="199" font-size="12.5" font-weight="700" fill="#334155">(n + d)k (자본유지선)</text>
+  <!-- Investment Curve: i = s·f(k): passes cleanly through (340, 228)! -->
+  <path d="M 100 360 C 150 282, 240 245, 340 228 C 415 215, 480 202, 540 194" fill="none" stroke="#1d4ed8" stroke-width="3.2" />
+  <text x="548" y="199" font-size="16" font-weight="800" fill="#1d4ed8">i = s·f(k)</text>
 
-  <!-- 2. Per Capita Production Function: y = f(k) -->
-  <path d="M 120 455 Q 320 205, 680 142" fill="none" stroke="#1e293b" stroke-width="2.8" />
-  <text x="690" y="146" font-size="12.5" font-weight="800" fill="#0f172a">y = f(k) (1인당 생산함수)</text>
+  <!-- Steady State Projections at k* = 340 -->
+  <line x1="340" y1="148" x2="340" y2="360" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="100" y1="148" x2="340" y2="148" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="100" y1="228" x2="340" y2="228" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" />
 
-  <!-- 3. Per Capita Investment Curve: i = s·f(k) (passes through (430, 311)) -->
-  <path d="M 120 455 Q 315 322, 680 295" fill="none" stroke="#1d4ed8" stroke-width="2.8" />
-  <text x="690" y="299" font-size="12.5" font-weight="800" fill="#1d4ed8">i = s·f(k) (1인당 투자곡선)</text>
+  <!-- Consumption c* Segment between y*(148) and i*(228) -->
+  <line x1="340" y1="148" x2="340" y2="228" stroke="#b91c1c" stroke-width="4.5" />
+  <circle cx="340" cy="148" r="5.5" fill="#ffffff" stroke="#0f172a" stroke-width="2.4" />
+  <circle cx="340" cy="228" r="6" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
 
-  <!-- Steady State Equilibrium Point at k* (x=430, y=311 on sf(k), y=228 on f(k)) -->
-  <line x1="430" y1="228" x2="430" y2="455" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.4" />
-  <line x1="120" y1="228" x2="430" y2="228" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.4" />
-  <line x1="120" y1="311" x2="430" y2="311" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.2" />
+  <text x="326" y="194" font-size="15" font-weight="800" fill="#b91c1c" text-anchor="end" class="halo">1인당 소비 c*</text>
+  <text x="354" y="250" font-size="15" font-weight="800" fill="#1d4ed8" class="halo">균제상태</text>
 
-  <!-- Steady State Consumption c* bracket between y*(228) and i*(311) -->
-  <line x1="430" y1="228" x2="430" y2="311" stroke="#1d4ed8" stroke-width="4" />
-  <circle cx="430" cy="228" r="5" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
-  <circle cx="430" cy="311" r="5.5" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+  <!-- Convergence Arrows along X-Axis -->
+  <line x1="210" y1="360" x2="318" y2="360" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#blue-arr)" />
+  <line x1="465" y1="360" x2="362" y2="360" stroke="#1d4ed8" stroke-width="2.6" marker-end="url(#blue-arr)" />
 
-  <text x="430" y="478" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">k* (균제상태 자본량)</text>
-  <text x="110" y="232" font-size="12" font-weight="700" fill="#0f172a" text-anchor="end">y*</text>
-  <text x="110" y="315" font-size="12" font-weight="700" fill="#1d4ed8" text-anchor="end">i*</text>
-
-  <rect x="444" y="256" width="166" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
-  <text x="527" y="273" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">c* (1인당 소비 = y* - i*)</text>
+  <!-- Axis Labels -->
+  <text x="88" y="153" font-size="15" font-weight="800" fill="#0f172a" text-anchor="end">y*</text>
+  <text x="88" y="233" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="end">i*</text>
+  <text x="340" y="390" font-size="15.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">k* (균제상태 자본)</text>
 </svg>
