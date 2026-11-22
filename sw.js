@@ -1,4 +1,4 @@
-const CACHE_NAME = 'edurecall-cache-v43';
+const CACHE_NAME = 'edurecall-cache-v44';
 const PRECACHE_URLS = [
   './',
   './index.html',
