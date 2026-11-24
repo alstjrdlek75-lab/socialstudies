@@ -8178,6 +8178,7 @@
           customHtml = null;
         }
 
+        let didRepairSplit = false;
         if (customHtml) {
           if (typeof healCorruptedHtml === 'function') {
             customHtml = healCorruptedHtml(customHtml);
@@ -8185,6 +8186,9 @@
           customHtml = normalizeExamBadges(customHtml);
           try { localStorage.setItem(`edurecall_custom_${topic.id}`, customHtml); } catch(e) {}
           subnoteContainer.innerHTML = customHtml;
+          if (typeof repairSplitTopicGroups === 'function') {
+            didRepairSplit = repairSplitTopicGroups(subnoteContainer);
+          }
           if (btnResetCustomTape) btnResetCustomTape.classList.remove('hidden');
         } else {
           subnoteContainer.innerHTML = normalizeExamBadges(topic.contentHtml);
@@ -8242,6 +8246,9 @@
         // Bind interactive handlers to groups and items
         setupGroupInteractions();
         setupTapeInteractions();
+        if (didRepairSplit) {
+          saveCurrentTopicCustomContent();
+        }
         if (window.renderMathInElement) {
           try {
             renderMathInElement(subnoteContainer, {
@@ -8354,6 +8361,77 @@
       }
 
       
+
+      // Auto-heal any .topic-group / .recall-item blocks fractured by legacy range.extractContents()
+      function repairSplitTopicGroups(container) {
+        if (!container) return false;
+        let repaired = false;
+
+        // 1. Unwrap any .mask-tape that erroneously wraps block-level elements
+        container.querySelectorAll('.mask-tape').forEach(tape => {
+          if (tape.querySelector('.topic-group, .group-content, .recall-item, table, tr, td, th, details, p, ul, ol, li')) {
+            const p = tape.parentNode;
+            if (p) {
+              while (tape.firstChild) p.insertBefore(tape.firstChild, tape);
+              p.removeChild(tape);
+              repaired = true;
+            }
+          }
+        });
+
+        // 2. Merge fractured headerless .topic-group cards back into the preceding .topic-group
+        const groups = Array.from(container.querySelectorAll(':scope > .topic-group'));
+        for (let i = 1; i < groups.length; i++) {
+          const orphan = groups[i];
+          const prev = orphan.previousElementSibling;
+          if (!prev || !prev.classList || !prev.classList.contains('topic-group')) continue;
+
+          const hasHeader = Boolean(
+            orphan.querySelector(':scope > div:first-child .font-bold') ||
+            orphan.querySelector(':scope > div:first-child.font-bold') ||
+            orphan.querySelector('table, img, svg, details')
+          );
+          if (hasHeader) continue;
+
+          let prevContent = prev.querySelector(':scope > .group-content');
+          if (!prevContent) {
+            prevContent = document.createElement('div');
+            prevContent.className = 'group-content space-y-2 pl-1';
+            prev.appendChild(prevContent);
+          }
+
+          const orphanSourceWrap = orphan.querySelector(':scope > .group-content') || orphan;
+          const orphanChildren = Array.from(orphanSourceWrap.children);
+          if (orphanChildren.length === 0 && orphanSourceWrap.textContent.trim()) {
+            const tmpItem = document.createElement('div');
+            tmpItem.className = 'recall-item text-sm md:text-[15px] text-slate-800 leading-relaxed pl-3.5 border-l-2 border-blue-200 py-1 transition-all';
+            while (orphanSourceWrap.firstChild) tmpItem.appendChild(orphanSourceWrap.firstChild);
+            orphanChildren.push(tmpItem);
+          }
+
+          orphanChildren.forEach((child, cIdx) => {
+            if (cIdx === 0 && child.classList && child.classList.contains('recall-item')) {
+              const prevLast = prevContent.querySelector(':scope > .recall-item:last-of-type');
+              const orphanTxt = child.textContent.trim();
+              const startsNewLine = /^(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮]|\(\d+\)|\d+\.|[-–—⦁•●▪→➔*※]|->)/.test(orphanTxt);
+              if (prevLast && !prevLast.querySelector('table, img, details, svg') && !child.querySelector('table, img, details, svg') && orphanTxt.length > 0 && !startsNewLine) {
+                const prevTarget = prevLast.querySelector(':scope > .flex-1') || prevLast;
+                const orphanInner = child.querySelector(':scope > .flex-1') || child;
+                while (orphanInner.firstChild) prevTarget.appendChild(orphanInner.firstChild);
+                prevTarget.normalize();
+                child.remove();
+                return;
+              }
+            }
+            prevContent.appendChild(child);
+          });
+
+          orphan.remove();
+          repaired = true;
+        }
+
+        return repaired;
+      }
 
       // Sanitize and normalize group headers to prevent split titles or stray elements
       function sanitizeAndNormalizeGroupHeaders(container) {
@@ -9134,62 +9212,138 @@
           }
         } catch (e) {}
 
-        // Create the new mask tape span
-        const span = document.createElement('span');
-        span.className = 'mask-tape is-taped';
-        span.setAttribute('data-tape', 'true');
-        span.setAttribute('data-text', selectedText);
-
-        let wrappedSuccessfully = false;
-        // Attempt safe split if within single text node
-        if (range.startContainer === range.endContainer && range.startContainer.nodeType === Node.TEXT_NODE) {
-          try {
-            const textNode = range.startContainer;
-            textNode.splitText(range.endOffset);
-            const middleNode = textNode.splitText(range.startOffset);
-            middleNode.parentNode.insertBefore(span, middleNode);
-            span.appendChild(middleNode);
-            wrappedSuccessfully = true;
-          } catch (e) {
-            wrappedSuccessfully = false;
+        // Block-safe text-node slicer: NEVER split .topic-group / .recall-item / table cells via extractContents()
+        const rootNode = range.commonAncestorContainer;
+        const textNodes = [];
+        if (rootNode.nodeType === Node.TEXT_NODE) {
+          textNodes.push(rootNode);
+        } else {
+          const walker = document.createTreeWalker(rootNode, NodeFilter.SHOW_TEXT, null);
+          while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
           }
         }
 
-        if (!wrappedSuccessfully) {
+        const slices = [];
+        const skipSelector = '.group-actions-wrap, button, .inline-edit-transient, .inline-block-editor, .subnote-indent-l2-dash, .subnote-indent-l3-bullet, .subnote-indent-l4-arrow, .exam-badge, .katex, summary, script, style';
+        textNodes.forEach(n => {
+          if (!n.nodeValue || n.nodeValue.length === 0) return;
+          const pEl = n.parentElement;
+          if (!pEl || !subnoteContainer.contains(pEl) || pEl.closest(skipSelector)) return;
           try {
-            range.surroundContents(span);
-            wrappedSuccessfully = true;
-          } catch (err) {
+            if (!range.intersectsNode(n)) return;
+          } catch (e) { return; }
+
+          const start = (n === range.startContainer) ? range.startOffset : 0;
+          const end = (n === range.endContainer) ? range.endOffset : n.nodeValue.length;
+          if (end <= start) return;
+          const rawSlice = n.nodeValue.slice(start, end);
+          if (!rawSlice.trim()) return;
+
+          const block = pEl.closest('.recall-item, td, th, p, li, .topic-group > div:first-child .font-bold > span');
+          if (!block || !subnoteContainer.contains(block)) return;
+          slices.push({ node: n, start, end, block });
+        });
+
+        if (slices.length === 0) {
+          if (isManualClick) showToast('마스킹할 본문 텍스트를 드래그해주세요', 'info');
+          return;
+        }
+
+        function createTapeSpan(txt) {
+          const s = document.createElement('span');
+          s.className = 'mask-tape is-taped';
+          s.setAttribute('data-tape', 'true');
+          s.setAttribute('data-text', txt);
+          return s;
+        }
+
+        const byBlock = new Map();
+        slices.forEach(sl => {
+          if (!byBlock.has(sl.block)) byBlock.set(sl.block, []);
+          byBlock.get(sl.block).push(sl);
+        });
+
+        const createdTapes = [];
+        for (const [, blockSlices] of byBlock.entries()) {
+          const firstParent = blockSlices[0].node.parentNode;
+          const allSameParent = firstParent && blockSlices.every(sl => sl.node.parentNode === firstParent);
+
+          if (blockSlices.length === 1) {
+            const sl = blockSlices[0];
             try {
-              const fragment = range.extractContents();
-              span.appendChild(fragment);
-              range.insertNode(span);
-              wrappedSuccessfully = true;
-            } catch (err2) {
-              console.warn('Masking fallback:', err2);
-              return;
+              const txt = sl.node.nodeValue.slice(sl.start, sl.end).trim();
+              if (!txt) continue;
+              sl.node.splitText(sl.end);
+              const mid = sl.node.splitText(sl.start);
+              const span = createTapeSpan(txt);
+              mid.parentNode.insertBefore(span, mid);
+              span.appendChild(mid);
+              span.normalize();
+              createdTapes.push(span);
+            } catch (e) {}
+          } else if (allSameParent) {
+            try {
+              const first = blockSlices[0];
+              const last = blockSlices[blockSlices.length - 1];
+              last.node.splitText(last.end);
+              const lastMid = last.node.splitText(last.start);
+              first.node.splitText(first.end);
+              const firstMid = first.node.splitText(first.start);
+              const subRange = document.createRange();
+              subRange.setStartBefore(firstMid);
+              subRange.setEndAfter(lastMid);
+              const combinedText = subRange.toString().trim();
+              if (combinedText) {
+                const span = createTapeSpan(combinedText);
+                subRange.surroundContents(span);
+                span.normalize();
+                createdTapes.push(span);
+              }
+            } catch (e) {
+              for (let i = blockSlices.length - 1; i >= 0; i--) {
+                const sl = blockSlices[i];
+                try {
+                  const txt = sl.node.nodeValue.slice(sl.start, sl.end).trim();
+                  if (!txt) continue;
+                  sl.node.splitText(sl.end);
+                  const mid = sl.node.splitText(sl.start);
+                  const span = createTapeSpan(txt);
+                  mid.parentNode.insertBefore(span, mid);
+                  span.appendChild(mid);
+                  span.normalize();
+                  createdTapes.push(span);
+                } catch (err2) {}
+              }
+            }
+          } else {
+            // Crosses inline phrasing tags (e.g. <strong>) inside the same block: wrap each slice safely
+            for (let i = blockSlices.length - 1; i >= 0; i--) {
+              const sl = blockSlices[i];
+              try {
+                const txt = sl.node.nodeValue.slice(sl.start, sl.end).trim();
+                if (!txt) continue;
+                sl.node.splitText(sl.end);
+                const mid = sl.node.splitText(sl.start);
+                const span = createTapeSpan(txt);
+                mid.parentNode.insertBefore(span, mid);
+                span.appendChild(mid);
+                span.normalize();
+                createdTapes.push(span);
+              } catch (e) {}
             }
           }
         }
 
-        // Safety cleanup: if span accidentally captured a .flex-1 wrapper or bullet span, unwrap .flex-1 and remove stray bullet spans
-        span.querySelectorAll('.subnote-indent-l2-dash, .subnote-indent-l3-bullet, .subnote-indent-l4-arrow').forEach(b => b.remove());
-        span.querySelectorAll('.flex-1').forEach(fDiv => {
-          const p = fDiv.parentNode;
-          if (p) {
-            while (fDiv.firstChild) p.insertBefore(fDiv.firstChild, fDiv);
-            p.removeChild(fDiv);
-          }
-        });
-        if (span.parentElement && span.parentElement.classList.contains('recall-item')) {
-          const siblingFlex = span.parentElement.querySelector(':scope > .flex-1');
-          if (siblingFlex && siblingFlex !== span) {
-            siblingFlex.insertBefore(span, siblingFlex.firstChild);
-          }
+        if (createdTapes.length === 0) {
+          if (isManualClick) showToast('마스킹할 본문 텍스트를 드래그해주세요', 'info');
+          return;
         }
 
-        span.normalize();
-        bindSingleTape(span);
+        createdTapes.forEach(t => {
+          bindSingleTape(t);
+          if (currentMode === 'study') peelTape(t);
+        });
 
         try { sel?.removeAllRanges(); } catch (e) {}
         lastValidSelectionRange = null;
@@ -9200,7 +9354,7 @@
         updateTapeCountBadge();
 
         const previewText = selectedText.length > 12 ? selectedText.slice(0, 12) + '...' : selectedText;
-        showToast(`'${previewText}' 마스킹 완료 [M]`, 'label');
+        showToast(createdTapes.length > 1 ? `'${previewText}' 등 ${createdTapes.length}개 구간 마스킹 완료 [M]` : `'${previewText}' 마스킹 완료 [M]`, 'label');
       }
 
       // Helper: Check if a DOM Range genuinely overlaps at least 1 character inside a tape element (ignoring 0-char boundary touches)
