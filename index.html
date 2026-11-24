@@ -63,6 +63,7 @@
       height: 100dvh;
     }
     button, a { touch-action: manipulation; }
+    [hidden] { display: none !important; }
     /* T14: Prevent Material Symbols FOUT (raw text like cloud_sync) & lock icon dimensions */
     .material-symbols-outlined {
       display: inline-flex;
@@ -218,6 +219,163 @@
 
     .mask-tape.is-peeled:hover {
       background-color: #d1fae5;
+    }
+
+    /* Inline Direct Editing (본문 제자리 수정 — edu-dankwon 방식) */
+    .inline-edit-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: #fffbf0;
+      border: 1.5px dashed #e3b341;
+      border-radius: 14px;
+      padding: 10px 14px;
+      margin-bottom: 4px;
+    }
+    #subnote-content-container.is-inline-editing .ed {
+      outline: 1.5px dashed #e3b341;
+      outline-offset: 1px;
+      border-radius: 6px;
+      cursor: text;
+      transition: background-color 0.12s ease, outline-color 0.12s ease;
+    }
+    #subnote-content-container.is-inline-editing .ed:hover {
+      background: #fffaea;
+    }
+    #subnote-content-container.is-inline-editing .ed.is-editing {
+      outline: 2px solid #2563eb;
+      outline-offset: 1px;
+      background: #ffffff;
+      cursor: default;
+    }
+    #subnote-content-container.is-inline-editing .mask-tape {
+      pointer-events: none;
+      color: #065f46 !important;
+      background: #dff7ea !important;
+      border-top-color: #a7f3d0 !important;
+      border-bottom-color: #34d399 !important;
+      box-shadow: none !important;
+    }
+    #subnote-content-container.is-inline-editing .mask-tape.is-taped::after {
+      content: none !important;
+      display: none !important;
+    }
+    .inline-block-editor {
+      display: block;
+      width: 100%;
+    }
+    .inline-ed-ta {
+      width: 100%;
+      min-height: 2.8em;
+      border: 0;
+      outline: 0;
+      resize: vertical;
+      font-size: inherit;
+      line-height: 1.65;
+      background: transparent;
+      padding: 6px 8px;
+      font-weight: 500;
+      color: #0f172a;
+      font-family: inherit;
+      display: block;
+    }
+    .inline-ed-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 6px 8px 4px;
+      border-top: 1px dashed #cbd5e1;
+      font-size: 12px;
+    }
+    .inline-ed-hint {
+      flex: 1 1 160px;
+      color: #64748b;
+      font-weight: 500;
+      text-align: left;
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+
+    /* Dark Arrowed Floating Tape Toolbar (드래그·테이프 클릭 시 플로팅 바) */
+    .edurecall-floater {
+      position: fixed;
+      z-index: 55;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: #171c2a;
+      color: #fff;
+      border-radius: 11px;
+      padding: 4px;
+      box-shadow: 0 10px 28px rgba(10, 15, 30, 0.3);
+      --ax: 50%;
+      user-select: none;
+      pointer-events: auto;
+      animation: edurecallFloaterPop 0.12s ease-out;
+    }
+    .edurecall-floater.hidden {
+      display: none !important;
+    }
+    .edurecall-floater::after {
+      content: "";
+      position: absolute;
+      left: var(--ax);
+      bottom: -5px;
+      width: 10px;
+      height: 10px;
+      background: #171c2a;
+      transform: translateX(-50%) rotate(45deg);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .edurecall-floater.below::after {
+      bottom: auto;
+      top: -5px;
+    }
+    .edurecall-floater button {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+    .edurecall-floater button:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+    .edurecall-floater button[data-act="untape"] {
+      color: #ffb4b6;
+    }
+    .edurecall-floater kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      padding: 1px 4px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      opacity: 0.85;
+    }
+    .edurecall-floater i {
+      display: block;
+      width: 1px;
+      align-self: stretch;
+      margin: 4px 2px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+    @keyframes edurecallFloaterPop {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: none; }
     }
 
     /* Interactive Tape Typing Mode (직접 타이핑 모드) */
@@ -2583,9 +2741,9 @@
               </button>
             </div>
             <div class="flex items-center gap-1.5 shrink-0 ml-auto">
-              <button id="btn-edit-topic-content" class="touch-hit-expand h-7 px-2.5 rounded-xl text-xs font-bold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 inline-flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문 내용을 직접 수정하거나 서식을 편집합니다">
+              <button id="btn-edit-topic-content" class="touch-hit-expand h-7 px-2.5 rounded-xl text-xs font-bold text-slate-600 hover:text-blue-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 inline-flex items-center gap-1 transition-colors cursor-pointer shadow-2xs" type="button" title="서브노트 본문을 제자리에서 직접 수정합니다 [단축키: E]">
                 <span class="material-symbols-outlined text-[15px]" aria-hidden="true">edit_note</span>
-                <span>본문 수정</span>
+                <span id="btn-edit-topic-label">본문 수정</span>
               </button>
               <button id="btn-reset-custom-tape" class="touch-hit-expand h-7 px-2 rounded-xl text-xs font-bold text-slate-500 hover:text-red-700 hover:bg-red-50 border border-slate-200 hover:border-red-200 hidden inline-flex items-center gap-1 transition-colors cursor-pointer" type="button" title="사용자가 직접 수정한 본문 내용 및 마스킹을 원본으로 복원합니다">
                 <span class="material-symbols-outlined text-[15px]" aria-hidden="true">restart_alt</span>
@@ -2657,12 +2815,38 @@
                 <span>테이프 붙이기 [M]</span>
               </button>
 
+              <button id="btn-remove-tape-inline" type="button" class="hidden md:flex min-h-[34px] px-2.5 py-1 rounded-lg border border-slate-200 hover:border-rose-300 bg-white hover:bg-rose-50 text-slate-700 hover:text-rose-700 font-bold text-xs items-center justify-center gap-1 transition-all cursor-pointer whitespace-nowrap shadow-2xs" title="선택한 영역 또는 방금 누른 테이프 떼기 [단축키: D]">
+                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">label_off</span>
+                <span>테이프 떼기 [D]</span>
+              </button>
+
               <div class="flex items-center bg-slate-100/90 rounded-lg p-0.5 border border-slate-200/80 text-xs text-slate-700 font-bold select-none shrink-0 whitespace-nowrap">
                 <button id="btn-font-down" type="button" class="min-h-[30px] px-2 py-0.5 rounded hover:bg-white hover:shadow-xs transition-all font-bold text-slate-700 cursor-pointer" title="글자 작게 [단축키: -]">A-</button>
                 <span id="font-scale-text" class="px-1.5 text-[11px] text-slate-700 font-mono font-bold min-w-[2.4rem] text-center">115%</span>
                 <button id="btn-font-up" type="button" class="min-h-[30px] px-2 py-0.5 rounded hover:bg-white hover:shadow-xs transition-all font-bold text-slate-700 cursor-pointer" title="글자 크게 [단축키: =]">A+</button>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Inline Edit Banner (Shown when 본문 수정 [E] is active) -->
+        <div id="inline-edit-banner" class="inline-edit-banner" hidden>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2.5 flex-1 min-w-0">
+            <span class="inline-flex items-center gap-1 font-extrabold text-xs sm:text-[13px] text-amber-900 shrink-0">
+              <span class="material-symbols-outlined text-[16px] text-amber-600" aria-hidden="true">edit_note</span>
+              <span>본문 수정 중</span>
+            </span>
+            <span class="text-xs text-amber-800/90 leading-snug">점선 칸을 누르면 그 칸을 바로 고칠 수 있어요. <code class="px-1 py-0.5 rounded bg-amber-100/90 text-amber-950 font-mono text-[11px]">{{가릴 말}}</code>처럼 감싸면 테이프가 됩니다.</span>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button id="btn-open-card-modal-from-inline" type="button" class="h-7 px-2.5 rounded-lg border border-amber-300 bg-white hover:bg-amber-50 text-amber-900 font-bold text-xs inline-flex items-center gap-1 transition-colors cursor-pointer whitespace-nowrap">
+              <span class="material-symbols-outlined text-[14px]" aria-hidden="true">view_agenda</span>
+              <span>카드 추가·순서</span>
+            </button>
+            <button id="btn-finish-inline-edit" type="button" class="h-7 px-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs inline-flex items-center gap-1 transition-colors cursor-pointer shadow-2xs whitespace-nowrap">
+              <span class="material-symbols-outlined text-[14px]" aria-hidden="true">check</span>
+              <span>수정 끝내기</span>
+            </button>
           </div>
         </div>
 
@@ -3070,11 +3254,8 @@
     </div>
   </div>
 
-  <!-- FLOATING MASKING TAPE ACTION BUTTON (Shows dynamically on text drag) -->
-  <button id="floating-mask-btn" class="fixed z-50 hidden bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-xs px-4 py-2 sm:px-3 sm:py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-emerald-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none pointer-events-auto" type="button" title="선택한 글자에 민트색 마스킹 테이프 붙이기 [단축키 M]">
-    <span class="material-symbols-outlined text-[15px]">label</span>
-    <span>테이프 붙이기 [M]</span>
-  </button>
+  <!-- FLOATING MASKING TAPE TOOLBAR (Shows dynamically on text drag or tape click) -->
+  <div id="floating-mask-btn" class="edurecall-floater hidden" role="toolbar" aria-label="테이프 도구"></div>
 
   <!-- TOAST NOTIFICATION -->
   <div id="toast" class="fixed bottom-16 xl:bottom-6 right-4 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg bg-slate-900 text-white text-xs font-medium">
@@ -3341,6 +3522,17 @@
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>마스킹 테이프 순차 다시 가리기 (역순)</span>
           <kbd class="px-2 py-1 bg-amber-100 text-amber-800 rounded border border-amber-300 font-mono font-bold">S</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>본문 직접 수정 켜기/끄기</span>
+          <kbd class="px-2 py-1 bg-amber-50 text-amber-800 rounded border border-amber-200 font-mono font-bold">E</kbd>
+        </div>
+        <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
+          <span>선택한 글자에 테이프 붙이기 / 떼기</span>
+          <div class="flex gap-1 font-mono font-bold">
+            <kbd class="px-2 py-1 bg-emerald-50 text-emerald-800 rounded border border-emerald-200">M</kbd>
+            <kbd class="px-2 py-1 bg-rose-50 text-rose-800 rounded border border-rose-200">D</kbd>
+          </div>
         </div>
         <div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700">
           <span>좌측 목차 패널 열기/닫기</span>
@@ -4292,8 +4484,12 @@
       const topicBadgeTape = document.getElementById('topic-badge-tape');
       const topicTapeCount = document.getElementById('topic-tape-count');
       const btnEditTopicContent = document.getElementById('btn-edit-topic-content');
+      const btnEditTopicLabel = document.getElementById('btn-edit-topic-label');
       const btnResetCustomTape = document.getElementById('btn-reset-custom-tape');
       const floatingMaskBtn = document.getElementById('floating-mask-btn');
+      const inlineEditBanner = document.getElementById('inline-edit-banner');
+      const btnFinishInlineEdit = document.getElementById('btn-finish-inline-edit');
+      const btnOpenCardModalFromInline = document.getElementById('btn-open-card-modal-from-inline');
       const topicPageRef = document.getElementById('topic-page-ref');
       const topicRepsBadge = document.getElementById('topic-reps-badge');
       const topicRepsBadgeText = document.getElementById('topic-reps-badge-text');
@@ -4303,6 +4499,7 @@
 
       const modePills = document.querySelectorAll('.mode-pill');
       const btnApplyTapeInline = document.getElementById('btn-apply-tape-inline');
+      const btnRemoveTapeInline = document.getElementById('btn-remove-tape-inline');
       const btnRevealAll = document.getElementById('btn-reveal-all');
       const revealBtnLabel = document.getElementById('reveal-btn-label');
       const revealEyeIcon = document.getElementById('reveal-eye-icon');
@@ -7559,6 +7756,9 @@
         }
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
+        if (typeof exitInlineEditMode === 'function') exitInlineEditMode(true);
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+        lastClickedTape = null;
 
         // Lazy load subject chunk on demand if not hydrated yet
         if (!topic._hydrated && !topic.contentHtml) {
@@ -7844,8 +8044,8 @@
           localStorage.removeItem(`edurecall_custom_masks_${topic.id}`);
           customHtml = null;
         }
-        // Integrity safeguard: Always sync the official audited <details> answer/explanation block (v35) into any cached customHtml for EXAM items while preserving prompt masks
-        if (customHtml && (topic.id.startsWith('EXAM-') || topic.id.startsWith('ECON-EXAM-'))) {
+        // Integrity safeguard: Always sync the official audited <details> answer/explanation block (v35) into any cached customHtml for EXAM items while preserving prompt masks (unless user explicitly edited inside details)
+        if (customHtml && (topic.id.startsWith('EXAM-') || topic.id.startsWith('ECON-EXAM-')) && !customHtml.includes('data-user-edited-details="true"')) {
           const officialDetails = (topic.contentHtml || '').match(/<details[\s\S]*?<\/details>/);
           if (officialDetails && /<details[\s\S]*?<\/details>/.test(customHtml)) {
             const updatedCustom = customHtml.replace(/<details[\s\S]*?<\/details>/, officialDetails[0]);
@@ -8428,14 +8628,14 @@
             }
 
             editBtn.className = 'group-edit-btn touch-hit-expand text-[10.5px] text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/40 px-1.5 py-0.5 rounded flex items-center gap-0.5 cursor-pointer transition-colors';
-            editBtn.title = '이 칸(카드) 개별 수정';
+            editBtn.title = '이 카드 제자리 수정 [E]';
             editBtn.innerHTML = `
               <span class="material-symbols-outlined text-[13px]">edit</span>
               <span class="font-normal text-[10.5px]">수정</span>
             `;
             editBtn.onclick = (e) => {
               e.stopPropagation();
-              openTopicEditor(gIdx);
+              enterInlineEditMode(gIdx);
             };
           }
 
@@ -8545,6 +8745,9 @@
 
         // Left-Click: toggle (or delete if modifier held)
         tape.addEventListener('click', (e) => {
+          if (typeof isInlineEditMode !== 'undefined' && isInlineEditMode) {
+            return; // let click bubble to .ed inline block editor
+          }
           e.stopPropagation();
           if (isLongPress) {
             isLongPress = false;
@@ -8562,6 +8765,15 @@
             peelTape(tape);
           } else {
             stickTape(tape);
+          }
+          if (currentMode !== 'type') {
+            const sel = window.getSelection();
+            if (!sel || sel.isCollapsed) {
+              lastClickedTape = tape;
+              if (typeof showFloatingBarForTape === 'function') {
+                showFloatingBarForTape(tape);
+              }
+            }
           }
         });
       }
@@ -8605,6 +8817,12 @@
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
         const tempDiv = subnoteContainer.cloneNode(true);
+        tempDiv.classList.remove('is-inline-editing');
+        tempDiv.querySelectorAll('.ed').forEach(el => {
+          el.classList.remove('ed', 'is-editing');
+          el.removeAttribute('data-ed-kind');
+        });
+        tempDiv.querySelectorAll('.inline-block-editor').forEach(el => el.remove());
         tempDiv.querySelectorAll('details').forEach(d => {
           d.open = false;
           d.removeAttribute('open');
@@ -8653,6 +8871,9 @@
       function resetTopicCustomContent() {
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
+        if (typeof exitInlineEditMode === 'function') exitInlineEditMode(true);
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+        lastClickedTape = null;
         if (!confirm(`'${topic.title}' 주제에서 직접 수정한 본문 내용 및 마스킹 테이프를 모두 초기화하고 원본 서브노트로 되돌리시겠습니까?`)) {
           return;
         }
@@ -8919,24 +9140,104 @@
         }
       }
 
-      let currentFloatingMode = 'add'; // 'add' or 'delete'
+      let currentFloatingMode = 'add'; // 'add', 'delete', or 'both'
       let targetTapesToDelete = [];
 
       function hideFloatingMaskBtn() {
         if (floatingMaskBtn) {
           floatingMaskBtn.classList.add('hidden');
+          floatingMaskBtn.removeAttribute('data-float-mode');
         }
         currentFloatingMode = 'add';
         targetTapesToDelete = [];
       }
 
+      function placeFloatingBar(rect, html, floatMode) {
+        if (!floatingMaskBtn || !rect) return;
+        floatingMaskBtn.innerHTML = html;
+        floatingMaskBtn.dataset.floatMode = floatMode || 'selection';
+        floatingMaskBtn.classList.remove('hidden');
+
+        const fw = floatingMaskBtn.offsetWidth || 150;
+        const fh = floatingMaskBtn.offsetHeight || 38;
+        const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        let top = rect.top - fh - (isTouch ? 18 : 10);
+        let below = false;
+        if (top < 60) {
+          top = rect.bottom + (isTouch ? 24 : 10);
+          below = true;
+        }
+        const left = Math.min(Math.max(rect.left + (rect.width / 2) - (fw / 2), 10), window.innerWidth - fw - 10);
+        const arrowX = Math.max(14, Math.min(fw - 14, rect.left + (rect.width / 2) - left));
+
+        floatingMaskBtn.style.top = `${top}px`;
+        floatingMaskBtn.style.left = `${left}px`;
+        floatingMaskBtn.classList.toggle('below', below);
+        floatingMaskBtn.style.setProperty('--ax', `${arrowX}px`);
+      }
+
+      function showFloatingBarForTape(tape) {
+        if (!floatingMaskBtn || !tape || !tape.isConnected) return;
+        if ((typeof isInlineEditMode !== 'undefined' && isInlineEditMode) || currentMode === 'type') {
+          hideFloatingMaskBtn();
+          return;
+        }
+        const rect = tape.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) {
+          hideFloatingMaskBtn();
+          return;
+        }
+        currentFloatingMode = 'delete';
+        targetTapesToDelete = [tape];
+        const html = `<button type="button" data-act="untape"><span class="material-symbols-outlined text-[15px]">label_off</span><span>이 테이프 떼기</span><kbd>D</kbd></button>`;
+        placeFloatingBar(rect, html, 'tape-click');
+      }
+
+      function untapeSelectionOrLast(isManualClick = false) {
+        if (currentMode === 'type') {
+          if (isManualClick) showToast('테이프 떼기는 마스킹·정독·블러 모드에서 쓸 수 있어요', 'info');
+          return;
+        }
+        let sel = window.getSelection();
+        let range = (sel && !sel.isCollapsed && sel.rangeCount > 0) ? sel.getRangeAt(0) : (lastValidSelectionRange || null);
+        if (range && subnoteContainer) {
+          const allTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape'));
+          const intersectingTapes = allTapes.filter(t => doesRangeOverlapTape(range, t));
+          if (intersectingTapes.length > 0) {
+            intersectingTapes.forEach(t => removeTape(t));
+            try { sel?.removeAllRanges(); } catch (err) {}
+            lastValidSelectionRange = null;
+            lastValidSelectionText = '';
+            lastClickedTape = null;
+            hideFloatingMaskBtn();
+            return;
+          }
+        }
+        if (lastClickedTape && lastClickedTape.isConnected) {
+          const target = lastClickedTape;
+          lastClickedTape = null;
+          removeTape(target);
+          hideFloatingMaskBtn();
+          return;
+        }
+        if (isManualClick) {
+          showToast('뗄 테이프를 누르거나 테이프가 걸치게 드래그하세요', 'info');
+        }
+      }
+
       function checkTextSelection() {
         if (!floatingMaskBtn || !subnoteContainer) return;
+        if ((typeof isInlineEditMode !== 'undefined' && isInlineEditMode) || currentMode === 'type') {
+          hideFloatingMaskBtn();
+          return;
+        }
 
         const sel = window.getSelection();
         // Strictly require an ACTIVE, non-collapsed selection
         if (!sel || sel.isCollapsed || sel.rangeCount === 0) {
-          hideFloatingMaskBtn();
+          if (floatingMaskBtn.dataset.floatMode !== 'tape-click') {
+            hideFloatingMaskBtn();
+          }
           return;
         }
 
@@ -8968,64 +9269,54 @@
           return;
         }
 
-        const rect = range.getBoundingClientRect();
-        if (rect.width === 0 && rect.height === 0) {
+        const rects = Array.from(range.getClientRects()).filter(r => r.width > 0);
+        const bounding = range.getBoundingClientRect();
+        if ((!rects.length && bounding.width === 0 && bounding.height === 0)) {
           hideFloatingMaskBtn();
           return;
         }
+        let anchorRect = bounding;
+        if (rects.length > 0) {
+          const r0 = rects[0];
+          const topRight = Math.max(...rects.filter(r => Math.abs(r.top - r0.top) < 4).map(r => r.right));
+          anchorRect = {
+            top: r0.top,
+            bottom: rects[rects.length - 1].bottom,
+            left: r0.left,
+            width: Math.max(1, topRight - r0.left)
+          };
+        }
 
+        lastClickedTape = null;
         const parentTape = commonNode.closest('.mask-tape');
+        const allTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape'));
+        const containedTapes = allTapes.filter(t => doesRangeOverlapTape(range, t));
 
+        let html = '';
         if (parentTape) {
           currentFloatingMode = 'delete';
           targetTapesToDelete = [parentTape];
-          floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
-          floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 [M/Del]</span>';
-          floatingMaskBtn.title = '이 마스킹 테이프를 완전히 삭제합니다 [단축키: M 또는 Delete]';
+          html = `<button type="button" data-act="untape"><span class="material-symbols-outlined text-[15px]">label_off</span><span>이 테이프 떼기</span><kbd>D</kbd></button>`;
+        } else if (containedTapes.length > 0) {
+          currentFloatingMode = 'both';
+          targetTapesToDelete = containedTapes;
+          html = `<button type="button" data-act="tape"><span class="material-symbols-outlined text-[15px]">label</span><span>테이프 붙이기</span><kbd>M</kbd></button><i></i><button type="button" data-act="untape"><span class="material-symbols-outlined text-[15px]">label_off</span><span>테이프 떼기${containedTapes.length > 1 ? ` (${containedTapes.length}개)` : ''}</span><kbd>D</kbd></button>`;
         } else {
-          const allTapes = Array.from(subnoteContainer.querySelectorAll('.mask-tape'));
-          const containedTapes = allTapes.filter(t => doesRangeOverlapTape(range, t));
-
-          if (containedTapes.length > 0) {
-            currentFloatingMode = 'delete';
-            targetTapesToDelete = containedTapes;
-            floatingMaskBtn.className = 'fixed z-50 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-rose-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
-            floatingMaskBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">delete</span><span>테이프 삭제 (${containedTapes.length}개) [M/Del]</span>`;
-            floatingMaskBtn.title = '선택 영역 내 마스킹 테이프들을 삭제합니다';
-          } else {
-            currentFloatingMode = 'add';
-            targetTapesToDelete = [];
-            floatingMaskBtn.className = 'fixed z-50 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-1.5 border border-emerald-400 cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 active:scale-95 transition-all select-none';
-            floatingMaskBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">label</span><span>테이프 붙이기 [M]</span>';
-            floatingMaskBtn.title = '선택한 글자에 민트색 마스킹 테이프 붙이기 [단축키 M]';
-          }
+          currentFloatingMode = 'add';
+          targetTapesToDelete = [];
+          html = `<button type="button" data-act="tape"><span class="material-symbols-outlined text-[15px]">label</span><span>테이프 붙이기</span><kbd>M</kbd></button>`;
         }
 
-        const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-        let btnTop;
-        let btnLeft;
-        if (isTouch) {
-          // On tablets/touch, position sufficiently above or below the selection bounding rect to not collide with iOS callout menu
-          if (rect.top > 90) {
-            btnTop = rect.top - 20;
-          } else if (rect.bottom + 65 < window.innerHeight) {
-            btnTop = rect.bottom + 48;
-          } else {
-            btnTop = 64; // Safe fallback top
-          }
-          btnLeft = Math.min(window.innerWidth - 90, Math.max(90, rect.left + (rect.width / 2)));
-        } else {
-          btnTop = rect.top > 80 ? (rect.top - 8) : (rect.bottom + 12);
-          btnLeft = Math.min(window.innerWidth - 80, Math.max(80, rect.left + (rect.width / 2)));
-        }
-
-        floatingMaskBtn.style.top = `${btnTop}px`;
-        floatingMaskBtn.style.left = `${btnLeft}px`;
-        floatingMaskBtn.classList.remove('hidden');
+        placeFloatingBar(anchorRect, html, 'selection');
       }
 
       // 6. Mode Switcher (Tape, Type, Study, Blur, Cloze)
       function applyMode(mode) {
+        if (mode === 'type' && typeof exitInlineEditMode === 'function') {
+          exitInlineEditMode(true);
+        }
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+        lastClickedTape = null;
         currentMode = mode;
         document.body.dataset.studyMode = mode;
         try { localStorage.setItem('edurecall_mode', mode); } catch (e) {}
@@ -9914,11 +10205,19 @@
           e.preventDefault();
           e.stopPropagation();
         }
-        if (currentFloatingMode === 'delete' && targetTapesToDelete.length > 0) {
-          targetTapesToDelete.forEach(t => removeTape(t));
-          try { window.getSelection()?.removeAllRanges(); } catch (err) {}
-          lastValidSelectionRange = null;
-          lastValidSelectionText = '';
+        const actBtn = e && e.target ? e.target.closest('button[data-act]') : null;
+        const act = actBtn ? actBtn.dataset.act : (currentFloatingMode === 'delete' ? 'untape' : 'tape');
+
+        if (act === 'untape') {
+          if (targetTapesToDelete.length > 0) {
+            targetTapesToDelete.forEach(t => removeTape(t));
+            try { window.getSelection()?.removeAllRanges(); } catch (err) {}
+            lastValidSelectionRange = null;
+            lastValidSelectionText = '';
+            lastClickedTape = null;
+          } else {
+            untapeSelectionOrLast(true);
+          }
         } else {
           addTapeToCurrentSelection(true);
         }
@@ -9959,16 +10258,18 @@
         const sel = window.getSelection();
         if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) {
           checkTextSelection();
-        } else {
+        } else if (!floatingMaskBtn || floatingMaskBtn.dataset.floatMode !== 'tape-click') {
           hideFloatingMaskBtn();
         }
       });
       document.addEventListener('pointerdown', (e) => {
         if (floatingMaskBtn && floatingMaskBtn.contains(e.target)) return;
         if (btnApplyTapeInline && btnApplyTapeInline.contains(e.target)) return;
-        if (e.target && (e.target.closest('#mobile-nav-tape') || e.target.closest('#btn-apply-tape-inline') || e.target.closest('#floating-mask-btn'))) return;
+        if (btnRemoveTapeInline && btnRemoveTapeInline.contains(e.target)) return;
+        if (e.target && (e.target.closest('#mobile-nav-tape') || e.target.closest('#btn-apply-tape-inline') || e.target.closest('#btn-remove-tape-inline') || e.target.closest('#floating-mask-btn') || e.target.closest('.mask-tape'))) return;
         const sel = window.getSelection();
         if (!sel || sel.isCollapsed) {
+          lastClickedTape = null;
           hideFloatingMaskBtn();
           lastValidSelectionRange = null;
           lastValidSelectionText = '';
@@ -9977,7 +10278,11 @@
       window.addEventListener('scroll', () => {
         const sel = window.getSelection();
         if (!sel || sel.isCollapsed || !sel.toString().trim()) {
-          hideFloatingMaskBtn();
+          if (floatingMaskBtn && floatingMaskBtn.dataset.floatMode === 'tape-click' && lastClickedTape && lastClickedTape.isConnected) {
+            showFloatingBarForTape(lastClickedTape);
+          } else {
+            hideFloatingMaskBtn();
+          }
         } else {
           checkTextSelection();
         }
@@ -9992,6 +10297,18 @@
           e.preventDefault();
           e.stopPropagation();
           addTapeToCurrentSelection(true);
+        });
+      }
+
+      if (btnRemoveTapeInline) {
+        btnRemoveTapeInline.addEventListener('mousedown', (e) => e.preventDefault());
+        btnRemoveTapeInline.addEventListener('touchstart', (e) => {
+          updateCachedSelection();
+        }, { passive: true });
+        btnRemoveTapeInline.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          untapeSelectionOrLast(true);
         });
       }
 
@@ -12009,7 +12326,385 @@
         }
       }
 
+      // =========================================================================
+      // INLINE DIRECT EDITING ENGINE (edu-dankwon 스타일 제자리 수정)
+      // =========================================================================
+      let isInlineEditMode = false;
+      let activeInlineEditorState = null; // { targetEl, originalHtml, initialText, isMultiline }
+      let lastClickedTape = null;
+
+      function clearEditableBlocks() {
+        if (!subnoteContainer) return;
+        subnoteContainer.querySelectorAll('.ed').forEach(el => {
+          el.classList.remove('ed', 'is-editing');
+          el.removeAttribute('data-ed-kind');
+        });
+      }
+
+      function markEditableBlocks() {
+        if (!subnoteContainer) return;
+        clearEditableBlocks();
+
+        // 1. Card Titles (skip diagram card headers)
+        subnoteContainer.querySelectorAll('.topic-group > div:first-child:not(.diagram-card-header) .font-bold > span:not(.rounded-full):not(.material-symbols-outlined):not(.exam-badge)').forEach(sp => {
+          if (sp.closest('.ed') || sp.closest('.group-actions-wrap')) return;
+          if (sp.querySelector('img, svg, canvas, button')) return;
+          sp.classList.add('ed');
+          sp.dataset.edKind = 'title';
+        });
+
+        // 2. Recall Items (preserve leading bullet/arrow by targeting :scope > .flex-1 when present)
+        subnoteContainer.querySelectorAll('.recall-item').forEach(item => {
+          if (item.querySelector('table, img, canvas, details, svg, .mobile-diagram-collapse-wrap')) return;
+          const target = item.querySelector(':scope > .flex-1') || item;
+          if (target.closest('.ed')) return;
+          target.classList.add('ed');
+          target.dataset.edKind = 'line';
+        });
+
+        // 3. Table Cells (th, td)
+        subnoteContainer.querySelectorAll('table th, table td').forEach(cell => {
+          if (cell.closest('.ed') || cell.querySelector('table, img, svg, canvas, button')) return;
+          cell.classList.add('ed');
+          cell.dataset.edKind = 'cell';
+        });
+
+        // 4. Standalone paragraphs / exam text blocks / <details> body paragraphs & list items
+        subnoteContainer.querySelectorAll('p, li').forEach(p => {
+          if (p.closest('.ed') || p.closest('.recall-item') || p.closest('table') || p.closest('summary')) return;
+          if (p.closest('.diagram-card-header') || p.closest('.mobile-diagram-collapse-wrap') || p.closest('.mobile-diagram-summary-first') || p.closest('.group-actions-wrap')) return;
+          if (p.querySelector('img, svg, canvas, table, button, details')) return;
+          if (!p.textContent.trim()) return;
+          p.classList.add('ed');
+          p.dataset.edKind = 'para';
+        });
+      }
+
+      function serializeElementToInlineText(el) {
+        if (!el) return '';
+        const clone = el.cloneNode(true);
+        // Unwrap KaTeX back to $...$ / $$...$$
+        clone.querySelectorAll('.katex-display, .katex').forEach(kEl => {
+          if (!kEl.parentNode) return;
+          const ann = kEl.querySelector('annotation[encoding="application/x-tex"]');
+          if (ann && ann.textContent) {
+            const isDisplay = kEl.classList.contains('katex-display') || (kEl.parentElement && kEl.parentElement.classList.contains('katex-display'));
+            const delim = isDisplay ? '$$' : '$';
+            kEl.replaceWith(document.createTextNode(`${delim}${ann.textContent.trim()}${delim}`));
+          }
+        });
+        // Convert .mask-tape spans -> {{text}}
+        clone.querySelectorAll('.mask-tape').forEach(tape => {
+          const hasTyping = Boolean(tape.querySelector('.tape-typing-input'));
+          const answer = hasTyping
+            ? (tape.getAttribute('data-text') || tape.querySelector('.tape-typing-input')?.getAttribute('data-answer') || '')
+            : (tape.textContent || tape.getAttribute('data-text') || '');
+          const clean = answer.trim();
+          tape.replaceWith(document.createTextNode(clean ? `{{${clean}}}` : ''));
+        });
+        // Convert bold spans/tags -> **text** (skip exam badges)
+        clone.querySelectorAll('strong, b').forEach(b => {
+          if (b.closest('.exam-badge') || b.classList.contains('exam-badge')) return;
+          const txt = b.textContent;
+          if (txt && txt.trim()) {
+            b.replaceWith(document.createTextNode(`**${txt}**`));
+          }
+        });
+        // Convert <br> -> newline
+        clone.querySelectorAll('br').forEach(br => br.replaceWith(document.createTextNode('\n')));
+        return clone.textContent.replace(/\r\n?/g, '\n').replace(/[ \t]+\n/g, '\n').trim();
+      }
+
+      function renderInlineTextToHtml(rawText, isMultiline) {
+        let txt = (rawText || '').replace(/\r\n?/g, '\n');
+        txt = isMultiline ? txt.trim() : txt.replace(/\s*\n\s*/g, ' ').trim();
+        let html = escapeHtml(txt);
+        html = html.replace(/\{\{([^}\n]+?)\}\}/g, (_, inner) => {
+          const cleanInner = inner.trim();
+          if (!cleanInner) return '';
+          const plainAttr = cleanInner.replace(/\*\*/g, '');
+          return `<span class="mask-tape is-taped" data-tape="true" data-text="${plainAttr}">${cleanInner}</span>`;
+        });
+        html = html.replace(/\n/g, '<br>');
+        html = normalizeExamBadges(html);
+        return html;
+      }
+
+      function wrapInlineTextareaWithTape(ta) {
+        if (!ta) return;
+        const s = ta.selectionStart;
+        const e = ta.selectionEnd;
+        const val = ta.value;
+        const sel = val.substring(s, e);
+        if (!sel) {
+          ta.value = val.substring(0, s) + '{{가릴 말}}' + val.substring(e);
+          ta.selectionStart = s + 2;
+          ta.selectionEnd = s + 6;
+          ta.focus();
+          ta.dispatchEvent(new Event('input'));
+          return;
+        }
+        if (sel.startsWith('{{') && sel.endsWith('}}') && sel.length >= 4) {
+          const unwrapped = sel.substring(2, sel.length - 2);
+          ta.value = val.substring(0, s) + unwrapped + val.substring(e);
+          ta.selectionStart = s;
+          ta.selectionEnd = s + unwrapped.length;
+        } else {
+          ta.value = val.substring(0, s) + `{{${sel}}}` + val.substring(e);
+          ta.selectionStart = s;
+          ta.selectionEnd = s + sel.length + 4;
+        }
+        ta.focus();
+        ta.dispatchEvent(new Event('input'));
+      }
+
+      function cancelInlineBlockEditor() {
+        if (!activeInlineEditorState) return;
+        const { targetEl, originalHtml } = activeInlineEditorState;
+        activeInlineEditorState = null;
+        if (targetEl && targetEl.isConnected) {
+          targetEl.innerHTML = originalHtml;
+          targetEl.classList.remove('is-editing');
+          targetEl.querySelectorAll('.mask-tape').forEach(t => bindSingleTape(t));
+          if (window.renderMathInElement) {
+            try {
+              renderMathInElement(targetEl, {
+                delimiters: [
+                  { left: '$$', right: '$$', display: true },
+                  { left: '$', right: '$', display: false }
+                ],
+                throwOnError: false
+              });
+            } catch (e) {}
+          }
+        }
+      }
+
+      function commitInlineBlockEditor() {
+        if (!activeInlineEditorState) return;
+        const { targetEl, isMultiline } = activeInlineEditorState;
+        const ta = targetEl ? targetEl.querySelector('.inline-ed-ta') : null;
+        if (!targetEl || !ta) {
+          cancelInlineBlockEditor();
+          return;
+        }
+        const rawVal = ta.value.replace(/\r\n?/g, '\n').trim();
+        if (!rawVal) {
+          cancelInlineBlockEditor();
+          showToast('빈 내용은 저장되지 않았어요', 'info');
+          return;
+        }
+        const newHtml = renderInlineTextToHtml(rawVal, isMultiline);
+        activeInlineEditorState = null;
+        targetEl.innerHTML = newHtml;
+        targetEl.classList.remove('is-editing');
+
+        const detailsParent = targetEl.closest('details');
+        if (detailsParent) {
+          detailsParent.setAttribute('data-user-edited-details', 'true');
+        }
+
+        targetEl.querySelectorAll('.mask-tape').forEach(t => {
+          bindSingleTape(t);
+          if (currentMode === 'study') peelTape(t);
+          else stickTape(t);
+        });
+
+        if (window.renderMathInElement) {
+          try {
+            renderMathInElement(targetEl, {
+              delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false }
+              ],
+              throwOnError: false
+            });
+          } catch (e) {}
+        }
+
+        saveCurrentTopicCustomContent();
+        updateTapeCountBadge();
+        showToast('수정 내용을 저장했어요', 'check_circle');
+      }
+
+      function openInlineBlockEditor(edEl) {
+        if (!edEl || !isInlineEditMode) return;
+        if (edEl.classList.contains('is-editing')) return;
+        if (activeInlineEditorState) {
+          const prevTa = activeInlineEditorState.targetEl?.querySelector('.inline-ed-ta');
+          if (prevTa && prevTa.value.trim() !== activeInlineEditorState.initialText.trim()) {
+            commitInlineBlockEditor();
+          } else {
+            cancelInlineBlockEditor();
+          }
+        }
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+
+        const isMultiline = (edEl.dataset.edKind === 'cell' || edEl.dataset.edKind === 'para' || Boolean(edEl.querySelector('br')));
+        const initialText = serializeElementToInlineText(edEl);
+        activeInlineEditorState = {
+          targetEl: edEl,
+          originalHtml: edEl.innerHTML,
+          initialText,
+          isMultiline
+        };
+
+        edEl.classList.add('is-editing');
+        edEl.innerHTML = `
+          <div class="inline-block-editor">
+            <textarea class="inline-ed-ta" spellcheck="false"></textarea>
+            <div class="inline-ed-row">
+              <span class="inline-ed-hint">{{가릴 말}} = 테이프 · ${isMultiline ? '⌘/Ctrl+Enter 저장 · 줄바꿈 가능' : 'Enter 저장 · Shift+Enter 줄바꿈'}</span>
+              <button type="button" class="px-2 py-1 rounded-md border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-[11px] cursor-pointer whitespace-nowrap" data-act="ed-wrap-tape" title="드래그한 글자를 {{테이프}}로 감싸기 [⌘/Ctrl+M]">{{테이프}}</button>
+              <button type="button" class="px-2.5 py-1 rounded-md border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 font-bold text-xs cursor-pointer whitespace-nowrap" data-act="ed-cancel">취소</button>
+              <button type="button" class="px-3 py-1 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer whitespace-nowrap shadow-2xs" data-act="ed-save">저장</button>
+            </div>
+          </div>
+        `;
+
+        const ta = edEl.querySelector('.inline-ed-ta');
+        const fitHeight = () => {
+          ta.style.height = 'auto';
+          ta.style.height = Math.max(44, ta.scrollHeight + 2) + 'px';
+        };
+        ta.value = initialText;
+        ta.addEventListener('input', fitHeight);
+        fitHeight();
+        ta.focus();
+        ta.setSelectionRange(ta.value.length, ta.value.length);
+
+        ta.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            e.preventDefault();
+            e.stopPropagation();
+            cancelInlineBlockEditor();
+            return;
+          }
+          if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+            e.preventDefault();
+            e.stopPropagation();
+            commitInlineBlockEditor();
+            return;
+          }
+          if (e.key === 'Enter' && !isMultiline && !e.shiftKey && !e.isComposing && e.keyCode !== 229) {
+            e.preventDefault();
+            e.stopPropagation();
+            commitInlineBlockEditor();
+            return;
+          }
+          if ((e.metaKey || e.ctrlKey) && (e.code === 'KeyM' || e.key === 'm' || e.key === 'M')) {
+            e.preventDefault();
+            e.stopPropagation();
+            wrapInlineTextareaWithTape(ta);
+          }
+        });
+
+        const btnWrap = edEl.querySelector('[data-act="ed-wrap-tape"]');
+        const btnCancel = edEl.querySelector('[data-act="ed-cancel"]');
+        const btnSave = edEl.querySelector('[data-act="ed-save"]');
+        if (btnWrap) {
+          btnWrap.addEventListener('mousedown', (e) => e.preventDefault());
+          btnWrap.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            wrapInlineTextareaWithTape(ta);
+          });
+        }
+        if (btnCancel) {
+          btnCancel.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            cancelInlineBlockEditor();
+          });
+        }
+        if (btnSave) {
+          btnSave.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            commitInlineBlockEditor();
+          });
+        }
+      }
+
+      function enterInlineEditMode(focusGroupIdx = null) {
+        if (!subnoteContainer) return;
+        if (currentMode === 'type') {
+          applyMode('tape');
+        }
+        if (currentMode === 'blur') {
+          document.querySelectorAll('.topic-group').forEach(grp => revealGroup(grp));
+        }
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+        lastClickedTape = null;
+
+        isInlineEditMode = true;
+        subnoteContainer.classList.add('is-inline-editing');
+        if (inlineEditBanner) inlineEditBanner.hidden = false;
+        if (btnEditTopicLabel) btnEditTopicLabel.textContent = '수정 끝내기';
+        if (btnEditTopicContent) {
+          btnEditTopicContent.classList.remove('text-slate-600', 'border-slate-200');
+          btnEditTopicContent.classList.add('bg-amber-50', 'text-amber-800', 'border-amber-300');
+        }
+
+        markEditableBlocks();
+
+        if (focusGroupIdx !== null && typeof focusGroupIdx === 'number') {
+          const groups = subnoteContainer.querySelectorAll('.topic-group');
+          const targetGrp = groups[focusGroupIdx];
+          if (targetGrp) {
+            targetGrp.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            const firstEd = targetGrp.querySelector('.group-content .ed') || targetGrp.querySelector('.ed');
+            if (firstEd) {
+              setTimeout(() => openInlineBlockEditor(firstEd), 60);
+            }
+          }
+        }
+      }
+
+      function exitInlineEditMode(silent = false) {
+        if (!isInlineEditMode) return;
+        if (activeInlineEditorState) {
+          cancelInlineBlockEditor();
+        }
+        clearEditableBlocks();
+        isInlineEditMode = false;
+        if (subnoteContainer) subnoteContainer.classList.remove('is-inline-editing');
+        if (inlineEditBanner) inlineEditBanner.hidden = true;
+        if (btnEditTopicLabel) btnEditTopicLabel.textContent = '본문 수정';
+        if (btnEditTopicContent) {
+          btnEditTopicContent.classList.remove('bg-amber-50', 'text-amber-800', 'border-amber-300');
+          btnEditTopicContent.classList.add('text-slate-600', 'border-slate-200');
+        }
+        if (currentMode === 'blur') {
+          document.querySelectorAll('.topic-group').forEach(grp => blurGroup(grp));
+        }
+        if (!silent) {
+          showToast('본문 수정을 마쳤어요', 'check');
+        }
+      }
+
+      function toggleInlineEditMode() {
+        if (isInlineEditMode) exitInlineEditMode(false);
+        else enterInlineEditMode(null);
+      }
+
+      if (subnoteContainer) {
+        subnoteContainer.addEventListener('click', (e) => {
+          if (!isInlineEditMode) return;
+          if (e.target.closest('.inline-block-editor') || e.target.closest('.group-actions-wrap') || e.target.closest('button') || e.target.closest('summary')) {
+            return;
+          }
+          const edEl = e.target.closest('.ed');
+          if (!edEl || !subnoteContainer.contains(edEl)) return;
+          if (edEl.classList.contains('is-editing')) return;
+          e.preventDefault();
+          e.stopPropagation();
+          openInlineBlockEditor(edEl);
+        });
+      }
+
       function openTopicEditor(targetCardIndex = null) {
+        if (typeof exitInlineEditMode === 'function') exitInlineEditMode(true);
         const topic = TOPICS[currentTopicIndex];
         if (!topic || !topicEditModal) return;
 
@@ -12059,6 +12754,9 @@
       function saveTopicEditor() {
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
+        if (typeof exitInlineEditMode === 'function') exitInlineEditMode(true);
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+        lastClickedTape = null;
 
         let content = '';
         if (isRawMode) {
@@ -12116,6 +12814,9 @@
       function resetFromTopicEditor() {
         const topic = TOPICS[currentTopicIndex];
         if (!topic) return;
+        if (typeof exitInlineEditMode === 'function') exitInlineEditMode(true);
+        if (typeof hideFloatingMaskBtn === 'function') hideFloatingMaskBtn();
+        lastClickedTape = null;
 
         if (!confirm(`'${topic.title}' 주제의 모든 사용자 수정사항(본문 수정 및 마스킹)을 초기화하고 원본 서브노트로 복원하시겠습니까?`)) {
           return;
@@ -12190,7 +12891,16 @@
       }
 
       if (btnEditTopicContent) {
-        btnEditTopicContent.addEventListener('click', () => openTopicEditor(null));
+        btnEditTopicContent.addEventListener('click', () => toggleInlineEditMode());
+      }
+      if (btnFinishInlineEdit) {
+        btnFinishInlineEdit.addEventListener('click', () => exitInlineEditMode(false));
+      }
+      if (btnOpenCardModalFromInline) {
+        btnOpenCardModalFromInline.addEventListener('click', () => {
+          exitInlineEditMode(true);
+          openTopicEditor(null);
+        });
       }
       if (btnToggleRawHtmlMode) {
         btnToggleRawHtmlMode.addEventListener('click', toggleRawHtmlMode);
@@ -12616,6 +13326,9 @@
         }
 
         const activeEl = document.activeElement;
+        if (activeEl && activeEl.classList.contains('inline-ed-ta')) {
+          return;
+        }
         const isTapeInput = activeEl && activeEl.classList.contains('tape-typing-input');
         if (isTapeInput) {
           // Allow standard Tab navigation between inline blank inputs
@@ -12830,6 +13543,22 @@
           return;
         }
 
+        // 8-3. [E] or [ㄷ] Toggle Inline Direct Edit Mode (본문 제자리 수정)
+        const isEKey = (e.key === 'e' || e.key === 'E' || e.key === 'ㄷ' || e.code === 'KeyE');
+        if (isEKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          toggleInlineEditMode();
+          return;
+        }
+
+        // 8-4. [D] or [ㅇ] Untape selected or last-clicked tape (테이프 떼기)
+        const isDKey = (e.key === 'd' || e.key === 'D' || e.key === 'ㅇ' || e.code === 'KeyD');
+        if (isDKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          untapeSelectionOrLast(false);
+          return;
+        }
+
         // 8. [M] or [Cmd+M] or [ㅡ] or [Backspace] or [Delete] for Tapes (Tablet & IME Multi-layout support)
         const isMKey = (e.key === 'm' || e.key === 'M' || e.key === 'ㅡ' || e.code === 'KeyM' || e.keyCode === 77 || e.which === 77);
         if (isMKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
@@ -12925,6 +13654,13 @@
           }
           if (!diffModal.classList.contains('hidden')) {
             closeDiff();
+          } else if (typeof activeInlineEditorState !== 'undefined' && activeInlineEditorState) {
+            cancelInlineBlockEditor();
+          } else if (typeof isInlineEditMode !== 'undefined' && isInlineEditMode) {
+            exitInlineEditMode(false);
+          } else if (floatingMaskBtn && !floatingMaskBtn.classList.contains('hidden')) {
+            hideFloatingMaskBtn();
+            lastClickedTape = null;
           } else {
             toggleMasterReveal(false);
           }
